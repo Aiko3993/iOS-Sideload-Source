@@ -32,5 +32,10 @@
   {
     "name": "LiveContainer",
     "github_repo": "LiveContainer/LiveContainer"
+  },
+  {
+    "name": "UTM",
+    "github_repo": "utmapp/UTM",
+    "icon_url": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/icon_512pt.png"
   }
 ]

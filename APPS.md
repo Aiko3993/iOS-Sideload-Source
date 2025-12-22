@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2025-12-22 15:12:15 (UTC)*
+> *Last Updated: 2025-12-22 15:13:31 (UTC)*
 
 ## Standard Apps
 
@@ -13,6 +13,7 @@
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp" width="48" height="48"> | **Apollo** | Altstore source and website for Apollo for Reddit (with ImprovedCustomApi) | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
 | <img src="https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png" width="48" height="48"> | **LiveContainer** | Run iOS apps without actually installing them! | [LiveContainer/LiveContainer](https://github.com/LiveContainer/LiveContainer) |
+| <img src="https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/icon_512pt.png" width="48" height="48"> | **UTM** | Virtual machines for iOS and macOS | [utmapp/UTM](https://github.com/utmapp/UTM) |
 
 ## NSFW Apps
 
