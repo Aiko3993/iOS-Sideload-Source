@@ -96,7 +96,7 @@ def load_existing_source(source_file, default_name, default_identifier):
         "news": []
     }
 
-def process_app(app_config, existing_source, client):
+def process_app(app_config, existing_source, client, apps_list_to_update=None):
     repo = app_config['github_repo']
     name = app_config['name']
     
@@ -105,6 +105,8 @@ def process_app(app_config, existing_source, client):
     app_entry = next((a for a in existing_source['apps'] 
                       if a.get('githubRepo') == repo or 
                       (not a.get('githubRepo') and a.get('developerName') == repo.split('/')[0] and a.get('name') == name)), None)
+
+    found_icon_auto = None
 
     if app_entry:
         app_entry['githubRepo'] = repo 
@@ -115,9 +117,9 @@ def process_app(app_config, existing_source, client):
             app_entry['iconURL'] = config_icon
         elif not app_entry.get('iconURL'):
             # Try auto-fetch if no icon exists
-            found_icon = find_best_icon(repo, client)
-            if found_icon:
-                app_entry['iconURL'] = found_icon
+            found_icon_auto = find_best_icon(repo, client)
+            if found_icon_auto:
+                app_entry['iconURL'] = found_icon_auto
 
         config_tint = app_config.get('tint_color')
         if config_tint:
@@ -214,9 +216,9 @@ def process_app(app_config, existing_source, client):
         # Handle Icon (Config > Auto-fetch > Fallback)
         icon_url = app_config.get('icon_url', '')
         if not icon_url or icon_url in ['None', '_No response_']:
-            found_icon = find_best_icon(repo, client)
-            if found_icon:
-                icon_url = found_icon
+            found_icon_auto = find_best_icon(repo, client)
+            if found_icon_auto:
+                icon_url = found_icon_auto
         
         tint_color = app_config.get('tint_color')
         if not tint_color:
@@ -242,6 +244,15 @@ def process_app(app_config, existing_source, client):
         }
         existing_source['apps'].append(app_entry)
 
+    # Sync found metadata back to apps_list_to_update
+    if found_icon_auto and apps_list_to_update is not None:
+        # Find the original config entry
+        orig_config = next((item for item in apps_list_to_update if item.get('github_repo') == repo), None)
+        if orig_config:
+            if not orig_config.get('icon_url'):
+                logger.info(f"Syncing found icon back to apps.json for {name}")
+                orig_config['icon_url'] = found_icon_auto
+
     return existing_source
 
 def update_repo(config_file, source_file, source_name, source_identifier, client):
@@ -250,13 +261,22 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
         return
 
     apps = load_json(config_file)
+    # Create a snapshot to detect changes
+    import copy
+    original_apps = copy.deepcopy(apps)
+    
     source_data = load_existing_source(source_file, source_name, source_identifier)
     
     source_data['name'] = source_name
     source_data['identifier'] = source_identifier
     
     for app in apps:
-        source_data = process_app(app, source_data, client)
+        source_data = process_app(app, source_data, client, apps_list_to_update=apps)
+    
+    # Check if we need to save back changes to apps.json
+    if apps != original_apps:
+        logger.info(f"Updating {config_file} with auto-detected metadata...")
+        save_json(config_file, apps)
     
     # Filter and sort
     valid_repos = set(app['github_repo'] for app in apps)
