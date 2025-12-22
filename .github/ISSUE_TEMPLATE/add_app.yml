@@ -16,7 +16,7 @@ body:
     attributes:
       label: App Name
       description: The name of the application.
-      placeholder: e.g. YouTube Reborn
+      placeholder: e.g. MyCoolApp
     validations:
       required: true
 
@@ -25,7 +25,7 @@ body:
     attributes:
       label: GitHub Repository
       description: The Owner/Repo format.
-      placeholder: e.g. google/ios-app
+      placeholder: e.g. You/MyCoolApp
     validations:
       required: true
 
@@ -34,8 +34,8 @@ body:
     attributes:
       label: Category
       options:
-        - NSFW
         - Standard
+        - NSFW
     validations:
       required: true
 
