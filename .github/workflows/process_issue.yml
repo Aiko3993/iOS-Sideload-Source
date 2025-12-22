@@ -56,7 +56,7 @@ jobs:
                 // Allow icon to be empty string if not found or placeholder
                 const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
 
-                if (name && repo && cat && name !== '_No response_' && repo !== '_No response_') {
+                if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
                     apps.push({
                         name: name,
                         repo: repo,
@@ -118,12 +118,10 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected. Skipping commit."
           else
-            git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.parse.outputs.app_name }} ($REPO) from #${{ github.event.issue.number }}"
+            git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
             git pull --rebase
             git push
           fi
-        env:
-          REPO: ${{ steps.parse.outputs.repo }}
 
       - name: Comment and Close
         uses: actions/github-script@v7
