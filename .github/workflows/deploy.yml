@@ -5,12 +5,17 @@ on:
     branches:
       - main
   workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Process App Request", "Update Source"]
+    types:
+      - completed
 
 permissions:
   contents: write
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
