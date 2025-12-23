@@ -34,11 +34,6 @@
     "github_repo": "LiveContainer/LiveContainer"
   },
   {
-    "name": "UTM",
-    "github_repo": "utmapp/UTM",
-    "icon_url": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/icon_512pt.png"
-  },
-  {
     "name": "PPSSPP",
     "github_repo": "hrydgard/ppsspp",
     "icon_url": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png"
