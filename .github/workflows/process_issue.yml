@@ -119,8 +119,19 @@ jobs:
             echo "No changes detected. Skipping commit."
           else
             git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
-            git pull --rebase
-            git push
+            
+            # Robust push with retry logic for concurrency
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until git pull --rebase && git push; do
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
+                echo "Failed to push after $MAX_RETRIES attempts."
+                exit 1
+              fi
+              echo "Push failed, retrying in $((RETRY_COUNT * 2)) seconds..."
+              sleep $((RETRY_COUNT * 2))
+            done
           fi
 
       - name: Comment and Close

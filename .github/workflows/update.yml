@@ -63,4 +63,21 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update source.json, app lists, and templates" && git pull --rebase && git push)
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update source.json, app lists, and templates"
+            
+            # Robust push with retry logic for concurrency
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until git pull --rebase && git push; do
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
+                echo "Failed to push after $MAX_RETRIES attempts."
+                exit 1
+              fi
+              echo "Push failed, retrying in $((RETRY_COUNT * 2)) seconds..."
+              sleep $((RETRY_COUNT * 2))
+            done
+          fi
