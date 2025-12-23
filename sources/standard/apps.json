@@ -55,5 +55,10 @@
     "github_repo": "LiveContainer/LiveContainer",
     "pre_release": true,
     "tag_regex": "nightly"
+  },
+  {
+    "name": "UTM",
+    "github_repo": "utmapp/UTM",
+    "pre_release": false
   }
 ]
