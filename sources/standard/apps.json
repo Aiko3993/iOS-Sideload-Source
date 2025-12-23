@@ -100,8 +100,6 @@
     "name": "Play! (Nightly)",
     "github_repo": "jpd002/Play-",
     "github_workflow": "build-ios.yaml",
-    "artifact_name": "Play_iOS",
-    "icon_url": "https://raw.githubusercontent.com/jpd002/Play-/master/Source/ui_ios/Resources/icon@2x.png",
-    "bundle_id": "com.virtualapplications.play"
+    "artifact_name": "Play_iOS"
   }
 ]

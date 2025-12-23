@@ -196,6 +196,62 @@ class GitHubClient:
         resp = self.get(url)
         return resp.content if resp else None
 
+    def get_release_by_tag(self, repo, tag):
+        """Fetch a release by tag name."""
+        url = f"https://api.github.com/repos/{repo}/releases/tags/{tag}"
+        resp = self.get(url)
+        return resp.json() if resp else None
+
+    def create_release(self, repo, tag, name=None, body=None, prerelease=False):
+        """Create a new release."""
+        url = f"https://api.github.com/repos/{repo}/releases"
+        data = {
+            "tag_name": tag,
+            "name": name or tag,
+            "body": body or f"Assets for {tag}",
+            "prerelease": prerelease
+        }
+        try:
+            resp = self.session.post(url, headers=self.headers, json=data, timeout=15)
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            logger.error(f"Failed to create release {tag}: {e}")
+            return None
+
+    def upload_release_asset(self, repo, release_id, file_path, name=None):
+        """Upload a file to a release, replacing if it exists."""
+        name = name or os.path.basename(file_path)
+        
+        # 1. Check if asset already exists
+        release_url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
+        resp = self.get(release_url)
+        if resp:
+            assets = resp.json().get('assets', [])
+            for asset in assets:
+                if asset['name'] == name:
+                    # Delete existing asset
+                    del_url = f"https://api.github.com/repos/{repo}/releases/assets/{asset['id']}"
+                    try:
+                        self.session.delete(del_url, headers=self.headers, timeout=15).raise_for_status()
+                        logger.info(f"Deleted existing asset {name}")
+                    except Exception as e:
+                        logger.error(f"Failed to delete existing asset {name}: {e}")
+
+        # 2. Upload new asset
+        upload_url = f"https://uploads.github.com/repos/{repo}/releases/{release_id}/assets?name={name}"
+        headers = self.headers.copy()
+        headers["Content-Type"] = "application/octet-stream"
+        
+        try:
+            with open(file_path, 'rb') as f:
+                resp = self.session.post(upload_url, headers=headers, data=f, timeout=300)
+                resp.raise_for_status()
+                return resp.json()
+        except Exception as e:
+            logger.error(f"Failed to upload asset {name}: {e}")
+            return None
+
 def normalize_name(s):
     """Normalize string for fuzzy comparison: lowercase and remove non-alphanumeric chars and common version suffixes."""
     if not s: return ""

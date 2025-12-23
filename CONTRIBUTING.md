@@ -72,7 +72,10 @@ To make contributing easier, our system performs several automated tasks:
 *   **Visual Intelligence**:
     *   **Smart Icon Selection**: If you don't provide an `icon_url`, the system scans the repository and ranks found icons based on resolution, aspect ratio, and transparency to pick the best one.
     *   **Auto-Sync**: If you update the `name` or `icon_url` in `apps.json`, the system will sync these changes to the source immediately, even if the app version hasn't changed.
-*   **Nightly.link Integration**: For apps using `github_workflow`, the system generates high-speed download links via `nightly.link`, bypassing GitHub's authentication requirements for artifacts.
+*   **IPA Repackaging & Direct Hosting**: 
+    *   **No more Zip issues**: For artifacts provided as `.app` or Zip files, the system automatically repackages them into standard `.ipa` files.
+    *   **Direct Download Links**: All artifacts are automatically uploaded to a dedicated local release (`app-artifacts`), providing **standard IPA direct links** compatible with LiveContainer, SideStore, and AltStore.
+    *   **Nightly.link (Fallback)**: Used only as a last-resort fallback to ensure high availability.
 
 ---
 

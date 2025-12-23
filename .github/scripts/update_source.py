@@ -47,6 +47,22 @@ def get_ipa_sha256(ipa_path):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
 
+def package_app_to_ipa(app_path, output_ipa_path):
+    """Package a .app directory into a standard .ipa file."""
+    try:
+        with zipfile.ZipFile(output_ipa_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
+            app_name = os.path.basename(app_path)
+            # IPA structure: Payload/AppName.app/...
+            for root, dirs, files in os.walk(app_path):
+                for file in files:
+                    full_path = os.path.join(root, file)
+                    relative_path = os.path.relpath(full_path, os.path.join(app_path, '..'))
+                    ipa.write(full_path, os.path.join('Payload', relative_path))
+        return True
+    except Exception as e:
+        logger.error(f"Failed to package IPA from {app_path}: {e}")
+        return False
+
 def extract_dominant_color(image_url, client):
     """Extract dominant color from image URL."""
     if not image_url or not image_url.startswith(('http://', 'https://')):
@@ -450,6 +466,9 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
     fd, temp_path = tempfile.mkstemp(suffix='.ipa')
     os.close(fd)
     
+    current_repo = os.environ.get('GITHUB_REPOSITORY')
+    upload_success = False
+
     try:
         if workflow_file:
             content = None
@@ -460,15 +479,64 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
                     logger.warning(f"Failed to download artifact via API: {e}")
             
             if content:
-                with zipfile.ZipFile(BytesIO(content)) as z:
-                    ipa_in_zip = next((n for n in z.namelist() if n.lower().endswith('.ipa')), None)
-                    if not ipa_in_zip:
-                        raise Exception(f"No IPA found inside artifact ZIP for {name}")
-                    with open(temp_path, 'wb') as f:
-                        f.write(z.read(ipa_in_zip))
-            else:
-                # Fallback to nightly.link for downloading if API fails or no token
-                logger.info(f"Downloading via nightly.link for metadata extraction: {download_url}")
+                # Process the ZIP content from GitHub API
+                with tempfile.TemporaryDirectory() as tmp_dir:
+                    zip_path = os.path.join(tmp_dir, "artifact.zip")
+                    with open(zip_path, 'wb') as f:
+                        f.write(content)
+                    
+                    with zipfile.ZipFile(zip_path, 'r') as z:
+                        z.extractall(tmp_dir)
+                        
+                        # Find IPA or .app
+                        ipa_in_zip = next((os.path.join(tmp_dir, n) for n in z.namelist() if n.lower().endswith('.ipa')), None)
+                        app_in_zip = None
+                        if not ipa_in_zip:
+                            # Look for .app folders
+                            for root, dirs, files in os.walk(tmp_dir):
+                                for d in dirs:
+                                    if d.lower().endswith('.app'):
+                                        app_in_zip = os.path.join(root, d)
+                                        break
+                                if app_in_zip: break
+                        
+                        target_ipa = None
+                        if ipa_in_zip:
+                            target_ipa = ipa_in_zip
+                        elif app_in_zip:
+                            repack_path = os.path.join(tmp_dir, f"{name}.ipa")
+                            if package_app_to_ipa(app_in_zip, repack_path):
+                                target_ipa = repack_path
+                        
+                        if target_ipa:
+                            # Copy to temp_path for metadata extraction
+                            shutil.copy2(target_ipa, temp_path)
+                            
+                            # Upload to our own repo to get a direct link
+                            if current_repo and client.token:
+                                tag_name = "app-artifacts"
+                                release = client.get_release_by_tag(current_repo, tag_name)
+                                if not release:
+                                    release = client.create_release(current_repo, tag_name, 
+                                                                  name="App Artifacts", 
+                                                                  body="This release contains direct download links for apps that are only available as GitHub Artifacts.")
+                                
+                                if release:
+                                    # Use a unique name for the asset to avoid collisions
+                                    # Format: Owner_Repo_ArtifactName.ipa
+                                    asset_name = f"{repo.replace('/', '_')}_{artifact['name']}.ipa"
+                                    if not asset_name.lower().endswith('.ipa'):
+                                        asset_name += ".ipa"
+                                        
+                                    asset = client.upload_release_asset(current_repo, release['id'], target_ipa, name=asset_name)
+                                    if asset:
+                                        download_url = asset['browser_download_url']
+                                        upload_success = True
+                                        logger.info(f"Successfully uploaded {asset_name} to {current_repo}")
+            
+            if not upload_success:
+                # Fallback to nightly.link if upload failed or no token
+                logger.warning(f"Could not provide direct link for {name}, falling back to nightly.link")
                 
                 # Verify URL first with a HEAD request to handle 404s gracefully
                 head_resp = client.session.head(download_url, timeout=30)
@@ -480,7 +548,7 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
                     if head_resp.status_code == 200:
                         download_url = alt_url
                     else:
-                        raise Exception(f"nightly.link returned 404 for both {download_url} and {alt_url}")
+                        logger.error(f"nightly.link returned 404 for both {download_url} and {alt_url}")
 
                 with client.session.get(download_url, stream=True, timeout=300) as r:
                     r.raise_for_status()
@@ -489,9 +557,31 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
                         ipa_in_zip = next((n for n in z.namelist() if n.lower().endswith('.ipa')), None)
                         if not ipa_in_zip:
                             raise Exception(f"No IPA found inside nightly.link ZIP for {name}")
+                        
+                        # Extract the IPA from nightly.link ZIP
                         with open(temp_path, 'wb') as f:
                             f.write(z.read(ipa_in_zip))
+                        
+                        # NEW: Also upload this extracted IPA to app-artifacts to provide a direct link
+                        if current_repo and client.token:
+                            tag_name = "app-artifacts"
+                            release = client.get_release_by_tag(current_repo, tag_name)
+                            if not release:
+                                release = client.create_release(current_repo, tag_name, 
+                                                              name="App Artifacts", 
+                                                              body="This release contains direct download links for apps that are only available as GitHub Artifacts.")
+                            
+                            if release:
+                                asset_name = f"{repo.replace('/', '_')}_{artifact['name']}.ipa"
+                                if not asset_name.lower().endswith('.ipa'):
+                                    asset_name += ".ipa"
+                                    
+                                asset = client.upload_release_asset(current_repo, release['id'], temp_path, name=asset_name)
+                                if asset:
+                                    download_url = asset['browser_download_url']
+                                    logger.info(f"Successfully moved nightly.link asset to {current_repo} direct link")
         else:
+            # Standard release download
             with client.session.get(download_url, stream=True, timeout=300) as r:
                 r.raise_for_status()
                 with open(temp_path, 'wb') as f:

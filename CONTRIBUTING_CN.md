@@ -70,7 +70,10 @@
 *   **视觉智能**:
     *   **智能图标选择**: 如果未提供 `icon_url`，系统会扫描仓库，并根据分辨率、长宽比和透明度对找到的图标进行评分，选择质量最高的一个。
     *   **自动同步**: 如果您在 `apps.json` 中更新了 `name` 或 `icon_url`，系统会立即同步这些更改，即使应用版本没有更新。
-*   **Nightly.link 集成**: 对于使用 `github_workflow` 的应用，系统会通过 `nightly.link` 生成高速下载链接，从而绕过 GitHub 对 Artifact 下载的身份验证限制。
+*   **IPA 自动重构与直链托管**: 
+    *   **告别 Zip 困扰**: 针对只提供 `.app` 或 Zip 的 Artifact，系统会自动将其重构为标准的 `.ipa` 格式。
+    *   **仓库直链**: 所有 Artifact 都会被自动上传至本仓库的专用 Release (`app-artifacts`)，提供**标准的 IPA 直链**，完美兼容 LiveContainer、SideStore 等侧载工具。
+    *   **Nightly.link (保底)**: 仅在极端情况下作为备选方案，确保服务高可用。
 
 ---
 
