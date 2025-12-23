@@ -44,5 +44,10 @@
     "github_repo": "LiveContainer/LiveContainer",
     "pre_release": true,
     "tag_regex": "nightly"
+  },
+  {
+    "name": "LiveContainer+SideStore",
+    "github_repo": "LiveContainer/LiveContainer",
+    "pre_release": false
   }
 ]

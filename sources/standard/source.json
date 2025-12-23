@@ -244,6 +244,32 @@
         }
       ],
       "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
+    },
+    {
+      "name": "LiveContainer+SideStore",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer.sidestore",
+      "developerName": "LiveContainer",
+      "version": "3.6.1",
+      "versionDate": "2025-08-19",
+      "versionDescription": "# ⚠️This version ⚠️REQUIRES⚠️ SideStore 0.6.2+ / AltStore 2.2.1+ to install.\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.6.0 and adds the following features. For more information, please see [3.6.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.6.0).\r\n\r\n- Fixed an issue where symbol offset caches were not reset after an iOS update, causing crashes. Fixes #765 #757 #760  \r\n- Fixed a bug where window controls could appear behind the status bar if the app was terminated while in full-screen mode with the dock hidden. Fixes #742  \r\n- Fixed an issue preventing the built-in SideStore from deactivating apps. Fixes #725  \r\n- Fixed a problem where LiveContainer failed to locate certain symbols in dyld on iPad 7 running iOS 18.6. Fixes #746  \r\n- Fixed a crash that could occur when LiveContainer attempted to check if another instance of LiveContainer was running. Fixes #751  \r\n- Fixed an issue where LiveContainer tries to open private app in another LiveContainer if an app is running in the primary LiveContainer.\r\n\r\n# New Features\r\n- On iPad, LiveContainer will now only open a new window in full-screen mode if LiveContainer itself is already in full-screen mode.  \r\n- The \"Fix File Picker and Local Notifications\" option has been split into three separate options: **Fix File Picker**, **Fix Local Notifications**, and **Use LiveContainer's Bundle ID**. Implements #739  \r\n\r\n# Localization\r\n- Updated translations: Arabic, Japanese, Polish, and Brazilian Portuguese.  \r\n- Added Korean translation, contributed by @Dr-Sauce.  ",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.6.1/LiveContainer%2BSideStore.ipa",
+      "localizedDescription": "Run iOS apps without actually installing them!",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0050FF",
+      "size": 36223272,
+      "permissions": {},
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "3.6.1",
+          "date": "2025-08-19",
+          "localizedDescription": "# ⚠️This version ⚠️REQUIRES⚠️ SideStore 0.6.2+ / AltStore 2.2.1+ to install.\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.6.0 and adds the following features. For more information, please see [3.6.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.6.0).\r\n\r\n- Fixed an issue where symbol offset caches were not reset after an iOS update, causing crashes. Fixes #765 #757 #760  \r\n- Fixed a bug where window controls could appear behind the status bar if the app was terminated while in full-screen mode with the dock hidden. Fixes #742  \r\n- Fixed an issue preventing the built-in SideStore from deactivating apps. Fixes #725  \r\n- Fixed a problem where LiveContainer failed to locate certain symbols in dyld on iPad 7 running iOS 18.6. Fixes #746  \r\n- Fixed a crash that could occur when LiveContainer attempted to check if another instance of LiveContainer was running. Fixes #751  \r\n- Fixed an issue where LiveContainer tries to open private app in another LiveContainer if an app is running in the primary LiveContainer.\r\n\r\n# New Features\r\n- On iPad, LiveContainer will now only open a new window in full-screen mode if LiveContainer itself is already in full-screen mode.  \r\n- The \"Fix File Picker and Local Notifications\" option has been split into three separate options: **Fix File Picker**, **Fix Local Notifications**, and **Use LiveContainer's Bundle ID**. Implements #739  \r\n\r\n# Localization\r\n- Updated translations: Arabic, Japanese, Polish, and Brazilian Portuguese.  \r\n- Added Korean translation, contributed by @Dr-Sauce.  ",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.6.1/LiveContainer%2BSideStore.ipa",
+          "size": 36223272,
+          "sha256": "39b4a4dc05aa8f0628972c239738e90d38edbdfcadf6019cfb8265228162a577"
+        }
+      ]
     }
   ],
   "news": []
