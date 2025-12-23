@@ -467,7 +467,7 @@
       "versionDescription": "## What's Changed\r\n* Fix macOS login sheet by @LiYanan2004 in https://github.com/Lakr233/Asspp/pull/48\r\n* Update macOS password field style\r\n* Update macOS installer with more detailed error information\r\n* Update App icons with more accurate corner radius\r\n\r\n## New Contributors\r\n* @LiYanan2004 made their first contribution in https://github.com/Lakr233/Asspp/pull/48\r\n\r\n**Full Changelog**: https://github.com/Lakr233/Asspp/compare/3.0.24...3.0.25",
       "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/3.0.25/Asspp.ipa",
       "localizedDescription": "The App Store for your multi-account eco system.",
-      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_512.png",
+      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png",
       "tintColor": "#4FA9E6",
       "size": 10917639,
       "permissions": {},
