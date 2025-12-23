@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2025-12-23 09:17:14 (UTC)*
+> *Last Updated: 2025-12-23 09:17:32 (UTC)*
 
 ## Standard Apps
 
@@ -12,8 +12,8 @@
 | <img src="https://raw.githubusercontent.com/open-ani/animeko/main/app/ios/Animeko/Assets.xcassets/AppIcon.appiconset/1024.png" width="48" height="48"> | **Animeko** | 集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform | [open-ani/animeko](https://github.com/open-ani/animeko) |
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/main/apollo_icons/icon_120.webp" width="48" height="48"> | **Apollo** | Altstore source and website for Apollo for Reddit (with ImprovedCustomApi) | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
-| <img src="https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png" width="48" height="48"> | **LiveContainer** | Run iOS apps without actually installing them! | [LiveContainer/LiveContainer](https://github.com/LiveContainer/LiveContainer) |
 | <img src="https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png" width="48" height="48"> | **PPSSPP** | A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org. | [hrydgard/ppsspp](https://github.com/hrydgard/ppsspp) |
+| <img src="https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png" width="48" height="48"> | **LiveContainer (Nightly)** | Run iOS apps without actually installing them! | [LiveContainer/LiveContainer](https://github.com/LiveContainer/LiveContainer) |
 
 ## NSFW Apps
 
