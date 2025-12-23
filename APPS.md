@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2025-12-23 12:39:36 (UTC)*
+> *Last Updated: 2025-12-23 12:47:09 (UTC)*
 
 ## Standard Apps
 
@@ -24,6 +24,7 @@
 | <img src="https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png" width="48" height="48"> | **Feather** | Free on-device iOS/iPadOS application manager/installer, using certificates part of the Apple Developer Program. | [khcrysalis/Feather](https://github.com/khcrysalis/Feather) |
 | <img src="https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png" width="48" height="48"> | **SideStore** | SideStore is a fork of AltStore that doesn't require an AltServer. | [SideStore/SideStore](https://github.com/SideStore/SideStore) |
 | <img src="https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png" width="48" height="48"> | **Ksign** | The "cleaner" Esign app. | [Nyasami/Ksign](https://github.com/Nyasami/Ksign) |
+| <img src="https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_512.png" width="48" height="48"> | **Asspp** | The App Store for your multi-account eco system. | [Lakr233/Asspp](https://github.com/Lakr233/Asspp) |
 | <img src="https://raw.githubusercontent.com/jpd002/Play-/master/Source/ui_ios/Resources/icon@2x.png" width="48" height="48"> | **Play! (Nightly)** | Play! - PlayStation2 Emulator | [jpd002/Play-](https://github.com/jpd002/Play-) |
 
 ## NSFW Apps

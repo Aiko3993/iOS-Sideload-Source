@@ -458,6 +458,32 @@
       ]
     },
     {
+      "name": "Asspp",
+      "githubRepo": "Lakr233/Asspp",
+      "bundleIdentifier": "wiki.qaq.Asspp",
+      "developerName": "Lakr233",
+      "version": "3.0.25",
+      "versionDate": "2025-10-16",
+      "versionDescription": "## What's Changed\r\n* Fix macOS login sheet by @LiYanan2004 in https://github.com/Lakr233/Asspp/pull/48\r\n* Update macOS password field style\r\n* Update macOS installer with more detailed error information\r\n* Update App icons with more accurate corner radius\r\n\r\n## New Contributors\r\n* @LiYanan2004 made their first contribution in https://github.com/Lakr233/Asspp/pull/48\r\n\r\n**Full Changelog**: https://github.com/Lakr233/Asspp/compare/3.0.24...3.0.25",
+      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/3.0.25/Asspp.ipa",
+      "localizedDescription": "The App Store for your multi-account eco system.",
+      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_512.png",
+      "tintColor": "#4FA9E6",
+      "size": 10917639,
+      "permissions": {},
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "3.0.25",
+          "date": "2025-10-16",
+          "localizedDescription": "## What's Changed\r\n* Fix macOS login sheet by @LiYanan2004 in https://github.com/Lakr233/Asspp/pull/48\r\n* Update macOS password field style\r\n* Update macOS installer with more detailed error information\r\n* Update App icons with more accurate corner radius\r\n\r\n## New Contributors\r\n* @LiYanan2004 made their first contribution in https://github.com/Lakr233/Asspp/pull/48\r\n\r\n**Full Changelog**: https://github.com/Lakr233/Asspp/compare/3.0.24...3.0.25",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/3.0.25/Asspp.ipa",
+          "size": 10917639,
+          "sha256": "8a108dfb00d0aa129643e48ba6f172ce9a1b71d336ce9fa9374d80dc5cba7462"
+        }
+      ]
+    },
+    {
       "name": "Play! (Nightly)",
       "githubRepo": "jpd002/Play-",
       "bundleIdentifier": "com.virtualapplications.play.nightly",
