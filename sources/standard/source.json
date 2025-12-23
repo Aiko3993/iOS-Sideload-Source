@@ -54,7 +54,7 @@
     },
     {
       "name": "NeoFreeBird",
-      "bundleIdentifier": "com.atebits.Tweetie2",
+      "bundleIdentifier": "com.atebits.Tweetie2.neofreebird",
       "developerName": "NeoFreeBird",
       "version": "11.35",
       "versionDate": "2025-11-03",
@@ -180,7 +180,7 @@
     {
       "name": "LiveContainer (Nightly)",
       "githubRepo": "LiveContainer/LiveContainer",
-      "bundleIdentifier": "com.kdt.livecontainer",
+      "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.60",
       "versionDate": "2025-12-21",
