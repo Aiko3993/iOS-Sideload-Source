@@ -40,7 +40,7 @@ The `main` branch serves as the development source. It does **NOT** directly con
 │   │   │   ├── main.js         # [ENTRY] Main application entry point
 │   │   │   ├── state.js        # [STATE] Global state management
 │   │   │   ├── theme.js        # [UI] Theme switching and dynamic colors
-│   │   │   ├── ui.js           # [UI] DOM manipulation and rendering
+│   │   │   ├── ui.js           # [UI] DOM manipulation, rendering, and version truncation
 │   │   │   └── utils.js        # [SHARED] Helper functions
 │   │   └── tailwind-config.js  # [CONFIG] Tailwind CSS configuration
 │   └── index.html              # [WEB] Static landing page source
@@ -130,6 +130,9 @@ This project mainly depends on the Python environment, and dependencies are defi
     *   Triggered by rapidly clicking the status dot (footer) multiple times.
     *   **Sequence**: `triggerElementEater` (Intro animation, footer turns red and vanishes) -> `triggerConfetti` (Random visual effect like Matrix Rain or Pong) -> Auto Cleanup.
     *   **Debug Console**: Accessed by typing `debug` in the search bar. Allows manual triggering of individual effects for testing.
+*   **Responsive UI**: 
+    *   **Adaptive Header**: Layout switches between vertical and horizontal at the `lg` (1024px) breakpoint to ensure optimal control placement.
+    *   **Smart Truncation**: Long app version strings are automatically truncated (e.g., `v1.0.0-beta...`) with tooltips for the full string to maintain UI density.
 
 ---
 
@@ -146,6 +149,7 @@ This project mainly depends on the Python environment, and dependencies are defi
         ```bash
         python .github/scripts/validate_apps.py
         ```
+    *   **UI Changes**: After modifying HTML/JS/CSS, launch a local server (`python3 -m http.server`) to verify responsive design (breakpoints) and interaction logic.
 3.  **Pre-commit Checks**:
     *   Run the complete local testing process.
     *   Ensure clean code formatting and remove unnecessary debug prints.
@@ -170,6 +174,7 @@ This section is designed for AI coding assistants (e.g., Trae, Copilot, etc.). P
 *   **Web Interface Testing**:
     *   **MANDATORY**: For ANY website-related change (HTML/CSS/JS/Assets), regardless of size, you **MUST** launch a local server (`python3 -m http.server`) to verify.
     *   Provide the preview link (`http://localhost:8000`) to the user.
+    *   **Breakpoint Check**: Verify the UI across multiple viewports: Mobile (< 640px), Tablet (768px - 1024px), and Desktop (> 1024px).
     *   Verify responsiveness, console logs, and network requests before confirming completion.
 
 ### AI Operation Log Requirements

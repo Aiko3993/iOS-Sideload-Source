@@ -60,8 +60,9 @@ export function createFlatCard(app, index) {
                 
                 <div class="flex flex-col items-end gap-1.5">
                      <span class="badge-dynamic-text inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold shadow-sm border tracking-wide uppercase"
+                           title="v${app.version}"
                            style="--badge-text-light: ${accessibleColors.textLight}; --badge-text-dark: ${accessibleColors.textDark}; border-color: rgba(var(--current-glow), 0.3); background-color: rgba(var(--current-glow), 0.15); color: rgb(var(--current-text));">
-                        v${app.version}
+                        v${app.version.length > 12 ? app.version.substring(0, 10) + '...' : app.version}
                     </span>
                     <span class="text-[10px] font-medium text-gray-400 dark:text-gray-500 bg-gray-100 dark:bg-gray-800/50 px-2 py-0.5 rounded-md">
                         ${formatBytes(app.size)}
@@ -237,7 +238,7 @@ export function updateCopyButtonUI(mode) {
     wrapper.style.opacity = '1';
 
     if (mode === 'all') {
-        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[36px]";
+        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
         const btnClass = 'hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
         const btnClass2 = 'hover:bg-pink-50 dark:hover:bg-pink-900/30';
         
@@ -246,7 +247,7 @@ export function updateCopyButtonUI(mode) {
             <button onclick="window.copySourceURL('nsfw')" class="p-1.5 rounded-lg text-pink-500 ${btnClass2} transition-all active:scale-95 group/nsfw" title="Copy NSFW Source" style="animation: split-down 0.3s ease-out forwards;">${getIcon('copy', 'w-4 h-4')}</button>
         `;
     } else {
-        wrapper.className = "flex items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[36px]";
+        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
         // Standard (or others) now gets colored by default (Emerald) instead of gray
         let colorClass = mode === 'nsfw' 
             ? 'text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/30' 
@@ -343,7 +344,8 @@ function renderModalHeader(app) {
     modalTitle.textContent = app.name;
     modalTitle.className = "text-2xl font-bold leading-tight mb-1 text-[var(--modal-tint-light)] dark:text-[var(--modal-tint-dark)] transition-colors duration-300";
     
-    modalVersionBadge.textContent = `v${app.version}`;
+    modalVersionBadge.textContent = `v${app.version.length > 12 ? app.version.substring(0, 10) + '...' : app.version}`;
+    modalVersionBadge.title = `v${app.version}`;
     modalVersionBadge.style.cssText = `background-color: rgba(var(--current-modal-glow), 0.15); color: rgb(var(--current-modal-text)); border-color: rgba(var(--current-modal-glow), 0.3);`;
     modalSize.textContent = formatBytes(app.size);
     modalIcon.src = app.iconURL;
