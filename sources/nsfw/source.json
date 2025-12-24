@@ -1,6 +1,11 @@
 {
   "name": "Aiko3993's Sideload Source (NSFW)",
   "identifier": "io.github.aiko3993.source.nsfw",
+  "subtitle": "Supports AltStore, SideStore & LiveContainer",
+  "description": "A collection of adult-themed sideloadable apps for iOS and iPadOS. Supports AltStore, SideStore, and LiveContainer.",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/nsfw/icon/nsfw.png",
+  "website": "https://aiko3993.github.io/iOS-Sideload-Source",
+  "tintColor": "#db2777",
   "apps": [
     {
       "name": "LoveIwara",
