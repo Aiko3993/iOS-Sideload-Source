@@ -24,7 +24,8 @@
           "sha256": "c858f99a46a76f1791ed3e71bf8c30f6b0cbd86b07d087576a7735bfc47c8cab"
         }
       ],
-      "githubRepo": "FoxSensei001/LoveIwara"
+      "githubRepo": "FoxSensei001/LoveIwara",
+      "sha256": "c858f99a46a76f1791ed3e71bf8c30f6b0cbd86b07d087576a7735bfc47c8cab"
     },
     {
       "name": "Pica Comic",
@@ -48,7 +49,8 @@
           "sha256": "cbc10f0827cb756ab4c1af9a9c78761f374015dde2425f76ee7b8fb4b18a27c1"
         }
       ],
-      "githubRepo": "Pacalini/PicaComic"
+      "githubRepo": "Pacalini/PicaComic",
+      "sha256": "cbc10f0827cb756ab4c1af9a9c78761f374015dde2425f76ee7b8fb4b18a27c1"
     },
     {
       "name": "JHentai",
@@ -74,7 +76,8 @@
           "size": 15698779,
           "sha256": "7d92624f76c76272f276545b2971d8274e7d9d685190e418673026ec27d829aa"
         }
-      ]
+      ],
+      "sha256": "7d92624f76c76272f276545b2971d8274e7d9d685190e418673026ec27d829aa"
     }
   ],
   "news": []

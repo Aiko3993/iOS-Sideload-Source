@@ -12,6 +12,75 @@ from io import BytesIO
 
 from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name
 
+def is_meaningless_version(version_str, app_name):
+    """Check if a version string is redundant or meaningless."""
+    if not version_str: return True
+    v = version_str.lower()
+    
+    # 1. Generic keywords
+    if v in ['nightly', 'latest', 'stable', 'dev', 'beta', 'alpha', 'release']:
+        return True
+    
+    # 2. Redundant patterns like "1.0-nightly.1.0" or "3.6.60-nightly.3.6.60"
+    # Matches <ver>-nightly.<ver>
+    match = re.search(r'^(.+)-nightly\.\1$', v)
+    if match:
+        return True
+        
+    # Matches <ver>.nightly
+    if re.search(r'^v?\d+(\.\d+)*\.nightly$', v):
+        return True
+
+    return False
+
+def deduplicate_versions(versions, app_name):
+    """
+    Smartly deduplicate versions based on multiple parameters:
+    - SHA256 (Primary: Same content is same version)
+    - Version String (Secondary)
+    - Meaningless filtering
+    """
+    if not versions:
+        return []
+        
+    # Sort by date descending first to process newest first
+    versions.sort(key=lambda x: x.get('date', ''), reverse=True)
+    
+    unique_sha = {}
+    unique_version = {}
+    
+    for v in versions:
+        sha = v.get('sha256')
+        ver = v.get('version')
+        is_meaningless = is_meaningless_version(ver, app_name)
+        
+        # Priority 1: SHA256 deduplication
+        if sha:
+            if sha not in unique_sha:
+                unique_sha[sha] = v
+            else:
+                # Keep the one that is NOT meaningless
+                existing = unique_sha[sha]
+                if is_meaningless_version(existing.get('version'), app_name) and not is_meaningless:
+                    unique_sha[sha] = v
+                continue # Skip this one as we already have the SHA
+        
+    # Second pass: Version string deduplication among unique SHAs
+    final_list = []
+    for v in unique_sha.values():
+        ver = v.get('version')
+        if ver not in unique_version:
+            unique_version[ver] = v
+            final_list.append(v)
+        else:
+            # Already have this version string, keep the one with better SHA/Date
+            # (In most cases they will be the same due to first pass)
+            pass
+            
+    # Final sort by date
+    final_list.sort(key=lambda x: x.get('date', ''), reverse=True)
+    return final_list
+
 def get_ipa_metadata(ipa_path, default_bundle_id):
     """Extract version, build number, and bundle ID from IPA content."""
     try:
@@ -665,14 +734,21 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
     if app_entry:
         logger.info(f"New version {version} detected for {name}")
         app_entry['versions'].insert(0, new_version_entry)
+        
+        # Smart deduplication
+        app_entry['versions'] = deduplicate_versions(app_entry['versions'], name)
+        
+        # Use the best available version (the first one after deduplication)
+        best_version = app_entry['versions'][0]
+        
         app_entry.update({
-            "version": version,
-            "versionDate": release_date,
-            "versionDescription": version_desc,
-            "downloadURL": download_url,
+            "version": best_version['version'],
+            "versionDate": best_version['date'],
+            "versionDescription": best_version['localizedDescription'],
+            "downloadURL": best_version['downloadURL'],
             "localizedDescription": main_desc, 
-            "size": size,
-            "sha256": sha256,
+            "size": best_version['size'],
+            "sha256": best_version['sha256'],
             "bundleIdentifier": bundle_id 
         })
     else:
@@ -761,6 +837,22 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
     for app in apps:
         source_data = process_app(app, source_data, client, apps_list_to_update=apps)
     
+    # Final pass: Global deduplication and cleanup of versions in source.json
+    for a in source_data['apps']:
+        if 'versions' in a:
+            a['versions'] = deduplicate_versions(a['versions'], a.get('name', ''))
+            # Sync main fields with the best version after deduplication
+            if a['versions']:
+                best = a['versions'][0]
+                a.update({
+                    "version": best['version'],
+                    "versionDate": best['date'],
+                    "versionDescription": best['localizedDescription'],
+                    "downloadURL": best['downloadURL'],
+                    "size": best['size'],
+                    "sha256": best['sha256']
+                })
+
     # Check if we need to save back changes to apps.json
     if apps != original_apps:
         logger.info(f"Updating {config_file} with auto-detected metadata...")

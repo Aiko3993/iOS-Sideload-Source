@@ -26,7 +26,8 @@
           "size": 6197921,
           "sha256": "cae27bcd622331cfa648dd562b648c7ac8a528815f692644e6c22c317aaa5631"
         }
-      ]
+      ],
+      "sha256": "cae27bcd622331cfa648dd562b648c7ac8a528815f692644e6c22c317aaa5631"
     },
     {
       "name": "Venera",
@@ -52,7 +53,8 @@
           "size": 15202312,
           "sha256": "f541b6eb73f6ef6b2ecf73a562d1e3d05165bd6d745ab63fed675df26c12ec8b"
         }
-      ]
+      ],
+      "sha256": "f541b6eb73f6ef6b2ecf73a562d1e3d05165bd6d745ab63fed675df26c12ec8b"
     },
     {
       "name": "NeoFreeBird",
@@ -78,7 +80,8 @@
           "size": 158452402,
           "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2"
         }
-      ]
+      ],
+      "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2"
     },
     {
       "name": "Animeko",
@@ -104,7 +107,8 @@
           "size": 34231046,
           "sha256": "42c99f14358028eeeeb27b10bbc2b870902c5ebacda04f6b3489bb69c2703fd1"
         }
-      ]
+      ],
+      "sha256": "42c99f14358028eeeeb27b10bbc2b870902c5ebacda04f6b3489bb69c2703fd1"
     },
     {
       "name": "PiliPlus",
@@ -130,7 +134,8 @@
           "size": 24632567,
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
-      ]
+      ],
+      "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
     },
     {
       "name": "Apollo",
@@ -156,7 +161,8 @@
           "size": 114656964,
           "sha256": "fd8789d96dc095f8a7194bd750097a48e3b0c803a60a41d3b55c03c4504225aa"
         }
-      ]
+      ],
+      "sha256": "fd8789d96dc095f8a7194bd750097a48e3b0c803a60a41d3b55c03c4504225aa"
     },
     {
       "name": "PPSSPP",
@@ -182,7 +188,8 @@
           "size": 29930616,
           "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc"
         }
-      ]
+      ],
+      "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc"
     },
     {
       "name": "LiveContainer",
@@ -208,7 +215,8 @@
           "size": 4232092,
           "sha256": "bec87a5d5c4e46f2f0adbf2a2ac5ec8fb9ccea6dd370409091f687815a89c69e"
         }
-      ]
+      ],
+      "sha256": "bec87a5d5c4e46f2f0adbf2a2ac5ec8fb9ccea6dd370409091f687815a89c69e"
     },
     {
       "name": "LiveContainer (Nightly)",
@@ -227,206 +235,6 @@
       "versions": [
         {
           "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "3.6.60-nightly.3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387422,
-          "sha256": "8a2d5cb28d4b7e910d6fbe53eb48c38c0dad0e0eb91c75b18a7d26b2794b6afb"
-        },
-        {
-          "version": "nightly",
           "date": "2025-12-21",
           "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
@@ -460,7 +268,8 @@
           "size": 36223272,
           "sha256": "39b4a4dc05aa8f0628972c239738e90d38edbdfcadf6019cfb8265228162a577"
         }
-      ]
+      ],
+      "sha256": "39b4a4dc05aa8f0628972c239738e90d38edbdfcadf6019cfb8265228162a577"
     },
     {
       "name": "LiveContainer+SideStore (Nightly)",
@@ -479,206 +288,6 @@
       "versions": [
         {
           "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "3.6.60-nightly.3.6.60",
-          "date": "2025-12-21",
-          "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469536,
-          "sha256": "0c70cca7912f50b975e22c2481f74f292adf81f7ccc33b2ab64c11ac067b2cc7"
-        },
-        {
-          "version": "nightly",
           "date": "2025-12-21",
           "localizedDescription": "**Commit:** [14c370b986c277e2a871a67712c6015ea32614f1](https://github.com/LiveContainer/LiveContainer/commit/14c370b986c277e2a871a67712c6015ea32614f1)\n**Message:** Fix #1047\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20401832822/attempts/1).",
           "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
@@ -712,7 +321,8 @@
           "size": 130036731,
           "sha256": "b94f78b1cb16d8396e710526f4256e6ec9f5aa94d62ecca7e57a6c42a4ae6ddc"
         }
-      ]
+      ],
+      "sha256": "b94f78b1cb16d8396e710526f4256e6ec9f5aa94d62ecca7e57a6c42a4ae6ddc"
     },
     {
       "name": "UTM HV",
@@ -738,7 +348,8 @@
           "size": 130036994,
           "sha256": "9b87f0dfe849c5faec1193f81e6687272a91726bd97e56db6411dd166211228d"
         }
-      ]
+      ],
+      "sha256": "9b87f0dfe849c5faec1193f81e6687272a91726bd97e56db6411dd166211228d"
     },
     {
       "name": "Amethyst (Nightly)",
@@ -762,238 +373,6 @@
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
           "size": 148571576,
           "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0.cd000a3",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa_cd000a3.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
-        },
-        {
-          "version": "1.0-nightly.1.0",
-          "date": "2025-11-02",
-          "localizedDescription": "Nightly build from commit cd000a30403595f1856c07bee32e135803963d50",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios.ipa",
-          "size": 148571576,
-          "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
         }
       ],
       "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
@@ -1003,24 +382,17 @@
       "githubRepo": "kodjodevf/mangayomi",
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
-      "version": "0.6.90",
-      "versionDate": "2025-12-23",
-      "versionDescription": "Update",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.90/Mangayomi-v0.6.90-ios.ipa",
+      "version": "0.6.85",
+      "versionDate": "2025-12-10",
+      "versionDescription": "## What's Changed\r\n* Integrate MExtensionServer for Android\r\n* Android no longer needs the APKBridge server.\r\n* fix: updated statistics to use async fetch from db by @Whiskas101 in https://github.com/kodjodevf/mangayomi/pull/618\r\n* Add new feature: Always On Top on the anime player view. by @hndrbrm in https://github.com/kodjodevf/mangayomi/pull/614\r\n* AppImage Fix by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/624\r\n* Add default user agent setting\r\n* Refactor reader page view and logic\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.6.80...v0.6.85",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.85/Mangayomi-v0.6.85-ios.ipa",
       "localizedDescription": "Free and open source application for reading manga, novels, and watching animes available on Android, iOS, macOS, Linux and Windows",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#BE1622",
-      "size": 45074150,
+      "size": 44541949,
+      "permissions": {},
       "screenshotURLs": [],
       "versions": [
-        {
-          "version": "0.6.90",
-          "date": "2025-12-23",
-          "localizedDescription": "Update",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.90/Mangayomi-v0.6.90-ios.ipa",
-          "size": 45074150,
-          "sha256": "3d0c1f7adb50f6be87ad48984f1f2b719f492a30691ce2a8984c4a6c933bee70"
-        },
         {
           "version": "0.6.85",
           "date": "2025-12-10",
@@ -1030,7 +402,7 @@
           "sha256": "e3e2b53de95c42686b9953d389b32b84a8498fd3d841693a593ee265a083f3c0"
         }
       ],
-      "sha256": "3d0c1f7adb50f6be87ad48984f1f2b719f492a30691ce2a8984c4a6c933bee70"
+      "sha256": "e3e2b53de95c42686b9953d389b32b84a8498fd3d841693a593ee265a083f3c0"
     },
     {
       "name": "Feather",
@@ -1056,7 +428,8 @@
           "size": 12720470,
           "sha256": "a458af86ed44814324acbc375c5dba98a6689b5e7dadb98eb8aa0da13e205a0a"
         }
-      ]
+      ],
+      "sha256": "a458af86ed44814324acbc375c5dba98a6689b5e7dadb98eb8aa0da13e205a0a"
     },
     {
       "name": "SideStore",
@@ -1082,7 +455,8 @@
           "size": 28873303,
           "sha256": "34d230f77367693bd2c1ff397a451304bfb512cd86c41bc6959703d31d5cc1d9"
         }
-      ]
+      ],
+      "sha256": "34d230f77367693bd2c1ff397a451304bfb512cd86c41bc6959703d31d5cc1d9"
     },
     {
       "name": "Ksign",
@@ -1108,7 +482,8 @@
           "size": 14029179,
           "sha256": "f687389d5d6c655c320317d26a3629572c50f79353ea72e9dd4103d193bae3c4"
         }
-      ]
+      ],
+      "sha256": "f687389d5d6c655c320317d26a3629572c50f79353ea72e9dd4103d193bae3c4"
     },
     {
       "name": "Asspp",
@@ -1134,265 +509,34 @@
           "size": 10917639,
           "sha256": "8a108dfb00d0aa129643e48ba6f172ce9a1b71d336ce9fa9374d80dc5cba7462"
         }
-      ]
+      ],
+      "sha256": "8a108dfb00d0aa129643e48ba6f172ce9a1b71d336ce9fa9374d80dc5cba7462"
     },
     {
       "name": "Play! (Nightly)",
       "githubRepo": "jpd002/Play-",
       "bundleIdentifier": "com.virtualapplications.play.nightly",
       "developerName": "jpd002",
-      "version": "0.71-86-gd0f13752.2025-12-24",
-      "versionDate": "2025-12-24",
-      "versionDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
+      "version": "0.71-84-g5171569d.2025-12-23",
+      "versionDate": "2025-12-23",
+      "versionDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
       "localizedDescription": "Play! - PlayStation2 Emulator",
       "iconURL": "https://raw.githubusercontent.com/jpd002/Play-/master/Source/ui_ios/Resources/icon@2x.png",
       "tintColor": "#BCBCFF",
-      "size": 7085982,
+      "size": 7085608,
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-86-gd0f13752.2025-12-24",
-          "date": "2025-12-24",
-          "localizedDescription": "Nightly build from commit d0f1375248e3003199cb973a12332b4cc9f0724f",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_d0f1375.ipa",
-          "size": 7085982,
-          "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
-        },
-        {
-          "version": "0.71-84-g2c89192b.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 2c89192ba24d364aeb5d15dc6298deb27004e662",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_2c89192.ipa",
-          "size": 7085767,
-          "sha256": "9b881af4bfca7d30ba76a7d9ff82633fce493b32242245e3b888394af089265c"
-        },
-        {
-          "version": "0.71-84-g2c89192b.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 2c89192ba24d364aeb5d15dc6298deb27004e662",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_2c89192.ipa",
-          "size": 7085767,
-          "sha256": "9b881af4bfca7d30ba76a7d9ff82633fce493b32242245e3b888394af089265c"
-        },
-        {
-          "version": "0.71-84-g2c89192b.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 2c89192ba24d364aeb5d15dc6298deb27004e662",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_2c89192.ipa",
-          "size": 7085767,
-          "sha256": "9b881af4bfca7d30ba76a7d9ff82633fce493b32242245e3b888394af089265c"
-        },
-        {
-          "version": "0.71-84-g2c89192b.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 2c89192ba24d364aeb5d15dc6298deb27004e662",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_2c89192.ipa",
-          "size": 7085767,
-          "sha256": "9b881af4bfca7d30ba76a7d9ff82633fce493b32242245e3b888394af089265c"
-        },
-        {
-          "version": "0.71-84-g2c89192b.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 2c89192ba24d364aeb5d15dc6298deb27004e662",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_2c89192.ipa",
-          "size": 7085767,
-          "sha256": "9b881af4bfca7d30ba76a7d9ff82633fce493b32242245e3b888394af089265c"
-        },
-        {
           "version": "0.71-84-g5171569d.2025-12-23",
           "date": "2025-12-23",
           "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS_5171569.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS.ipa",
-          "size": 7085608,
-          "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
-        },
-        {
-          "version": "0.71-84-g5171569d-nightly.2025-12-23",
-          "date": "2025-12-23",
-          "localizedDescription": "Nightly build from commit 5171569d0018e02f731d63ac37d8c34da41ff0a7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/app-artifacts/jpd002_Play-_Play_iOS.ipa",
           "size": 7085608,
           "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
         }
       ],
-      "sha256": "1911d84624edf4da55ebe718aead87d81326cd52df15272cccac85c71c00022b"
+      "sha256": "a30d8c9588a3673d7662218a96d4268f5d019dd6ce3f3c9140cf49f1eb5170c2"
     }
   ],
   "news": []
