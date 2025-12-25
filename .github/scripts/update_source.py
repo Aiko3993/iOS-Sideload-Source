@@ -1,4 +1,3 @@
-import json
 import zipfile
 import plistlib
 import os
@@ -12,7 +11,7 @@ from io import BytesIO
 
 from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name
 
-def is_meaningless_version(version_str, app_name):
+def is_meaningless_version(version_str):
     """Check if a version string is redundant or meaningless."""
     if not version_str: return True
     v = version_str.lower()
@@ -52,7 +51,7 @@ def deduplicate_versions(versions, app_name):
     for v in versions:
         sha = v.get('sha256')
         ver = v.get('version')
-        is_meaningless = is_meaningless_version(ver, app_name)
+        is_meaningless = is_meaningless_version(ver)
         
         # Priority 1: SHA256 deduplication
         if sha:
@@ -61,7 +60,7 @@ def deduplicate_versions(versions, app_name):
             else:
                 # Keep the one that is NOT meaningless
                 existing = unique_sha[sha]
-                if is_meaningless_version(existing.get('version'), app_name) and not is_meaningless:
+                if is_meaningless_version(existing.get('version')) and not is_meaningless:
                     unique_sha[sha] = v
                 continue # Skip this one as we already have the SHA
         
@@ -120,9 +119,8 @@ def package_app_to_ipa(app_path, output_ipa_path):
     """Package a .app directory into a standard .ipa file."""
     try:
         with zipfile.ZipFile(output_ipa_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
-            app_name = os.path.basename(app_path)
             # IPA structure: Payload/AppName.app/...
-            for root, dirs, files in os.walk(app_path):
+            for root, _, files in os.walk(app_path):
                 for file in files:
                     full_path = os.path.join(root, file)
                     relative_path = os.path.relpath(full_path, os.path.join(app_path, '..'))
@@ -531,7 +529,7 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
             best_repo_icon = None
             if repo_icons:
                 for cand in repo_icons:
-                    q_score, is_sq, has_trans = get_image_quality(cand, client)
+                    q_score, _, _ = get_image_quality(cand, client)
                     path_score = score_icon_path(cand)
                     total_score = q_score + path_score
                     if total_score > best_repo_score:
@@ -593,7 +591,7 @@ def process_app(app_config, existing_source, client, apps_list_to_update=None):
                         app_in_zip = None
                         if not ipa_in_zip:
                             # Look for .app folders
-                            for root, dirs, files in os.walk(tmp_dir):
+                            for root, dirs, _ in os.walk(tmp_dir):
                                 for d in dirs:
                                     if d.lower().endswith('.app'):
                                         app_in_zip = os.path.join(root, d)
