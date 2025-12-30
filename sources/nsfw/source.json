@@ -12,17 +12,24 @@
       "githubRepo": "jiangtian616/JHenTai",
       "bundleIdentifier": "top.jtmonster.jhentai",
       "developerName": "jiangtian616",
-      "version": "8.0.10+302",
-      "versionDate": "2025-10-11",
-      "versionDescription": "- 修复空文件名图片会导致保存图片失败的bug\n\n--------------------\n\n- Fix the bug that saving images fails when the filename is empty.",
-      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.10%2B302/JHenTai_8.0.10%2B302.ipa",
+      "version": "8.0.10+303",
+      "versionDate": "2025-12-30",
+      "versionDescription": "- 修复macOS下web登录无法通过cf盾的问题\n\n--------------------\n\n- Fix the issue that web login on macOS cannot pass the Cloudflare. ",
+      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.10%2B303/JHenTai_8.0.10%2B303.ipa",
       "localizedDescription": "A cross-platform manga app made for e-hentai & exhentai by Flutter",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15698779,
-      "permissions": {},
+      "size": 15702563,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "8.0.10+303",
+          "date": "2025-12-30",
+          "localizedDescription": "- 修复macOS下web登录无法通过cf盾的问题\n\n--------------------\n\n- Fix the issue that web login on macOS cannot pass the Cloudflare. ",
+          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.10%2B303/JHenTai_8.0.10%2B303.ipa",
+          "size": 15702563,
+          "sha256": "d689bcc83872a92bf3656e68caeb4a8e3977cbac48d0937462c115c2470859c6"
+        },
         {
           "version": "8.0.10+302",
           "date": "2025-10-11",
@@ -32,7 +39,7 @@
           "sha256": "7d92624f76c76272f276545b2971d8274e7d9d685190e418673026ec27d829aa"
         }
       ],
-      "sha256": "7d92624f76c76272f276545b2971d8274e7d9d685190e418673026ec27d829aa"
+      "sha256": "d689bcc83872a92bf3656e68caeb4a8e3977cbac48d0937462c115c2470859c6"
     },
     {
       "name": "LoveIwara",
