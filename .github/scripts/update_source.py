@@ -849,30 +849,30 @@ def process_app(app_config, current_app_entry, client):
                 sha256 = new_sha256
                 bundle_id = target_bundle_id
                 
-                # Upload to modified-YYYYMMDD release (unified for all repackaged IPAs)
-                modified_tag = f"modified-{release_date.replace('-', '')}"
-                modified_release = client.get_release_by_tag(current_repo, modified_tag)
-                if not modified_release:
-                    modified_release = client.create_release(
-                        current_repo, modified_tag,
-                        name=f"Modified IPAs ({release_date})",
-                        body="This release contains IPAs with modified bundle IDs for app variants that share the same original bundle ID. This allows SideStore/AltStore to install multiple versions."
+                # Upload to cached-YYYYMMDD release (unified for all repackaged IPAs)
+                cached_tag = f"cached-{release_date.replace('-', '')}"
+                cached_release = client.get_release_by_tag(current_repo, cached_tag)
+                if not cached_release:
+                    cached_release = client.create_release(
+                        current_repo, cached_tag,
+                        name=f"Cached IPAs ({release_date})",
+                        body="Cached IPA files for optimized distribution."
                     )
                 
-                if modified_release:
+                if cached_release:
                     # Asset name: AppName_version.ipa
                     clean_name = name.replace(' ', '_').replace('(', '').replace(')', '').replace('+', 'Plus')
-                    modified_asset_name = f"{clean_name}_{version}.ipa"
+                    cached_asset_name = f"{clean_name}_{version}.ipa"
                     
                     asset = client.upload_release_asset(
-                        current_repo, modified_release['id'], temp_path,
-                        name=modified_asset_name, bundle_id=target_bundle_id, app_name=name
+                        current_repo, cached_release['id'], temp_path,
+                        name=cached_asset_name, bundle_id=target_bundle_id, app_name=name
                     )
                     
                     if asset:
                         download_url = asset['browser_download_url']
                         size = os.path.getsize(temp_path)
-                        logger.info(f"Uploaded modified IPA: {modified_asset_name}")
+                        logger.info(f"Uploaded cached IPA: {cached_asset_name}")
             else:
                 logger.warning(f"Failed to repackage {name}, using original bundle ID")
                 bundle_id = target_bundle_id  # Still use target for source.json consistency
@@ -1206,6 +1206,15 @@ def main():
             if len(artifact_releases) > 7:
                 for old_r in artifact_releases[7:]:
                     logger.info(f"Deleting old artifact release: {old_r['tag_name']}")
+                    client.delete_release(current_repo, old_r['id'], old_r['tag_name'])
+            
+            # 3c. Keep only last 7 days of cached releases (repackaged IPAs)
+            cached_releases = [r for r in all_releases if r['tag_name'].startswith('cached-')]
+            cached_releases.sort(key=lambda x: x['tag_name'], reverse=True)
+            
+            if len(cached_releases) > 7:
+                for old_r in cached_releases[7:]:
+                    logger.info(f"Deleting old cached release: {old_r['tag_name']}")
                     client.delete_release(current_repo, old_r['id'], old_r['tag_name'])
         except Exception as e:
             logger.warning(f"Failed to run retention policy: {e}")
