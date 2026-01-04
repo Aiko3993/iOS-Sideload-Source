@@ -120,7 +120,18 @@ The deployment structure is a flattened version of `main`:
             *   **Maintenance**: Old assets for the same app are automatically deleted (based on Bundle ID/App Name) before uploading new ones.
             *   **Nightly.link (Smart Proxy)**: If the primary GitHub API download fails, the script falls back to `nightly.link`. Crucially, it now **unpacks the ZIP, extracts the IPA, and re-hosts it** on the daily release, ensuring the final user always receives a direct IPA link.
             *   **Retention**: Only the most recent 7 daily releases are kept to prevent storage bloat.
-    *   **Note**: Multiple entries for the same repository are allowed as long as their `name` is unique (e.g., "UTM" and "UTM (TrollStore)").
+        *   **Bundle ID Repackaging** (v1.24):
+            *   **Problem**: SideStore/AltStore reject sources with duplicate bundle IDs. Apps like UTM/UTM HV or LiveContainer variants share the same original bundle ID.
+            *   **Solution**: When an app variant (detected by keywords like `nightly`, `hv`, `sidestore` in the name) is processed, the script:
+                1. Downloads the original IPA.
+                2. Modifies `Info.plist` to change `CFBundleIdentifier` (e.g., `com.utmapp.UTM` → `com.utmapp.UTM.hv`).
+                3. Repackages the IPA and uploads to `cached-YYYYMMDD` release.
+            *   **Variant Detection**: `compute_bundle_id_suffix()` detects keywords: `nightly`, `beta`, `alpha`, `debug`, `sidestore`, `trollstore`, `hv`, `se`.
+            *   **Skip Logic Enhancement**: Even if version is unchanged, apps with incorrect bundle IDs are forced to reprocess.
+            *   **Release Naming**:
+                *   `artifacts-YYYYMMDD`: Original workflow artifacts (Nightly builds).
+                *   `cached-YYYYMMDD`: Repackaged IPAs with modified bundle IDs.
+    *   **Note**: Multiple entries for the same repository are allowed as long as their `name` is unique (e.g., "UTM" and "UTM HV").
 *   **deploy.yml (`.github/workflows/`)**:
     *   Responsible for assembling the website and source files and pushing them to the `gh-pages` branch.
     *   Triggered by `push` to `main` or completion of update/process workflows.
@@ -315,6 +326,7 @@ In case of severe failure (e.g., generating a corrupted source.json causing clie
 | v1.21 | 2025-12-26 | AI Assistant | **Architecture Refinement**: Externalized configuration to `.github/config.yml` and implemented JSON Schema validation with VSCode integration. |
 | v1.22 | 2025-12-26 | AI Assistant | **Standardization**: Reorganized repository structure by moving `APPS.md`, `CONTRIBUTING.md`, and schemas to `.github/` directories. |
 | v1.23 | 2026-01-05 | AI Assistant | **IPA Selection Overhaul**: Rewrote `select_best_ipa` with multi-strategy fuzzy matching (exact match → substring → Jaccard similarity → SequenceMatcher). Added deterministic tie-breaking to prevent flip-flop commits. Disabled `apply_bundle_id_suffix` to fix installation failures caused by hallucinated bundle IDs. |
+| v1.24 | 2026-01-05 | AI Assistant | **Bundle ID Repackaging**: Re-enabled `apply_bundle_id_suffix` with IPA repackaging support. Variant apps (detected by keywords: `nightly`, `hv`, `sidestore`, etc.) now have their IPAs repackaged with modified `CFBundleIdentifier` and hosted on `cached-YYYYMMDD` releases. Fixed SideStore/AltStore duplicate bundle ID rejection. Enhanced skip logic to force reprocess when bundle ID is incorrect. |
 
 ---
 

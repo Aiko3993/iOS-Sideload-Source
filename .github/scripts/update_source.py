@@ -331,13 +331,139 @@ def get_image_quality(image_url, client):
 
 def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
     """
-    [DEPRECATED] Trust IPA metadata for bundle ID.
+    Compute a modified bundle ID based on app variant keywords.
     
-    This function was causing installation failures by inventing bundle IDs
-    that don't match the actual IPA content. SideStore/AltStore requires
-    exact match between source and IPA's Info.plist.
+    For apps that have multiple variants (UTM/UTM HV, LiveContainer variants),
+    we need unique bundle IDs. This returns the target bundle ID and whether
+    IPA repackaging is needed.
+    
+    Returns: (new_bundle_id, needs_repackage: bool)
     """
-    return bundle_id
+    if not bundle_id:
+        return bundle_id, False
+    
+    suffix = compute_bundle_id_suffix(app_name, repo_name)
+    if suffix:
+        return f"{bundle_id}{suffix}", True
+    return bundle_id, False
+
+def compute_bundle_id_suffix(app_name, repo_name):
+    """
+    Compute a bundle ID suffix based on app name variants.
+    
+    Returns a suffix string (e.g., '.nightly', '.sidestore', '.hv')
+    or empty string if no suffix is needed (main/stable version).
+    """
+    name_lower = app_name.lower()
+    repo_clean = repo_name.split('/')[-1].lower()
+    
+    # Clean comparison to identify base app
+    def simple_clean(s): 
+        return re.sub(r'[^a-z0-9]', '', s.lower())
+    
+    # If names are effectively the same, no suffix needed
+    if simple_clean(app_name) == simple_clean(repo_clean):
+        return ''
+    
+    # Extract variant keywords
+    suffixes = []
+    
+    # Check for common variant keywords (sorted for consistent ordering)
+    variant_keywords = [
+        ('nightly', '.nightly'),
+        ('beta', '.beta'),
+        ('alpha', '.alpha'),
+        ('debug', '.debug'),
+        ('sidestore', '.sidestore'),
+        ('trollstore', '.trollstore'),
+        ('hv', '.hv'),
+        ('se', '.se'),
+    ]
+    
+    for keyword, suffix in variant_keywords:
+        if keyword in name_lower:
+            suffixes.append(suffix)
+    
+    return ''.join(suffixes)
+
+def repackage_ipa_with_bundle_id(ipa_path, new_bundle_id, output_path=None):
+    """
+    Repackage an IPA with a modified bundle ID.
+    
+    This is necessary when multiple app variants share the same original bundle ID,
+    as SideStore/AltStore require unique bundle IDs per app in a source.
+    
+    Args:
+        ipa_path: Path to the original IPA file
+        new_bundle_id: The new bundle ID to set
+        output_path: Output path for repackaged IPA (defaults to overwriting original)
+    
+    Returns:
+        (success: bool, sha256: str or None)
+    """
+    if output_path is None:
+        output_path = ipa_path
+    
+    temp_dir = None
+    try:
+        # Create a temporary directory for extraction
+        temp_dir = tempfile.mkdtemp(prefix='ipa_repackage_')
+        
+        # Extract the IPA
+        with zipfile.ZipFile(ipa_path, 'r') as ipa:
+            ipa.extractall(temp_dir)
+        
+        # Find and modify Info.plist
+        payload_dir = os.path.join(temp_dir, 'Payload')
+        if not os.path.exists(payload_dir):
+            logger.error(f"No Payload directory found in {ipa_path}")
+            return False, None
+        
+        # Find the .app directory
+        app_dirs = [d for d in os.listdir(payload_dir) if d.endswith('.app')]
+        if not app_dirs:
+            logger.error(f"No .app directory found in {ipa_path}")
+            return False, None
+        
+        app_dir = os.path.join(payload_dir, app_dirs[0])
+        info_plist_path = os.path.join(app_dir, 'Info.plist')
+        
+        if not os.path.exists(info_plist_path):
+            logger.error(f"Info.plist not found in {app_dir}")
+            return False, None
+        
+        # Modify the bundle ID
+        with open(info_plist_path, 'rb') as f:
+            plist = plistlib.load(f)
+        
+        old_bundle_id = plist.get('CFBundleIdentifier', '')
+        plist['CFBundleIdentifier'] = new_bundle_id
+        
+        with open(info_plist_path, 'wb') as f:
+            plistlib.dump(plist, f)
+        
+        logger.info(f"Modified bundle ID: {old_bundle_id} -> {new_bundle_id}")
+        
+        # Repackage the IPA
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
+            for root, dirs, files in os.walk(temp_dir):
+                for file in files:
+                    full_path = os.path.join(root, file)
+                    relative_path = os.path.relpath(full_path, temp_dir)
+                    ipa.write(full_path, relative_path)
+        
+        # Calculate new SHA256
+        sha256 = get_ipa_sha256(output_path)
+        
+        return True, sha256
+        
+    except Exception as e:
+        logger.error(f"Failed to repackage IPA {ipa_path}: {e}")
+        return False, None
+    finally:
+        # Clean up temp directory
+        if temp_dir and os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 def process_app(app_config, current_app_entry, client):
     """
@@ -412,8 +538,8 @@ def process_app(app_config, current_app_entry, client):
         # Pre-calculate what our direct download URL would be if we upload it
         current_repo = client.get_current_repo()
         if current_repo:
-            # Daily release tag: artifacts-YYYYMMDD
-            release_tag = f"artifacts-{release_date.replace('-', '')}"
+            # Daily release tag: cached-YYYYMMDD
+            release_tag = f"cached-{release_date.replace('-', '')}"
             
             # Use a unique name for the asset to avoid collisions and allow skipping redundant downloads
             # Format: Owner_Repo_ArtifactName_SHA.ipa
@@ -423,7 +549,7 @@ def process_app(app_config, current_app_entry, client):
             
             asset_name = f"{repo.replace('/', '_')}_{clean_artifact_name}_{version}.ipa"
             
-            # https://github.com/owner/repo/releases/download/artifacts-YYYYMMDD/asset_name.ipa
+            # https://github.com/owner/repo/releases/download/cached-YYYYMMDD/asset_name.ipa
             direct_url = f"https://github.com/{current_repo}/releases/download/{release_tag}/{asset_name}"
         else:
             release_tag = "app-artifacts"
@@ -477,10 +603,25 @@ def process_app(app_config, current_app_entry, client):
         
         is_generic = version.lower() in skip_versions
         
+        # Also check if bundle ID needs to be updated (variant apps)
+        current_bundle_id = app_entry.get('bundleIdentifier', '')
+        
+        # Compute what suffix this app should have based on its name
+        suffix = compute_bundle_id_suffix(name, repo)
+        
+        # Check if the current bundle ID already has the correct suffix
+        # If suffix is empty (main app), no update needed
+        # If suffix exists, check if current_bundle_id ends with that suffix
+        if suffix:
+            bundle_id_needs_update = not current_bundle_id.endswith(suffix)
+        else:
+            bundle_id_needs_update = False
+        
         # If we are up to date and have the link we want, we can skip
         # BUT: don't skip if the version is generic (like "nightly"), because we want to 
         # extract the real version from the IPA.
-        if is_up_to_date and (has_direct_link or not direct_url) and not is_generic:
+        # AND: don't skip if bundle ID needs to be updated (variant apps need repackaging)
+        if is_up_to_date and (has_direct_link or not direct_url) and not is_generic and not bundle_id_needs_update:
              metadata_updates = {}
              # Even if up to date, we might want to update some metadata from config
              config_icon = app_config.get('icon_url')
@@ -650,7 +791,7 @@ def process_app(app_config, current_app_entry, client):
                         with open(temp_path, 'wb') as f:
                             f.write(z.read(ipa_in_zip))
                         
-                        # NEW: Also upload this extracted IPA to artifacts-YYYYMMDD to provide a direct link
+                        # NEW: Also upload this extracted IPA to cached-YYYYMMDD to provide a direct link
                         if current_repo and client.token:
                             release = client.get_release_by_tag(current_repo, release_tag)
                             if not release:
@@ -704,7 +845,95 @@ def process_app(app_config, current_app_entry, client):
             bundle_id = default_bundle_id
             
         sha256 = get_ipa_sha256(temp_path)
-        bundle_id = apply_bundle_id_suffix(bundle_id, name, repo)
+        
+        # Check if we need to repackage the IPA with a modified bundle ID
+        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, repo)
+        
+        if needs_repackage and current_repo and client.token:
+            logger.info(f"Repackaging IPA for {name} with bundle ID: {target_bundle_id}")
+            
+            success, new_sha256 = repackage_ipa_with_bundle_id(temp_path, target_bundle_id)
+            
+            if success:
+                sha256 = new_sha256
+                bundle_id = target_bundle_id
+                
+                # Upload to cached-YYYYMMDD release (unified for all repackaged IPAs)
+                cached_tag = f"cached-{release_date.replace('-', '')}"
+                cached_release = client.get_release_by_tag(current_repo, cached_tag)
+                if not cached_release:
+                    cached_release = client.create_release(
+                        current_repo, cached_tag,
+                        name=f"Cached IPAs ({release_date})",
+                        body="Cached IPA files for optimized distribution."
+                    )
+                
+                if cached_release:
+                    # Asset name: AppName_version.ipa
+                    clean_name = name.replace(' ', '_').replace('(', '').replace(')', '').replace('+', 'Plus')
+                    cached_asset_name = f"{clean_name}_{version}.ipa"
+                    
+                    asset = client.upload_release_asset(
+                        current_repo, cached_release['id'], temp_path,
+                        name=cached_asset_name, bundle_id=target_bundle_id, app_name=name
+                    )
+                    
+                    if asset:
+                        download_url = asset['browser_download_url']
+                        size = os.path.getsize(temp_path)
+                        logger.info(f"Uploaded cached IPA: {cached_asset_name}")
+                        
+                        # Smart retention cleanup: delete old versions of this app only from older releases
+                        # - Same-day releases (hotfixes): delete immediately
+                        # - Older releases: only delete if 3+ days older than new version
+                        try:
+                            from datetime import datetime, timedelta
+                            current_date = datetime.strptime(release_date, '%Y-%m-%d')
+                            all_releases = client.get_all_releases(current_repo)
+                            
+                            for other_release in all_releases:
+                                other_tag = other_release.get('tag_name', '')
+                                
+                                # Skip current release and non-cached releases
+                                if other_tag == cached_tag or not other_tag.startswith('cached-'):
+                                    continue
+                                
+                                # Parse the release date from tag (cached-YYYYMMDD)
+                                try:
+                                    other_date_str = other_tag.replace('cached-', '')
+                                    other_date = datetime.strptime(other_date_str, '%Y%m%d')
+                                except ValueError:
+                                    continue
+                                
+                                # Calculate age difference
+                                days_diff = (current_date - other_date).days
+                                
+                                # Skip if the old release is less than 3 days old (keep for rollback)
+                                # Unless it's the same day (hotfix scenario)
+                                if 0 < days_diff < 3:
+                                    continue
+                                
+                                # Check assets in this release for old versions of the same app
+                                for asset_info in other_release.get('assets', []):
+                                    asset_name_check = asset_info.get('name', '').lower()
+                                    clean_name_lower = clean_name.lower()
+                                    
+                                    # Match if asset belongs to the same app (same prefix)
+                                    if asset_name_check.startswith(clean_name_lower) and asset_name_check.endswith('.ipa'):
+                                        # Delete old version
+                                        del_url = f"https://api.github.com/repos/{current_repo}/releases/assets/{asset_info['id']}"
+                                        try:
+                                            client.session.delete(del_url, headers=client.headers, timeout=15).raise_for_status()
+                                            logger.info(f"Cleaned up old cached IPA ({days_diff}d old): {asset_info['name']} from {other_tag}")
+                                        except Exception as del_e:
+                                            logger.debug(f"Could not delete old asset {asset_info['name']}: {del_e}")
+                        except Exception as cleanup_e:
+                            logger.debug(f"Smart retention cleanup skipped: {cleanup_e}")
+            else:
+                logger.warning(f"Failed to repackage {name}, using original bundle ID")
+                bundle_id = target_bundle_id  # Still use target for source.json consistency
+        else:
+            bundle_id = target_bundle_id
 
     except Exception as e:
         logger.error(f"Processing failed for {name}: {e}")
@@ -1012,7 +1241,7 @@ def main():
     else:
         logger.info("No changes in sources, skipping APPS.md regeneration.")
 
-    # 3. Artifact Retention Policy: Keep last 7 days of artifacts-YYYYMMDD releases
+    # 3. Cached Release Retention Policy: Keep last 7 days of cached-YYYYMMDD releases
     current_repo = client.get_current_repo()
     if current_repo and client.token:
         try:
@@ -1025,14 +1254,16 @@ def main():
                 logger.info("Found legacy 'app-artifacts' release, deleting...")
                 client.delete_release(current_repo, legacy_release['id'], 'app-artifacts')
 
-            # 3b. Keep only last 7 days of daily artifacts
-            artifact_releases = [r for r in all_releases if r['tag_name'].startswith('artifacts-')]
-            # Sort by tag name (YYYYMMDD) descending
-            artifact_releases.sort(key=lambda x: x['tag_name'], reverse=True)
+            # 3b. Keep only last 7 days of cached releases (all IPAs now use cached- prefix)
+            # Also clean up any legacy artifacts- releases
+            all_managed_releases = [r for r in all_releases 
+                                    if r['tag_name'].startswith('cached-') 
+                                    or r['tag_name'].startswith('artifacts-')]
+            all_managed_releases.sort(key=lambda x: x['tag_name'], reverse=True)
             
-            if len(artifact_releases) > 7:
-                for old_r in artifact_releases[7:]:
-                    logger.info(f"Deleting old artifact release: {old_r['tag_name']}")
+            if len(all_managed_releases) > 7:
+                for old_r in all_managed_releases[7:]:
+                    logger.info(f"Deleting old release: {old_r['tag_name']}")
                     client.delete_release(current_repo, old_r['id'], old_r['tag_name'])
         except Exception as e:
             logger.warning(f"Failed to run retention policy: {e}")

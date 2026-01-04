@@ -120,17 +120,47 @@ jobs:
           else
             git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
             
-            # Robust push with retry logic for concurrency
+            # Robust push with conflict recovery
             MAX_RETRIES=5
             RETRY_COUNT=0
-            until git pull --rebase && git push; do
+            
+            push_with_recovery() {
+              # Try simple rebase first
+              if git pull --rebase origin main && git push origin main; then
+                return 0
+              fi
+              
+              # If rebase failed (conflict), reset and try fresh approach
+              echo "Rebase failed, attempting recovery..."
+              git rebase --abort 2>/dev/null || true
+              git reset --hard HEAD~1 2>/dev/null || true
+              
+              # Fetch latest and replay our changes
+              git fetch origin main
+              git checkout origin/main -B main
+              
+              # Re-run the add script (regenerate changes)
+              python3 .github/scripts/add_app.py
+              python3 .github/scripts/update_source.py
+              
+              # Commit and push
+              git add .
+              if ! git diff --staged --quiet; then
+                git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
+                git push origin main
+                return $?
+              fi
+              return 0
+            }
+            
+            until push_with_recovery; do
               RETRY_COUNT=$((RETRY_COUNT + 1))
               if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
                 echo "Failed to push after $MAX_RETRIES attempts."
                 exit 1
               fi
-              echo "Push failed, retrying in $((RETRY_COUNT * 2)) seconds..."
-              sleep $((RETRY_COUNT * 2))
+              echo "Push failed, retrying in $((RETRY_COUNT * 3)) seconds..."
+              sleep $((RETRY_COUNT * 3))
             done
           fi
 

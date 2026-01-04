@@ -54,6 +54,31 @@ This project runs on GitHub Actions:
 https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/nsfw/source.json
 ```
 
+## Security & Integrity
+
+> **We do NOT inject any code into the IPAs.**
+
+For app variants (e.g., UTM HV, LiveContainer Nightly), we only modify the `CFBundleIdentifier` in `Info.plist` to ensure unique bundle IDs. This is required because AltStore/SideStore reject sources with duplicate bundle IDs.
+
+### What We Modify
+- **Only**: `Info.plist` → `CFBundleIdentifier` field
+- **Nothing else**: No code injection, no library changes, no binary modifications
+
+### How to Verify
+1. **SHA256 Checksums**: Every IPA in `source.json` includes a `sha256` field
+2. **Manual Verification**:
+   ```bash
+   # Download and verify
+   shasum -a 256 downloaded.ipa
+   # Compare with sha256 in source.json
+   ```
+3. **Inspect Changes**: Unzip the IPA and compare `Payload/App.app/Info.plist` with the original release
+
+### Transparency
+- All source code is open and auditable in this repository
+- GitHub Actions logs show exactly what modifications are made
+- Cached releases contain only repackaged IPAs, no additional files
+
 ## Disclaimer
 
 This repository serves only as a mirror and index. All app copyrights belong to their original authors. Please assess the risks yourself before use.

@@ -1,0 +1,12 @@
+# Override GitHub's linguist detection to recognize Python scripts
+# This ensures Python appears in the repository language stats
+
+# Mark Python scripts as actual code (not vendored or generated)
+*.py linguist-detectable=true
+*.py linguist-language=Python
+
+# Optionally: Mark website files as documentation to reduce their weight in stats
+# website/** linguist-documentation
+
+# Mark JSON data files to reduce noise in language stats  
+sources/**/*.json linguist-vendored=false
