@@ -331,13 +331,139 @@ def get_image_quality(image_url, client):
 
 def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
     """
-    [DEPRECATED] Trust IPA metadata for bundle ID.
+    Compute a modified bundle ID based on app variant keywords.
     
-    This function was causing installation failures by inventing bundle IDs
-    that don't match the actual IPA content. SideStore/AltStore requires
-    exact match between source and IPA's Info.plist.
+    For apps that have multiple variants (UTM/UTM HV, LiveContainer variants),
+    we need unique bundle IDs. This returns the target bundle ID and whether
+    IPA repackaging is needed.
+    
+    Returns: (new_bundle_id, needs_repackage: bool)
     """
-    return bundle_id
+    if not bundle_id:
+        return bundle_id, False
+    
+    suffix = compute_bundle_id_suffix(app_name, repo_name)
+    if suffix:
+        return f"{bundle_id}{suffix}", True
+    return bundle_id, False
+
+def compute_bundle_id_suffix(app_name, repo_name):
+    """
+    Compute a bundle ID suffix based on app name variants.
+    
+    Returns a suffix string (e.g., '.nightly', '.sidestore', '.hv')
+    or empty string if no suffix is needed (main/stable version).
+    """
+    name_lower = app_name.lower()
+    repo_clean = repo_name.split('/')[-1].lower()
+    
+    # Clean comparison to identify base app
+    def simple_clean(s): 
+        return re.sub(r'[^a-z0-9]', '', s.lower())
+    
+    # If names are effectively the same, no suffix needed
+    if simple_clean(app_name) == simple_clean(repo_clean):
+        return ''
+    
+    # Extract variant keywords
+    suffixes = []
+    
+    # Check for common variant keywords (sorted for consistent ordering)
+    variant_keywords = [
+        ('nightly', '.nightly'),
+        ('beta', '.beta'),
+        ('alpha', '.alpha'),
+        ('debug', '.debug'),
+        ('sidestore', '.sidestore'),
+        ('trollstore', '.trollstore'),
+        ('hv', '.hv'),
+        ('se', '.se'),
+    ]
+    
+    for keyword, suffix in variant_keywords:
+        if keyword in name_lower:
+            suffixes.append(suffix)
+    
+    return ''.join(suffixes)
+
+def repackage_ipa_with_bundle_id(ipa_path, new_bundle_id, output_path=None):
+    """
+    Repackage an IPA with a modified bundle ID.
+    
+    This is necessary when multiple app variants share the same original bundle ID,
+    as SideStore/AltStore require unique bundle IDs per app in a source.
+    
+    Args:
+        ipa_path: Path to the original IPA file
+        new_bundle_id: The new bundle ID to set
+        output_path: Output path for repackaged IPA (defaults to overwriting original)
+    
+    Returns:
+        (success: bool, sha256: str or None)
+    """
+    if output_path is None:
+        output_path = ipa_path
+    
+    temp_dir = None
+    try:
+        # Create a temporary directory for extraction
+        temp_dir = tempfile.mkdtemp(prefix='ipa_repackage_')
+        
+        # Extract the IPA
+        with zipfile.ZipFile(ipa_path, 'r') as ipa:
+            ipa.extractall(temp_dir)
+        
+        # Find and modify Info.plist
+        payload_dir = os.path.join(temp_dir, 'Payload')
+        if not os.path.exists(payload_dir):
+            logger.error(f"No Payload directory found in {ipa_path}")
+            return False, None
+        
+        # Find the .app directory
+        app_dirs = [d for d in os.listdir(payload_dir) if d.endswith('.app')]
+        if not app_dirs:
+            logger.error(f"No .app directory found in {ipa_path}")
+            return False, None
+        
+        app_dir = os.path.join(payload_dir, app_dirs[0])
+        info_plist_path = os.path.join(app_dir, 'Info.plist')
+        
+        if not os.path.exists(info_plist_path):
+            logger.error(f"Info.plist not found in {app_dir}")
+            return False, None
+        
+        # Modify the bundle ID
+        with open(info_plist_path, 'rb') as f:
+            plist = plistlib.load(f)
+        
+        old_bundle_id = plist.get('CFBundleIdentifier', '')
+        plist['CFBundleIdentifier'] = new_bundle_id
+        
+        with open(info_plist_path, 'wb') as f:
+            plistlib.dump(plist, f)
+        
+        logger.info(f"Modified bundle ID: {old_bundle_id} -> {new_bundle_id}")
+        
+        # Repackage the IPA
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
+            for root, dirs, files in os.walk(temp_dir):
+                for file in files:
+                    full_path = os.path.join(root, file)
+                    relative_path = os.path.relpath(full_path, temp_dir)
+                    ipa.write(full_path, relative_path)
+        
+        # Calculate new SHA256
+        sha256 = get_ipa_sha256(output_path)
+        
+        return True, sha256
+        
+    except Exception as e:
+        logger.error(f"Failed to repackage IPA {ipa_path}: {e}")
+        return False, None
+    finally:
+        # Clean up temp directory
+        if temp_dir and os.path.exists(temp_dir):
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 def process_app(app_config, current_app_entry, client):
     """
@@ -704,7 +830,48 @@ def process_app(app_config, current_app_entry, client):
             bundle_id = default_bundle_id
             
         sha256 = get_ipa_sha256(temp_path)
-        bundle_id = apply_bundle_id_suffix(bundle_id, name, repo)
+        
+        # Check if we need to repackage the IPA with a modified bundle ID
+        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, repo)
+        
+        if needs_repackage and current_repo and client.token:
+            logger.info(f"Repackaging IPA for {name} with bundle ID: {target_bundle_id}")
+            
+            success, new_sha256 = repackage_ipa_with_bundle_id(temp_path, target_bundle_id)
+            
+            if success:
+                sha256 = new_sha256
+                bundle_id = target_bundle_id
+                
+                # Upload to modified-YYYYMMDD release (unified for all repackaged IPAs)
+                modified_tag = f"modified-{release_date.replace('-', '')}"
+                modified_release = client.get_release_by_tag(current_repo, modified_tag)
+                if not modified_release:
+                    modified_release = client.create_release(
+                        current_repo, modified_tag,
+                        name=f"Modified IPAs ({release_date})",
+                        body="This release contains IPAs with modified bundle IDs for app variants that share the same original bundle ID. This allows SideStore/AltStore to install multiple versions."
+                    )
+                
+                if modified_release:
+                    # Asset name: AppName_version.ipa
+                    clean_name = name.replace(' ', '_').replace('(', '').replace(')', '').replace('+', 'Plus')
+                    modified_asset_name = f"{clean_name}_{version}.ipa"
+                    
+                    asset = client.upload_release_asset(
+                        current_repo, modified_release['id'], temp_path,
+                        name=modified_asset_name, bundle_id=target_bundle_id, app_name=name
+                    )
+                    
+                    if asset:
+                        download_url = asset['browser_download_url']
+                        size = os.path.getsize(temp_path)
+                        logger.info(f"Uploaded modified IPA: {modified_asset_name}")
+            else:
+                logger.warning(f"Failed to repackage {name}, using original bundle ID")
+                bundle_id = target_bundle_id  # Still use target for source.json consistency
+        else:
+            bundle_id = target_bundle_id
 
     except Exception as e:
         logger.error(f"Processing failed for {name}: {e}")
