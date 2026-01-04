@@ -271,7 +271,9 @@ def select_best_ipa(assets, app_config):
             scored_assets.append((-999, a))
 
     if scored_assets:
-        scored_assets.sort(key=lambda x: x[0], reverse=True)
+        # CRITICAL FIX: Add deterministic tie-breaking to prevent flip-flop commits
+        # Sort by: (1) score descending, (2) name length ascending (shorter = simpler = preferred), (3) alphabetical
+        scored_assets.sort(key=lambda x: (-x[0], len(x[1]['name']), x[1]['name']))
         best_score, best_asset = scored_assets[0]
         
         # Only select if score is reasonable (not massively penalized)
@@ -341,43 +343,18 @@ def get_image_quality(image_url, client):
         return 0, False, False
 
 def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
-    """Apply unique suffixes to bundle identifier based on app name/flavor automatically."""
-    if not bundle_id: return bundle_id
+    """
+    [DEPRECATED - DO NOT USE]
     
-    name_lower = app_name.lower()
-    repo_name_clean = repo_name.split('/')[-1].lower()
+    This function was causing installation failures by hallucinating bundle IDs.
+    Example: "LiveContainer (Nightly)" would get "com.kdt.livecontainer.nightly" 
+    but the actual IPA contains "com.kdt.livecontainer", causing SideStore to reject it.
     
-    # Use a simple clean comparison to see if they are effectively the same name
-    # (e.g., "Pica Comic" vs "PicaComic")
-    def simple_clean(s): return re.sub(r'[^a-z0-9]', '', s.lower())
-    
-    if simple_clean(app_name) == simple_clean(repo_name_clean):
-        return bundle_id
-
-    # Extract words from both to find the "flavor"
-    name_words = re.findall(r'[a-z0-9]{2,}', name_lower)
-    repo_words = set(re.findall(r'[a-z0-9]{2,}', repo_name_clean))
-    
-    # Keywords are words in app name but not in repo name
-    keywords = [w for w in name_words if w not in repo_words]
-    
-    # Also specifically check inside parentheses
-    tags_in_brackets = re.findall(r'\((.*?)\)', name_lower)
-    for tag in tags_in_brackets:
-        tag_clean = re.sub(r'[^a-z0-9]', '', tag.lower())
-        if tag_clean and len(tag_clean) >= 2 and tag_clean not in keywords:
-            keywords.append(tag_clean)
-
-    # Sort keywords to ensure consistent bundle ID generation
-    keywords = sorted(list(set(keywords)))
-    
-    new_bundle_id = bundle_id
-    for kw in keywords:
-        # Avoid adding if already there
-        if not re.search(rf'\.{kw}(\.|$)', new_bundle_id):
-            new_bundle_id = f"{new_bundle_id}.{kw}"
-            
-    return new_bundle_id
+    The bundle ID MUST match what's inside the IPA's Info.plist.
+    We now trust the IPA metadata and only allow manual override via apps.json.
+    """
+    # CRITICAL FIX: Return bundle_id unchanged - trust the IPA metadata
+    return bundle_id
 
 def process_app(app_config, current_app_entry, client):
     """
