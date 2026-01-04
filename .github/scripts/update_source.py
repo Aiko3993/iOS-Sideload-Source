@@ -603,10 +603,16 @@ def process_app(app_config, current_app_entry, client):
         
         is_generic = version.lower() in skip_versions
         
+        # Also check if bundle ID needs to be updated (variant apps)
+        current_bundle_id = app_entry.get('bundleIdentifier', '')
+        expected_bundle_id, needs_repackage = apply_bundle_id_suffix(current_bundle_id, name, repo)
+        bundle_id_needs_update = needs_repackage and current_bundle_id != expected_bundle_id
+        
         # If we are up to date and have the link we want, we can skip
         # BUT: don't skip if the version is generic (like "nightly"), because we want to 
         # extract the real version from the IPA.
-        if is_up_to_date and (has_direct_link or not direct_url) and not is_generic:
+        # AND: don't skip if bundle ID needs to be updated (variant apps need repackaging)
+        if is_up_to_date and (has_direct_link or not direct_url) and not is_generic and not bundle_id_needs_update:
              metadata_updates = {}
              # Even if up to date, we might want to update some metadata from config
              config_icon = app_config.get('icon_url')
