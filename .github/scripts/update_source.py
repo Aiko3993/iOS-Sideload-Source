@@ -180,84 +180,99 @@ def load_existing_source(source_file, default_name, default_identifier):
     }
 
 def select_best_ipa(assets, app_config):
-    """Select the most appropriate IPA asset based on config and heuristics."""
+    """
+    Select the most appropriate IPA asset using multi-strategy fuzzy matching.
+    
+    Strategies (in priority order):
+    1. Exact normalized match
+    2. Substring containment
+    3. Token set similarity (handles duplicates and reordering)
+    4. Character-level similarity (SequenceMatcher)
+    
+    Tie-breaking: shorter filename → alphabetical order (deterministic)
+    """
+    from difflib import SequenceMatcher
+    
     ipa_assets = [a for a in assets if a.get('name', '').lower().endswith('.ipa')]
     if not ipa_assets:
         return None
-        
     if len(ipa_assets) == 1:
         return ipa_assets[0]
-        
-    # 1. Regex Match (User Override)
-    ipa_regex = app_config.get('ipa_regex')
-    if ipa_regex:
-        try:
-            pattern = re.compile(ipa_regex, re.IGNORECASE)
-            for a in ipa_assets:
-                if pattern.search(a['name']):
-                    return a
-        except Exception as e:
-            logger.error(f"Invalid ipa_regex '{ipa_regex}': {e}")
-
-    # 2. Fuzzy Match with Name or Repo Name
-    # This handles "UTM-HV" matching "UTM HV" or "UTM_HV"
-    norm_app_name = normalize_name(app_config['name'])
-    norm_repo_name = normalize_name(app_config['github_repo'].split('/')[-1])
     
-    # Track scores for fallback
+    # Normalization: lowercase, remove all non-alphanumeric
+    def normalize(s):
+        return re.sub(r'[^a-z0-9]', '', s.lower())
+    
+    # Token set: split, deduplicate, sort (order-independent matching)
+    def token_set(s):
+        tokens = set(re.findall(r'[a-z0-9]+', s.lower()))
+        tokens.discard('ipa')  # Remove extension
+        # Filter out pure version numbers
+        tokens = {t for t in tokens if not (t.isdigit() or (t.startswith('v') and t[1:].isdigit()))}
+        return tokens
+    
+    app_name = app_config['name']
+    app_norm = normalize(app_name)
+    app_tokens = token_set(app_name)
+    
     scored_assets = []
     
-    # Extract "flavor" keywords from app name
-    # We want keywords from the whole name, including those in brackets
-    name_words = set(re.findall(r'[a-z0-9]{2,}', app_config['name'].lower()))
-    repo_words = set(re.findall(r'[a-z0-9]{2,}', app_config['github_repo'].lower()))
-    flavor_keywords = name_words - repo_words
-
-    for a in ipa_assets:
-        base_name = os.path.splitext(a['name'])[0]
-        norm_base = normalize_name(base_name)
+    for asset in ipa_assets:
+        asset_name = asset['name']
+        asset_base = asset_name.rsplit('.', 1)[0]  # Remove .ipa
+        asset_norm = normalize(asset_base)
+        asset_tokens = token_set(asset_base)
         
-        # Exact match with app name is best
-        if norm_base == norm_app_name:
-            return a
-            
-        # Exact match with repo name is second best
         score = 0
-        if norm_base == norm_repo_name:
-            score += 50
         
-        # Calculate a subset score
-        if norm_app_name in norm_base: score += 10
-        if norm_base in norm_app_name: score += 5
+        # Strategy 1: Exact normalized match (highest priority)
+        if app_norm == asset_norm:
+            score += 1000
         
-        # Bonus for matching "flavor" keywords
-        base_name_lower = base_name.lower()
-        for kw in flavor_keywords:
-            if kw in base_name_lower:
-                score += 40 # Increased bonus to beat repo name match if flavor matches
+        # Strategy 2: Substring containment
+        if app_norm in asset_norm:
+            score += 200
+        if asset_norm in app_norm:
+            score += 150
         
-        scored_assets.append((score, a))
-
-    if scored_assets:
-        scored_assets.sort(key=lambda x: x[0], reverse=True)
-        if scored_assets[0][0] > 0:
-            return scored_assets[0][1]
-
-    # 3. Smart Filtering: Exclude common "flavors" if multiple exist
-    # We prefer the one without suffixes like -Remote, -HV, -SE
-    exclude_patterns = ['-remote', '-hv', '-se', '-jailbroken', '-macos', '-linux', '-windows']
-    
-    filtered = []
-    for a in ipa_assets:
-        name_lower = a['name'].lower()
-        if not any(p in name_lower for p in exclude_patterns):
-            filtered.append(a)
+        # Strategy 3: Token set similarity (handles duplicates, reordering)
+        # Jaccard-like: intersection / union
+        if app_tokens and asset_tokens:
+            intersection = app_tokens & asset_tokens
+            union = app_tokens | asset_tokens
+            jaccard = len(intersection) / len(union) if union else 0
+            score += int(jaccard * 100)
             
-    if filtered:
-        return filtered[0]
+            # Penalty for "surprise" tokens in asset but not in app
+            surprise = asset_tokens - app_tokens
+            if surprise:
+                # Heavier penalty for more surprises
+                score -= len(surprise) * 50
         
-    # 4. Fallback: Just return the first one
-    return ipa_assets[0]
+        # Strategy 4: Character-level similarity (fallback)
+        similarity = SequenceMatcher(None, app_norm, asset_norm).ratio()
+        score += int(similarity * 50)
+        
+        scored_assets.append({
+            'score': score,
+            'name': asset_name,
+            'asset': asset
+        })
+    
+    # Sort: score DESC → length ASC → name ASC (deterministic)
+    scored_assets.sort(key=lambda x: (-x['score'], len(x['name']), x['name']))
+    
+    best = scored_assets[0]
+    
+    # Log for debugging
+    logger.debug(f"IPA selection for '{app_name}': {[(a['name'], a['score']) for a in scored_assets[:3]]}")
+    
+    # Only return if score is reasonable
+    if best['score'] > -100:
+        return best['asset']
+    
+    logger.warning(f"No suitable IPA found for {app_name}")
+    return None
 
 def get_image_quality(image_url, client):
     """
@@ -315,43 +330,14 @@ def get_image_quality(image_url, client):
         return 0, False, False
 
 def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
-    """Apply unique suffixes to bundle identifier based on app name/flavor automatically."""
-    if not bundle_id: return bundle_id
+    """
+    [DEPRECATED] Trust IPA metadata for bundle ID.
     
-    name_lower = app_name.lower()
-    repo_name_clean = repo_name.split('/')[-1].lower()
-    
-    # Use a simple clean comparison to see if they are effectively the same name
-    # (e.g., "Pica Comic" vs "PicaComic")
-    def simple_clean(s): return re.sub(r'[^a-z0-9]', '', s.lower())
-    
-    if simple_clean(app_name) == simple_clean(repo_name_clean):
-        return bundle_id
-
-    # Extract words from both to find the "flavor"
-    name_words = re.findall(r'[a-z0-9]{2,}', name_lower)
-    repo_words = set(re.findall(r'[a-z0-9]{2,}', repo_name_clean))
-    
-    # Keywords are words in app name but not in repo name
-    keywords = [w for w in name_words if w not in repo_words]
-    
-    # Also specifically check inside parentheses
-    tags_in_brackets = re.findall(r'\((.*?)\)', name_lower)
-    for tag in tags_in_brackets:
-        tag_clean = re.sub(r'[^a-z0-9]', '', tag.lower())
-        if tag_clean and len(tag_clean) >= 2 and tag_clean not in keywords:
-            keywords.append(tag_clean)
-
-    # Sort keywords to ensure consistent bundle ID generation
-    keywords = sorted(list(set(keywords)))
-    
-    new_bundle_id = bundle_id
-    for kw in keywords:
-        # Avoid adding if already there
-        if not re.search(rf'\.{kw}(\.|$)', new_bundle_id):
-            new_bundle_id = f"{new_bundle_id}.{kw}"
-            
-    return new_bundle_id
+    This function was causing installation failures by inventing bundle IDs
+    that don't match the actual IPA content. SideStore/AltStore requires
+    exact match between source and IPA's Info.plist.
+    """
+    return bundle_id
 
 def process_app(app_config, current_app_entry, client):
     """

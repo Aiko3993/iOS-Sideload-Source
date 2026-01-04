@@ -99,9 +99,9 @@ The deployment structure is a flattened version of `main`:
         *   `ipa_regex`: A regular expression to select a specific IPA from GitHub Releases.
         *   `pre_release`: Boolean (default: `false`). Set to `true` to prefer pre-releases/nightly versions.
         *   `tag_regex`: A regular expression to filter releases by their tag name.
-        *   `github_workflow`: (New) Workflow file name (e.g., `nightly.yml`) to fetch IPAs from GitHub Actions Artifacts.
-        *   `artifact_name`: (New) Regular expression to match the desired artifact name.
-        *   `bundle_id`: (Auto-Sync) App's bundle identifier. Automatically extracted from IPA and synced back to `apps.json`.
+        *   `github_workflow`: Workflow file name (e.g., `nightly.yml`) to fetch IPAs from GitHub Actions Artifacts.
+        *   `artifact_name`: Regular expression to match the desired artifact name.
+        *   `bundle_id`: (Auto-Sync) App's bundle identifier. Automatically extracted from IPA and synced back to `apps.json`. **Note**: This is trusted from IPA metadata only; the system does not invent bundle IDs.
     *   **Advanced Logic**:
         *   **Fast Skip**: The script detects if `downloadURL` (Release/Artifact) is unchanged. If unchanged AND the app entry in `apps.json` (name/icon) hasn't changed, it skips heavy processing (scraping & downloading).
         *   **Metadata Auto-Sync**: Fields like `icon_url` and `bundle_id` discovered by the script are automatically written back to `apps.json` to speed up future runs and improve data completeness.
@@ -314,8 +314,9 @@ In case of severe failure (e.g., generating a corrupted source.json causing clie
 | v1.20 | 2025-12-26 | AI Assistant | **Parallelization**: Refactored `update_source.py` to support multithreaded processing (5x concurrency), significantly reducing execution time for network-bound tasks. |
 | v1.21 | 2025-12-26 | AI Assistant | **Architecture Refinement**: Externalized configuration to `.github/config.yml` and implemented JSON Schema validation with VSCode integration. |
 | v1.22 | 2025-12-26 | AI Assistant | **Standardization**: Reorganized repository structure by moving `APPS.md`, `CONTRIBUTING.md`, and schemas to `.github/` directories. |
+| v1.23 | 2026-01-05 | AI Assistant | **IPA Selection Overhaul**: Rewrote `select_best_ipa` with multi-strategy fuzzy matching (exact match → substring → Jaccard similarity → SequenceMatcher). Added deterministic tie-breaking to prevent flip-flop commits. Disabled `apply_bundle_id_suffix` to fix installation failures caused by hallucinated bundle IDs. |
 
 ---
 
 
-*Last Updated: 2025-12-26*
+*Last Updated: 2026-01-05*
