@@ -44,25 +44,25 @@
     {
       "name": "Amethyst (Nightly)",
       "githubRepo": "AngelAuraMC/Amethyst-iOS",
-      "bundleIdentifier": "org.angelauramc.amethyst",
+      "bundleIdentifier": "org.angelauramc.amethyst.nightly",
       "developerName": "AngelAuraMC",
       "version": "1.0.b97b097",
       "versionDate": "2025-12-16",
       "versionDescription": "Nightly build from commit b97b0972028d05b8aea6f513cd04e4aed9815e60",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/artifacts-20251216/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_b97b097.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20251216/Amethyst_Nightly_1.0.b97b097.ipa",
       "localizedDescription": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148571521,
+      "size": 150330124,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "1.0.b97b097",
           "date": "2025-12-16",
           "localizedDescription": "Nightly build from commit b97b0972028d05b8aea6f513cd04e4aed9815e60",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/artifacts-20251216/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_b97b097.ipa",
-          "size": 148571521,
-          "sha256": "3d8ea4c94ba94e4bcf694dabf8a59641fc9415b6bec85c6020c90371c8177c22"
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20251216/Amethyst_Nightly_1.0.b97b097.ipa",
+          "size": 150330124,
+          "sha256": "24d1f909e7499a20e83ade02c201507f7f8a8fc7d4e145e94307a42ea70f75cd"
         },
         {
           "version": "1.0.cd000a3",
@@ -73,7 +73,7 @@
           "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
         }
       ],
-      "sha256": "3d8ea4c94ba94e4bcf694dabf8a59641fc9415b6bec85c6020c90371c8177c22"
+      "sha256": "24d1f909e7499a20e83ade02c201507f7f8a8fc7d4e145e94307a42ea70f75cd"
     },
     {
       "name": "Animeko",
@@ -274,54 +274,54 @@
     {
       "name": "LiveContainer (Nightly)",
       "githubRepo": "LiveContainer/LiveContainer",
-      "bundleIdentifier": "com.kdt.livecontainer",
+      "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.60",
       "versionDate": "2026-01-03",
       "versionDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20260103/LiveContainer_Nightly_3.6.60.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4387555,
+      "size": 4370880,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.60",
           "date": "2026-01-03",
           "localizedDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-          "size": 4387555,
-          "sha256": "3b205db60447b6509042141b5228b56bf57a2a8cd6e7c1eb0706c5e6b8860915"
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20260103/LiveContainer_Nightly_3.6.60.ipa",
+          "size": 4370880,
+          "sha256": "66e4a4bd97167983c0c99938e6ea917371d104da10713254c05f905b74e049a9"
         }
       ],
-      "sha256": "3b205db60447b6509042141b5228b56bf57a2a8cd6e7c1eb0706c5e6b8860915"
+      "sha256": "66e4a4bd97167983c0c99938e6ea917371d104da10713254c05f905b74e049a9"
     },
     {
       "name": "LiveContainer+SideStore (Nightly)",
       "githubRepo": "LiveContainer/LiveContainer",
-      "bundleIdentifier": "com.kdt.livecontainer",
+      "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
       "version": "3.6.60",
       "versionDate": "2026-01-03",
       "versionDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20260103/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36469666,
+      "size": 36457463,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.60",
           "date": "2026-01-03",
           "localizedDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-          "size": 36469666,
-          "sha256": "ec158d8e9e82ff6809cec9fb88b1c7f6bbc9ecb2720c24cc3a86975f0e6bf340"
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/modified-20260103/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
+          "size": 36457463,
+          "sha256": "5b8a23a96bcd1265ee8fa69889f4fa20ea5b31819111a03a6f60e08f8e90974c"
         }
       ],
-      "sha256": "ec158d8e9e82ff6809cec9fb88b1c7f6bbc9ecb2720c24cc3a86975f0e6bf340"
+      "sha256": "5b8a23a96bcd1265ee8fa69889f4fa20ea5b31819111a03a6f60e08f8e90974c"
     },
     {
       "name": "Mangayomi",
