@@ -444,13 +444,20 @@ def repackage_ipa_with_bundle_id(ipa_path, new_bundle_id, output_path=None):
         
         logger.info(f"Modified bundle ID: {old_bundle_id} -> {new_bundle_id}")
         
-        # Repackage the IPA
+        # Repackage the IPA with deterministic ordering for consistent SHA256
         with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
+            # Collect all files first, then sort for deterministic ordering
+            all_files = []
             for root, dirs, files in os.walk(temp_dir):
-                for file in files:
+                dirs.sort()  # Sort directories for deterministic traversal
+                for file in sorted(files):  # Sort files within each directory
                     full_path = os.path.join(root, file)
                     relative_path = os.path.relpath(full_path, temp_dir)
-                    ipa.write(full_path, relative_path)
+                    all_files.append((relative_path, full_path))
+            
+            # Add files in sorted order
+            for relative_path, full_path in sorted(all_files):
+                ipa.write(full_path, relative_path)
         
         # Calculate new SHA256
         sha256 = get_ipa_sha256(output_path)

@@ -1,6 +1,6 @@
 # How to Submit New Apps
 
-[中文文档](CONTRIBUTING_CN.md)
+[中文文档](https://github.com/Aiko3993/iOS-Sideload-Source/blob/main/.github/CONTRIBUTING_CN.md)
 
 Want to add an app to this source? There are two ways to do it.
 
@@ -77,8 +77,11 @@ To make contributing easier, our system performs several automated tasks:
     *   **Auto-Sync**: If you update the `name` or `icon_url` in `apps.json`, the system will sync these changes to the source immediately, even if the app version hasn't changed.
 *   **IPA Repackaging & Direct Hosting**: 
     *   **No more Zip issues**: For artifacts provided as `.app` or Zip files, the system automatically repackages them into standard `.ipa` files.
-    *   **Direct Download Links**: All artifacts are automatically uploaded to a dedicated local release (`app-artifacts`), providing **standard IPA direct links** compatible with LiveContainer, SideStore, and AltStore.
+    *   **Direct Download Links**: All hosted IPAs (repackaged artifacts and Bundle ID fixes) are uploaded to dedicated **cached releases** (`cached-YYYYMMDD`), providing fast and reliable direct download links.
     *   **Nightly.link (Fallback)**: Used only as a last-resort fallback to ensure high availability.
+*   **Security & Transparency**:
+    *   **No Code Injection**: We strictly only modify `Info.plist` for Bundle ID conflict resolution where necessary.
+    *   **Verifiable**: All IPAs include SHA256 checksums in the source file for verification. See [Security](../README.md#security--integrity) for details.
 
 ---
 

@@ -1,6 +1,6 @@
 # 如何提交新应用
 
-[English](CONTRIBUTING.md)
+[English](https://github.com/Aiko3993/iOS-Sideload-Source/blob/main/.github/CONTRIBUTING.md)
 
 想在这个源里添加一个新应用吗？有两种方法。
 
@@ -55,6 +55,8 @@
 *   **`github_repo`** (必填): 应用的 GitHub 仓库地址 (例如 `Aiko3993/MyCoolApp`)。
     *   ✅ **推荐**: `Aiko3993/MyCoolApp`
     *   ✅ **支持**: `https://github.com/Aiko3993/MyCoolApp` (系统会自动识别)
+*   **`icon_url`** (选填): 应用图标的**直链 URL**。
+    *   **智能选择**: 如果省略，系统会自动扫描仓库寻找最佳图标。即使提供了图标，系统也会比较其质量，并选择最优的那个。
 *   **`pre_release`** (选填): 布尔值 (`true` 或 `false`)。设置为 `true` 以获取 Beta/Nightly 版本。(提示：如果应用名包含 "Nightly" 或 "Beta"，系统会自动识别)。
 *   **`github_workflow`** (选填): GitHub Actions 工作流文件名 (例如 `build.yml`)。如果应用没有正式 Release，希望从 **GitHub Actions Artifacts** 抓取 IPA 时使用。
 *   **`artifact_name`** (选填): 使用 `github_workflow` 时，用于匹配特定 Artifact 名称的正则表达式。**提示**：系统内置了 5 步智能启发式搜索（包括 IPA 后缀匹配和关键字搜索），通常情况下您可以省略此字段。
@@ -75,8 +77,11 @@
     *   **自动同步**: 如果您在 `apps.json` 中更新了 `name` 或 `icon_url`，系统会立即同步这些更改，即使应用版本没有更新。
 *   **IPA 自动重构与直链托管**: 
     *   **告别 Zip 困扰**: 针对只提供 `.app` 或 Zip 的 Artifact，系统会自动将其重构为标准的 `.ipa` 格式。
-    *   **仓库直链**: 所有 Artifact 都会被自动上传至本仓库的专用 Release (`app-artifacts`)，提供**标准的 IPA 直链**，完美兼容 LiveContainer、SideStore 等侧载工具。
+    *   **高速缓存**: 所有托管的 IPA（包括重打包 artifact 和修复 Bundle ID 的变体）都会上传至专用的 **Cached Release** (`cached-YYYYMMDD`)，提供高速、稳定的直链下载。
     *   **Nightly.link (保底)**: 仅在极端情况下作为备选方案，确保服务高可用。
+*   **安全与透明**:
+    *   **无代码注入**: 我们严格限制仅在解决安装冲突时修改 `Info.plist` 中的 Bundle ID。
+    *   **可验证**: 所有 IPA 的源文件中均包含 SHA256 校验和。详情请参阅 [安全与完整性](../README_CN.md#安全与完整性)。
 
 ---
 
