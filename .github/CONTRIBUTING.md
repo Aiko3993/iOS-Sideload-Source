@@ -79,6 +79,9 @@ To make contributing easier, our system performs several automated tasks:
     *   **No more Zip issues**: For artifacts provided as `.app` or Zip files, the system automatically repackages them into standard `.ipa` files.
     *   **Direct Download Links**: All hosted IPAs (repackaged artifacts and Bundle ID fixes) are uploaded to dedicated **cached releases** (`cached-YYYYMMDD`), providing fast and reliable direct download links.
     *   **Nightly.link (Fallback)**: Used only as a last-resort fallback to ensure high availability.
+*   **Smart Skip Logic**:
+    *   **Efficient Updates**: The system compares precise timestamps (not just dates) for nightly builds, so apps are only reprocessed when there's actually a new release.
+    *   **Stable Processing**: Apps from the same repository (like "LiveContainer" variants) are processed in a stable order to prevent data inconsistencies.
 *   **Security & Transparency**:
     *   **No Code Injection**: We strictly only modify `Info.plist` for Bundle ID conflict resolution where necessary.
     *   **Verifiable**: All IPAs include SHA256 checksums in the source file for verification. See [Security](../README.md#security--integrity) for details.

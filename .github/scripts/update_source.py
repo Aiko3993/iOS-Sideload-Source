@@ -344,6 +344,9 @@ def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
     
     suffix = compute_bundle_id_suffix(app_name, repo_name)
     if suffix:
+        # Check if suffix is already present to avoid double-suffixing
+        if bundle_id.endswith(suffix):
+            return bundle_id, False  # Already has correct suffix, no repackage needed
         return f"{bundle_id}{suffix}", True
     return bundle_id, False
 
@@ -535,6 +538,7 @@ def process_app(app_config, current_app_entry, client):
             
         version = workflow_run['head_sha'][:7]
         release_date = workflow_run['created_at'].split('T')[0]
+        release_timestamp = workflow_run['created_at']  # Full ISO timestamp for precise comparison
         version_desc = f"Nightly build from commit {workflow_run['head_sha']}"
         
         wf_name_clean = workflow_file.replace('.yml', '').replace('.yaml', '')
@@ -585,6 +589,7 @@ def process_app(app_config, current_app_entry, client):
         asset_name = None
         version = release['tag_name'].lstrip('v')
         release_date = release['published_at'].split('T')[0]
+        release_timestamp = release['published_at']  # Full ISO timestamp for precise comparison
         version_desc = release['body'] or "Update"
         size = ipa_asset['size']
 
@@ -602,13 +607,30 @@ def process_app(app_config, current_app_entry, client):
         
         latest_version = app_entry.get('versions', [{}])[0]
         is_up_to_date = latest_version.get('version') == version
-        has_direct_link = direct_url and latest_version.get('downloadURL') == direct_url
+        
+        current_download_url = latest_version.get('downloadURL', '')
+        # Check if we have a direct link - either matching the original or a cached URL we created
+        has_direct_link = direct_url and current_download_url == direct_url
+        # Also accept if the current URL is a cached URL from our repo (for variant apps)
+        is_cached_url = 'Aiko3993/iOS-Sideload-Source/releases/download/cached-' in current_download_url
         
         skip_versions = GLOBAL_CONFIG.get('skip_versions', [])
         # Case insensitive check
         skip_versions = [x.lower() for x in skip_versions]
         
         is_generic = version.lower() in skip_versions
+        
+        # For generic versions (nightly, latest), compare timestamps instead of version strings
+        # The "version" from GitHub is the tag name (e.g., "nightly"), but we store the real version (e.g., "3.6.60")
+        # So we need to use timestamp comparison to determine if we're up-to-date
+        if is_generic:
+            stored_timestamp = latest_version.get('releaseTimestamp', latest_version.get('date', ''))
+            # release_timestamp is set earlier from published_at or created_at
+            is_timestamp_newer = release_timestamp > stored_timestamp if stored_timestamp else True
+            # If timestamp is not newer and we have a valid cached/direct link, treat as up-to-date
+            if not is_timestamp_newer and (has_direct_link or is_cached_url):
+                is_up_to_date = True  # Override version check with timestamp check
+                is_generic = False  # Treat as non-generic to allow skip
         
         # Also check if bundle ID needs to be updated (variant apps)
         current_bundle_id = app_entry.get('bundleIdentifier', '')
@@ -625,10 +647,9 @@ def process_app(app_config, current_app_entry, client):
             bundle_id_needs_update = False
         
         # If we are up to date and have the link we want, we can skip
-        # BUT: don't skip if the version is generic (like "nightly"), because we want to 
-        # extract the real version from the IPA.
+        # BUT: don't skip if the version is generic (like "nightly") AND has a newer release date
         # AND: don't skip if bundle ID needs to be updated (variant apps need repackaging)
-        if is_up_to_date and (has_direct_link or not direct_url) and not is_generic and not bundle_id_needs_update:
+        if is_up_to_date and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
              metadata_updates = {}
              # Even if up to date, we might want to update some metadata from config
              config_icon = app_config.get('icon_url')
@@ -647,7 +668,7 @@ def process_app(app_config, current_app_entry, client):
         # If not skipped, proceed with metadata updates
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
-            new_id = apply_bundle_id_suffix(old_id, name, repo)
+            new_id, _ = apply_bundle_id_suffix(old_id, name, repo)  # Properly unpack tuple
             if old_id != new_id:
                 logger.info(f"Updated Bundle ID for {name}: {old_id} -> {new_id}")
                 app_entry['bundleIdentifier'] = new_id
@@ -961,6 +982,10 @@ def process_app(app_config, current_app_entry, client):
         "size": size,
         "sha256": sha256
     }
+    
+    # Store full timestamp for nightly/generic version comparison
+    if release_timestamp:
+        new_version_entry["releaseTimestamp"] = release_timestamp
 
     if app_entry:
         logger.info(f"New version {version} detected for {name}")
@@ -1156,13 +1181,18 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
     
     source_data['apps'] = final_apps_list
     
-    app_order = {app['github_repo']: idx for idx, app in enumerate(apps)}
+    # Build sort order from apps.json: (repo_order, name_order_within_config)
+    app_order = {}
+    for idx, app in enumerate(apps):
+        key = f"{app['github_repo']}::{app['name']}"
+        app_order[key] = idx
     
     def get_sort_key(app_entry):
-        repo = app_entry.get('githubRepo')
-        if repo:
-             return app_order.get(repo, 9999)
-        return 9999
+        repo = app_entry.get('githubRepo', '')
+        name = app_entry.get('name', '')
+        key = f"{repo}::{name}"
+        # Primary: order from apps.json, Secondary: name alphabetically
+        return (app_order.get(key, 9999), name)
 
     source_data['apps'].sort(key=get_sort_key)
     

@@ -131,7 +131,10 @@ The deployment structure is a flattened version of `main`:
             *   **Release Naming**:
                 *   `artifacts-YYYYMMDD`: Original workflow artifacts (Nightly builds).
                 *   `cached-YYYYMMDD`: Repackaged IPAs with modified bundle IDs.
-    *   **Note**: Multiple entries for the same repository are allowed as long as their `name` is unique (e.g., "UTM" and "UTM HV").
+        *   **Smart Skip Logic** (v1.25):
+            *   **Cached URL Recognition**: Apps using our cached releases (`cached-YYYYMMDD`) are recognized as having valid direct links, preventing unnecessary reprocessing.
+            *   **Timestamp-Based Nightly Skip**: Nightly/generic versions (e.g., `nightly`, `latest`) now compare full ISO timestamps instead of just dates. The `releaseTimestamp` field stores the exact `published_at` time, enabling precise detection of new builds even if multiple releases occur on the same day.
+            *   **Deterministic Ordering**: Apps are sorted by `repo::name` composite key to ensure consistent ordering across parallel processing runs, preventing data swaps for same-repo variants (e.g., LiveContainer variants).
 *   **deploy.yml (`.github/workflows/`)**:
     *   Responsible for assembling the website and source files and pushing them to the `gh-pages` branch.
     *   Triggered by `push` to `main` or completion of update/process workflows.

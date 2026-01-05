@@ -44,6 +44,7 @@ This project runs on GitHub Actions:
 *   **Auto-Sync**: Automatically updates `apps.json` with discovered `icon_url` and `bundle_id` to keep the source clean.
 *   **Auto Version Discovery**: Automatically identifies `Nightly`, `Beta`, etc., versions from app names and cross-references GitHub tags for pre-release matching.
 *   **Quality-First Icon Discovery**: Automatically scans repository for icons and selects the highest-quality version based on scoring.
+*   **Smart Skip Logic**: Compares precise timestamps for nightly builds to avoid redundant processing; maintains stable ordering for same-repo variants.
 *   **Validation**: Automatically checks `apps.json` syntax on Pull Requests.
 
 ## Additional Sources
