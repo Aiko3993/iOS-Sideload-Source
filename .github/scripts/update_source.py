@@ -5,7 +5,7 @@ import hashlib
 import tempfile
 import shutil
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from PIL import Image
 from io import BytesIO
 
@@ -75,6 +75,19 @@ def deduplicate_versions(versions, app_name):
             # Already have this version string, keep the one with better SHA/Date
             # (In most cases they will be the same due to first pass)
             pass
+    
+    # AltStore spec compliance: Remove any non-standard fields from version entries
+    # Standard fields per https://faq.altstore.io/developers/make-a-source#app-versions:
+    # version, buildVersion, marketingVersion, date, localizedDescription, 
+    # downloadURL, assetURLs, minOSVersion, maxOSVersion, size, sha256
+    allowed_version_fields = {
+        'version', 'buildVersion', 'marketingVersion', 'date', 'localizedDescription',
+        'downloadURL', 'assetURLs', 'minOSVersion', 'maxOSVersion', 'size', 'sha256'
+    }
+    for v in final_list:
+        keys_to_remove = [k for k in v.keys() if k not in allowed_version_fields]
+        for k in keys_to_remove:
+            del v[k]
             
     # Final sort by date
     final_list.sort(key=lambda x: x.get('date', ''), reverse=True)
@@ -538,7 +551,7 @@ def process_app(app_config, current_app_entry, client):
             
         version = workflow_run['head_sha'][:7]
         release_date = workflow_run['created_at'].split('T')[0]
-        release_timestamp = workflow_run['created_at']  # Full ISO timestamp for precise comparison
+        release_timestamp = workflow_run['created_at']  # Full ISO timestamp for comparison
         version_desc = f"Nightly build from commit {workflow_run['head_sha']}"
         
         wf_name_clean = workflow_file.replace('.yml', '').replace('.yaml', '')
@@ -589,7 +602,7 @@ def process_app(app_config, current_app_entry, client):
         asset_name = None
         version = release['tag_name'].lstrip('v')
         release_date = release['published_at'].split('T')[0]
-        release_timestamp = release['published_at']  # Full ISO timestamp for precise comparison
+        release_timestamp = release['published_at']  # Full ISO timestamp for comparison
         version_desc = release['body'] or "Update"
         size = ipa_asset['size']
 
@@ -606,7 +619,14 @@ def process_app(app_config, current_app_entry, client):
         # 2. AND we have a valid download URL (not a nightly.link if we prefer direct)
         
         latest_version = app_entry.get('versions', [{}])[0]
-        is_up_to_date = latest_version.get('version') == version
+        stored_version = latest_version.get('version', '')
+        
+        # For workflow artifacts, version is SHA (e.g., 'f45a524') but stored may be '1.0.f45a524'
+        # Check both exact match and SHA containment for workflow builds
+        is_up_to_date = stored_version == version
+        if not is_up_to_date and workflow_file and len(version) == 7:
+            # Check if stored version ends with or contains the SHA (workflow build pattern)
+            is_up_to_date = stored_version.endswith(version) or version in stored_version
         
         current_download_url = latest_version.get('downloadURL', '')
         # Check if we have a direct link - either matching the original or a cached URL we created
@@ -624,9 +644,10 @@ def process_app(app_config, current_app_entry, client):
         # The "version" from GitHub is the tag name (e.g., "nightly"), but we store the real version (e.g., "3.6.60")
         # So we need to use timestamp comparison to determine if we're up-to-date
         if is_generic:
-            stored_timestamp = latest_version.get('releaseTimestamp', latest_version.get('date', ''))
+            # date field now stores full ISO timestamp (e.g., 2026-01-03T06:06:48Z)
+            stored_date = latest_version.get('date', '')
             # release_timestamp is set earlier from published_at or created_at
-            is_timestamp_newer = release_timestamp > stored_timestamp if stored_timestamp else True
+            is_timestamp_newer = release_timestamp > stored_date if stored_date else True
             # If timestamp is not newer and we have a valid cached/direct link, treat as up-to-date
             if not is_timestamp_newer and (has_direct_link or is_cached_url):
                 is_up_to_date = True  # Override version check with timestamp check
@@ -915,7 +936,7 @@ def process_app(app_config, current_app_entry, client):
                         # - Same-day releases (hotfixes): delete immediately
                         # - Older releases: only delete if 3+ days older than new version
                         try:
-                            from datetime import datetime, timedelta
+
                             current_date = datetime.strptime(release_date, '%Y-%m-%d')
                             all_releases = client.get_all_releases(current_repo)
                             
@@ -976,16 +997,13 @@ def process_app(app_config, current_app_entry, client):
     
     new_version_entry = {
         "version": version,
-        "date": release_date,
+        "date": release_timestamp if release_timestamp else release_date,  # Use full timestamp for nightly comparison
         "localizedDescription": version_desc,
         "downloadURL": download_url,
         "size": size,
         "sha256": sha256
     }
-    
-    # Store full timestamp for nightly/generic version comparison
-    if release_timestamp:
-        new_version_entry["releaseTimestamp"] = release_timestamp
+    # NOTE: No custom fields - AltStore spec compliant
 
     if app_entry:
         logger.info(f"New version {version} detected for {name}")
@@ -1195,6 +1213,18 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
         return (app_order.get(key, 9999), name)
 
     source_data['apps'].sort(key=get_sort_key)
+    
+    # AltStore spec compliance: Sanitize all version entries before save
+    # This ensures non-standard fields are removed from skipped apps too
+    allowed_version_fields = {
+        'version', 'buildVersion', 'marketingVersion', 'date', 'localizedDescription',
+        'downloadURL', 'assetURLs', 'minOSVersion', 'maxOSVersion', 'size', 'sha256'
+    }
+    for app in source_data['apps']:
+        for v in app.get('versions', []):
+            keys_to_remove = [k for k in v.keys() if k not in allowed_version_fields]
+            for k in keys_to_remove:
+                del v[k]
     
     # Only save if there are actual changes
     has_changes = False

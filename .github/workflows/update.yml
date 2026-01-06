@@ -34,6 +34,8 @@ permissions:
 jobs:
   update-source:
     runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.commit.outputs.has_changes }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -42,11 +44,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+          cache: 'pip'
+          cache-dependency-path: '.github/requirements.txt'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests Pillow urllib3 pyyaml
+        run: pip install -r .github/requirements.txt
 
       - name: Run update script
         env:
@@ -59,13 +61,16 @@ jobs:
         run: python .github/scripts/sync_issue_template.py
 
       - name: Commit and push changes
+        id: commit
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add .
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
           else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
             git commit -m "Update source.json, app lists, and templates"
             
             # Robust push with retry logic for concurrency

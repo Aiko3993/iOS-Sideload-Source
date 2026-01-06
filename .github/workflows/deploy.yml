@@ -15,13 +15,45 @@ permissions:
 
 jobs:
   deploy:
+    # Only run if:
+    # 1. Push to main (always deploy)
+    # 2. Manual trigger (always deploy)
+    # 3. Workflow completed successfully AND made changes (check via commit time)
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Need 2 commits to check if recent
+
+      - name: Check if deploy needed
+        id: check
+        run: |
+          # For workflow_run events, check if there was a recent commit
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            # Get the timestamp of the last commit
+            LAST_COMMIT_TIME=$(git log -1 --format="%ct")
+            NOW=$(date +%s)
+            DIFF=$((NOW - LAST_COMMIT_TIME))
+            
+            echo "Last commit was $DIFF seconds ago"
+            
+            # If the last commit was more than 5 minutes ago, skip deployment
+            # (The update workflow typically takes < 2 min, so 5 min is generous)
+            if [ $DIFF -gt 300 ]; then
+              echo "No recent commits, skipping deployment"
+              echo "skip=true" >> $GITHUB_OUTPUT
+            else
+              echo "Recent commit detected, proceeding with deployment"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Prepare deployment
+        if: steps.check.outputs.skip != 'true'
         run: |
           mkdir public
           
@@ -41,6 +73,7 @@ jobs:
           touch public/.nojekyll
 
       - name: Deploy to GitHub Pages
+        if: steps.check.outputs.skip != 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
