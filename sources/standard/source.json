@@ -388,16 +388,24 @@
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "1.1.5.2",
-      "versionDate": "2026-01-03",
-      "versionDescription": "增加桌面端音量上限\r\n支持显示动态互动内容\r\nSuperChat 支持常驻显示\r\n投票面板支持查看关注的人的投票\r\n直播弹幕列表支持`@`、`举报`等操作\r\n新增视频画质ID #1794 by @Vixb1122\r\n私信分享支持多选 #1779 co-by @leset0ng\r\n缓存面板显示网络类型 #1781 by @My-Responsitories\r\n同步 [BilibiliSponsorBlock](https://github.com/hanydd/BilibiliSponsorBlock) 片段类型 #1777 co-by @Vixb1122\r\n弹幕支持`固定转滚动`、`滚动弹幕固定速度` #1791 by @My-Responsitories\r\n\r\n页面优化\r\n优化专栏字体颜色\r\n优化 #1776 #1780 #1782 #1785 #1787 #1788 by @My-Responsitories\r\n\r\n修复 #1790 by @My-Responsitories\r\n修复 bug\r\n其他",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.2/PiliPlus_ios_1.1.5%2B4519.ipa",
+      "version": "1.1.5.3",
+      "versionDate": "2026-01-07T05:09:09Z",
+      "versionDescription": "修复 #1795 by @sghhhh\r\n修复 bug",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.3/PiliPlus_ios_1.1.5%2B4526.ipa",
       "localizedDescription": "PiliPlus",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24619651,
+      "size": 24632843,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.1.5.3",
+          "date": "2026-01-07T05:09:09Z",
+          "localizedDescription": "修复 #1795 by @sghhhh\r\n修复 bug",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.3/PiliPlus_ios_1.1.5%2B4526.ipa",
+          "size": 24632843,
+          "sha256": "fc8f733417cd49dadc79b2eceef3d767125f937e4385f573d6126806c4be369a"
+        },
         {
           "version": "1.1.5.2",
           "date": "2026-01-03",
@@ -415,7 +423,7 @@
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
       ],
-      "sha256": "819fb528a89bfb95efc5319ea2f1893a3bb3c8572f4e01491e7442d4c68c2f0e"
+      "sha256": "fc8f733417cd49dadc79b2eceef3d767125f937e4385f573d6126806c4be369a"
     },
     {
       "name": "PPSSPP",
