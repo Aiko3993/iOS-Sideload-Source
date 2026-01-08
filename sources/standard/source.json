@@ -336,16 +336,24 @@
       "githubRepo": "kodjodevf/mangayomi",
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
-      "version": "0.6.90",
-      "versionDate": "2025-12-23",
-      "versionDescription": "## What's Changed\r\n* Add log switch to about-menu by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/629\r\n* Path optimizations by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/632\r\n* fix: show chanded source preference for mihon source\r\n* Chapter jump fix in vertical continuous mode\r\n* some fixes\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.6.85...v0.6.90",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.90/Mangayomi-v0.6.90-ios.ipa",
+      "version": "0.6.95",
+      "versionDate": "2026-01-08T13:43:16Z",
+      "versionDescription": "## What's Changed\r\n* Fix \"Show extensions\" Button AND Fix category rearrange bug AND hide ItemType from calendar by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/636\r\n* Add a force landscape mode on mobile by @686udjie in https://github.com/kodjodevf/mangayomi/pull/638\r\n* Fix #637: Importing .epub doesn’t work\r\n* Enhance category management with animation\r\n* Refactor download management with shared isolate pool and optimize concurrent downloads\r\n\r\n## New Contributors\r\n* @686udjie made their first contribution in https://github.com/kodjodevf/mangayomi/pull/638\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.6.90...v0.6.95",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.95/Mangayomi-v0.6.95-ios.ipa",
       "localizedDescription": "Free and open source application for reading manga, novels, and watching animes available on Android, iOS, macOS, Linux and Windows",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#BE1622",
-      "size": 45074150,
+      "size": 45267048,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.95",
+          "date": "2026-01-08T13:43:16Z",
+          "localizedDescription": "## What's Changed\r\n* Fix \"Show extensions\" Button AND Fix category rearrange bug AND hide ItemType from calendar by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/636\r\n* Add a force landscape mode on mobile by @686udjie in https://github.com/kodjodevf/mangayomi/pull/638\r\n* Fix #637: Importing .epub doesn’t work\r\n* Enhance category management with animation\r\n* Refactor download management with shared isolate pool and optimize concurrent downloads\r\n\r\n## New Contributors\r\n* @686udjie made their first contribution in https://github.com/kodjodevf/mangayomi/pull/638\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.6.90...v0.6.95",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.6.95/Mangayomi-v0.6.95-ios.ipa",
+          "size": 45267048,
+          "sha256": "29c8c583c21f2633ab7790a002937c2e60bc1279553a26042f277e7758da7817"
+        },
         {
           "version": "0.6.90",
           "date": "2025-12-23",
@@ -363,7 +371,7 @@
           "sha256": "e3e2b53de95c42686b9953d389b32b84a8498fd3d841693a593ee265a083f3c0"
         }
       ],
-      "sha256": "3d0c1f7adb50f6be87ad48984f1f2b719f492a30691ce2a8984c4a6c933bee70"
+      "sha256": "29c8c583c21f2633ab7790a002937c2e60bc1279553a26042f277e7758da7817"
     },
     {
       "name": "NeoFreeBird",
