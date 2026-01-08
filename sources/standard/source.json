@@ -258,25 +258,25 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.60",
-      "versionDate": "2026-01-03T06:06:48Z",
-      "versionDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260103/LiveContainer_Nightly_3.6.60.ipa",
+      "versionDate": "2026-01-08T17:01:50Z",
+      "versionDescription": "**Commit:** [3c2228f2784fe5ebe9219639e82d026549588ac9](https://github.com/LiveContainer/LiveContainer/commit/3c2228f2784fe5ebe9219639e82d026549588ac9)\n**Message:** Add warning for non-local container. implement #683\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20824866990/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260108/LiveContainer_Nightly_3.6.60.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4370880,
+      "size": 4395786,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.60",
-          "date": "2026-01-03T06:06:48Z",
-          "localizedDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260103/LiveContainer_Nightly_3.6.60.ipa",
-          "size": 4370880,
-          "sha256": "d3d4f7168f241dc9b022edd0097c3336734ac2ac37d6027609c71f7250a7d8ec"
+          "date": "2026-01-08T17:01:50Z",
+          "localizedDescription": "**Commit:** [3c2228f2784fe5ebe9219639e82d026549588ac9](https://github.com/LiveContainer/LiveContainer/commit/3c2228f2784fe5ebe9219639e82d026549588ac9)\n**Message:** Add warning for non-local container. implement #683\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20824866990/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260108/LiveContainer_Nightly_3.6.60.ipa",
+          "size": 4395786,
+          "sha256": "e86696e17b8055ff92057eee37852babdcf25647eaaeac27714e1a3556c6eb38"
         }
       ],
-      "sha256": "d3d4f7168f241dc9b022edd0097c3336734ac2ac37d6027609c71f7250a7d8ec"
+      "sha256": "e86696e17b8055ff92057eee37852babdcf25647eaaeac27714e1a3556c6eb38"
     },
     {
       "name": "LiveContainer+SideStore",
@@ -311,25 +311,25 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
       "version": "3.6.60",
-      "versionDate": "2026-01-03T06:06:48Z",
-      "versionDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260103/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
+      "versionDate": "2026-01-08T17:01:50Z",
+      "versionDescription": "**Commit:** [3c2228f2784fe5ebe9219639e82d026549588ac9](https://github.com/LiveContainer/LiveContainer/commit/3c2228f2784fe5ebe9219639e82d026549588ac9)\n**Message:** Add warning for non-local container. implement #683\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20824866990/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260108/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36457463,
+      "size": 36482365,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.60",
-          "date": "2026-01-03T06:06:48Z",
-          "localizedDescription": "**Commit:** [6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1](https://github.com/LiveContainer/LiveContainer/commit/6908c7847555ac34a8f0cfb6ecfe922bfa4a21a1)\n**Message:** Fix #947 and probably #759\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20673274649/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260103/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
-          "size": 36457463,
-          "sha256": "247f29857dd56902ac251db90acaef7881891354614f8ad2146c4ad643190cd1"
+          "date": "2026-01-08T17:01:50Z",
+          "localizedDescription": "**Commit:** [3c2228f2784fe5ebe9219639e82d026549588ac9](https://github.com/LiveContainer/LiveContainer/commit/3c2228f2784fe5ebe9219639e82d026549588ac9)\n**Message:** Add warning for non-local container. implement #683\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/20824866990/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260108/LiveContainerPlusSideStore_Nightly_3.6.60.ipa",
+          "size": 36482365,
+          "sha256": "d1e0bc4ad562f8feae621f38b9ff97618deaa1055cd3dfc5b8076c5d67440f2c"
         }
       ],
-      "sha256": "247f29857dd56902ac251db90acaef7881891354614f8ad2146c4ad643190cd1"
+      "sha256": "d1e0bc4ad562f8feae621f38b9ff97618deaa1055cd3dfc5b8076c5d67440f2c"
     },
     {
       "name": "Mangayomi",
