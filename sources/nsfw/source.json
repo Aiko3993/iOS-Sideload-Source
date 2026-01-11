@@ -68,17 +68,25 @@
     },
     {
       "name": "Pica Comic",
-      "bundleIdentifier": "com.github.pacalini.picaComic.comic.pica",
+      "bundleIdentifier": "com.github.pacalini.picaComic",
       "developerName": "Pacalini",
-      "version": "4.2.9",
-      "versionDate": "2025-11-06",
-      "versionDescription": "4.2.9 (2025-11-06)\n\n更新说明\n 修复 jm 详情页 作品、人物 tag 151\n 修复 nhentai 某些关键词搜索下的页数错误 150\n htcomic 新增排名页面 139\n 搜索无结果时新增提示 77\n\n安装&更新\n (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\n IOS、MacOS 版本未经任何测试，不受任何支持.\n\nFull Changelog: https://github.com/Pacalini/PicaComic/compare/v4.2.7...v4.2.9",
-      "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.9/PicaComic-4.2.9-app-ios.ipa",
+      "version": "4.2.10",
+      "versionDate": "2026-01-11T06:27:19Z",
+      "versionDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+      "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.10/PicaComic-4.2.10-app-ios.ipa",
       "localizedDescription": "A comic app built with Flutter, supporting multiple comic sources.",
       "iconURL": "https://raw.githubusercontent.com/Pacalini/PicaComic/master/images/app_icon.png",
       "tintColor": "#FCE4E4",
-      "size": 13388036,
+      "size": 13517258,
       "versions": [
+        {
+          "version": "4.2.10",
+          "date": "2026-01-11T06:27:19Z",
+          "localizedDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+          "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.10/PicaComic-4.2.10-app-ios.ipa",
+          "size": 13517258,
+          "sha256": "baa62c6feef68e76c71643637558f995f8c75f42719a902408006474b2cd6116"
+        },
         {
           "version": "4.2.9",
           "date": "2025-11-06",
@@ -89,7 +97,7 @@
         }
       ],
       "githubRepo": "Pacalini/PicaComic",
-      "sha256": "cbc10f0827cb756ab4c1af9a9c78761f374015dde2425f76ee7b8fb4b18a27c1"
+      "sha256": "baa62c6feef68e76c71643637558f995f8c75f42719a902408006474b2cd6116"
     }
   ],
   "news": []
