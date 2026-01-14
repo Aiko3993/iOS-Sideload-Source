@@ -46,16 +46,24 @@
       "githubRepo": "AngelAuraMC/Amethyst-iOS",
       "bundleIdentifier": "org.angelauramc.amethyst.nightly",
       "developerName": "AngelAuraMC",
-      "version": "1.0.f45a524",
-      "versionDate": "2026-01-05T02:42:46Z",
-      "versionDescription": "Nightly build from commit f45a5244face3d1b4298c8a6b247b1f978b30f1b",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260105/Amethyst_Nightly_1.0.f45a524.ipa",
+      "version": "1.0.5a19024",
+      "versionDate": "2026-01-14T04:43:17Z",
+      "versionDescription": "Nightly build from commit 5a19024c91bf528bf468dfafb062581a3a368b3f",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260114/Amethyst_Nightly_1.0.5a19024.ipa",
       "localizedDescription": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 150331898,
+      "size": 150354337,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.0.5a19024",
+          "date": "2026-01-14T04:43:17Z",
+          "localizedDescription": "Nightly build from commit 5a19024c91bf528bf468dfafb062581a3a368b3f",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260114/Amethyst_Nightly_1.0.5a19024.ipa",
+          "size": 150354337,
+          "sha256": "be29330c778d6d49f1811fd225762cbe09467d52a8b79cfcb19caafa79959d53"
+        },
         {
           "version": "1.0.f45a524",
           "date": "2026-01-05T02:42:46Z",
@@ -73,7 +81,7 @@
           "sha256": "df2b2874e835094b55d5a1dfe73099957a30f6f833c306ad2633cce9737fc8eb"
         }
       ],
-      "sha256": "f0d6ca30b59478231b26594f270f884348ab889408ce88a354176d09cf47e2cc"
+      "sha256": "be29330c778d6d49f1811fd225762cbe09467d52a8b79cfcb19caafa79959d53"
     },
     {
       "name": "Animeko",
