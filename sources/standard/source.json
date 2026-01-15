@@ -420,16 +420,24 @@
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "1.1.5.3",
-      "versionDate": "2026-01-07T05:09:09Z",
-      "versionDescription": "修复 #1795 by @sghhhh\r\n修复 bug",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.3/PiliPlus_ios_1.1.5%2B4526.ipa",
+      "version": "1.1.5.4",
+      "versionDate": "2026-01-15T10:05:41Z",
+      "versionDescription": "支持长按/右键图片显示菜单，默认关\r\n调整 #1802 by @My-Responsitories\r\n支持界面缩放 #1800 co-by @sghhhh\r\nSponsorBlock Api 调整 #1797 by @zjns\r\n添加显示动态互动信息开关 #1798 co-by @sghhhh\r\n\r\n修复 #1799 co-by @KoishiMoe\r\n修复 Linux Task Icon #1800 by @sghhhh\r\n修复无法通过 AltStore/SideStore 安装 IPA #1803 by @KoishiMoe\r\n修复 bug",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.4/PiliPlus_ios_1.1.5%2B4543.ipa",
       "localizedDescription": "PiliPlus",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24632843,
+      "size": 25103780,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.1.5.4",
+          "date": "2026-01-15T10:05:41Z",
+          "localizedDescription": "支持长按/右键图片显示菜单，默认关\r\n调整 #1802 by @My-Responsitories\r\n支持界面缩放 #1800 co-by @sghhhh\r\nSponsorBlock Api 调整 #1797 by @zjns\r\n添加显示动态互动信息开关 #1798 co-by @sghhhh\r\n\r\n修复 #1799 co-by @KoishiMoe\r\n修复 Linux Task Icon #1800 by @sghhhh\r\n修复无法通过 AltStore/SideStore 安装 IPA #1803 by @KoishiMoe\r\n修复 bug",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.4/PiliPlus_ios_1.1.5%2B4543.ipa",
+          "size": 25103780,
+          "sha256": "c88fbbb739f5ba00faeacc378f21fb1bcf5c543e4f5c4fba9aaf9bdf11faadf3"
+        },
         {
           "version": "1.1.5.3",
           "date": "2026-01-07T05:09:09Z",
@@ -455,7 +463,7 @@
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
       ],
-      "sha256": "fc8f733417cd49dadc79b2eceef3d767125f937e4385f573d6126806c4be369a"
+      "sha256": "c88fbbb739f5ba00faeacc378f21fb1bcf5c543e4f5c4fba9aaf9bdf11faadf3"
     },
     {
       "name": "PPSSPP",
