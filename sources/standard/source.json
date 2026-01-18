@@ -274,22 +274,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.61",
-      "versionDate": "2026-01-16T04:41:15Z",
-      "versionDescription": "**Commit:** [10fca20c97721c79d0b50dfe677bf2e005b4a6e6](https://github.com/LiveContainer/LiveContainer/commit/10fca20c97721c79d0b50dfe677bf2e005b4a6e6)\n**Message:** Update translation\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21055781338/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260116/LiveContainer_Nightly_3.6.61.ipa",
+      "versionDate": "2026-01-18T06:21:44Z",
+      "versionDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainer_Nightly_3.6.61.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4427516,
+      "size": 4427592,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.61",
-          "date": "2026-01-16T04:41:15Z",
-          "localizedDescription": "**Commit:** [10fca20c97721c79d0b50dfe677bf2e005b4a6e6](https://github.com/LiveContainer/LiveContainer/commit/10fca20c97721c79d0b50dfe677bf2e005b4a6e6)\n**Message:** Update translation\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21055781338/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260116/LiveContainer_Nightly_3.6.61.ipa",
-          "size": 4427516,
-          "sha256": "751058bd0a3830dae2115e278b14eca9a63b3a5a27235bb0bdd51a05c345cf34"
+          "date": "2026-01-18T06:21:44Z",
+          "localizedDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainer_Nightly_3.6.61.ipa",
+          "size": 4427592,
+          "sha256": "b99067d609832ee4cc304162645f3c86fa811ce3cd00194baadae24c342e7630"
         },
         {
           "version": "3.6.60",
@@ -300,7 +300,7 @@
           "sha256": "420718d98fde01c01270e44c1e15124b377595c1c8fb995021b8cc2d25018997"
         }
       ],
-      "sha256": "751058bd0a3830dae2115e278b14eca9a63b3a5a27235bb0bdd51a05c345cf34"
+      "sha256": "b99067d609832ee4cc304162645f3c86fa811ce3cd00194baadae24c342e7630"
     },
     {
       "name": "LiveContainer+SideStore",
@@ -335,22 +335,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
       "version": "3.6.61",
-      "versionDate": "2026-01-16T04:41:15Z",
-      "versionDescription": "**Commit:** [10fca20c97721c79d0b50dfe677bf2e005b4a6e6](https://github.com/LiveContainer/LiveContainer/commit/10fca20c97721c79d0b50dfe677bf2e005b4a6e6)\n**Message:** Update translation\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21055781338/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260116/LiveContainerPlusSideStore_Nightly_3.6.61.ipa",
+      "versionDate": "2026-01-18T06:21:44Z",
+      "versionDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainerPlusSideStore_Nightly_3.6.61.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36514206,
+      "size": 36514830,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.61",
-          "date": "2026-01-16T04:41:15Z",
-          "localizedDescription": "**Commit:** [10fca20c97721c79d0b50dfe677bf2e005b4a6e6](https://github.com/LiveContainer/LiveContainer/commit/10fca20c97721c79d0b50dfe677bf2e005b4a6e6)\n**Message:** Update translation\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21055781338/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260116/LiveContainerPlusSideStore_Nightly_3.6.61.ipa",
-          "size": 36514206,
-          "sha256": "39c98b7815996c0cde5d6418f1a5cd4dfd6c631f7e5bf842c8dcefaf10ddc9eb"
+          "date": "2026-01-18T06:21:44Z",
+          "localizedDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainerPlusSideStore_Nightly_3.6.61.ipa",
+          "size": 36514830,
+          "sha256": "82e89f448926c850d9df0624c66f1876e9fc23008660356f3f1c844773f0281e"
         },
         {
           "version": "3.6.60",
@@ -361,7 +361,7 @@
           "sha256": "e0576468fd3bd018200c145d1fc09f20f14a5d5d355002fee8c400d5dd1607fd"
         }
       ],
-      "sha256": "39c98b7815996c0cde5d6418f1a5cd4dfd6c631f7e5bf842c8dcefaf10ddc9eb"
+      "sha256": "82e89f448926c850d9df0624c66f1876e9fc23008660356f3f1c844773f0281e"
     },
     {
       "name": "Mangayomi",
