@@ -273,16 +273,24 @@
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
-      "version": "3.6.61",
-      "versionDate": "2026-01-18T06:21:44Z",
-      "versionDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainer_Nightly_3.6.61.ipa",
+      "version": "3.6.62",
+      "versionDate": "2026-01-23T06:17:27Z",
+      "versionDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainer_Nightly_3.6.62.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4427592,
+      "size": 4452897,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.6.62",
+          "date": "2026-01-23T06:17:27Z",
+          "localizedDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainer_Nightly_3.6.62.ipa",
+          "size": 4452897,
+          "sha256": "cbb9d0127964d0f1636f8f57d84214063f8fb775160f1e0b8923bdef60947074"
+        },
         {
           "version": "3.6.61",
           "date": "2026-01-18T06:21:44Z",
@@ -300,7 +308,7 @@
           "sha256": "420718d98fde01c01270e44c1e15124b377595c1c8fb995021b8cc2d25018997"
         }
       ],
-      "sha256": "b99067d609832ee4cc304162645f3c86fa811ce3cd00194baadae24c342e7630"
+      "sha256": "cbb9d0127964d0f1636f8f57d84214063f8fb775160f1e0b8923bdef60947074"
     },
     {
       "name": "LiveContainer+SideStore",
@@ -334,16 +342,24 @@
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
-      "version": "3.6.61",
-      "versionDate": "2026-01-18T06:21:44Z",
-      "versionDescription": "**Commit:** [89b1aa0a748fe8a2377c26b972da4d0a8b199e2b](https://github.com/LiveContainer/LiveContainer/commit/89b1aa0a748fe8a2377c26b972da4d0a8b199e2b)\n**Message:** Throw error when LiveProcess is not installed\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21107268725/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260118/LiveContainerPlusSideStore_Nightly_3.6.61.ipa",
+      "version": "3.6.62",
+      "versionDate": "2026-01-23T06:17:27Z",
+      "versionDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainerPlusSideStore_Nightly_3.6.62.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36514830,
+      "size": 36540138,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.6.62",
+          "date": "2026-01-23T06:17:27Z",
+          "localizedDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainerPlusSideStore_Nightly_3.6.62.ipa",
+          "size": 36540138,
+          "sha256": "f443d9920c403801eccf3aaaf9af1cc9e53675c9bc4d4e5ecc67a1b4426aeb02"
+        },
         {
           "version": "3.6.61",
           "date": "2026-01-18T06:21:44Z",
@@ -361,7 +377,7 @@
           "sha256": "e0576468fd3bd018200c145d1fc09f20f14a5d5d355002fee8c400d5dd1607fd"
         }
       ],
-      "sha256": "82e89f448926c850d9df0624c66f1876e9fc23008660356f3f1c844773f0281e"
+      "sha256": "f443d9920c403801eccf3aaaf9af1cc9e53675c9bc4d4e5ecc67a1b4426aeb02"
     },
     {
       "name": "Mangayomi",
