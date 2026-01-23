@@ -274,22 +274,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.62",
-      "versionDate": "2026-01-23T06:17:27Z",
-      "versionDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+      "versionDate": "2026-01-23T07:06:39Z",
+      "versionDescription": "**Commit:** [3a6c97b87009ff562f287d5f8033dc7d24f01f39](https://github.com/LiveContainer/LiveContainer/commit/3a6c97b87009ff562f287d5f8033dc7d24f01f39)\n**Message:** Automatically switch to running apps\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21277676792/attempts/1).",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainer_Nightly_3.6.62.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4452897,
+      "size": 4453320,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.62",
-          "date": "2026-01-23T06:17:27Z",
-          "localizedDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+          "date": "2026-01-23T07:06:39Z",
+          "localizedDescription": "**Commit:** [3a6c97b87009ff562f287d5f8033dc7d24f01f39](https://github.com/LiveContainer/LiveContainer/commit/3a6c97b87009ff562f287d5f8033dc7d24f01f39)\n**Message:** Automatically switch to running apps\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21277676792/attempts/1).",
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainer_Nightly_3.6.62.ipa",
-          "size": 4452897,
-          "sha256": "cbb9d0127964d0f1636f8f57d84214063f8fb775160f1e0b8923bdef60947074"
+          "size": 4453320,
+          "sha256": "793e4cd07ea5660ed679cc8b9c3620ced5d6408b248663fadea634b3727bba18"
         },
         {
           "version": "3.6.61",
@@ -308,7 +308,7 @@
           "sha256": "420718d98fde01c01270e44c1e15124b377595c1c8fb995021b8cc2d25018997"
         }
       ],
-      "sha256": "cbb9d0127964d0f1636f8f57d84214063f8fb775160f1e0b8923bdef60947074"
+      "sha256": "793e4cd07ea5660ed679cc8b9c3620ced5d6408b248663fadea634b3727bba18"
     },
     {
       "name": "LiveContainer+SideStore",
@@ -343,22 +343,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
       "version": "3.6.62",
-      "versionDate": "2026-01-23T06:17:27Z",
-      "versionDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+      "versionDate": "2026-01-23T07:06:39Z",
+      "versionDescription": "**Commit:** [3a6c97b87009ff562f287d5f8033dc7d24f01f39](https://github.com/LiveContainer/LiveContainer/commit/3a6c97b87009ff562f287d5f8033dc7d24f01f39)\n**Message:** Automatically switch to running apps\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21277676792/attempts/1).",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainerPlusSideStore_Nightly_3.6.62.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36540138,
+      "size": 36540559,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.62",
-          "date": "2026-01-23T06:17:27Z",
-          "localizedDescription": "**Commit:** [c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf](https://github.com/LiveContainer/LiveContainer/commit/c730d9c2317e2081ec0c3c5ebea8dcd6a9714fcf)\n**Message:** Fix signing issues\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21276605637/attempts/1).",
+          "date": "2026-01-23T07:06:39Z",
+          "localizedDescription": "**Commit:** [3a6c97b87009ff562f287d5f8033dc7d24f01f39](https://github.com/LiveContainer/LiveContainer/commit/3a6c97b87009ff562f287d5f8033dc7d24f01f39)\n**Message:** Automatically switch to running apps\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21277676792/attempts/1).",
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260123/LiveContainerPlusSideStore_Nightly_3.6.62.ipa",
-          "size": 36540138,
-          "sha256": "f443d9920c403801eccf3aaaf9af1cc9e53675c9bc4d4e5ecc67a1b4426aeb02"
+          "size": 36540559,
+          "sha256": "dd6e77dd384656c1096bfa3f25899b7179759aa2be2aeda563dc9c4f0bed95c5"
         },
         {
           "version": "3.6.61",
@@ -377,7 +377,7 @@
           "sha256": "e0576468fd3bd018200c145d1fc09f20f14a5d5d355002fee8c400d5dd1607fd"
         }
       ],
-      "sha256": "f443d9920c403801eccf3aaaf9af1cc9e53675c9bc4d4e5ecc67a1b4426aeb02"
+      "sha256": "dd6e77dd384656c1096bfa3f25899b7179759aa2be2aeda563dc9c4f0bed95c5"
     },
     {
       "name": "Mangayomi",
