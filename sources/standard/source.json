@@ -460,16 +460,24 @@
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "1.1.5.4",
-      "versionDate": "2026-01-15T10:05:41Z",
-      "versionDescription": "支持长按/右键图片显示菜单，默认关\r\n调整 #1802 by @My-Responsitories\r\n支持界面缩放 #1800 co-by @sghhhh\r\nSponsorBlock Api 调整 #1797 by @zjns\r\n添加显示动态互动信息开关 #1798 co-by @sghhhh\r\n\r\n修复 #1799 co-by @KoishiMoe\r\n修复 Linux Task Icon #1800 by @sghhhh\r\n修复无法通过 AltStore/SideStore 安装 IPA #1803 by @KoishiMoe\r\n修复 bug",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.4/PiliPlus_ios_1.1.5%2B4543.ipa",
+      "version": "1.1.5.5",
+      "versionDate": "2026-01-25T08:41:50Z",
+      "versionDescription": "组件/页面优化\r\n桌面端返回优化\r\n横向滑动优化，支持调节滑动阈值\r\n调整 #1806 #1810 by @My-Responsitories\r\n安卓音频输出优先使用 aaudio #1805 by @My-Responsitories\r\n\r\n修复 Web 端推荐\r\n修复 bug",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.5/PiliPlus_ios_1.1.5%2B4573.ipa",
       "localizedDescription": "PiliPlus",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 25103780,
+      "size": 25108013,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.1.5.5",
+          "date": "2026-01-25T08:41:50Z",
+          "localizedDescription": "组件/页面优化\r\n桌面端返回优化\r\n横向滑动优化，支持调节滑动阈值\r\n调整 #1806 #1810 by @My-Responsitories\r\n安卓音频输出优先使用 aaudio #1805 by @My-Responsitories\r\n\r\n修复 Web 端推荐\r\n修复 bug",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.5/PiliPlus_ios_1.1.5%2B4573.ipa",
+          "size": 25108013,
+          "sha256": "624a8dc7aced8ae703b608e0ec633d092942de00f15494b9b7a40999e2e4979d"
+        },
         {
           "version": "1.1.5.4",
           "date": "2026-01-15T10:05:41Z",
@@ -503,7 +511,7 @@
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
       ],
-      "sha256": "c88fbbb739f5ba00faeacc378f21fb1bcf5c543e4f5c4fba9aaf9bdf11faadf3"
+      "sha256": "624a8dc7aced8ae703b608e0ec633d092942de00f15494b9b7a40999e2e4979d"
     },
     {
       "name": "PPSSPP",
