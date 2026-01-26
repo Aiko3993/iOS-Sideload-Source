@@ -460,16 +460,24 @@
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "1.1.5.5",
-      "versionDate": "2026-01-25T08:41:50Z",
-      "versionDescription": "组件/页面优化\r\n桌面端返回优化\r\n横向滑动优化，支持调节滑动阈值\r\n调整 #1806 #1810 by @My-Responsitories\r\n安卓音频输出优先使用 aaudio #1805 by @My-Responsitories\r\n\r\n修复 Web 端推荐\r\n修复 bug",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.5/PiliPlus_ios_1.1.5%2B4573.ipa",
+      "version": "1.1.5.6",
+      "versionDate": "2026-01-26T06:46:49Z",
+      "versionDescription": "安卓端音频输出回退默认 opensles\r\n安卓端支持选择音频输出 #1811 by @My-Responsitories\r\n其他",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.6/PiliPlus_ios_1.1.5%2B4577.ipa",
       "localizedDescription": "PiliPlus",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 25108013,
+      "size": 25114723,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.1.5.6",
+          "date": "2026-01-26T06:46:49Z",
+          "localizedDescription": "安卓端音频输出回退默认 opensles\r\n安卓端支持选择音频输出 #1811 by @My-Responsitories\r\n其他",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.6/PiliPlus_ios_1.1.5%2B4577.ipa",
+          "size": 25114723,
+          "sha256": "b4d562cc977b75bde984093559ed253c29471b42da9427e3ad8a6b88fb45292e"
+        },
         {
           "version": "1.1.5.5",
           "date": "2026-01-25T08:41:50Z",
@@ -511,7 +519,7 @@
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
       ],
-      "sha256": "624a8dc7aced8ae703b608e0ec633d092942de00f15494b9b7a40999e2e4979d"
+      "sha256": "b4d562cc977b75bde984093559ed253c29471b42da9427e3ad8a6b88fb45292e"
     },
     {
       "name": "PPSSPP",
