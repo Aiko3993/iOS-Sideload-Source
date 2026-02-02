@@ -392,16 +392,24 @@
       "githubRepo": "kodjodevf/mangayomi",
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
-      "version": "0.7.0",
-      "versionDate": "2026-01-09T10:56:42Z",
-      "versionDescription": "Update",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.0/Mangayomi-v0.7.0-ios.ipa",
+      "version": "0.7.1",
+      "versionDate": "2026-02-02T11:49:10Z",
+      "versionDescription": "## What's Changed\r\n* fix/reader-single-pages by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/654\r\n* added option to exclude categories from mass update by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/655\r\n* fix #643 EPUB fails to load when nav.xhtml references missing script (../js/kobo.js)\r\n* feat: update entitlements and plist for file access permissions\r\n* feat: add DNS-over-HTTPS (DoH) support (experimental)\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.0...v0.7.1",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.1/Mangayomi-v0.7.1-ios.ipa",
       "localizedDescription": "Free and open source application for reading manga, novels, and watching animes available on Android, iOS, macOS, Linux and Windows",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#BE1622",
-      "size": 45269466,
+      "size": 45081197,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.7.1",
+          "date": "2026-02-02T11:49:10Z",
+          "localizedDescription": "## What's Changed\r\n* fix/reader-single-pages by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/654\r\n* added option to exclude categories from mass update by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/655\r\n* fix #643 EPUB fails to load when nav.xhtml references missing script (../js/kobo.js)\r\n* feat: update entitlements and plist for file access permissions\r\n* feat: add DNS-over-HTTPS (DoH) support (experimental)\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.0...v0.7.1",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.1/Mangayomi-v0.7.1-ios.ipa",
+          "size": 45081197,
+          "sha256": "ceaba7c34f52ed351d67b138da66f142ebb0e615ac9807d9acb3e1ff32d9cc8d"
+        },
         {
           "version": "0.7.0",
           "date": "2026-01-09T10:56:42Z",
@@ -435,7 +443,7 @@
           "sha256": "e3e2b53de95c42686b9953d389b32b84a8498fd3d841693a593ee265a083f3c0"
         }
       ],
-      "sha256": "ee8d1cafa87931cc5a96e8de68d02e049b66cad84e5dd94c022c75df3d0e2671"
+      "sha256": "ceaba7c34f52ed351d67b138da66f142ebb0e615ac9807d9acb3e1ff32d9cc8d"
     },
     {
       "name": "NeoFreeBird",
