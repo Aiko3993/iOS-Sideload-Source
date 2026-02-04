@@ -200,17 +200,24 @@
       "githubRepo": "khcrysalis/Feather",
       "bundleIdentifier": "thewonderofyou.Feather",
       "developerName": "khcrysalis",
-      "version": "2.5.0",
-      "versionDate": "2025-12-23",
-      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [idevicepair](https://github.com/jkcoxson/idevice_pair) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added the ability to choose when to stay active in the background by @Nyasami in https://github.com/khcrysalis/Feather/pull/502\r\n  - It will keep itself active when content is being downloaded or being installed.\r\n* Added ability for signing services to bundle default certificates inside of Feather, by following a set scheme: \r\n  - References in code to how it imports signing-assets can be found [here](https://github.com/khcrysalis/Feather/blob/main/Feather/FeatherApp.swift#L196-L245).\r\n  ```\r\n  Feather.app\r\n   |__ signing-assets\r\n         |__ SuperDuperSign\r\n               |__ file.p12\r\n               |__ file.mobileprovision\r\n               |__ file.txt\r\n         |__ SuperDuperUltraSign\r\n               |__ file.p12\r\n               |__ file.mobileprovision\r\n               |__ file.txt\r\n  ``` \r\n* Added LocalDevVPN integration by @CelloSerenity in https://github.com/khcrysalis/Feather/pull/546\r\n  * Also removed mentions of StosVPN as that is no longer on the App Store.\r\n* Added alerts for export/copy repo buttons by @neoarz in https://github.com/khcrysalis/Feather/pull/536\r\n* Added support for altstudio date format (#529) by @Nyasami in https://github.com/khcrysalis/Feather/pull/532\r\n* Fixes theme section clipping on iOS 26 by @shgew in https://github.com/khcrysalis/Feather/pull/492\r\n* Fixes text cutoff in donation banner by @scratchyone in https://github.com/khcrysalis/Feather/pull/494\r\n* Made unsigned/signed sections in the library tab not appear unless populated by @sdhEmily in https://github.com/khcrysalis/Feather/pull/500\r\n\r\n## New Contributors\r\n* @shgew made their first contribution in https://github.com/khcrysalis/Feather/pull/492\r\n* @scratchyone made their first contribution in https://github.com/khcrysalis/Feather/pull/494\r\n* @sdhEmily made their first contribution in https://github.com/khcrysalis/Feather/pull/500\r\n* @mattp12 made their first contribution in https://github.com/khcrysalis/Feather/pull/518\r\n* @neoarz made their first contribution in https://github.com/khcrysalis/Feather/pull/536\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.4.0...v2.5.0",
-      "downloadURL": "https://github.com/khcrysalis/Feather/releases/download/v2.5.0/Feather.ipa",
+      "version": "2.6.0",
+      "versionDate": "2026-02-04T08:07:54Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
+      "downloadURL": "https://github.com/khcrysalis/Feather/releases/download/v2.6.0/Feather.ipa",
       "localizedDescription": "Free on-device iOS/iPadOS application manager/installer, using certificates part of the Apple Developer Program.",
       "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
       "tintColor": "#C5A8EB",
-      "size": 12720470,
-      "permissions": {},
+      "size": 14118478,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.6.0",
+          "date": "2026-02-04T08:07:54Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
+          "downloadURL": "https://github.com/khcrysalis/Feather/releases/download/v2.6.0/Feather.ipa",
+          "size": 14118478,
+          "sha256": "01f4d8dc7c8ae97ed82943d668d1937b8ec8009dbfa0b6f45375b815c842a191"
+        },
         {
           "version": "2.5.0",
           "date": "2025-12-23",
@@ -220,7 +227,7 @@
           "sha256": "a458af86ed44814324acbc375c5dba98a6689b5e7dadb98eb8aa0da13e205a0a"
         }
       ],
-      "sha256": "a458af86ed44814324acbc375c5dba98a6689b5e7dadb98eb8aa0da13e205a0a"
+      "sha256": "01f4d8dc7c8ae97ed82943d668d1937b8ec8009dbfa0b6f45375b815c842a191"
     },
     {
       "name": "Ksign",
