@@ -131,16 +131,24 @@
       "githubRepo": "Balackburn/Apollo",
       "bundleIdentifier": "com.christianselig.Apollo",
       "developerName": "Balackburn",
-      "version": "1.15.11_1.4.1",
-      "versionDate": "2026-01-30T17:02:57Z",
-      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v1.4.1`\n\n## Release Notes\n- Fix certain Streamable links not loading in media view (https://github.com/JeffreyCA/Apollo-ImprovedCustomApi/pull/95)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_1.4.1/Apollo-1.15.11_ImprovedCustomApi-1.4.1.ipa",
+      "version": "1.15.11_1.4.2",
+      "versionDate": "2026-02-07T06:48:10Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v1.4.2`\n\n## Release Notes\n- Update default trending subreddit source to `https://jeffreyca.github.io/subreddits/trending-subriff-blended.txt` ([source](https://github.com/JeffreyCA/subreddits?tab=readme-ov-file#trending-subriff-blendedtxt))\r\n    - Previous source has been discontinued\r\n- Fix certain GIFs playing at 2x speed on 120Hz displays (#97)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_1.4.2/Apollo-1.15.11_ImprovedCustomApi-1.4.2.ipa",
       "localizedDescription": "Altstore source and website for Apollo for Reddit (with ImprovedCustomApi)",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp",
       "tintColor": "#6F5EFF",
-      "size": 114717040,
+      "size": 114716971,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.15.11_1.4.2",
+          "date": "2026-02-07T06:48:10Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v1.4.2`\n\n## Release Notes\n- Update default trending subreddit source to `https://jeffreyca.github.io/subreddits/trending-subriff-blended.txt` ([source](https://github.com/JeffreyCA/subreddits?tab=readme-ov-file#trending-subriff-blendedtxt))\r\n    - Previous source has been discontinued\r\n- Fix certain GIFs playing at 2x speed on 120Hz displays (#97)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_1.4.2/Apollo-1.15.11_ImprovedCustomApi-1.4.2.ipa",
+          "size": 114716971,
+          "sha256": "fc258a9231e08a6d82a4faecfe54f43a934e4c6c1c80da4cd371f9f81726e074"
+        },
         {
           "version": "1.15.11_1.4.1",
           "date": "2026-01-30T17:02:57Z",
@@ -174,7 +182,7 @@
           "sha256": "fd8789d96dc095f8a7194bd750097a48e3b0c803a60a41d3b55c03c4504225aa"
         }
       ],
-      "sha256": "e1f9cd480d729ba6731ea0d3fafcf1aafb4a0b726c11e9b830c0625f2aecb0e9"
+      "sha256": "fc258a9231e08a6d82a4faecfe54f43a934e4c6c1c80da4cd371f9f81726e074"
     },
     {
       "name": "Asspp",
