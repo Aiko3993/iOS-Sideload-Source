@@ -515,16 +515,24 @@
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
-      "version": "1.1.5.7",
-      "versionDate": "2026-01-28T08:01:10Z",
-      "versionDescription": "优化滑动\r\n其他",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.5.7/PiliPlus_ios_1.1.5%2B4584.ipa",
+      "version": "1.1.6",
+      "versionDate": "2026-02-07T08:48:56Z",
+      "versionDescription": "优化滑动手势\r\n优化分区 TAB\r\n优化查看评论笔记\r\n优化调整倍速时卡顿 #1813 by @nakixii\r\n\r\n支持调整自动同步(`autosync`)数值\r\n支持快捷切换账号 #1815 co-by @cnctem\r\n稍后再看/收藏搜索添加`复制`/`移动`按钮 #1822 @cnctem\r\n调整 #1816 #1818 #1821 #1826 by @My-Responsitories\r\n支持基于滑动时间设置滑动弹簧参数 #1816 co-by @My-Responsitories\r\n\r\n修复 #1825 by @Wu-HZ\r\n修复动态页 UP 列表 #1819 by @leset0ng\r\n\r\n其他",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.6/PiliPlus_ios_1.1.6%2B4626.ipa",
       "localizedDescription": "PiliPlus",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 25132786,
+      "size": 25139197,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.1.6",
+          "date": "2026-02-07T08:48:56Z",
+          "localizedDescription": "优化滑动手势\r\n优化分区 TAB\r\n优化查看评论笔记\r\n优化调整倍速时卡顿 #1813 by @nakixii\r\n\r\n支持调整自动同步(`autosync`)数值\r\n支持快捷切换账号 #1815 co-by @cnctem\r\n稍后再看/收藏搜索添加`复制`/`移动`按钮 #1822 @cnctem\r\n调整 #1816 #1818 #1821 #1826 by @My-Responsitories\r\n支持基于滑动时间设置滑动弹簧参数 #1816 co-by @My-Responsitories\r\n\r\n修复 #1825 by @Wu-HZ\r\n修复动态页 UP 列表 #1819 by @leset0ng\r\n\r\n其他",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.6/PiliPlus_ios_1.1.6%2B4626.ipa",
+          "size": 25139197,
+          "sha256": "c7a93ca3759b867ed23dcfb2540b0cd9c792a1cbca867b08da5e4882ce1605be"
+        },
         {
           "version": "1.1.5.7",
           "date": "2026-01-28T08:01:10Z",
@@ -582,7 +590,7 @@
           "sha256": "faa8f4ba776271f6d258b9b8aed636a36834462149aca917d9f59fe64d1f07e5"
         }
       ],
-      "sha256": "db7c686b88c338aab62d1bb1d25f39d4995fe263db94bd3acaa7177d39408453"
+      "sha256": "c7a93ca3759b867ed23dcfb2540b0cd9c792a1cbca867b08da5e4882ce1605be"
     },
     {
       "name": "PPSSPP",
