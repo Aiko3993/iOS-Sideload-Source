@@ -12,16 +12,24 @@
       "githubRepo": "jiangtian616/JHenTai",
       "bundleIdentifier": "top.jtmonster.jhentai",
       "developerName": "jiangtian616",
-      "version": "8.0.10+305",
-      "versionDate": "2026-01-04",
-      "versionDescription": "- 优化AltStore.json文件中的版本号问题\n\n--------------------\n\n- Optimize the version number issue in the AltStore.json file\n\n",
-      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.10%2B305/JHenTai_8.0.10%2B305.ipa",
+      "version": "8.0.11",
+      "versionDate": "2026-02-08T07:40:14Z",
+      "versionDescription": "- 支持使用webview辅助cookie登录\n- 支持跳过cookie登录的用户名验证\n\n--------------------\n\n- Support using webView to assist with cookie login\n- Support skipping username verification for cookie login",
+      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.11/JHenTai_8.0.11%2B306.ipa",
       "localizedDescription": "A cross-platform manga app made for e-hentai & exhentai by Flutter",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15701183,
+      "size": 15739810,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "8.0.11",
+          "date": "2026-02-08T07:40:14Z",
+          "localizedDescription": "- 支持使用webview辅助cookie登录\n- 支持跳过cookie登录的用户名验证\n\n--------------------\n\n- Support using webView to assist with cookie login\n- Support skipping username verification for cookie login",
+          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.11/JHenTai_8.0.11%2B306.ipa",
+          "size": 15739810,
+          "sha256": "b5f322bc889cd89240dcedc41bb3bc6dd84c5c762ebb27e99a64b9ea1d4c83fb"
+        },
         {
           "version": "8.0.10+305",
           "date": "2026-01-04",
@@ -39,7 +47,7 @@
           "sha256": "7d92624f76c76272f276545b2971d8274e7d9d685190e418673026ec27d829aa"
         }
       ],
-      "sha256": "25d1eb4611ac026c510ba14ca6160643d10624318fa7c9d102180e16aa51137b"
+      "sha256": "b5f322bc889cd89240dcedc41bb3bc6dd84c5c762ebb27e99a64b9ea1d4c83fb"
     },
     {
       "name": "LoveIwara",
