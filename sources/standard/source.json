@@ -320,22 +320,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly",
       "developerName": "LiveContainer",
       "version": "3.6.63",
-      "versionDate": "2026-02-06T16:15:30Z",
-      "versionDescription": "**Commit:** [fd6b6505a16115cf1bdbdec6caf17bea4513f2ab](https://github.com/LiveContainer/LiveContainer/commit/fd6b6505a16115cf1bdbdec6caf17bea4513f2ab)\n**Message:** Fix #1130 by sanitizing decompressed path\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21757348427/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260206/LiveContainer_Nightly_3.6.63.ipa",
+      "versionDate": "2026-02-08T03:21:15Z",
+      "versionDescription": "**Commit:** [563d0f45bb3e49f45e3b3989bf611dd13baa6cad](https://github.com/LiveContainer/LiveContainer/commit/563d0f45bb3e49f45e3b3989bf611dd13baa6cad)\n**Message:** Fix: correct error message when input http url is not ipa (#1134)\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21791437274/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260208/LiveContainer_Nightly_3.6.63.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4482881,
+      "size": 4485104,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.63",
-          "date": "2026-02-06T16:15:30Z",
-          "localizedDescription": "**Commit:** [fd6b6505a16115cf1bdbdec6caf17bea4513f2ab](https://github.com/LiveContainer/LiveContainer/commit/fd6b6505a16115cf1bdbdec6caf17bea4513f2ab)\n**Message:** Fix #1130 by sanitizing decompressed path\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21757348427/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260206/LiveContainer_Nightly_3.6.63.ipa",
-          "size": 4482881,
-          "sha256": "8cd678a2485936ef23b544c762860d8726d8e01933202ab885447e9bd538c3cb"
+          "date": "2026-02-08T03:21:15Z",
+          "localizedDescription": "**Commit:** [563d0f45bb3e49f45e3b3989bf611dd13baa6cad](https://github.com/LiveContainer/LiveContainer/commit/563d0f45bb3e49f45e3b3989bf611dd13baa6cad)\n**Message:** Fix: correct error message when input http url is not ipa (#1134)\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21791437274/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260208/LiveContainer_Nightly_3.6.63.ipa",
+          "size": 4485104,
+          "sha256": "cdc8de6053ce0a5d15004b9a5a127cfa39c4e12d764ef053f61a8cbdfe499ed0"
         },
         {
           "version": "3.6.62",
@@ -362,7 +362,7 @@
           "sha256": "420718d98fde01c01270e44c1e15124b377595c1c8fb995021b8cc2d25018997"
         }
       ],
-      "sha256": "8cd678a2485936ef23b544c762860d8726d8e01933202ab885447e9bd538c3cb"
+      "sha256": "cdc8de6053ce0a5d15004b9a5a127cfa39c4e12d764ef053f61a8cbdfe499ed0"
     },
     {
       "name": "LiveContainer+SideStore",
@@ -397,22 +397,22 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.sidestore",
       "developerName": "LiveContainer",
       "version": "3.6.63",
-      "versionDate": "2026-02-06T16:15:30Z",
-      "versionDescription": "**Commit:** [fd6b6505a16115cf1bdbdec6caf17bea4513f2ab](https://github.com/LiveContainer/LiveContainer/commit/fd6b6505a16115cf1bdbdec6caf17bea4513f2ab)\n**Message:** Fix #1130 by sanitizing decompressed path\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21757348427/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260206/LiveContainerPlusSideStore_Nightly_3.6.63.ipa",
+      "versionDate": "2026-02-08T03:21:15Z",
+      "versionDescription": "**Commit:** [563d0f45bb3e49f45e3b3989bf611dd13baa6cad](https://github.com/LiveContainer/LiveContainer/commit/563d0f45bb3e49f45e3b3989bf611dd13baa6cad)\n**Message:** Fix: correct error message when input http url is not ipa (#1134)\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21791437274/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260208/LiveContainerPlusSideStore_Nightly_3.6.63.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36577810,
+      "size": 36580035,
       "screenshotURLs": [],
       "versions": [
         {
           "version": "3.6.63",
-          "date": "2026-02-06T16:15:30Z",
-          "localizedDescription": "**Commit:** [fd6b6505a16115cf1bdbdec6caf17bea4513f2ab](https://github.com/LiveContainer/LiveContainer/commit/fd6b6505a16115cf1bdbdec6caf17bea4513f2ab)\n**Message:** Fix #1130 by sanitizing decompressed path\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21757348427/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260206/LiveContainerPlusSideStore_Nightly_3.6.63.ipa",
-          "size": 36577810,
-          "sha256": "53fa419bee62706d27a36e2bd0556a8c35b2cc502170a07fcdc7d40c65ea6734"
+          "date": "2026-02-08T03:21:15Z",
+          "localizedDescription": "**Commit:** [563d0f45bb3e49f45e3b3989bf611dd13baa6cad](https://github.com/LiveContainer/LiveContainer/commit/563d0f45bb3e49f45e3b3989bf611dd13baa6cad)\n**Message:** Fix: correct error message when input http url is not ipa (#1134)\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/21791437274/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/cached-20260208/LiveContainerPlusSideStore_Nightly_3.6.63.ipa",
+          "size": 36580035,
+          "sha256": "929b9940f8b9d0fdf0fa8d1633bc3e14d861eeb773015402138527372240e6e5"
         },
         {
           "version": "3.6.62",
@@ -439,7 +439,7 @@
           "sha256": "e0576468fd3bd018200c145d1fc09f20f14a5d5d355002fee8c400d5dd1607fd"
         }
       ],
-      "sha256": "53fa419bee62706d27a36e2bd0556a8c35b2cc502170a07fcdc7d40c65ea6734"
+      "sha256": "929b9940f8b9d0fdf0fa8d1633bc3e14d861eeb773015402138527372240e6e5"
     },
     {
       "name": "Mangayomi",
