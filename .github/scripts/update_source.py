@@ -189,48 +189,51 @@ def get_readme_description(repo, client, max_length=500):
 
         readme_text = base64.b64decode(content_b64).decode('utf-8', errors='replace')
 
-        # Pre-process: strip all HTML tags globally
-        readme_text = re.sub(r'<[^>]+>', '', readme_text)
-
         lines = readme_text.split('\n')
         cleaned = []
+        skip_block = False
+
         for line in lines:
             stripped = line.strip()
+
+            # Empty line resets the block state
             if not stripped:
-                continue
-            # Skip badges, images, headers, blockquotes, HRs, tables, code fences
-            if stripped.startswith(('[![', '![', '#', '>', '---', '***', '|', '```')):
-                continue
-            # Skip reference-style links: [1]: http://...
-            if re.match(r'^\[.+\]:\s', stripped):
-                continue
-            # Skip markdown task list items: - [x] or - [ ]
-            if re.match(r'^[-*]\s*\[[ xX]\]', stripped):
-                continue
-            # Skip pure list items that are short (feature bullet points)
-            if re.match(r'^[-*+]\s', stripped) and len(stripped) < 80:
-                continue
-            # Skip citation/quote patterns: -- <cite>...</cite> or -- Author
-            if re.match(r'^--\s', stripped):
-                continue
-            # Skip lines that are just bold/italic short labels
-            if re.match(r'^[*_]{1,2}[^*_]+[*_]{1,2}$', stripped) and len(stripped) < 40:
+                if cleaned:
+                    break  # Stop at first paragraph to avoid concatenating unrelated sections
+                skip_block = False
                 continue
 
-            # Clean inline markdown formatting
-            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', stripped)  # [text](url) -> text
+            if skip_block:
+                continue
+
+            # Block-level filtering
+            if stripped.startswith(('[![', '![', '#', '>', '---', '***', '|', '```', '<h1', '<div', '<picture', '<p align')):
+                skip_block = True
+                continue
+
+            if re.match(r'^\[.+\]:\s', stripped) or \
+               re.match(r'^[-*]\s*\[[ xX]\]', stripped) or \
+               re.match(r'^[-*+]\s', stripped) or \
+               re.match(r'^--\s', stripped) or \
+               re.match(r'^[*_]{1,2}[^*_]+[*_]{1,2}$', stripped):
+                skip_block = True
+                continue
+
+            # Line is valid prose. Clean HTML and Markdown.
+            text = re.sub(r'<[^>]+>', ' ', stripped)  # Replace HTML tags with space to avoid word join
+            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)  # [text](url) -> text
             text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
             text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', text)  # Bold/italic -> plain
             text = re.sub(r'_{1,2}([^_]+)_{1,2}', r'\1', text)  # Underscore emphasis
             text = re.sub(r'\s+', ' ', text).strip()  # Normalize whitespace
 
-            if len(text) > 15:  # Only meaningful prose lines
+            if len(text) > 15:
                 cleaned.append(text)
 
         if not cleaned:
             return None
 
-        # Take first paragraph(s) up to max_length
+        # Combine lines of the first paragraph
         result = []
         total_len = 0
         for para in cleaned:
@@ -864,20 +867,32 @@ def process_app(app_config, current_app_entry, client):
             bundle_id_needs_update = False
 
         if is_up_to_date and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
-             metadata_updates = {}
+             url_is_alive = True
+             if current_download_url:
+                 try:
+                     resp = client.head(current_download_url, allow_redirects=True, timeout=15)
+                     if resp is None or resp.status_code >= 400:
+                         url_is_alive = False
+                         logger.warning(f"Download URL for {name} is dead ({resp.status_code if resp else 'None'}), will re-download.")
+                 except Exception as e:
+                     url_is_alive = False
+                     logger.warning(f"Failed to check download URL for {name}: {e}")
 
-             config_icon = app_config.get('icon_url')
-             if config_icon and config_icon not in ['None', '_No response_'] and app_entry.get('iconURL') != config_icon:
-                 app_entry['iconURL'] = config_icon
-                 logger.info(f"Updated icon for {name} from config")
+             if url_is_alive:
+                  metadata_updates = {}
 
-             config_tint = app_config.get('tint_color')
-             if config_tint and app_entry.get('tintColor') != config_tint:
-                 app_entry['tintColor'] = config_tint
-                 logger.info(f"Updated tint color for {name} from config")
+                  config_icon = app_config.get('icon_url')
+                  if config_icon and config_icon not in ['None', '_No response_'] and app_entry.get('iconURL') != config_icon:
+                      app_entry['iconURL'] = config_icon
+                      logger.info(f"Updated icon for {name} from config")
 
-             logger.info(f"Skipping {name} (Already up to date at version {version})")
-             return app_entry, {} # No metadata updates needed if skipping
+                  config_tint = app_config.get('tint_color')
+                  if config_tint and app_entry.get('tintColor') != config_tint:
+                      app_entry['tintColor'] = config_tint
+                      logger.info(f"Updated tint color for {name} from config")
+
+                  logger.info(f"Skipping {name} (Already up to date at version {version})")
+                  return app_entry, {} # No metadata updates needed if skipping
 
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
@@ -1055,7 +1070,8 @@ def process_app(app_config, current_app_entry, client):
             bundle_id = target_bundle_id
 
     except Exception as e:
-        logger.error(f"Processing failed for {name}: {e}")
+        import traceback
+        logger.error(f"Processing failed for {name}: {e}\n{traceback.format_exc()}")
         return current_app_entry, {}
     finally:
         if os.path.exists(temp_path): os.remove(temp_path)
@@ -1237,6 +1253,23 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
             except Exception as exc:
                 logger.error(f"App {name} generated an exception: {exc}")
+                # Preserve existing entry if available
+                key = next((f"{ac['github_repo']}::{ac['name']}" for ac in apps if ac['name'] == name), None)
+                if key and key in existing_apps_map:
+                    logger.warning(f"Preserving existing entry for {name} after exception")
+                    new_apps_list.append(existing_apps_map[key])
+
+    # Catastrophic loss prevention: if we lost more than half the apps, abort save
+    expected_count = len(apps)
+    actual_count = len(new_apps_list)
+    old_count = len(source_data.get('apps', []))
+
+    if expected_count > 0 and actual_count < expected_count * 0.5 and old_count > actual_count:
+        logger.error(
+            f"CATASTROPHIC LOSS PREVENTION: Only {actual_count}/{expected_count} apps processed successfully. "
+            f"Old source had {old_count} apps. Aborting source.json update to prevent data loss."
+        )
+        return False
 
     source_data['apps'] = new_apps_list
 
@@ -1393,15 +1426,25 @@ def main():
                 logger.info("Found legacy 'app-artifacts' release, deleting...")
                 client.delete_release(current_repo, legacy_release['id'], 'app-artifacts')
 
-            # Covers both cached- (current) and artifacts- (legacy) prefixes
             all_managed_releases = [r for r in all_releases
                                     if r['tag_name'].startswith('cached-')
                                     or r['tag_name'].startswith('artifacts-')]
             all_managed_releases.sort(key=lambda x: x['tag_name'], reverse=True)
 
-            if len(all_managed_releases) > 7:
-                for old_r in all_managed_releases[7:]:
-                    logger.info(f"Deleting old release: {old_r['tag_name']}")
+            # Keep track of ones we keep
+            kept_releases = []
+            for r in all_managed_releases:
+                # If a release has 0 assets, it's empty clutter, delete it immediately.
+                if len(r.get('assets', [])) == 0:
+                    logger.info(f"Deleting empty release: {r['tag_name']}")
+                    client.delete_release(current_repo, r['id'], r['tag_name'])
+                else:
+                    kept_releases.append(r)
+
+            # Of the remaining non-empty releases, keep only the latest 7 to prevent infinite growth.
+            if len(kept_releases) > 7:
+                for old_r in kept_releases[7:]:
+                    logger.info(f"Deleting old release (retention limit): {old_r['tag_name']}")
                     client.delete_release(current_repo, old_r['id'], old_r['tag_name'])
         except Exception as e:
             logger.warning(f"Failed to run retention policy: {e}")

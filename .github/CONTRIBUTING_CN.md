@@ -3,7 +3,7 @@
 [English](https://github.com/Aiko3993/iOS-Sideload-Source/blob/main/.github/CONTRIBUTING.md)
 
 ## 通过 Issues 提交 (推荐)
-提交一个 **[Add App Issue](../../issues/new/choose)**。填写应用名称、GitHub 仓库 (`Owner/Repo`) 以及所属分类。若需追踪处于预览版的分支，在应用名称中加入 `(Nightly)` 或 `(Beta)` 即可。
+提交一个 **[Add App Issue](https://github.com/Aiko3993/iOS-Sideload-Source/issues/new/choose)**。填写应用名称、GitHub 仓库 (`Owner/Repo`) 以及所属分类。若需追踪处于预览版的分支，在应用名称中加入 `(Nightly)` 或 `(Beta)` 即可。
 
 ---
 

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aiko3993's Sideload Source for iOS</title>
     <meta name="description" content="Sideload source for iOS (AltStore, SideStore, and LiveContainer)">
+    <meta name="color-scheme" content="light dark">
+    <meta name="darkreader-lock">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -172,7 +174,7 @@
                             </svg>
                         </div>
                         <input type="text" id="search-input" placeholder="Search..."
-                            class="block w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50 rounded-xl text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder-gray-400 focus:bg-white dark:focus:bg-gray-800"
+                            class="block w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition placeholder-gray-400 focus:bg-white dark:focus:bg-white/10"
                             autocomplete="off">
                     </div>
 
@@ -183,7 +185,7 @@
                         <!-- Source Switcher -->
                         <div class="relative min-w-0" id="source-container">
                             <button onclick="toggleSource()" id="source-trigger"
-                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[120px] group">
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[120px] group">
                                 <div class="relative h-6 w-full sm:w-28 overflow-hidden text-center">
                                     <div id="source-label-track"
                                         class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
@@ -225,7 +227,7 @@
                         <!-- Sort Button -->
                         <div class="relative min-w-0" id="sort-container">
                             <button onclick="cycleSort()" id="sort-trigger"
-                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
                                 title="Sort">
                                 <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
                                     <div id="sort-label-track"
@@ -267,7 +269,7 @@
                         <!-- Coexist Toggle -->
                         <div class="relative min-w-0" id="coexist-container">
                             <button onclick="toggleCoexist()" id="coexist-trigger"
-                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300 hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
                                 title="Toggle coexist mode">
                                 <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
                                     <div id="coexist-label-track"
@@ -313,7 +315,8 @@
         </div>
 
         <!-- Empty State (Hidden by default) -->
-        <div id="empty-state" class="hidden flex flex-col items-center justify-center py-24 text-center">
+        <div id="empty-state"
+            class="hidden col-span-full flex flex-col items-center justify-center py-24 text-center animate-fade-in">
             <div class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
                 <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -382,14 +385,15 @@
 
     <!-- Details Modal -->
     <div id="modal-backdrop"
-        class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"
+        class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-500 touch-none"
         onclick="closeModal()"></div>
-    <div id="modal-panel" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden pointer-events-none">
-        <div class="bg-white dark:bg-gray-900 w-full max-w-2xl max-h-[85vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform scale-95 opacity-0 transition duration-300"
+    <div id="modal-panel"
+        class="fixed top-0 inset-x-0 h-[100dvh] z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 pt-16 sm:pt-4 hidden pointer-events-none">
+        <div class="bg-white dark:bg-gray-900 w-full max-w-2xl max-h-[80dvh] sm:max-h-[85dvh] rounded-t-[2rem] sm:rounded-b-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform translate-y-full sm:translate-y-0 sm:scale-95 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu will-change-transform"
             onclick="event.stopPropagation()">
             <!-- Modal Header -->
             <div
-                class="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl z-10">
+                class="px-6 py-4 border-b border-gray-100 dark:border-white/5 flex items-center justify-between bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl shrink-0 z-10">
                 <div class="flex items-center gap-4">
                     <img id="modal-icon" src=""
                         class="w-14 h-14 rounded-xl bg-gray-100 dark:bg-gray-800 object-cover shadow-sm">
@@ -407,8 +411,8 @@
                     </div>
                 </div>
                 <button onclick="closeModal()"
-                    class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="p-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-white/10 mt-1 self-start">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
@@ -416,23 +420,55 @@
             </div>
 
             <!-- Modal Content -->
-            <div class="flex-grow overflow-y-auto p-0 custom-scrollbar bg-white dark:bg-gray-900">
+            <div
+                class="flex-1 overflow-y-auto p-0 custom-scrollbar bg-white dark:bg-gray-900 relative overscroll-contain">
                 <!-- Metadata Grid -->
                 <div id="modal-meta-grid"
-                    class="grid grid-cols-2 gap-3 p-5 border-b border-gray-100 dark:border-gray-800">
+                    class="grid grid-cols-2 gap-3 p-5 border-b border-gray-100 dark:border-white/5">
                     <!-- Injected by JS -->
                 </div>
 
-                <div class="p-6">
+                <div class="p-6 pb-[max(1.5rem,calc(env(safe-area-inset-bottom)+1.5rem))]">
                     <div id="modal-content" class="markdown-body text-sm bg-transparent">
                         <!-- Markdown content will be injected here -->
                     </div>
                 </div>
             </div>
 
-            <!-- Modal Footer -->
-            <div id="modal-footer"
-                class="p-4 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-xl flex items-center gap-3">
+        </div>
+    </div>
+
+    <!-- Versions Modal -->
+    <div id="versions-modal-backdrop"
+        class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-500 touch-none"
+        onclick="closeVersionsModal()"></div>
+    <div id="versions-modal-panel"
+        class="fixed top-0 inset-x-0 h-[100dvh] z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 pt-16 sm:pt-4 hidden pointer-events-none">
+        <div class="bg-gray-50 dark:bg-gray-900 w-full max-w-lg max-h-[80dvh] sm:max-h-[85dvh] rounded-t-[2rem] sm:rounded-b-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform translate-y-full sm:translate-y-0 sm:scale-95 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu will-change-transform"
+            onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div
+                class="px-6 py-4 border-b border-gray-200 dark:border-white/5 flex items-center justify-between bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl shrink-0 z-20">
+                <div class="flex items-center gap-3">
+                    <img id="versions-modal-icon" src=""
+                        class="w-12 h-12 rounded-[0.875rem] bg-gray-100 dark:bg-gray-800 object-cover shadow-sm">
+                    <div>
+                        <h3 id="versions-modal-title"
+                            class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight">Versions</h3>
+                        <p id="versions-modal-count" class="text-xs text-gray-500 dark:text-gray-400 font-medium"></p>
+                    </div>
+                </div>
+                <button onclick="closeVersionsModal()"
+                    class="p-2.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-white/10 mt-1 self-start">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Content -->
+            <div id="versions-modal-list"
+                class="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-3 pb-[max(2rem,calc(env(safe-area-inset-bottom)+1rem))] relative overscroll-contain">
                 <!-- Injected by JS -->
             </div>
         </div>

@@ -3,7 +3,7 @@
 [中文文档](https://github.com/Aiko3993/iOS-Sideload-Source/blob/main/.github/CONTRIBUTING_CN.md)
 
 ## Via Issues (Recommended)
-Submit an **[Add App Issue](../../issues/new/choose)**. Provide the App Name, GitHub repository (`Owner/Repo`), and Category. To target pre-releases, include `(Nightly)` or `(Beta)` in the App Name.
+Submit an **[Add App Issue](https://github.com/Aiko3993/iOS-Sideload-Source/issues/new/choose)**. Provide the App Name, GitHub repository (`Owner/Repo`), and Category. To target pre-releases, include `(Nightly)` or `(Beta)` in the App Name.
 
 ---
 

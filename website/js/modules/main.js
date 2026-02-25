@@ -2,7 +2,7 @@
 import { APP_MODES, SORT_MODES, SORT_MAP } from './config.js';
 import { detectLanguage, debounce } from './utils.js';
 import { getState, setState } from './state.js';
-import { renderApps, updateLanguage, updateSourceUI, updateHeaderIcon, updateFavicon, showToast, copySourceURL, handleDownloadClick, openModal, closeModal, collapseAllExpanded } from './ui.js';
+import { renderApps, filterApps, updateLanguage, updateSourceUI, updateHeaderIcon, updateFavicon, showToast, copySourceURL, handleDownloadClick, openModal, closeModal, collapseAllExpanded, openVersionsModal, closeVersionsModal } from './ui.js';
 import { fetchSource, switchSource, toggleSource } from './data.js';
 import { handleEasterEgg, showDeveloperConsolePrompt, initCheatCodes } from './effects.js';
 
@@ -10,6 +10,8 @@ import { handleEasterEgg, showDeveloperConsolePrompt, initCheatCodes } from './e
 window.handleDownloadClick = handleDownloadClick;
 window.openModal = openModal;
 window.closeModal = closeModal;
+window.openVersionsModal = openVersionsModal;
+window.closeVersionsModal = closeVersionsModal;
 window.copySourceURL = copySourceURL;
 window.toggleSource = toggleSource;
 window.handleEasterEgg = handleEasterEgg;
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search Listener
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
-        const debouncedRender = debounce(renderApps, 300);
+        const debouncedFilter = debounce(() => filterApps(true), 100);
 
         searchInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
@@ -106,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         searchInput.addEventListener('input', (e) => {
-            debouncedRender();
+            debouncedFilter();
         });
     }
 

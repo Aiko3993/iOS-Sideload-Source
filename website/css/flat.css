@@ -22,7 +22,8 @@ body {
     --secondary-500: 45 212 191;
     --secondary-600: 20 184 166;
 
-    --glow-opacity: 0.2; /* Light mode default glow opacity */
+    --glow-opacity: 0.2;
+    /* Light mode default glow opacity */
     --icon-glow-opacity: 0.15;
     --color-canvas-default: transparent;
     --color-canvas-subtle: transparent;
@@ -71,20 +72,25 @@ body {
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgba(156, 163, 175, 0.5);
     border-radius: 20px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgba(107, 114, 128, 0.8);
 }
+
 @media (prefers-color-scheme: dark) {
     .custom-scrollbar::-webkit-scrollbar-thumb {
         background-color: rgba(75, 85, 99, 0.5);
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         background-color: rgba(107, 114, 128, 0.8);
     }
@@ -93,8 +99,8 @@ body {
 /* Dark Mode Glow Variables */
 @media (prefers-color-scheme: dark) {
     :root {
-        --glow-opacity: 0.15;
-        --icon-glow-opacity: 0.1;
+        --glow-opacity: 0.25;
+        --icon-glow-opacity: 0.15;
         --color-canvas-default: transparent;
         --color-canvas-subtle: transparent;
         --color-border-default: #3f3f46;
@@ -143,19 +149,21 @@ body {
         --color-canvas-subtle: #161b22;
         --color-border-default: #30363d;
         --color-border-muted: #21262d;
-        --color-neutral-muted: rgba(110,118,129,0.4);
+        --color-neutral-muted: rgba(110, 118, 129, 0.4);
         --color-accent-fg: #58a6ff;
         --color-accent-emphasis: #1f6feb;
-        --color-attention-subtle: rgba(187,128,9,0.15);
+        --color-attention-subtle: rgba(187, 128, 9, 0.15);
         --color-attention-fg: #d29922;
     }
 }
+
 /* Badge Dynamic Text & Background Color */
 .badge-dynamic-text {
     color: rgb(var(--badge-text-light));
     background-color: rgba(var(--badge-text-light), 0.12);
     border-color: rgba(var(--badge-text-light), 0.3);
 }
+
 @media (prefers-color-scheme: dark) {
     .badge-dynamic-text {
         color: rgb(var(--badge-text-dark));
@@ -163,12 +171,14 @@ body {
         border-color: rgba(var(--badge-text-dark), 0.3);
     }
 }
+
 /* Dynamic Modal Glow Class */
 .dynamic-modal-glow {
     --current-modal-glow: var(--modal-glow-light);
     --current-modal-text: var(--modal-tint-light);
     --current-modal-btn-text: #ffffff;
 }
+
 @media (prefers-color-scheme: dark) {
     .dynamic-modal-glow {
         --current-modal-glow: var(--modal-glow-dark);
@@ -180,10 +190,12 @@ body {
 .modal-action-btn-text {
     color: var(--current-modal-btn-text) !important;
 }
+
 .dynamic-app-glow {
     --current-glow: var(--app-glow-light);
     --current-text: var(--app-tint-light);
 }
+
 @media (prefers-color-scheme: dark) {
     .dynamic-app-glow {
         --current-glow: var(--app-glow-dark);
@@ -193,30 +205,65 @@ body {
 
 /* Apply the dynamic variable */
 .group-hover\:glow-active:hover .glow-target {
-     opacity: 1;
-     box-shadow: 0 0 40px rgba(var(--current-glow), var(--glow-opacity));
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(var(--current-glow), var(--glow-opacity));
 }
 
 @keyframes split-up {
-    0% { transform: translateY(50%) scale(0.5); opacity: 0; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
+    0% {
+        transform: translateY(50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
 }
+
 @keyframes split-down {
-    0% { transform: translateY(-50%) scale(0.5); opacity: 0; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
+    0% {
+        transform: translateY(-50%) scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
 }
 
 /* Easter Egg Animations */
 @keyframes fall-down {
-    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 @keyframes shake-hard {
-    0%, 100% { transform: translate(0, 0) scale(1.5); }
-    25% { transform: translate(-2px, 2px) scale(1.6); }
-    50% { transform: translate(2px, -2px) scale(1.6); }
-    75% { transform: translate(-2px, -2px) scale(1.6); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1.5);
+    }
+
+    25% {
+        transform: translate(-2px, 2px) scale(1.6);
+    }
+
+    50% {
+        transform: translate(2px, -2px) scale(1.6);
+    }
+
+    75% {
+        transform: translate(-2px, -2px) scale(1.6);
+    }
 }
 
 /* Atomic Theme Switching - Prevents layout glitches */
@@ -232,4 +279,47 @@ html.theme-switching .clear-panel,
 html.theme-switching .clear-btn {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+}
+
+/* Stack Cards Depth and Fan-out */
+.stack-bg-1 {
+    z-index: 0;
+    transform: translateY(4px) scale(0.96);
+    opacity: 0.9;
+}
+
+.stack-bg-2 {
+    z-index: -1;
+    transform: translateY(8px) scale(0.92);
+    opacity: 0.8;
+}
+
+.group-hover\/stack:hover .stack-bg-1 {
+    transform: translateY(8px) scale(0.98) rotate(-1deg);
+    opacity: 1;
+}
+
+.group-hover\/stack:hover .stack-bg-2 {
+    transform: translateY(16px) scale(0.95) rotate(1.5deg);
+    opacity: 0.95;
+}
+
+@media (prefers-color-scheme: dark) {
+    .stack-bg-1 {
+        opacity: 0.8;
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .stack-bg-2 {
+        opacity: 0.6;
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .group-hover\/stack:hover .stack-bg-1 {
+        opacity: 0.9;
+    }
+
+    .group-hover\/stack:hover .stack-bg-2 {
+        opacity: 0.8;
+    }
 }
