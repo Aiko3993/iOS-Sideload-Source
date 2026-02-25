@@ -2,3 +2,4 @@ requests
 Pillow
 urllib3
 pyyaml
+certifi

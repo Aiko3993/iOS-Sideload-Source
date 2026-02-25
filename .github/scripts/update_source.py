@@ -12,7 +12,7 @@ from io import BytesIO
 
 from PIL import Image
 
-from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name, GLOBAL_CONFIG
+from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name, compute_variant_tag, GLOBAL_CONFIG
 
 # AltStore spec: allowed fields in version entries
 ALLOWED_VERSION_FIELDS = {
@@ -461,12 +461,12 @@ def get_image_quality(image_url, client):
         logger.warning(f"Could not analyze image {image_url}: {e}")
         return 0, False, False
 
-def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
+def apply_bundle_id_suffix(bundle_id, app_name, base_name):
     """
     Compute a coexistence bundle ID for app variants.
 
     Base apps keep their original bundle ID. Variants get a
-    'coexist.{original}.{tag}' prefix to signal the ID was modified
+    '{original}.{tag}.coexist' suffix to signal the ID was modified
     for multi-install coexistence, not by the original developer.
 
     Returns: (new_bundle_id, needs_repackage: bool)
@@ -474,49 +474,14 @@ def apply_bundle_id_suffix(bundle_id, app_name, repo_name):
     if not bundle_id:
         return bundle_id, False
 
-    tag = compute_variant_tag(app_name, repo_name)
+    tag = compute_variant_tag(app_name, base_name)
     if not tag:
         return bundle_id, False
 
-    new_id = f"coexist.{bundle_id}.{tag}"
-    if bundle_id.startswith('coexist.') or bundle_id == new_id:
+    new_id = f"{bundle_id}.{tag}.coexist"
+    if bundle_id.endswith('.coexist') or bundle_id == new_id:
         return bundle_id, False
     return new_id, True
-
-def compute_variant_tag(app_name, repo_name):
-    """
-    Derive a short variant tag from app name keywords.
-
-    Returns e.g. 'nightly', 'sidestore', 'nightly-sidestore', 'hv',
-    or empty string if the app is the base/stable version.
-    """
-    name_lower = app_name.lower()
-    repo_clean = repo_name.split('/')[-1].lower()
-
-    def simple_clean(s):
-        return re.sub(r'[^a-z0-9]', '', s.lower())
-
-    if simple_clean(app_name) == simple_clean(repo_clean):
-        return ''
-
-    tags = []
-
-    variant_keywords = [
-        ('nightly', 'nightly'),
-        ('beta', 'beta'),
-        ('alpha', 'alpha'),
-        ('debug', 'debug'),
-        ('sidestore', 'sidestore'),
-        ('trollstore', 'trollstore'),
-        ('hv', 'hv'),
-        ('se', 'se'),
-    ]
-
-    for keyword, tag in variant_keywords:
-        if keyword in name_lower:
-            tags.append(tag)
-
-    return '-'.join(tags)
 
 def repackage_ipa_with_bundle_id(ipa_path, new_bundle_id, output_path=None):
     """
@@ -724,7 +689,7 @@ def download_from_release(client, download_url, temp_path):
     with open(temp_path, 'wb') as f:
         f.write(r.content)
 
-def process_app(app_config, current_app_entry, client):
+def process_app(app_config, app_entry, client, base_name):
     """
     Process a single app.
     Returns: (app_entry, metadata_updates_dict)
@@ -736,10 +701,21 @@ def process_app(app_config, current_app_entry, client):
 
     logger.info(f"Processing {name} ({repo})...")
 
-    app_entry = copy.deepcopy(current_app_entry) if current_app_entry else None
+    app_entry = copy.deepcopy(app_entry) if app_entry else None
 
     found_icon_auto = None
     found_bundle_id_auto = None
+
+    tag = compute_variant_tag(name, base_name)
+    
+    injected_tag_regex = None
+    if 'tag_regex' not in app_config and tag:
+        for pre_release_kw in ['nightly', 'beta', 'alpha', 'dev']:
+            if pre_release_kw in tag:
+                app_config['tag_regex'] = pre_release_kw
+                injected_tag_regex = pre_release_kw
+                logger.info(f"Auto-injected tag_regex '{pre_release_kw}' for {name} based on variant name")
+                break
 
     release = None
     workflow_run = None
@@ -751,7 +727,7 @@ def process_app(app_config, current_app_entry, client):
         workflow_run = client.get_latest_workflow_run(repo, workflow_file)
         if not workflow_run:
             logger.warning(f"No successful workflow run found for {name} ({workflow_file})")
-            return current_app_entry, {}
+            return app_entry, {}
 
         artifacts = client.get_workflow_run_artifacts(repo, workflow_run['id'])
         artifact_name = app_config.get('artifact_name')
@@ -775,7 +751,7 @@ def process_app(app_config, current_app_entry, client):
 
         if not artifact:
             logger.warning(f"No suitable artifact found for {name} in run {workflow_run['id']}")
-            return current_app_entry, {}
+            return app_entry, {}
 
         version = workflow_run['head_sha'][:7]
         release_date = workflow_run['created_at'].split('T')[0]
@@ -811,7 +787,7 @@ def process_app(app_config, current_app_entry, client):
 
         if not release:
             logger.warning(f"No release found for {name}")
-            return current_app_entry, {}
+            return app_entry, {}
 
         ipa_asset = select_best_ipa(release.get('assets', []), app_config)
         if not ipa_asset:
@@ -827,6 +803,7 @@ def process_app(app_config, current_app_entry, client):
         version_desc = release['body'] or "Update"
         size = ipa_asset['size']
 
+    is_cached_url = False
     if app_entry:
         app_entry['githubRepo'] = repo
         app_entry['name'] = name
@@ -842,7 +819,7 @@ def process_app(app_config, current_app_entry, client):
         current_download_url = latest_version.get('downloadURL', '')
         has_direct_link = direct_url and current_download_url == direct_url
         current_repo_name = client.get_current_repo() or ''
-        is_cached_url = current_repo_name and f'{current_repo_name}/releases/download/cached-' in current_download_url
+        is_cached_url = bool(current_repo_name and f'{current_repo_name}/releases/download/cached-' in current_download_url)
 
         skip_versions = get_skip_versions()
 
@@ -857,12 +834,15 @@ def process_app(app_config, current_app_entry, client):
                 is_generic = False
 
         current_bundle_id = app_entry.get('bundleIdentifier', '')
-        tag = compute_variant_tag(name, repo)
+        tag = compute_variant_tag(name, base_name)
 
         if tag:
-            config_bundle_id = app_config.get('bundle_id', '')
-            expected_id = f"coexist.{config_bundle_id}.{tag}"
-            bundle_id_needs_update = current_bundle_id != expected_id
+            base_id_for_calc = app_config.get('bundle_id') or app_entry.get('_originalBundleIdentifier') or current_bundle_id.replace(f".{tag}.coexist", "")
+            if base_id_for_calc:
+                expected_id = f"{base_id_for_calc}.{tag}.coexist"
+                bundle_id_needs_update = current_bundle_id != expected_id
+            else:
+                bundle_id_needs_update = True
         else:
             bundle_id_needs_update = False
 
@@ -896,7 +876,18 @@ def process_app(app_config, current_app_entry, client):
 
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
-            new_id, _ = apply_bundle_id_suffix(old_id, name, repo)
+            clean_base_id = app_config.get('bundle_id') or app_entry.get('_originalBundleIdentifier') or old_id
+            
+            if clean_base_id == old_id and old_id.endswith('.coexist'):
+                parts = old_id.split('.')
+                if len(parts) >= 3:
+                    clean_base_id = '.'.join(parts[:-2])
+            
+            new_id, _ = apply_bundle_id_suffix(clean_base_id, name, base_name)
+            
+            if new_id != clean_base_id and '_originalBundleIdentifier' not in app_entry:
+                app_entry['_originalBundleIdentifier'] = clean_base_id
+
             if old_id != new_id:
                 logger.info(f"Updated Bundle ID for {name}: {old_id} -> {new_id}")
                 app_entry['bundleIdentifier'] = new_id
@@ -959,9 +950,27 @@ def process_app(app_config, current_app_entry, client):
         else:
             download_from_release(client, download_url, temp_path)
 
+        is_fresh_download = not is_cached_url
+
         default_bundle_id = f"com.placeholder.{name.lower().replace(' ', '')}"
-        ipa_version, ipa_build, bundle_id = get_ipa_metadata(temp_path, default_bundle_id)
-        found_bundle_id_auto = bundle_id
+        ipa_version, ipa_build, extracted_bundle_id = get_ipa_metadata(temp_path, default_bundle_id)
+
+        clean_bundle_id = app_config.get('bundle_id') or (app_entry.get('_originalBundleIdentifier') if app_entry else None)
+        
+        if not clean_bundle_id:
+            clean_bundle_id = extracted_bundle_id
+            if not is_fresh_download and clean_bundle_id.endswith('.coexist'):
+                parts = clean_bundle_id.split('.')
+                if len(parts) >= 3:
+                    clean_bundle_id = '.'.join(parts[:-2])
+
+        if is_fresh_download and extracted_bundle_id != default_bundle_id and extracted_bundle_id != clean_bundle_id:
+            if clean_bundle_id and not clean_bundle_id.startswith('com.placeholder.'):
+                logger.warning(f"Upstream drift: {name} bundle ID changed from {clean_bundle_id} to {extracted_bundle_id}")
+            clean_bundle_id = extracted_bundle_id
+
+        found_bundle_id_auto = clean_bundle_id
+        bundle_id = clean_bundle_id
 
         if ipa_version:
             skip_versions = get_skip_versions()
@@ -992,7 +1001,7 @@ def process_app(app_config, current_app_entry, client):
         original_size = size
         original_sha256 = sha256
 
-        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, repo)
+        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, base_name)
 
         if needs_repackage and current_repo and client.token:
             logger.info(f"Repackaging IPA for {name} with bundle ID: {target_bundle_id}")
@@ -1072,7 +1081,7 @@ def process_app(app_config, current_app_entry, client):
     except Exception as e:
         import traceback
         logger.error(f"Processing failed for {name}: {e}\n{traceback.format_exc()}")
-        return current_app_entry, {}
+        return app_entry, {}
     finally:
         if os.path.exists(temp_path): os.remove(temp_path)
 
@@ -1181,6 +1190,9 @@ def process_app(app_config, current_app_entry, client):
         metadata_updates['icon_url'] = found_icon_auto
     if found_bundle_id_auto and not found_bundle_id_auto.startswith('com.placeholder.'):
         metadata_updates['bundle_id'] = found_bundle_id_auto
+    if injected_tag_regex:
+        metadata_updates['tag_regex'] = injected_tag_regex
+        metadata_updates['pre_release'] = True
 
     return app_entry, metadata_updates
 
@@ -1206,6 +1218,14 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
             key = f"{a['githubRepo']}::{a['name']}"
             existing_apps_map[key] = a
 
+    # Pre-compute base app names per repo (shortest name)
+    repo_to_base_name = {}
+    for app_config in apps:
+        repo = app_config['github_repo']
+        name = app_config['name']
+        if repo not in repo_to_base_name or len(name) < len(repo_to_base_name[repo]):
+            repo_to_base_name[repo] = name
+
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
     new_apps_list = []
@@ -1221,11 +1241,12 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
             repo = app_config['github_repo']
             name = app_config['name']
             key = f"{repo}::{name}"
+            base_name = repo_to_base_name.get(repo, name)
 
             # Find current entry to pass to worker
             current_entry = existing_apps_map.get(key)
 
-            future = executor.submit(process_app, app_config, current_entry, client)
+            future = executor.submit(process_app, app_config, current_entry, client, base_name)
             future_to_app[future] = name
 
         for future in as_completed(future_to_app):
@@ -1250,6 +1271,13 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                                 if not target_config.get('bundle_id'):
                                     logger.info(f"Syncing found bundle_id back to apps.json for {name}")
                                     target_config['bundle_id'] = v
+                            elif k == 'tag_regex':
+                                if not target_config.get('tag_regex'):
+                                    logger.info(f"Syncing computed tag_regex back to apps.json for {name}")
+                                    target_config['tag_regex'] = v
+                            elif k == 'pre_release':
+                                if 'pre_release' not in target_config:
+                                    target_config['pre_release'] = v
 
             except Exception as exc:
                 logger.error(f"App {name} generated an exception: {exc}")
@@ -1289,9 +1317,31 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                     "sha256": best['sha256']
                 })
 
+    # Standardize apps.json formatting
+    order_keys = ["name", "github_repo", "artifact_name", "github_workflow", "bundle_id", "icon_url", "pre_release", "tag_regex"]
+
+    for app in apps:
+        if "pre_release" in app and not app.get("pre_release", True):
+            del app["pre_release"]
+
+        sorted_app = {}
+        for k in order_keys:
+            if k in app:
+                sorted_app[k] = app[k]
+        for k in app:
+            if k not in order_keys:
+                sorted_app[k] = app[k]
+
+        app.clear()
+        app.update(sorted_app)
+        
+    # Alphabetize the final list
+    apps.sort(key=lambda x: x.get('name', '').lower())
+
     # Check if we need to save back changes to apps.json
-    if apps != original_apps:
-        logger.info(f"Updating {config_file} with auto-detected metadata...")
+    import json
+    if json.dumps(apps) != json.dumps(original_apps):
+        logger.info(f"Updating {config_file} with auto-detected metadata and standardized format...")
         save_json(config_file, apps)
 
     # Filter and sort
@@ -1360,7 +1410,7 @@ def generate_combined_apps_md(source_file_standard, source_file_nsfw, output_fil
             repo = app.get('githubRepo', '')
             icon = app.get('iconURL', '')
 
-            description = app.get('localizedDescription', 'No description available.')
+            description = app.get('subtitle', 'No description available.')
             description = description.split('\n')[0]
 
             icon_md = f"<img src=\"{icon}\" width=\"48\" height=\"48\">" if icon else ""

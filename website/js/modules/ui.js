@@ -502,21 +502,33 @@ function renderModalHeader(app) {
     const modalIcon = document.getElementById('modal-icon');
 
     modalTitle.textContent = app.name;
-    modalTitle.className = "text-2xl font-bold leading-tight mb-0.5 text-[var(--modal-tint-light)] dark:text-[var(--modal-tint-dark)] transition-colors duration-300";
+    modalTitle.className = "text-2xl font-bold leading-tight mb-0.5 text-[var(--modal-tint-light)] dark:text-[var(--modal-tint-dark)] transition-colors duration-300 line-clamp-2 break-words";
+
+    const githubLink = document.getElementById('modal-github-link');
+    if (githubLink) {
+        if (app.githubRepo) {
+            githubLink.href = `https://github.com/${app.githubRepo}`;
+            githubLink.classList.remove('hidden');
+            githubLink.classList.add('flex');
+        } else {
+            githubLink.classList.add('hidden');
+            githubLink.classList.remove('flex');
+        }
+    }
 
     // Show subtitle under app name if available
     const subtitleEl = document.getElementById('modal-subtitle');
     if (subtitleEl) {
         if (app.subtitle) {
             subtitleEl.textContent = app.subtitle;
-            subtitleEl.className = "text-xs text-gray-500 dark:text-gray-400 mb-1 line-clamp-2 leading-relaxed";
+            subtitleEl.className = "text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed pb-0.5";
             subtitleEl.style.display = '';
         } else {
             subtitleEl.style.display = 'none';
         }
     }
 
-    modalVersionBadge.textContent = `v${app.version.length > 12 ? app.version.substring(0, 10) + '...' : app.version}`;
+    modalVersionBadge.textContent = `v${app.version}`;
     modalVersionBadge.title = `v${app.version}`;
     modalVersionBadge.style.cssText = `background-color: rgba(var(--current-modal-glow), 0.15); color: rgb(var(--current-modal-text)); border-color: rgba(var(--current-modal-glow), 0.3);`;
     modalSize.textContent = formatBytes(app.size);
@@ -588,3 +600,85 @@ export function handleDownloadClick(e) {
         }
     }
 }
+
+// Swipe-to-dismiss Logic for Modals
+function setupSwipeToDismiss(panelId, contentId, closeFunction) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+    const inner = panel.querySelector('div'); // The modal panel sliding up
+    const scrollContent = document.getElementById(contentId);
+
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+    let isScrollableTarget = false;
+    const threshold = 120; // Distance needed to close
+
+    inner.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) return;
+
+        const target = e.target;
+        isScrollableTarget = scrollContent && scrollContent.contains(target);
+
+        if (isScrollableTarget && scrollContent.scrollTop > 0) return;
+
+        startY = e.touches[0].clientY;
+        isDragging = true;
+        currentY = 0;
+
+        inner.style.transition = 'none';
+    }, { passive: true });
+
+    inner.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+
+        if (isScrollableTarget && scrollContent && scrollContent.scrollTop > 0) {
+            isDragging = false;
+            inner.style.transform = '';
+            return;
+        }
+
+        const y = e.touches[0].clientY;
+        const deltaY = y - startY;
+
+        if (deltaY > 0) {
+            if (isScrollableTarget && e.cancelable) {
+                e.preventDefault();
+            }
+
+            currentY = deltaY;
+            const resistanceStr = currentY * 0.85;
+            inner.style.transform = `translateY(${resistanceStr}px)`;
+        } else {
+            currentY = 0;
+            inner.style.transform = '';
+        }
+    }, { passive: false });
+
+    const handleTouchEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        inner.style.transition = 'all 0.4s cubic-bezier(0.32,0.72,0,1)';
+
+        if (currentY > threshold) {
+            closeFunction();
+            setTimeout(() => {
+                inner.style.transform = '';
+            }, 500);
+        } else {
+            inner.style.transform = 'translateY(0px)';
+        }
+        currentY = 0;
+    };
+
+    inner.addEventListener('touchend', handleTouchEnd);
+    inner.addEventListener('touchcancel', handleTouchEnd);
+}
+
+// Initialize swipe-to-dismiss behaviors
+document.addEventListener('DOMContentLoaded', () => {
+    setupSwipeToDismiss('modal-panel', 'modal-content', closeModal);
+    // For versions modal, the scrollable area is versions-modal-list
+    setupSwipeToDismiss('versions-modal-panel', 'versions-modal-list', closeVersionsModal);
+});

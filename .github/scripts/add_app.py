@@ -3,72 +3,7 @@ import os
 import re
 import sys
 import argparse
-from utils import load_json, save_json, validate_repo_format, validate_url, logger, GitHubClient, normalize_name
-
-PRERELEASE_KEYWORDS = frozenset([
-    'nightly', 'beta', 'alpha', 'dev', 'pre-release',
-    'experimental', 'test', 'canary', 'unstable', 'rc',
-])
-
-def _tokenize(s):
-    """Split a string into lowercase alphanumeric tokens."""
-    return re.findall(r'[a-z0-9]+', s.lower())
-
-def detect_pre_release(app_name, repo, client=None):
-    """
-    Two-stage pre-release detection.
-
-    Stage 1 (Static): Check if app_name contains any known keyword.
-    Stage 2 (Dynamic): Tokenize the app name, diff against repo name tokens,
-                        then check if any unique token (>=4 chars) appears as a
-                        whole word in recent pre-release tags.
-
-    Returns: (is_pre_release: bool, tag_regex: str | None)
-    """
-    name_lower = app_name.lower()
-
-    # Stage 1: Static keyword match
-    for kw in PRERELEASE_KEYWORDS:
-        if kw in name_lower:
-            return True, kw
-
-    # Stage 2: Dynamic discovery via GitHub releases
-    if not client:
-        return False, None
-
-    repo_name = repo.split('/')[-1] if '/' in repo else repo
-    repo_tokens = set(_tokenize(repo_name))
-    app_tokens = set(_tokenize(app_name))
-    unique_tokens = app_tokens - repo_tokens
-
-    # Only check tokens >= 4 chars to avoid short-word collisions (e.g. "Pro", "Go")
-    candidates = [t for t in unique_tokens if len(t) >= 4]
-    if not candidates:
-        return False, None
-
-    try:
-        url = f"https://api.github.com/repos/{repo}/releases?per_page=5"
-        resp = client.get(url)
-        if not resp:
-            return False, None
-
-        releases = resp.json()
-        pre_releases = [r for r in releases if r.get('prerelease')]
-        if not pre_releases:
-            return False, None
-
-        for token in candidates:
-            pattern = re.compile(rf'\b{re.escape(token)}\b', re.IGNORECASE)
-            for r in pre_releases:
-                tag = r.get('tag_name', '')
-                title = r.get('name', '')
-                if pattern.search(tag) or pattern.search(title):
-                    logger.info(f"Dynamic detection: '{token}' matches pre-release tag '{tag}'")
-                    return True, token
-    except Exception as e:
-        logger.warning(f"Dynamic pre-release detection failed for {repo}: {e}")
-
-    return False, None
+from utils import load_json, save_json, validate_repo_format, validate_url, logger, GitHubClient, normalize_name, compute_variant_tag
 
 def process_single_app(app_data, client=None):
     """Process a single app dictionary. Returns result dict."""
@@ -120,7 +55,20 @@ def process_single_app(app_data, client=None):
         logger.warning(f"Invalid icon URL for {repo}: {icon_msg}")
         icon_url = ""
 
-    pre_release, tag_regex = detect_pre_release(app_name, repo, client)
+    repo_name = repo.split('/')[-1] if '/' in repo else repo
+    tag = compute_variant_tag(app_name, repo_name)
+    
+    pre_release = False
+    tag_regex = None
+    prerelease_kws = ['nightly', 'beta', 'alpha', 'dev', 'pre-release', 'experimental', 'test', 'canary', 'unstable', 'rc']
+    
+    if tag:
+        for pre_release_kw in prerelease_kws:
+            if pre_release_kw in tag:
+                pre_release = True
+                tag_regex = pre_release_kw
+                logger.info(f"Derived pre_release=True and tag_regex='{tag_regex}' from variant tag '{tag}'")
+                break
 
     if existing_entry:
         logger.info(f"Updating existing entry for {repo} ({app_name})")

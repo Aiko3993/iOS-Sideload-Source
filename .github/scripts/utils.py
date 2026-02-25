@@ -474,3 +474,25 @@ def find_best_icon(repo, client, limit=20):
         top_urls.append(raw_url)
 
     return top_urls
+
+def compute_variant_tag(app_name, base_name):
+    """
+    Derive a dynamic short variant tag from app name modifications.
+
+    Subtracts the shortest base app name from the current app variant's name,
+    retaining any leftover alphanumeric words joined by periods.
+    """
+    if app_name.lower() == base_name.lower():
+        return ''
+
+    pattern = re.compile(re.escape(base_name), re.IGNORECASE)
+    variant_part = pattern.sub('', app_name).strip()
+
+    if not variant_part and app_name.lower() != base_name.lower():
+        variant_part = app_name
+
+    words = re.findall(r'[a-zA-Z0-9]+', variant_part)
+    if not words:
+        return ''
+        
+    return '.'.join([w.lower() for w in words])
