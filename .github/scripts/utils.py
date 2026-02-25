@@ -494,5 +494,5 @@ def compute_variant_tag(app_name, base_name):
     words = re.findall(r'[a-zA-Z0-9]+', variant_part)
     if not words:
         return ''
-        
+
     return '.'.join([w.lower() for w in words])

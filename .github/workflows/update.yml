@@ -60,6 +60,18 @@ jobs:
       - name: Sync Issue Template
         run: python .github/scripts/sync_issue_template.py
 
+      - name: Auto-format files (EOF, trailing spaces, blanks)
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
+
       - name: Commit and push changes
         id: commit
         run: |

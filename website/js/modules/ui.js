@@ -1,4 +1,4 @@
-import { TRANSLATIONS, APP_MODES, getDisplayBundleId } from './config.js';
+import { TRANSLATIONS, APP_MODES, getDisplayBundleId, resolveDownloadURL } from './config.js';
 import { getIcon, formatBytes, timeAgo, cleanMarkdown, copyToClipboard, getPublicUrl, roundRect } from './utils.js';
 import { getAppTheme, applyModalTheme } from './theme.js';
 import { getState, setState } from './state.js';
@@ -13,27 +13,28 @@ export function createInstallButtons(app, isModal = false) {
     const ic = 'w-5 h-5 flex-shrink-0 transition-transform duration-500 transform-gpu';
     const lc = 'max-w-0 opacity-0 group-hover/btn:max-w-[200px] group-hover/btn:opacity-100 group-hover/btn:ml-2 group-focus/btn:max-w-[200px] group-focus/btn:opacity-100 group-focus/btn:ml-2 group-data-[expanded=true]/btn:max-w-[200px] group-data-[expanded=true]/btn:opacity-100 group-data-[expanded=true]/btn:ml-2 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] whitespace-nowrap font-bold text-xs truncate';
     const bc = 'group/btn flex-1 h-10 rounded-xl flex items-center justify-center gap-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] active:scale-95 shadow-sm overflow-hidden hover:shadow-md min-w-0';
+    const url = resolveDownloadURL(app);
 
     return `<div class="flex gap-2 w-full">
-                    <a href="${app.downloadURL}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                    <a href="${url}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
                        class="${bc} bg-gray-500/5 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-500/10 dark:hover:bg-white/10 focus:bg-gray-500/10 dark:focus:bg-white/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-gray-500/20 dark:ring-white/10 hover:ring-gray-500/40 dark:hover:ring-white/20"
                        title="IPA">
                         ${getIcon('download', ic)}
                         <span class="${lc}">IPA</span>
                     </a>
-                    <a href="altstore://install?url=${encodeURIComponent(app.downloadURL)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                    <a href="altstore://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
                        class="${bc} bg-[#00A97F]/5 text-[#00A97F] hover:bg-[#00A97F]/10 focus:bg-[#00A97F]/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-[#00A97F]/20 hover:ring-[#00A97F]/40"
                        title="AltStore">
                         ${getIcon('altstore', ic)}
                         <span class="${lc}">AltStore</span>
                     </a>
-                    <a href="sidestore://install?url=${encodeURIComponent(app.downloadURL)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                    <a href="sidestore://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
                        class="${bc} bg-[#A359FF]/5 text-[#A359FF] hover:bg-[#A359FF]/10 focus:bg-[#A359FF]/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-[#A359FF]/20 hover:ring-[#A359FF]/40"
                        title="SideStore">
                         ${getIcon('sidestore', ic)}
                         <span class="${lc}">SideStore</span>
                     </a>
-                    <a href="livecontainer://install?url=${encodeURIComponent(app.downloadURL)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                    <a href="livecontainer://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
                        class="${bc} bg-[#2563EB]/5 text-[#2563EB] hover:bg-[#2563EB]/10 focus:bg-[#2563EB]/10 hover:flex-[4] focus:flex-[4] data-[expanded=true]:flex-[4] ring-1 ring-[#2563EB]/20 hover:ring-[#2563EB]/40"
                        title="LiveContainer">
                         ${getIcon('livecontainer', ic)}
@@ -59,7 +60,7 @@ export function createFlatCard(app, index) {
              style="animation-delay: ${index * 50}ms; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
             <!-- Glow on Hover -->
-            <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+            <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-all duration-500 pointer-events-none"></div>
 
             <div class="flex items-start justify-between mb-4 z-10">
                 <div class="relative">
@@ -142,7 +143,7 @@ export function createStackCard(group, index) {
             <div class="relative bg-white dark:bg-gray-900 rounded-3xl p-5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full ring-1 ring-gray-100 dark:ring-gray-800 group-hover/stack:ring-2 group-hover/stack:ring-primary-500/20 dark:group-hover/stack:ring-primary-500/20 dynamic-app-glow group-hover/stack:glow-active z-10"
                  style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
-                <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+                <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-all duration-500 pointer-events-none"></div>
 
                 <div class="flex items-start justify-between mb-4 z-10">
                     <div class="relative">
