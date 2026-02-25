@@ -204,7 +204,8 @@ body {
 }
 
 /* Apply the dynamic variable */
-.group-hover\:glow-active:hover .glow-target {
+.group-hover\:glow-active:hover .glow-target,
+.group\/stack:hover .group-hover\/stack\:glow-active .glow-target {
     opacity: 1;
     box-shadow: 0 0 40px rgba(var(--current-glow), var(--glow-opacity));
 }

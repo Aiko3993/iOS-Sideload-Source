@@ -103,6 +103,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/update_source.py
 
+      - name: Auto-format files (EOF, trailing spaces, blanks)
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
+
       - name: Commit and Close Issue
         run: |
           git config --global user.name "GitHub Actions"
@@ -131,6 +143,16 @@ jobs:
               
               python3 .github/scripts/add_app.py
               python3 .github/scripts/update_source.py
+              
+              for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+                if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+                  sed -i 's/[[:space:]]*$//' "$f"
+                fi
+                perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+                if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+                  echo "" >> "$f"
+                fi
+              done
               
               git add .
               if ! git diff --staged --quiet; then
@@ -230,6 +252,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/update_source.py
+
+      - name: Auto-format files (EOF, trailing spaces, blanks)
+        if: steps.remove.outputs.removed == 'true'
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
 
       - name: Commit Changes (If Removed)
         if: steps.remove.outputs.removed == 'true'

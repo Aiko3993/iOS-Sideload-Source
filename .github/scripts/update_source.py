@@ -707,7 +707,7 @@ def process_app(app_config, app_entry, client, base_name):
     found_bundle_id_auto = None
 
     tag = compute_variant_tag(name, base_name)
-    
+
     injected_tag_regex = None
     if 'tag_regex' not in app_config and tag:
         for pre_release_kw in ['nightly', 'beta', 'alpha', 'dev']:
@@ -798,8 +798,9 @@ def process_app(app_config, app_entry, client, base_name):
         direct_url = download_url
         asset_name = None
         version = release['tag_name'].lstrip('v')
-        release_date = release['published_at'].split('T')[0]
-        release_timestamp = release['published_at']
+        actual_date = ipa_asset.get('updated_at') or ipa_asset.get('created_at') or release.get('published_at', '')
+        release_date = actual_date.split('T')[0] if actual_date else release.get('published_at', '').split('T')[0]
+        release_timestamp = actual_date
         version_desc = release['body'] or "Update"
         size = ipa_asset['size']
 
@@ -877,14 +878,14 @@ def process_app(app_config, app_entry, client, base_name):
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
             clean_base_id = app_config.get('bundle_id') or app_entry.get('_originalBundleIdentifier') or old_id
-            
+
             if clean_base_id == old_id and old_id.endswith('.coexist'):
                 parts = old_id.split('.')
                 if len(parts) >= 3:
                     clean_base_id = '.'.join(parts[:-2])
-            
+
             new_id, _ = apply_bundle_id_suffix(clean_base_id, name, base_name)
-            
+
             if new_id != clean_base_id and '_originalBundleIdentifier' not in app_entry:
                 app_entry['_originalBundleIdentifier'] = clean_base_id
 
@@ -956,7 +957,7 @@ def process_app(app_config, app_entry, client, base_name):
         ipa_version, ipa_build, extracted_bundle_id = get_ipa_metadata(temp_path, default_bundle_id)
 
         clean_bundle_id = app_config.get('bundle_id') or (app_entry.get('_originalBundleIdentifier') if app_entry else None)
-        
+
         if not clean_bundle_id:
             clean_bundle_id = extracted_bundle_id
             if not is_fresh_download and clean_bundle_id.endswith('.coexist'):
@@ -1334,7 +1335,7 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
         app.clear()
         app.update(sorted_app)
-        
+
     # Alphabetize the final list
     apps.sort(key=lambda x: x.get('name', '').lower())
 

@@ -57,11 +57,11 @@ def process_single_app(app_data, client=None):
 
     repo_name = repo.split('/')[-1] if '/' in repo else repo
     tag = compute_variant_tag(app_name, repo_name)
-    
+
     pre_release = False
     tag_regex = None
     prerelease_kws = ['nightly', 'beta', 'alpha', 'dev', 'pre-release', 'experimental', 'test', 'canary', 'unstable', 'rc']
-    
+
     if tag:
         for pre_release_kw in prerelease_kws:
             if pre_release_kw in tag:
