@@ -1,0 +1,29 @@
+# Sideload Source Configuration
+
+# Versions to treat as "meaningless channel names" and skip updating
+# if found as the main version string.
+skip_versions:
+  - nightly
+  - latest
+  - stable
+  - dev
+  - beta
+  - alpha
+  - release
+
+# Icon discovery scoring rules
+icon_scoring:
+  # Keywords to penalize (path contains these)
+  exclude_patterns:
+    - android
+    - small
+    - toolbar
+    - preview
+    - mask
+    - rounded
+    - circle
+    - notification
+    - tabbar
+    - watch
+    - macos
+    - tvos

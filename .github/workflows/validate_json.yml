@@ -1,0 +1,20 @@
+name: Validate Config
+
+on:
+  pull_request:
+    paths:
+      - 'sources/standard/apps.json'
+      - 'sources/nsfw/apps.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Validate Apps JSON
+        run: python3 .github/scripts/validate_apps.py

@@ -1,0 +1,44 @@
+name: Add App Request
+description: Submit a new app for inclusion in the source
+title: '[App Request]: <App Name>'
+labels:
+  - app-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Instructions
+
+        Please submit **one app per issue**.
+
+        If you need to add more, please open another issue.
+  - type: input
+    id: app_name
+    attributes:
+      label: App Name
+      description: The name of the application.
+      placeholder: e.g. MyCoolApp
+    validations:
+      required: true
+  - type: input
+    id: github_repo
+    attributes:
+      label: GitHub Repository
+      description: The Owner/Repo format.
+      placeholder: e.g. You/MyCoolApp
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Standard
+        - NSFW
+    validations:
+      required: true
+  - type: input
+    id: icon_url
+    attributes:
+      label: Icon URL (Optional)
+      placeholder: https://example.com/icon.png

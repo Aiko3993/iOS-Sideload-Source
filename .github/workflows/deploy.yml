@@ -1,0 +1,87 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Process App Request", "Update Source"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check if deploy needed
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            LAST_COMMIT_TIME=$(git log -1 --format="%ct")
+            NOW=$(date +%s)
+            DIFF=$((NOW - LAST_COMMIT_TIME))
+            
+            echo "Last commit was $DIFF seconds ago"
+            
+            if [ $DIFF -gt 300 ]; then
+              echo "No recent commits, skipping deployment"
+              echo "skip=true" >> $GITHUB_OUTPUT
+            else
+              echo "Recent commit detected, proceeding with deployment"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Prepare deployment
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          mkdir public
+          
+          cp website/index.html public/
+          cp -r website/css public/
+          cp -r website/js public/
+          
+          mkdir -p public/sources/standard public/sources/nsfw
+          [ -f sources/standard/source.json ] && cp sources/standard/source.json public/sources/standard/
+          [ -f sources/nsfw/source.json ] && cp sources/nsfw/source.json public/sources/nsfw/
+          
+          touch public/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        if: steps.check.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          
+          git fetch origin gh-pages --depth=1 || true
+          
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git commit -m "Temp"
+            
+            if git diff origin/gh-pages --quiet; then
+              echo "No changes detected compared to gh-pages. Skipping deployment."
+              exit 0
+            fi
+            
+            git reset --soft HEAD~1
+          fi
+
+          git commit -m "Deploy to GitHub Pages (Automated)"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
