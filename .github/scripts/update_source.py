@@ -139,13 +139,11 @@ def get_ipa_permissions(ipa_path):
             with ipa.open(info_plist_path) as plist_file:
                 plist = plistlib.load(plist_file)
 
-            # Extract NS*UsageDescription keys (privacy declarations)
             for key, value in plist.items():
                 if key.startswith('NS') and key.endswith('UsageDescription'):
                     if isinstance(value, str) and value.strip():
                         result['privacy'][key] = value.strip()
 
-            # Extract entitlements from embedded.mobileprovision if present
             provision_path = None
             app_dir_pattern = re.compile(r'^Payload/[^/]+\.app/', re.IGNORECASE)
             for name in ipa.namelist():
@@ -196,7 +194,6 @@ def get_readme_description(repo, client, max_length=500):
         for line in lines:
             stripped = line.strip()
 
-            # Empty line resets the block state
             if not stripped:
                 if cleaned:
                     break  # Stop at first paragraph to avoid concatenating unrelated sections
@@ -206,7 +203,6 @@ def get_readme_description(repo, client, max_length=500):
             if skip_block:
                 continue
 
-            # Block-level filtering
             if stripped.startswith(('[![', '![', '#', '>', '---', '***', '|', '```', '<h1', '<div', '<picture', '<p align')):
                 skip_block = True
                 continue
@@ -219,13 +215,12 @@ def get_readme_description(repo, client, max_length=500):
                 skip_block = True
                 continue
 
-            # Line is valid prose. Clean HTML and Markdown.
-            text = re.sub(r'<[^>]+>', ' ', stripped)  # Replace HTML tags with space to avoid word join
-            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)  # [text](url) -> text
-            text = re.sub(r'`[^`]+`', '', text)  # Remove inline code
-            text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', text)  # Bold/italic -> plain
-            text = re.sub(r'_{1,2}([^_]+)_{1,2}', r'\1', text)  # Underscore emphasis
-            text = re.sub(r'\s+', ' ', text).strip()  # Normalize whitespace
+            text = re.sub(r'<[^>]+>', ' ', stripped)
+            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+            text = re.sub(r'`[^`]+`', '', text)
+            text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', text)
+            text = re.sub(r'_{1,2}([^_]+)_{1,2}', r'\1', text)
+            text = re.sub(r'\s+', ' ', text).strip()
 
             if len(text) > 15:
                 cleaned.append(text)
@@ -233,7 +228,6 @@ def get_readme_description(repo, client, max_length=500):
         if not cleaned:
             return None
 
-        # Combine lines of the first paragraph
         result = []
         total_len = 0
         for para in cleaned:
@@ -263,7 +257,6 @@ def package_app_to_ipa(app_path, output_ipa_path):
     """Package a .app directory into a standard .ipa file."""
     try:
         with zipfile.ZipFile(output_ipa_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
-            # IPA structure: Payload/AppName.app/...
             for root, _, files in os.walk(app_path):
                 for file in files:
                     full_path = os.path.join(root, file)
@@ -347,7 +340,7 @@ def select_best_ipa(assets, app_config):
 
     def token_set(s):
         tokens = set(re.findall(r'[a-z0-9]+', s.lower()))
-        tokens.discard('ipa')  # Remove extension
+        tokens.discard('ipa')
 
         tokens = {t for t in tokens if not (t.isdigit() or (t.startswith('v') and t[1:].isdigit()))}
         return tokens
@@ -366,31 +359,24 @@ def select_best_ipa(assets, app_config):
 
         score = 0
 
-        # Strategy 1: Exact normalized match (highest priority)
         if app_norm == asset_norm:
             score += 1000
 
-        # Strategy 2: Substring containment
         if app_norm in asset_norm:
             score += 200
         if asset_norm in app_norm:
             score += 150
 
-        # Strategy 3: Token set similarity (handles duplicates, reordering)
-        # Jaccard-like: intersection / union
         if app_tokens and asset_tokens:
             intersection = app_tokens & asset_tokens
             union = app_tokens | asset_tokens
             jaccard = len(intersection) / len(union) if union else 0
             score += int(jaccard * 100)
 
-            # Penalty for "surprise" tokens in asset but not in app
             surprise = asset_tokens - app_tokens
             if surprise:
-                # Heavier penalty for more surprises
                 score -= len(surprise) * 50
 
-        # Strategy 4: Character-level similarity (fallback)
         similarity = SequenceMatcher(None, app_norm, asset_norm).ratio()
         score += int(similarity * 50)
 
@@ -435,7 +421,6 @@ def get_image_quality(image_url, client):
         if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
 
             img_rgba = img.convert("RGBA")
-            # Corner sampling: corners are most likely transparent in rounded icons
             corners = [
                 (0, 0), (width-1, 0), (0, height-1), (width-1, height-1),
                 (width//2, 0), (0, height//2), (width-1, height//2), (width//2, height-1)
@@ -994,7 +979,6 @@ def process_app(app_config, app_entry, client, base_name):
 
         sha256 = get_ipa_sha256(temp_path)
 
-        # Extract permissions while IPA is still available
         ipa_permissions = get_ipa_permissions(temp_path)
 
         original_bundle_id = bundle_id
@@ -1036,9 +1020,7 @@ def process_app(app_config, app_entry, client, base_name):
                         size = os.path.getsize(temp_path)
                         logger.info(f"Uploaded cached IPA: {cached_asset_name}")
 
-                        # Retention cleanup: delete old versions from older cached releases
                         try:
-
                             current_date = datetime.strptime(release_date, '%Y-%m-%d')
                             all_releases = client.get_all_releases(current_repo)
 
@@ -1056,7 +1038,6 @@ def process_app(app_config, app_entry, client, base_name):
 
                                 days_diff = (current_date - other_date).days
 
-                                # Keep releases < 3 days old for rollback
                                 if 0 < days_diff < 3:
                                     continue
 
@@ -1185,7 +1166,6 @@ def process_app(app_config, app_entry, client, base_name):
             app_entry['_originalSize'] = original_size
             app_entry['_originalSHA256'] = original_sha256
 
-    # Construct metadata updates dict
     metadata_updates = {}
     if found_icon_auto:
         metadata_updates['icon_url'] = found_icon_auto
@@ -1206,20 +1186,17 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
     original_apps = copy.deepcopy(apps)
 
     source_data = load_existing_source(source_file, source_name, source_identifier)
-    # Create a snapshot of source data to detect changes
     original_source_data = copy.deepcopy(source_data)
 
     source_data['name'] = source_name
     source_data['identifier'] = source_identifier
 
-    # Pre-map existing apps for faster lookup during parallel processing
     existing_apps_map = {}
     for a in source_data.get('apps', []):
         if a.get('githubRepo') and a.get('name'):
             key = f"{a['githubRepo']}::{a['name']}"
             existing_apps_map[key] = a
 
-    # Pre-compute base app names per repo (shortest name)
     repo_to_base_name = {}
     for app_config in apps:
         repo = app_config['github_repo']
@@ -1231,7 +1208,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
     new_apps_list = []
 
-    # Use fewer workers to avoid hitting GitHub API rate limits too hard/fast.
     MAX_WORKERS = 5
 
     logger.info(f"Starting parallel update with {MAX_WORKERS} workers for {len(apps)} apps...")
@@ -1244,7 +1220,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
             key = f"{repo}::{name}"
             base_name = repo_to_base_name.get(repo, name)
 
-            # Find current entry to pass to worker
             current_entry = existing_apps_map.get(key)
 
             future = executor.submit(process_app, app_config, current_entry, client, base_name)
@@ -1259,8 +1234,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                     new_apps_list.append(resulting_entry)
 
                 if metadata_updates:
-                    # Sync back to apps config (in-memory)
-                    # We need to find the specific app_config object in 'apps' list again
                     target_config = next((x for x in apps if x['name'] == name), None)
                     if target_config:
                         for k, v in metadata_updates.items():
@@ -1282,13 +1255,11 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
             except Exception as exc:
                 logger.error(f"App {name} generated an exception: {exc}")
-                # Preserve existing entry if available
                 key = next((f"{ac['github_repo']}::{ac['name']}" for ac in apps if ac['name'] == name), None)
                 if key and key in existing_apps_map:
                     logger.warning(f"Preserving existing entry for {name} after exception")
                     new_apps_list.append(existing_apps_map[key])
 
-    # Catastrophic loss prevention: if we lost more than half the apps, abort save
     expected_count = len(apps)
     actual_count = len(new_apps_list)
     old_count = len(source_data.get('apps', []))
@@ -1302,11 +1273,9 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
     source_data['apps'] = new_apps_list
 
-    # Final pass: Global deduplication and cleanup of versions in source.json
     for a in source_data['apps']:
         if 'versions' in a:
             a['versions'] = deduplicate_versions(a['versions'], a.get('name', ''))
-            # Sync main fields with the best version after deduplication
             if a['versions']:
                 best = a['versions'][0]
                 a.update({
@@ -1318,7 +1287,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                     "sha256": best['sha256']
                 })
 
-    # Standardize apps.json formatting
     order_keys = ["name", "github_repo", "artifact_name", "github_workflow", "bundle_id", "icon_url", "pre_release", "tag_regex"]
 
     for app in apps:
@@ -1336,16 +1304,13 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
         app.clear()
         app.update(sorted_app)
 
-    # Alphabetize the final list
     apps.sort(key=lambda x: x.get('name', '').lower())
 
-    # Check if we need to save back changes to apps.json
     import json
     if json.dumps(apps) != json.dumps(original_apps):
         logger.info(f"Updating {config_file} with auto-detected metadata and standardized format...")
         save_json(config_file, apps)
 
-    # Filter and sort
     valid_repos = set(app['github_repo'] for app in apps)
     valid_names = set((app['github_repo'].split('/')[0], app['name']) for app in apps)
 
@@ -1361,7 +1326,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
     source_data['apps'] = final_apps_list
 
-    # Build sort order from apps.json: (repo_order, name_order_within_config)
     app_order = {}
     for idx, app in enumerate(apps):
         key = f"{app['github_repo']}::{app['name']}"
@@ -1371,19 +1335,16 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
         repo = app_entry.get('githubRepo', '')
         name = app_entry.get('name', '')
         key = f"{repo}::{name}"
-        # Primary: order from apps.json, Secondary: name alphabetically
         return (app_order.get(key, 9999), name)
 
     source_data['apps'].sort(key=get_sort_key)
 
-    # Sanitize version entries (remove non-standard fields)
     for app in source_data['apps']:
         for v in app.get('versions', []):
             keys_to_remove = [k for k in v.keys() if k not in ALLOWED_VERSION_FIELDS]
             for k in keys_to_remove:
                 del v[k]
 
-    # Only save if there are actual changes
     has_changes = False
     if source_data != original_source_data:
         logger.info(f"Changes detected in {source_file}, saving...")
@@ -1452,20 +1413,22 @@ def generate_combined_apps_md(source_file_standard, source_file_nsfw, output_fil
 def main():
     client = GitHubClient()
 
-    # Update Standard Source
-    changed_std = update_repo('sources/standard/apps.json', 'sources/standard/source.json', "Aiko3993's Sideload Source", "io.github.aiko3993.source", client)
+    current_repo = os.environ.get('GITHUB_REPOSITORY', 'Aiko3993/iOS-Sideload-Source')
+    repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Aiko3993'
+    owner_lower = repo_owner.lower()
 
-    # Update NSFW Source
-    changed_nsfw = update_repo('sources/nsfw/apps.json', 'sources/nsfw/source.json', "Aiko3993's Sideload Source (NSFW)", "io.github.aiko3993.source.nsfw", client)
+    source_name = f"{repo_owner}'s Sideload Source"
+    source_id = f"io.github.{owner_lower}.source"
 
-    # Generate Combined App List only if something changed or APPS.md is missing
+    changed_std = update_repo('sources/standard/apps.json', 'sources/standard/source.json', source_name, source_id, client)
+    changed_nsfw = update_repo('sources/nsfw/apps.json', 'sources/nsfw/source.json', f"{source_name} (NSFW)", f"{source_id}.nsfw", client)
+
     if changed_std or changed_nsfw or not os.path.exists('.github/APPS.md'):
         logger.info("Generating updated .github/APPS.md...")
         generate_combined_apps_md('sources/standard/apps.json', 'sources/nsfw/apps.json', '.github/APPS.md')
     else:
         logger.info("No changes in sources, skipping APPS.md regeneration.")
 
-    # 3. Release retention: keep last 7 cached-YYYYMMDD releases
     current_repo = client.get_current_repo()
     if current_repo and client.token:
         try:
@@ -1482,17 +1445,14 @@ def main():
                                     or r['tag_name'].startswith('artifacts-')]
             all_managed_releases.sort(key=lambda x: x['tag_name'], reverse=True)
 
-            # Keep track of ones we keep
             kept_releases = []
             for r in all_managed_releases:
-                # If a release has 0 assets, it's empty clutter, delete it immediately.
                 if len(r.get('assets', [])) == 0:
                     logger.info(f"Deleting empty release: {r['tag_name']}")
                     client.delete_release(current_repo, r['id'], r['tag_name'])
                 else:
                     kept_releases.append(r)
 
-            # Of the remaining non-empty releases, keep only the latest 7 to prevent infinite growth.
             if len(kept_releases) > 7:
                 for old_r in kept_releases[7:]:
                     logger.info(f"Deleting old release (retention limit): {old_r['tag_name']}")

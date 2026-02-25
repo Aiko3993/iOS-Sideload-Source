@@ -111,8 +111,7 @@ class GitHubClient:
     def get(self, url, params=None, **kwargs):
         try:
             headers = self.headers.copy()
-            # Don't send Authorization header to non-GitHub URLs
-            if 'github.com' not in url and 'githubusercontent.com' not in url:
+            if not self._is_api_url(url):
                 headers.pop('Authorization', None)
 
             timeout = kwargs.pop('timeout', 30)
@@ -126,11 +125,14 @@ class GitHubClient:
                 logger.error(f"Request failed: {url} - {e}")
             return None
 
+    def _is_api_url(self, url):
+        """Check if URL is a GitHub API endpoint (vs CDN/download URL that rejects auth)."""
+        return 'api.github.com' in url or 'uploads.github.com' in url
+
     def head(self, url, **kwargs):
         try:
             headers = self.headers.copy()
-            # Don't send Authorization header to non-GitHub URLs
-            if 'github.com' not in url and 'githubusercontent.com' not in url:
+            if not self._is_api_url(url):
                 headers.pop('Authorization', None)
 
             timeout = kwargs.pop('timeout', 30)

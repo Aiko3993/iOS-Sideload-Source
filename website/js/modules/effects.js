@@ -34,28 +34,19 @@ export function initCheatCodes() {
 }
 
 function playKonamiEntry() {
-    // 1. Flash Overlay (Removed per user request for safety)
-    // const flash = document.createElement('div');
-    // flash.className = 'fixed inset-0 bg-white z-[10000] animate-flash pointer-events-none mix-blend-difference';
-    // document.body.appendChild(flash);
-
-    // 2. Retro Text Container (Flexbox for perfect centering, avoids transform conflict with animate-bounce)
     const container = document.createElement('div');
     container.className = 'fixed inset-0 z-[10001] flex items-center justify-center pointer-events-none';
     document.body.appendChild(container);
 
     const text = document.createElement('div');
-    // Responsive text size: text-3xl (mobile) -> text-5xl (tablet) -> text-7xl (desktop)
     text.className = 'px-4 text-center text-3xl sm:text-5xl md:text-7xl font-black text-green-500 font-mono animate-bounce drop-shadow-[0_0_15px_rgba(34,197,94,0.8)] break-words max-w-full';
     text.innerText = "CHEAT CODE ACTIVATED";
     container.appendChild(text);
 
-    // 3. Sound Effect (Simulated visually via shake)
     document.body.classList.add('animate-shake');
 
     setTimeout(() => {
-        // flash.remove();
-        container.remove(); // Remove the wrapper
+        container.remove();
         document.body.classList.remove('animate-shake');
         openDeveloperConsole();
     }, 1500);
@@ -202,11 +193,7 @@ export function openDeveloperConsole() {
     const scaleInput = document.getElementById('cfg-scale');
     const dismissCheck = document.getElementById('cfg-autodismiss');
 
-    // Override triggerConfetti to inject config
     const originalTrigger = triggerConfetti;
-    // We can't easily override the export, but we can pass config if we modify triggerConfetti signature
-    // OR we can rely on triggerConfetti being in the same module scope if we promote devConfig.
-    // However, triggerConfetti is exported.
 
     overlay.querySelectorAll('.dev-effect-btn').forEach(btn => {
         btn.onclick = () => {
@@ -290,12 +277,8 @@ export function triggerElementEater(callback) {
         return;
     }
 
-    // 1. Prepare for EATING
-    // Stop ping animation to keep it solid red
     if (pingDot) pingDot.classList.remove('animate-ping');
 
-    // 2. FOOTER TURNS RED & FADES (EATING EFFECT)
-    // Instead of dot expanding, the infection spreads to the footer container
     setTimeout(() => {
         footer.style.transition = 'all 1s ease-in-out';
 
@@ -317,7 +300,6 @@ export function triggerElementEater(callback) {
         wrapper.style.transition = 'transform 0.5s ease';
     }, 100);
 
-    // 3. VANISH
     setTimeout(() => {
         footer.style.opacity = '0';
         footer.style.transform = 'translate(-50%, 20px) scale(0.9)'; // Drop down slightly
@@ -327,8 +309,6 @@ export function triggerElementEater(callback) {
 
     }, 1200);
 
-    // 4. RETURN (Delayed to happen after the random effect finishes usually, or just restore it)
-    // We restore the footer after 5s regardless, acting as the "cleanup" crew
     setTimeout(() => {
         // Reset styles
         wrapper.style.transform = 'scale(1)';
@@ -563,12 +543,6 @@ export function triggerConfetti(forcedEffect = null, config = {}) {
                 fadeOutAndRemove(0);
             }, cfg.duration);
         } else {
-            // If manual close (e.g. via console or external), we need to ensure listeners are cleaned
-            // But since this effect doesn't have a close button, it runs forever until reload if autoDismiss is false
-            // unless we provide a way to close it.
-            // The container has pointer-events: auto, so we can click to close? No, it just eats clicks.
-            // Let's add a click-to-close if autoDismiss is false, or just let it run.
-            // User asked for "disable auto dismiss", implying infinite run.
         }
     } else if (effect === 'spin-madness') {
         document.body.style.transition = 'transform 1s ease-in-out';
@@ -603,7 +577,6 @@ export function triggerConfetti(forcedEffect = null, config = {}) {
         container.style.justifyContent = 'center';
         container.style.zIndex = '10000'; // High z-index for input
 
-        // 1. Terminal Input Interface
         const terminal = document.createElement('div');
         terminal.className = 'w-full max-w-2xl bg-black border border-green-500 font-mono text-green-500 p-6 rounded shadow-[0_0_30px_rgba(34,197,94,0.3)] flex flex-col gap-4 m-4 animate-scale-up';
         terminal.innerHTML = `
@@ -664,12 +637,10 @@ export function triggerConfetti(forcedEffect = null, config = {}) {
             renderWaifu(art, ratio, color);
         };
 
-        // Prevent clicks inside terminal from bubbling (just in case we add container click later or for safety)
         terminal.onclick = (e) => {
             e.stopPropagation();
         };
 
-        // 2. Rendering Logic (Moved into a closure function)
         const renderWaifu = (artStr, ratioStr, colorStr) => {
             container.style.backgroundColor = '#000000'; // Ensure dark bg
 
@@ -952,8 +923,6 @@ _)      \\.___.,|     .'
                 }, cfg.duration);
             }
         });
-        // Remove the outer fadeOutAndRemove since we handle it inside
-        // fadeOutAndRemove(cfg.duration + 500);
     } else if (effect === 'retro-terminal') {
         container.style.background = '#000';
         container.style.color = '#0f0';
@@ -1041,7 +1010,6 @@ _)      \\.___.,|     .'
         // Acceleration Handlers
         const startAccel = (e) => {
             e.preventDefault();
-            // If we were stopping, cancel the stop sequence
             if (isStopping) {
                 isStopping = false;
                 if (stopTimer) {
@@ -1433,8 +1401,6 @@ _)      \\.___.,|     .'
             }
 
             if (gameState === 'scored') {
-                // Wait for ball to go fully off screen or delay
-                // Actually, if we are in 'scored', we usually transition to 'serve' immediately or after short delay
                 // Logic handled in ball bounds check
                 return;
             }
@@ -1535,17 +1501,6 @@ _)      \\.___.,|     .'
         function draw() {
             // Check Auto Close logic
             if (cfg.autoDismiss && !gameOver) {
-                // Determine if we should count this as idle
-                // If game is in play, NEVER auto-close
-                // We only auto-close if in 'gameover' or maybe 'serve' for too long?
-                // User said: "disappearance logic... ensure it doesn't auto-close while playing"
-
-                // So, let's DISABLE auto-close entirely while playing.
-                // Relegate auto-close only to when game is over?
-                // Or if user is AFK for extremely long time?
-
-                // Let's just disable the idle timeout during gameplay.
-                // The close button is there for manual exit.
             }
 
             // Auto-detect resize

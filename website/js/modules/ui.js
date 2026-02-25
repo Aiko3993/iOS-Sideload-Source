@@ -2,8 +2,6 @@ import { TRANSLATIONS, APP_MODES, getDisplayBundleId, resolveDownloadURL } from 
 import { getIcon, formatBytes, timeAgo, cleanMarkdown, copyToClipboard, getPublicUrl, roundRect } from './utils.js';
 import { getAppTheme, applyModalTheme } from './theme.js';
 import { getState, setState } from './state.js';
-
-// DOM Elements
 const grid = document.getElementById('apps-grid');
 const searchInput = document.getElementById('search-input');
 const emptyState = document.getElementById('empty-state');
@@ -59,7 +57,6 @@ export function createFlatCard(app, index) {
              data-search="${searchStr}"
              style="animation-delay: ${index * 50}ms; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
-            <!-- Glow on Hover -->
             <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-all duration-500 pointer-events-none"></div>
 
             <div class="flex items-start justify-between mb-4 z-10">
@@ -259,7 +256,6 @@ export function openVersionsModal(repoKey) {
     backdrop.classList.remove('hidden');
     panel.classList.remove('hidden');
 
-    // Force reflow
     void panel.offsetWidth;
 
     backdrop.classList.remove('opacity-0');
@@ -456,7 +452,6 @@ export function updateFavicon(sourceKey) {
     link.href = canvas.toDataURL();
 }
 
-// Modal Logic
 export function openModal(identifier) {
     const { currentApps, currentLang } = getState();
     const app = currentApps.find(a => a.bundleIdentifier === identifier || a.name === identifier);
@@ -517,7 +512,6 @@ function renderModalHeader(app) {
         }
     }
 
-    // Show subtitle under app name if available
     const subtitleEl = document.getElementById('modal-subtitle');
     if (subtitleEl) {
         if (app.subtitle) {
@@ -602,11 +596,10 @@ export function handleDownloadClick(e) {
     }
 }
 
-// Swipe-to-dismiss Logic for Modals
 function setupSwipeToDismiss(panelId, contentId, closeFunction) {
     const panel = document.getElementById(panelId);
     if (!panel) return;
-    const inner = panel.querySelector('div'); // The modal panel sliding up
+    const inner = panel.querySelector('div');
     const scrollContent = document.getElementById(contentId);
 
     let startY = 0;
@@ -677,9 +670,7 @@ function setupSwipeToDismiss(panelId, contentId, closeFunction) {
     inner.addEventListener('touchcancel', handleTouchEnd);
 }
 
-// Initialize swipe-to-dismiss behaviors
 document.addEventListener('DOMContentLoaded', () => {
     setupSwipeToDismiss('modal-panel', 'modal-content', closeModal);
-    // For versions modal, the scrollable area is versions-modal-list
     setupSwipeToDismiss('versions-modal-panel', 'versions-modal-list', closeVersionsModal);
 });
