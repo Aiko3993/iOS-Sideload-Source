@@ -57,6 +57,41 @@ jobs:
           [ -f sources/standard/source.json ] && cp sources/standard/source.json public/sources/standard/
           [ -f sources/nsfw/source.json ] && cp sources/nsfw/source.json public/sources/nsfw/
           
+          # Compute URL and Repo info
+          BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          AUTHOR="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          
+          # Replace placeholder canoncial link and hardcoded Aiko3993
+          sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
+          sed -i "s|Aiko3993|$AUTHOR|g" public/index.html
+          
+          # Replace hardcoded config in config.js
+          sed -i "s|Aiko3993|$AUTHOR|g" public/js/modules/config.js
+          sed -i "s|iOS-Sideload-Source|$REPO|g" public/js/modules/config.js
+          
+          # Generate robots.txt
+          cat <<EOF > public/robots.txt
+          User-agent: *
+          Allow: /
+
+          Sitemap: ${BASE_URL}sitemap.xml
+          EOF
+          
+          # Generate sitemap.xml
+          CURRENT_DATE=$(date +"%Y-%m-%d")
+          cat <<EOF > public/sitemap.xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+             <url>
+                <loc>${BASE_URL}</loc>
+                <lastmod>${CURRENT_DATE}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>1.0</priority>
+             </url>
+          </urlset>
+          EOF
+          
           touch public/.nojekyll
 
       - name: Deploy to GitHub Pages

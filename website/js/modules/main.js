@@ -33,7 +33,6 @@ window.toggleCoexist = function () {
     renderApps();
 };
 
-// Sort Logic
 function setSort(mode) {
     const { currentSort } = getState();
     if (currentSort === mode) return;
@@ -52,7 +51,6 @@ window.cycleSort = function () {
     setSort(SORT_MODES[nextIndex]);
 };
 
-// Error Handling
 window.onerror = function (msg, url, lineNo, columnNo, error) {
     if (msg.includes('ResizeObserver') || msg.includes('Context lost')) return;
     const log = document.getElementById('debug-log');
@@ -63,7 +61,6 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
     return false;
 };
 
-// Init
 document.addEventListener('DOMContentLoaded', () => {
     // Detect Mobile
     const mobileMediaQuery = window.matchMedia ? window.matchMedia('(hover: none), (pointer: coarse)') : { matches: false };
@@ -79,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLanguage(detectLanguage());
     updateSourceUI(startSource);
 
-    // Initial fetch
     const docEl = document.documentElement;
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const mode = APP_MODES[startSource];
@@ -92,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchSource(startSource);
 
-    // Search Listener
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         const debouncedFilter = debounce(() => filterApps(true), 100);
@@ -112,13 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Global click listener for closing expanded buttons
     document.addEventListener('click', (e) => {
         if (typeof window.isMobile === 'function' && !window.isMobile()) return;
         if (!e.target.closest('a[onclick*="handleDownloadClick"]')) collapseAllExpanded();
     });
 
-    // Back to top scroll handler
     const backToTopBtn = document.getElementById('back-to-top');
     if (backToTopBtn) {
         window.addEventListener('scroll', () => {
