@@ -9,7 +9,7 @@ export const PATH_CONFIG = {
 
 const _authorMatch = PATH_CONFIG.productionBase.match(/github(?:usercontent)?\.com\/([^/]+)\//);
 let author = _authorMatch ? _authorMatch[1] : 'Unknown';
-if (author === '{{AUTHOR}}') author = 'Local Environment';
+if (author === '{{' + 'AUTHOR}}') author = 'Local Environment';
 export const RESOLVED_AUTHOR = author;
 
 export const TRANSLATIONS = {

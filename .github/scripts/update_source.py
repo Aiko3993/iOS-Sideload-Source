@@ -110,11 +110,12 @@ def get_ipa_metadata(ipa_path, default_bundle_id):
             version = plist.get('CFBundleShortVersionString', '0.0.0')
             build = plist.get('CFBundleVersion', '0')
             bundle_id = plist.get('CFBundleIdentifier', default_bundle_id)
+            min_os_version = plist.get('MinimumOSVersion')
 
-            return version, build, bundle_id
+            return version, build, bundle_id, min_os_version
     except Exception as e:
         logger.error(f"Error parsing IPA: {e}")
-        return None, None, None
+        return None, None, None, None
 
 def get_ipa_permissions(ipa_path):
     """
@@ -613,7 +614,7 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
 
                 if target_ipa:
                     shutil.copy2(target_ipa, temp_path)
-                    _, _, bid_ipa = get_ipa_metadata(
+                    _, _, bid_ipa, _ = get_ipa_metadata(
                         target_ipa,
                         app_entry.get('bundleIdentifier') if app_entry else None
                     )
@@ -654,11 +655,16 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
             with open(temp_path, 'wb') as f:
                 f.write(z.read(ipa_in_zip))
 
+            _, _, bid_ipa, _ = get_ipa_metadata(
+                temp_path,
+                app_entry.get('bundleIdentifier') if app_entry else None
+            )
+
             url = upload_to_cached_release(
                 client, current_repo, release_tag,
                 f"Builds ({release_date})",
                 "Build IPAs for optimized distribution.\n\n### Included Apps:\n",
-                temp_path, asset_name, bundle_id=found_bundle_id_auto, app_name=name
+                temp_path, asset_name, bundle_id=bid_ipa, app_name=name
             )
             if url:
                 download_url = url
@@ -777,7 +783,7 @@ def process_app(app_config, app_entry, client, base_name):
         ipa_asset = select_best_ipa(release.get('assets', []), app_config)
         if not ipa_asset:
             logger.warning(f"No IPA found for {name}")
-            return current_app_entry, {}
+            return app_entry, {}
 
         download_url = ipa_asset['browser_download_url']
         direct_url = download_url
@@ -925,6 +931,7 @@ def process_app(app_config, app_entry, client, base_name):
 
     current_repo = client.get_current_repo()
     ipa_permissions = {"entitlements": [], "privacy": {}}
+    min_os_version = None
 
     try:
         if workflow_file:
@@ -939,7 +946,7 @@ def process_app(app_config, app_entry, client, base_name):
         is_fresh_download = not is_cached_url
 
         default_bundle_id = f"com.placeholder.{name.lower().replace(' ', '')}"
-        ipa_version, ipa_build, extracted_bundle_id = get_ipa_metadata(temp_path, default_bundle_id)
+        ipa_version, ipa_build, extracted_bundle_id, min_os_version = get_ipa_metadata(temp_path, default_bundle_id)
 
         clean_bundle_id = app_config.get('bundle_id') or (app_entry.get('_originalBundleIdentifier') if app_entry else None)
 
@@ -1080,6 +1087,9 @@ def process_app(app_config, app_entry, client, base_name):
         "size": size,
         "sha256": sha256
     }
+
+    if min_os_version:
+        new_version_entry["minOSVersion"] = min_os_version
 
     if app_entry:
         logger.info(f"New version {version} detected for {name}")

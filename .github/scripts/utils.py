@@ -260,14 +260,30 @@ class GitHubClient:
     def update_release_body(self, repo, release_id, new_body):
         """Update the body text of a GitHub release."""
         url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
-        data = {"body": new_body}
-        try:
-            resp = self.session.patch(url, headers=self.headers, json=data, timeout=15)
-            resp.raise_for_status()
-            return True
-        except Exception as e:
-            logger.error(f"Failed to update release body: {e}")
-            return False
+
+        if not hasattr(self, '_body_lock'):
+            import threading
+            self._body_lock = threading.Lock()
+
+        with self._body_lock:
+            try:
+                current_resp = self.session.get(url, headers=self.headers, timeout=15)
+                current_resp.raise_for_status()
+                latest_body = current_resp.json().get('body') or ""
+
+                new_entry = new_body.strip().split("\n")[-1]
+                if new_entry not in latest_body:
+                    final_body = (latest_body + f"\n{new_entry}").strip()
+                else:
+                    final_body = latest_body
+
+                patch_data = {"body": final_body}
+                resp = self.session.patch(url, headers=self.headers, json=patch_data, timeout=15)
+                resp.raise_for_status()
+                return True
+            except Exception as e:
+                logger.error(f"Failed to update release body: {e}")
+                return False
 
     def upload_release_asset(self, repo, release_id, file_path, name=None, bundle_id=None, app_name=None):
         """Upload a file to a release, replacing if it exists (by name or bundle_id/app_name logic)."""
