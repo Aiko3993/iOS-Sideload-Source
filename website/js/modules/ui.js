@@ -358,8 +358,8 @@ export function updateLanguage(lang) {
             maintainerLink.removeAttribute('target');
             maintainerLink.classList.remove('hover:underline');
             maintainerLink.style.cursor = 'text';
-        } else if (maintainerLink.href.includes('{{AUTHOR}}')) {
-            maintainerLink.href = maintainerLink.href.replace(/\{\{AUTHOR\}\}/g, RESOLVED_AUTHOR);
+        } else {
+            maintainerLink.href = `https://github.com/${RESOLVED_AUTHOR}`;
         }
     }
     if (searchInput) searchInput.placeholder = t.searchPlaceholder;

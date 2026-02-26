@@ -1,6 +1,6 @@
 {
-  "name": "Aiko3993's Sideload Source (NSFW)",
-  "identifier": "io.github.aiko3993.source.nsfw",
+  "name": "Placeholder's Sideload Source (NSFW)",
+  "identifier": "io.github.placeholder.source.nsfw",
   "subtitle": "Supports AltStore, SideStore & LiveContainer",
   "description": "A collection of adult-themed sideloadable apps for iOS and iPadOS. Supports AltStore, SideStore, and LiveContainer.",
   "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/nsfw/icon/nsfw.png",
@@ -28,7 +28,8 @@
           "localizedDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
           "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.12/JHenTai_8.0.12%2B308.ipa",
           "size": 15739502,
-          "sha256": "8f7ca2f93accd08383e888f887614205091b981a5f7f64c6d20eb4e3a4c09e8e"
+          "sha256": "8f7ca2f93accd08383e888f887614205091b981a5f7f64c6d20eb4e3a4c09e8e",
+          "minOSVersion": "12.0"
         },
         {
           "version": "8.0.11+307",

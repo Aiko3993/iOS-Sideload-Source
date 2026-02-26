@@ -1,4 +1,4 @@
-# Aiko3993's Sideload Source for iOS
+# iOS Sideload Source by Aiko3993
 
 [![Web Interface](https://img.shields.io/badge/Web_Interface-View_Source-blue?style=for-the-badge&logo=safari)](https://aiko3993.github.io/iOS-Sideload-Source/)
 [![Add App](https://img.shields.io/badge/Contribute-Add_App-green?style=for-the-badge&logo=github)](.github/CONTRIBUTING.md)

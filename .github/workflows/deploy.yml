@@ -52,6 +52,8 @@ jobs:
           cp website/index.html public/
           cp -r website/css public/
           cp -r website/js public/
+          cp -r website/assets public/
+          cp website/manifest.json public/
           
           mkdir -p public/sources/standard public/sources/nsfw
           [ -f sources/standard/source.json ] && cp sources/standard/source.json public/sources/standard/
