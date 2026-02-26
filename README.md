@@ -26,7 +26,7 @@ https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/nsfw
 
 ## Integrity & Modifications
 **We do not inject code.** For app variants (e.g., LiveContainer Nightly), we only repackage the `CFBundleIdentifier` in `Info.plist` to prevent installation conflicts.
-All releases provide a `sha256` checksum for verification. Cache releases only contain the unmodified/re-bundled IPAs.
+All releases provide a `sha256` checksum for verification and contain only the unmodified or re-bundled IPAs.
 
 ## Links
 - [Web Interface](https://aiko3993.github.io/iOS-Sideload-Source/)

@@ -620,8 +620,8 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
 
                     url = upload_to_cached_release(
                         client, current_repo, release_tag,
-                        f"App Artifacts ({datetime.now().strftime('%Y-%m-%d')})",
-                        "Direct download links for apps only available as GitHub Artifacts.",
+                        f"Builds ({datetime.now().strftime('%Y-%m-%d')})",
+                        "Build IPAs for optimized distribution.\n\n### Included Apps:\n",
                         target_ipa, asset_name, bundle_id=bid_ipa, app_name=name
                     )
                     if url:
@@ -656,8 +656,8 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
 
             url = upload_to_cached_release(
                 client, current_repo, release_tag,
-                f"App Artifacts ({release_date})",
-                "Direct download links for apps only available as GitHub Artifacts.",
+                f"Builds ({release_date})",
+                "Build IPAs for optimized distribution.\n\n### Included Apps:\n",
                 temp_path, asset_name, bundle_id=found_bundle_id_auto, app_name=name
             )
             if url:
@@ -749,7 +749,7 @@ def process_app(app_config, app_entry, client, base_name):
 
         current_repo = client.get_current_repo()
         if current_repo:
-            release_tag = f"cached-{release_date.replace('-', '')}"
+            release_tag = f"builds-{release_date.replace('-', '')}"
             clean_artifact_name = artifact['name']
             if clean_artifact_name.lower().endswith('.ipa'):
                 clean_artifact_name = clean_artifact_name[:-4]
@@ -805,7 +805,7 @@ def process_app(app_config, app_entry, client, base_name):
         current_download_url = latest_version.get('downloadURL', '')
         has_direct_link = direct_url and current_download_url == direct_url
         current_repo_name = client.get_current_repo() or ''
-        is_cached_url = bool(current_repo_name and f'{current_repo_name}/releases/download/cached-' in current_download_url)
+        is_cached_url = bool(current_repo_name and f'{current_repo_name}/releases/download/builds-' in current_download_url)
 
         skip_versions = get_skip_versions()
 
@@ -997,13 +997,13 @@ def process_app(app_config, app_entry, client, base_name):
                 sha256 = new_sha256
                 bundle_id = target_bundle_id
 
-                cached_tag = f"cached-{release_date.replace('-', '')}"
+                cached_tag = f"builds-{release_date.replace('-', '')}"
                 cached_release = client.get_release_by_tag(current_repo, cached_tag)
                 if not cached_release:
                     cached_release = client.create_release(
                         current_repo, cached_tag,
-                        name=f"Cached IPAs ({release_date})",
-                        body="Cached IPA files for optimized distribution."
+                        name=f"Builds ({release_date})",
+                        body="Build IPAs for optimized distribution.\n\n### Included Apps:\n"
                     )
 
                 if cached_release:
@@ -1027,11 +1027,11 @@ def process_app(app_config, app_entry, client, base_name):
                             for other_release in all_releases:
                                 other_tag = other_release.get('tag_name', '')
 
-                                if other_tag == cached_tag or not other_tag.startswith('cached-'):
+                                if other_tag == cached_tag or not other_tag.startswith('builds-'):
                                     continue
 
                                 try:
-                                    other_date_str = other_tag.replace('cached-', '')
+                                    other_date_str = other_tag.replace('builds-', '')
                                     other_date = datetime.strptime(other_date_str, '%Y%m%d')
                                 except ValueError:
                                     continue
@@ -1413,8 +1413,8 @@ def generate_combined_apps_md(source_file_standard, source_file_nsfw, output_fil
 def main():
     client = GitHubClient()
 
-    current_repo = os.environ.get('GITHUB_REPOSITORY', 'Aiko3993/iOS-Sideload-Source')
-    repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Aiko3993'
+    current_repo = os.environ.get('GITHUB_REPOSITORY', 'Placeholder/Repository')
+    repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Placeholder'
     owner_lower = repo_owner.lower()
 
     source_name = f"{repo_owner}'s Sideload Source"
@@ -1441,8 +1441,7 @@ def main():
                 client.delete_release(current_repo, legacy_release['id'], 'app-artifacts')
 
             all_managed_releases = [r for r in all_releases
-                                    if r['tag_name'].startswith('cached-')
-                                    or r['tag_name'].startswith('artifacts-')]
+                                    if r['tag_name'].startswith('builds-')]
             all_managed_releases.sort(key=lambda x: x['tag_name'], reverse=True)
 
             kept_releases = []

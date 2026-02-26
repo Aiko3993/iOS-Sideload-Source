@@ -33,4 +33,4 @@
 ### 构建机制说明
 - 诸如 `version`、`bundleIdentifier` 及 `size` 等详细元数据会在 CI 实际解析 IPA 后**被构建脚本强制提取和覆盖**，请勿在源内显式定义这些值。
 - 同一应用产生不同的共存变体索引时（例如标准版与远程连接版），系统将重新打包原始 IPA，注入以 `.coexist` 定位后缀修改 Bundle ID 解决在真机上的覆盖安装报错。
-- 由于 GitHub 网络隔离或提取的构建格式复杂，CI 获取的 Artifacts 将被重新清理封装，并在同一仓库的 `cached-*` Release 分发生成持久化高速直链。
+- 由于 GitHub 网络隔离或提取的构建格式复杂，CI 获取的 Artifacts 将被重新清理封装，并在同一仓库的 `builds-*` Release 分发生成持久化直链。

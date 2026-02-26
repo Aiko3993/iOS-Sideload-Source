@@ -124,4 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
     }
+
+    // Subtle layout transition on breakpoint crossing
+    const layoutTargets = ['apps-grid', 'header-bar'];
+    const breakpoints = ['(min-width: 640px)', '(min-width: 768px)', '(min-width: 1024px)', '(min-width: 1280px)'];
+
+    breakpoints.forEach(bp => {
+        const mq = window.matchMedia(bp);
+        mq.addEventListener('change', () => {
+            layoutTargets.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.classList.remove('layout-shifting');
+                void el.offsetWidth;
+                el.classList.add('layout-shifting');
+            });
+        });
+    });
 });
