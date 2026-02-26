@@ -1,4 +1,4 @@
-import { TRANSLATIONS, APP_MODES, getDisplayBundleId, resolveDownloadURL } from './config.js';
+import { TRANSLATIONS, APP_MODES, getDisplayBundleId, resolveDownloadURL, RESOLVED_AUTHOR } from './config.js';
 import { getIcon, formatBytes, timeAgo, cleanMarkdown, copyToClipboard, getPublicUrl, roundRect } from './utils.js';
 import { getAppTheme, applyModalTheme } from './theme.js';
 import { getState, setState } from './state.js';
@@ -53,16 +53,16 @@ export function createFlatCard(app, index) {
     const searchStr = [app.name, app.developerName, getDisplayBundleId(app), app.bundleIdentifier, app.localizedDescription, app.description].filter(Boolean).join(' ').toLowerCase().replace(/"/g, '&quot;');
 
     return `
-        <div class="app-card group relative bg-white dark:bg-gray-900 rounded-3xl p-5 hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full animate-slide-up ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-2 hover:ring-primary-500/20 dark:hover:ring-primary-500/20 dynamic-app-glow group-hover:glow-active"
+        <div class="app-card group relative bg-white dark:bg-gray-900 rounded-3xl p-5 hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full animate-slide-up ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-2 hover:ring-primary-500/20 dark:hover:ring-primary-500/20 dynamic-app-glow group-hover:glow-active"
              data-search="${searchStr}"
              style="animation-delay: ${index * 50}ms; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
-            <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-all duration-500 pointer-events-none"></div>
+            <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
 
             <div class="flex items-start justify-between mb-4 z-10">
                 <div class="relative">
                      <img src="${app.iconURL}" alt="${app.name}" loading="lazy"
-                         class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105"
+                         class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover:shadow-md transition duration-300 group-hover:scale-105"
                          style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
                 </div>
 
@@ -100,7 +100,7 @@ export function createFlatCard(app, index) {
                         <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
                             <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </span>
-                        <span class="font-medium">${t.details}</span>
+                        <span class="font-medium max-[340px]:hidden">${t.details}</span>
                     </button>
                     <span class="font-medium opacity-70" title="${new Date(app.versionDate).toLocaleDateString()}">${timeAgo(app.versionDate, currentLang)}</span>
                 </div>
@@ -126,26 +126,26 @@ export function createStackCard(group, index) {
     const searchStr = group.map(a => [a.name, a.developerName, getDisplayBundleId(a), a.bundleIdentifier, a.localizedDescription, a.description].filter(Boolean).join(' ')).join(' ').toLowerCase().replace(/"/g, '&quot;');
 
     const bgHTML = `
-        <div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition-all duration-300 stack-bg-1 shadow-sm"></div>
-        ${group.length > 2 ? '<div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition-all duration-300 stack-bg-2 shadow-sm"></div>' : ''}
+        <div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition duration-300 stack-bg-1 shadow-sm"></div>
+        ${group.length > 2 ? '<div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition duration-300 stack-bg-2 shadow-sm"></div>' : ''}
     `;
 
     return `
-        <div class="app-card group/stack relative h-full animate-slide-up select-none hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+        <div class="app-card group/stack relative h-full animate-slide-up select-none hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
              data-search="${searchStr}"
              style="animation-delay: ${index * 50}ms;">
 
             ${bgHTML}
 
-            <div class="relative bg-white dark:bg-gray-900 rounded-3xl p-5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full ring-1 ring-gray-100 dark:ring-gray-800 group-hover/stack:ring-2 group-hover/stack:ring-primary-500/20 dark:group-hover/stack:ring-primary-500/20 dynamic-app-glow group-hover/stack:glow-active z-10"
+            <div class="relative bg-white dark:bg-gray-900 rounded-3xl p-5 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full ring-1 ring-gray-100 dark:ring-gray-800 group-hover/stack:ring-2 group-hover/stack:ring-primary-500/20 dark:group-hover/stack:ring-primary-500/20 dynamic-app-glow group-hover/stack:glow-active z-10"
                  style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
-                <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-all duration-500 pointer-events-none"></div>
+                <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div class="flex items-start justify-between mb-4 z-10">
                     <div class="relative">
                          <img src="${primaryApp.iconURL}" alt="${primaryApp.name}" loading="lazy"
-                             class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover/stack:shadow-md transition-all duration-300 group-hover/stack:scale-105"
+                             class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover/stack:shadow-md transition duration-300 group-hover/stack:scale-105"
                              style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
                     </div>
 
@@ -184,7 +184,7 @@ export function createStackCard(group, index) {
                                 <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
                                     <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </span>
-                                <span class="font-medium">${t.details}</span>
+                                <span class="font-medium max-[340px]:hidden">${t.details}</span>
                             </button>
                             <button onclick="window.openVersionsModal('${repoKey}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
                                      style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
@@ -193,7 +193,7 @@ export function createStackCard(group, index) {
                                 <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
                                     <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                                 </span>
-                                <span class="font-medium">Editions (${group.length})</span>
+                                <span class="font-medium max-[340px]:hidden">${t.editionsButton.replace('{0}', group.length)}</span>
                             </button>
                          </div>
                          <span class="font-medium opacity-70" title="${new Date(primaryApp.versionDate).toLocaleDateString()}">${timeAgo(primaryApp.versionDate, currentLang)}</span>
@@ -218,8 +218,8 @@ export function openVersionsModal(repoKey) {
     const primaryApp = group[0];
 
     document.getElementById('versions-modal-icon').src = primaryApp.iconURL;
-    document.getElementById('versions-modal-title').textContent = primaryApp.githubRepo ? primaryApp.githubRepo.split('/')[1] : primaryApp.name;
-    document.getElementById('versions-modal-count').textContent = `${group.length} Editions Available`;
+    document.getElementById('versions-modal-title').textContent = t.versions;
+    document.getElementById('versions-modal-count').textContent = t.editionsAvailable.replace('{0}', group.length);
 
     const listHtml = group.map(app => {
         return `
@@ -227,8 +227,8 @@ export function openVersionsModal(repoKey) {
                 <div class="flex items-start justify-between gap-4">
                     <div class="flex-1 min-w-0">
                         <h4 class="font-bold text-[17px] text-gray-900 dark:text-gray-100 truncate">${app.name}</h4>
-                        <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1.5 flex items-center flex-wrap gap-1.5">
-                            <span class="font-bold bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-md text-[10px] uppercase text-gray-600 dark:text-gray-300">v${app.version}</span>
+                        <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1.5 flex items-center flex-wrap gap-1.5 min-w-0">
+                            <span class="font-bold bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-md text-[10px] uppercase text-gray-600 dark:text-gray-300 truncate max-w-[100px] sm:max-w-[150px]" title="v${app.version}">v${app.version}</span>
                             <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
                             <span>${formatBytes(app.size)}</span>
                             <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
@@ -344,8 +344,24 @@ export function updateLanguage(lang) {
     const t = TRANSLATIONS[lang];
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (t[key]) {
+            let text = t[key];
+            if (text.includes('{{AUTHOR}}')) text = text.replace(/\{\{AUTHOR\}\}/g, RESOLVED_AUTHOR);
+            el.textContent = text;
+        }
     });
+
+    const maintainerLink = document.getElementById('maintainer-link');
+    if (maintainerLink) {
+        if (RESOLVED_AUTHOR === 'Local Environment') {
+            maintainerLink.removeAttribute('href');
+            maintainerLink.removeAttribute('target');
+            maintainerLink.classList.remove('hover:underline');
+            maintainerLink.style.cursor = 'text';
+        } else if (maintainerLink.href.includes('{{AUTHOR}}')) {
+            maintainerLink.href = maintainerLink.href.replace(/\{\{AUTHOR\}\}/g, RESOLVED_AUTHOR);
+        }
+    }
     if (searchInput) searchInput.placeholder = t.searchPlaceholder;
 
     const { currentSource, currentApps } = getState();
@@ -538,7 +554,7 @@ function buildModalMeta(app, currentLang) {
             <div class="text-xs font-mono text-gray-600 dark:text-gray-200 break-all select-all">${getDisplayBundleId(app)}</div>
         </div>`;
     if (app.minOSVersion) html += `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
-            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.minOs}</div>
+            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.minOS}</div>
             <div class="text-xs font-medium text-gray-600 dark:text-gray-200">${app.minOSVersion}</div>
         </div>`;
     if (app.versionDate) html += `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">

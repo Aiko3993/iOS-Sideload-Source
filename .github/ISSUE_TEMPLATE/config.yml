@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Question or Discussion
-    url: https://github.com/Aiko3993/iOS-Sideload-Source/discussions
+    url: https://github.com/{{AUTHOR}}/{{REPO}}/discussions
     about: Please use GitHub Discussions for questions, ideas, or general chat.
   - name: Bug Report
-    url: https://github.com/Aiko3993/iOS-Sideload-Source/discussions
+    url: https://github.com/{{AUTHOR}}/{{REPO}}/discussions
     about: Please use GitHub Discussions for bug reports to help us improve.

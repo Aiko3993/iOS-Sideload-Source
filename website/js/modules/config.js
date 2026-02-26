@@ -3,15 +3,19 @@ import { getState } from './state.js';
 
 // Base config for paths
 export const PATH_CONFIG = {
-    // Detect if we are in the local development structure (inside /website/)
     isLocalDev: window.location.pathname.includes('/website/'),
-    productionBase: 'https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/gh-pages/'
+    productionBase: 'https://raw.githubusercontent.com/{{AUTHOR}}/{{REPO}}/gh-pages/'
 };
+
+const _authorMatch = PATH_CONFIG.productionBase.match(/github(?:usercontent)?\.com\/([^/]+)\//);
+let author = _authorMatch ? _authorMatch[1] : 'Unknown';
+if (author === '{{AUTHOR}}') author = 'Local Environment';
+export const RESOLVED_AUTHOR = author;
 
 export const TRANSLATIONS = {
     en: {
-        title: "Aiko3993's",
-        sourceTitle: "Sideload Source",
+        title: "iOS Sideload Source",
+        sourceTitle: "{{AUTHOR}}",
         subtitle: "Supports AltStore, SideStore & LiveContainer",
         searchPlaceholder: "Search...",
         sourceAll: "All Apps",
@@ -39,7 +43,7 @@ export const TRANSLATIONS = {
         installLiveContainer: "LiveContainer",
         ipa: "IPA",
         bundleId: "Bundle ID",
-        minOs: "Min OS",
+        minOS: "Min OS",
         updated: "Updated",
         developer: "Developer",
         linkCopiedFor: "Link copied for",
@@ -52,11 +56,14 @@ export const TRANSLATIONS = {
         noDescription: "No description available.",
         noChangelog: "No changelog available.",
         coexistOff: "Original",
-        coexistOn: "Coexist"
+        coexistOn: "Coexist",
+        editionsButton: "Editions ({0})",
+        editionsAvailable: "{0} Editions Available",
+        versions: "Versions"
     },
     zh: {
-        title: "Aiko3993 的",
-        sourceTitle: "iOS 侧载源",
+        title: "iOS 侧载源",
+        sourceTitle: "{{AUTHOR}}",
         subtitle: "支持 AltStore, SideStore & LiveContainer",
         searchPlaceholder: "搜索应用...",
         sourceAll: "全部应用",
@@ -84,7 +91,7 @@ export const TRANSLATIONS = {
         installLiveContainer: "LiveContainer",
         ipa: "IPA",
         bundleId: "包名",
-        minOs: "最低系统",
+        minOS: "最低系统",
         updated: "更新时间",
         developer: "开发者",
         linkCopiedFor: "已拷贝链接：",
@@ -97,7 +104,10 @@ export const TRANSLATIONS = {
         noDescription: "暂无描述。",
         noChangelog: "暂无更新日志。",
         coexistOff: "原版",
-        coexistOn: "共存"
+        coexistOn: "共存",
+        editionsButton: "版本 ({0})",
+        editionsAvailable: "{0} 个可用版本",
+        versions: "版本"
     }
 };
 

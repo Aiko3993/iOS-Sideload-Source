@@ -257,14 +257,29 @@ class GitHubClient:
             logger.error(f"Failed to create release {tag}: {e}")
             return None
 
+    def update_release_body(self, repo, release_id, new_body):
+        """Update the body text of a GitHub release."""
+        url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
+        data = {"body": new_body}
+        try:
+            resp = self.session.patch(url, headers=self.headers, json=data, timeout=15)
+            resp.raise_for_status()
+            return True
+        except Exception as e:
+            logger.error(f"Failed to update release body: {e}")
+            return False
+
     def upload_release_asset(self, repo, release_id, file_path, name=None, bundle_id=None, app_name=None):
         """Upload a file to a release, replacing if it exists (by name or bundle_id/app_name logic)."""
         name = name or os.path.basename(file_path)
 
         release_url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
         resp = self.get(release_url)
+        current_body = ""
         if resp:
-            assets = resp.json().get('assets', [])
+            release_data = resp.json()
+            current_body = release_data.get('body', "")
+            assets = release_data.get('assets', [])
             for asset in assets:
                 should_delete = False
 
@@ -304,6 +319,13 @@ class GitHubClient:
             with open(file_path, 'rb') as f:
                 resp = self.session.post(upload_url, headers=headers, data=f, timeout=300)
                 resp.raise_for_status()
+
+                if app_name and bundle_id:
+                    entry = f"- **{app_name}**: `{name}` ({bundle_id})"
+                    if entry not in current_body:
+                        new_body = (current_body + f"\n{entry}").strip()
+                        self.update_release_body(repo, release_id, new_body)
+
                 return resp.json()
         except Exception as e:
             logger.error(f"Failed to upload asset {name}: {e}")

@@ -33,4 +33,4 @@ Append new app entries to the respective `apps.json`.
 ### CI/CD Behaviors
 - The workflow automatically overrides explicitly declared `version`, `bundleIdentifier`, and `size` fields during IPA acquisition. Do not provide these manually.
 - Conflicting Bundle IDs (caused by indexing same-repo variants) are dynamically resolved via repackaging and `.coexist` suffixing to permit parallel installations.
-- Fetched assets (Artifact zips, raw `.app` directories, repacked IPAs) are deployed immediately to `cached-*` releases to persist direct download links.
+- Fetched assets (Artifact zips, raw `.app` directories, repacked IPAs) are deployed immediately to `builds-*` releases to persist direct download links.

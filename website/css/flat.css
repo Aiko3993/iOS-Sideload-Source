@@ -3,6 +3,25 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+/* Responsive Layout Transition */
+@keyframes layout-shift {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.995);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.layout-shifting {
+    animation: layout-shift 0.3s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
 /* Theme Variables */
 :root {
     /* Default (Standard) - Emerald Green */

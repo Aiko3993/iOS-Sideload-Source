@@ -60,5 +60,19 @@ def sync_issue_template():
     else:
         logger.info("Issue template categories are already up to date.")
 
+    config_path = '.github/ISSUE_TEMPLATE/config.yml'
+    current_repo = os.environ.get('GITHUB_REPOSITORY')
+    if current_repo and os.path.exists(config_path):
+        import re
+        with open(config_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        new_content = re.sub(r'https://github\.com/[^/]+/[^/]+/discussions', f'https://github.com/{current_repo}/discussions', content)
+
+        if new_content != content:
+            with open(config_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            logger.info(f"Updated config.yml repository links to {current_repo}")
+
 if __name__ == "__main__":
     sync_issue_template()

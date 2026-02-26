@@ -26,7 +26,7 @@ https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/nsfw
 
 ## 安全与完整性
 **我们不注入任何代码。** 针对 Nightly 变体或相同应用多分支的情景，仅以重打包形式修改 `Info.plist` 中的 `CFBundleIdentifier` 以防安装冲突。
-所有文件均在下载后直接生成 `sha256` 校验和以供端侧校验。所有缓存文件内仅存留原版或重新重签包名的 IPA。
+所有文件均在下载后直接生成 `sha256` 校验和以供端侧校验。所有 Release 发布项内仅存留原版或重新重签包名的 IPA。
 
 ## 相关链接
 - [网页界面](https://aiko3993.github.io/iOS-Sideload-Source/)
