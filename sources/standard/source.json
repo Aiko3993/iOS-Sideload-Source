@@ -1,6 +1,6 @@
 {
-  "name": "Placeholder's Sideload Source",
-  "identifier": "io.github.placeholder.source",
+  "name": "Aiko3993's Sideload Source",
+  "identifier": "io.github.aiko3993.source",
   "subtitle": "Supports AltStore, SideStore & LiveContainer",
   "description": "A collection of sideloadable apps for iOS and iPadOS. Supports AltStore, SideStore, and LiveContainer.",
   "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/sources/standard/icon/standard.png",
