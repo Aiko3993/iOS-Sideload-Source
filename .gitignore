@@ -49,3 +49,4 @@ venv.bak/
 *.bak
 *.tmp
 *.temp
+/website/assets

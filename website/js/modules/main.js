@@ -27,10 +27,10 @@ function updateCoexistUI() {
 }
 
 window.toggleCoexist = function () {
-    const { coexistMode } = getState();
+    const { coexistMode, currentSource } = getState();
     setState('coexistMode', !coexistMode);
     updateCoexistUI();
-    renderApps();
+    fetchSource(currentSource);
 };
 
 function setSort(mode) {
