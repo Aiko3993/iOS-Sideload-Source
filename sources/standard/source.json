@@ -400,16 +400,25 @@
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer",
       "developerName": "LiveContainer",
-      "version": "3.7.0",
-      "versionDate": "2026-02-19T03:17:54Z",
-      "versionDescription": "# LiveContainer 3.7.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> We recommend installing LiveContainer + SideStore using [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\nHappy Spring Festival / Lunar New Year! After six months of development, we’re excited to release **LiveContainer 3.7.0**. This update introduces several powerful new features, including the Launch App Shortcut, iOS 26 JIT script support, external containers, native icon generation, and more.\r\n\r\n\r\n# New Features\r\n\r\n## Launch App Shortcut\r\n\r\n> [!Note]\r\n> This feature requires LiveContainer to be installed with at least the **LaunchAppExtension** and **LaunchAppExtensionHelper** extension. iOS 16+ is supported.\r\n\r\nA new extension allows apps to launch instantly without opening the LiveContainer main interface (for apps that are not locked, hidden, or JIT-required). Once configured, the shortcut prepares the runtime environment and selects an available LiveContainer instance to launch the app directly.\r\n\r\nThis reduces extra relaunches and jumps and typically saves 1~2 seconds per launch.\r\n\r\nSee the [setup guide](https://livecontainer.github.io/docs/guides/add-to-home-screen) for instructions.\r\n\r\n## JIT\r\n\r\nSupport for iOS 26 JIT scripts has been added by @Vishram1123. Scripts can be configured in app-specific settings and loaded automatically on iOS 26+.\r\n\r\nThe **“StikDebug in another LiveContainer”** option has been fixed, allowing StikDebug to run within LiveContainer. When launching a JIT-required app, LiveContainer will automatically detect StikDebug, launch it in an available container, and pass all required parameters — including scripts — to enable JIT.\r\n\r\nIn addition, when enabling JIT for multitasked app, LiveContainer will prioritize launching StikDebug as a multitask app to save app slot usage. (TODO: this doesn’t automatically minimize StikDebug after enabling JIT, might be added later)\r\n\r\nBe sure to convert StikDebug into a shared app before use.\r\n\r\n\r\n## External Containers\r\n\r\n> [!Note]\r\n> Containers stored on external media (portable drives, SMB shares, etc.) are unsupported by many apps and may cause instability or crashes.\r\n\r\nYou can now use external folders as app containers. This is useful if you want to manage app data through a file manager while still accessing it in LiveContainer, or if you want maintain container access when an app is shared.\r\n\r\nTo configure this, open:\r\n\r\n**App-Specific Settings → Select External Data Folder**\r\n\r\n## Native Icons\r\n\r\nLiveContainer now generates icons using native iOS libraries. On iOS 18+, this enables proper Light, Dark, and Original (Liquid Glass) icon rendering. These icons can also be saved for home screen shortcuts.\r\n\r\n## Multitasking Improvements\r\n\r\n* Added **“Skip app terminate screen”** (by @boa-z)\r\n* Added **”Single Window Mode”** to minimize other apps when a maximized app is brought to front\r\n* Launch URL schemes can now be passed to multitasking apps. Passing URL between multitask apps can be controlled via **”Redirect URL to Host”** switch\r\n* Launching Private Apps is now possible. By default, apps launched with private container is only given sandbox access to its own data container folder. You can change it in developer settings.\r\n* Changed animations a little bit\r\n\r\n## AltStore Source Support\r\n\r\nBasic AltSource support has been implemented by @StephenDev0. Sources can be added using:\r\n\r\n```\r\nlivecontainer://sources?url=<URL>\r\n```\r\n\r\n## Other Additions\r\n\r\n* App remarks are now supported (by @WingCH)\r\n* Decrypted apps can now be installed via `itms-services` links (by @WingCH)\r\n\r\n# Bug Fixes\r\n\r\n* Fixed iOS 26.4b1 compatibility (#1152)\r\n* Fixed crashes caused by `-[NSUserDefaults synchronize]` returning NO\r\n* Fixed signing crashes when apps contain too many libraries (#1135)\r\n* Fixed signing failure when not enough space is available to insert HM_DYLIB in Mach-O headers (#951)\r\n* Fixed signing issues when bundle IDs contain emoji (#1130)\r\n* Fixed some apps getting incorrect status bar height (#759)\r\n* Fixed malfunctions after clearing cache or removing the TEMP directory (#1040, #1125, #884)\r\n* Game mode is now disabled by default (can be enabled by reinstalling another LiveContainer instance)\r\n* Fixed incorrect handling of `sidestore://` URLs\r\n* Fixed WebKit cookie persistence issues (#888)\r\n* Improved multitasking dock tap responsiveness\r\n* Fixed playback interruptions in multitasking PiP mode\r\n* Improved app list color tinting to be always readable\r\n\r\n# Removed Features\r\n* 32-bit app support: @khanhduytran0 currently don’t have time for LiveExec32 R&D yet, contributions welcome. We might rollback later using an existing engine such as touchHLE.\r\n\r\n---\r\n\r\n# Credits\r\n\r\nMany thanks to the contributors who continue improving translations:\r\n\r\n* Traditional Chinese — Jack Black\r\n* Italian — @Checkm8ra1n\r\n* Turkish — @sekertr\r\n* Vietnamese — @khanhduytran0\r\n* Portuguese — @DaniTrox\r\n* Arabic — dlshad2\r\n* French — @p-sage\r\n* German — @binnichtaktiv for improving German translation quality\r\n* Japanese — @naolad\r\n* Swedish — @se2crid\r\n",
-      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.0/LiveContainer.ipa",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:18:01Z",
+      "versionDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer.ipa",
       "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4521039,
+      "size": 4523860,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:18:01Z",
+          "localizedDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer.ipa",
+          "size": 4523860,
+          "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.0",
           "date": "2026-02-19T03:17:54Z",
@@ -427,7 +436,7 @@
           "sha256": "bec87a5d5c4e46f2f0adbf2a2ac5ec8fb9ccea6dd370409091f687815a89c69e"
         }
       ],
-      "sha256": "6cc44e52ccc855d6818a758dc6d0e6ca6d40763b33422dd13df9c87f9b4b46b4",
+      "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15",
       "subtitle": "Run iOS apps without actually installing them!",
       "appPermissions": {
         "entitlements": [],
@@ -470,16 +479,25 @@
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer.nightly.coexist",
       "developerName": "LiveContainer",
-      "version": "3.7.1",
-      "versionDate": "2026-02-24T12:06:58Z",
-      "versionDescription": "**Commit:** [221db5ccaab169521b2924d228e3419f46a8434f](https://github.com/LiveContainer/LiveContainer/commit/221db5ccaab169521b2924d228e3419f46a8434f)\n**Message:** Fix #1181\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22350004369/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/LiveContainer_Nightly_3.7.1.ipa",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:15:39Z",
+      "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer_Nightly_3.7.2.ipa",
       "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 4506508,
+      "size": 4506518,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:15:39Z",
+          "localizedDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer_Nightly_3.7.2.ipa",
+          "size": 4506518,
+          "sha256": "0655b2b1d9b3573095f5b514b04a68a363576d401a5c8bd69501a49a7b6d1262",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.1",
           "date": "2026-02-24T12:06:58Z",
@@ -490,7 +508,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "fa7ba363fb3b114b751043689f39b64ba3e72348d5f75a38e1e4bddf1ed75808",
+      "sha256": "0655b2b1d9b3573095f5b514b04a68a363576d401a5c8bd69501a49a7b6d1262",
       "subtitle": "Run iOS apps without actually installing them!",
       "appPermissions": {
         "entitlements": [],
@@ -529,24 +547,33 @@
       },
       "_originalBundleIdentifier": "com.kdt.livecontainer",
       "_originalDownloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
-      "_originalSize": 4523847,
-      "_originalSHA256": "8d17b4f21e80980e9bb587eb7f1d3f22372d8a16100e222fdb6b1c8163c19e46"
+      "_originalSize": 4523860,
+      "_originalSHA256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15"
     },
     {
       "name": "LiveContainer+SideStore",
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.coexist",
       "developerName": "LiveContainer",
-      "version": "3.7.0",
-      "versionDate": "2026-02-19T03:17:54Z",
-      "versionDescription": "# LiveContainer 3.7.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> We recommend installing LiveContainer + SideStore using [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\nHappy Spring Festival / Lunar New Year! After six months of development, we’re excited to release **LiveContainer 3.7.0**. This update introduces several powerful new features, including the Launch App Shortcut, iOS 26 JIT script support, external containers, native icon generation, and more.\r\n\r\n\r\n# New Features\r\n\r\n## Launch App Shortcut\r\n\r\n> [!Note]\r\n> This feature requires LiveContainer to be installed with at least the **LaunchAppExtension** and **LaunchAppExtensionHelper** extension. iOS 16+ is supported.\r\n\r\nA new extension allows apps to launch instantly without opening the LiveContainer main interface (for apps that are not locked, hidden, or JIT-required). Once configured, the shortcut prepares the runtime environment and selects an available LiveContainer instance to launch the app directly.\r\n\r\nThis reduces extra relaunches and jumps and typically saves 1~2 seconds per launch.\r\n\r\nSee the [setup guide](https://livecontainer.github.io/docs/guides/add-to-home-screen) for instructions.\r\n\r\n## JIT\r\n\r\nSupport for iOS 26 JIT scripts has been added by @Vishram1123. Scripts can be configured in app-specific settings and loaded automatically on iOS 26+.\r\n\r\nThe **“StikDebug in another LiveContainer”** option has been fixed, allowing StikDebug to run within LiveContainer. When launching a JIT-required app, LiveContainer will automatically detect StikDebug, launch it in an available container, and pass all required parameters — including scripts — to enable JIT.\r\n\r\nIn addition, when enabling JIT for multitasked app, LiveContainer will prioritize launching StikDebug as a multitask app to save app slot usage. (TODO: this doesn’t automatically minimize StikDebug after enabling JIT, might be added later)\r\n\r\nBe sure to convert StikDebug into a shared app before use.\r\n\r\n\r\n## External Containers\r\n\r\n> [!Note]\r\n> Containers stored on external media (portable drives, SMB shares, etc.) are unsupported by many apps and may cause instability or crashes.\r\n\r\nYou can now use external folders as app containers. This is useful if you want to manage app data through a file manager while still accessing it in LiveContainer, or if you want maintain container access when an app is shared.\r\n\r\nTo configure this, open:\r\n\r\n**App-Specific Settings → Select External Data Folder**\r\n\r\n## Native Icons\r\n\r\nLiveContainer now generates icons using native iOS libraries. On iOS 18+, this enables proper Light, Dark, and Original (Liquid Glass) icon rendering. These icons can also be saved for home screen shortcuts.\r\n\r\n## Multitasking Improvements\r\n\r\n* Added **“Skip app terminate screen”** (by @boa-z)\r\n* Added **”Single Window Mode”** to minimize other apps when a maximized app is brought to front\r\n* Launch URL schemes can now be passed to multitasking apps. Passing URL between multitask apps can be controlled via **”Redirect URL to Host”** switch\r\n* Launching Private Apps is now possible. By default, apps launched with private container is only given sandbox access to its own data container folder. You can change it in developer settings.\r\n* Changed animations a little bit\r\n\r\n## AltStore Source Support\r\n\r\nBasic AltSource support has been implemented by @StephenDev0. Sources can be added using:\r\n\r\n```\r\nlivecontainer://sources?url=<URL>\r\n```\r\n\r\n## Other Additions\r\n\r\n* App remarks are now supported (by @WingCH)\r\n* Decrypted apps can now be installed via `itms-services` links (by @WingCH)\r\n\r\n# Bug Fixes\r\n\r\n* Fixed iOS 26.4b1 compatibility (#1152)\r\n* Fixed crashes caused by `-[NSUserDefaults synchronize]` returning NO\r\n* Fixed signing crashes when apps contain too many libraries (#1135)\r\n* Fixed signing failure when not enough space is available to insert HM_DYLIB in Mach-O headers (#951)\r\n* Fixed signing issues when bundle IDs contain emoji (#1130)\r\n* Fixed some apps getting incorrect status bar height (#759)\r\n* Fixed malfunctions after clearing cache or removing the TEMP directory (#1040, #1125, #884)\r\n* Game mode is now disabled by default (can be enabled by reinstalling another LiveContainer instance)\r\n* Fixed incorrect handling of `sidestore://` URLs\r\n* Fixed WebKit cookie persistence issues (#888)\r\n* Improved multitasking dock tap responsiveness\r\n* Fixed playback interruptions in multitasking PiP mode\r\n* Improved app list color tinting to be always readable\r\n\r\n# Removed Features\r\n* 32-bit app support: @khanhduytran0 currently don’t have time for LiveExec32 R&D yet, contributions welcome. We might rollback later using an existing engine such as touchHLE.\r\n\r\n---\r\n\r\n# Credits\r\n\r\nMany thanks to the contributors who continue improving translations:\r\n\r\n* Traditional Chinese — Jack Black\r\n* Italian — @Checkm8ra1n\r\n* Turkish — @sekertr\r\n* Vietnamese — @khanhduytran0\r\n* Portuguese — @DaniTrox\r\n* Arabic — dlshad2\r\n* French — @p-sage\r\n* German — @binnichtaktiv for improving German translation quality\r\n* Japanese — @naolad\r\n* Swedish — @se2crid\r\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260219/LiveContainer.SideStore_3.7.0.ipa",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:18:08Z",
+      "versionDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_3.7.2.ipa",
       "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 36598287,
+      "size": 34793892,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:18:08Z",
+          "localizedDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_3.7.2.ipa",
+          "size": 34793892,
+          "sha256": "91cd68fe1b0d09c7c5f0ab2ecbf08aa225e41081cf0f7c322fe5c3633ed26c7f",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.0",
           "date": "2026-02-19T03:17:54Z",
@@ -556,7 +583,7 @@
           "sha256": "817ad2a067e8024fb1c32e131fe64d0cadfd24024e9b44f30717d475fde34742"
         }
       ],
-      "sha256": "817ad2a067e8024fb1c32e131fe64d0cadfd24024e9b44f30717d475fde34742",
+      "sha256": "91cd68fe1b0d09c7c5f0ab2ecbf08aa225e41081cf0f7c322fe5c3633ed26c7f",
       "subtitle": "Run iOS apps without actually installing them!",
       "appPermissions": {
         "entitlements": [
@@ -596,25 +623,34 @@
         }
       },
       "_originalBundleIdentifier": "com.kdt.livecontainer",
-      "_originalDownloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.0/LiveContainer%2BSideStore.ipa",
-      "_originalSize": 36613311,
-      "_originalSHA256": "196bc5b7236ada5bbde75ce599491e4f43d9c96ea9c686c6d2bb16d7548544d8"
+      "_originalDownloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer%2BSideStore.ipa",
+      "_originalSize": 34811049,
+      "_originalSHA256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9"
     },
     {
       "name": "LiveContainer+SideStore (Nightly)",
       "githubRepo": "LiveContainer/LiveContainer",
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.nightly.coexist",
       "developerName": "LiveContainer",
-      "version": "3.7.1",
-      "versionDate": "2026-02-24T12:06:59Z",
-      "versionDescription": "**Commit:** [221db5ccaab169521b2924d228e3419f46a8434f](https://github.com/LiveContainer/LiveContainer/commit/221db5ccaab169521b2924d228e3419f46a8434f)\n**Message:** Fix #1181\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22350004369/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/LiveContainer.SideStore_Nightly_3.7.1.ipa",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:15:40Z",
+      "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_Nightly_3.7.2.ipa",
       "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0050FF",
-      "size": 34793886,
+      "size": 34793894,
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:15:40Z",
+          "localizedDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_Nightly_3.7.2.ipa",
+          "size": 34793894,
+          "sha256": "67897652ab7d438f028c7ffa270b307d3e981827d2932e2a6458ccab9522b92c",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.1",
           "date": "2026-02-24T12:06:59Z",
@@ -625,7 +661,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "449feb7fc3c7c4836dd28483ab94c476613886266283f79f66e5109a6ccb0718",
+      "sha256": "67897652ab7d438f028c7ffa270b307d3e981827d2932e2a6458ccab9522b92c",
       "subtitle": "Run iOS apps without actually installing them!",
       "appPermissions": {
         "entitlements": [
@@ -666,8 +702,8 @@
       },
       "_originalBundleIdentifier": "com.kdt.livecontainer",
       "_originalDownloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-      "_originalSize": 34811033,
-      "_originalSHA256": "7a94042e49f5b8f4573060f627d13f87299cab9fd1c665752004b70338429542"
+      "_originalSize": 34811049,
+      "_originalSHA256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9"
     },
     {
       "name": "Luna",
