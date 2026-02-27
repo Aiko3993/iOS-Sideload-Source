@@ -18,10 +18,13 @@ export async function fetchSource(sourceKey) {
 
     try {
         let currentApps = [];
+        const { coexistMode } = getState();
+        const subDir = coexistMode ? 'coexist' : 'original';
+
         if (sourceKey === 'all') {
             const [standardRes, nsfwRes] = await Promise.all([
-                fetch(`${getSourceUrl(APP_MODES['standard'].path)}?t=${Date.now()}`),
-                fetch(`${getSourceUrl(APP_MODES['nsfw'].path)}?t=${Date.now()}`)
+                fetch(`${getSourceUrl(APP_MODES['standard'].path + '/' + subDir + '/source.json')}?t=${Date.now()}`),
+                fetch(`${getSourceUrl(APP_MODES['nsfw'].path + '/' + subDir + '/source.json')}?t=${Date.now()}`)
             ]);
 
             if (!standardRes.ok && !nsfwRes.ok) throw new Error("Failed to load any source");
@@ -44,7 +47,7 @@ export async function fetchSource(sourceKey) {
                 return true;
             });
         } else {
-            const url = `${getSourceUrl(APP_MODES[sourceKey].path)}?t=${Date.now()}`;
+            const url = `${getSourceUrl(APP_MODES[sourceKey].path + '/' + subDir + '/source.json')}?t=${Date.now()}`;
             const response = await fetch(url, { cache: "no-store" });
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();

@@ -386,10 +386,13 @@ export function showToast(message, type = 'success') {
 }
 
 export function copySourceURL(specificSource = null) {
-    const { currentSource, currentLang } = getState();
+    const { currentSource, currentLang, coexistMode } = getState();
     const targetMode = specificSource || currentSource;
     const key = (targetMode === 'all') ? 'standard' : targetMode;
-    const fullUrl = getPublicUrl(APP_MODES[key]?.path || APP_MODES['standard'].path);
+    const basePath = APP_MODES[key]?.path || APP_MODES['standard'].path;
+    const subDir = coexistMode ? 'coexist' : 'original';
+    const jsonPath = `${basePath}/${subDir}/source.json`;
+    const fullUrl = getPublicUrl(jsonPath);
     const t = TRANSLATIONS[currentLang];
     const name = t[APP_MODES[key].labelKey];
     copyToClipboard(fullUrl, `${name} ${t.sourceCopied}`, t.copyFailed, showToast);

@@ -4,6 +4,7 @@ import os
 import plistlib
 import re
 import shutil
+import struct
 import tempfile
 import zipfile
 from datetime import datetime, timedelta
@@ -12,7 +13,7 @@ from io import BytesIO
 
 from PIL import Image
 
-from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name, compute_variant_tag, GLOBAL_CONFIG
+from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name, compute_variant_tag, GLOBAL_CONFIG, find_official_source
 
 # AltStore spec: allowed fields in version entries
 ALLOWED_VERSION_FIELDS = {
@@ -89,80 +90,199 @@ def deduplicate_versions(versions, app_name):
     final_list.sort(key=lambda x: x.get('date', ''), reverse=True)
     return final_list
 
-def get_ipa_metadata(ipa_path, default_bundle_id):
-    """Extract version, build number, and bundle ID from IPA content."""
-    try:
-        with zipfile.ZipFile(ipa_path, 'r') as ipa:
-            info_plist_path = None
-            pattern = re.compile(r'^Payload/[^/]+\.app/Info\.plist$', re.IGNORECASE)
+# --- Mach-O constants for entitlements extraction ---
+_MH_MAGIC_64 = 0xFEEDFACF
+_MH_MAGIC_32 = 0xFEEDFACE
+_FAT_MAGIC = 0xCAFEBABE
+_FAT_MAGIC_64 = 0xCAFEBABF
+_LC_CODE_SIGNATURE = 0x1D
+_CSMAGIC_EMBEDDED_SIGNATURE = 0xFADE0CC0
+_CSMAGIC_ENTITLEMENTS = 0xFADE7171
 
-            for name in ipa.namelist():
-                if pattern.match(name):
-                    info_plist_path = name
-                    break
+_EXCLUDED_ENTITLEMENTS = {
+    'com.apple.developer.team-identifier',
+    'application-identifier',
+}
 
-            if not info_plist_path:
-                return None, None, None
+def _find_macho_slice(data):
+    """Find the ARM64 (or first) slice in a FAT/thin Mach-O binary."""
+    if len(data) < 4:
+        return None
+    magic = struct.unpack_from('>I', data, 0)[0]
+    if magic in (_FAT_MAGIC, _FAT_MAGIC_64):
+        nfat = struct.unpack_from('>I', data, 4)[0]
+        best = None
+        for i in range(nfat):
+            if magic == _FAT_MAGIC:
+                base = 8 + i * 20
+                cpu_type = struct.unpack_from('>I', data, base)[0]
+                offset = struct.unpack_from('>I', data, base + 8)[0]
+                size = struct.unpack_from('>I', data, base + 12)[0]
+            else:
+                base = 8 + i * 32
+                cpu_type = struct.unpack_from('>I', data, base)[0]
+                offset = struct.unpack_from('>Q', data, base + 8)[0]
+                size = struct.unpack_from('>Q', data, base + 16)[0]
+            if cpu_type == 0x100000C:  # CPU_TYPE_ARM64
+                return (offset, size)
+            if best is None:
+                best = (offset, size)
+        return best
+    magic_le = struct.unpack_from('<I', data, 0)[0]
+    if magic_le in (_MH_MAGIC_64, _MH_MAGIC_32) or magic in (_MH_MAGIC_64, _MH_MAGIC_32):
+        return (0, len(data))
+    return None
 
-            with ipa.open(info_plist_path) as plist_file:
-                plist = plistlib.load(plist_file)
+def _extract_entitlements_from_macho(data):
+    """Parse Mach-O binary to extract entitlements from LC_CODE_SIGNATURE."""
+    slice_info = _find_macho_slice(data)
+    if not slice_info:
+        return set()
+    offset, size = slice_info
+    macho = data[offset:offset + size]
+    if len(macho) < 32:
+        return set()
+    magic = struct.unpack_from('<I', macho, 0)[0]
+    if magic == _MH_MAGIC_64:
+        header_size = 32
+    elif magic == _MH_MAGIC_32:
+        header_size = 28
+    else:
+        return set()
+    ncmds = struct.unpack_from('<I', macho, 16)[0]
+    pos = header_size
+    cs_offset = cs_size = None
+    for _ in range(ncmds):
+        if pos + 8 > len(macho):
+            break
+        cmd = struct.unpack_from('<I', macho, pos)[0]
+        cmdsize = struct.unpack_from('<I', macho, pos + 4)[0]
+        if cmd == _LC_CODE_SIGNATURE:
+            cs_offset = struct.unpack_from('<I', macho, pos + 8)[0]
+            cs_size = struct.unpack_from('<I', macho, pos + 12)[0]
+            break
+        pos += cmdsize
+    if cs_offset is None:
+        return set()
+    cs_data = macho[cs_offset:cs_offset + cs_size]
+    return _parse_code_signature(cs_data)
 
-            version = plist.get('CFBundleShortVersionString', '0.0.0')
-            build = plist.get('CFBundleVersion', '0')
-            bundle_id = plist.get('CFBundleIdentifier', default_bundle_id)
-            min_os_version = plist.get('MinimumOSVersion')
+def _parse_code_signature(cs_data):
+    """Parse a code signature SuperBlob to find entitlements."""
+    entitlements = set()
+    if len(cs_data) < 12:
+        return entitlements
+    magic = struct.unpack_from('>I', cs_data, 0)[0]
+    if magic != _CSMAGIC_EMBEDDED_SIGNATURE:
+        return entitlements
+    count = struct.unpack_from('>I', cs_data, 8)[0]
+    for i in range(count):
+        idx_off = 12 + i * 8
+        if idx_off + 8 > len(cs_data):
+            break
+        blob_offset = struct.unpack_from('>I', cs_data, idx_off + 4)[0]
+        if blob_offset + 8 > len(cs_data):
+            continue
+        blob_magic = struct.unpack_from('>I', cs_data, blob_offset)[0]
+        blob_length = struct.unpack_from('>I', cs_data, blob_offset + 4)[0]
+        if blob_magic == _CSMAGIC_ENTITLEMENTS:
+            plist_data = cs_data[blob_offset + 8:blob_offset + blob_length]
+            try:
+                ent_dict = plistlib.loads(plist_data)
+                for key in ent_dict:
+                    if key not in _EXCLUDED_ENTITLEMENTS:
+                        entitlements.add(key)
+            except Exception:
+                pass
+    return entitlements
 
-            return version, build, bundle_id, min_os_version
-    except Exception as e:
-        logger.error(f"Error parsing IPA: {e}")
-        return None, None, None, None
-
-def get_ipa_permissions(ipa_path):
+def parse_ipa(ipa_path, default_bundle_id):
     """
-    Extract app permissions from IPA for AltStore appPermissions field.
+    One-pass IPA extraction of metadata and AltStore appPermissions.
 
-    Reads Info.plist to collect NS*UsageDescription privacy keys.
-    Returns: {"entitlements": [], "privacy": {key: description, ...}}
+    Opens the ZIP once, extracts:
+      - version, build, bundle_id, min_os_version from Info.plist
+      - privacy keys (*UsageDescription) from Info.plist
+      - entitlements from Mach-O binary's LC_CODE_SIGNATURE
+      - extension entitlements/privacy from PlugIns/*.appex
+
+    Returns dict with keys: version, build, bundle_id, min_os_version, permissions
     """
-    result = {"entitlements": [], "privacy": {}}
-    try:
-        with zipfile.ZipFile(ipa_path, 'r') as ipa:
-            info_plist_path = None
-            pattern = re.compile(r'^Payload/[^/]+\.app/Info\.plist$', re.IGNORECASE)
-            for name in ipa.namelist():
-                if pattern.match(name):
-                    info_plist_path = name
-                    break
+    result = {
+        'version': None, 'build': None,
+        'bundle_id': default_bundle_id, 'min_os_version': None,
+        'permissions': {'entitlements': [], 'privacy': {}},
+    }
+    all_entitlements = set()
+    all_privacy = {}
 
-            if not info_plist_path:
+    try:
+        with zipfile.ZipFile(ipa_path, 'r') as zf:
+            names = zf.namelist()
+
+            # Find .app bundle prefix
+            app_prefix = None
+            for n in names:
+                m = re.match(r'^Payload/([^/]+\.app)/', n)
+                if m:
+                    app_prefix = f"Payload/{m.group(1)}"
+                    break
+            if not app_prefix:
+                logger.warning("No .app bundle found in IPA")
                 return result
 
-            with ipa.open(info_plist_path) as plist_file:
-                plist = plistlib.load(plist_file)
+            # 1. Parse main Info.plist
+            info_path = f"{app_prefix}/Info.plist"
+            exec_name = app_prefix.split('/')[-1].replace('.app', '')
+            if info_path in names:
+                with zf.open(info_path) as f:
+                    plist = plistlib.load(f)
+                result['version'] = plist.get('CFBundleShortVersionString', '0.0.0')
+                result['build'] = plist.get('CFBundleVersion', '0')
+                result['bundle_id'] = plist.get('CFBundleIdentifier', default_bundle_id)
+                result['min_os_version'] = plist.get('MinimumOSVersion')
+                exec_name = plist.get('CFBundleExecutable', exec_name)
+                # Collect privacy keys
+                for key, value in plist.items():
+                    if key.endswith('UsageDescription') and isinstance(value, str) and value.strip():
+                        all_privacy[key] = value.strip()
 
-            for key, value in plist.items():
-                if key.startswith('NS') and key.endswith('UsageDescription'):
-                    if isinstance(value, str) and value.strip():
-                        result['privacy'][key] = value.strip()
+            # 2. Extract entitlements from main binary
+            exec_path = f"{app_prefix}/{exec_name}"
+            if exec_path in names:
+                with zf.open(exec_path) as f:
+                    all_entitlements |= _extract_entitlements_from_macho(f.read())
 
-            provision_path = None
-            app_dir_pattern = re.compile(r'^Payload/[^/]+\.app/', re.IGNORECASE)
-            for name in ipa.namelist():
-                if app_dir_pattern.match(name) and name.endswith('.entitlements'):
-                    provision_path = name
-                    break
+            # 3. Scan app extensions
+            appex_prefixes = set()
+            for n in names:
+                em = re.match(rf'^{re.escape(app_prefix)}/PlugIns/([^/]+\.appex)/', n)
+                if em:
+                    appex_prefixes.add(f"{app_prefix}/PlugIns/{em.group(1)}")
 
-            if provision_path:
-                try:
-                    with ipa.open(provision_path) as ent_file:
-                        ent_plist = plistlib.load(ent_file)
-                    result['entitlements'] = [k for k in ent_plist.keys()
-                                              if k.startswith('com.apple.') and k != 'com.apple.application-identifier']
-                except Exception:
-                    pass
+            for appex in sorted(appex_prefixes):
+                ext_info = f"{appex}/Info.plist"
+                ext_exec = appex.split('/')[-1].replace('.appex', '')
+                if ext_info in names:
+                    with zf.open(ext_info) as f:
+                        ext_plist = plistlib.load(f)
+                    ext_exec = ext_plist.get('CFBundleExecutable', ext_exec)
+                    for key, value in ext_plist.items():
+                        if key.endswith('UsageDescription') and isinstance(value, str) and value.strip():
+                            all_privacy[key] = value.strip()
+                ext_exec_path = f"{appex}/{ext_exec}"
+                if ext_exec_path in names:
+                    with zf.open(ext_exec_path) as f:
+                        all_entitlements |= _extract_entitlements_from_macho(f.read())
+
+        result['permissions'] = {
+            'entitlements': sorted(all_entitlements),
+            'privacy': dict(sorted(all_privacy.items())),
+        }
 
     except Exception as e:
-        logger.warning(f"Could not extract permissions from IPA: {e}")
+        logger.error(f"Error parsing IPA: {e}")
+
     return result
 
 def get_readme_description(repo, client, max_length=500):
@@ -447,7 +567,7 @@ def get_image_quality(image_url, client):
         logger.warning(f"Could not analyze image {image_url}: {e}")
         return 0, False, False
 
-def apply_bundle_id_suffix(bundle_id, app_name, base_name):
+def apply_bundle_id_suffix(bundle_id, app_name, base_name, is_coexist=True):
     """
     Compute a coexistence bundle ID for app variants.
 
@@ -457,14 +577,14 @@ def apply_bundle_id_suffix(bundle_id, app_name, base_name):
 
     Returns: (new_bundle_id, needs_repackage: bool)
     """
-    if not bundle_id:
+    if not bundle_id or not is_coexist:
         return bundle_id, False
 
     tag = compute_variant_tag(app_name, base_name)
     if not tag:
-        return bundle_id, False
-
-    new_id = f"{bundle_id}.{tag}.coexist"
+        new_id = f"{bundle_id}.coexist"
+    else:
+        new_id = f"{bundle_id}.{tag}.coexist"
     if bundle_id.endswith('.coexist') or bundle_id == new_id:
         return bundle_id, False
     return new_id, True
@@ -522,17 +642,21 @@ def repackage_ipa_with_bundle_id(ipa_path, new_bundle_id, output_path=None):
 
         logger.info(f"Modified bundle ID: {old_bundle_id} -> {new_bundle_id}")
 
-        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as ipa:
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as ipa:
+            FIXED_TIME = (2020, 1, 1, 0, 0, 0)
             all_files = []
             for root, dirs, files in os.walk(temp_dir):
-                dirs.sort()  # Sort directories for deterministic traversal
-                for file in sorted(files):  # Sort files within each directory
+                dirs.sort()
+                for file in sorted(files):
                     full_path = os.path.join(root, file)
                     relative_path = os.path.relpath(full_path, temp_dir)
                     all_files.append((relative_path, full_path))
 
             for relative_path, full_path in sorted(all_files):
-                ipa.write(full_path, relative_path)
+                info = zipfile.ZipInfo(relative_path, date_time=FIXED_TIME)
+                info.compress_type = zipfile.ZIP_DEFLATED
+                with open(full_path, 'rb') as fh:
+                    ipa.writestr(info, fh.read())
 
         sha256 = get_ipa_sha256(output_path)
 
@@ -614,10 +738,11 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
 
                 if target_ipa:
                     shutil.copy2(target_ipa, temp_path)
-                    _, _, bid_ipa, _ = get_ipa_metadata(
+                    ipa_info = parse_ipa(
                         target_ipa,
                         app_entry.get('bundleIdentifier') if app_entry else None
                     )
+                    bid_ipa = ipa_info['bundle_id']
 
                     url = upload_to_cached_release(
                         client, current_repo, release_tag,
@@ -655,10 +780,11 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
             with open(temp_path, 'wb') as f:
                 f.write(z.read(ipa_in_zip))
 
-            _, _, bid_ipa, _ = get_ipa_metadata(
+            ipa_info = parse_ipa(
                 temp_path,
                 app_entry.get('bundleIdentifier') if app_entry else None
             )
+            bid_ipa = ipa_info['bundle_id']
 
             url = upload_to_cached_release(
                 client, current_repo, release_tag,
@@ -680,7 +806,7 @@ def download_from_release(client, download_url, temp_path):
     with open(temp_path, 'wb') as f:
         f.write(r.content)
 
-def process_app(app_config, app_entry, client, base_name):
+def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     """
     Process a single app.
     Returns: (app_entry, metadata_updates_dict)
@@ -801,42 +927,54 @@ def process_app(app_config, app_entry, client, base_name):
         app_entry['name'] = name
 
         latest_version = app_entry.get('versions', [{}])[0]
-        stored_version = latest_version.get('version', '')
+        stored_version = latest_version.get('version') or ''
 
         # For workflow builds, stored version may contain the SHA (e.g. '1.0.f45a524')
         is_up_to_date = stored_version == version
         if not is_up_to_date and workflow_file and len(version) == 7:
             is_up_to_date = stored_version.endswith(version) or version in stored_version
 
-        current_download_url = latest_version.get('downloadURL', '')
+        current_download_url = latest_version.get('downloadURL') or ''
         has_direct_link = direct_url and current_download_url == direct_url
         current_repo_name = client.get_current_repo() or ''
         is_cached_url = bool(current_repo_name and f'{current_repo_name}/releases/download/builds-' in current_download_url)
 
         skip_versions = get_skip_versions()
-
         is_generic = version.lower() in skip_versions
 
-        # For generic versions (nightly, latest), use timestamp comparison
+        # Basic version check
+        is_newer = not is_up_to_date
+
         if is_generic:
-            stored_date = latest_version.get('date', '')
+            stored_date = latest_version.get('date') or ''
             is_timestamp_newer = release_timestamp > stored_date if stored_date else True
             if not is_timestamp_newer and (has_direct_link or is_cached_url):
-                is_up_to_date = True
-                is_generic = False
+                is_newer = False
+            else:
+                is_newer = is_timestamp_newer
+
+        # Metadata self-healing logic
+        has_critical_metadata = app_entry and 'screenshotURLs' in app_entry and 'appPermissions' in app_entry and 'entitlements' in app_entry.get('appPermissions', {})
+        if app_entry and not has_critical_metadata:
+            logger.info(f"Self-healing triggered for {name}: missing critical metadata (screenshotURLs/appPermissions)")
+            is_newer = True
+
+        if not is_newer:
+            if not os.environ.get('FORCE_UPDATE_ALL'):
+                logger.info(f"Skipping {name}: already up to date ({stored_version} / {stored_date})")
+                return app_entry, {}
 
         current_bundle_id = app_entry.get('bundleIdentifier', '')
-        tag = compute_variant_tag(name, base_name)
 
-        if tag:
-            base_id_for_calc = app_config.get('bundle_id') or app_entry.get('_originalBundleIdentifier') or current_bundle_id.replace(f".{tag}.coexist", "")
-            if base_id_for_calc:
-                expected_id = f"{base_id_for_calc}.{tag}.coexist"
-                bundle_id_needs_update = current_bundle_id != expected_id
-            else:
-                bundle_id_needs_update = True
-        else:
-            bundle_id_needs_update = False
+        clean_base_for_calc = app_config.get('bundle_id') or current_bundle_id
+        if clean_base_for_calc == current_bundle_id and current_bundle_id.endswith('.coexist'):
+            clean_base_for_calc = clean_base_for_calc[:-8] # remove '.coexist'
+            tag = compute_variant_tag(name, base_name)
+            if tag and clean_base_for_calc.endswith(f".{tag}"):
+                clean_base_for_calc = clean_base_for_calc[:-(len(tag) + 1)]
+
+        expected_id, _ = apply_bundle_id_suffix(clean_base_for_calc, name, base_name, is_coexist)
+        bundle_id_needs_update = (current_bundle_id != expected_id)
 
         if is_up_to_date and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
              url_is_alive = True
@@ -863,22 +1001,28 @@ def process_app(app_config, app_entry, client, base_name):
                       app_entry['tintColor'] = config_tint
                       logger.info(f"Updated tint color for {name} from config")
 
+                  official_data = find_official_source(repo, expected_id, client)
+                  if official_data:
+                      for k, v in official_data.items():
+                          if k not in app_entry or not app_entry[k] or k in ['screenshotURLs', 'tintColor']:
+                              app_entry[k] = v
+                      if 'subtitle' in official_data:
+                          app_entry['subtitle'] = official_data['subtitle']
+
                   logger.info(f"Skipping {name} (Already up to date at version {version})")
                   return app_entry, {} # No metadata updates needed if skipping
 
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
-            clean_base_id = app_config.get('bundle_id') or app_entry.get('_originalBundleIdentifier') or old_id
+            clean_base_id = app_config.get('bundle_id') or old_id
 
             if clean_base_id == old_id and old_id.endswith('.coexist'):
-                parts = old_id.split('.')
-                if len(parts) >= 3:
-                    clean_base_id = '.'.join(parts[:-2])
+                clean_base_id = clean_base_id[:-8]
+                tag = compute_variant_tag(name, base_name)
+                if tag and clean_base_id.endswith(f".{tag}"):
+                    clean_base_id = clean_base_id[:-(len(tag) + 1)]
 
-            new_id, _ = apply_bundle_id_suffix(clean_base_id, name, base_name)
-
-            if new_id != clean_base_id and '_originalBundleIdentifier' not in app_entry:
-                app_entry['_originalBundleIdentifier'] = clean_base_id
+            new_id, _ = apply_bundle_id_suffix(clean_base_id, name, base_name, is_coexist)
 
             if old_id != new_id:
                 logger.info(f"Updated Bundle ID for {name}: {old_id} -> {new_id}")
@@ -930,8 +1074,6 @@ def process_app(app_config, app_entry, client, base_name):
     os.close(fd)
 
     current_repo = client.get_current_repo()
-    ipa_permissions = {"entitlements": [], "privacy": {}}
-    min_os_version = None
 
     try:
         if workflow_file:
@@ -946,16 +1088,23 @@ def process_app(app_config, app_entry, client, base_name):
         is_fresh_download = not is_cached_url
 
         default_bundle_id = f"com.placeholder.{name.lower().replace(' ', '')}"
-        ipa_version, ipa_build, extracted_bundle_id, min_os_version = get_ipa_metadata(temp_path, default_bundle_id)
+        ipa_info = parse_ipa(temp_path, default_bundle_id)
+        ipa_version = ipa_info['version']
+        ipa_build = ipa_info['build']
+        extracted_bundle_id = ipa_info['bundle_id']
+        min_os_version = ipa_info['min_os_version']
+        ipa_permissions = ipa_info['permissions']
 
-        clean_bundle_id = app_config.get('bundle_id') or (app_entry.get('_originalBundleIdentifier') if app_entry else None)
+        if extracted_bundle_id and extracted_bundle_id.endswith('.coexist'):
+            extracted_bundle_id = extracted_bundle_id[:-8]
+            tag = compute_variant_tag(name, base_name)
+            if tag and extracted_bundle_id.endswith(f".{tag}"):
+                extracted_bundle_id = extracted_bundle_id[:-(len(tag) + 1)]
+
+        clean_bundle_id = app_config.get('bundle_id')
 
         if not clean_bundle_id:
             clean_bundle_id = extracted_bundle_id
-            if not is_fresh_download and clean_bundle_id.endswith('.coexist'):
-                parts = clean_bundle_id.split('.')
-                if len(parts) >= 3:
-                    clean_bundle_id = '.'.join(parts[:-2])
 
         if is_fresh_download and extracted_bundle_id != default_bundle_id and extracted_bundle_id != clean_bundle_id:
             if clean_bundle_id and not clean_bundle_id.startswith('com.placeholder.'):
@@ -986,16 +1135,10 @@ def process_app(app_config, app_entry, client, base_name):
 
         sha256 = get_ipa_sha256(temp_path)
 
-        ipa_permissions = get_ipa_permissions(temp_path)
+        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, base_name, is_coexist)
 
-        original_bundle_id = bundle_id
-        original_download_url = download_url
-        original_size = size
-        original_sha256 = sha256
-
-        target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, base_name)
-
-        if needs_repackage and current_repo and client.token:
+        is_local_validation = os.environ.get('LOCAL_VALIDATION_ONLY') == '1'
+        if needs_repackage and current_repo and client.token and not is_local_validation:
             logger.info(f"Repackaging IPA for {name} with bundle ID: {target_bundle_id}")
 
             success, new_sha256 = repackage_ipa_with_bundle_id(temp_path, target_bundle_id)
@@ -1079,6 +1222,13 @@ def process_app(app_config, app_entry, client, base_name):
     readme_desc = get_readme_description(repo, client)
     full_description = readme_desc if readme_desc else subtitle
 
+    official_data = find_official_source(repo, target_bundle_id, client)
+    if official_data:
+        if 'subtitle' in official_data:
+            subtitle = official_data['subtitle']
+        if 'localizedDescription' in official_data:
+            full_description = official_data['localizedDescription']
+
     new_version_entry = {
         "version": version,
         "date": release_timestamp if release_timestamp else release_date,
@@ -1107,18 +1257,12 @@ def process_app(app_config, app_entry, client, base_name):
             "localizedDescription": full_description,
             "size": best_version['size'],
             "sha256": best_version['sha256'],
-            "bundleIdentifier": bundle_id,
+            "bundleIdentifier": target_bundle_id,
             "appPermissions": ipa_permissions
         })
 
-        if needs_repackage and bundle_id != original_bundle_id:
-            app_entry['_originalBundleIdentifier'] = original_bundle_id
-            app_entry['_originalDownloadURL'] = original_download_url
-            app_entry['_originalSize'] = original_size
-            app_entry['_originalSHA256'] = original_sha256
-        else:
-            for k in ('_originalBundleIdentifier', '_originalDownloadURL', '_originalSize', '_originalSHA256'):
-                app_entry.pop(k, None)
+        for k in ('_originalBundleIdentifier', '_originalDownloadURL', '_originalSize', '_originalSHA256'):
+            app_entry.pop(k, None)
     else:
         logger.info(f"Adding new app: {name}")
 
@@ -1169,12 +1313,10 @@ def process_app(app_config, app_entry, client, base_name):
             "screenshotURLs": [],
             "versions": [new_version_entry]
         }
-
-        if needs_repackage and bundle_id != original_bundle_id:
-            app_entry['_originalBundleIdentifier'] = original_bundle_id
-            app_entry['_originalDownloadURL'] = original_download_url
-            app_entry['_originalSize'] = original_size
-            app_entry['_originalSHA256'] = original_sha256
+    if official_data:
+        for k, v in official_data.items():
+            if k not in app_entry or not app_entry.get(k) or k in ['screenshotURLs', 'tintColor']:
+                app_entry[k] = v
 
     metadata_updates = {}
     if found_icon_auto:
@@ -1187,7 +1329,7 @@ def process_app(app_config, app_entry, client, base_name):
 
     return app_entry, metadata_updates
 
-def update_repo(config_file, source_file, source_name, source_identifier, client):
+def update_repo(config_file, source_file, source_name, source_identifier, client, is_coexist=True):
     if not os.path.exists(config_file):
         logger.warning(f"Config file not found: {config_file}")
         return False
@@ -1200,6 +1342,15 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
     source_data['name'] = source_name
     source_data['identifier'] = source_identifier
+
+    current_repo = os.environ.get('GITHUB_REPOSITORY', 'Placeholder/Repository')
+    repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Placeholder'
+    repo_name = current_repo.split('/')[1] if '/' in current_repo else 'Repository'
+
+    is_nsfw = 'nsfw' in source_identifier.lower()
+    icon_filename = 'nsfw.png' if is_nsfw else 'standard.png'
+    source_data['iconURL'] = f"https://raw.githubusercontent.com/{current_repo}/main/.github/assets/{icon_filename}"
+    source_data['website'] = f"https://{repo_owner}.github.io/{repo_name}"
 
     existing_apps_map = {}
     for a in source_data.get('apps', []):
@@ -1232,7 +1383,7 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
             current_entry = existing_apps_map.get(key)
 
-            future = executor.submit(process_app, app_config, current_entry, client, base_name)
+            future = executor.submit(process_app, app_config, current_entry, client, base_name, is_coexist)
             future_to_app[future] = name
 
         for future in as_completed(future_to_app):
@@ -1355,6 +1506,18 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
             for k in keys_to_remove:
                 del v[k]
 
+    root_order = ["name", "identifier", "subtitle", "description", "tintColor", "iconURL", "website", "apps", "news"]
+    ordered_source_data = {}
+    for k in root_order:
+        if k in source_data:
+            ordered_source_data[k] = source_data[k]
+    for k in source_data:
+        if k not in ordered_source_data:
+            ordered_source_data[k] = source_data[k]
+
+    source_data.clear()
+    source_data.update(ordered_source_data)
+
     has_changes = False
     if source_data != original_source_data:
         logger.info(f"Changes detected in {source_file}, saving...")
@@ -1398,13 +1561,13 @@ def generate_combined_apps_md(source_file_standard, source_file_nsfw, output_fil
             tmp.write("# Supported Apps\n\n")
             tmp.write(f"> *Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} (UTC)*\n\n")
 
-            source_file_standard_json = source_file_standard.replace('apps.json', 'source.json')
+            source_file_standard_json = source_file_standard.replace('apps.json', 'coexist/source.json')
             if os.path.exists(source_file_standard_json):
                 tmp.write("## Standard Apps\n\n")
                 write_table_from_source(tmp, source_file_standard_json)
                 tmp.write("\n")
 
-            source_file_nsfw_json = source_file_nsfw.replace('apps.json', 'source.json')
+            source_file_nsfw_json = source_file_nsfw.replace('apps.json', 'coexist/source.json')
             if os.path.exists(source_file_nsfw_json):
                 tmp.write("## NSFW Apps\n\n")
                 write_table_from_source(tmp, source_file_nsfw_json)
@@ -1430,17 +1593,21 @@ def main():
     source_name = f"{repo_owner}'s Sideload Source"
     source_id = f"io.github.{owner_lower}.source"
 
-    changed_std = update_repo('sources/standard/apps.json', 'sources/standard/source.json', source_name, source_id, client)
-    changed_nsfw = update_repo('sources/nsfw/apps.json', 'sources/nsfw/source.json', f"{source_name} (NSFW)", f"{source_id}.nsfw", client)
+    changed_std_coex = update_repo('sources/standard/apps.json', 'sources/standard/coexist/source.json', f"{source_name} (Coexist)", f"{source_id}.coexist", client, True)
+    changed_std_orig = update_repo('sources/standard/apps.json', 'sources/standard/original/source.json', source_name, source_id, client, False)
 
-    if changed_std or changed_nsfw or not os.path.exists('.github/APPS.md'):
+    changed_nsfw_coex = update_repo('sources/nsfw/apps.json', 'sources/nsfw/coexist/source.json', f"{source_name} (NSFW Coexist)", f"{source_id}.nsfw.coexist", client, True)
+    changed_nsfw_orig = update_repo('sources/nsfw/apps.json', 'sources/nsfw/original/source.json', f"{source_name} (NSFW)", f"{source_id}.nsfw", client, False)
+
+    if changed_std_coex or changed_std_orig or changed_nsfw_coex or changed_nsfw_orig or not os.path.exists('.github/APPS.md'):
         logger.info("Generating updated .github/APPS.md...")
         generate_combined_apps_md('sources/standard/apps.json', 'sources/nsfw/apps.json', '.github/APPS.md')
     else:
         logger.info("No changes in sources, skipping APPS.md regeneration.")
 
     current_repo = client.get_current_repo()
-    if current_repo and client.token:
+    is_local_validation = os.environ.get('LOCAL_VALIDATION_ONLY') == '1'
+    if current_repo and client.token and not is_local_validation:
         try:
             logger.info("Running Artifact Retention Policy...")
             all_releases = client.get_all_releases(current_repo)

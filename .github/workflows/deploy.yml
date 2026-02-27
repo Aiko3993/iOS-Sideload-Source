@@ -52,12 +52,12 @@ jobs:
           cp website/index.html public/
           cp -r website/css public/
           cp -r website/js public/
-          cp -r website/assets public/
-          cp website/manifest.json public/
           
-          mkdir -p public/sources/standard public/sources/nsfw
-          [ -f sources/standard/source.json ] && cp sources/standard/source.json public/sources/standard/
-          [ -f sources/nsfw/source.json ] && cp sources/nsfw/source.json public/sources/nsfw/
+          mkdir -p public/sources/standard/original public/sources/standard/coexist public/sources/nsfw/original public/sources/nsfw/coexist
+          [ -f sources/standard/original/source.json ] && cp sources/standard/original/source.json public/sources/standard/original/
+          [ -f sources/standard/coexist/source.json ] && cp sources/standard/coexist/source.json public/sources/standard/coexist/
+          [ -f sources/nsfw/original/source.json ] && cp sources/nsfw/original/source.json public/sources/nsfw/original/
+          [ -f sources/nsfw/coexist/source.json ] && cp sources/nsfw/coexist/source.json public/sources/nsfw/coexist/
           
           BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
           AUTHOR="${GITHUB_REPOSITORY_OWNER}"
@@ -65,9 +65,31 @@ jobs:
           
           sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/index.html
+          sed -i "s|{{BASE_URL}}/assets/|https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
+          sed -i "s|\"assets/|\"https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
           
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
           sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
+
+          cat <<EOF > public/manifest.json
+          {
+              "name": "iOS Sideload Source",
+              "short_name": "iOS Sideload Source",
+              "description": "AltStore, SideStore & LiveContainer app sources.",
+              "start_url": "./?source=pwa",
+              "display": "standalone",
+              "background_color": "#111827",
+              "theme_color": "#2563eb",
+              "icons": [
+                  {
+                      "src": "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/apple-touch-icon.png",
+                      "sizes": "1024x1024",
+                      "type": "image/png",
+                      "purpose": "any"
+                  }
+              ]
+          }
+          EOF
           
           cat <<EOF > public/robots.txt
           User-agent: *

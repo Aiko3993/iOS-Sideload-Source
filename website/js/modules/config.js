@@ -16,7 +16,7 @@ export const TRANSLATIONS = {
     en: {
         title: "iOS Sideload Source",
         sourceTitle: "{{AUTHOR}}",
-        subtitle: "Supports AltStore, SideStore & LiveContainer",
+        subtitle: "Discover & Install Apps",
         searchPlaceholder: "Search...",
         sourceAll: "All Apps",
         sourceAllDesc: "All available apps",
@@ -64,7 +64,7 @@ export const TRANSLATIONS = {
     zh: {
         title: "iOS 侧载源",
         sourceTitle: "{{AUTHOR}}",
-        subtitle: "支持 AltStore, SideStore & LiveContainer",
+        subtitle: "Discover & Install Apps",
         searchPlaceholder: "搜索应用...",
         sourceAll: "全部应用",
         sourceAllDesc: "所有可用应用",
@@ -137,7 +137,7 @@ export const ICONS = {
 
 export const APP_MODES = {
     standard: {
-        path: 'sources/standard/source.json',
+        path: 'sources/standard',
         labelKey: 'sourceStandard',
         nextMode: 'nsfw',
         theme: 'standard',
@@ -147,7 +147,7 @@ export const APP_MODES = {
         faviconPath: "M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
     },
     nsfw: {
-        path: 'sources/nsfw/source.json',
+        path: 'sources/nsfw',
         labelKey: 'sourceNSFW',
         nextMode: 'all',
         theme: 'nsfw',
@@ -169,28 +169,10 @@ export const APP_MODES = {
 };
 
 export function getDisplayBundleId(app) {
-    const { coexistMode } = getState();
-    if (coexistMode) return app.bundleIdentifier;
-
-    if (app._originalBundleIdentifier) return app._originalBundleIdentifier;
-
-    let bid = app.bundleIdentifier;
-    if (bid && bid.startsWith('coexist.')) {
-        const parts = bid.split('.');
-        if (parts.length > 2) {
-            parts.shift(); // remove 'coexist'
-            parts.pop();   // remove tag
-            return parts.join('.');
-        }
-    }
-    return bid;
+    return app.bundleIdentifier;
 }
 
 export function resolveDownloadURL(app) {
-    const { coexistMode } = getState();
-    if (!coexistMode && app._originalDownloadURL) {
-        return app._originalDownloadURL;
-    }
     return app.downloadURL;
 }
 

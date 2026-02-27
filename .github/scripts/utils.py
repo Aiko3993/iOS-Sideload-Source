@@ -41,6 +41,7 @@ def save_json(path, data):
     try:
         with tempfile.NamedTemporaryFile('w', dir=dir_path, delete=False, encoding='utf-8') as tmp:
             json.dump(data, tmp, indent=2, ensure_ascii=False)
+            tmp.write('\n')
             tmp_path = tmp.name
 
         os.replace(tmp_path, path)
@@ -267,17 +268,7 @@ class GitHubClient:
 
         with self._body_lock:
             try:
-                current_resp = self.session.get(url, headers=self.headers, timeout=15)
-                current_resp.raise_for_status()
-                latest_body = current_resp.json().get('body') or ""
-
-                new_entry = new_body.strip().split("\n")[-1]
-                if new_entry not in latest_body:
-                    final_body = (latest_body + f"\n{new_entry}").strip()
-                else:
-                    final_body = latest_body
-
-                patch_data = {"body": final_body}
+                patch_data = {"body": new_body}
                 resp = self.session.patch(url, headers=self.headers, json=patch_data, timeout=15)
                 resp.raise_for_status()
                 return True
@@ -292,9 +283,14 @@ class GitHubClient:
         release_url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
         resp = self.get(release_url)
         current_body = ""
+        assets_deleted = []
+        original_body_text = ""
+
         if resp:
             release_data = resp.json()
-            current_body = release_data.get('body', "")
+            original_body_text = release_data.get('body') or ""
+            current_body = original_body_text
+
             assets = release_data.get('assets', [])
             for asset in assets:
                 should_delete = False
@@ -314,18 +310,26 @@ class GitHubClient:
                         norm_asset = normalize_name(asset['name'])
                         if norm_app == norm_asset or norm_app + "nightly" == norm_asset:
                             should_delete = True
-                        elif norm_app in norm_asset and asset_name_lower.endswith('.ipa'):
-
-                            should_delete = True
 
                 if should_delete:
-
                     del_url = f"https://api.github.com/repos/{repo}/releases/assets/{asset['id']}"
                     try:
                         self.session.delete(del_url, headers=self.headers, timeout=15).raise_for_status()
                         logger.info(f"Deleted old/conflicting asset {asset['name']}")
+                        assets_deleted.append(asset['name'])
                     except Exception as e:
                         logger.error(f"Failed to delete asset {asset['name']}: {e}")
+
+        # Process current_body to remove any deleted assets from the Included Apps list
+        if assets_deleted and current_body:
+            body_lines = current_body.split('\n')
+            new_lines = []
+            for line in body_lines:
+                # If line is a list item containing the exact deleted asset name (wrapped in backticks), drop it
+                if any(f"`{del_name}`" in line for del_name in assets_deleted):
+                    continue
+                new_lines.append(line)
+            current_body = '\n'.join(new_lines).strip()
 
         upload_url = f"https://uploads.github.com/repos/{repo}/releases/{release_id}/assets?name={name}"
         headers = self.headers.copy()
@@ -338,8 +342,20 @@ class GitHubClient:
 
                 if app_name and bundle_id:
                     entry = f"- **{app_name}**: `{name}` ({bundle_id})"
-                    if entry not in current_body:
-                        new_body = (current_body + f"\n{entry}").strip()
+                    lines = current_body.split('\n')
+
+                    # Remove any exact matching line or line matching the same bundle_id to avoid duplication
+                    clean_lines = [l for l in lines if not l.strip().endswith(f"({bundle_id})") and l.strip() != entry]
+
+                    if "## Included Apps" not in '\n'.join(clean_lines):
+                        clean_lines.append("\n## Included Apps")
+
+                    clean_lines.append(entry)
+                    new_body = '\n'.join(clean_lines).strip()
+                    # Collapse multiple blank lines
+                    new_body = re.sub(r'\n{3,}', '\n\n', new_body)
+
+                    if new_body != original_body_text:
                         self.update_release_body(repo, release_id, new_body)
 
                 return resp.json()
@@ -536,3 +552,206 @@ def compute_variant_tag(app_name, base_name):
         return ''
 
     return '.'.join([w.lower() for w in words])
+
+def _score_source_candidate(path, size=None):
+    """Score a JSON file path for likelihood of being an AltStore source."""
+    p = path.lower()
+    score = 0
+
+    # Exclude known non-source JSON files
+    exclude_prefixes = ('package', 'tsconfig', '.eslint', '.prettier', 'composer',
+                        'bower', 'lerna', '.swiftlint', 'podfile', 'cartfile',
+                        'renovate', 'dependabot')
+    basename = p.rsplit('/', 1)[-1] if '/' in p else p
+    for prefix in exclude_prefixes:
+        if basename.startswith(prefix):
+            return -100
+
+    exclude_dirs = ('node_modules/', '.github/workflows/', 'test/', 'tests/',
+                    '__pycache__/', '.vscode/', '.idea/', 'vendor/', 'pods/')
+    for d in exclude_dirs:
+        if d in p:
+            return -100
+
+    if not basename.endswith('.json'):
+        return -100
+
+    # Positive signals from filename semantics
+    stem = basename.replace('.json', '')
+    source_keywords = ('source', 'altsource', 'altstore', 'sidestore', 'sideload')
+    for kw in source_keywords:
+        if kw in stem:
+            score += 30
+
+    app_keywords = ('apps', 'app', 'repo')
+    for kw in app_keywords:
+        if kw in stem:
+            score += 15
+
+    # Depth preference: shallower = better
+    depth = p.count('/')
+    score -= depth * 5
+
+    # Size heuristic (git tree provides size in bytes for blobs)
+    if size is not None:
+        if size < 100:
+            score -= 50  # Too small, likely config
+        elif size < 500:
+            score -= 10
+        elif 500 <= size <= 500_000:
+            score += 10  # Sweet spot for source JSON
+        elif size > 2_000_000:
+            score -= 20  # Unusually large
+
+    return score
+
+def _validate_altstore_json(data):
+    """Check if parsed JSON data conforms to AltStore source schema."""
+    if not isinstance(data, dict):
+        return False
+    apps = data.get('apps')
+    if not isinstance(apps, list) or not apps:
+        return False
+    # Check first app entry for bundleIdentifier
+    first = apps[0]
+    return isinstance(first, dict) and 'bundleIdentifier' in first
+
+def _extract_json_urls_from_readme(readme_text):
+    """Extract URLs to potential JSON source files from README content."""
+    urls = set()
+    # Match any http(s) URL ending in .json
+    for m in re.finditer(r'https?://\S+\.json(?:\b|["\')>\s])', readme_text):
+        url = m.group(0).rstrip('"\')> \t\n')
+        urls.add(url)
+    # Match AltStore/SideStore add-source deep links containing a URL
+    for m in re.finditer(r'(?:altstore|sidestore)://source\?url=(https?://\S+)', readme_text):
+        url = m.group(1).rstrip('"\')> \t\n')
+        urls.add(url)
+    return urls
+
+def find_official_source(repo, bundle_id, client):
+    """
+    Auto-discover an AltStore-compatible source from a GitHub repo and extract
+    metadata for the app matching the given bundle_id.
+
+    Discovery layers:
+      1. Git tree scan: score all .json files, fetch top candidates
+      2. README URL extraction: parse README for .json links
+      3. GitHub Pages probe: try common source paths on {owner}.github.io
+
+    Returns: dict with supplemental fields (screenshotURLs, category, subtitle, tintColor, etc.)
+             or None if no official source found.
+    """
+    logger.info(f"Searching for official AltStore source in {repo}...")
+
+    repo_info = client.get_repo_info(repo)
+    if not repo_info:
+        return None
+    default_branch = repo_info.get('default_branch', 'main')
+    owner = repo.split('/')[0]
+    repo_name = repo.split('/')[1]
+
+    validated_sources = []  # list of (source_dict, origin_label)
+
+    # --- Layer 1: Git tree scan ---
+    tree_data = client.get_git_tree(repo, recursive=True)
+    if tree_data and 'tree' in tree_data:
+        candidates = []
+        for item in tree_data['tree']:
+            if item.get('type') != 'blob':
+                continue
+            path = item['path']
+            if not path.lower().endswith('.json'):
+                continue
+            size = item.get('size', None)
+            score = _score_source_candidate(path, size)
+            if score > -50:
+                candidates.append((score, path, size))
+
+        candidates.sort(key=lambda x: x[0], reverse=True)
+
+        for score, path, size in candidates[:5]:
+            raw_url = f"https://raw.githubusercontent.com/{repo}/{default_branch}/{path}"
+            try:
+                resp = client.session.get(raw_url, headers=client.headers, timeout=10)
+                if resp and resp.status_code == 200:
+                    data = resp.json()
+                    if _validate_altstore_json(data):
+                        logger.info(f"Found AltStore source in repo: {path} (score={score})")
+                        validated_sources.append((data, f"repo:{path}"))
+            except Exception:
+                continue
+
+    # --- Layer 2: README URL extraction ---
+    try:
+        readme_url = f"https://api.github.com/repos/{repo}/readme"
+        resp = client.get(readme_url)
+        if resp:
+            readme_data = resp.json()
+            import base64
+            readme_text = base64.b64decode(readme_data.get('content', '')).decode('utf-8', errors='ignore')
+            json_urls = _extract_json_urls_from_readme(readme_text)
+            for url in json_urls:
+                try:
+                    resp2 = client.session.get(url, timeout=10)
+                    if resp2 and resp2.status_code == 200:
+                        data = resp2.json()
+                        if _validate_altstore_json(data):
+                            logger.info(f"Found AltStore source from README: {url}")
+                            validated_sources.append((data, f"readme:{url}"))
+                except Exception:
+                    continue
+    except Exception:
+        pass
+
+    # --- Layer 3: GitHub Pages probe ---
+    pages_base = f"https://{owner}.github.io/{repo_name}"
+    pages_paths = ['source.json', 'apps.json', 'altstore.json',
+                   'api/source.json', 'api/apps.json']
+    for p in pages_paths:
+        url = f"{pages_base}/{p}"
+        try:
+            resp = client.session.get(url, timeout=8)
+            if resp and resp.status_code == 200:
+                data = resp.json()
+                if _validate_altstore_json(data):
+                    logger.info(f"Found AltStore source on GitHub Pages: {url}")
+                    validated_sources.append((data, f"pages:{url}"))
+        except Exception:
+            continue
+
+    if not validated_sources:
+        logger.debug(f"No official AltStore source found for {repo}")
+        return None
+
+    # --- Match by bundleIdentifier ---
+    clean_bid = bundle_id.replace('.coexist', '')
+    # Also strip variant tags for matching
+    for tag_suffix in ['.nightly', '.beta', '.alpha', '.dev', '.sidestore', '.hv']:
+        if clean_bid.endswith(tag_suffix):
+            clean_bid = clean_bid[:-(len(tag_suffix))]
+
+    supplemental = {}
+    for source_data, origin in validated_sources:
+        for app in source_data.get('apps', []):
+            app_bid = app.get('bundleIdentifier', '')
+            if app_bid == clean_bid or app_bid == bundle_id:
+                logger.info(f"Matched {bundle_id} in official source ({origin})")
+                # Extract supplemental fields (only collect, don't apply yet)
+                if app.get('screenshotURLs'):
+                    supplemental['screenshotURLs'] = app['screenshotURLs']
+                if app.get('screenshots'):
+                    supplemental['screenshots'] = app['screenshots']
+                if app.get('category'):
+                    supplemental['category'] = app['category']
+                if app.get('subtitle'):
+                    supplemental['subtitle'] = app['subtitle']
+                if app.get('tintColor'):
+                    supplemental['tintColor'] = app['tintColor']
+                if app.get('localizedDescription'):
+                    supplemental['officialDescription'] = app['localizedDescription']
+                return supplemental
+
+    logger.debug(f"No bundle ID match for {bundle_id} in discovered sources")
+    return None
+
