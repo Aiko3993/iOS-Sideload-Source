@@ -1,0 +1,150 @@
+{
+  "name": "Aiko3993's Sideload Source (NSFW)",
+  "identifier": "io.github.aiko3993.source.nsfw",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/nsfw.png",
+  "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
+  "apps": [
+    {
+      "name": "JHentai",
+      "githubRepo": "jiangtian616/JHenTai",
+      "bundleIdentifier": "top.jtmonster.jhentai",
+      "developerName": "jiangtian616",
+      "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
+      "version": "8.0.12",
+      "versionDate": "2026-02-24T12:24:22Z",
+      "versionDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.12/JHenTai_8.0.12%2B308.ipa",
+      "localizedDescription": "English | 简体中文 | 한국어",
+      "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "#E6E623",
+      "size": 15739502,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Auth identity",
+          "NSPhotoLibraryAddUsageDescription": "Pick up image to search",
+          "NSPhotoLibraryUsageDescription": "Pick up image to search"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "8.0.12",
+          "date": "2026-02-24T12:24:22Z",
+          "localizedDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.12/JHenTai_8.0.12%2B308.ipa",
+          "size": 15739502,
+          "sha256": "8f7ca2f93accd08383e888f887614205091b981a5f7f64c6d20eb4e3a4c09e8e",
+          "minOSVersion": "12.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg",
+          "width": 795,
+          "height": 1633
+        }
+      ],
+      "category": "entertainment",
+      "officialDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
+      "sha256": "8f7ca2f93accd08383e888f887614205091b981a5f7f64c6d20eb4e3a4c09e8e"
+    },
+    {
+      "name": "LoveIwara",
+      "githubRepo": "FoxSensei001/LoveIwara",
+      "bundleIdentifier": "m.c.g.a.i_iwara",
+      "developerName": "FoxSensei001",
+      "subtitle": "Love Iwara (i-iwara or 2i). An unofficial iwara flutter app - Supporting multiple platforms and devices including mobile phones, tablets and computers. Compatible with Android, Windows and other systems. 第三方的Iwara应用 - 支持多个平台和设备，包括手机、平板和计算机。兼容 安卓、IOS、Windows、MacOS等系统。",
+      "version": "0.4.2",
+      "versionDate": "2026-02-20T11:54:23Z",
+      "versionDescription": "# 🚀 Release Notes for Version 0.4.2\r\n\r\n## 🔥 New Features\r\n\r\n* **New Site API Support**: Adapted to the new site API to ensure service availability and compatibility with the latest backend.\r\n* **Forum Improvements**:\r\n  * **Sitewide Announcements**: The forum now has a dedicated area for sitewide announcements, so you won’t miss important updates.\r\n  * **UI Refinements**: Forum layout and interactions have been improved for clearer reading and navigation.\r\n  * **External Link Prompts**: When following links that leave the app, you’ll see a prompt to avoid accidental navigation.\r\n* **CDN & Player Experience (Experimental)**:\r\n  * **Automatic CDN Lookup**: Video playback and downloads now support automatic CDN detection and server selection for better availability and speed.\r\n  * **Player Tweaks**: General improvements to the in-app player experience.  \r\n  _Note: This is an experimental feature and may be removed or changed in a future release._\r\n* **Download List Enhancements**:\r\n  * **Batch Download & Delete**: The download list now supports batch download and batch delete for faster management.\r\n  * **Failed Tasks Visibility**: Failed tasks are shown earlier on the download page so you can spot and retry them quickly.\r\n  * **UI Polish**: Layout and status display on the download page have been refined.\r\n* **Personal Info Management**: You can now manage your personal information in-app; the profile page has been updated with a cleaner layout and clearer controls.\r\n\r\n\r\n## 🛠 Optimizations\r\n\r\n* **Markdown & Interactions**: Improved Markdown rendering and multi-select interaction styling for a more consistent look and feel.\r\n* **Scrolling & Layout**: Various scrolling and layout refinements across the app for smoother navigation and fewer layout glitches.\r\n\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the GitHub issues section\r\n* Or join the [discussion group](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n\r\n---\r\n\r\n# 🚀 0.4.2 版本发布说明\r\n\r\n\r\n## 🔥 新功能\r\n\r\n* **新版站点接口适配**：适配新版站点接口，保证服务可用，与最新后端保持兼容。\r\n* **论坛改进**：\r\n  * **全站公告**：论坛新增全站公告展示区域，重要通知一目了然。\r\n  * **UI 优化**：论坛布局与交互优化，阅读与跳转更清晰。\r\n  * **外链提醒**：跳转至站外链接时会给出提示，减少误触离开。\r\n* **CDN 与播放体验（实验性）**：\r\n  * **CDN 自动查询与选择**：视频播放与下载支持 CDN 自动查询与服务端选择，提升可用性与加载体验。\r\n  * **播放器优化**：整体优化应用内播放器使用体验。  \r\n  _说明：此为实验性功能，后续版本可能调整或移除。_\r\n* **下载列表增强**：\r\n  * **批量下载与删除**：下载列表支持批量下载、批量删除，管理更高效。\r\n  * **失败任务前置展示**：下载页面调整后，失败任务更早展示，便于发现与重试。\r\n  * **UI 优化**：下载页布局与状态展示进一步优化。\r\n* **个人信息管理**：新增个人信息管理能力；个人资料页 UI 优化，信息与操作更清晰。\r\n\r\n\r\n## 🛠 优化改进\r\n\r\n* **Markdown 与多选**：Markdown 渲染与多选交互样式优化，展示与操作更统一。\r\n* **滚动与布局**：多处滚动与布局细节优化，浏览与导航更顺畅。\r\n\r\n\r\n## 📢 反馈方式\r\n\r\n* 在 GitHub issues 区留言\r\n* 加入[用户讨论群](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\n你的每一条反馈都对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+      "downloadURL": "https://github.com/FoxSensei001/LoveIwara/releases/download/0.4.2/i_iwara-0.4.2-ios.ipa",
+      "localizedDescription": "Thank you for your understanding and support! If you're also a Flutter beginner, I hope we can progress together in our learning journey.",
+      "iconURL": "https://raw.githubusercontent.com/FoxSensei001/LoveIwara/refs/heads/master/assets/icon/launcher_icon_v2.png",
+      "tintColor": "#F89032",
+      "size": 21368504,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "App需要访问本地网络",
+          "NSLocationWhenInUseUsageDescription": "App需要访问位置来获取WiFi信息"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.4.2",
+          "date": "2026-02-20T11:54:23Z",
+          "localizedDescription": "# 🚀 Release Notes for Version 0.4.2\r\n\r\n## 🔥 New Features\r\n\r\n* **New Site API Support**: Adapted to the new site API to ensure service availability and compatibility with the latest backend.\r\n* **Forum Improvements**:\r\n  * **Sitewide Announcements**: The forum now has a dedicated area for sitewide announcements, so you won’t miss important updates.\r\n  * **UI Refinements**: Forum layout and interactions have been improved for clearer reading and navigation.\r\n  * **External Link Prompts**: When following links that leave the app, you’ll see a prompt to avoid accidental navigation.\r\n* **CDN & Player Experience (Experimental)**:\r\n  * **Automatic CDN Lookup**: Video playback and downloads now support automatic CDN detection and server selection for better availability and speed.\r\n  * **Player Tweaks**: General improvements to the in-app player experience.  \r\n  _Note: This is an experimental feature and may be removed or changed in a future release._\r\n* **Download List Enhancements**:\r\n  * **Batch Download & Delete**: The download list now supports batch download and batch delete for faster management.\r\n  * **Failed Tasks Visibility**: Failed tasks are shown earlier on the download page so you can spot and retry them quickly.\r\n  * **UI Polish**: Layout and status display on the download page have been refined.\r\n* **Personal Info Management**: You can now manage your personal information in-app; the profile page has been updated with a cleaner layout and clearer controls.\r\n\r\n\r\n## 🛠 Optimizations\r\n\r\n* **Markdown & Interactions**: Improved Markdown rendering and multi-select interaction styling for a more consistent look and feel.\r\n* **Scrolling & Layout**: Various scrolling and layout refinements across the app for smoother navigation and fewer layout glitches.\r\n\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the GitHub issues section\r\n* Or join the [discussion group](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n\r\n---\r\n\r\n# 🚀 0.4.2 版本发布说明\r\n\r\n\r\n## 🔥 新功能\r\n\r\n* **新版站点接口适配**：适配新版站点接口，保证服务可用，与最新后端保持兼容。\r\n* **论坛改进**：\r\n  * **全站公告**：论坛新增全站公告展示区域，重要通知一目了然。\r\n  * **UI 优化**：论坛布局与交互优化，阅读与跳转更清晰。\r\n  * **外链提醒**：跳转至站外链接时会给出提示，减少误触离开。\r\n* **CDN 与播放体验（实验性）**：\r\n  * **CDN 自动查询与选择**：视频播放与下载支持 CDN 自动查询与服务端选择，提升可用性与加载体验。\r\n  * **播放器优化**：整体优化应用内播放器使用体验。  \r\n  _说明：此为实验性功能，后续版本可能调整或移除。_\r\n* **下载列表增强**：\r\n  * **批量下载与删除**：下载列表支持批量下载、批量删除，管理更高效。\r\n  * **失败任务前置展示**：下载页面调整后，失败任务更早展示，便于发现与重试。\r\n  * **UI 优化**：下载页布局与状态展示进一步优化。\r\n* **个人信息管理**：新增个人信息管理能力；个人资料页 UI 优化，信息与操作更清晰。\r\n\r\n\r\n## 🛠 优化改进\r\n\r\n* **Markdown 与多选**：Markdown 渲染与多选交互样式优化，展示与操作更统一。\r\n* **滚动与布局**：多处滚动与布局细节优化，浏览与导航更顺畅。\r\n\r\n\r\n## 📢 反馈方式\r\n\r\n* 在 GitHub issues 区留言\r\n* 加入[用户讨论群](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\n你的每一条反馈都对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+          "downloadURL": "https://github.com/FoxSensei001/LoveIwara/releases/download/0.4.2/i_iwara-0.4.2-ios.ipa",
+          "size": 21368504,
+          "sha256": "231d580274c58cbbc925d2cc69f7ad3ac2a9a5375dff76f1f8d9e45ae7347516",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "231d580274c58cbbc925d2cc69f7ad3ac2a9a5375dff76f1f8d9e45ae7347516"
+    },
+    {
+      "name": "Pica Comic",
+      "githubRepo": "Pacalini/PicaComic",
+      "bundleIdentifier": "com.github.pacalini.picaComic",
+      "developerName": "Pacalini",
+      "subtitle": "A comic app built with Flutter, supporting multiple comic sources.",
+      "version": "4.2.10",
+      "versionDate": "2026-01-11T06:24:07Z",
+      "versionDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+      "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.10/PicaComic-4.2.10-app-ios.ipa",
+      "localizedDescription": "A comic app with multiple sources built with flutter.",
+      "iconURL": "https://raw.githubusercontent.com/Pacalini/PicaComic/master/images/app_icon.png",
+      "tintColor": "#FCE4E4",
+      "size": 13517258,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Protect user's privacy",
+          "NSPhotoLibraryAddUsageDescription": "Save the images selected by user",
+          "NSPhotoLibraryUsageDescription": "Allow user to Choose image as his avatar"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.2.10",
+          "date": "2026-01-11T06:24:07Z",
+          "localizedDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+          "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.10/PicaComic-4.2.10-app-ios.ipa",
+          "size": 13517258,
+          "sha256": "baa62c6feef68e76c71643637558f995f8c75f42719a902408006474b2cd6116",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "baa62c6feef68e76c71643637558f995f8c75f42719a902408006474b2cd6116"
+    }
+  ],
+  "news": []
+}
