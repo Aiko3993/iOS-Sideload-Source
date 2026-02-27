@@ -1,0 +1,1249 @@
+{
+  "name": "Aiko3993's Sideload Source",
+  "identifier": "io.github.aiko3993.source",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/standard.png",
+  "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
+  "apps": [
+    {
+      "name": "Aidoku",
+      "githubRepo": "Aidoku/Aidoku",
+      "bundleIdentifier": "app.aidoku.Aidoku",
+      "developerName": "Aidoku",
+      "subtitle": "Free and open source manga reader for iOS and iPadOS",
+      "version": "0.8.1",
+      "versionDate": "2026-02-12T14:20:11Z",
+      "versionDescription": "- Pinned sources should stay pinned\r\n- Error when restoring chapters from backup resolved\r\n- Insights page more accurately determines chapter read count\r\n- Kavita source login issues resolved\r\n- Lots of other fixes (30+)! Check [the website](https://aidoku.app/release-notes/) for a more complete list.",
+      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.8.1/Aidoku.ipa",
+      "localizedDescription": "For detailed installation instructions, check out the website.",
+      "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "ff375f",
+      "size": 8636349,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.icloud-container-environment",
+          "com.apple.developer.icloud-container-identifiers",
+          "com.apple.developer.icloud-services",
+          "com.apple.developer.ubiquity-container-identifiers",
+          "com.apple.developer.ubiquity-kvstore-identifier",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Aidoku needs FaceID permissions for user-defined settings",
+          "NSLocalNetworkUsageDescription": "Aidoku needs permission to connect to local Komga and Kavita servers",
+          "NSPhotoLibraryUsageDescription": "Aidoku needs permission to save pages in your photo library"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.8.1",
+          "date": "2026-02-12T14:20:11Z",
+          "localizedDescription": "- Pinned sources should stay pinned\r\n- Error when restoring chapters from backup resolved\r\n- Insights page more accurately determines chapter read count\r\n- Kavita source login issues resolved\r\n- Lots of other fixes (30+)! Check [the website](https://aidoku.app/release-notes/) for a more complete list.",
+          "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.8.1/Aidoku.ipa",
+          "size": 8636349,
+          "sha256": "b9e5ab726b1f2de591473d9e3752eb4e60821884fe48f8386d140679a2a1903e",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://aidoku.app/images/library.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/source.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/reader.png",
+          "width": 450,
+          "height": 908
+        }
+      ],
+      "category": "entertainment",
+      "officialDescription": "A free and open source manga reading application for iOS and iPadOS.",
+      "sha256": "b9e5ab726b1f2de591473d9e3752eb4e60821884fe48f8386d140679a2a1903e"
+    },
+    {
+      "name": "Amethyst (Nightly)",
+      "githubRepo": "AngelAuraMC/Amethyst-iOS",
+      "bundleIdentifier": "org.angelauramc.amethyst",
+      "developerName": "AngelAuraMC",
+      "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
+      "version": "1.0.d40fb11",
+      "versionDate": "2026-02-25T04:58:23Z",
+      "versionDescription": "Nightly build from commit d40fb1117124b9a8ec848a76f4775ea31ff33848",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260225/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_d40fb11.ipa",
+      "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
+      "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
+      "tintColor": "#2F2F2F",
+      "size": 148600515,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.memorystatus",
+          "com.apple.private.security.container-required",
+          "get-task-allow",
+          "jb.pmap_cs_custom_trust"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Angel Aura Amethyst uses the local network to find and communicate with AltServer and LAN servers.",
+          "NSMicrophoneUsageDescription": "Angel Aura Amethyst uses the microphone to enable support for voice chat mods."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.d40fb11",
+          "date": "2026-02-25T04:58:23Z",
+          "localizedDescription": "Nightly build from commit d40fb1117124b9a8ec848a76f4775ea31ff33848",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260225/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_d40fb11.ipa",
+          "size": 148600515,
+          "sha256": "f26ec42bb455ff2dfecaa219c3c4c4efcf6d1dc62cacb345bcd6877621337cba",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "f26ec42bb455ff2dfecaa219c3c4c4efcf6d1dc62cacb345bcd6877621337cba"
+    },
+    {
+      "name": "Animeko",
+      "githubRepo": "open-ani/animeko",
+      "bundleIdentifier": "org.openani.Animeko",
+      "developerName": "open-ani",
+      "subtitle": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+      "version": "5.3.2",
+      "versionDate": "2026-02-26T02:42:13Z",
+      "versionDescription": "- 修复搜索接口的问题\r\n\r\n---- \r\n\r\nFull Changelog: https://github.com/open-ani/animeko/compare/v5.3.1...v5.3.2\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-windows-x86_64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-windows-x86_64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v5.3.2/ani-5.3.2-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v5.3.2/ani-5.3.2.ipa\r\n\r\n[cf-android]: https://d.myani.org/v5.3.2/ani-5.3.2-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v5.3.2/ani-5.3.2-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v5.3.2/ani-5.3.2-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v5.3.2/ani-5.3.2-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-windows-x86_64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macOS-%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/Windows%E4%B8%8B%E5%AD%97%E4%BD%93%E4%B8%8E%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%BC%82%E5%B8%B8\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/Linux-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macOS-Intel-%E8%8A%AF%E7%89%87%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/iOS-%E8%87%AA%E7%AD%BE\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | 仍在开发中                                            | 现在可以使用平板版接鼠标使用                              |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v5.3.2/ani-5.3.2-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v5.3.2/ani-5.3.2.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n</details>",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v5.3.2/ani-5.3.2.ipa",
+      "localizedDescription": "Animeko 支持云同步观看记录 ([Bangumi][Bangumi])、多视频数据源、缓存、弹幕、以及更多功能，提供尽可能简单且舒适的追番体验。",
+      "iconURL": "https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png",
+      "tintColor": "#2F3943",
+      "size": 31051074,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "5.3.2",
+          "date": "2026-02-26T02:42:13Z",
+          "localizedDescription": "- 修复搜索接口的问题\r\n\r\n---- \r\n\r\nFull Changelog: https://github.com/open-ani/animeko/compare/v5.3.1...v5.3.2\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-windows-x86_64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-windows-x86_64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v5.3.2/ani-5.3.2-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v5.3.2/ani-5.3.2-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v5.3.2/ani-5.3.2.ipa\r\n\r\n[cf-android]: https://d.myani.org/v5.3.2/ani-5.3.2-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v5.3.2/ani-5.3.2-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v5.3.2/ani-5.3.2-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v5.3.2/ani-5.3.2-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-windows-x86_64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv5.3.2%2Fani-5.3.2-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macOS-%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/Windows%E4%B8%8B%E5%AD%97%E4%BD%93%E4%B8%8E%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2%E5%BC%82%E5%B8%B8\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/Linux-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macOS-Intel-%E8%8A%AF%E7%89%87%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/iOS-%E8%87%AA%E7%AD%BE\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | 仍在开发中                                            | 现在可以使用平板版接鼠标使用                              |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v5.3.2/ani-5.3.2-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v5.3.2/ani-5.3.2-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v5.3.2/ani-5.3.2.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n</details>",
+          "downloadURL": "https://github.com/open-ani/animeko/releases/download/v5.3.2/ani-5.3.2.ipa",
+          "size": 31051074,
+          "sha256": "cd715b374fd618035ec43cd2ccc13e3ffbfa3ea4af58cff52abdd897b2dea464",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "cd715b374fd618035ec43cd2ccc13e3ffbfa3ea4af58cff52abdd897b2dea464"
+    },
+    {
+      "name": "Apollo",
+      "githubRepo": "Balackburn/Apollo",
+      "bundleIdentifier": "com.christianselig.Apollo",
+      "developerName": "Balackburn",
+      "subtitle": "The award-winning Reddit app",
+      "version": "1.15.11_1.4.5",
+      "versionDate": "2026-02-17T20:15:38Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v1.4.5`\n\n## Release Notes\nPrevent certain crashes when Reddit API goes down (#105)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_1.4.5/Apollo-1.15.11_ImprovedCustomApi-1.4.5.ipa",
+      "localizedDescription": "This AltStore source provides pre-built releases of Apollo App (Christian Selig) injected with ImprovedCustomApi (JeffreyCA).",
+      "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp",
+      "tintColor": "#4453f4",
+      "size": 114721749,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.group-session",
+          "com.apple.developer.icloud-container-identifiers",
+          "com.apple.developer.ubiquity-kvstore-identifier",
+          "com.apple.developer.weatherkit",
+          "com.apple.security.application-groups",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to take photos to upload for sharing.",
+          "NSFaceIDUsageDescription": "Unlock Apollo when re-opening in order to prevent unauthorized access.",
+          "NSLocationWhenInUseUsageDescription": "Checked once to calculate sunset/sunrise times for the location.",
+          "NSMotionUsageDescription": "Detect rotations in Media Viewer and offer corresponding options.",
+          "NSPhotoLibraryAddUsageDescription": "Save media to photo library.",
+          "NSPhotoLibraryUsageDescription": "Used to save media or to select images to upload for sharing."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.15.11_1.4.5",
+          "date": "2026-02-17T20:15:38Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v1.4.5`\n\n## Release Notes\nPrevent certain crashes when Reddit API goes down (#105)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_1.4.5/Apollo-1.15.11_ImprovedCustomApi-1.4.5.ipa",
+          "size": 114721749,
+          "sha256": "a4e2a0bbaac03dcfe1d096d4981bdac12619d83033b20a4312600304720efc60",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_1.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_2.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_3.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_4.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_5.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_6.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_7.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
+      ],
+      "category": "social",
+      "officialDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
+      "sha256": "a4e2a0bbaac03dcfe1d096d4981bdac12619d83033b20a4312600304720efc60"
+    },
+    {
+      "name": "Asspp",
+      "githubRepo": "Lakr233/Asspp",
+      "bundleIdentifier": "wiki.qaq.Asspp",
+      "developerName": "Lakr233",
+      "subtitle": "The App Store for your multi-account eco system.",
+      "version": "4.1.1",
+      "versionDate": "2026-02-20T17:26:31Z",
+      "versionDescription": "### New Features\n- **macOS Installed Apps tab** — view and update apps on connected devices\n- **In-app logging** — built-in log viewer for debugging\n- **Chinese localization** (zh-Hans)\n- **iTunesMetadata injection** — IPAs now include proper App Store metadata\n\n### Improvements\n- Migrated to `@Observable` and modern SwiftUI patterns\n- Modernized UI with AsyncButton, grouped Form style, and enriched package details\n- Fixed buttons not tappable in iOS Settings\n\n### Bug Fixes\n- **Fixed login failure due to empty response body** — login now works correctly\n- Fixed install failure message not showing\n- Fixed macOS login sheet",
+      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.1.1/Asspp.ipa",
+      "localizedDescription": "Asspp is a powerful client designed for users who need to manage multiple Apple IDs across different countries and regions. Switch stores instantly, download apps from anywhere, and manage your IPA library—all without logging out of your device.",
+      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png",
+      "tintColor": "#52ADE7",
+      "size": 13586686,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Asspp requires this permission to communicate with install service on your device."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.1.1",
+          "date": "2026-02-20T17:26:31Z",
+          "localizedDescription": "### New Features\n- **macOS Installed Apps tab** — view and update apps on connected devices\n- **In-app logging** — built-in log viewer for debugging\n- **Chinese localization** (zh-Hans)\n- **iTunesMetadata injection** — IPAs now include proper App Store metadata\n\n### Improvements\n- Migrated to `@Observable` and modern SwiftUI patterns\n- Modernized UI with AsyncButton, grouped Form style, and enriched package details\n- Fixed buttons not tappable in iOS Settings\n\n### Bug Fixes\n- **Fixed login failure due to empty response body** — login now works correctly\n- Fixed install failure message not showing\n- Fixed macOS login sheet",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.1.1/Asspp.ipa",
+          "size": 13586686,
+          "sha256": "11309ae515f29b7785331de59cfe5c4a3d1f5fa005ac249d22e0dd56b89361cd",
+          "minOSVersion": "17.0"
+        }
+      ],
+      "sha256": "11309ae515f29b7785331de59cfe5c4a3d1f5fa005ac249d22e0dd56b89361cd"
+    },
+    {
+      "name": "Feather",
+      "githubRepo": "khcrysalis/Feather",
+      "bundleIdentifier": "thewonderofyou.Feather",
+      "developerName": "khcrysalis",
+      "subtitle": "On-device signing application",
+      "version": "2.6.0",
+      "versionDate": "2026-02-04T07:54:07Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
+      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.6.0/Feather.ipa",
+      "localizedDescription": "This app allows you to install and manage applications contained in a single app, using certificate pairs and various installation techniques to allow apps to install to your device. This is an entirely stock application and uses built-in features to be able to do this!",
+      "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
+      "tintColor": "848ef9",
+      "size": 14118478,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Repos.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Sign.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Store.png?raw=true"
+      ],
+      "versions": [
+        {
+          "version": "2.6.0",
+          "date": "2026-02-04T07:54:07Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
+          "downloadURL": "https://github.com/claration/Feather/releases/download/v2.6.0/Feather.ipa",
+          "size": 14118478,
+          "sha256": "01f4d8dc7c8ae97ed82943d668d1937b8ec8009dbfa0b6f45375b815c842a191",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "officialDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
+      "sha256": "01f4d8dc7c8ae97ed82943d668d1937b8ec8009dbfa0b6f45375b815c842a191"
+    },
+    {
+      "name": "iTorrent",
+      "githubRepo": "XITRIX/iTorrent",
+      "bundleIdentifier": "com.xitrix.iTorrent2",
+      "developerName": "XITRIX",
+      "subtitle": "Torrent client for iOS",
+      "version": "2.1.1-1",
+      "versionDate": "2025-12-18T09:43:35Z",
+      "versionDescription": "## What’s new\r\n* Import/Export of RSS channels\r\n\r\n## Improvements\r\n* Files thumbnails now looks properly\r\n* Minor UI changes\r\n\r\n## Fixes\r\n* HTTPS trackers now works!\r\n* App crash on launch fixed\r\n* RSS magnet links now works\r\n\r\n**Full Changelog**: https://github.com/XITRIX/iTorrent/compare/v2.1.0-1...v2.1.1-1",
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.1.1-1/iTorrent.ipa",
+      "localizedDescription": "For everyone else, unfortunately, there is no official way to install the app, so you will need to sideload it using AltStore or SideStore. You can find installation links above if you already have one of these apps installed on your phone.",
+      "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon-Blue.appiconset/AppIcon-Blue.png",
+      "tintColor": "#F19E69",
+      "size": 8362011,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {}
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/1.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/2.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/3.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/4.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/5.png"
+      ],
+      "versions": [
+        {
+          "version": "2.1.1-1",
+          "date": "2025-12-18T09:43:35Z",
+          "localizedDescription": "## What’s new\r\n* Import/Export of RSS channels\r\n\r\n## Improvements\r\n* Files thumbnails now looks properly\r\n* Minor UI changes\r\n\r\n## Fixes\r\n* HTTPS trackers now works!\r\n* App crash on launch fixed\r\n* RSS magnet links now works\r\n\r\n**Full Changelog**: https://github.com/XITRIX/iTorrent/compare/v2.1.0-1...v2.1.1-1",
+          "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.1.1-1/iTorrent.ipa",
+          "size": 8362011,
+          "sha256": "8194f03444534d41eeac799f09bb7b7a73877606ba1573999f0c28987a379c1a",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/1.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/2.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/3.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/4.PNG"
+      ],
+      "category": "utilities",
+      "officialDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
+      "sha256": "8194f03444534d41eeac799f09bb7b7a73877606ba1573999f0c28987a379c1a"
+    },
+    {
+      "name": "Kazumi",
+      "githubRepo": "Predidit/Kazumi",
+      "bundleIdentifier": "com.example.kazumi",
+      "developerName": "Predidit",
+      "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
+      "version": "2.0.3",
+      "versionDate": "2026-02-20T03:34:46Z",
+      "versionDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_ios_2.0.3_no_sign.ipa",
+      "localizedDescription": "通过本页面 releases 选项卡下载：",
+      "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "#F6F5F0",
+      "size": 27716594,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "2.0.3",
+          "date": "2026-02-20T03:34:46Z",
+          "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_ios_2.0.3_no_sign.ipa",
+          "size": 27716594,
+          "sha256": "e64dba48034aa8a2121528037f444f6cee3c1ffbd65fd809ea77f2ca02d517a0",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "e64dba48034aa8a2121528037f444f6cee3c1ffbd65fd809ea77f2ca02d517a0"
+    },
+    {
+      "name": "Ksign",
+      "githubRepo": "Nyasami/Ksign",
+      "bundleIdentifier": "nya.asami.ksign",
+      "developerName": "Nyasami",
+      "subtitle": "The \"cleaner\" Esign app.",
+      "version": "1.5.1",
+      "versionDate": "2025-12-18T06:21:51Z",
+      "versionDescription": "Hawwo everywan its been a while since last update so here's a small update for this time !\r\n\r\n## What's Changed\r\n* Notification when finished downloading in background (you can enable in App Features settings) \r\n* Button that filled bundle ID with certificate's App ID\r\n* add share button to export in logs tab by @Am1nCmd in https://github.com/Nyasami/Ksign/pull/59\r\n* remove support of ksign certificate file\r\n* prefix / suffix for app name in signing config\r\n* refactored the IPA Downloader to just Downloads and new features\r\n* some UI changes and better UX\r\n\r\n## New Contributors\r\n* @Am1nCmd made their first contribution in https://github.com/Nyasami/Ksign/pull/59\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5...v1.5.1",
+      "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/v1.5.1/Ksign.ipa",
+      "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child?",
+      "iconURL": "https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png",
+      "tintColor": "3c94fc",
+      "size": 14029179,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.5.1",
+          "date": "2025-12-18T06:21:51Z",
+          "localizedDescription": "Hawwo everywan its been a while since last update so here's a small update for this time !\r\n\r\n## What's Changed\r\n* Notification when finished downloading in background (you can enable in App Features settings) \r\n* Button that filled bundle ID with certificate's App ID\r\n* add share button to export in logs tab by @Am1nCmd in https://github.com/Nyasami/Ksign/pull/59\r\n* remove support of ksign certificate file\r\n* prefix / suffix for app name in signing config\r\n* refactored the IPA Downloader to just Downloads and new features\r\n* some UI changes and better UX\r\n\r\n## New Contributors\r\n* @Am1nCmd made their first contribution in https://github.com/Nyasami/Ksign/pull/59\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5...v1.5.1",
+          "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/v1.5.1/Ksign.ipa",
+          "size": 14029179,
+          "sha256": "f687389d5d6c655c320317d26a3629572c50f79353ea72e9dd4103d193bae3c4",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
+      "sha256": "f687389d5d6c655c320317d26a3629572c50f79353ea72e9dd4103d193bae3c4"
+    },
+    {
+      "name": "LiveContainer",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:18:01Z",
+      "versionDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer.ipa",
+      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 4523860,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:18:01Z",
+          "localizedDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer.ipa",
+          "size": 4523860,
+          "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "Run iOS apps without actually installing them!",
+      "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15"
+    },
+    {
+      "name": "LiveContainer (Nightly)",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:15:39Z",
+      "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
+      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 4523860,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:15:39Z",
+          "localizedDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
+          "size": 4523860,
+          "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "Run iOS apps without actually installing them!",
+      "sha256": "7349ccf8aadf61425d20309209a3c7179977cdce3b48cdb8661580086bdadb15"
+    },
+    {
+      "name": "LiveContainer+SideStore",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:18:08Z",
+      "versionDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer%2BSideStore.ipa",
+      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 34811049,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:18:08Z",
+          "localizedDescription": "> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (LiveContainer+SideStore.ipa), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n>[!Note]\r\n> This a minor release that solves the following issues in version 3.7.0 and adds the following features. For more information, please see [3.7.0 release note](https://github.com/LiveContainer/LiveContainer/releases/tag/3.7.0).\r\n\r\n## Bug Fixes\r\n\r\n- Fix an issue where built-in SideStore may freeze on launch (#1158)\r\n- Fix the ipa of another LiveContainer not generating in LiveContainer+SideStore builds after SideStore's massive codebase change (#1184)\r\n- Fix the new Launch App Shortcut does not work below iOS 18 (#1159)\r\n- The Launch App Shortcut now reports meaningful errors\r\n- Fix crash when using external container in multitasking mode\r\n- Fix process hangs when debugging multitask private apps\r\n\r\n## New Features\r\n- The \"Tap top of the view to scroll to top\" action can be passed through to multitasking guest apps.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.7.2/LiveContainer%2BSideStore.ipa",
+          "size": 34811049,
+          "sha256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "Run iOS apps without actually installing them!",
+      "sha256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9"
+    },
+    {
+      "name": "LiveContainer+SideStore (Nightly)",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.7.2",
+      "versionDate": "2026-02-27T04:15:40Z",
+      "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 34811049,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.7.2",
+          "date": "2026-02-27T04:15:40Z",
+          "localizedDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+          "size": 34811049,
+          "sha256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "Run iOS apps without actually installing them!",
+      "sha256": "794ec785c30a2f3a02f3757e5cd5978c9871bc0539e332deeb66f15f4aaf4de9"
+    },
+    {
+      "name": "Luna",
+      "githubRepo": "cranci1/Luna",
+      "bundleIdentifier": "me.cranci.solar",
+      "developerName": "cranci1",
+      "subtitle": "No description available.",
+      "version": "1.0.0",
+      "versionDate": "2026-02-22T16:48:41Z",
+      "versionDescription": "# Luna 1.0.0\r\n\r\nLuna first release is here and it's packed with plenty of features, that include:\r\n\r\n- _**TMDB support**_\r\n- _**mpv**_ based player\r\n- _**module settings**_ for customization\r\n- _**Kazen**_ loader for manga to @DawudOsman \r\n- Fully working and modular _**continue watching**_\r\n- AniList & Trakt login with _**push updates**_ working\r\n\r\n> [!Note]\r\n> Subtitles in mpv can cause overheating!\r\n\r\nother features to come are:\r\n- [ ]  external subtitles provider\r\n- [ ] _**chromecast**_ support for streams\r\n- [ ]  _**VideoLAN**_ player thanks to @soupy-dev\r\n\r\nand more to come!\r\n\r\n## New Contributors\r\n* @50n50 made their first contribution in https://github.com/cranci1/Luna/pull/1\r\n* @SuperFico2100 made their first contribution in https://github.com/cranci1/Luna/pull/11\r\n* @undeaDD made their first contribution in https://github.com/cranci1/Luna/pull/18\r\n* @DawudOsman made their first contribution in https://github.com/cranci1/Luna/pull/23\r\n* @686udjie made their first contribution in https://github.com/cranci1/Luna/pull/24\r\n* @soupy-dev made their first contribution in https://github.com/cranci1/Luna/pull/34\r\n\r\n**Full Changelog**: https://github.com/cranci1/Luna/commits/v1.0.0",
+      "downloadURL": "https://github.com/cranci1/Luna/releases/download/v1.0.0/Luna.ipa",
+      "localizedDescription": "You can download Luna using Xcode or using the .ipa file, which you can find in the Nightly build page.",
+      "iconURL": "https://raw.githubusercontent.com/cranci1/Luna/main/Luna/Assets.xcassets/AppIcon.appiconset/Default.png",
+      "tintColor": "#696969",
+      "size": 16273075,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-02-22T16:48:41Z",
+          "localizedDescription": "# Luna 1.0.0\r\n\r\nLuna first release is here and it's packed with plenty of features, that include:\r\n\r\n- _**TMDB support**_\r\n- _**mpv**_ based player\r\n- _**module settings**_ for customization\r\n- _**Kazen**_ loader for manga to @DawudOsman \r\n- Fully working and modular _**continue watching**_\r\n- AniList & Trakt login with _**push updates**_ working\r\n\r\n> [!Note]\r\n> Subtitles in mpv can cause overheating!\r\n\r\nother features to come are:\r\n- [ ]  external subtitles provider\r\n- [ ] _**chromecast**_ support for streams\r\n- [ ]  _**VideoLAN**_ player thanks to @soupy-dev\r\n\r\nand more to come!\r\n\r\n## New Contributors\r\n* @50n50 made their first contribution in https://github.com/cranci1/Luna/pull/1\r\n* @SuperFico2100 made their first contribution in https://github.com/cranci1/Luna/pull/11\r\n* @undeaDD made their first contribution in https://github.com/cranci1/Luna/pull/18\r\n* @DawudOsman made their first contribution in https://github.com/cranci1/Luna/pull/23\r\n* @686udjie made their first contribution in https://github.com/cranci1/Luna/pull/24\r\n* @soupy-dev made their first contribution in https://github.com/cranci1/Luna/pull/34\r\n\r\n**Full Changelog**: https://github.com/cranci1/Luna/commits/v1.0.0",
+          "downloadURL": "https://github.com/cranci1/Luna/releases/download/v1.0.0/Luna.ipa",
+          "size": 16273075,
+          "sha256": "da3c7e77f9fb1e689fdb0e9a5d4c208a2e2910a84d9e8533f0993abff13fa17e",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "da3c7e77f9fb1e689fdb0e9a5d4c208a2e2910a84d9e8533f0993abff13fa17e"
+    },
+    {
+      "name": "Mangayomi",
+      "githubRepo": "kodjodevf/mangayomi",
+      "bundleIdentifier": "com.kodjodevf.mangayomi",
+      "developerName": "kodjodevf",
+      "subtitle": "Read manga, novels, and watch anime",
+      "version": "0.7.1",
+      "versionDate": "2026-02-02T12:06:52Z",
+      "versionDescription": "## What's Changed\r\n* fix/reader-single-pages by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/654\r\n* added option to exclude categories from mass update by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/655\r\n* fix #643 EPUB fails to load when nav.xhtml references missing script (../js/kobo.js)\r\n* feat: update entitlements and plist for file access permissions\r\n* feat: add DNS-over-HTTPS (DoH) support (experimental)\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.0...v0.7.1",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.1/Mangayomi-v0.7.1-ios.ipa",
+      "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching animes across multiple platforms.",
+      "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "EF4444",
+      "size": 45081197,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSDocumentUsageDescription": "Mangayomi needs access to your files to create and restore backups.",
+          "NSPhotoLibraryUsageDescription": "Mangayomi needs access to your photo library to save and restore backups."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
+      ],
+      "versions": [
+        {
+          "version": "0.7.1",
+          "date": "2026-02-02T12:06:52Z",
+          "localizedDescription": "## What's Changed\r\n* fix/reader-single-pages by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/654\r\n* added option to exclude categories from mass update by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/655\r\n* fix #643 EPUB fails to load when nav.xhtml references missing script (../js/kobo.js)\r\n* feat: update entitlements and plist for file access permissions\r\n* feat: add DNS-over-HTTPS (DoH) support (experimental)\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.0...v0.7.1",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.1/Mangayomi-v0.7.1-ios.ipa",
+          "size": 45081197,
+          "sha256": "ceaba7c34f52ed351d67b138da66f142ebb0e615ac9807d9acb3e1ff32d9cc8d",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "category": "entertainment",
+      "officialDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
+      "sha256": "ceaba7c34f52ed351d67b138da66f142ebb0e615ac9807d9acb3e1ff32d9cc8d"
+    },
+    {
+      "name": "NeoFreeBird",
+      "githubRepo": "NeoFreeBird/app",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird",
+      "subtitle": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
+      "version": "2.2",
+      "versionDate": "2025-11-03T01:40:11Z",
+      "versionDescription": "NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\r\n\r\n### Change log:\r\n\r\n**Twitter, version 11.35:**\r\n- Updated the Twitter build to 11.35\r\n\r\n**NeoFreeBird, version 2.2:**\r\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\r\n- Localized the Post > Tweet replacer\r\n- Improved the Open in Twitter extension\r\n- Minor bug fixes and other minor improvements\r\n\r\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\r\n\r\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+      "localizedDescription": "A modified Twitter/X app for iOS/iPadOS devices with branding reverts, a new updated BHTwitter , and many other useful features.",
+      "iconURL": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png",
+      "tintColor": "1DA1F2",
+      "size": 153108663,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.applesignin",
+          "com.apple.developer.associated-appclip-app-identifiers",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.devicecheck.appattest-environment",
+          "com.apple.developer.networking.carrier-constrained.app-optimized",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.networking.wifi-info",
+          "com.apple.developer.pass-type-identifiers",
+          "com.apple.developer.payment-pass-provisioning",
+          "com.apple.developer.replace-plugin",
+          "com.apple.developer.siri",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSBluetoothAlwaysUsageDescription": "Twitter uses Bluetooth to discover Cast-enabled devices near you.",
+          "NSCalendarsUsageDescription": "Add events to your calendar from Twitter.",
+          "NSCameraUsageDescription": "Capture and post photos and videos from Twitter.",
+          "NSContactsUsageDescription": "We will securely upload your contacts to our servers to help you connect with friends and suggest users to follow on X.",
+          "NSFaceIDUsageDescription": "Use FaceID to authenticate on Twitter.",
+          "NSLocalNetworkUsageDescription": "Twitter uses the local network to discover Cast-enabled devices on your WiFi network.",
+          "NSLocationUsageDescription": "Enjoy Twitter tailored to your location.",
+          "NSLocationWhenInUseUsageDescription": "Enables X to customize your experience based on your current location.",
+          "NSMicrophoneUsageDescription": "Capture and post videos with sound from Twitter.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you download photos and videos to your Photos.",
+          "NSPhotoLibraryUsageDescription": "Allow access to share photos from your camera roll.",
+          "NSSpeechRecognitionUsageDescription": "Going forward, whenever you choose to share captions on this device, Apple will provide the service. Doing so helps make sure people of all hearing abilities can access your content.",
+          "NSUserTrackingUsageDescription": "This helps Twitter show you more relevant ads."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9189.png",
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9190.png"
+      ],
+      "versions": [
+        {
+          "version": "2.2",
+          "date": "2025-11-03T01:40:11Z",
+          "localizedDescription": "NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\r\n\r\n### Change log:\r\n\r\n**Twitter, version 11.35:**\r\n- Updated the Twitter build to 11.35\r\n\r\n**NeoFreeBird, version 2.2:**\r\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\r\n- Localized the Post > Tweet replacer\r\n- Improved the Open in Twitter extension\r\n- Minor bug fixes and other minor improvements\r\n\r\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\r\n\r\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+          "size": 153108663,
+          "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "officialDescription": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
+      "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0"
+    },
+    {
+      "name": "Nyxian",
+      "githubRepo": "ProjectNyxian/Nyxian",
+      "bundleIdentifier": "com.cr4zy.nyxian",
+      "developerName": "ProjectNyxian",
+      "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
+      "version": "0.8.6",
+      "versionDate": "2026-02-07T02:41:31Z",
+      "versionDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- improved KernelLogViewController (60d74e5d121dead42062e7a99a8c4db9be2dcd6e, d571453f6447fbe863b9b94c09061df158af3d1e)\r\n- fixed utility compilation failing due to missing flags on lower iOS versions (a9cb50ebfee7e6797f9ded549cbbe6ac1c77f808)\r\n- fixed utility development (eeb9a1cee31b5fd10c12e100f0c019ab478afc9c, 8b04ef40b1bb21232999fd2f5e1577ec705d1ec1, f7b8f2303c3c511b86eeaa0eedf0976012170bef, 7090741ea6e4ae6dfc9e575471bbc08016950ce5)\r\n- added undo and redo button to CodeEditor (51bf2554358bffa8225bdf1c248853e4690dfd4c, a0987c1578ccf8aac27ddd256adc05716dd9cbf5, 08acab8c2895e5e4406a4484ab95a4ee33012e3c)\r\n- fixed iOS 14 appearance issues (942a861e62e64a86f8f52fdb0499e8a239905115, 025b4c1c5f776b8d6edebd95a2b42343119f0e14)\r\n- improved keyboard tab button with indentation features (e33ade5c5a888e9bf1c769873c2fa85823c33ba9, 61999897be379eab37de3f0048cda12036fefea2)\r\n- fixed LDEWindow focusing on iPadOS (54a3efcae1fd37f541908b0d3ff503a3a17b40cc, 8e21e1a08ad4f6c42eca72fb9b859b8a36d77baa)\r\n- reduced jitter of XCodeButton animations (6233eebbcdbb00fb3ae6080547f245f1147b47e4)\r\n#### LiveContainer\r\n- fixed a bug where the bundle was kept `LiveProcess`, instead of overwritten with the value expected (78debea4b2870776e0317973d83a02732e9901c8)\r\n- overwrites now _CFGetProcessPath too (3307c66d05ee8d1b509cd26ad780d5eae5df31f1)\r\n- fixed home path for utilities (105968a97a978025250e0ef989c0281dca9dd530, a7497f92ef355991658fe9023781d6e10b5cfa13)\r\n- fixed `DYLD_INSERT_LIBRARIES` (9f6c1b720f8180bff1618a03d835b238210214a9)\r\n----\r\n### Jailbroken\r\n#### Nyxian\r\n- initial release\r\n",
+      "downloadURL": "https://github.com/ProjectNyxian/Nyxian/releases/download/0.8.6/nyxian.ipa",
+      "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
+      "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
+      "tintColor": "#9978c8",
+      "size": 87498780,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleEventsUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDocumentsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDownloadsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderDomainUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderPresenceUsageDescription": "The guest app is requesting for this permission.",
+          "NSFocusStatusUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemAdministrationUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemExtensionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission.",
+          "NSVideoSubscriberAccountUsageDescription": "The guest app is requesting for this permission.",
+          "NSVoIPUsageDescription": "The guest app is requesting for this permission.",
+          "OSBundleUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.8.6",
+          "date": "2026-02-07T02:41:31Z",
+          "localizedDescription": "## Changelog\r\n### Jailed\r\n#### Nyxian\r\n- improved KernelLogViewController (60d74e5d121dead42062e7a99a8c4db9be2dcd6e, d571453f6447fbe863b9b94c09061df158af3d1e)\r\n- fixed utility compilation failing due to missing flags on lower iOS versions (a9cb50ebfee7e6797f9ded549cbbe6ac1c77f808)\r\n- fixed utility development (eeb9a1cee31b5fd10c12e100f0c019ab478afc9c, 8b04ef40b1bb21232999fd2f5e1577ec705d1ec1, f7b8f2303c3c511b86eeaa0eedf0976012170bef, 7090741ea6e4ae6dfc9e575471bbc08016950ce5)\r\n- added undo and redo button to CodeEditor (51bf2554358bffa8225bdf1c248853e4690dfd4c, a0987c1578ccf8aac27ddd256adc05716dd9cbf5, 08acab8c2895e5e4406a4484ab95a4ee33012e3c)\r\n- fixed iOS 14 appearance issues (942a861e62e64a86f8f52fdb0499e8a239905115, 025b4c1c5f776b8d6edebd95a2b42343119f0e14)\r\n- improved keyboard tab button with indentation features (e33ade5c5a888e9bf1c769873c2fa85823c33ba9, 61999897be379eab37de3f0048cda12036fefea2)\r\n- fixed LDEWindow focusing on iPadOS (54a3efcae1fd37f541908b0d3ff503a3a17b40cc, 8e21e1a08ad4f6c42eca72fb9b859b8a36d77baa)\r\n- reduced jitter of XCodeButton animations (6233eebbcdbb00fb3ae6080547f245f1147b47e4)\r\n#### LiveContainer\r\n- fixed a bug where the bundle was kept `LiveProcess`, instead of overwritten with the value expected (78debea4b2870776e0317973d83a02732e9901c8)\r\n- overwrites now _CFGetProcessPath too (3307c66d05ee8d1b509cd26ad780d5eae5df31f1)\r\n- fixed home path for utilities (105968a97a978025250e0ef989c0281dca9dd530, a7497f92ef355991658fe9023781d6e10b5cfa13)\r\n- fixed `DYLD_INSERT_LIBRARIES` (9f6c1b720f8180bff1618a03d835b238210214a9)\r\n----\r\n### Jailbroken\r\n#### Nyxian\r\n- initial release\r\n",
+          "downloadURL": "https://github.com/ProjectNyxian/Nyxian/releases/download/0.8.6/nyxian.ipa",
+          "size": 87498780,
+          "sha256": "5c8e65ad569c197fcb6ef1adce73a465b6bcb6fa6b4b4e8c19a55a65b55e0ce0",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/home.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/editor.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/customization.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      },
+      "category": "developer",
+      "officialDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
+      "sha256": "5c8e65ad569c197fcb6ef1adce73a465b6bcb6fa6b4b4e8c19a55a65b55e0ce0"
+    },
+    {
+      "name": "PiliPlus",
+      "githubRepo": "bggRGjQaUbCoE/PiliPlus",
+      "bundleIdentifier": "com.example.piliplus",
+      "developerName": "bggRGjQaUbCoE",
+      "subtitle": "PiliPlus",
+      "version": "1.1.6",
+      "versionDate": "2026-02-07T08:50:08Z",
+      "versionDescription": "优化滑动手势\r\n优化分区 TAB\r\n优化查看评论笔记\r\n优化调整倍速时卡顿 #1813 by @nakixii\r\n\r\n支持调整自动同步(`autosync`)数值\r\n支持快捷切换账号 #1815 co-by @cnctem\r\n稍后再看/收藏搜索添加`复制`/`移动`按钮 #1822 @cnctem\r\n调整 #1816 #1818 #1821 #1826 by @My-Responsitories\r\n支持基于滑动时间设置滑动弹簧参数 #1816 co-by @My-Responsitories\r\n\r\n修复 #1825 by @Wu-HZ\r\n修复动态页 UP 列表 #1819 by @leset0ng\r\n\r\n其他",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.6/PiliPlus_ios_1.1.6%2B4626.ipa",
+      "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
+      "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
+      "tintColor": "#5CB67B",
+      "size": 25139197,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "App需要您的同意,才能访问媒体资料库",
+          "NSCameraUsageDescription": "App需要您的同意,才能访问相册",
+          "NSPhotoLibraryUsageDescription": "请允许APP保存图片到相册"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.1.6",
+          "date": "2026-02-07T08:50:08Z",
+          "localizedDescription": "优化滑动手势\r\n优化分区 TAB\r\n优化查看评论笔记\r\n优化调整倍速时卡顿 #1813 by @nakixii\r\n\r\n支持调整自动同步(`autosync`)数值\r\n支持快捷切换账号 #1815 co-by @cnctem\r\n稍后再看/收藏搜索添加`复制`/`移动`按钮 #1822 @cnctem\r\n调整 #1816 #1818 #1821 #1826 by @My-Responsitories\r\n支持基于滑动时间设置滑动弹簧参数 #1816 co-by @My-Responsitories\r\n\r\n修复 #1825 by @Wu-HZ\r\n修复动态页 UP 列表 #1819 by @leset0ng\r\n\r\n其他",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/1.1.6/PiliPlus_ios_1.1.6%2B4626.ipa",
+          "size": 25139197,
+          "sha256": "c7a93ca3759b867ed23dcfb2540b0cd9c792a1cbca867b08da5e4882ce1605be",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "c7a93ca3759b867ed23dcfb2540b0cd9c792a1cbca867b08da5e4882ce1605be"
+    },
+    {
+      "name": "PPSSPP",
+      "githubRepo": "hrydgard/ppsspp",
+      "bundleIdentifier": "org.ppsspp.ppsspp",
+      "developerName": "hrydgard",
+      "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
+      "version": "1.19.3",
+      "versionDate": "2025-07-15T10:21:14Z",
+      "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/PPSSPP-iOS-v1.19.3.ipa",
+      "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
+      "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
+      "tintColor": "#2D4553",
+      "size": 29930616,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.security.container-required",
+          "com.apple.private.security.no-container",
+          "com.apple.private.security.no-sandbox",
+          "com.apple.private.security.storage.AppDataContainers",
+          "com.apple.private.security.storage.MobileDocuments",
+          "com.apple.security.iokit-user-client-class",
+          "get-task-allow",
+          "platform-application"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Your camera may be used to emulate Go!Cam, a camera accessory",
+          "NSLocalNetworkUsageDescription": "Your local network needs to be accessed by PPSSPP for network multiplayer support.",
+          "NSLocationWhenInUseUsageDescription": "Your location may be used to emulate Go!Explore, a GPS accessory",
+          "NSMicrophoneUsageDescription": "Your microphone may be used to emulate Go!Cam/Talkman, a microphone accessory",
+          "NSPhotoLibraryUsageDescription": "Access to your photos is needed to allow setting a background image."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.19.3",
+          "date": "2025-07-15T10:21:14Z",
+          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/PPSSPP-iOS-v1.19.3.ipa",
+          "size": 29930616,
+          "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc",
+          "minOSVersion": "11.0"
+        }
+      ],
+      "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc"
+    },
+    {
+      "name": "SideStore",
+      "githubRepo": "SideStore/SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore",
+      "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
+      "version": "0.6.2",
+      "versionDate": "2025-07-01T01:20:21Z",
+      "versionDescription": "## Build Info\r\nBuilt at (UTC): `Tue Jul  1 01:20:17 2025`\r\nBuilt at (UTC date): `2025-07-01`\r\nCommit SHA: `685d9567752c6b7396304f8b64f0f713f52cf936`\r\nVersion: `0.6.2`\r\n\r\n## What's Changed\r\n* Rebase 2.0 wip by @nythepegasus in https://github.com/SideStore/SideStore/pull/794\r\n* [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in https://github.com/SideStore/SideStore/pull/846\r\n* [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in https://github.com/SideStore/SideStore/pull/850\r\n* Update trustedapps.json by @neoarz in https://github.com/SideStore/SideStore/pull/853\r\n* [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in https://github.com/SideStore/SideStore/pull/857\r\n* Fix Repository App Previews by @neoarz in https://github.com/SideStore/SideStore/pull/871\r\n* Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in https://github.com/SideStore/SideStore/pull/888\r\n* Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in https://github.com/SideStore/SideStore/pull/894\r\n* Feature: Render in-app update description as (full) markdown by @mahee96 in https://github.com/SideStore/SideStore/pull/897\r\n* fix: typo in hasUpdate comparison by @l2dy in https://github.com/SideStore/SideStore/pull/900\r\n* Update SettingsViewController.swift by @neoarz in https://github.com/SideStore/SideStore/pull/915\r\n* WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0  by @mahee96 in https://github.com/SideStore/SideStore/pull/920\r\n* Fix typo \"levaraging\" -> \"leveraging\" by @lafrenierejm in https://github.com/SideStore/SideStore/pull/926\r\n* Added StosVPN to the EM Proxy part. by @Br0des in https://github.com/SideStore/SideStore/pull/940\r\n* StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in https://github.com/SideStore/SideStore/pull/945\r\n* Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in https://github.com/SideStore/SideStore/pull/935\r\n* Add iOS 17.4+ JIT and mounting by @jkcoxson in https://github.com/SideStore/SideStore/pull/953\r\n* Add export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/959\r\n* Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in https://github.com/SideStore/SideStore/pull/962\r\n* Change front-facing references to AltStore by @owoellen in https://github.com/SideStore/SideStore/pull/987\r\n* Update OperationError.swift for idevice_pair by @CelloSerenity in https://github.com/SideStore/SideStore/pull/995\r\n* Add import/export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/1008\r\n* Fix pairing file doc link by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1011\r\n* Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in https://github.com/SideStore/SideStore/pull/1012\r\n* Use main profile when refreshing by @hugeBlack in https://github.com/SideStore/SideStore/pull/1013\r\n\r\n## New Contributors\r\n* @l2dy made their first contribution in https://github.com/SideStore/SideStore/pull/900\r\n* @lafrenierejm made their first contribution in https://github.com/SideStore/SideStore/pull/926\r\n* @Br0des made their first contribution in https://github.com/SideStore/SideStore/pull/940\r\n* @hugeBlack made their first contribution in https://github.com/SideStore/SideStore/pull/959\r\n* @owoellen made their first contribution in https://github.com/SideStore/SideStore/pull/987\r\n* @CelloSerenity made their first contribution in https://github.com/SideStore/SideStore/pull/995\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.5.9...0.6.2",
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.2/SideStore.ipa",
+      "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
+      "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+      "tintColor": "#EDE7FD",
+      "size": 28873303,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore uses the local network to find and communicate with your device."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.6.2",
+          "date": "2025-07-01T01:20:21Z",
+          "localizedDescription": "## Build Info\r\nBuilt at (UTC): `Tue Jul  1 01:20:17 2025`\r\nBuilt at (UTC date): `2025-07-01`\r\nCommit SHA: `685d9567752c6b7396304f8b64f0f713f52cf936`\r\nVersion: `0.6.2`\r\n\r\n## What's Changed\r\n* Rebase 2.0 wip by @nythepegasus in https://github.com/SideStore/SideStore/pull/794\r\n* [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in https://github.com/SideStore/SideStore/pull/846\r\n* [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in https://github.com/SideStore/SideStore/pull/850\r\n* Update trustedapps.json by @neoarz in https://github.com/SideStore/SideStore/pull/853\r\n* [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in https://github.com/SideStore/SideStore/pull/857\r\n* Fix Repository App Previews by @neoarz in https://github.com/SideStore/SideStore/pull/871\r\n* Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in https://github.com/SideStore/SideStore/pull/888\r\n* Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in https://github.com/SideStore/SideStore/pull/894\r\n* Feature: Render in-app update description as (full) markdown by @mahee96 in https://github.com/SideStore/SideStore/pull/897\r\n* fix: typo in hasUpdate comparison by @l2dy in https://github.com/SideStore/SideStore/pull/900\r\n* Update SettingsViewController.swift by @neoarz in https://github.com/SideStore/SideStore/pull/915\r\n* WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0  by @mahee96 in https://github.com/SideStore/SideStore/pull/920\r\n* Fix typo \"levaraging\" -> \"leveraging\" by @lafrenierejm in https://github.com/SideStore/SideStore/pull/926\r\n* Added StosVPN to the EM Proxy part. by @Br0des in https://github.com/SideStore/SideStore/pull/940\r\n* StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in https://github.com/SideStore/SideStore/pull/945\r\n* Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in https://github.com/SideStore/SideStore/pull/935\r\n* Add iOS 17.4+ JIT and mounting by @jkcoxson in https://github.com/SideStore/SideStore/pull/953\r\n* Add export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/959\r\n* Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in https://github.com/SideStore/SideStore/pull/962\r\n* Change front-facing references to AltStore by @owoellen in https://github.com/SideStore/SideStore/pull/987\r\n* Update OperationError.swift for idevice_pair by @CelloSerenity in https://github.com/SideStore/SideStore/pull/995\r\n* Add import/export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/1008\r\n* Fix pairing file doc link by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1011\r\n* Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in https://github.com/SideStore/SideStore/pull/1012\r\n* Use main profile when refreshing by @hugeBlack in https://github.com/SideStore/SideStore/pull/1013\r\n\r\n## New Contributors\r\n* @l2dy made their first contribution in https://github.com/SideStore/SideStore/pull/900\r\n* @lafrenierejm made their first contribution in https://github.com/SideStore/SideStore/pull/926\r\n* @Br0des made their first contribution in https://github.com/SideStore/SideStore/pull/940\r\n* @hugeBlack made their first contribution in https://github.com/SideStore/SideStore/pull/959\r\n* @owoellen made their first contribution in https://github.com/SideStore/SideStore/pull/987\r\n* @CelloSerenity made their first contribution in https://github.com/SideStore/SideStore/pull/995\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.5.9...0.6.2",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.2/SideStore.ipa",
+          "size": 28873303,
+          "sha256": "34d230f77367693bd2c1ff397a451304bfb512cd86c41bc6959703d31d5cc1d9",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "34d230f77367693bd2c1ff397a451304bfb512cd86c41bc6959703d31d5cc1d9"
+    },
+    {
+      "name": "SideStore (Nightly)",
+      "githubRepo": "SideStore/SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore",
+      "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
+      "version": "0.6.3-20260225.940+bff192be.0603",
+      "versionDate": "2026-02-25T03:01:04Z",
+      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [bff192be4e2b99e0e7cd717ba3d1871d3a7b2136](https://github.com/SideStore/SideStore/commit/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Wed Feb 25 03:00:59 2026`\nBuilt at (UTC date): `2026-02-25`\nCommit SHA: `bff192be4e2b99e0e7cd717ba3d1871d3a7b2136`\nVersion: `0.6.3-20260225.940+bff192be`\n#### What's Changed\n- ALTSign cleanup\n- ALTSign cleanup\n- CI: add what xcode is suggesting (xcode noise from auto create schemes)\n\n#### Full Changelog: [06ad6488...bff192be](https://github.com/SideStore/SideStore/compare/06ad6488cc3709860bdb4b6dbb146d43171753cc...bff192be4e2b99e0e7cd717ba3d1871d3a7b2136)\n",
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+      "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
+      "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+      "tintColor": "#EDE7FD",
+      "size": 27287993,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore uses the local network to find and communicate with your device."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.6.3-20260225.940+bff192be.0603",
+          "date": "2026-02-25T03:01:04Z",
+          "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [bff192be4e2b99e0e7cd717ba3d1871d3a7b2136](https://github.com/SideStore/SideStore/commit/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Wed Feb 25 03:00:59 2026`\nBuilt at (UTC date): `2026-02-25`\nCommit SHA: `bff192be4e2b99e0e7cd717ba3d1871d3a7b2136`\nVersion: `0.6.3-20260225.940+bff192be`\n#### What's Changed\n- ALTSign cleanup\n- ALTSign cleanup\n- CI: add what xcode is suggesting (xcode noise from auto create schemes)\n\n#### Full Changelog: [06ad6488...bff192be](https://github.com/SideStore/SideStore/compare/06ad6488cc3709860bdb4b6dbb146d43171753cc...bff192be4e2b99e0e7cd717ba3d1871d3a7b2136)\n",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+          "size": 27287993,
+          "sha256": "bbb1de815db9f973e5620173727eeeed62b5c683dadcf47f5389db9d3f81e016",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "bbb1de815db9f973e5620173727eeeed62b5c683dadcf47f5389db9d3f81e016"
+    },
+    {
+      "name": "UTM",
+      "githubRepo": "utmapp/UTM",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "developerName": "utmapp",
+      "subtitle": "Virtual machines for iOS and macOS",
+      "version": "4.7.5",
+      "versionDate": "2026-01-03T18:14:50Z",
+      "versionDescription": "## Highlights\r\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\r\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\r\n* **App Intents**: New support for automation with Shortcuts.\r\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\r\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\r\n\r\n## Changes (v4.7.5)\r\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\r\n* Fixed some rare crashes that can happen after a VM stops\r\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\r\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\r\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\r\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\r\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\r\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\r\n\r\n## Changes (v4.7.4)\r\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\r\n* Home: Fixed layout issue with button titles\r\n* (macOS) Fixed a crash when VM exits while USB is active\r\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\r\n\r\n## Changes (v4.7.3)\r\n* Fixed a crash when starting a VM results in a block device error\r\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\r\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\r\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\r\n* (macOS) Fixed crash when exiting full screen (#7377)\r\n\r\n## Changes (v4.7.2)\r\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\r\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\r\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\r\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\r\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\r\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\r\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\r\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\r\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\r\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\r\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\r\n* Wizard: Update OS logos to be consistent with other icons\r\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\r\n* Wizard: Add additional supported hardware configurations for running older Windows\r\n* Wizard: Support floppy boot for Windows configuration\r\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\r\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\r\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\r\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\r\n* (macOS) Fixed connecting USB devices from secondary windows\r\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\r\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\r\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\r\n* (macOS) utmctl: Add `version` command to detect current UTM version\r\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\r\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\r\n\r\n## Changes (v4.7.1)\r\n* New Liquid Glass icon thanks to @forcequitOS\r\n* Added App Intents for VM operations (#6245)\r\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\r\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\r\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\r\n* QEMU M68K: Fixed virtio drive config (#7008)\r\n* Fixed a rare crash after stopping VM due to a race condition in libusb\r\n* Home: improve screenshot contrast in Dark Mode (#6894)\r\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\r\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\r\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\r\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\r\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\r\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\r\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\r\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. However, removing these will make the app size a lot smaller. M68K is added to support classic Mac OS.\r\n* (macOS 11) Fixed guest tools mounting (#7297)\r\n* (macOS 11) Fixed stop button not working (#7298)\r\n* (macOS) Fixed a bug where an error message on startup leads to the window being stuck (#7161)\r\n* (macOS) Settings: New setting to disable file locking so VMs can be launched from a network share or a filesystem that does not support locking (#7211)\r\n* (macOS) Settings: New setting to disable screenshots completely for privacy reasons (#6620)\r\n* (macOS) Settings: New setting to swap Ctrl and Cmd keys in VMs (#4003)\r\n* (macOS 26) Settings: Brand new layout with a sidebar to match other native apps\r\n* (macOS) AVF: Added clearer message when trying to install macOS beta without having the latest beta support tools installed\r\n* (macOS) AVF: New option to resize (expand) disk images (#6891)\r\n* (macOS 26) Fixed a layout issue with the resize image popover\r\n* (macOS) Home: Fixed hide sidebar button\r\n* (macOS) Config: Show localized network adapter names when available (#7287) (thanks @Schamper)\r\n* (macOS) Scripting: Fixed an issue where wrong UUIDs were generated for display configs (#7145)\r\n\r\n## Changes (v4.7.0)\r\n* Updated to QEMU v10.0.2\r\n* Config: In the RAM slider, the maximum value has been increased to 64GiB (note that you can always go above the slider limit by typing in the text box) (#7234)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Wizard: Fixed crash when VM name is empty (#7245)\r\n* (iOS) Toolbar: Refactored toolbar button layout code\r\n* (macOS) Host only networks: you can set up multiple host-only networks (including ones shared by VMware) and have multiple VMs on the same virtual network (thanks @Schamper)\r\n* (macOS) utmctl: added option to boot Apple VMs into recovery mode (thanks @cees-elzinga)\r\n* (macOS) ~~Enable QEMU support for vmapple (#7150)~~ Machine model is removed for stability reasons but `apple-gfx-pci` is still supported for Intel VMs\r\n* (macOS) Rename the main window to 'UTM Library' (#7264)\r\n* (macOS) Display an error when IPSW install fails to load the file (instead of crashing) (#6855)\r\n* (macOS) Settings: Fixed a layout issue (#7117)\r\n* (macOS) Apple Virtualization: Add support for ASIF drive images. On macOS 26, ASIF drives will be created by default.\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+      "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
+      "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "#3D7FEB",
+      "size": 130058389,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.hypervisor",
+          "com.apple.private.iokit.IOServiceSetAuthorizationID",
+          "com.apple.private.memorystatus",
+          "com.apple.security.exception.iokit-user-client-class",
+          "com.apple.system.diagnostics.iokit-properties",
+          "com.apple.vm.device-access",
+          "dynamic-codesigning",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "The virtual machine may access the local network. UTM may also use the network to communicate with local servers.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationAlwaysUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSMicrophoneUsageDescription": "Permission is required for any virtual machine to record from the microphone."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.7.5",
+          "date": "2026-01-03T18:14:50Z",
+          "localizedDescription": "## Highlights\r\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\r\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\r\n* **App Intents**: New support for automation with Shortcuts.\r\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\r\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\r\n\r\n## Changes (v4.7.5)\r\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\r\n* Fixed some rare crashes that can happen after a VM stops\r\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\r\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\r\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\r\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\r\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\r\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\r\n\r\n## Changes (v4.7.4)\r\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\r\n* Home: Fixed layout issue with button titles\r\n* (macOS) Fixed a crash when VM exits while USB is active\r\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\r\n\r\n## Changes (v4.7.3)\r\n* Fixed a crash when starting a VM results in a block device error\r\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\r\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\r\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\r\n* (macOS) Fixed crash when exiting full screen (#7377)\r\n\r\n## Changes (v4.7.2)\r\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\r\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\r\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\r\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\r\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\r\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\r\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\r\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\r\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\r\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\r\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\r\n* Wizard: Update OS logos to be consistent with other icons\r\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\r\n* Wizard: Add additional supported hardware configurations for running older Windows\r\n* Wizard: Support floppy boot for Windows configuration\r\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\r\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\r\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\r\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\r\n* (macOS) Fixed connecting USB devices from secondary windows\r\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\r\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\r\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\r\n* (macOS) utmctl: Add `version` command to detect current UTM version\r\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\r\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\r\n\r\n## Changes (v4.7.1)\r\n* New Liquid Glass icon thanks to @forcequitOS\r\n* Added App Intents for VM operations (#6245)\r\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\r\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\r\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\r\n* QEMU M68K: Fixed virtio drive config (#7008)\r\n* Fixed a rare crash after stopping VM due to a race condition in libusb\r\n* Home: improve screenshot contrast in Dark Mode (#6894)\r\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\r\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\r\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\r\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\r\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\r\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\r\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\r\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. However, removing these will make the app size a lot smaller. M68K is added to support classic Mac OS.\r\n* (macOS 11) Fixed guest tools mounting (#7297)\r\n* (macOS 11) Fixed stop button not working (#7298)\r\n* (macOS) Fixed a bug where an error message on startup leads to the window being stuck (#7161)\r\n* (macOS) Settings: New setting to disable file locking so VMs can be launched from a network share or a filesystem that does not support locking (#7211)\r\n* (macOS) Settings: New setting to disable screenshots completely for privacy reasons (#6620)\r\n* (macOS) Settings: New setting to swap Ctrl and Cmd keys in VMs (#4003)\r\n* (macOS 26) Settings: Brand new layout with a sidebar to match other native apps\r\n* (macOS) AVF: Added clearer message when trying to install macOS beta without having the latest beta support tools installed\r\n* (macOS) AVF: New option to resize (expand) disk images (#6891)\r\n* (macOS 26) Fixed a layout issue with the resize image popover\r\n* (macOS) Home: Fixed hide sidebar button\r\n* (macOS) Config: Show localized network adapter names when available (#7287) (thanks @Schamper)\r\n* (macOS) Scripting: Fixed an issue where wrong UUIDs were generated for display configs (#7145)\r\n\r\n## Changes (v4.7.0)\r\n* Updated to QEMU v10.0.2\r\n* Config: In the RAM slider, the maximum value has been increased to 64GiB (note that you can always go above the slider limit by typing in the text box) (#7234)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Wizard: Fixed crash when VM name is empty (#7245)\r\n* (iOS) Toolbar: Refactored toolbar button layout code\r\n* (macOS) Host only networks: you can set up multiple host-only networks (including ones shared by VMware) and have multiple VMs on the same virtual network (thanks @Schamper)\r\n* (macOS) utmctl: added option to boot Apple VMs into recovery mode (thanks @cees-elzinga)\r\n* (macOS) ~~Enable QEMU support for vmapple (#7150)~~ Machine model is removed for stability reasons but `apple-gfx-pci` is still supported for Intel VMs\r\n* (macOS) Rename the main window to 'UTM Library' (#7264)\r\n* (macOS) Display an error when IPSW install fails to load the file (instead of crashing) (#6855)\r\n* (macOS) Settings: Fixed a layout issue (#7117)\r\n* (macOS) Apple Virtualization: Add support for ASIF drive images. On macOS 26, ASIF drives will be created by default.\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+          "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+          "size": 130058389,
+          "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101"
+    },
+    {
+      "name": "UTM HV",
+      "githubRepo": "utmapp/UTM",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "developerName": "utmapp",
+      "subtitle": "Virtual machines for iOS and macOS",
+      "version": "4.7.5",
+      "versionDate": "2026-01-03T18:15:46Z",
+      "versionDescription": "## Highlights\r\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\r\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\r\n* **App Intents**: New support for automation with Shortcuts.\r\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\r\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\r\n\r\n## Changes (v4.7.5)\r\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\r\n* Fixed some rare crashes that can happen after a VM stops\r\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\r\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\r\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\r\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\r\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\r\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\r\n\r\n## Changes (v4.7.4)\r\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\r\n* Home: Fixed layout issue with button titles\r\n* (macOS) Fixed a crash when VM exits while USB is active\r\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\r\n\r\n## Changes (v4.7.3)\r\n* Fixed a crash when starting a VM results in a block device error\r\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\r\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\r\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\r\n* (macOS) Fixed crash when exiting full screen (#7377)\r\n\r\n## Changes (v4.7.2)\r\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\r\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\r\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\r\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\r\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\r\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\r\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\r\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\r\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\r\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\r\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\r\n* Wizard: Update OS logos to be consistent with other icons\r\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\r\n* Wizard: Add additional supported hardware configurations for running older Windows\r\n* Wizard: Support floppy boot for Windows configuration\r\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\r\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\r\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\r\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\r\n* (macOS) Fixed connecting USB devices from secondary windows\r\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\r\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\r\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\r\n* (macOS) utmctl: Add `version` command to detect current UTM version\r\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\r\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\r\n\r\n## Changes (v4.7.1)\r\n* New Liquid Glass icon thanks to @forcequitOS\r\n* Added App Intents for VM operations (#6245)\r\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\r\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\r\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\r\n* QEMU M68K: Fixed virtio drive config (#7008)\r\n* Fixed a rare crash after stopping VM due to a race condition in libusb\r\n* Home: improve screenshot contrast in Dark Mode (#6894)\r\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\r\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\r\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\r\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\r\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\r\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\r\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\r\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. However, removing these will make the app size a lot smaller. M68K is added to support classic Mac OS.\r\n* (macOS 11) Fixed guest tools mounting (#7297)\r\n* (macOS 11) Fixed stop button not working (#7298)\r\n* (macOS) Fixed a bug where an error message on startup leads to the window being stuck (#7161)\r\n* (macOS) Settings: New setting to disable file locking so VMs can be launched from a network share or a filesystem that does not support locking (#7211)\r\n* (macOS) Settings: New setting to disable screenshots completely for privacy reasons (#6620)\r\n* (macOS) Settings: New setting to swap Ctrl and Cmd keys in VMs (#4003)\r\n* (macOS 26) Settings: Brand new layout with a sidebar to match other native apps\r\n* (macOS) AVF: Added clearer message when trying to install macOS beta without having the latest beta support tools installed\r\n* (macOS) AVF: New option to resize (expand) disk images (#6891)\r\n* (macOS 26) Fixed a layout issue with the resize image popover\r\n* (macOS) Home: Fixed hide sidebar button\r\n* (macOS) Config: Show localized network adapter names when available (#7287) (thanks @Schamper)\r\n* (macOS) Scripting: Fixed an issue where wrong UUIDs were generated for display configs (#7145)\r\n\r\n## Changes (v4.7.0)\r\n* Updated to QEMU v10.0.2\r\n* Config: In the RAM slider, the maximum value has been increased to 64GiB (note that you can always go above the slider limit by typing in the text box) (#7234)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Wizard: Fixed crash when VM name is empty (#7245)\r\n* (iOS) Toolbar: Refactored toolbar button layout code\r\n* (macOS) Host only networks: you can set up multiple host-only networks (including ones shared by VMware) and have multiple VMs on the same virtual network (thanks @Schamper)\r\n* (macOS) utmctl: added option to boot Apple VMs into recovery mode (thanks @cees-elzinga)\r\n* (macOS) ~~Enable QEMU support for vmapple (#7150)~~ Machine model is removed for stability reasons but `apple-gfx-pci` is still supported for Intel VMs\r\n* (macOS) Rename the main window to 'UTM Library' (#7264)\r\n* (macOS) Display an error when IPSW install fails to load the file (instead of crashing) (#6855)\r\n* (macOS) Settings: Fixed a layout issue (#7117)\r\n* (macOS) Apple Virtualization: Add support for ASIF drive images. On macOS 26, ASIF drives will be created by default.\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-HV.ipa",
+      "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
+      "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "#3D7FEB",
+      "size": 130058653,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.hypervisor",
+          "com.apple.private.iokit.IOServiceSetAuthorizationID",
+          "com.apple.private.memorystatus",
+          "com.apple.private.security.no-sandbox",
+          "com.apple.private.security.storage.AppDataContainers",
+          "com.apple.private.security.storage.MobileDocuments",
+          "com.apple.security.exception.iokit-user-client-class",
+          "com.apple.system.diagnostics.iokit-properties",
+          "com.apple.vm.device-access",
+          "get-task-allow",
+          "platform-application"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "The virtual machine may access the local network. UTM may also use the network to communicate with local servers.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationAlwaysUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSMicrophoneUsageDescription": "Permission is required for any virtual machine to record from the microphone."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.7.5",
+          "date": "2026-01-03T18:15:46Z",
+          "localizedDescription": "## Highlights\r\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\r\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\r\n* **App Intents**: New support for automation with Shortcuts.\r\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\r\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\r\n\r\n## Changes (v4.7.5)\r\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\r\n* Fixed some rare crashes that can happen after a VM stops\r\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\r\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\r\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\r\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\r\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\r\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\r\n\r\n## Changes (v4.7.4)\r\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\r\n* Home: Fixed layout issue with button titles\r\n* (macOS) Fixed a crash when VM exits while USB is active\r\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\r\n\r\n## Changes (v4.7.3)\r\n* Fixed a crash when starting a VM results in a block device error\r\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\r\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\r\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\r\n* (macOS) Fixed crash when exiting full screen (#7377)\r\n\r\n## Changes (v4.7.2)\r\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\r\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\r\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\r\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\r\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\r\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\r\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\r\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\r\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\r\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\r\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\r\n* Wizard: Update OS logos to be consistent with other icons\r\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\r\n* Wizard: Add additional supported hardware configurations for running older Windows\r\n* Wizard: Support floppy boot for Windows configuration\r\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\r\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\r\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\r\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\r\n* (macOS) Fixed connecting USB devices from secondary windows\r\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\r\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\r\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\r\n* (macOS) utmctl: Add `version` command to detect current UTM version\r\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\r\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\r\n\r\n## Changes (v4.7.1)\r\n* New Liquid Glass icon thanks to @forcequitOS\r\n* Added App Intents for VM operations (#6245)\r\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\r\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\r\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\r\n* QEMU M68K: Fixed virtio drive config (#7008)\r\n* Fixed a rare crash after stopping VM due to a race condition in libusb\r\n* Home: improve screenshot contrast in Dark Mode (#6894)\r\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\r\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\r\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\r\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\r\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\r\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\r\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\r\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\r\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. However, removing these will make the app size a lot smaller. M68K is added to support classic Mac OS.\r\n* (macOS 11) Fixed guest tools mounting (#7297)\r\n* (macOS 11) Fixed stop button not working (#7298)\r\n* (macOS) Fixed a bug where an error message on startup leads to the window being stuck (#7161)\r\n* (macOS) Settings: New setting to disable file locking so VMs can be launched from a network share or a filesystem that does not support locking (#7211)\r\n* (macOS) Settings: New setting to disable screenshots completely for privacy reasons (#6620)\r\n* (macOS) Settings: New setting to swap Ctrl and Cmd keys in VMs (#4003)\r\n* (macOS 26) Settings: Brand new layout with a sidebar to match other native apps\r\n* (macOS) AVF: Added clearer message when trying to install macOS beta without having the latest beta support tools installed\r\n* (macOS) AVF: New option to resize (expand) disk images (#6891)\r\n* (macOS 26) Fixed a layout issue with the resize image popover\r\n* (macOS) Home: Fixed hide sidebar button\r\n* (macOS) Config: Show localized network adapter names when available (#7287) (thanks @Schamper)\r\n* (macOS) Scripting: Fixed an issue where wrong UUIDs were generated for display configs (#7145)\r\n\r\n## Changes (v4.7.0)\r\n* Updated to QEMU v10.0.2\r\n* Config: In the RAM slider, the maximum value has been increased to 64GiB (note that you can always go above the slider limit by typing in the text box) (#7234)\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Wizard: Fixed crash when VM name is empty (#7245)\r\n* (iOS) Toolbar: Refactored toolbar button layout code\r\n* (macOS) Host only networks: you can set up multiple host-only networks (including ones shared by VMware) and have multiple VMs on the same virtual network (thanks @Schamper)\r\n* (macOS) utmctl: added option to boot Apple VMs into recovery mode (thanks @cees-elzinga)\r\n* (macOS) ~~Enable QEMU support for vmapple (#7150)~~ Machine model is removed for stability reasons but `apple-gfx-pci` is still supported for Intel VMs\r\n* (macOS) Rename the main window to 'UTM Library' (#7264)\r\n* (macOS) Display an error when IPSW install fails to load the file (instead of crashing) (#6855)\r\n* (macOS) Settings: Fixed a layout issue (#7117)\r\n* (macOS) Apple Virtualization: Add support for ASIF drive images. On macOS 26, ASIF drives will be created by default.\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+          "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-HV.ipa",
+          "size": 130058653,
+          "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28"
+    },
+    {
+      "name": "Venera",
+      "githubRepo": "venera-app/venera",
+      "bundleIdentifier": "com.github.wgh136.venera",
+      "developerName": "venera-app",
+      "subtitle": "A comic reader that supports reading local and network comics",
+      "version": "1.6.2",
+      "versionDate": "2026-01-01T08:55:21Z",
+      "versionDescription": "## What's Changed\r\n* Set status bar transparent when startup. by @lings03 in https://github.com/venera-app/venera/pull/664\r\n* Jump to last page when continuously flipping to previous chapter.  by @lings03 in https://github.com/venera-app/venera/pull/665\r\n* Show chapter comments at end of chapter. by @lings03 in https://github.com/venera-app/venera/pull/666\r\n* Save file name: {comic}_EP{chapter}_P{page}.{ext} to avoid conflict. by @lings03 in https://github.com/venera-app/venera/pull/669\r\n* Enable to refresh history info. by @lings03 in https://github.com/venera-app/venera/pull/722\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/651\r\n* Update comic source URL to use jsdelivr CDN for improved reliability by @wgh136 in https://github.com/venera-app/venera/pull/734\r\n* Improve layout of buttons in reader by @wgh136 in https://github.com/venera-app/venera/pull/735\r\n\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.1...v1.6.2",
+      "downloadURL": "https://github.com/venera-app/venera/releases/download/v1.6.2/venera-ios-1.6.2%2B162.ipa",
+      "localizedDescription": "A comic reader that support reading local and network comics.",
+      "iconURL": "https://raw.githubusercontent.com/venera-app/venera/refs/heads/master/assets/app_icon.png",
+      "tintColor": "#0784FC",
+      "size": 15209455,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Ensure that the operation is being performed by the user themselves.",
+          "NSPhotoLibraryUsageDescription": "Choose images"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.6.2",
+          "date": "2026-01-01T08:55:21Z",
+          "localizedDescription": "## What's Changed\r\n* Set status bar transparent when startup. by @lings03 in https://github.com/venera-app/venera/pull/664\r\n* Jump to last page when continuously flipping to previous chapter.  by @lings03 in https://github.com/venera-app/venera/pull/665\r\n* Show chapter comments at end of chapter. by @lings03 in https://github.com/venera-app/venera/pull/666\r\n* Save file name: {comic}_EP{chapter}_P{page}.{ext} to avoid conflict. by @lings03 in https://github.com/venera-app/venera/pull/669\r\n* Enable to refresh history info. by @lings03 in https://github.com/venera-app/venera/pull/722\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/651\r\n* Update comic source URL to use jsdelivr CDN for improved reliability by @wgh136 in https://github.com/venera-app/venera/pull/734\r\n* Improve layout of buttons in reader by @wgh136 in https://github.com/venera-app/venera/pull/735\r\n\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.1...v1.6.2",
+          "downloadURL": "https://github.com/venera-app/venera/releases/download/v1.6.2/venera-ios-1.6.2%2B162.ipa",
+          "size": 15209455,
+          "sha256": "d42960772c4e66bb372e25ce02059d6bcd108111d4d16312325fa3a08da386ef",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "category": "utilities",
+      "officialDescription": "A comic reader that supports reading local and network comics",
+      "sha256": "d42960772c4e66bb372e25ce02059d6bcd108111d4d16312325fa3a08da386ef"
+    }
+  ],
+  "news": []
+}
