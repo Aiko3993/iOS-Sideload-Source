@@ -1007,7 +1007,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                      logger.warning(f"Failed to check download URL for {name}: {e}")
 
              if url_is_alive:
-                  metadata_updates = {}
 
                   config_icon = app_config.get('icon_url')
                   if config_icon and config_icon not in ['None', '_No response_'] and app_entry.get('iconURL') != config_icon:
@@ -1302,7 +1301,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             if k not in app_entry or not app_entry.get(k) or k in ['screenshotURLs', 'tintColor']:
                 app_entry[k] = v
 
-    metadata_updates = {}
     if found_icon_auto:
         metadata_updates['icon_url'] = found_icon_auto
     if found_bundle_id_auto and not found_bundle_id_auto.startswith('com.placeholder.'):
