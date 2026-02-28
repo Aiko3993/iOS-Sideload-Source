@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-02-28 05:27:53 (UTC)*
+> *Last Updated: 2026-02-28 06:55:26 (UTC)*
 
 ## Standard Apps
 
@@ -24,6 +24,7 @@
 | <img src="https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png" width="48" height="48"> | **NeoFreeBird** | A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications. | [NeoFreeBird/app](https://github.com/NeoFreeBird/app) |
 | <img src="https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png" width="48" height="48"> | **Nyxian** | IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps. | [ProjectNyxian/Nyxian](https://github.com/ProjectNyxian/Nyxian) |
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
+| <img src="https://raw.githubusercontent.com/jpd002/Play-/master/tools/ElfView/qt_ui/assets/app_icon.png" width="48" height="48"> | **Play! (Nightly)** | Play! - PlayStation2 Emulator | [jpd002/Play-](https://github.com/jpd002/Play-) |
 | <img src="https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png" width="48" height="48"> | **PPSSPP** | A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org. | [hrydgard/ppsspp](https://github.com/hrydgard/ppsspp) |
 | <img src="https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png" width="48" height="48"> | **SideStore** | SideStore is a fork of AltStore that doesn't require an AltServer. | [SideStore/SideStore](https://github.com/SideStore/SideStore) |
 | <img src="https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png" width="48" height="48"> | **SideStore (Nightly)** | SideStore is a fork of AltStore that doesn't require an AltServer. | [SideStore/SideStore](https://github.com/SideStore/SideStore) |
