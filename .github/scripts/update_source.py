@@ -459,7 +459,7 @@ def select_best_ipa(assets, app_config):
     Tie-breaking: shorter filename → alphabetical order (deterministic)
     """
 
-    ipa_assets = [a for a in assets if a.get('name', '').lower().endswith('.ipa')]
+    ipa_assets = [a for a in assets if a.get('name', '').lower().endswith(('.ipa', '.tipa', '.zip'))]
     if not ipa_assets:
         return None
     if len(ipa_assets) == 1:
@@ -699,7 +699,7 @@ def upload_to_cached_release(client, current_repo, tag, release_name, release_bo
 
 def download_from_artifact(client, repo, artifact, name, app_entry,
                            release_tag, release_date, asset_name, download_url,
-                           temp_path, current_repo, found_bundle_id_auto):
+                           temp_path, current_repo, found_bundle_id_auto, metadata_updates):
     """
     Download IPA from GitHub Actions Artifact.
     Tries API download first, falls back to nightly.link.
@@ -760,6 +760,7 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
                         target_ipa, asset_name, bundle_id=bid_ipa, app_name=name
                     )
                     if url:
+                        metadata_updates['downloadURL'] = url
                         download_url = url
                         upload_success = True
                         logger.info(f"Uploaded {asset_name} to {release_tag}")
@@ -802,18 +803,35 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
                 temp_path, asset_name, bundle_id=bid_ipa, app_name=name
             )
             if url:
+                metadata_updates['downloadURL'] = url
                 download_url = url
                 logger.info(f"Moved nightly.link asset to direct link ({release_tag})")
 
     return download_url
 
 def download_from_release(client, download_url, temp_path):
-    """Download IPA from a standard GitHub Release asset."""
+    """Download IPA from a standard GitHub Release asset, unpacking if it's a generic ZIP."""
     r = client.get(download_url, stream=True, timeout=300)
     if not r:
         raise Exception(f"Failed to download from {download_url}")
+
+    content = r.content
+    is_ipa = download_url.lower().endswith('.ipa') or download_url.lower().endswith('.tipa')
+
+    if not is_ipa and download_url.lower().endswith('.zip'):
+        try:
+            from io import BytesIO
+            import zipfile
+            with zipfile.ZipFile(BytesIO(content)) as z:
+                ipa_in_zip = next((n for n in z.namelist() if n.lower().endswith('.ipa')), None)
+                if ipa_in_zip:
+                    content = z.read(ipa_in_zip)
+        except Exception as e:
+            from utils import logger
+            logger.warning(f"Failed to extract IPA from downloaded ZIP: {e}")
+
     with open(temp_path, 'wb') as f:
-        f.write(r.content)
+        f.write(content)
 
 def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     """
@@ -925,7 +943,10 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             if clean_artifact_name.lower().endswith('.ipa'):
                 clean_artifact_name = clean_artifact_name[:-4]
 
-            asset_name = f"{repo.replace('/', '_')}_{clean_artifact_name}_{version}.ipa"
+            if is_coexist:
+                asset_name = f"{repo.replace('/', '_')}_{clean_artifact_name}_{version}_Coexist.ipa"
+            else:
+                asset_name = f"{repo.replace('/', '_')}_{clean_artifact_name}_{version}.ipa"
 
             direct_url = f"https://github.com/{current_repo}/releases/download/{release_tag}/{asset_name}"
         else:
@@ -1097,7 +1118,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             download_url = download_from_artifact(
                 client, repo, artifact, name, app_entry,
                 release_tag, release_date, asset_name, download_url,
-                temp_path, current_repo, found_bundle_id_auto
+                temp_path, current_repo, found_bundle_id_auto, metadata_updates
             )
         else:
             download_from_release(client, download_url, temp_path)
@@ -1175,7 +1196,10 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
                 if cached_release:
                     clean_name = name.replace(' ', '_').replace('(', '').replace(')', '')
-                    cached_asset_name = f"{clean_name}_{version}.ipa"
+                    if is_coexist:
+                        cached_asset_name = f"{clean_name}_{version}_Coexist.ipa"
+                    else:
+                        cached_asset_name = f"{clean_name}_{version}.ipa"
 
                     asset = client.upload_release_asset(
                         current_repo, cached_release['id'], temp_path,
@@ -1407,7 +1431,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                             elif k == 'tag_regex':
                                 if not target_config.get('tag_regex'):
                                     logger.info(f"Syncing computed tag_regex back to apps.json for {name}")
-                                    target_config['tag_regex'] = v
                             elif k == 'pre_release':
                                 if 'pre_release' not in target_config:
                                     target_config['pre_release'] = v
@@ -1441,7 +1464,6 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
             f"Old source had {old_count} apps. Aborting source.json update to prevent data loss."
         )
         return False
-
     source_data['apps'] = new_apps_list
 
     for a in source_data['apps']:
@@ -1490,6 +1512,8 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
     order_keys = ["name", "github_repo", "artifact_name", "github_workflow", "bundle_id", "icon_url", "pre_release", "tag_regex"]
 
     for app in apps:
+        app.pop("source_issue", None)
+        app.pop("form_index", None)
         if "pre_release" in app and not app.get("pre_release", True):
             del app["pre_release"]
 
