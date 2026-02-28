@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-02-28 06:55:26 (UTC)*
+> *Last Updated: 2026-02-28 07:17:13 (UTC)*
 
 ## Standard Apps
 
@@ -22,7 +22,6 @@
 | <img src="https://raw.githubusercontent.com/cranci1/Luna/main/Luna/Assets.xcassets/AppIcon.appiconset/Default.png" width="48" height="48"> | **Luna** | No description available. | [cranci1/Luna](https://github.com/cranci1/Luna) |
 | <img src="https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="48" height="48"> | **Mangayomi** | Read manga, novels, and watch anime | [kodjodevf/mangayomi](https://github.com/kodjodevf/mangayomi) |
 | <img src="https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png" width="48" height="48"> | **NeoFreeBird** | A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications. | [NeoFreeBird/app](https://github.com/NeoFreeBird/app) |
-| <img src="https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png" width="48" height="48"> | **Nyxian** | IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps. | [ProjectNyxian/Nyxian](https://github.com/ProjectNyxian/Nyxian) |
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
 | <img src="https://raw.githubusercontent.com/jpd002/Play-/master/tools/ElfView/qt_ui/assets/app_icon.png" width="48" height="48"> | **Play! (Nightly)** | Play! - PlayStation2 Emulator | [jpd002/Play-](https://github.com/jpd002/Play-) |
 | <img src="https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png" width="48" height="48"> | **PPSSPP** | A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org. | [hrydgard/ppsspp](https://github.com/hrydgard/ppsspp) |
@@ -32,6 +31,7 @@
 | <img src="https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **UTM** | Virtual machines for iOS and macOS | [utmapp/UTM](https://github.com/utmapp/UTM) |
 | <img src="https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **UTM HV** | Virtual machines for iOS and macOS | [utmapp/UTM](https://github.com/utmapp/UTM) |
 | <img src="https://raw.githubusercontent.com/venera-app/venera/refs/heads/master/assets/app_icon.png" width="48" height="48"> | **Venera** | A comic reader that supports reading local and network comics | [venera-app/venera](https://github.com/venera-app/venera) |
+| <img src="https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png" width="48" height="48"> | **Nyxian (Nightly)** | IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps. | [ProjectNyxian/Nyxian](https://github.com/ProjectNyxian/Nyxian) |
 
 ## NSFW Apps
 
