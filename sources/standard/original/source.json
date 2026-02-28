@@ -1073,14 +1073,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260225.940+bff192be.0603",
-      "versionDate": "2026-02-25T03:01:04Z",
-      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [bff192be4e2b99e0e7cd717ba3d1871d3a7b2136](https://github.com/SideStore/SideStore/commit/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Wed Feb 25 03:00:59 2026`\nBuilt at (UTC date): `2026-02-25`\nCommit SHA: `bff192be4e2b99e0e7cd717ba3d1871d3a7b2136`\nVersion: `0.6.3-20260225.940+bff192be`\n#### What's Changed\n- ALTSign cleanup\n- ALTSign cleanup\n- CI: add what xcode is suggesting (xcode noise from auto create schemes)\n\n#### Full Changelog: [06ad6488...bff192be](https://github.com/SideStore/SideStore/compare/06ad6488cc3709860bdb4b6dbb146d43171753cc...bff192be4e2b99e0e7cd717ba3d1871d3a7b2136)\n",
+      "version": "0.6.3-20260227.944+3b9b45a0.0603",
+      "versionDate": "2026-02-27T23:17:47Z",
+      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [3b9b45a06f041aaeee2663bf56cf604f5a1825f1](https://github.com/SideStore/SideStore/commit/3b9b45a06f041aaeee2663bf56cf604f5a1825f1).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Fri Feb 27 23:17:39 2026`\nBuilt at (UTC date): `2026-02-27`\nCommit SHA: `3b9b45a06f041aaeee2663bf56cf604f5a1825f1`\nVersion: `0.6.3-20260227.944+3b9b45a0`\n#### What's Changed\n- pbxproj: was missing references to IfManager.swift\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: updated submodule to latest\n\n#### Full Changelog: [bff192be...3b9b45a0](https://github.com/SideStore/SideStore/compare/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136...3b9b45a06f041aaeee2663bf56cf604f5a1825f1)\n",
       "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27287993,
+      "size": 27047194,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1095,6 +1095,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.3-20260227.944+3b9b45a0.0603",
+          "date": "2026-02-27T23:17:47Z",
+          "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [3b9b45a06f041aaeee2663bf56cf604f5a1825f1](https://github.com/SideStore/SideStore/commit/3b9b45a06f041aaeee2663bf56cf604f5a1825f1).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Fri Feb 27 23:17:39 2026`\nBuilt at (UTC date): `2026-02-27`\nCommit SHA: `3b9b45a06f041aaeee2663bf56cf604f5a1825f1`\nVersion: `0.6.3-20260227.944+3b9b45a0`\n#### What's Changed\n- pbxproj: was missing references to IfManager.swift\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: updated submodule to latest\n\n#### Full Changelog: [bff192be...3b9b45a0](https://github.com/SideStore/SideStore/compare/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136...3b9b45a06f041aaeee2663bf56cf604f5a1825f1)\n",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+          "size": 27047194,
+          "sha256": "66279b0de901aab7e62ca560be26ac2f958769de6a8c0826781fe0659f335341",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.3-20260225.940+bff192be.0603",
           "date": "2026-02-25T03:01:04Z",
           "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [bff192be4e2b99e0e7cd717ba3d1871d3a7b2136](https://github.com/SideStore/SideStore/commit/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Wed Feb 25 03:00:59 2026`\nBuilt at (UTC date): `2026-02-25`\nCommit SHA: `bff192be4e2b99e0e7cd717ba3d1871d3a7b2136`\nVersion: `0.6.3-20260225.940+bff192be`\n#### What's Changed\n- ALTSign cleanup\n- ALTSign cleanup\n- CI: add what xcode is suggesting (xcode noise from auto create schemes)\n\n#### Full Changelog: [06ad6488...bff192be](https://github.com/SideStore/SideStore/compare/06ad6488cc3709860bdb4b6dbb146d43171753cc...bff192be4e2b99e0e7cd717ba3d1871d3a7b2136)\n",
@@ -1104,7 +1113,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "bbb1de815db9f973e5620173727eeeed62b5c683dadcf47f5389db9d3f81e016"
+      "sha256": "66279b0de901aab7e62ca560be26ac2f958769de6a8c0826781fe0659f335341"
     },
     {
       "name": "UTM",
