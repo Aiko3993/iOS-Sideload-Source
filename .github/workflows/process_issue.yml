@@ -177,9 +177,11 @@ jobs:
             };
 
             const apps = [];
+            let formIndex = 0;
             
             // Function to try extract app data with suffix
             const tryExtract = (suffix) => {
+                formIndex++;
                 const s = suffix ? ` ${suffix}` : '';
                 const name = extract(`App Name${s}`);
                 const repo = extract(`GitHub Repository${s}`);
@@ -194,7 +196,9 @@ jobs:
                         name: name,
                         repo: repo,
                         category: cat,
-                        icon_url: cleanIcon
+                        icon_url: cleanIcon,
+                        source_issue: context.issue.number,
+                        form_index: formIndex
                     });
                 }
             };

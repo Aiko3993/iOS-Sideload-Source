@@ -9,8 +9,8 @@
     "name": "Amethyst (Nightly)",
     "github_repo": "AngelAuraMC/Amethyst-iOS",
     "artifact_name": "org.angelauramc.amethyst-ios.ipa",
-    "github_workflow": "development.yml",
     "bundle_id": "org.angelauramc.amethyst",
+    "github_workflow": "development.yml",
     "icon_url": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png"
   },
   {
@@ -120,6 +120,12 @@
     "github_repo": "bggRGjQaUbCoE/PiliPlus",
     "bundle_id": "com.example.piliplus",
     "icon_url": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png"
+  },
+  {
+    "name": "Play! (Nightly)",
+    "github_repo": "jpd002/Play-",
+    "pre_release": true,
+    "tag_regex": "nightly"
   },
   {
     "name": "PPSSPP",
