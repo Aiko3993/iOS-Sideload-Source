@@ -15,10 +15,19 @@ from PIL import Image
 
 from utils import load_json, save_json, logger, GitHubClient, find_best_icon, score_icon_path, normalize_name, compute_variant_tag, GLOBAL_CONFIG, find_official_source
 
-# AltStore spec: allowed fields in version entries
 ALLOWED_VERSION_FIELDS = {
     'version', 'buildVersion', 'marketingVersion', 'date', 'localizedDescription',
     'downloadURL', 'assetURLs', 'minOSVersion', 'maxOSVersion', 'size', 'sha256'
+}
+
+# Declarative output schema for app entries.
+# Add a field: it persists in source.json. Remove a field: stripped on next CI run.
+ALLOWED_APP_FIELDS = {
+    'name', 'bundleIdentifier', 'developerName', 'localizedDescription',
+    'iconURL', 'versions', 'appPermissions',
+    'subtitle', 'tintColor', 'category', 'screenshots', 'screenshotURLs', 'patreon',
+    'version', 'versionDate', 'versionDescription', 'downloadURL', 'size', 'sha256',
+    'githubRepo',
 }
 
 def get_skip_versions():
@@ -747,7 +756,7 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
                     url = upload_to_cached_release(
                         client, current_repo, release_tag,
                         f"Builds ({datetime.now().strftime('%Y-%m-%d')})",
-                        "Build IPAs for optimized distribution.\n\n### Included Apps:\n",
+                        "Build IPAs for optimized distribution.",
                         target_ipa, asset_name, bundle_id=bid_ipa, app_name=name
                     )
                     if url:
@@ -789,7 +798,7 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
             url = upload_to_cached_release(
                 client, current_repo, release_tag,
                 f"Builds ({release_date})",
-                "Build IPAs for optimized distribution.\n\n### Included Apps:\n",
+                "Build IPAs for optimized distribution.",
                 temp_path, asset_name, bundle_id=bid_ipa, app_name=name
             )
             if url:
@@ -953,10 +962,11 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             else:
                 is_newer = is_timestamp_newer
 
-        # Metadata self-healing logic
-        has_critical_metadata = app_entry and 'screenshotURLs' in app_entry and 'appPermissions' in app_entry and 'entitlements' in app_entry.get('appPermissions', {})
+        REQUIRED_APP_FIELDS = {'bundleIdentifier', 'versions', 'appPermissions', 'iconURL'}
+        has_critical_metadata = app_entry and REQUIRED_APP_FIELDS.issubset(app_entry.keys())
         if app_entry and not has_critical_metadata:
-            logger.info(f"Self-healing triggered for {name}: missing critical metadata (screenshotURLs/appPermissions)")
+            missing = REQUIRED_APP_FIELDS - set(app_entry.keys())
+            logger.info(f"Self-healing for {name}: missing {missing}")
             is_newer = True
 
         if not is_newer:
@@ -1153,7 +1163,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                     cached_release = client.create_release(
                         current_repo, cached_tag,
                         name=f"Builds ({release_date})",
-                        body="Build IPAs for optimized distribution.\n\n### Included Apps:\n"
+                        body="Build IPAs for optimized distribution."
                     )
 
                 if cached_release:
@@ -1191,6 +1201,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                                 if 0 < days_diff < 3:
                                     continue
 
+                                any_deleted = False
                                 for asset_info in other_release.get('assets', []):
                                     asset_name_check = asset_info.get('name', '').lower()
                                     clean_name_lower = clean_name.lower()
@@ -1200,8 +1211,15 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                                         try:
                                             client.session.delete(del_url, headers=client.headers, timeout=15).raise_for_status()
                                             logger.info(f"Cleaned up old cached IPA ({days_diff}d old): {asset_info['name']} from {other_tag}")
+                                            any_deleted = True
                                         except Exception as del_e:
                                             logger.debug(f"Could not delete old asset {asset_info['name']}: {del_e}")
+
+                                if any_deleted:
+                                    fresh = client.get_release_by_tag(current_repo, other_tag)
+                                    if fresh:
+                                        new_body = client.rebuild_release_body(fresh.get('assets', []))
+                                        client.update_release_body(current_repo, fresh['id'], new_body)
                         except Exception as cleanup_e:
                             logger.debug(f"Smart retention cleanup skipped: {cleanup_e}")
             else:
@@ -1448,6 +1466,35 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                     "sha256": best['sha256']
                 })
 
+    # --- Normalize all app entries (conservative, idempotent) ---
+    for a in source_data['apps']:
+        if 'category' not in a:
+            a['category'] = 'other'
+
+        official_desc = a.get('officialDescription', '')
+        local_desc = a.get('localizedDescription', '')
+        if official_desc and (not local_desc or len(local_desc) < 30):
+            a['localizedDescription'] = official_desc
+
+        screenshots = a.get('screenshots')
+        screenshot_urls = a.get('screenshotURLs')
+        if screenshots and isinstance(screenshots, list) and len(screenshots) > 0:
+            if not screenshot_urls or (isinstance(screenshot_urls, list) and len(screenshot_urls) == 0):
+                urls = []
+                for s in screenshots:
+                    if isinstance(s, str):
+                        urls.append(s)
+                    elif isinstance(s, dict) and 'imageURL' in s:
+                        urls.append(s['imageURL'])
+                if urls:
+                    a['screenshotURLs'] = urls
+        elif screenshot_urls and isinstance(screenshot_urls, list) and len(screenshot_urls) > 0:
+            if not screenshots:
+                a['screenshots'] = screenshot_urls
+
+        for k in [k for k in a.keys() if k not in ALLOWED_APP_FIELDS]:
+            del a[k]
+
     order_keys = ["name", "github_repo", "artifact_name", "github_workflow", "bundle_id", "icon_url", "pre_release", "tag_regex"]
 
     for app in apps:
@@ -1629,10 +1676,7 @@ def main():
                 else:
                     kept_releases.append(r)
 
-            if len(kept_releases) > 7:
-                for old_r in kept_releases[7:]:
-                    logger.info(f"Deleting old release (retention limit): {old_r['tag_name']}")
-                    client.delete_release(current_repo, old_r['id'], old_r['tag_name'])
+            logger.info(f"Retention complete: {len(kept_releases)} active releases with assets")
         except Exception as e:
             logger.warning(f"Failed to run retention policy: {e}")
 

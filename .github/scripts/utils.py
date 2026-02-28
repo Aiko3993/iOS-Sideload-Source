@@ -276,21 +276,28 @@ class GitHubClient:
                 logger.error(f"Failed to update release body: {e}")
                 return False
 
+    @staticmethod
+    def rebuild_release_body(assets):
+        """Build complete release body from current asset list. Idempotent."""
+        header = "Build IPAs for optimized distribution."
+        if not assets:
+            return header
+        lines = [header, "", "## Included Apps"]
+        for asset in sorted(assets, key=lambda a: a.get('name', '')):
+            name = asset.get('name', '')
+            if name.lower().endswith('.ipa'):
+                lines.append(f"- `{name}`")
+        return '\n'.join(lines)
+
     def upload_release_asset(self, repo, release_id, file_path, name=None, bundle_id=None, app_name=None):
         """Upload a file to a release, replacing if it exists (by name or bundle_id/app_name logic)."""
         name = name or os.path.basename(file_path)
 
         release_url = f"https://api.github.com/repos/{repo}/releases/{release_id}"
         resp = self.get(release_url)
-        current_body = ""
-        assets_deleted = []
-        original_body_text = ""
 
         if resp:
             release_data = resp.json()
-            original_body_text = release_data.get('body') or ""
-            current_body = original_body_text
-
             assets = release_data.get('assets', [])
             for asset in assets:
                 should_delete = False
@@ -316,20 +323,8 @@ class GitHubClient:
                     try:
                         self.session.delete(del_url, headers=self.headers, timeout=15).raise_for_status()
                         logger.info(f"Deleted old/conflicting asset {asset['name']}")
-                        assets_deleted.append(asset['name'])
                     except Exception as e:
                         logger.error(f"Failed to delete asset {asset['name']}: {e}")
-
-        # Process current_body to remove any deleted assets from the Included Apps list
-        if assets_deleted and current_body:
-            body_lines = current_body.split('\n')
-            new_lines = []
-            for line in body_lines:
-                # If line is a list item containing the exact deleted asset name (wrapped in backticks), drop it
-                if any(f"`{del_name}`" in line for del_name in assets_deleted):
-                    continue
-                new_lines.append(line)
-            current_body = '\n'.join(new_lines).strip()
 
         upload_url = f"https://uploads.github.com/repos/{repo}/releases/{release_id}/assets?name={name}"
         headers = self.headers.copy()
@@ -340,22 +335,13 @@ class GitHubClient:
                 resp = self.session.post(upload_url, headers=headers, data=f, timeout=300)
                 resp.raise_for_status()
 
-                if app_name and bundle_id:
-                    entry = f"- **{app_name}**: `{name}` ({bundle_id})"
-                    lines = current_body.split('\n')
-
-                    # Remove any exact matching line or line matching the same bundle_id to avoid duplication
-                    clean_lines = [l for l in lines if not l.strip().endswith(f"({bundle_id})") and l.strip() != entry]
-
-                    if "## Included Apps" not in '\n'.join(clean_lines):
-                        clean_lines.append("\n## Included Apps")
-
-                    clean_lines.append(entry)
-                    new_body = '\n'.join(clean_lines).strip()
-                    # Collapse multiple blank lines
-                    new_body = re.sub(r'\n{3,}', '\n\n', new_body)
-
-                    if new_body != original_body_text:
+                fresh_resp = self.get(release_url)
+                if fresh_resp:
+                    fresh_data = fresh_resp.json()
+                    fresh_assets = fresh_data.get('assets', [])
+                    original_body = fresh_data.get('body') or ''
+                    new_body = self.rebuild_release_body(fresh_assets)
+                    if new_body != original_body.strip():
                         self.update_release_body(repo, release_id, new_body)
 
                 return resp.json()
