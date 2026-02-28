@@ -138,6 +138,12 @@
     "tag_regex": "nightly"
   },
   {
+    "name": "StikDebug",
+    "github_repo": "StephenDev0/StikDebug",
+    "bundle_id": "com.stik.stikdebug",
+    "icon_url": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png"
+  },
+  {
     "name": "UTM",
     "github_repo": "utmapp/UTM",
     "bundle_id": "com.utmapp.UTM",
