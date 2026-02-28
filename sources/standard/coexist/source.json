@@ -1,6 +1,9 @@
 {
-  "name": "Aiko3993's Sideload Source (Coexist)",
-  "identifier": "io.github.aiko3993.source.coexist",
+  "name": "iOS Sideload Source (Coexist)",
+  "identifier": "io.github.aiko3993.ios-sideload-source.coexist",
+  "subtitle": "iOS Sideload Source by Aiko3993",
+  "description": "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source.",
+  "tintColor": "#10b981",
   "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/standard.png",
   "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
   "apps": [
@@ -1111,14 +1114,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260228.946+95953ca0.0603",
-      "versionDate": "2026-02-28T01:19:25Z",
-      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [95953ca0e9ad50dffe7110ed40522fb85be17364](https://github.com/SideStore/SideStore/commit/95953ca0e9ad50dffe7110ed40522fb85be17364).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 01:19:18 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `95953ca0e9ad50dffe7110ed40522fb85be17364`\nVersion: `0.6.3-20260228.946+95953ca0`\n#### What's Changed\n- IfManager: added String representation for readability\n\n#### Full Changelog: [3b9b45a0...95953ca0](https://github.com/SideStore/SideStore/compare/3b9b45a06f041aaeee2663bf56cf604f5a1825f1...95953ca0e9ad50dffe7110ed40522fb85be17364)\n",
-      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+      "version": "0.6.3-20260228.947+a505d042.0603",
+      "versionDate": "2026-02-28T03:27:31Z",
+      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [a505d042152e8a929db57433616cfe5f4582f051](https://github.com/SideStore/SideStore/commit/a505d042152e8a929db57433616cfe5f4582f051).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 03:27:26 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `a505d042152e8a929db57433616cfe5f4582f051`\nVersion: `0.6.3-20260228.947+a505d042`\n#### What's Changed\n- fix: 26.4 patch, add correct dest\n\n#### Full Changelog: [95953ca0...a505d042](https://github.com/SideStore/SideStore/compare/95953ca0e9ad50dffe7110ed40522fb85be17364...a505d042152e8a929db57433616cfe5f4582f051)\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.947.a505d042.0603.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27051155,
+      "size": 27055062,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1132,6 +1135,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260228.947+a505d042.0603",
+          "date": "2026-02-28T03:27:31Z",
+          "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [a505d042152e8a929db57433616cfe5f4582f051](https://github.com/SideStore/SideStore/commit/a505d042152e8a929db57433616cfe5f4582f051).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 03:27:26 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `a505d042152e8a929db57433616cfe5f4582f051`\nVersion: `0.6.3-20260228.947+a505d042`\n#### What's Changed\n- fix: 26.4 patch, add correct dest\n\n#### Full Changelog: [95953ca0...a505d042](https://github.com/SideStore/SideStore/compare/95953ca0e9ad50dffe7110ed40522fb85be17364...a505d042152e8a929db57433616cfe5f4582f051)\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.947.a505d042.0603.ipa",
+          "size": 27055062,
+          "sha256": "4dced8fef1cb665cee6c3a5cbbac0dc5d01d94aa86ceb2950aa5b76dc24e07a8",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260228.946+95953ca0.0603",
           "date": "2026-02-28T01:19:25Z",
@@ -1160,7 +1172,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "5de2492821a80505bb2a87c0c4a26a1ef37c14c820eeebcfe1958432da4fc2d3",
+      "sha256": "4dced8fef1cb665cee6c3a5cbbac0dc5d01d94aa86ceb2950aa5b76dc24e07a8",
       "category": "other"
     },
     {
@@ -1303,5 +1315,6 @@
       "sha256": "dd8d968486ccbb09d570660487bcefa91424a82d938be4f88a11e8ab378cd39b"
     }
   ],
-  "news": []
+  "news": [],
+  "headerURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/og-image.png"
 }
