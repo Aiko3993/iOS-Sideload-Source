@@ -297,6 +297,71 @@
       ]
     },
     {
+      "name": "Ferrite",
+      "githubRepo": "Ferrite-iOS/Ferrite",
+      "bundleIdentifier": "me.kingbri.Ferrite",
+      "developerName": "Ferrite-iOS",
+      "subtitle": "A media search engine for iOS with debrid support",
+      "version": "0.7.4",
+      "versionDate": "2025-11-28T20:36:12Z",
+      "versionDescription": "Ferrite v0.7.4 has been released.\r\n\r\nDownloading from releases? Get the zip file. The ipa file may not work!\r\n\r\nChangelog:\r\n\r\n- Fix encoding URLs with POST queries. The app was not percent encoding URLEncoded POST request bodies. Fix this to avoid errors from websites expecting these encoded strings.\r\n- Temporarily disable liquid glass. Liquid glass breaks some parts of Ferrite's UI. Disable it for now and fix this in the future.\r\n- Make TorBox a more prominent debrid option. TorBox is a way better service and API than RealDebrid at this point and should get more traction.",
+      "downloadURL": "https://github.com/Ferrite-iOS/Ferrite/releases/download/v0.7.4/Ferrite-iOS_v0.7.4.ipa.zip",
+      "localizedDescription": "A media search engine for iOS with a plugin API to extend its functionality.",
+      "iconURL": "https://raw.githubusercontent.com/Ferrite-iOS/Ferrite/next/Ferrite/Assets.xcassets/AppIcon.appiconset/Ferrite-lg.png",
+      "tintColor": "#D56B4D",
+      "size": 1922557,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.7.4",
+          "date": "2025-11-28T20:36:12Z",
+          "localizedDescription": "Ferrite v0.7.4 has been released.\r\n\r\nDownloading from releases? Get the zip file. The ipa file may not work!\r\n\r\nChangelog:\r\n\r\n- Fix encoding URLs with POST queries. The app was not percent encoding URLEncoded POST request bodies. Fix this to avoid errors from websites expecting these encoded strings.\r\n- Temporarily disable liquid glass. Liquid glass breaks some parts of Ferrite's UI. Disable it for now and fix this in the future.\r\n- Make TorBox a more prominent debrid option. TorBox is a way better service and API than RealDebrid at this point and should get more traction.",
+          "downloadURL": "https://github.com/Ferrite-iOS/Ferrite/releases/download/v0.7.4/Ferrite-iOS_v0.7.4.ipa.zip",
+          "size": 1922557,
+          "sha256": "cf5160bab3c8308c0062d6e71f32f6a551c81922812538000f4673ffe1f7922a",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "sha256": "cf5160bab3c8308c0062d6e71f32f6a551c81922812538000f4673ffe1f7922a",
+      "category": "other"
+    },
+    {
+      "name": "Flycast",
+      "githubRepo": "flyinghead/flycast",
+      "bundleIdentifier": "com.placeholder.flycast",
+      "developerName": "flyinghead",
+      "subtitle": "Flycast is a multiplatform Sega Dreamcast, Naomi, Naomi 2 and Atomiswave emulator",
+      "version": "2.6",
+      "versionDate": "2026-01-10T16:55:51Z",
+      "versionDescription": "## What's Changed\r\n* Per pixel rendering with OpenGL ES on mobile\r\n* Match code server for battle cable games (F355, Virtual-On Oratorio Tangram and others)\r\n* Outtrigger and Power Smash online gaming support\r\n* Integer scaling and choice of filtering for output frame by @xander-will\r\n* Audio: improved frequency envelope generator\r\n* Fixed major issue with Mali GPUs when using Per-pixel rendering\r\n* DreamPicoPort fixes and enhancements by @Tails86\r\n* Combos to trigger emulator buttons (Pause, Exit, etc.)\r\n* DreamPotato support by @RikkiGibson \r\n* Configurable paths for BIOS, VMU and others,  and UWP enhancements by @danprice142\r\n* UI themes by @nexus382\r\n* Better support for Thrustmaster wheels\r\n* Panther DC controller emulation\r\n* Improved arcade box art\r\n* Improved on-screen keyboard support on Nintendo Switch\r\n* iOS is no longer supported\r\n* Texture upscaling is no longer available\r\n\r\n## Fixed games\r\n* Battle Racer (new)\r\n* Doom 64 (rendering)\r\n* Mushiking 2003 2nd (new)\r\n* Sonic Adventure\r\n* Mobile Suit Gundam: Federation vs.Zeon\r\n* Dinosaur King (inputs)\r\n* Zombie Revenge (inputs)\r\n* Virtual-On Oratorio Tangram (Naomi, VMU support)\r\n* Sega Tetris (Naomi, network)\r\n* Spawn (boot)\r\n* Block Pong-Pong (inputs)\r\n* Sega Rally 2 (crash)\r\n* Jet Set Radio (audio)\r\n* King of Route 66 (microphone support)\r\n\r\n## New Contributors\r\n* @nexus382  made their first contribution in https://github.com/flyinghead/flycast/pull/1916\r\n* @xander-will made their first contribution in https://github.com/flyinghead/flycast/pull/1976\r\n* @Shockblast made their first contribution in https://github.com/flyinghead/flycast/pull/1992\r\n* @RikkiGibson made their first contribution in https://github.com/flyinghead/flycast/pull/2000\r\n* @falsepopsky made their first contribution in https://github.com/flyinghead/flycast/pull/2006\r\n* @sonninnos made their first contribution in https://github.com/flyinghead/flycast/pull/2033\r\n* @Clownacy made their first contribution in https://github.com/flyinghead/flycast/pull/2056\r\n* @jlansing made their first contribution in https://github.com/flyinghead/flycast/pull/2089\r\n* @danprice142 made their first contribution in https://github.com/flyinghead/flycast/pull/2095\r\n* @cscd98 made their first contribution in https://github.com/flyinghead/flycast/pull/2167\r\n\r\n**Full Changelog**: https://github.com/flyinghead/flycast/compare/v2.5...v2.6",
+      "downloadURL": "https://github.com/flyinghead/flycast/releases/download/v2.6/flycast-macOS-2.6.zip",
+      "localizedDescription": "Flycast is a multi-platform Sega Dreamcast, Naomi, Naomi 2, and Atomiswave emulator derived from reicast.",
+      "iconURL": "https://raw.githubusercontent.com/flyinghead/flycast/master/shell/apple/emulator-ios/emulator/Images.xcassets/AppIcon.appiconset/180.png",
+      "tintColor": "#5773DC",
+      "size": 19405444,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "2.6",
+          "date": "2026-01-10T16:55:51Z",
+          "localizedDescription": "## What's Changed\r\n* Per pixel rendering with OpenGL ES on mobile\r\n* Match code server for battle cable games (F355, Virtual-On Oratorio Tangram and others)\r\n* Outtrigger and Power Smash online gaming support\r\n* Integer scaling and choice of filtering for output frame by @xander-will\r\n* Audio: improved frequency envelope generator\r\n* Fixed major issue with Mali GPUs when using Per-pixel rendering\r\n* DreamPicoPort fixes and enhancements by @Tails86\r\n* Combos to trigger emulator buttons (Pause, Exit, etc.)\r\n* DreamPotato support by @RikkiGibson \r\n* Configurable paths for BIOS, VMU and others,  and UWP enhancements by @danprice142\r\n* UI themes by @nexus382\r\n* Better support for Thrustmaster wheels\r\n* Panther DC controller emulation\r\n* Improved arcade box art\r\n* Improved on-screen keyboard support on Nintendo Switch\r\n* iOS is no longer supported\r\n* Texture upscaling is no longer available\r\n\r\n## Fixed games\r\n* Battle Racer (new)\r\n* Doom 64 (rendering)\r\n* Mushiking 2003 2nd (new)\r\n* Sonic Adventure\r\n* Mobile Suit Gundam: Federation vs.Zeon\r\n* Dinosaur King (inputs)\r\n* Zombie Revenge (inputs)\r\n* Virtual-On Oratorio Tangram (Naomi, VMU support)\r\n* Sega Tetris (Naomi, network)\r\n* Spawn (boot)\r\n* Block Pong-Pong (inputs)\r\n* Sega Rally 2 (crash)\r\n* Jet Set Radio (audio)\r\n* King of Route 66 (microphone support)\r\n\r\n## New Contributors\r\n* @nexus382  made their first contribution in https://github.com/flyinghead/flycast/pull/1916\r\n* @xander-will made their first contribution in https://github.com/flyinghead/flycast/pull/1976\r\n* @Shockblast made their first contribution in https://github.com/flyinghead/flycast/pull/1992\r\n* @RikkiGibson made their first contribution in https://github.com/flyinghead/flycast/pull/2000\r\n* @falsepopsky made their first contribution in https://github.com/flyinghead/flycast/pull/2006\r\n* @sonninnos made their first contribution in https://github.com/flyinghead/flycast/pull/2033\r\n* @Clownacy made their first contribution in https://github.com/flyinghead/flycast/pull/2056\r\n* @jlansing made their first contribution in https://github.com/flyinghead/flycast/pull/2089\r\n* @danprice142 made their first contribution in https://github.com/flyinghead/flycast/pull/2095\r\n* @cscd98 made their first contribution in https://github.com/flyinghead/flycast/pull/2167\r\n\r\n**Full Changelog**: https://github.com/flyinghead/flycast/compare/v2.5...v2.6",
+          "downloadURL": "https://github.com/flyinghead/flycast/releases/download/v2.6/flycast-macOS-2.6.zip",
+          "size": 19405444,
+          "sha256": "1dc33d2a77b9c84d0ba1fe30a88f570701f15a47ffb40a306dc244b0a8213267"
+        }
+      ],
+      "sha256": "1dc33d2a77b9c84d0ba1fe30a88f570701f15a47ffb40a306dc244b0a8213267",
+      "category": "other"
+    },
+    {
       "name": "iTorrent",
       "githubRepo": "XITRIX/iTorrent",
       "bundleIdentifier": "com.xitrix.iTorrent2",
@@ -353,11 +418,11 @@
       "version": "2.0.3",
       "versionDate": "2026-02-20T03:34:46Z",
       "versionDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_ios_2.0.3_no_sign.ipa",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 27716594,
+      "size": 39994010,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -368,13 +433,12 @@
           "version": "2.0.3",
           "date": "2026-02-20T03:34:46Z",
           "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_ios_2.0.3_no_sign.ipa",
-          "size": 27716594,
-          "sha256": "e64dba48034aa8a2121528037f444f6cee3c1ffbd65fd809ea77f2ca02d517a0",
-          "minOSVersion": "13.0"
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
+          "size": 39994010,
+          "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520"
         }
       ],
-      "sha256": "e64dba48034aa8a2121528037f444f6cee3c1ffbd65fd809ea77f2ca02d517a0",
+      "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520",
       "category": "other"
     },
     {
@@ -884,14 +948,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260227.71.US.runner.e3d73a5",
-      "versionDate": "2026-02-27T16:35:30Z",
-      "versionDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/ProjectNyxian_Nyxian_nyxian_e3d73a5.ipa",
+      "version": "0.9.0.20260228.21.US.runner.706796a",
+      "versionDate": "2026-02-28T09:18:50Z",
+      "versionDescription": "Nightly build from commit 706796ad80cd37c34996aa257b323b1bc02f47ef",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/ProjectNyxian_Nyxian_nyxian_706796a.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88277017,
+      "size": 88278776,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -949,6 +1013,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.0.20260228.21.US.runner.706796a",
+          "date": "2026-02-28T09:18:50Z",
+          "localizedDescription": "Nightly build from commit 706796ad80cd37c34996aa257b323b1bc02f47ef",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/ProjectNyxian_Nyxian_nyxian_706796a.ipa",
+          "size": 88278776,
+          "sha256": "98ce2e091a8e30eb093fcdf07386262456b2336d673f1c00f6d48cc5a571494e",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "0.9.0.20260227.71.US.runner.e3d73a5",
           "date": "2026-02-27T16:35:30Z",
           "localizedDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
@@ -979,7 +1052,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "0c5db3f70496be9f53876c6c27b31f1012335ddc68dbca0c2f18e138d8ba53b9"
+      "sha256": "98ce2e091a8e30eb093fcdf07386262456b2336d673f1c00f6d48cc5a571494e"
     },
     {
       "name": "PiliPlus",
