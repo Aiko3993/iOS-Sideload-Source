@@ -828,6 +828,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     logger.info(f"Processing {name} ({repo})...")
 
     app_entry = copy.deepcopy(app_entry) if app_entry else None
+    metadata_updates = {}
 
     found_icon_auto = None
     found_bundle_id_auto = None
@@ -935,6 +936,13 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         size = artifact['size_in_bytes']
 
     is_cached_url = False
+    
+    # Auto-rename for nightly artifact fallbacks
+    if not release and not ("Nightly" in name or "nightly" in name.lower()):
+        name = f"{name} (Nightly)"
+        metadata_updates['name'] = name
+        logger.info(f"Auto-renamed to '{name}' due to artifact build fallback")
+
     if app_entry:
         app_entry['githubRepo'] = repo
         app_entry['name'] = name
@@ -1405,6 +1413,8 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
                             elif k == 'pre_release':
                                 if 'pre_release' not in target_config:
                                     target_config['pre_release'] = v
+                            elif k == 'name':
+                                target_config['name'] = v
 
             except Exception as exc:
                 logger.error(f"App {name} generated an exception: {exc}")
@@ -1666,6 +1676,10 @@ def main():
             logger.info(f"Retention complete: {len(kept_releases)} active releases with assets")
         except Exception as e:
             logger.warning(f"Failed to run retention policy: {e}")
-
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        logger.warning("\n[Interrupted] User cancelled the update process. Exiting cleanly.")
+        import sys
+        sys.exit(130)
