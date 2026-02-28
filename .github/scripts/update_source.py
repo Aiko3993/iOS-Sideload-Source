@@ -848,11 +848,40 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     artifact = None
 
     workflow_file = app_config.get('github_workflow')
-    if workflow_file:
-        logger.info(f"Checking workflow {workflow_file} for {name}...")
-        workflow_run = client.get_latest_workflow_run(repo, workflow_file)
+    force_workflow = bool(workflow_file)
+
+    if not force_workflow:
+        release = client.get_latest_release(
+            repo,
+            prefer_pre_release=app_config.get('pre_release', False),
+            tag_regex=app_config.get('tag_regex')
+        )
+
+    if release:
+        ipa_asset = select_best_ipa(release.get('assets', []), app_config)
+        if ipa_asset:
+            download_url = ipa_asset['browser_download_url']
+            direct_url = download_url
+            asset_name = None
+            version = release['tag_name'].lstrip('v')
+            actual_date = ipa_asset.get('updated_at') or ipa_asset.get('created_at') or release.get('published_at', '')
+            release_date = actual_date.split('T')[0] if actual_date else release.get('published_at', '').split('T')[0]
+            release_timestamp = actual_date
+            version_desc = release['body'] or "Update"
+            size = ipa_asset['size']
+        else:
+            logger.warning(f"No IPA found in release for {name}. Will fallback to checking Action artifacts...")
+            release = None # Fall through to artifacts check
+
+    if not release:
+        if not force_workflow:
+            logger.info(f"Checking actions/artifacts since no valid release was found for {name}...")
+        else:
+            logger.info(f"Checking explicit workflow {workflow_file} for {name}...")
+
+        workflow_run, workflow_file = client.get_latest_workflow_run(repo, workflow_file)
         if not workflow_run:
-            logger.warning(f"No successful workflow run found for {name} ({workflow_file})")
+            logger.warning(f"No successful workflow run found for {name}")
             return app_entry, {}
 
         artifacts = client.get_workflow_run_artifacts(repo, workflow_run['id'])
@@ -884,7 +913,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         release_timestamp = workflow_run['created_at']  # Full ISO timestamp for comparison
         version_desc = f"Nightly build from commit {workflow_run['head_sha']}"
 
-        wf_name_clean = workflow_file.replace('.yml', '').replace('.yaml', '')
+        wf_name_clean = (workflow_file or 'action').replace('.yml', '').replace('.yaml', '')
         branch = workflow_run['head_branch']
         download_url = f"https://nightly.link/{repo}/workflows/{wf_name_clean}/{branch}/{artifact['name']}.zip"
 
@@ -904,31 +933,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             direct_url = None
 
         size = artifact['size_in_bytes']
-    else:
-        release = client.get_latest_release(
-            repo,
-            prefer_pre_release=app_config.get('pre_release', False),
-            tag_regex=app_config.get('tag_regex')
-        )
-
-        if not release:
-            logger.warning(f"No release found for {name}")
-            return app_entry, {}
-
-        ipa_asset = select_best_ipa(release.get('assets', []), app_config)
-        if not ipa_asset:
-            logger.warning(f"No IPA found for {name}")
-            return app_entry, {}
-
-        download_url = ipa_asset['browser_download_url']
-        direct_url = download_url
-        asset_name = None
-        version = release['tag_name'].lstrip('v')
-        actual_date = ipa_asset.get('updated_at') or ipa_asset.get('created_at') or release.get('published_at', '')
-        release_date = actual_date.split('T')[0] if actual_date else release.get('published_at', '').split('T')[0]
-        release_timestamp = actual_date
-        version_desc = release['body'] or "Update"
-        size = ipa_asset['size']
 
     is_cached_url = False
     if app_entry:
@@ -1176,48 +1180,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                         size = os.path.getsize(temp_path)
                         logger.info(f"Uploaded cached IPA: {cached_asset_name}")
 
-                        try:
-                            current_date = datetime.strptime(release_date, '%Y-%m-%d')
-                            all_releases = client.get_all_releases(current_repo)
-
-                            for other_release in all_releases:
-                                other_tag = other_release.get('tag_name', '')
-
-                                if other_tag == cached_tag or not other_tag.startswith('builds-'):
-                                    continue
-
-                                try:
-                                    other_date_str = other_tag.replace('builds-', '')
-                                    other_date = datetime.strptime(other_date_str, '%Y%m%d')
-                                except ValueError:
-                                    continue
-
-                                days_diff = (current_date - other_date).days
-
-                                if 0 < days_diff < 3:
-                                    continue
-
-                                any_deleted = False
-                                for asset_info in other_release.get('assets', []):
-                                    asset_name_check = asset_info.get('name', '').lower()
-                                    clean_name_lower = clean_name.lower()
-
-                                    if asset_name_check.startswith(clean_name_lower) and asset_name_check.endswith('.ipa'):
-                                        del_url = f"https://api.github.com/repos/{current_repo}/releases/assets/{asset_info['id']}"
-                                        try:
-                                            client.session.delete(del_url, headers=client.headers, timeout=15).raise_for_status()
-                                            logger.info(f"Cleaned up old cached IPA ({days_diff}d old): {asset_info['name']} from {other_tag}")
-                                            any_deleted = True
-                                        except Exception as del_e:
-                                            logger.debug(f"Could not delete old asset {asset_info['name']}: {del_e}")
-
-                                if any_deleted:
-                                    fresh = client.get_release_by_tag(current_repo, other_tag)
-                                    if fresh:
-                                        new_body = client.rebuild_release_body(fresh.get('assets', []))
-                                        client.update_release_body(current_repo, fresh['id'], new_body)
-                        except Exception as cleanup_e:
-                            logger.debug(f"Smart retention cleanup skipped: {cleanup_e}")
             else:
                 logger.warning(f"Failed to repackage {name}, using original bundle ID")
                 bundle_id = target_bundle_id  # Still use target for source.json consistency
@@ -1372,7 +1334,10 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
     existing_apps_map = {}
     for a in source_data.get('apps', []):
-        if a.get('githubRepo') and a.get('name'):
+        if a.get('source_issue') and a.get('form_index'):
+            key = f"issue::{a['source_issue']}::{a['form_index']}"
+            existing_apps_map[key] = a
+        elif a.get('githubRepo') and a.get('name'):
             key = f"{a['githubRepo']}::{a['name']}"
             existing_apps_map[key] = a
 
@@ -1396,10 +1361,19 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
         for app_config in apps:
             repo = app_config['github_repo']
             name = app_config['name']
-            key = f"{repo}::{name}"
-            base_name = repo_to_base_name.get(repo, name)
+            source_issue = app_config.get('source_issue')
+            form_index = app_config.get('form_index')
 
+            if source_issue and form_index:
+                key = f"issue::{source_issue}::{form_index}"
+            else:
+                key = f"{repo}::{name}"
+
+            base_name = repo_to_base_name.get(repo, name)
             current_entry = existing_apps_map.get(key)
+            if not current_entry and source_issue and form_index:
+                legacy_key = f"{repo}::{name}"
+                current_entry = existing_apps_map.get(legacy_key)
 
             future = executor.submit(process_app, app_config, current_entry, client, base_name, is_coexist)
             future_to_app[future] = name
@@ -1434,10 +1408,20 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
 
             except Exception as exc:
                 logger.error(f"App {name} generated an exception: {exc}")
-                key = next((f"{ac['github_repo']}::{ac['name']}" for ac in apps if ac['name'] == name), None)
+                target_config = next((x for x in apps if x['name'] == name), {})
+                repo = target_config.get('github_repo', '')
+                source_issue = target_config.get('source_issue')
+                form_index = target_config.get('form_index')
+
+                key = f"issue::{source_issue}::{form_index}" if source_issue and form_index else f"{repo}::{name}"
+                legacy_key = f"{repo}::{name}"
+
                 if key and key in existing_apps_map:
                     logger.warning(f"Preserving existing entry for {name} after exception")
                     new_apps_list.append(existing_apps_map[key])
+                elif legacy_key and legacy_key in existing_apps_map:
+                    logger.warning(f"Preserving existing legacy entry for {name} after exception")
+                    new_apps_list.append(existing_apps_map[legacy_key])
 
     expected_count = len(apps)
     actual_count = len(new_apps_list)

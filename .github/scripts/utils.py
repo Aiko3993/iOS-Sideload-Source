@@ -149,6 +149,11 @@ class GitHubClient:
         return resp.json() if resp else None
 
     def get_latest_release(self, repo, prefer_pre_release=False, tag_regex=None):
+        if not prefer_pre_release and not tag_regex:
+            url = f"https://api.github.com/repos/{repo}/releases/latest"
+            resp = self.get(url)
+            return resp.json() if resp else None
+
         url = f"https://api.github.com/repos/{repo}/releases"
         resp = self.get(url)
         if not resp:
@@ -212,15 +217,36 @@ class GitHubClient:
         resp = self.get(url)
         return resp.json() if resp else None
 
-    def get_latest_workflow_run(self, repo, workflow_file, branch=None):
-        """Fetch the latest successful workflow run."""
+    def get_workflows(self, repo):
+        """Fetch all workflows for a repository."""
+        url = f"https://api.github.com/repos/{repo}/actions/workflows"
+        resp = self.get(url)
+        if not resp: return []
+        return resp.json().get('workflows', [])
+
+    def get_latest_workflow_run(self, repo, workflow_file=None, branch=None):
+        """Fetch the latest successful workflow run. If workflow_file is empty, sniff for iOS workflows."""
+        if not workflow_file:
+            logger.info(f"Target workflow not specified for {repo}. Sniffing for iOS workflow...")
+            workflows = self.get_workflows(repo)
+            for w in workflows:
+                name = w.get('name', '').lower()
+                path = w.get('path', '').lower()
+                if any(x in name or x in path for x in ['ios', 'apple', 'iphone']):
+                    workflow_file = os.path.basename(path)
+                    logger.info(f"Intelligently locked onto iOS workflow: {workflow_file} ({w.get('name')})")
+                    break
+
+        if not workflow_file:
+            return None
+
         url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}/runs?status=success&per_page=1"
         if branch:
             url += f"&branch={branch}"
         resp = self.get(url)
-        if not resp: return None
+        if not resp: return None, None
         runs = resp.json().get('workflow_runs', [])
-        return runs[0] if runs else None
+        return (runs[0], workflow_file) if runs else (None, None)
 
     def get_workflow_run_artifacts(self, repo, run_id):
         """Fetch artifacts for a specific workflow run."""
