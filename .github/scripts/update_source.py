@@ -936,7 +936,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         size = artifact['size_in_bytes']
 
     is_cached_url = False
-    
+
     # Auto-rename for nightly artifact fallbacks
     if not release and not ("Nightly" in name or "nightly" in name.lower()):
         name = f"{name} (Nightly)"
