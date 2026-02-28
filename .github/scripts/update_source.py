@@ -954,8 +954,9 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         # Basic version check
         is_newer = not is_up_to_date
 
+        stored_date = latest_version.get('date') or ''
+
         if is_generic:
-            stored_date = latest_version.get('date') or ''
             is_timestamp_newer = release_timestamp > stored_date if stored_date else True
             if not is_timestamp_newer and (has_direct_link or is_cached_url):
                 is_newer = False
@@ -969,11 +970,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             logger.info(f"Self-healing for {name}: missing {missing}")
             is_newer = True
 
-        if not is_newer:
-            if not os.environ.get('FORCE_UPDATE_ALL'):
-                logger.info(f"Skipping {name}: already up to date ({stored_version} / {stored_date})")
-                return app_entry, {}
-
         current_bundle_id = app_entry.get('bundleIdentifier', '')
 
         clean_base_for_calc = app_config.get('bundle_id') or current_bundle_id
@@ -986,7 +982,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         expected_id, _ = apply_bundle_id_suffix(clean_base_for_calc, name, base_name, is_coexist)
         bundle_id_needs_update = (current_bundle_id != expected_id)
 
-        if is_up_to_date and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
+        if not is_newer and not os.environ.get('FORCE_UPDATE_ALL') and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
              url_is_alive = True
              if current_download_url:
                  try:
