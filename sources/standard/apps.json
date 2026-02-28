@@ -38,6 +38,10 @@
     "icon_url": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png"
   },
   {
+    "name": "Flycast",
+    "github_repo": "flyinghead/flycast"
+  },
+  {
     "name": "Impactor",
     "github_repo": "claration/Impactor"
   },

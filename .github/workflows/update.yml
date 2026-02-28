@@ -26,7 +26,6 @@ on:
     paths:
       - '.github/scripts/**'
       - '.github/workflows/update.yml'
-      - '**/apps.json'
 
 permissions:
   contents: write
