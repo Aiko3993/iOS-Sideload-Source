@@ -879,6 +879,109 @@
       ]
     },
     {
+      "name": "Nyxian (Nightly)",
+      "githubRepo": "ProjectNyxian/Nyxian",
+      "bundleIdentifier": "com.cr4zy.nyxian",
+      "developerName": "ProjectNyxian",
+      "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
+      "version": "0.9.0.20260227.71.US.runner.e3d73a5",
+      "versionDate": "2026-02-27T16:35:30Z",
+      "versionDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/ProjectNyxian_Nyxian_nyxian_e3d73a5.ipa",
+      "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
+      "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
+      "tintColor": "#9978c8",
+      "size": 88277017,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleEventsUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDocumentsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDownloadsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderDomainUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderPresenceUsageDescription": "The guest app is requesting for this permission.",
+          "NSFocusStatusUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemAdministrationUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemExtensionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission.",
+          "NSVideoSubscriberAccountUsageDescription": "The guest app is requesting for this permission.",
+          "NSVoIPUsageDescription": "The guest app is requesting for this permission.",
+          "OSBundleUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.9.0.20260227.71.US.runner.e3d73a5",
+          "date": "2026-02-27T16:35:30Z",
+          "localizedDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/ProjectNyxian_Nyxian_nyxian_e3d73a5.ipa",
+          "size": 88277017,
+          "sha256": "0c5db3f70496be9f53876c6c27b31f1012335ddc68dbca0c2f18e138d8ba53b9",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/home.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/editor.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/customization.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      },
+      "category": "developer",
+      "sha256": "0c5db3f70496be9f53876c6c27b31f1012335ddc68dbca0c2f18e138d8ba53b9"
+    },
+    {
       "name": "PiliPlus",
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus",
@@ -1282,109 +1385,6 @@
       ],
       "category": "utilities",
       "sha256": "d42960772c4e66bb372e25ce02059d6bcd108111d4d16312325fa3a08da386ef"
-    },
-    {
-      "name": "Nyxian (Nightly)",
-      "githubRepo": "ProjectNyxian/Nyxian",
-      "bundleIdentifier": "com.cr4zy.nyxian",
-      "developerName": "ProjectNyxian",
-      "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260227.71.US.runner.e3d73a5",
-      "versionDate": "2026-02-27T16:35:30Z",
-      "versionDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/ProjectNyxian_Nyxian_nyxian_e3d73a5.ipa",
-      "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
-      "tintColor": "#9978c8",
-      "size": 88277017,
-      "appPermissions": {
-        "entitlements": [],
-        "privacy": {
-          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
-          "NSAppleEventsUsageDescription": "The guest app is requesting for this permission.",
-          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
-          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
-          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
-          "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
-          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
-          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
-          "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
-          "NSDocumentsFolderUsageDescription": "The guest app is requesting for this permission.",
-          "NSDownloadsFolderUsageDescription": "The guest app is requesting for this permission.",
-          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
-          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
-          "NSFileProviderDomainUsageDescription": "The guest app is requesting for this permission.",
-          "NSFileProviderPresenceUsageDescription": "The guest app is requesting for this permission.",
-          "NSFocusStatusUsageDescription": "The guest app is requesting for this permission.",
-          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
-          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
-          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
-          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
-          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
-          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
-          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
-          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
-          "NSLocationAlwaysUsageDescription": "The guest app is requesting for this permission.",
-          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
-          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
-          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
-          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
-          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
-          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
-          "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
-          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
-          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
-          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
-          "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
-          "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
-          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
-          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
-          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
-          "NSSystemAdministrationUsageDescription": "The guest app is requesting for this permission.",
-          "NSSystemExtensionUsageDescription": "The guest app is requesting for this permission.",
-          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission.",
-          "NSVideoSubscriberAccountUsageDescription": "The guest app is requesting for this permission.",
-          "NSVoIPUsageDescription": "The guest app is requesting for this permission.",
-          "OSBundleUsageDescription": "The guest app is requesting for this permission."
-        }
-      },
-      "screenshotURLs": [],
-      "versions": [
-        {
-          "version": "0.9.0.20260227.71.US.runner.e3d73a5",
-          "date": "2026-02-27T16:35:30Z",
-          "localizedDescription": "Nightly build from commit e3d73a5b10e8fdd57212de9e56219166ca3560ae",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/ProjectNyxian_Nyxian_nyxian_e3d73a5.ipa",
-          "size": 88277017,
-          "sha256": "0c5db3f70496be9f53876c6c27b31f1012335ddc68dbca0c2f18e138d8ba53b9",
-          "minOSVersion": "16.0"
-        }
-      ],
-      "screenshots": {
-        "iphone": [],
-        "ipad": [
-          {
-            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/home.png",
-            "width": 2360,
-            "height": 1640
-          },
-          {
-            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/editor.png",
-            "width": 2360,
-            "height": 1640
-          },
-          {
-            "imageURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/refs/heads/main/Screenshots/customization.png",
-            "width": 2360,
-            "height": 1640
-          }
-        ]
-      },
-      "category": "developer",
-      "sha256": "0c5db3f70496be9f53876c6c27b31f1012335ddc68dbca0c2f18e138d8ba53b9"
     }
   ],
   "news": [],

@@ -110,7 +110,7 @@
     "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png"
   },
   {
-    "name": "Nyxian",
+    "name": "Nyxian (Nightly)",
     "github_repo": "ProjectNyxian/Nyxian",
     "bundle_id": "com.cr4zy.nyxian",
     "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png"
