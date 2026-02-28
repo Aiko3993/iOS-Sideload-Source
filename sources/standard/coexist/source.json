@@ -34,7 +34,11 @@
           "NSPhotoLibraryUsageDescription": "Aidoku needs permission to save pages in your photo library"
         }
       },
-      "screenshotURLs": [],
+      "screenshotURLs": [
+        "https://aidoku.app/images/library.png",
+        "https://aidoku.app/images/source.png",
+        "https://aidoku.app/images/reader.png"
+      ],
       "versions": [
         {
           "version": "0.8.1",
@@ -64,7 +68,6 @@
         }
       ],
       "category": "entertainment",
-      "officialDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "sha256": "4afb2804b49670abce47606cda599013ce890c28cc4b427e1c902511b954511e"
     },
     {
@@ -107,7 +110,8 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "a4bd77113254f2265ff756a8591b31e9ecc7db1d16e52d5a04c614b7496aaa91"
+      "sha256": "a4bd77113254f2265ff756a8591b31e9ecc7db1d16e52d5a04c614b7496aaa91",
+      "category": "other"
     },
     {
       "name": "Animeko",
@@ -139,7 +143,8 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "e5568b872870b0ff4d458412011de069a75f49597bff4f6748e71a69712d6700"
+      "sha256": "e5568b872870b0ff4d458412011de069a75f49597bff4f6748e71a69712d6700",
+      "category": "other"
     },
     {
       "name": "Apollo",
@@ -175,7 +180,16 @@
           "NSPhotoLibraryUsageDescription": "Used to save media or to select images to upload for sharing."
         }
       },
-      "screenshotURLs": [],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_1.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_2.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_3.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_4.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_5.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_6.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_7.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
+      ],
       "versions": [
         {
           "version": "1.15.11_1.4.5",
@@ -198,7 +212,6 @@
         "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
       ],
       "category": "social",
-      "officialDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "sha256": "7fc3d4d9884090b3cd9bc80ec63f8895ac4a9a7af67f2b3e12c6b8a0b3e121be"
     },
     {
@@ -233,7 +246,8 @@
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "318a9f13eb090a00b541aa1f4cc7f1aede57f92218a10a9994d231dbd180fe96"
+      "sha256": "318a9f13eb090a00b541aa1f4cc7f1aede57f92218a10a9994d231dbd180fe96",
+      "category": "other"
     },
     {
       "name": "Feather",
@@ -270,8 +284,14 @@
           "minOSVersion": "16.0"
         }
       ],
-      "officialDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
-      "sha256": "56f6e66c491e59bbd89e4d68d32a80ff38e8099c309666aa6d16f549979c3cef"
+      "sha256": "56f6e66c491e59bbd89e4d68d32a80ff38e8099c309666aa6d16f549979c3cef",
+      "category": "other",
+      "screenshots": [
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Repos.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Sign.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Store.png?raw=true"
+      ]
     },
     {
       "name": "iTorrent",
@@ -319,7 +339,6 @@
         "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/4.PNG"
       ],
       "category": "utilities",
-      "officialDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
       "sha256": "896d0dab018cf080a2d793f00df2a24273587a41be82d6895135f3bedd297010"
     },
     {
@@ -352,7 +371,8 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3"
+      "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3",
+      "category": "other"
     },
     {
       "name": "Ksign",
@@ -385,7 +405,6 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
       "sha256": "1f68e5d8342a6d1b740ea75845e104cdfba026454c43f70d031b7446d13dff2c"
     },
     {
@@ -461,8 +480,10 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "Run iOS apps without actually installing them!",
-      "sha256": "b0d14f000d7a59001a51abe9bd62849bd68e64d66c9bd9769022252283aafc41"
+      "sha256": "b0d14f000d7a59001a51abe9bd62849bd68e64d66c9bd9769022252283aafc41",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
     },
     {
       "name": "LiveContainer (Nightly)",
@@ -537,8 +558,10 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "Run iOS apps without actually installing them!",
-      "sha256": "dcc16290529a8aefb70ac83a7afa90de5fdc8a68382206025fed13b2fc0a7231"
+      "sha256": "dcc16290529a8aefb70ac83a7afa90de5fdc8a68382206025fed13b2fc0a7231",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
     },
     {
       "name": "LiveContainer+SideStore",
@@ -613,8 +636,10 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "Run iOS apps without actually installing them!",
-      "sha256": "95439192fce00cc2ac61a29a4a60d22823b0016f1d0fe16154a59bc10fd38d25"
+      "sha256": "95439192fce00cc2ac61a29a4a60d22823b0016f1d0fe16154a59bc10fd38d25",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
     },
     {
       "name": "LiveContainer+SideStore (Nightly)",
@@ -689,8 +714,10 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "Run iOS apps without actually installing them!",
-      "sha256": "7e90e59d66a40ac41f6aabd9cb016129e1ac26b14d201b678288b174cb4c3837"
+      "sha256": "7e90e59d66a40ac41f6aabd9cb016129e1ac26b14d201b678288b174cb4c3837",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
     },
     {
       "name": "Luna",
@@ -722,7 +749,8 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "20a231e9179187fb465ff497eba098814a7af57b4349c7c64626dc314900c570"
+      "sha256": "20a231e9179187fb465ff497eba098814a7af57b4349c7c64626dc314900c570",
+      "category": "other"
     },
     {
       "name": "Mangayomi",
@@ -768,8 +796,12 @@
         }
       ],
       "category": "entertainment",
-      "officialDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
-      "sha256": "d88c4e495cc8696245607dbc7885bfec579eb2c147d4d69895a7fa2e87bff0cb"
+      "sha256": "d88c4e495cc8696245607dbc7885bfec579eb2c147d4d69895a7fa2e87bff0cb",
+      "screenshots": [
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
+      ]
     },
     {
       "name": "NeoFreeBird",
@@ -836,8 +868,12 @@
           "minOSVersion": "15.0"
         }
       ],
-      "officialDescription": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
-      "sha256": "116829253fb403bdf864c922f1c2658526014e36bce1b3692734410b0b656eac"
+      "sha256": "116829253fb403bdf864c922f1c2658526014e36bce1b3692734410b0b656eac",
+      "category": "other",
+      "screenshots": [
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9189.png",
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9190.png"
+      ]
     },
     {
       "name": "Nyxian",
@@ -940,7 +976,6 @@
         ]
       },
       "category": "developer",
-      "officialDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "sha256": "c4222ac5d0f821a177d45ac7e5e60fdda0176156763ea0402571c0ea6596390c"
     },
     {
@@ -977,7 +1012,8 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "f904abd34032c347e7cba3876c605bd5031a97e986779d67dcb2b4681474267a"
+      "sha256": "f904abd34032c347e7cba3876c605bd5031a97e986779d67dcb2b4681474267a",
+      "category": "other"
     },
     {
       "name": "PPSSPP",
@@ -1026,7 +1062,8 @@
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "dd2464792100a53dc6294b9e0b3e895f354735b398b1d97f55aa041bd4e01289"
+      "sha256": "dd2464792100a53dc6294b9e0b3e895f354735b398b1d97f55aa041bd4e01289",
+      "category": "other"
     },
     {
       "name": "SideStore",
@@ -1065,7 +1102,8 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "fa5b1510c1eb6850bd43efb47fbb6ab7f4181ebea9046ab1ac254028a4940179"
+      "sha256": "fa5b1510c1eb6850bd43efb47fbb6ab7f4181ebea9046ab1ac254028a4940179",
+      "category": "other"
     },
     {
       "name": "SideStore (Nightly)",
@@ -1073,14 +1111,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260227.944+3b9b45a0.0603",
-      "versionDate": "2026-02-27T23:17:47Z",
-      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [3b9b45a06f041aaeee2663bf56cf604f5a1825f1](https://github.com/SideStore/SideStore/commit/3b9b45a06f041aaeee2663bf56cf604f5a1825f1).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Fri Feb 27 23:17:39 2026`\nBuilt at (UTC date): `2026-02-27`\nCommit SHA: `3b9b45a06f041aaeee2663bf56cf604f5a1825f1`\nVersion: `0.6.3-20260227.944+3b9b45a0`\n#### What's Changed\n- pbxproj: was missing references to IfManager.swift\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: added @nythepegasus's patch as-is\n- minimuxer: updated submodule to latest\n\n#### Full Changelog: [bff192be...3b9b45a0](https://github.com/SideStore/SideStore/compare/bff192be4e2b99e0e7cd717ba3d1871d3a7b2136...3b9b45a06f041aaeee2663bf56cf604f5a1825f1)\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/SideStore_Nightly_0.6.3-20260227.944.3b9b45a0.0603.ipa",
+      "version": "0.6.3-20260228.946+95953ca0.0603",
+      "versionDate": "2026-02-28T01:19:25Z",
+      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [95953ca0e9ad50dffe7110ed40522fb85be17364](https://github.com/SideStore/SideStore/commit/95953ca0e9ad50dffe7110ed40522fb85be17364).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 01:19:18 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `95953ca0e9ad50dffe7110ed40522fb85be17364`\nVersion: `0.6.3-20260228.946+95953ca0`\n#### What's Changed\n- IfManager: added String representation for readability\n\n#### Full Changelog: [3b9b45a0...95953ca0](https://github.com/SideStore/SideStore/compare/3b9b45a06f041aaeee2663bf56cf604f5a1825f1...95953ca0e9ad50dffe7110ed40522fb85be17364)\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.946.95953ca0.0603.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27054008,
+      "size": 27055368,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1094,6 +1132,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260228.946+95953ca0.0603",
+          "date": "2026-02-28T01:19:25Z",
+          "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [95953ca0e9ad50dffe7110ed40522fb85be17364](https://github.com/SideStore/SideStore/commit/95953ca0e9ad50dffe7110ed40522fb85be17364).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 01:19:18 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `95953ca0e9ad50dffe7110ed40522fb85be17364`\nVersion: `0.6.3-20260228.946+95953ca0`\n#### What's Changed\n- IfManager: added String representation for readability\n\n#### Full Changelog: [3b9b45a0...95953ca0](https://github.com/SideStore/SideStore/compare/3b9b45a06f041aaeee2663bf56cf604f5a1825f1...95953ca0e9ad50dffe7110ed40522fb85be17364)\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.946.95953ca0.0603.ipa",
+          "size": 27055368,
+          "sha256": "5de2492821a80505bb2a87c0c4a26a1ef37c14c820eeebcfe1958432da4fc2d3",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260227.944+3b9b45a0.0603",
           "date": "2026-02-27T23:17:47Z",
@@ -1113,7 +1160,8 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "1e260ca66886ceb4919f3ffd9c9748154033768e1cf7cd2cc784abcd00e60fff"
+      "sha256": "5de2492821a80505bb2a87c0c4a26a1ef37c14c820eeebcfe1958432da4fc2d3",
+      "category": "other"
     },
     {
       "name": "UTM",
@@ -1162,7 +1210,8 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "9553b6fc064685fb38b8fbe0328ab7f0cbf74ad490986850a14b1c7d5116bada"
+      "sha256": "9553b6fc064685fb38b8fbe0328ab7f0cbf74ad490986850a14b1c7d5116bada",
+      "category": "other"
     },
     {
       "name": "UTM HV",
@@ -1214,7 +1263,8 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "14e21cf8486111d0a24f59ce798fcd2b63943ad777fac945a8efd98b88828158"
+      "sha256": "14e21cf8486111d0a24f59ce798fcd2b63943ad777fac945a8efd98b88828158",
+      "category": "other"
     },
     {
       "name": "Venera",
@@ -1250,7 +1300,6 @@
         }
       ],
       "category": "utilities",
-      "officialDescription": "A comic reader that supports reading local and network comics",
       "sha256": "dd8d968486ccbb09d570660487bcefa91424a82d938be4f88a11e8ab378cd39b"
     }
   ],
