@@ -31,7 +31,7 @@
 * **CI 抓取**: 通过 GitHub Workflows 定时拉取并解析 Releases 或 Artifacts 中的应用构建包。
 * **IPA 元数据提取**: 从 `Info.plist` 解析 `version`、`bundleIdentifier`、`size`、`minOSVersion`。通过纯 Python 直接从 Mach-O 二进制的代码签名中提取 entitlements，从 plist 中提取隐私权限描述，无需 macOS 工具。
 * **变体应用处理**: 识别各类 Nightly 或分支构建并主动为 Bundle ID 挂载 `.coexist` 后缀，解决设备上的覆盖安装报错。
-* **官方源发现**: 自动从上游仓库中发现兼容标准格式的官方源，补全截图等元数据。
+* **官方源发现**: 自动从上游仓库中发现兼容标准格式的官方源，补全截图、分类、主色调等元数据。
 
 ## 安全与完整性
 **我们不注入任何代码。** 对于同一应用的多个侧载变体（如 Stable 与 Nightly 并存），仅以重打包形式修改 `Info.plist` 中的 `CFBundleIdentifier` 以解决 Bundle ID 冲突。

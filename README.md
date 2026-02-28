@@ -31,7 +31,7 @@ Each source is available in two editions:
 * **CI Integration**: Workflows fetch new versions from GitHub Releases and Actions Artifacts periodically.
 * **IPA Metadata Extraction**: Parses `Info.plist` for `version`, `bundleIdentifier`, `size`, and `minOSVersion`. Extracts entitlements directly from the Mach-O binary's code signature and privacy usage descriptions from the plist — all via pure Python, no macOS tools required.
 * **Variant Generation**: Resolves Beta/Nightly distributions by branch/tag matching rules, appending `.coexist` to bundle IDs to permit parallel installations on iOS devices.
-* **Official Source Discovery**: Automatically discovers upstream sideload-compatible sources from app repositories to supplement metadata like screenshots.
+* **Official Source Discovery**: Automatically discovers upstream sideload-compatible sources from app repositories to supplement metadata like screenshots, category, and tintColor.
 
 ## Integrity & Modifications
 **We do not inject code.** To resolve bundle ID conflicts between sideloaded variants (e.g., Nightly alongside Stable), we only repackage the `CFBundleIdentifier` in `Info.plist`.

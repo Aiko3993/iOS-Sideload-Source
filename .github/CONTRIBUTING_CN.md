@@ -33,5 +33,7 @@
 
 ### 构建机制说明
 - CI 会自动从 IPA 二进制中提取 `version`、`bundleIdentifier`、`size`、`minOSVersion`、`appPermissions`（权限与隐私描述）和 `sha256` 校验和。请勿手动编写这些值。
-- 应用会自动生成两个版本：**Original**（保留上游 bundleIdentifier）和 **Coexist**（追加 `.coexist` 后缀，解决部分侧载 app 对同一应用的多个变体之间的 bundleIdentifier 冲突，允许并存安装）。
-- CI 获取的 Artifacts 将被清理封装，并部署至 `builds-*` Release 生成持久化直链。
+- 应用会自动生成两个版本：**Original**（保留上游 bundleIdentifier）和 **Coexist**（追加 `.coexist` 后缀，允许并存安装）。
+- CI 获取的 Artifacts 将被清理封装，并部署至 `Builds` Release 生成持久化直链。
+- 输出字段由 `update_source.py` 中的 `ALLOWED_APP_FIELDS` 和 `ALLOWED_VERSION_FIELDS` 声明式 schema 管控。从 schema 中移除字段时，下次 CI 运行会自动将其从 `source.json` 中清除。
+- `category`、`screenshots`、`tintColor`、`subtitle` 等元数据会自动从上游兼容 AltStore 格式的官方源中发现并补全。

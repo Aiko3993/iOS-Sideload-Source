@@ -33,5 +33,7 @@ Append new app entries to the respective `apps.json` under `sources/standard/` o
 
 ### CI/CD Behaviors
 - The workflow automatically extracts `version`, `bundleIdentifier`, `size`, `minOSVersion`, `appPermissions` (entitlements and privacy descriptions), and `sha256` from the IPA binary. Do not provide these manually.
-- Apps are published in two editions: **Original** (upstream bundleIdentifier) and **Coexist** (`.coexist` suffix appended to bundleIdentifier to resolve bundleIdentifier conflicts that some sideload apps impose on multiple variants of the same app, allowing parallel installation).
-- Fetched assets (Artifact zips, raw `.app` directories, repacked IPAs) are deployed to `builds-*` releases to persist direct download links.
+- Apps are published in two editions: **Original** (upstream bundleIdentifier) and **Coexist** (`.coexist` suffix appended to bundleIdentifier to allow parallel installation).
+- Fetched assets are deployed to `Builds` releases to persist direct download links.
+- Output fields are governed by the `ALLOWED_APP_FIELDS` and `ALLOWED_VERSION_FIELDS` schemas in `update_source.py`. Removing a field from the schema automatically strips it from `source.json` on the next CI run.
+- Metadata such as `category`, `screenshots`, `tintColor`, and `subtitle` is automatically discovered from upstream AltStore-compatible sources when available.
