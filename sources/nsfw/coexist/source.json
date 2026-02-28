@@ -1,6 +1,9 @@
 {
-  "name": "Aiko3993's Sideload Source (NSFW Coexist)",
-  "identifier": "io.github.aiko3993.source.nsfw.coexist",
+  "name": "iOS Sideload Source (NSFW Coexist)",
+  "identifier": "io.github.aiko3993.ios-sideload-source.nsfw.coexist",
+  "subtitle": "iOS Sideload Source by Aiko3993",
+  "description": "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source.",
+  "tintColor": "#db2777",
   "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/nsfw.png",
   "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
   "apps": [
@@ -154,5 +157,6 @@
       "category": "other"
     }
   ],
-  "news": []
+  "news": [],
+  "headerURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/og-image.png"
 }
