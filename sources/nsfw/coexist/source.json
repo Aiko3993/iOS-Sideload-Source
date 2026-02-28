@@ -14,7 +14,7 @@
       "versionDate": "2026-02-24T12:24:22Z",
       "versionDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12.ipa",
-      "localizedDescription": "English | 简体中文 | 한국어",
+      "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
       "size": 15750837,
@@ -26,7 +26,14 @@
           "NSPhotoLibraryUsageDescription": "Pick up image to search"
         }
       },
-      "screenshotURLs": [],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg"
+      ],
       "versions": [
         {
           "version": "8.0.12",
@@ -71,7 +78,6 @@
         }
       ],
       "category": "entertainment",
-      "officialDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db"
     },
     {
@@ -107,7 +113,8 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "8c5e37c3aabe5630aaa5008ae7c3fb162dd7fb5cb42c01ea9dd2a9be7e03cc12"
+      "sha256": "8c5e37c3aabe5630aaa5008ae7c3fb162dd7fb5cb42c01ea9dd2a9be7e03cc12",
+      "category": "other"
     },
     {
       "name": "Pica Comic",
@@ -143,7 +150,8 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "a11038b653bc111340b487ef239d631ab937487ffe8a3e0e88c6603847734192"
+      "sha256": "a11038b653bc111340b487ef239d631ab937487ffe8a3e0e88c6603847734192",
+      "category": "other"
     }
   ],
   "news": []
