@@ -1354,17 +1354,21 @@ def update_repo(config_file, source_file, source_name, source_identifier, client
     source_data = load_existing_source(source_file, source_name, source_identifier)
     original_source_data = copy.deepcopy(source_data)
 
-    source_data['name'] = source_name
-    source_data['identifier'] = source_identifier
-
     current_repo = os.environ.get('GITHUB_REPOSITORY', 'Placeholder/Repository')
     repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Placeholder'
     repo_name = current_repo.split('/')[1] if '/' in current_repo else 'Repository'
 
     is_nsfw = 'nsfw' in source_identifier.lower()
     icon_filename = 'nsfw.png' if is_nsfw else 'standard.png'
-    source_data['iconURL'] = f"https://raw.githubusercontent.com/{current_repo}/main/.github/assets/{icon_filename}"
+
+    source_data['name'] = source_name
+    source_data['identifier'] = source_identifier
+    source_data['subtitle'] = f"iOS Sideload Source by {repo_owner}"
+    source_data['description'] = "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source."
     source_data['website'] = f"https://{repo_owner}.github.io/{repo_name}"
+    source_data['tintColor'] = "#db2777" if is_nsfw else "#10b981"
+    source_data['iconURL'] = f"https://raw.githubusercontent.com/{current_repo}/main/.github/assets/{icon_filename}"
+    source_data['headerURL'] = f"https://raw.githubusercontent.com/{current_repo}/main/.github/assets/og-image.png"
 
     existing_apps_map = {}
     for a in source_data.get('apps', []):
@@ -1633,8 +1637,11 @@ def main():
     repo_owner = current_repo.split('/')[0] if '/' in current_repo else 'Placeholder'
     owner_lower = repo_owner.lower()
 
-    source_name = f"{repo_owner}'s Sideload Source"
-    source_id = f"io.github.{owner_lower}.source"
+    repo_name = current_repo.split('/')[1] if '/' in current_repo else 'Repository'
+    repo_name_display = repo_name.replace('-', ' ')
+
+    source_name = repo_name_display
+    source_id = f"io.github.{owner_lower}.{repo_name.lower()}"
 
     changed_std_coex = update_repo('sources/standard/apps.json', 'sources/standard/coexist/source.json', f"{source_name} (Coexist)", f"{source_id}.coexist", client, True)
     changed_std_orig = update_repo('sources/standard/apps.json', 'sources/standard/original/source.json', source_name, source_id, client, False)
