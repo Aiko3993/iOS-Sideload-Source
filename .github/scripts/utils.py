@@ -238,7 +238,7 @@ class GitHubClient:
                     break
 
         if not workflow_file:
-            return None
+            return None, None
 
         url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}/runs?status=success&per_page=1"
         if branch:
@@ -303,16 +303,34 @@ class GitHubClient:
                 return False
 
     @staticmethod
-    def rebuild_release_body(assets):
-        """Build complete release body from current asset list. Idempotent."""
+    def rebuild_release_body(assets, entries_dict=None):
+        """Build complete release body from current asset list and structured entries. Idempotent."""
         header = "Build IPAs for optimized distribution."
-        if not assets:
+        if not assets and not entries_dict:
             return header
-        lines = [header, "", "## Included Apps"]
-        for asset in sorted(assets, key=lambda a: a.get('name', '')):
+
+        lines = [header, "", "**Included Apps:**", ""]
+        entries_dict = entries_dict or {}
+        processed_asset_names = set()
+
+        for asset_name in sorted(entries_dict.keys(), key=lambda k: k.lower()):
+            val = entries_dict[asset_name]
+            if val.startswith('- '):
+                lines.append(val)
+            else:
+                lines.append(f"- {val}")
+            processed_asset_names.add(asset_name)
+
+        remaining_assets = []
+        for asset in assets:
             name = asset.get('name', '')
-            if name.lower().endswith('.ipa'):
-                lines.append(f"- `{name}`")
+            if name.lower().endswith(('.ipa', '.tipa')) and name not in processed_asset_names:
+                remaining_assets.append(name)
+
+        for name in sorted(remaining_assets, key=lambda n: n.lower()):
+            clean_app_name = name.split('_')[0]
+            lines.append(f"- **{clean_app_name}**: `{name}`")
+
         return '\n'.join(lines)
 
     def upload_release_asset(self, repo, release_id, file_path, name=None, bundle_id=None, app_name=None):
@@ -360,15 +378,6 @@ class GitHubClient:
             with open(file_path, 'rb') as f:
                 resp = self.session.post(upload_url, headers=headers, data=f, timeout=300)
                 resp.raise_for_status()
-
-                fresh_resp = self.get(release_url)
-                if fresh_resp:
-                    fresh_data = fresh_resp.json()
-                    fresh_assets = fresh_data.get('assets', [])
-                    original_body = fresh_data.get('body') or ''
-                    new_body = self.rebuild_release_body(fresh_assets)
-                    if new_body != original_body.strip():
-                        self.update_release_body(repo, release_id, new_body)
 
                 return resp.json()
         except Exception as e:

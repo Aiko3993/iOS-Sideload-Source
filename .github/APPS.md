@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-02-28 07:25:39 (UTC)*
+> *Last Updated: 2026-02-28 17:01:59 (UTC)*
 
 ## Standard Apps
 
@@ -12,6 +12,8 @@
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
 | <img src="https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png" width="48" height="48"> | **Asspp** | The App Store for your multi-account eco system. | [Lakr233/Asspp](https://github.com/Lakr233/Asspp) |
 | <img src="https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png" width="48" height="48"> | **Feather** | On-device signing application | [khcrysalis/Feather](https://github.com/khcrysalis/Feather) |
+| <img src="https://raw.githubusercontent.com/Ferrite-iOS/Ferrite/next/Ferrite/Assets.xcassets/AppIcon.appiconset/Ferrite-lg.png" width="48" height="48"> | **Ferrite** | A media search engine for iOS with debrid support | [Ferrite-iOS/Ferrite](https://github.com/Ferrite-iOS/Ferrite) |
+| <img src="https://raw.githubusercontent.com/flyinghead/flycast/master/shell/apple/emulator-ios/emulator/Images.xcassets/AppIcon.appiconset/180.png" width="48" height="48"> | **Flycast** | Flycast is a multiplatform Sega Dreamcast, Naomi, Naomi 2 and Atomiswave emulator | [flyinghead/flycast](https://github.com/flyinghead/flycast) |
 | <img src="https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon-Blue.appiconset/AppIcon-Blue.png" width="48" height="48"> | **iTorrent** | Torrent client for iOS | [XITRIX/iTorrent](https://github.com/XITRIX/iTorrent) |
 | <img src="https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="48" height="48"> | **Kazumi** | 基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。 | [Predidit/Kazumi](https://github.com/Predidit/Kazumi) |
 | <img src="https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png" width="48" height="48"> | **Ksign** | The "cleaner" Esign app. | [Nyasami/Ksign](https://github.com/Nyasami/Ksign) |
