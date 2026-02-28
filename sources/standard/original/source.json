@@ -1258,14 +1258,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260228.947+a505d042.0603",
-      "versionDate": "2026-02-28T03:27:31Z",
-      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [a505d042152e8a929db57433616cfe5f4582f051](https://github.com/SideStore/SideStore/commit/a505d042152e8a929db57433616cfe5f4582f051).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 03:27:26 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `a505d042152e8a929db57433616cfe5f4582f051`\nVersion: `0.6.3-20260228.947+a505d042`\n#### What's Changed\n- fix: 26.4 patch, add correct dest\n\n#### Full Changelog: [95953ca0...a505d042](https://github.com/SideStore/SideStore/compare/95953ca0e9ad50dffe7110ed40522fb85be17364...a505d042152e8a929db57433616cfe5f4582f051)\n",
+      "version": "0.6.3-20260228.948+6e9e0aee.0603",
+      "versionDate": "2026-02-28T23:08:11Z",
+      "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3](https://github.com/SideStore/SideStore/commit/6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 23:08:04 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3`\nVersion: `0.6.3-20260228.948+6e9e0aee`\n#### What's Changed\n- fix: revert 26.4 fix partially to fix everywhere\n\n#### Full Changelog: [a505d042...6e9e0aee](https://github.com/SideStore/SideStore/compare/a505d042152e8a929db57433616cfe5f4582f051...6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3)\n",
       "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27047531,
+      "size": 27047368,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1279,6 +1279,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260228.948+6e9e0aee.0603",
+          "date": "2026-02-28T23:08:11Z",
+          "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3](https://github.com/SideStore/SideStore/commit/6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 23:08:04 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3`\nVersion: `0.6.3-20260228.948+6e9e0aee`\n#### What's Changed\n- fix: revert 26.4 fix partially to fix everywhere\n\n#### Full Changelog: [a505d042...6e9e0aee](https://github.com/SideStore/SideStore/compare/a505d042152e8a929db57433616cfe5f4582f051...6e9e0aee0a9a493cd9b86d1a7c50b5b68d2c6fe3)\n",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+          "size": 27047368,
+          "sha256": "3668df98140db2c7f4d118191febc58b43af1674b25d5b6a4bd3e14b585a01d6",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260228.947+a505d042.0603",
           "date": "2026-02-28T03:27:31Z",
@@ -1316,7 +1325,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "b75c95aa57ae6915442c3242b5f42d16381aaf9dd0632bbba7049cb016e9d73b",
+      "sha256": "3668df98140db2c7f4d118191febc58b43af1674b25d5b6a4bd3e14b585a01d6",
       "category": "other"
     },
     {
