@@ -2,15 +2,137 @@ name: Process App Request
 
 on:
   issues:
-    types: [labeled]
+    types: [opened, edited, labeled]
 
 permissions:
   contents: write
   issues: write
 
 jobs:
+  validate-request:
+    if: |
+      (github.event.action == 'opened' || github.event.action == 'edited') && 
+      contains(github.event.issue.labels.*.name, 'app-request') && 
+      !contains(github.event.issue.labels.*.name, 'approved') && 
+      !contains(github.event.issue.labels.*.name, 'rejected')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r .github/requirements.txt
+
+      - name: Parse Issue Body
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            
+            const extract = (key) => {
+              const regex = new RegExp(`### ${key}\\s+([\\s\\S]*?)(?=(###|$))`);
+              const match = body.match(regex);
+              return match ? match[1].trim() : null;
+            };
+
+            const apps = [];
+            
+            const tryExtract = (suffix) => {
+                const s = suffix ? ` ${suffix}` : '';
+                const name = extract(`App Name${s}`);
+                const repo = extract(`GitHub Repository${s}`);
+                const cat = extract(`Category${s}`);
+                const icon = extract(`Icon URL${s} (Optional)`);
+                
+                const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
+
+                if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
+                    apps.push({
+                        name: name,
+                        repo: repo,
+                        category: cat,
+                        icon_url: cleanIcon
+                    });
+                }
+            };
+
+            tryExtract('');
+            tryExtract('2');
+            tryExtract('3');
+
+            if (apps.length === 0) {
+              core.setFailed('No valid app data found in issue body.');
+              return;
+            }
+
+            core.setOutput('apps_json', JSON.stringify(apps));
+
+      - name: Dry-run Validation
+        id: validate
+        env:
+          APPS_JSON: ${{ steps.parse.outputs.apps_json }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/add_app.py
+
+      - name: Comment Validation Result
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const resultsStr = '${{ steps.validate.outputs.results }}';
+            let results = [];
+            try {
+              results = JSON.parse(resultsStr || '[]');
+            } catch (e) {
+              console.log('Error parsing results:', e);
+            }
+            
+            let message = '';
+            let hasError = false;
+            
+            for (const res of results) {
+               if (res.status === 'error') {
+                   hasError = true;
+                   message += `❌ **${res.repo}**: ${res.message}\n`;
+               } else {
+                   message += `✅ **${res.repo}**: Ready to be ${res.status} in \`${res.message}\`\n`;
+               }
+            }
+            
+            if (hasError) {
+                message = "### ⚠️ Validation Failed\nPlease check the repository name or input format.\n\n" + message;
+                github.rest.issues.addLabels({
+                   owner: context.repo.owner,
+                   repo: context.repo.repo,
+                   issue_number: context.issue.number,
+                   labels: ['invalid']
+                });
+            } else {
+                message = "### ✅ Validation Passed\nAutomated checks completed! Awaiting maintainer review. If approved, this will be added automatically.\n\n" + message;
+                try {
+                   github.rest.issues.removeLabel({
+                     owner: context.repo.owner,
+                     repo: context.repo.repo,
+                     issue_number: context.issue.number,
+                     name: 'invalid'
+                   });
+                } catch (e) {}
+            }
+            
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: message
+            });
+
   process-app:
-    if: github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'app-request')
+    if: github.event.action == 'labeled' && github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'app-request')
     runs-on: ubuntu-latest
     concurrency: 
       group: process-app-request
@@ -202,7 +324,7 @@ jobs:
             });
 
   reject-app:
-    if: github.event.label.name == 'rejected' && contains(github.event.issue.labels.*.name, 'app-request') && github.event.sender.id == github.event.repository.owner.id
+    if: github.event.action == 'labeled' && github.event.label.name == 'rejected' && contains(github.event.issue.labels.*.name, 'app-request') && github.event.sender.id == github.event.repository.owner.id
     runs-on: ubuntu-latest
     concurrency:
       group: process-app-request
