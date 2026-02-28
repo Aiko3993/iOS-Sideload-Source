@@ -717,11 +717,11 @@
       "version": "3.7.2",
       "versionDate": "2026-02-27T04:15:40Z",
       "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_Nightly_3.7.2_Coexist.ipa",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
       "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 34793894,
+      "size": 34811049,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -774,8 +774,8 @@
           "version": "3.7.2",
           "date": "2026-02-27T04:15:40Z",
           "localizedDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer.SideStore_Nightly_3.7.2_Coexist.ipa",
-          "size": 34793894,
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+          "size": 34811049,
           "sha256": "7e90e59d66a40ac41f6aabd9cb016129e1ac26b14d201b678288b174cb4c3837",
           "minOSVersion": "15.0"
         }
@@ -948,14 +948,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260228.21.US.runner.706796a",
-      "versionDate": "2026-02-28T09:18:50Z",
-      "versionDescription": "Nightly build from commit 706796ad80cd37c34996aa257b323b1bc02f47ef",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/Nyxian_Nightly_0.9.0.20260228.21.US.runner.706796a_Coexist.ipa",
+      "version": "0.9.0.20260228.57.US.runner.6ac0166",
+      "versionDate": "2026-02-28T10:06:24Z",
+      "versionDescription": "Nightly build from commit 6ac016610354abb860aba8aba71cba8d6933c641",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/Nyxian_Nightly_0.9.0.20260228.57.US.runner.6ac0166_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88504369,
+      "size": 88500707,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1013,6 +1013,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.0.20260228.57.US.runner.6ac0166",
+          "date": "2026-02-28T10:06:24Z",
+          "localizedDescription": "Nightly build from commit 6ac016610354abb860aba8aba71cba8d6933c641",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/Nyxian_Nightly_0.9.0.20260228.57.US.runner.6ac0166_Coexist.ipa",
+          "size": 88500707,
+          "sha256": "0f42f43153a6d34a2dde6bb5d023a2d4a9e4305e973239faa61ccf24e70db13d",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "0.9.0.20260228.21.US.runner.706796a",
           "date": "2026-02-28T09:18:50Z",
           "localizedDescription": "Nightly build from commit 706796ad80cd37c34996aa257b323b1bc02f47ef",
@@ -1052,7 +1061,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "86a61fc89228e815642faeff7f597de5f014df35bad71844115ac29b084dd3c8"
+      "sha256": "0f42f43153a6d34a2dde6bb5d023a2d4a9e4305e973239faa61ccf24e70db13d"
     },
     {
       "name": "PiliPlus",
@@ -1225,11 +1234,11 @@
       "version": "0.6.3-20260228.947+a505d042.0603",
       "versionDate": "2026-02-28T03:27:31Z",
       "versionDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [a505d042152e8a929db57433616cfe5f4582f051](https://github.com/SideStore/SideStore/commit/a505d042152e8a929db57433616cfe5f4582f051).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 03:27:26 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `a505d042152e8a929db57433616cfe5f4582f051`\nVersion: `0.6.3-20260228.947+a505d042`\n#### What's Changed\n- fix: 26.4 patch, add correct dest\n\n#### Full Changelog: [95953ca0...a505d042](https://github.com/SideStore/SideStore/compare/95953ca0e9ad50dffe7110ed40522fb85be17364...a505d042152e8a929db57433616cfe5f4582f051)\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.947.a505d042.0603_Coexist.ipa",
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27055062,
+      "size": 27047531,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1247,8 +1256,8 @@
           "version": "0.6.3-20260228.947+a505d042.0603",
           "date": "2026-02-28T03:27:31Z",
           "localizedDescription": "This is an ⚠️ **EXPERIMENTAL** ⚠️ Nightly build for commit [a505d042152e8a929db57433616cfe5f4582f051](https://github.com/SideStore/SideStore/commit/a505d042152e8a929db57433616cfe5f4582f051).\n\nNightly builds are **extremely experimental builds only meant to be used by developers and beta testers. They often contain bugs and experimental features. Use at your own risk!**\n\n## Build Info\n\nBuilt at (UTC): `Sat Feb 28 03:27:26 2026`\nBuilt at (UTC date): `2026-02-28`\nCommit SHA: `a505d042152e8a929db57433616cfe5f4582f051`\nVersion: `0.6.3-20260228.947+a505d042`\n#### What's Changed\n- fix: 26.4 patch, add correct dest\n\n#### Full Changelog: [95953ca0...a505d042](https://github.com/SideStore/SideStore/compare/95953ca0e9ad50dffe7110ed40522fb85be17364...a505d042152e8a929db57433616cfe5f4582f051)\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260228/SideStore_Nightly_0.6.3-20260228.947.a505d042.0603_Coexist.ipa",
-          "size": 27055062,
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/nightly/SideStore.ipa",
+          "size": 27047531,
           "sha256": "4dced8fef1cb665cee6c3a5cbbac0dc5d01d94aa86ceb2950aa5b76dc24e07a8",
           "minOSVersion": "15.0"
         },
