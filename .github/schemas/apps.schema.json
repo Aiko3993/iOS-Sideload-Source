@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/iOS-Sideload-Source/apps.schema.json",
+  "title": "apps.json",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/AppEntry"
+  },
+  "$defs": {
+    "AppEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "github_repo"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "github_repo": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+\\/[A-Za-z0-9._-]+$",
+          "maxLength": 100
+        },
+        "icon_url": {
+          "type": "string",
+          "maxLength": 2048,
+          "anyOf": [
+            {
+              "format": "uri"
+            },
+            {
+              "enum": [
+                "",
+                "None",
+                "_No response_"
+              ]
+            }
+          ]
+        },
+        "bundle_id": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+        },
+        "tint_color": {
+          "type": "string",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
+        },
+        "pre_release": {
+          "type": "boolean"
+        },
+        "tag_regex": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "github_workflow": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[^\\\\/]+\\.(yml|yaml)$"
+        },
+        "artifact_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "ipa_regex": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "source_issue": false,
+        "form_index": false
+      }
+    }
+  }
+}

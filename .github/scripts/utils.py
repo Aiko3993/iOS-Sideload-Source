@@ -6,6 +6,7 @@ import tempfile
 import logging
 import requests
 from requests.adapters import HTTPAdapter
+from requests.exceptions import HTTPError
 from urllib3.util.retry import Retry
 
 logging.basicConfig(
@@ -84,6 +85,14 @@ class GitHubClient:
         retries = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
         self.session.mount("https://", HTTPAdapter(max_retries=retries))
         self.token = token or os.environ.get('GITHUB_TOKEN')
+        if not self.token:
+            try:
+                import subprocess
+                self.token = subprocess.check_output(['gh', 'auth', 'token'], text=True).strip() or None
+                if self.token:
+                    os.environ['GITHUB_TOKEN'] = self.token
+            except Exception:
+                pass
         self.headers = {
             "Accept": "application/vnd.github+json",
             "User-Agent": "iOS-Sideload-Source-Updater"
@@ -109,7 +118,7 @@ class GitHubClient:
             pass
         return None
 
-    def get(self, url, params=None, **kwargs):
+    def get(self, url, params=None, suppress_not_found_log=False, **kwargs):
         try:
             headers = self.headers.copy()
             if not self._is_api_url(url):
@@ -119,11 +128,18 @@ class GitHubClient:
             resp = self.session.get(url, headers=headers, params=params, timeout=timeout, **kwargs)
             resp.raise_for_status()
             return resp
-        except Exception as e:
-            if '404' in str(e):
-                logger.warning(f"Not found: {url}")
+        except HTTPError as e:
+            status = getattr(e.response, 'status_code', None)
+            if status == 404:
+                if suppress_not_found_log:
+                    logger.debug(f"Not found: {url}")
+                else:
+                    logger.warning(f"Not found: {url}")
             else:
                 logger.error(f"Request failed: {url} - {e}")
+            return None
+        except Exception as e:
+            logger.error(f"Request failed: {url} - {e}")
             return None
 
     def _is_api_url(self, url):
@@ -220,12 +236,35 @@ class GitHubClient:
     def get_workflows(self, repo):
         """Fetch all workflows for a repository."""
         url = f"https://api.github.com/repos/{repo}/actions/workflows"
-        resp = self.get(url)
-        if not resp: return []
-        return resp.json().get('workflows', [])
+        return self._paginate(url, key='workflows')
 
-    def get_latest_workflow_run(self, repo, workflow_file=None, branch=None):
-        """Fetch the latest successful workflow run. If workflow_file is empty, sniff for iOS workflows."""
+    def _paginate(self, url, key=None, params=None, per_page=100, max_pages=10):
+        params = dict(params or {})
+        params.pop('page', None)
+        params.pop('per_page', None)
+
+        items = []
+        for page in range(1, max_pages + 1):
+            page_params = dict(params)
+            page_params['per_page'] = per_page
+            page_params['page'] = page
+            resp = self.get(url, params=page_params, suppress_not_found_log=True)
+            if not resp:
+                break
+            data = resp.json()
+            chunk = data.get(key, []) if key else data
+            if not chunk:
+                break
+            if isinstance(chunk, list):
+                items.extend(chunk)
+            else:
+                items.append(chunk)
+            if isinstance(chunk, list) and len(chunk) < per_page:
+                break
+        return items
+
+    def get_workflow_runs(self, repo, workflow_file=None, branch=None, status='success', per_page=20):
+        """Fetch workflow runs. If workflow_file is empty, sniff for iOS workflows."""
         if not workflow_file:
             logger.info(f"Target workflow not specified for {repo}. Sniffing for iOS workflow...")
             workflows = self.get_workflows(repo)
@@ -238,28 +277,37 @@ class GitHubClient:
                     break
 
         if not workflow_file:
-            return None, None
+            return [], None
 
-        url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}/runs?status=success&per_page=1"
+        url = f"https://api.github.com/repos/{repo}/actions/workflows/{workflow_file}/runs"
+        params = {'status': status, 'per_page': per_page}
         if branch:
-            url += f"&branch={branch}"
-        resp = self.get(url)
-        if not resp: return None, None
-        runs = resp.json().get('workflow_runs', [])
-        return (runs[0], workflow_file) if runs else (None, None)
+            params['branch'] = branch
+        resp = self.get(url, params=params, suppress_not_found_log=True)
+        if not resp:
+            return [], workflow_file
+        runs = resp.json().get('workflow_runs', []) or []
+        return runs, workflow_file
+
+    def get_latest_workflow_run(self, repo, workflow_file=None, branch=None):
+        runs, workflow_file = self.get_workflow_runs(repo, workflow_file=workflow_file, branch=branch, status='success', per_page=1)
+        return (runs[0], workflow_file) if runs else (None, workflow_file)
 
     def get_workflow_run_artifacts(self, repo, run_id):
         """Fetch artifacts for a specific workflow run."""
         url = f"https://api.github.com/repos/{repo}/actions/runs/{run_id}/artifacts"
-        resp = self.get(url)
-        if not resp: return []
-        return resp.json().get('artifacts', [])
+        return self._paginate(url, key='artifacts')
 
     def download_artifact(self, repo, artifact_id):
         """Download an artifact by ID. Returns the response content (ZIP file)."""
         url = f"https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip"
-        resp = self.get(url)
+        resp = self.get(url, suppress_not_found_log=True)
         return resp.content if resp else None
+
+    def get_latest_commit(self, repo, ref):
+        url = f"https://api.github.com/repos/{repo}/commits/{ref}"
+        resp = self.get(url, suppress_not_found_log=True)
+        return resp.json() if resp else None
 
     def get_release_by_tag(self, repo, tag):
         """Fetch a release by tag name."""
@@ -770,9 +818,8 @@ def find_official_source(repo, bundle_id, client):
                 if app.get('tintColor'):
                     supplemental['tintColor'] = app['tintColor']
                 if app.get('localizedDescription'):
-                    supplemental['officialDescription'] = app['localizedDescription']
+                    supplemental['localizedDescription'] = app['localizedDescription']
                 return supplemental
 
     logger.debug(f"No bundle ID match for {bundle_id} in discovered sources")
     return None
-

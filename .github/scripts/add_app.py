@@ -42,19 +42,10 @@ def process_single_app(app_data, client=None):
 
     data = load_json(target_path)
 
-    source_issue = app_data.get('source_issue')
-    form_index = app_data.get('form_index')
-
     existing_entry = None
-    if source_issue and form_index:
-        existing_entry = next((item for item in data
-                              if item.get('source_issue') == source_issue
-                              and item.get('form_index') == form_index), None)
-
-    if not existing_entry:
-        existing_entry = next((item for item in data
-                              if item.get('github_repo', '').lower() == repo.lower()
-                              and item.get('name', '').lower() == app_name.lower()), None)
+    existing_entry = next((item for item in data
+                          if item.get('github_repo', '').lower() == repo.lower()
+                          and item.get('name', '').lower() == app_name.lower()), None)
 
     status = ""
     message = ""
@@ -83,9 +74,6 @@ def process_single_app(app_data, client=None):
         logger.info(f"Updating existing entry for {repo} ({app_name})")
         existing_entry['name'] = app_name
         existing_entry['github_repo'] = repo
-        if source_issue and form_index:
-            existing_entry['source_issue'] = source_issue
-            existing_entry['form_index'] = form_index
         if icon_url:
             existing_entry['icon_url'] = icon_url
             logger.info(f"Updated icon_url to {icon_url}")
@@ -103,9 +91,6 @@ def process_single_app(app_data, client=None):
             'github_repo': repo,
             'pre_release': pre_release
         }
-        if source_issue and form_index:
-            new_entry['source_issue'] = source_issue
-            new_entry['form_index'] = form_index
         if tag_regex:
             new_entry['tag_regex'] = tag_regex
         if icon_url:
