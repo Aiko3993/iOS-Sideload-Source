@@ -57,8 +57,9 @@ export const TRANSLATIONS = {
         noChangelog: "No changelog available.",
         coexistOff: "Original",
         coexistOn: "Coexist",
-        editionsButton: "Editions ({0})",
-        editionsAvailable: "{0} Editions Available",
+        variantsButton: "Variants ({0})",
+        variantsAvailable: "{0} Variants Available",
+        variantsTitle: "Variants",
         versions: "Versions"
     },
     zh: {
@@ -105,8 +106,9 @@ export const TRANSLATIONS = {
         noChangelog: "暂无更新日志。",
         coexistOff: "原版",
         coexistOn: "共存",
-        editionsButton: "版本 ({0})",
-        editionsAvailable: "{0} 个可用版本",
+        variantsButton: "变体 ({0})",
+        variantsAvailable: "{0} 个可用变体",
+        variantsTitle: "变体",
         versions: "版本"
     }
 };

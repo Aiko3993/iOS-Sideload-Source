@@ -6,6 +6,112 @@ const grid = document.getElementById('apps-grid');
 const searchInput = document.getElementById('search-input');
 const emptyState = document.getElementById('empty-state');
 const toastContainer = document.getElementById('toast-container');
+const categoryBar = document.getElementById('category-bar');
+const categoryBarScroll = document.getElementById('category-bar-scroll');
+const categoryFadeLeft = document.getElementById('category-fade-left');
+const categoryFadeRight = document.getElementById('category-fade-right');
+
+function normalizeCategory(c) {
+    if (!c || typeof c !== 'string') return 'other';
+    const v = c.trim().toLowerCase();
+    return v || 'other';
+}
+
+function categoryLabel(c) {
+    const v = normalizeCategory(c);
+    if (v === 'all') return 'All';
+    const parts = v.replace(/[_-]+/g, ' ').split(' ').filter(Boolean);
+    return parts.map(x => x.charAt(0).toUpperCase() + x.slice(1)).join(' ');
+}
+
+function renderCategoryBar() {
+    if (!categoryBar || !categoryBarScroll) return;
+
+    const { currentApps, currentCategory } = getState();
+    const groups = new Map();
+    for (const app of (currentApps || [])) {
+        const key = app.githubRepo || `${app.developerName}::${app.name}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(app);
+    }
+
+    const counts = new Map();
+    for (const apps of groups.values()) {
+        const cats = new Set(apps.map(a => normalizeCategory(a?.category)));
+        for (const c of cats) {
+            counts.set(c, (counts.get(c) || 0) + 1);
+        }
+    }
+
+    const entries = Array.from(counts.entries());
+    if (entries.length <= 1) {
+        categoryBar.classList.add('hidden');
+        return;
+    }
+
+    entries.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    const sortedCats = entries.map(([c]) => c).filter(c => c !== 'other');
+    if (counts.has('other')) sortedCats.push('other');
+
+    const isValidSelection = currentCategory === 'all' || counts.has(currentCategory);
+    if (!isValidSelection) setState('currentCategory', 'all');
+
+    const active = getState().currentCategory;
+
+    const baseBtn = 'flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200 active:scale-[0.98] select-none whitespace-nowrap border focus:outline-none focus:ring-2 focus:ring-primary-500/15 backdrop-blur-xl';
+    const inactive = 'bg-white/70 text-gray-700 border-gray-200/70 hover:bg-white/90 hover:border-primary-500/40 active:bg-white dark:bg-white/5 dark:text-gray-100 dark:border-white/5 dark:hover:bg-white/10 dark:hover:border-primary-500/40 dark:active:bg-white/10';
+    const activeCls = 'bg-primary-600/20 text-primary-800 border-primary-500/35 hover:bg-primary-600/25 active:bg-primary-600/25 shadow-sm dark:bg-primary-500/30 dark:text-primary-100 dark:border-primary-500/45 dark:hover:bg-primary-500/35 dark:active:bg-primary-500/35';
+
+    const allBtn = `
+        <button type="button" data-category="all"
+            class="${baseBtn} ${active === 'all' ? activeCls : inactive}">
+            ${categoryLabel('all')}
+        </button>
+    `;
+
+    const catBtns = sortedCats.map(c => {
+        const count = counts.get(c) || 0;
+        return `
+            <button type="button" data-category="${c}"
+                class="${baseBtn} ${active === c ? activeCls : inactive}">
+                ${categoryLabel(c)}
+                <span class="ml-2 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-[10px] font-bold bg-white/90 text-gray-700 ring-1 ring-black/5 dark:bg-gray-900/70 dark:text-gray-200 dark:ring-white/10">
+                    ${count}
+                </span>
+            </button>
+        `;
+    }).join('');
+
+    categoryBarScroll.innerHTML = allBtn + catBtns;
+    categoryBar.classList.remove('hidden');
+
+    const updateFades = () => {
+        if (!categoryFadeLeft || !categoryFadeRight) return;
+        const el = categoryBarScroll;
+        const maxScrollLeft = Math.max(0, el.scrollWidth - el.clientWidth);
+        const left = el.scrollLeft;
+        const showLeft = maxScrollLeft > 2 && left > 2;
+        const showRight = maxScrollLeft > 2 && left < maxScrollLeft - 2;
+        categoryFadeLeft.classList.toggle('category-fade--show', showLeft);
+        categoryFadeRight.classList.toggle('category-fade--show', showRight);
+    };
+
+    if (!categoryBarScroll.dataset.bound) {
+        categoryBarScroll.addEventListener('click', (e) => {
+            const btn = e.target.closest('button[data-category]');
+            if (!btn) return;
+            const key = btn.getAttribute('data-category') || 'all';
+            setState('currentCategory', key);
+            renderCategoryBar();
+            filterApps(false);
+        });
+        categoryBarScroll.addEventListener('scroll', () => updateFades(), { passive: true });
+        window.addEventListener('resize', () => updateFades());
+        categoryBarScroll.dataset.bound = '1';
+    }
+
+    requestAnimationFrame(updateFades);
+}
 
 export function createInstallButtons(app, isModal = false) {
     const ic = 'w-5 h-5 flex-shrink-0 transition-transform duration-500 transform-gpu';
@@ -51,18 +157,20 @@ export function createFlatCard(app, index) {
     if (descSummary.length > 60) descSummary = descSummary.substring(0, 60) + '...';
 
     const searchStr = [app.name, app.developerName, getDisplayBundleId(app), app.bundleIdentifier, app.localizedDescription, app.description].filter(Boolean).join(' ').toLowerCase().replace(/"/g, '&quot;');
+    const categoriesStr = normalizeCategory(app.category);
 
     return `
         <div class="app-card group relative bg-white dark:bg-gray-900 rounded-3xl p-5 hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full animate-slide-up ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-2 hover:ring-primary-500/20 dark:hover:ring-primary-500/20 dynamic-app-glow group-hover:glow-active"
              data-search="${searchStr}"
+             data-categories="${categoriesStr}"
              style="animation-delay: ${index * 50}ms; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
 
             <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
 
             <div class="flex items-start justify-between mb-4 z-10">
                 <div class="relative">
-                     <img src="${app.iconURL}" alt="${app.name}" loading="lazy"
-                         class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover:shadow-md transition duration-300 group-hover:scale-105"
+                     <img src="${app.iconURL}" alt="${app.name}" loading="lazy" draggable="false"
+                         class="no-drag w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover:shadow-md transition duration-300 group-hover:scale-105"
                          style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
                 </div>
 
@@ -93,15 +201,18 @@ export function createFlatCard(app, index) {
 
             <div class="mt-auto space-y-3 z-10">
                 <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-white/5 pt-3 mb-1">
-                     <button onclick="window.openModal('${app.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
-                             style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
-                             onmouseover="this.style.color='var(--hover-color)'"
-                             onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
-                        <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
-                            <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </span>
-                        <span class="font-medium max-[340px]:hidden">${t.details}</span>
-                    </button>
+                     <div class="flex items-center gap-2">
+                         <button onclick="window.openModal('${app.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                                 style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
+                                 onmouseover="this.style.color='var(--hover-color)'"
+                                 onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
+                            <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
+                                <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </span>
+                            <span class="font-medium max-[340px]:hidden">${t.details}</span>
+                        </button>
+
+                     </div>
                     <span class="font-medium opacity-70" title="${new Date(app.versionDate).toLocaleDateString()}">${timeAgo(app.versionDate, currentLang)}</span>
                 </div>
 
@@ -124,6 +235,7 @@ export function createStackCard(group, index) {
 
     const repoKey = primaryApp.githubRepo || `${primaryApp.developerName}::${primaryApp.name}`;
     const searchStr = group.map(a => [a.name, a.developerName, getDisplayBundleId(a), a.bundleIdentifier, a.localizedDescription, a.description].filter(Boolean).join(' ')).join(' ').toLowerCase().replace(/"/g, '&quot;');
+    const categoriesStr = Array.from(new Set(group.map(a => normalizeCategory(a.category)))).sort().join(',');
 
     const bgHTML = `
         <div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition duration-300 stack-bg-1 shadow-sm"></div>
@@ -133,6 +245,7 @@ export function createStackCard(group, index) {
     return `
         <div class="app-card group/stack relative h-full animate-slide-up select-none hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
              data-search="${searchStr}"
+             data-categories="${categoriesStr}"
              style="animation-delay: ${index * 50}ms;">
 
             ${bgHTML}
@@ -144,8 +257,8 @@ export function createStackCard(group, index) {
 
                 <div class="flex items-start justify-between mb-4 z-10">
                     <div class="relative">
-                         <img src="${primaryApp.iconURL}" alt="${primaryApp.name}" loading="lazy"
-                             class="w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover/stack:shadow-md transition duration-300 group-hover/stack:scale-105"
+                         <img src="${primaryApp.iconURL}" alt="${primaryApp.name}" loading="lazy" draggable="false"
+                             class="no-drag w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover/stack:shadow-md transition duration-300 group-hover/stack:scale-105"
                              style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
                     </div>
 
@@ -193,7 +306,7 @@ export function createStackCard(group, index) {
                                 <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
                                     <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                                 </span>
-                                <span class="font-medium max-[340px]:hidden">${t.editionsButton.replace('{0}', group.length)}</span>
+                                <span class="font-medium max-[340px]:hidden">${t.variantsButton.replace('{0}', group.length)}</span>
                             </button>
                          </div>
                          <span class="font-medium opacity-70" title="${new Date(primaryApp.versionDate).toLocaleDateString()}">${timeAgo(primaryApp.versionDate, currentLang)}</span>
@@ -218,8 +331,8 @@ export function openVersionsModal(repoKey) {
     const primaryApp = group[0];
 
     document.getElementById('versions-modal-icon').src = primaryApp.iconURL;
-    document.getElementById('versions-modal-title').textContent = t.versions;
-    document.getElementById('versions-modal-count').textContent = t.editionsAvailable.replace('{0}', group.length);
+    document.getElementById('versions-modal-title').textContent = t.variantsTitle || t.versions;
+    document.getElementById('versions-modal-count').textContent = t.variantsAvailable.replace('{0}', group.length);
 
     const listHtml = group.map(app => {
         return `
@@ -313,18 +426,24 @@ export function renderApps() {
         return createFlatCard(group[0], index);
     }).join('');
 
+    renderCategoryBar();
     filterApps();
 }
 
 export function filterApps(isSearchEvent = false) {
     if (!searchInput) return;
     const query = searchInput.value.toLowerCase().trim();
+    const { currentCategory } = getState();
     let visibleCount = 0;
     const cards = grid.querySelectorAll('.app-card');
 
     cards.forEach(card => {
         if (isSearchEvent) card.classList.remove('animate-slide-up');
-        if (!query || card.dataset.search.includes(query)) {
+        const catKey = currentCategory || 'all';
+        const cats = (card.dataset.categories || 'other').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+        const categoryOk = (catKey === 'all') || cats.includes(catKey);
+        const searchOk = (!query || card.dataset.search.includes(query));
+        if (categoryOk && searchOk) {
             card.style.display = '';
             visibleCount++;
         } else {
@@ -414,22 +533,22 @@ export function updateCopyButtonUI(mode) {
     wrapper.style.opacity = '1';
 
     if (mode === 'all') {
-        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+        wrapper.className = "flex flex-row items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px] h-10";
         const btnClass = 'hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
         const btnClass2 = 'hover:bg-pink-50 dark:hover:bg-pink-900/30';
 
         wrapper.innerHTML = `
-            <button onclick="window.copySourceURL('standard')" class="p-1.5 rounded-lg text-emerald-500 ${btnClass} transition-all active:scale-95 group/std" title="Copy Standard Source" style="animation: split-up 0.3s ease-out forwards;">${getIcon('copy', 'w-4 h-4')}</button>
-            <button onclick="window.copySourceURL('nsfw')" class="p-1.5 rounded-lg text-pink-500 ${btnClass2} transition-all active:scale-95 group/nsfw" title="Copy NSFW Source" style="animation: split-down 0.3s ease-out forwards;">${getIcon('copy', 'w-4 h-4')}</button>
+            <button onclick="window.copySourceURL('standard')" class="w-10 h-10 flex items-center justify-center rounded-xl text-emerald-500 ${btnClass} transition-all active:scale-95 group/std" title="Copy Standard Source">${getIcon('copy', 'w-5 h-5')}</button>
+            <button onclick="window.copySourceURL('nsfw')" class="w-10 h-10 flex items-center justify-center rounded-xl text-pink-500 ${btnClass2} transition-all active:scale-95 group/nsfw" title="Copy NSFW Source">${getIcon('copy', 'w-5 h-5')}</button>
         `;
     } else {
-        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px] h-10";
         // Standard (or others) now gets colored by default (Emerald) instead of gray
         let colorClass = mode === 'nsfw'
             ? 'text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/30'
             : 'text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
 
-        wrapper.innerHTML = `<button onclick="window.copySourceURL('${mode}')" class="p-2 rounded-xl ${colorClass} transition-all active:scale-95" title="Copy Source URL">${getIcon('copy', 'w-5 h-5')}</button>`;
+        wrapper.innerHTML = `<button onclick="window.copySourceURL('${mode}')" class="w-10 h-10 flex items-center justify-center rounded-xl ${colorClass} transition-all active:scale-95" title="Copy Source URL">${getIcon('copy', 'w-5 h-5')}</button>`;
     }
 }
 

@@ -5,6 +5,7 @@ const state = {
     currentSource: 'standard',
     currentSort: 'date',
     currentLang: 'en',
+    currentCategory: 'all',
     coexistMode: false,
     themeCache: new Map()
 };

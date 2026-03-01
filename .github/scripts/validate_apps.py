@@ -1,7 +1,54 @@
 import sys
 import os
 import argparse
+import json
+from pathlib import Path
 from utils import load_json, save_json, validate_repo_format, validate_url, logger
+
+try:
+    from jsonschema import Draft202012Validator
+except Exception:
+    Draft202012Validator = None
+
+def _format_error_path(error_path):
+    if not error_path:
+        return "$"
+    parts = ["$"]
+    for p in error_path:
+        if isinstance(p, int):
+            parts.append(f"[{p}]")
+        else:
+            parts.append(f".{p}")
+    return "".join(parts)
+
+def validate_against_schema(file_path):
+    if Draft202012Validator is None:
+        logger.info("jsonschema not available; skipping JSON Schema validation")
+        return True
+
+    schema_path = Path(__file__).resolve().parents[1] / "schemas" / "apps.schema.json"
+    if not schema_path.exists():
+        logger.warning(f"Schema file not found (skipping): {schema_path}")
+        return True
+
+    try:
+        with open(schema_path, "r", encoding="utf-8") as f:
+            schema = json.load(f)
+    except Exception as e:
+        logger.error(f"Failed to load schema {schema_path}: {e}")
+        return False
+
+    data = load_json(file_path)
+    validator = Draft202012Validator(schema)
+    errors = sorted(validator.iter_errors(data), key=lambda e: list(e.path))
+    if not errors:
+        return True
+
+    for e in errors[:50]:
+        logger.error(f"Schema error: {file_path} {_format_error_path(e.path)}: {e.message}")
+    if len(errors) > 50:
+        logger.error(f"Schema error: {file_path} ... and {len(errors) - 50} more")
+    return False
 
 def fix_apps_json(file_path):
     """Sort and format apps.json."""
@@ -26,18 +73,20 @@ def fix_apps_json(file_path):
         fixed_data.append(ordered_app)
 
     save_json(file_path, fixed_data)
-    logger.info(f"✅ Auto-fixed {file_path}")
+    logger.info(f"OK Auto-fixed {file_path}")
     return True
 
 def validate_apps_json(file_path, global_seen_repos):
     logger.info(f"Validating {file_path}...")
+
+    schema_ok = validate_against_schema(file_path)
 
     data = load_json(file_path)
     if not isinstance(data, list):
         logger.error("Root must be a list")
         return False
 
-    success = True
+    success = schema_ok
 
     for idx, app in enumerate(data):
 
@@ -73,7 +122,7 @@ def validate_apps_json(file_path, global_seen_repos):
                 success = False
 
     if success:
-        logger.info(f"✅ {file_path} is valid. ({len(data)} apps)")
+        logger.info(f"OK {file_path} is valid. ({len(data)} apps)")
     return success
 
 def main():

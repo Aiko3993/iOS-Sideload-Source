@@ -55,6 +55,7 @@ export async function fetchSource(sourceKey) {
         }
 
         setState('currentApps', currentApps);
+        setState('currentCategory', 'all');
         renderApps();
 
         if (history.pushState) {
