@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-03-01 12:27:04 (UTC)*
+> *Last Updated: 2026-03-01 22:22:14 (UTC)*
 
 ## Standard Apps
 
@@ -42,4 +42,3 @@
 | <img src="https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="48" height="48"> | **JHentai** | A cross-platform manga app made for e-hentai & exhentai by Flutter. | [jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai) |
 | <img src="https://raw.githubusercontent.com/FoxSensei001/LoveIwara/refs/heads/master/assets/icon/launcher_icon_v2.png" width="48" height="48"> | **LoveIwara** | Love Iwara (i-iwara or 2i). An unofficial iwara flutter app - Supporting multiple platforms and devices including mobile phones, tablets and computers. Compatible with Android, Windows and other systems. 第三方的Iwara应用 - 支持多个平台和设备，包括手机、平板和计算机。兼容 安卓、IOS、Windows、MacOS等系统。 | [FoxSensei001/LoveIwara](https://github.com/FoxSensei001/LoveIwara) |
 | <img src="https://raw.githubusercontent.com/Pacalini/PicaComic/master/images/app_icon.png" width="48" height="48"> | **Pica Comic** | A comic app built with Flutter, supporting multiple comic sources. | [Pacalini/PicaComic](https://github.com/Pacalini/PicaComic) |
-

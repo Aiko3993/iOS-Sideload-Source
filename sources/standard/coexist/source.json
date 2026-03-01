@@ -418,11 +418,11 @@
       "version": "2.0.3",
       "versionDate": "2026-02-20T03:34:46Z",
       "versionDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260220/Kazumi_2.0.3_Coexist.ipa",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 39994010,
+      "size": 27646258,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -433,12 +433,21 @@
           "version": "2.0.3",
           "date": "2026-02-20T03:34:46Z",
           "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260220/Kazumi_2.0.3_Coexist.ipa",
+          "size": 27646258,
+          "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3",
+          "minOSVersion": "13.0"
+        },
+        {
+          "version": "2.0.3",
+          "date": "2026-02-20T03:34:46Z",
+          "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
           "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
           "size": 39994010,
           "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520"
         }
       ],
-      "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520",
+      "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3",
       "category": "other"
     },
     {
@@ -562,7 +571,7 @@
       "versionDate": "2026-02-27T04:15:39Z",
       "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer_Nightly_3.7.2_Coexist.ipa",
-      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
       "size": 4506518,
@@ -718,7 +727,7 @@
       "versionDate": "2026-02-27T04:15:40Z",
       "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
       "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
       "size": 34811049,
