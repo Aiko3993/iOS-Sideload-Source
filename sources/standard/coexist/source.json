@@ -418,11 +418,11 @@
       "version": "2.0.3",
       "versionDate": "2026-02-20T03:34:46Z",
       "versionDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260220/Kazumi_2.0.3_Coexist.ipa",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 39994010,
+      "size": 27646258,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -433,12 +433,21 @@
           "version": "2.0.3",
           "date": "2026-02-20T03:34:46Z",
           "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260220/Kazumi_2.0.3_Coexist.ipa",
+          "size": 27646258,
+          "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3",
+          "minOSVersion": "13.0"
+        },
+        {
+          "version": "2.0.3",
+          "date": "2026-02-20T03:34:46Z",
+          "localizedDescription": "- 新增弹幕去重功能 (#1147) (#1575) (@UzawaReisaQwQ)\r\n- 新增弹幕描边宽度调整功能 (@UzawaReisaQwQ)\r\n- 修复 android 平台切换全屏可能导致内容错位的问题 (@Predidit)\r\n- 修复短时大量离线缓冲可能导致下载记录损坏的问题 (#1772) (@0Chencc)\r\n- 修复非默认线路离线缓冲无法播放的问题 (@Predidit)\r\n- 现在可以自定义长按快捷手势的快进倍率 (#1724) (@UzawaReisaQwQ)",
           "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.3/Kazumi_windows_2.0.3.zip",
           "size": 39994010,
           "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520"
         }
       ],
-      "sha256": "610060d19ff9c88455c87cb77506b83abfa13a40b33b5ff1483ba21a4199a520",
+      "sha256": "87ba4b90bd8f8b2e4c211b93b6553fbd98988076ac957e456fe50327972abaa3",
       "category": "other"
     },
     {
@@ -562,7 +571,7 @@
       "versionDate": "2026-02-27T04:15:39Z",
       "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260227/LiveContainer_Nightly_3.7.2_Coexist.ipa",
-      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
       "size": 4506518,
@@ -718,7 +727,7 @@
       "versionDate": "2026-02-27T04:15:40Z",
       "versionDescription": "**Commit:** [d62aa328a44c07386a3dcd96a5d9f16231c67047](https://github.com/LiveContainer/LiveContainer/commit/d62aa328a44c07386a3dcd96a5d9f16231c67047)\n**Message:** 3.7.2\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/22472450098/attempts/1).",
       "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
-      "localizedDescription": "Crowdin Project: ![Crowdin](https://crowdin.com/project/livecontainer) &nbsp;| &nbsp; Documentation:liveconainer.github.io",
+      "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
       "size": 34811049,
@@ -948,14 +957,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260301.108.US.runner.26e2e47",
-      "versionDate": "2026-03-01T10:25:58Z",
-      "versionDescription": "Nightly build from commit 26e2e4783456d596c7ef5a16efcf076025940c7f",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260301/Nyxian_Nightly_0.9.0.20260301.108.US.runner.26e2e47_Coexist.ipa",
-      "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
+      "version": "0.9.0.20260301.130.US.runner.c40a293",
+      "versionDate": "2026-03-01T22:09:58Z",
+      "versionDescription": "Nightly build from commit c40a293c4c0a2b4efe80a0b7b804a2b461602fd3",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260301/Nyxian_Nightly_0.9.0.20260301.130.US.runner.c40a293_Coexist.ipa",
+      "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88565044,
+      "size": 88563265,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1012,6 +1021,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260301.130.US.runner.c40a293",
+          "date": "2026-03-01T22:09:58Z",
+          "localizedDescription": "Nightly build from commit c40a293c4c0a2b4efe80a0b7b804a2b461602fd3",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260301/Nyxian_Nightly_0.9.0.20260301.130.US.runner.c40a293_Coexist.ipa",
+          "size": 88563265,
+          "sha256": "80e6bd5d002b4e111464b2aa3ae1dffaab0379ca9eb41eee36423fa34eddb0be",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260301.108.US.runner.26e2e47",
           "date": "2026-03-01T10:25:58Z",
@@ -1124,7 +1142,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "0f9c191373e5df351cdf65da2738a430d0e3c399dc8a847ef01bfc1bab562e3a"
+      "sha256": "80e6bd5d002b4e111464b2aa3ae1dffaab0379ca9eb41eee36423fa34eddb0be"
     },
     {
       "name": "PiliPlus",
