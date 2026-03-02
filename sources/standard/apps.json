@@ -10,9 +10,9 @@
     "github_repo": "AngelAuraMC/Amethyst-iOS",
     "artifact_name": "org.angelauramc.amethyst-ios.ipa",
     "github_workflow": "development.yml",
-    "artifact_only": true,
     "bundle_id": "org.angelauramc.amethyst",
-    "icon_url": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png"
+    "icon_url": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
+    "artifact_only": true
   },
   {
     "name": "Animeko",
@@ -71,9 +71,9 @@
   {
     "name": "LiveContainer (Nightly)",
     "github_repo": "LiveContainer/LiveContainer",
-    "artifact_only": true,
     "bundle_id": "com.kdt.livecontainer",
-    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png"
+    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+    "artifact_only": true
   },
   {
     "name": "LiveContainer+SideStore",
@@ -84,9 +84,9 @@
   {
     "name": "LiveContainer+SideStore (Nightly)",
     "github_repo": "LiveContainer/LiveContainer",
-    "artifact_only": true,
     "bundle_id": "com.kdt.livecontainer",
-    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png"
+    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+    "artifact_only": true
   },
   {
     "name": "Luna",
@@ -109,9 +109,9 @@
   {
     "name": "Nyxian (Nightly)",
     "github_repo": "ProjectNyxian/Nyxian",
-    "artifact_only": true,
     "bundle_id": "com.cr4zy.nyxian",
-    "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png"
+    "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
+    "artifact_only": true
   },
   {
     "name": "PiliPlus",
@@ -122,9 +122,9 @@
   {
     "name": "Play! (Nightly)",
     "github_repo": "jpd002/Play-",
-    "artifact_only": true,
     "bundle_id": "com.virtualapplications.play",
-    "icon_url": "https://raw.githubusercontent.com/jpd002/Play-/master/tools/ElfView/qt_ui/assets/app_icon.png"
+    "icon_url": "https://raw.githubusercontent.com/jpd002/Play-/master/tools/ElfView/qt_ui/assets/app_icon.png",
+    "artifact_only": true
   },
   {
     "name": "PPSSPP",
@@ -141,9 +141,9 @@
   {
     "name": "SideStore (Nightly)",
     "github_repo": "SideStore/SideStore",
-    "artifact_only": true,
     "bundle_id": "com.SideStore.SideStore",
-    "icon_url": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png"
+    "icon_url": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+    "artifact_only": true
   },
   {
     "name": "StikDebug",
