@@ -4,6 +4,7 @@ import sys
 import re
 import tempfile
 import logging
+import shutil
 import requests
 from requests.adapters import HTTPAdapter
 from requests.exceptions import HTTPError
@@ -85,6 +86,16 @@ class GitHubClient:
         retries = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
         self.session.mount("https://", HTTPAdapter(max_retries=retries))
         self.token = token or os.environ.get('GITHUB_TOKEN')
+        self._json_cache = {}
+        self._paginate_cache = {}
+        self._workflow_hint_cache = {}
+        self._download_cache = {}
+        self._download_cache_dir = tempfile.mkdtemp(prefix="download-cache-")
+        self.asset_changes = {
+            "deleted": [],
+            "uploaded": [],
+            "releases_deleted": []
+        }
         if not self.token:
             try:
                 import subprocess
@@ -142,6 +153,42 @@ class GitHubClient:
             logger.error(f"Request failed: {url} - {e}")
             return None
 
+    def _cache_key(self, url, params=None):
+        if not params:
+            return url
+        items = [f"{k}={params[k]}" for k in sorted(params.keys())]
+        return f"{url}?{'&'.join(items)}"
+
+    def get_cached_download(self, key):
+        path = self._download_cache.get(key)
+        if path and os.path.exists(path):
+            return path
+        return None
+
+    def cache_download_file(self, key, source_path, suffix=None):
+        if not source_path or not os.path.exists(source_path):
+            return None
+        if key in self._download_cache and os.path.exists(self._download_cache[key]):
+            return self._download_cache[key]
+        suffix = suffix or os.path.splitext(source_path)[1]
+        filename = re.sub(r'[^a-zA-Z0-9._-]+', '_', key)
+        cache_path = os.path.join(self._download_cache_dir, f"{filename}{suffix}")
+        try:
+            shutil.copy2(source_path, cache_path)
+            self._download_cache[key] = cache_path
+            return cache_path
+        except Exception:
+            return None
+
+    def _get_json_cached(self, url, params=None, suppress_not_found_log=False):
+        key = self._cache_key(url, params)
+        if key in self._json_cache:
+            return self._json_cache[key]
+        resp = self.get(url, params=params, suppress_not_found_log=suppress_not_found_log)
+        data = resp.json() if resp else None
+        self._json_cache[key] = data
+        return data
+
     def _is_api_url(self, url):
         """Check if URL is a GitHub API endpoint (vs CDN/download URL that rejects auth)."""
         return 'api.github.com' in url or 'uploads.github.com' in url
@@ -161,21 +208,17 @@ class GitHubClient:
 
     def get_repo_info(self, repo):
         url = f"https://api.github.com/repos/{repo}"
-        resp = self.get(url)
-        return resp.json() if resp else None
+        return self._get_json_cached(url)
 
     def get_latest_release(self, repo, prefer_pre_release=False, tag_regex=None):
         if not prefer_pre_release and not tag_regex:
             url = f"https://api.github.com/repos/{repo}/releases/latest"
-            resp = self.get(url)
-            return resp.json() if resp else None
+            return self._get_json_cached(url)
 
         url = f"https://api.github.com/repos/{repo}/releases"
-        resp = self.get(url)
-        if not resp:
+        releases = self._get_json_cached(url)
+        if not releases:
             return None
-
-        releases = resp.json()
         if not isinstance(releases, list):
             return None
 
@@ -223,15 +266,13 @@ class GitHubClient:
     def get_repo_contents(self, repo, path=""):
         """Fetch contents of a path in the repo."""
         url = f"https://api.github.com/repos/{repo}/contents/{path}"
-        resp = self.get(url)
-        return resp.json() if resp else None
+        return self._get_json_cached(url)
 
     def get_git_tree(self, repo, sha="HEAD", recursive=True):
         """Fetch the git tree of the repo."""
         recursive_param = "?recursive=1" if recursive else ""
         url = f"https://api.github.com/repos/{repo}/git/trees/{sha}{recursive_param}"
-        resp = self.get(url)
-        return resp.json() if resp else None
+        return self._get_json_cached(url)
 
     def get_workflows(self, repo):
         """Fetch all workflows for a repository."""
@@ -239,6 +280,9 @@ class GitHubClient:
         return self._paginate(url, key='workflows')
 
     def _paginate(self, url, key=None, params=None, per_page=100, max_pages=10):
+        cache_key = self._cache_key(url, {**(params or {}), "per_page": per_page, "max_pages": max_pages})
+        if cache_key in self._paginate_cache:
+            return list(self._paginate_cache[cache_key])
         params = dict(params or {})
         params.pop('page', None)
         params.pop('per_page', None)
@@ -261,20 +305,27 @@ class GitHubClient:
                 items.append(chunk)
             if isinstance(chunk, list) and len(chunk) < per_page:
                 break
+        self._paginate_cache[cache_key] = list(items)
         return items
 
     def get_workflow_runs(self, repo, workflow_file=None, branch=None, status='success', per_page=20):
         """Fetch workflow runs. If workflow_file is empty, sniff for iOS workflows."""
         if not workflow_file:
-            logger.info(f"Target workflow not specified for {repo}. Sniffing for iOS workflow...")
-            workflows = self.get_workflows(repo)
-            for w in workflows:
-                name = w.get('name', '').lower()
-                path = w.get('path', '').lower()
-                if any(x in name or x in path for x in ['ios', 'apple', 'iphone']):
-                    workflow_file = os.path.basename(path)
-                    logger.info(f"Intelligently locked onto iOS workflow: {workflow_file} ({w.get('name')})")
-                    break
+            cached_workflow = self._workflow_hint_cache.get(repo)
+            if cached_workflow:
+                workflow_file = cached_workflow
+            else:
+                logger.info(f"Target workflow not specified for {repo}. Sniffing for iOS workflow...")
+                workflows = self.get_workflows(repo)
+                for w in workflows:
+                    name = w.get('name', '').lower()
+                    path = w.get('path', '').lower()
+                    if any(x in name or x in path for x in ['ios', 'apple', 'iphone']):
+                        workflow_file = os.path.basename(path)
+                        logger.info(f"Intelligently locked onto iOS workflow: {workflow_file} ({w.get('name')})")
+                        break
+                if workflow_file:
+                    self._workflow_hint_cache[repo] = workflow_file
 
         if not workflow_file:
             return [], None
@@ -283,10 +334,10 @@ class GitHubClient:
         params = {'status': status, 'per_page': per_page}
         if branch:
             params['branch'] = branch
-        resp = self.get(url, params=params, suppress_not_found_log=True)
-        if not resp:
+        data = self._get_json_cached(url, params=params, suppress_not_found_log=True)
+        if not data:
             return [], workflow_file
-        runs = resp.json().get('workflow_runs', []) or []
+        runs = data.get('workflow_runs', []) or []
         return runs, workflow_file
 
     def get_latest_workflow_run(self, repo, workflow_file=None, branch=None):
@@ -300,20 +351,37 @@ class GitHubClient:
 
     def download_artifact(self, repo, artifact_id):
         """Download an artifact by ID. Returns the response content (ZIP file)."""
+        cache_key = f"artifact:{repo}:{artifact_id}"
+        cached = self.get_cached_download(cache_key)
+        if cached:
+            try:
+                with open(cached, 'rb') as f:
+                    return f.read()
+            except Exception:
+                pass
         url = f"https://api.github.com/repos/{repo}/actions/artifacts/{artifact_id}/zip"
         resp = self.get(url, suppress_not_found_log=True)
-        return resp.content if resp else None
+        content = resp.content if resp else None
+        if content:
+            try:
+                filename = f"{cache_key}.zip"
+                filename = re.sub(r'[^a-zA-Z0-9._-]+', '_', filename)
+                cache_path = os.path.join(self._download_cache_dir, filename)
+                with open(cache_path, 'wb') as f:
+                    f.write(content)
+                self._download_cache[cache_key] = cache_path
+            except Exception:
+                pass
+        return content
 
     def get_latest_commit(self, repo, ref):
         url = f"https://api.github.com/repos/{repo}/commits/{ref}"
-        resp = self.get(url, suppress_not_found_log=True)
-        return resp.json() if resp else None
+        return self._get_json_cached(url, suppress_not_found_log=True)
 
     def get_release_by_tag(self, repo, tag):
         """Fetch a release by tag name."""
         url = f"https://api.github.com/repos/{repo}/releases/tags/{tag}"
-        resp = self.get(url)
-        return resp.json() if resp else None
+        return self._get_json_cached(url)
 
     def create_release(self, repo, tag, name=None, body=None, prerelease=False):
         """Create a new release."""
@@ -415,10 +483,17 @@ class GitHubClient:
                     try:
                         self.session.delete(del_url, headers=self.headers, timeout=15).raise_for_status()
                         logger.info(f"Deleted old/conflicting asset {asset['name']}")
+                        self.asset_changes["deleted"].append({
+                            "repo": repo,
+                            "release_id": release_id,
+                            "asset": asset['name']
+                        })
                     except Exception as e:
                         logger.error(f"Failed to delete asset {asset['name']}: {e}")
 
-        upload_url = f"https://uploads.github.com/repos/{repo}/releases/{release_id}/assets?name={name}"
+        from urllib.parse import quote
+        safe_name = quote(name, safe='')
+        upload_url = f"https://uploads.github.com/repos/{repo}/releases/{release_id}/assets?name={safe_name}"
         headers = self.headers.copy()
         headers["Content-Type"] = "application/octet-stream"
 
@@ -426,8 +501,13 @@ class GitHubClient:
             with open(file_path, 'rb') as f:
                 resp = self.session.post(upload_url, headers=headers, data=f, timeout=300)
                 resp.raise_for_status()
-
-                return resp.json()
+                data = resp.json()
+                self.asset_changes["uploaded"].append({
+                    "repo": repo,
+                    "release_id": release_id,
+                    "asset": name
+                })
+                return data
         except Exception as e:
             logger.error(f"Failed to upload asset {name}: {e}")
             return None
@@ -435,8 +515,8 @@ class GitHubClient:
     def get_all_releases(self, repo):
         """Fetch all releases for a repository."""
         url = f"https://api.github.com/repos/{repo}/releases"
-        resp = self.get(url)
-        return resp.json() if resp else []
+        data = self._get_json_cached(url)
+        return data if isinstance(data, list) else []
 
     def delete_release(self, repo, release_id, tag):
         """Delete a release and its associated tag."""
@@ -456,6 +536,11 @@ class GitHubClient:
         except Exception as e:
             logger.warning(f"Failed to delete tag {tag} (it might have been deleted with the release): {e}")
 
+        self.asset_changes["releases_deleted"].append({
+            "repo": repo,
+            "release_id": release_id,
+            "tag": tag
+        })
         return True
 
 def normalize_name(s):
@@ -474,7 +559,16 @@ def load_config():
     default_config = {
         'skip_versions': ['nightly', 'latest', 'stable', 'dev', 'beta', 'alpha', 'release'],
         'icon_scoring': {'exclude_patterns': ['android', 'small', 'toolbar', 'preview', 'mask', 'rounded',
-                                            'circle', 'notification', 'tabbar', 'watch', 'macos', 'tvos']}
+                                            'circle', 'notification', 'tabbar', 'watch', 'macos', 'tvos']},
+        'release_asset_scoring': {
+            'allowed_direct_extensions': ['.ipa'],
+            'allowed_archive_extensions': ['.ipa.zip', '.zip', '.tar', '.tar.gz', '.tgz'],
+            'archive_hint_tokens': ['ipa', 'ios', 'iphone', 'ipad'],
+            'exclude_extensions': ['.apk', '.aab', '.appx', '.msix', '.exe', '.msi', '.dmg', '.pkg', '.deb',
+                                   '.rpm', '.appimage', '.nro', '.7z', '.rar', '.zst'],
+            'exclude_tokens': ['android', 'windows', 'win32', 'win64', 'macos', 'osx', 'darwin', 'linux', 'ubuntu',
+                               'debian', 'fedora', 'arch', 'x86', 'x64', 'amd64', 'i386'],
+        },
     }
 
     if not os.path.exists(config_path):

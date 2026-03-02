@@ -1,6 +1,7 @@
 import copy
 import json
 import re
+from urllib.parse import urlparse, unquote
 
 from utils import logger, save_json, GLOBAL_CONFIG
 
@@ -51,6 +52,30 @@ def deduplicate_versions(versions, app_name):
     unique_versions.sort(key=lambda x: x.get('date', ''), reverse=True)
     return unique_versions
 
+def _is_allowed_version_url(url):
+    if not url or not isinstance(url, str):
+        return False
+    parsed = urlparse(url)
+    filename = (parsed.path or '').rsplit('/', 1)[-1]
+    if not filename:
+        return False
+    lower_name = unquote(filename.lower())
+    scoring_cfg = (GLOBAL_CONFIG or {}).get('release_asset_scoring', {}) or {}
+    allowed_direct_exts = tuple(scoring_cfg.get('allowed_direct_extensions', ['.ipa']))
+    allowed_archive_exts = tuple(scoring_cfg.get('allowed_archive_extensions', ['.ipa.zip', '.zip', '.tar', '.tar.gz', '.tgz']))
+    archive_hint_tokens = tuple(scoring_cfg.get('archive_hint_tokens', ['ipa', 'ios', 'iphone', 'ipad']))
+    exclude_exts = tuple(scoring_cfg.get('exclude_extensions', []))
+    exclude_tokens = tuple(scoring_cfg.get('exclude_tokens', []))
+    if exclude_exts and lower_name.endswith(exclude_exts):
+        return False
+    if exclude_tokens and any(t in lower_name for t in exclude_tokens):
+        return False
+    if allowed_direct_exts and lower_name.endswith(allowed_direct_exts):
+        return True
+    if allowed_archive_exts and lower_name.endswith(allowed_archive_exts):
+        return any(t in lower_name for t in archive_hint_tokens)
+    return False
+
 def sync_and_save_apps_config(config_file, apps, original_apps):
     order_keys = ["name", "github_repo", "artifact_name", "github_workflow", "bundle_id", "icon_url", "pre_release", "tag_regex"]
 
@@ -85,6 +110,10 @@ def normalize_source_data(source_data, apps_config, allowed_app_fields, allowed_
 
     for a in source_data.get('apps', []):
         if 'versions' in a:
+            a['versions'] = [
+                v for v in a['versions']
+                if isinstance(v, dict) and _is_allowed_version_url(v.get('downloadURL'))
+            ]
             a['versions'] = deduplicate_versions(a['versions'], a.get('name', ''))
             if a['versions']:
                 best = a['versions'][0]
@@ -126,14 +155,15 @@ def normalize_source_data(source_data, apps_config, allowed_app_fields, allowed_
         for k in [k for k in a.keys() if k not in allowed_app_fields]:
             del a[k]
 
-    valid_repos = set(app['github_repo'] for app in apps_config)
+    valid_keys = set(f"{app['github_repo']}::{app['name']}" for app in apps_config)
     valid_names = set((app['github_repo'].split('/')[0], app['name']) for app in apps_config)
 
     final_apps_list = []
     for a in source_data.get('apps', []):
         repo = a.get('githubRepo')
         if repo:
-            if repo in valid_repos:
+            key = f"{repo}::{a.get('name', '')}"
+            if key in valid_keys:
                 final_apps_list.append(a)
         else:
             if (a.get('developerName'), a.get('name')) in valid_names:

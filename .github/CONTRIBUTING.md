@@ -3,7 +3,11 @@
 [中文文档](https://github.com/Aiko3993/iOS-Sideload-Source/blob/main/.github/CONTRIBUTING_CN.md)
 
 ## Via Issues (Recommended)
-Submit an **[Add App Issue](https://github.com/Aiko3993/iOS-Sideload-Source/issues/new/choose)**. Provide the App Name, GitHub repository (`Owner/Repo`), and Category. To target pre-releases, include `(Nightly)` or `(Beta)` in the App Name.
+Submit an **[Add App Issue](https://github.com/Aiko3993/iOS-Sideload-Source/issues/new/choose)**. Provide the App Name, GitHub repository (`Owner/Repo`), and Category.
+
+- Nightly builds: include `(Nightly)` in the App Name (Artifacts-only).
+- Pre-releases on Releases: include `(Beta)` in the App Name.
+- Advanced configuration (regex/workflow/branch): use a Pull Request to edit `apps.json`.
 
 ---
 
@@ -24,11 +28,13 @@ Append new app entries to the respective `apps.json` under `sources/standard/` o
 *   **`github_repo`** (Required): GitHub repository slug (`Owner/Repo`) or URL.
 *   **`icon_url`** (Optional): Direct link to an app icon. Omit to let the CI pipeline scan the source tree for optimal icons automatically.
 *   **`bundle_id`** (Optional): Override the auto-detected bundle identifier from the IPA.
-*   **`pre_release`** (Optional): Set `true` to track pre-releases. (Inferred automatically if `name` suffix contains "Nightly" or "Beta").
+*   **`pre_release`** (Optional): Set `true` to allow selecting pre-releases when they are newer than stable releases.
+*   **`tag_regex`** (Optional): Regex filter applied to `release.tag_name` when selecting a Release. If set, the resolver switches to listing releases (instead of `releases/latest`). Over-filtering may cause “no Release candidate” and trigger artifact fallback.
 *   **`github_workflow`** (Optional): Workflow filename (e.g., `build.yml`) to extract `.app` or `.ipa` artifacts from when formal Releases are not deployed.
 *   **`artifact_name`** (Optional): Regex filter to match a specific artifact name for `github_workflow` pipelines.
-*   **`tag_regex`** (Optional): Regex filter to target specific releases by tag (e.g., `^v1\.2`).
 *   **`ipa_regex`** (Optional): Regex filter to select a specific IPA file from releases containing multiple IPAs (e.g., `.*Standard.*`).
+*   **`artifact_only`** (Optional): Set `true` to skip Releases entirely and resolve builds from Actions/Artifacts. This is the intended “Nightly” mode.
+*   **`github_branch`** (Optional): Branch name used when searching workflow runs (defaults to the repo default branch).
 *   **`tint_color`** (Optional): Hex color code. System extracts dominant icon colors if omitted.
 
 ### CI/CD Behaviors

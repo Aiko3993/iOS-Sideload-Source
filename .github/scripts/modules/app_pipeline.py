@@ -19,7 +19,7 @@ def apply_bundle_id_suffix(bundle_id, app_name, base_name, is_coexist=True):
     if is_coexist:
         new_id = f"{bundle_id}.coexist" if not tag else f"{bundle_id}.{tag}.coexist"
     else:
-        new_id = bundle_id if not tag else f"{bundle_id}.{tag}"
+        new_id = bundle_id
 
     if bundle_id == new_id:
         return bundle_id, False
@@ -39,6 +39,34 @@ def _should_add_version(app_entry, new_version_entry):
 
     return True
 
+def _apply_passthrough_fields(app_entry, app_config):
+    if not app_entry or not app_config:
+        return
+    passthrough_map = {
+        "marketplace_id": "marketplaceID",
+        "developer_name": "developerName",
+        "screenshot_urls": "screenshotURLs",
+        "localized_description": "localizedDescription",
+    }
+    direct_keys = {
+        "marketplaceID",
+        "developerName",
+        "category",
+        "patreon",
+        "screenshots",
+        "screenshotURLs",
+        "subtitle",
+        "localizedDescription",
+    }
+    for src, dest in passthrough_map.items():
+        val = app_config.get(src)
+        if val not in [None, ""] and not app_entry.get(dest):
+            app_entry[dest] = val
+    for key in direct_keys:
+        val = app_config.get(key)
+        if val not in [None, ""] and not app_entry.get(key):
+            app_entry[key] = val
+
 def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     repo = app_config['github_repo']
     name = app_config['name']
@@ -53,8 +81,17 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
     tag = compute_variant_tag(name, base_name)
 
+    def _is_supported_download_url(url):
+        if not url or not isinstance(url, str):
+            return False
+        u = url.split('?', 1)[0].lower()
+        return u.endswith('.ipa') or u.endswith('.ipa.zip')
+
+    is_local_validation = os.environ.get('LOCAL_VALIDATION_ONLY') == '1'
+    artifact_only = bool(app_config.get('artifact_only'))
+
     injected_tag_regex = None
-    if 'tag_regex' not in app_config and tag:
+    if not artifact_only and 'tag_regex' not in app_config and tag:
         for pre_release_kw in ['nightly', 'beta', 'alpha', 'dev']:
             if pre_release_kw in tag:
                 app_config['tag_regex'] = pre_release_kw
@@ -67,13 +104,15 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
     current_repo = client.get_current_repo()
 
     candidate = None
-    if not force_workflow:
+    if not force_workflow and not artifact_only:
         candidate = resolve_release_candidate(app_config, client, repo)
         if candidate:
             logger.info(f"Selected Release asset for {name}: {candidate.download_url}")
 
     if not candidate:
-        if not force_workflow:
+        if artifact_only:
+            logger.info(f"Artifact-only mode enabled for {name}, checking actions/artifacts...")
+        elif not force_workflow:
             logger.info(f"Checking actions/artifacts since no valid release was found for {name}...")
         else:
             logger.info(f"Checking explicit workflow {workflow_file} for {name}...")
@@ -81,6 +120,15 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         candidate = resolve_artifact_candidate(app_config, client, repo, name, is_coexist, current_repo)
         if not candidate:
             logger.warning(f"No successful workflow run/artifact found for {name}")
+            if app_entry:
+                versions_list = app_entry.get('versions') if isinstance(app_entry.get('versions'), list) else []
+                latest_version = versions_list[0] if versions_list else {}
+                current_download_url = latest_version.get('downloadURL') or ''
+                if current_download_url and not _is_supported_download_url(current_download_url):
+                    logger.warning(
+                        f"Dropping {name}: no valid IPA candidate and existing downloadURL is invalid: {current_download_url}"
+                    )
+                    return None, {}
             return app_entry, {}
 
     workflow_file = candidate.workflow_file
@@ -98,16 +146,18 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
     is_cached_url = False
 
-    if candidate.source == 'artifact' and not ("Nightly" in name or "nightly" in name.lower()):
+    if candidate.source == 'artifact' and not artifact_only and not force_workflow and not ("Nightly" in name or "nightly" in name.lower()):
         name = f"{name} (Nightly)"
         metadata_updates['name'] = name
+        metadata_updates['artifact_only'] = True
         logger.info(f"Auto-renamed to '{name}' due to artifact build fallback")
 
     if app_entry:
         app_entry['githubRepo'] = repo
         app_entry['name'] = name
 
-        latest_version = app_entry.get('versions', [{}])[0]
+        versions_list = app_entry.get('versions') if isinstance(app_entry.get('versions'), list) else []
+        latest_version = versions_list[0] if versions_list else {}
         stored_version = latest_version.get('version') or ''
 
         is_up_to_date = stored_version == version
@@ -123,6 +173,9 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         is_generic = version.lower() in skip_versions
 
         is_newer = not is_up_to_date
+        if current_download_url and not _is_supported_download_url(current_download_url):
+            logger.warning(f"Existing downloadURL for {name} is not an IPA, forcing refresh: {current_download_url}")
+            is_newer = True
 
         stored_date = latest_version.get('date') or ''
 
@@ -145,15 +198,21 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         clean_base_for_calc = app_config.get('bundle_id') or current_bundle_id
         if clean_base_for_calc == current_bundle_id:
             base_for_calc = current_bundle_id
-            if base_for_calc.endswith('.coexist'):
-                base_for_calc = base_for_calc[:-8]
-            tag = compute_variant_tag(name, base_name)
-            if tag and base_for_calc.endswith(f".{tag}"):
-                base_for_calc = base_for_calc[:-(len(tag) + 1)]
+            if is_coexist:
+                if base_for_calc.endswith('.coexist'):
+                    base_for_calc = base_for_calc[:-8]
+                tag = compute_variant_tag(name, base_name)
+                if tag and base_for_calc.endswith(f".{tag}"):
+                    base_for_calc = base_for_calc[:-(len(tag) + 1)]
             clean_base_for_calc = base_for_calc
 
         expected_id, _ = apply_bundle_id_suffix(clean_base_for_calc, name, base_name, is_coexist)
         bundle_id_needs_update = (current_bundle_id != expected_id)
+
+        if current_download_url and current_download_url.lower().endswith('.ipa.zip') and not is_cached_url:
+            if current_repo and client.token and not is_local_validation:
+                logger.info(f"ZIP wrapper detected for {name}, forcing refresh to produce direct IPA link")
+                is_newer = True
 
         if not is_newer and not os.environ.get('FORCE_UPDATE_ALL') and (has_direct_link or is_cached_url or not direct_url) and not is_generic and not bundle_id_needs_update:
             url_is_alive = True
@@ -178,14 +237,26 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                     app_entry['tintColor'] = config_tint
                     logger.info(f"Updated tint color for {name} from config")
 
-                official_data = find_official_source(repo, expected_id, client)
-                if official_data:
-                    for k, v in official_data.items():
-                        if k not in app_entry or not app_entry[k] or k in ['screenshotURLs', 'tintColor']:
-                            app_entry[k] = v
-                    if 'subtitle' in official_data:
-                        app_entry['subtitle'] = official_data['subtitle']
+                should_discover = os.environ.get('OFFICIAL_SOURCE_DISCOVERY') == '1'
+                if not should_discover and not is_local_validation:
+                    should_discover = not app_entry.get('subtitle') or not app_entry.get('localizedDescription') or not app_entry.get('screenshotURLs')
 
+                if should_discover:
+                    official_data = find_official_source(repo, expected_id, client)
+                    if official_data:
+                        for k, v in official_data.items():
+                            if k not in app_entry or not app_entry[k] or k in ['screenshotURLs', 'tintColor']:
+                                app_entry[k] = v
+                        if 'subtitle' in official_data:
+                            app_entry['subtitle'] = official_data['subtitle']
+
+                if isinstance(app_entry.get('versions'), list):
+                    app_entry['versions'] = [
+                        v for v in app_entry['versions']
+                        if isinstance(v, dict) and _is_supported_download_url(v.get('downloadURL'))
+                    ]
+
+                _apply_passthrough_fields(app_entry, app_config)
                 logger.info(f"Skipping {name} (Already up to date at version {version})")
                 return app_entry, {}
 
@@ -195,11 +266,12 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
             if clean_base_id == old_id:
                 base_id = old_id
-                if base_id.endswith('.coexist'):
-                    base_id = base_id[:-8]
-                tag = compute_variant_tag(name, base_name)
-                if tag and base_id.endswith(f".{tag}"):
-                    base_id = base_id[:-(len(tag) + 1)]
+                if is_coexist:
+                    if base_id.endswith('.coexist'):
+                        base_id = base_id[:-8]
+                    tag = compute_variant_tag(name, base_name)
+                    if tag and base_id.endswith(f".{tag}"):
+                        base_id = base_id[:-(len(tag) + 1)]
                 clean_base_id = base_id
 
             new_id, _ = apply_bundle_id_suffix(clean_base_id, name, base_name, is_coexist)
@@ -267,7 +339,29 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             else:
                 download_from_release(client, download_url, temp_path)
 
-        _download_selected_candidate()
+        try:
+            _download_selected_candidate()
+        except Exception as e:
+            if candidate.source == 'release':
+                logger.warning(f"Release download failed for {name} ({e}), falling back to artifacts...")
+                candidate = resolve_artifact_candidate(app_config, client, repo, name, is_coexist, current_repo)
+                if not candidate:
+                    raise
+                workflow_file = candidate.workflow_file
+                workflow_run = candidate.workflow_run
+                artifact = candidate.artifact
+                download_url = candidate.download_url
+                direct_url = candidate.direct_url
+                asset_name = candidate.asset_name
+                release_tag = candidate.release_tag
+                version = candidate.version
+                release_date = candidate.release_date
+                release_timestamp = candidate.release_timestamp
+                version_desc = candidate.version_desc
+                size = candidate.size
+                _download_selected_candidate()
+            else:
+                raise
 
         is_fresh_download = not is_cached_url
 
@@ -303,7 +397,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         min_os_version = ipa_info['min_os_version']
         ipa_permissions = ipa_info['permissions']
 
-        if extracted_bundle_id and extracted_bundle_id.endswith('.coexist'):
+        if is_coexist and extracted_bundle_id and extracted_bundle_id.endswith('.coexist'):
             extracted_bundle_id = extracted_bundle_id[:-8]
             tag = compute_variant_tag(name, base_name)
             if tag and extracted_bundle_id.endswith(f".{tag}"):
@@ -345,7 +439,6 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
         target_bundle_id, needs_repackage = apply_bundle_id_suffix(bundle_id, name, base_name, is_coexist)
 
-        is_local_validation = os.environ.get('LOCAL_VALIDATION_ONLY') == '1'
         if needs_repackage and current_repo and client.token and not is_local_validation:
             logger.info(f"Repackaging IPA for {name} with bundle ID: {target_bundle_id}")
 
@@ -449,13 +542,21 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         new_version_entry["minOSVersion"] = min_os_version
 
     if app_entry:
+        if not isinstance(app_entry.get('versions'), list):
+            app_entry['versions'] = []
+        app_entry['versions'] = [
+            v for v in app_entry['versions']
+            if isinstance(v, dict) and _is_supported_download_url(v.get('downloadURL'))
+        ]
+
         is_new_version = _should_add_version(app_entry, new_version_entry)
         if is_new_version:
             logger.info(f"New version {version} detected for {name}")
             app_entry['versions'].insert(0, new_version_entry)
 
         app_entry['versions'] = deduplicate_versions(app_entry['versions'], name)
-        best_version = app_entry.get('versions', [{}])[0]
+        versions_list = app_entry.get('versions') if isinstance(app_entry.get('versions'), list) else []
+        best_version = versions_list[0] if versions_list else {}
 
         app_entry.update({
             "version": best_version.get('version'),
@@ -527,6 +628,8 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         for k, v in official_data.items():
             if k not in app_entry or not app_entry.get(k) or k in ['screenshotURLs', 'tintColor']:
                 app_entry[k] = v
+
+    _apply_passthrough_fields(app_entry, app_config)
 
     if found_icon_auto:
         metadata_updates['icon_url'] = found_icon_auto

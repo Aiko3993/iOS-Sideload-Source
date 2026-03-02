@@ -12,12 +12,16 @@ body:
         Please submit **one app per issue**.
 
         If you need to add more, please open another issue.
+
+        - For Nightly builds (Artifacts-only): add `(Nightly)` to App Name.
+        - To allow pre-releases on Releases: add `(Beta)` to App Name.
+        - For advanced options (regex/workflow/branch): open a PR to edit apps.json.
   - type: input
     id: app_name
     attributes:
       label: App Name
       description: The name of the application.
-      placeholder: e.g. MyCoolApp
+      placeholder: 'e.g. MyCoolApp'
     validations:
       required: true
   - type: input
@@ -25,7 +29,7 @@ body:
     attributes:
       label: GitHub Repository
       description: The Owner/Repo format.
-      placeholder: e.g. You/MyCoolApp
+      placeholder: 'e.g. You/MyCoolApp'
     validations:
       required: true
   - type: dropdown
@@ -41,4 +45,4 @@ body:
     id: icon_url
     attributes:
       label: Icon URL (Optional)
-      placeholder: https://example.com/icon.png
+      placeholder: 'https://example.com/icon.png'

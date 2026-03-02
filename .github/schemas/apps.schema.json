@@ -65,10 +65,18 @@
           "maxLength": 200,
           "pattern": "^[^\\\\/]+\\.(yml|yaml)$"
         },
+        "github_branch": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
         "artifact_name": {
           "type": "string",
           "minLength": 1,
           "maxLength": 200
+        },
+        "artifact_only": {
+          "type": "boolean"
         },
         "ipa_regex": {
           "type": "string",
