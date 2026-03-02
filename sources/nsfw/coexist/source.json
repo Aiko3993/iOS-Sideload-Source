@@ -1,0 +1,162 @@
+{
+  "name": "iOS Sideload Source (NSFW Coexist)",
+  "identifier": "io.github.aiko3993.ios-sideload-source.nsfw.coexist",
+  "subtitle": "iOS Sideload Source by Aiko3993",
+  "description": "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source.",
+  "tintColor": "#db2777",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/nsfw.png",
+  "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
+  "apps": [
+    {
+      "name": "JHentai",
+      "githubRepo": "jiangtian616/JHenTai",
+      "bundleIdentifier": "top.jtmonster.jhentai.coexist",
+      "developerName": "jiangtian616",
+      "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
+      "version": "8.0.12",
+      "versionDate": "2026-02-24T12:24:22Z",
+      "versionDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
+      "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
+      "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "#E6E623",
+      "size": 15750837,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Auth identity",
+          "NSPhotoLibraryAddUsageDescription": "Pick up image to search",
+          "NSPhotoLibraryUsageDescription": "Pick up image to search"
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg"
+      ],
+      "versions": [
+        {
+          "version": "8.0.12",
+          "date": "2026-02-24T12:24:22Z",
+          "localizedDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
+          "size": 15750837,
+          "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db",
+          "minOSVersion": "12.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg",
+          "width": 795,
+          "height": 1633
+        }
+      ],
+      "category": "entertainment",
+      "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db"
+    },
+    {
+      "name": "LoveIwara",
+      "githubRepo": "FoxSensei001/LoveIwara",
+      "bundleIdentifier": "m.c.g.a.i_iwara.coexist",
+      "developerName": "FoxSensei001",
+      "subtitle": "Love Iwara (i-iwara or 2i). An unofficial iwara flutter app - Supporting multiple platforms and devices including mobile phones, tablets and computers. Compatible with Android, Windows and other systems. 第三方的Iwara应用 - 支持多个平台和设备，包括手机、平板和计算机。兼容 安卓、IOS、Windows、MacOS等系统。",
+      "version": "0.4.3",
+      "versionDate": "2026-03-02T04:45:13Z",
+      "versionDescription": "# 🚀 Release Notes for Version 0.4.3\r\n\r\n## 🔥 Highlights\r\n\r\n* **Smoother Back Gestures**: We've rebuilt the navigation system from the ground up. Android users with predictive back gestures enabled will now see a preview animation when swiping back, and iOS users will enjoy swipe-back interactions that feel much closer to native apps. Overall navigation is now faster and more fluid.\r\n\r\n## 🐛 Bug Fixes\r\n\r\n* **Crash Fix for Some Devices**: Fixed crashes on certain devices caused by incorrect Impeller rendering engine configuration. ([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows Video Playback Freeze**: Removed Windows zip build artifacts and now use installer only. This resolves the issue where the app would freeze during video playback while audio kept playing. ([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n```The Windows version will be uploaded again later```\r\n## 🛠 Optimizations\r\n\r\n* **Better List & Detail Pages**: Common list pages and detail pages now have improved layouts and interactions for a cleaner, more intuitive experience.\r\n* **Performance & Stability**: Various under-the-hood optimizations to improve smoothness and fix bugs.\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the GitHub issues section\r\n* Or join the [discussion group](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n\r\n---\r\n\r\n# 🚀 0.4.3 版本发布说明\r\n\r\n## 🔥 重点更新\r\n\r\n* **更流畅的返回手势**：我们对导航系统进行了全面重构。开启预测性返回手势的安卓用户，滑动返回时可以看到预览动画；iOS 用户则能享受更接近原生应用的手势返回体验。整体导航更快更流畅。\r\n\r\n## 🐛 问题修复\r\n```Windows版本在稍后会重新上传```\r\n* **部分机型闪退修复**：修复了因 Impeller 渲染引擎配置错误导致部分机型闪退的问题。([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows 视频播放卡死**：移除 Windows zip 构建产物，统一使用安装器进行安装，解决了视频播放时应用卡死（但音频仍在播放）的问题。([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n\r\n## 🛠 优化改进\r\n\r\n* **列表与详情页优化**：常用列表页和详情页的布局与交互得到优化，界面更简洁，操作更直观。\r\n* **流畅度与稳定性提升**：多项底层优化，提升整体流畅度，修复已知问题。\r\n\r\n## 📢 反馈方式\r\n\r\n* 在 GitHub issues 区留言\r\n* 加入[用户讨论群](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\n你的每一条反馈都对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260302/LoveIwara_0.4.3_Coexist.ipa",
+      "localizedDescription": "Thank you for your understanding and support! If you're also a Flutter beginner, I hope we can progress together in our learning journey.",
+      "iconURL": "https://raw.githubusercontent.com/FoxSensei001/LoveIwara/refs/heads/master/assets/icon/launcher_icon_v2.png",
+      "tintColor": "#F89032",
+      "size": 22904142,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "App需要访问本地网络",
+          "NSLocationWhenInUseUsageDescription": "App需要访问位置来获取WiFi信息"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.4.3",
+          "date": "2026-03-02T04:45:13Z",
+          "localizedDescription": "# 🚀 Release Notes for Version 0.4.3\r\n\r\n## 🔥 Highlights\r\n\r\n* **Smoother Back Gestures**: We've rebuilt the navigation system from the ground up. Android users with predictive back gestures enabled will now see a preview animation when swiping back, and iOS users will enjoy swipe-back interactions that feel much closer to native apps. Overall navigation is now faster and more fluid.\r\n\r\n## 🐛 Bug Fixes\r\n\r\n* **Crash Fix for Some Devices**: Fixed crashes on certain devices caused by incorrect Impeller rendering engine configuration. ([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows Video Playback Freeze**: Removed Windows zip build artifacts and now use installer only. This resolves the issue where the app would freeze during video playback while audio kept playing. ([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n```The Windows version will be uploaded again later```\r\n## 🛠 Optimizations\r\n\r\n* **Better List & Detail Pages**: Common list pages and detail pages now have improved layouts and interactions for a cleaner, more intuitive experience.\r\n* **Performance & Stability**: Various under-the-hood optimizations to improve smoothness and fix bugs.\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the GitHub issues section\r\n* Or join the [discussion group](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n\r\n---\r\n\r\n# 🚀 0.4.3 版本发布说明\r\n\r\n## 🔥 重点更新\r\n\r\n* **更流畅的返回手势**：我们对导航系统进行了全面重构。开启预测性返回手势的安卓用户，滑动返回时可以看到预览动画；iOS 用户则能享受更接近原生应用的手势返回体验。整体导航更快更流畅。\r\n\r\n## 🐛 问题修复\r\n```Windows版本在稍后会重新上传```\r\n* **部分机型闪退修复**：修复了因 Impeller 渲染引擎配置错误导致部分机型闪退的问题。([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows 视频播放卡死**：移除 Windows zip 构建产物，统一使用安装器进行安装，解决了视频播放时应用卡死（但音频仍在播放）的问题。([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n\r\n## 🛠 优化改进\r\n\r\n* **列表与详情页优化**：常用列表页和详情页的布局与交互得到优化，界面更简洁，操作更直观。\r\n* **流畅度与稳定性提升**：多项底层优化，提升整体流畅度，修复已知问题。\r\n\r\n## 📢 反馈方式\r\n\r\n* 在 GitHub issues 区留言\r\n* 加入[用户讨论群](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\n你的每一条反馈都对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260302/LoveIwara_0.4.3_Coexist.ipa",
+          "size": 22904142,
+          "sha256": "790ffdfd88a74c5fe6c388d37d3d2f311bf208379b54823f52a18d18df3c9e21",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "790ffdfd88a74c5fe6c388d37d3d2f311bf208379b54823f52a18d18df3c9e21",
+      "category": "other"
+    },
+    {
+      "name": "Pica Comic",
+      "githubRepo": "Pacalini/PicaComic",
+      "bundleIdentifier": "com.github.pacalini.picaComic.coexist",
+      "developerName": "Pacalini",
+      "subtitle": "A comic app built with Flutter, supporting multiple comic sources.",
+      "version": "4.2.10",
+      "versionDate": "2026-01-11T06:24:07Z",
+      "versionDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260111/Pica_Comic_4.2.10_Coexist.ipa",
+      "localizedDescription": "A comic app with multiple sources built with flutter.",
+      "iconURL": "https://raw.githubusercontent.com/Pacalini/PicaComic/master/images/app_icon.png",
+      "tintColor": "#FCE4E4",
+      "size": 13454387,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Protect user's privacy",
+          "NSPhotoLibraryAddUsageDescription": "Save the images selected by user",
+          "NSPhotoLibraryUsageDescription": "Allow user to Choose image as his avatar"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.2.10",
+          "date": "2026-01-11T06:24:07Z",
+          "localizedDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260111/Pica_Comic_4.2.10_Coexist.ipa",
+          "size": 13454387,
+          "sha256": "a11038b653bc111340b487ef239d631ab937487ffe8a3e0e88c6603847734192",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "a11038b653bc111340b487ef239d631ab937487ffe8a3e0e88c6603847734192",
+      "category": "other"
+    }
+  ],
+  "news": [],
+  "headerURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/og-image.png"
+}
