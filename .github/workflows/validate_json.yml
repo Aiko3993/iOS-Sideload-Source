@@ -12,9 +12,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install -r .github/requirements.txt
 
       - name: Validate Apps JSON
         run: python3 .github/scripts/validate_apps.py
+
+      - name: Sandbox validate changed apps
+        env:
+          BASE_REF: origin/${{ github.base_ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          python3 .github/scripts/validate_apps_sandbox.py

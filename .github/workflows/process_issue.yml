@@ -16,6 +16,9 @@ jobs:
       !contains(github.event.issue.labels.*.name, 'approved') && 
       !contains(github.event.issue.labels.*.name, 'rejected')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -49,15 +52,31 @@ jobs:
                 const repo = extract(`GitHub Repository${s}`);
                 const cat = extract(`Category${s}`);
                 const icon = extract(`Icon URL${s} (Optional)`);
+                const relChan = extract(`Release Channel${s} (Optional)`);
+                const mode = extract(`Build Source Mode${s} (Optional)`);
+                const tagRegex = extract(`Release Tag Regex${s} (Optional)`);
+                const workflow = extract(`GitHub Workflow File${s} (Optional)`);
+                const artifactName = extract(`Artifact Name / Regex${s} (Optional)`);
+                const branch = extract(`GitHub Branch${s} (Optional)`);
+                const ipaRegex = extract(`Release Asset Regex${s} (Optional)`);
                 
                 const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
+                const artifactOnly = (mode && mode.toLowerCase().includes('artifacts')) ? true : undefined;
+                const preRelease = (relChan && relChan.toLowerCase().includes('pre')) ? true : undefined;
 
                 if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
                     apps.push({
                         name: name,
                         repo: repo,
                         category: cat,
-                        icon_url: cleanIcon
+                        icon_url: cleanIcon,
+                        pre_release: preRelease,
+                        artifact_only: artifactOnly,
+                        tag_regex: (tagRegex && tagRegex !== '_No response_') ? tagRegex : undefined,
+                        github_workflow: (workflow && workflow !== '_No response_') ? workflow : undefined,
+                        artifact_name: (artifactName && artifactName !== '_No response_') ? artifactName : undefined,
+                        github_branch: (branch && branch !== '_No response_') ? branch : undefined,
+                        ipa_regex: (ipaRegex && ipaRegex !== '_No response_') ? ipaRegex : undefined
                     });
                 }
             };
@@ -78,7 +97,10 @@ jobs:
         env:
           APPS_JSON: ${{ steps.parse.outputs.apps_json }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 .github/scripts/add_app.py
+        run: python3 .github/scripts/validate_app_request_sandbox.py
+
+      - name: Ensure working tree unchanged
+        run: git diff --exit-code
 
       - name: Comment Validation Result
         uses: actions/github-script@v7
@@ -100,7 +122,7 @@ jobs:
                    hasError = true;
                    message += `❌ **${res.repo}**: ${res.message}\n`;
                } else {
-                   message += `✅ **${res.repo}**: Ready to be ${res.status} in \`${res.message}\`\n`;
+                   message += `✅ **${res.repo}**: ${res.message}\n`;
                }
             }
             
@@ -187,9 +209,18 @@ jobs:
                 const repo = extract(`GitHub Repository${s}`);
                 const cat = extract(`Category${s}`);
                 const icon = extract(`Icon URL${s} (Optional)`);
+                const relChan = extract(`Release Channel${s} (Optional)`);
+                const mode = extract(`Build Source Mode${s} (Optional)`);
+                const tagRegex = extract(`Release Tag Regex${s} (Optional)`);
+                const workflow = extract(`GitHub Workflow File${s} (Optional)`);
+                const artifactName = extract(`Artifact Name / Regex${s} (Optional)`);
+                const branch = extract(`GitHub Branch${s} (Optional)`);
+                const ipaRegex = extract(`Release Asset Regex${s} (Optional)`);
                 
                 // Allow icon to be empty string if not found or placeholder
                 const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
+                const artifactOnly = (mode && mode.toLowerCase().includes('artifacts')) ? true : undefined;
+                const preRelease = (relChan && relChan.toLowerCase().includes('pre')) ? true : undefined;
 
                 if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
                     apps.push({
@@ -197,6 +228,13 @@ jobs:
                         repo: repo,
                         category: cat,
                         icon_url: cleanIcon,
+                        pre_release: preRelease,
+                        artifact_only: artifactOnly,
+                        tag_regex: (tagRegex && tagRegex !== '_No response_') ? tagRegex : undefined,
+                        github_workflow: (workflow && workflow !== '_No response_') ? workflow : undefined,
+                        artifact_name: (artifactName && artifactName !== '_No response_') ? artifactName : undefined,
+                        github_branch: (branch && branch !== '_No response_') ? branch : undefined,
+                        ipa_regex: (ipaRegex && ipaRegex !== '_No response_') ? ipaRegex : undefined,
                         source_issue: context.issue.number,
                         form_index: formIndex
                     });

@@ -1,9 +1,9 @@
 import re
+import os
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from typing import Optional
-
-from utils import logger
+from utils import logger, GLOBAL_CONFIG
 
 def select_best_ipa(assets, app_config):
     def _name(a):
@@ -20,40 +20,48 @@ def select_best_ipa(assets, app_config):
         except re.error as e:
             logger.warning(f"Invalid ipa_regex for {app_config.get('name', 'Unknown')}: {e}")
 
-    def _looks_like_ipa_zip(filename_lower):
-        if not filename_lower.endswith('.zip'):
-            return False
-        if '.ipa.' in filename_lower or filename_lower.endswith('.ipa.zip') or filename_lower.endswith('.tipa.zip'):
+    scoring_cfg = (GLOBAL_CONFIG or {}).get('release_asset_scoring', {}) or {}
+    allowed_direct_exts = tuple(scoring_cfg.get('allowed_direct_extensions', ['.ipa']))
+    allowed_archive_exts = tuple(scoring_cfg.get('allowed_archive_extensions', ['.ipa.zip', '.zip', '.tar', '.tar.gz', '.tgz']))
+    archive_hint_tokens = tuple(scoring_cfg.get('archive_hint_tokens', ['ipa', 'ios', 'iphone', 'ipad']))
+    exclude_exts = tuple(scoring_cfg.get('exclude_extensions', []))
+    exclude_tokens = tuple(scoring_cfg.get('exclude_tokens', []))
+
+    def _has_archive_hint(filename_lower):
+        return any(t in filename_lower for t in archive_hint_tokens)
+
+    def _is_excluded(filename_lower, ignore_tokens=False):
+        if exclude_exts and filename_lower.endswith(exclude_exts):
             return True
-        if 'ipa' in filename_lower or 'ios' in filename_lower:
+        if not ignore_tokens and exclude_tokens and any(t in filename_lower for t in exclude_tokens):
             return True
         return False
 
-    def _is_obviously_not_ios(filename_lower):
-        bad_ext = ('.apk', '.aab', '.exe', '.msi', '.dmg', '.pkg', '.deb', '.rpm', '.appimage', '.tar.gz', '.tgz', '.tar.xz')
-        if filename_lower.endswith(bad_ext):
-            return True
-        bad_tokens = (
-            'linux', 'ubuntu', 'debian', 'fedora', 'arch', 'centos', 'alpine',
-            'windows', 'win32', 'win64', 'macos', 'osx', 'darwin',
-            'x86', 'x64', 'amd64', 'i386', 'armv7',
-        )
-        return any(t in filename_lower for t in bad_tokens)
-
     ipa_assets = []
+    fallback_archives = []
     for a in assets:
         n = _lname(a)
         if not n:
             continue
-        if _is_obviously_not_ios(n):
+
+        is_direct_ipa = n.endswith('.ipa')
+        is_ipa_wrapper_zip = n.endswith('.ipa.zip')
+        ignore_tokens = is_direct_ipa or is_ipa_wrapper_zip
+
+        if _is_excluded(n, ignore_tokens=ignore_tokens):
             continue
-        if n.endswith(('.ipa', '.tipa')):
+        if allowed_direct_exts and n.endswith(allowed_direct_exts):
             ipa_assets.append(a)
             continue
-        if _looks_like_ipa_zip(n):
-            ipa_assets.append(a)
+        if allowed_archive_exts and n.endswith(allowed_archive_exts):
+            if _has_archive_hint(n):
+                ipa_assets.append(a)
+            else:
+                fallback_archives.append(a)
 
     if not ipa_assets:
+        if len(fallback_archives) == 1:
+            return fallback_archives[0]
         return None
     if len(ipa_assets) == 1:
         return ipa_assets[0]
@@ -80,6 +88,14 @@ def select_best_ipa(assets, app_config):
         asset_tokens = token_set(asset_base)
 
         score = 0
+
+        lower_full = (asset_name or '').lower()
+        if lower_full.endswith('.ipa'):
+            score += 250
+        elif lower_full.endswith('.ipa.zip'):
+            score += 120
+        elif lower_full.endswith(allowed_archive_exts) and any(t in lower_full for t in archive_hint_tokens):
+            score += 60
 
         if app_norm == asset_norm:
             score += 1000
@@ -180,6 +196,43 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
         repo_info = client.get_repo_info(repo) or {}
         preferred_branch = repo_info.get('default_branch')
 
+    if not workflow_file and app_config.get('artifact_only'):
+        workflows = client.get_workflows(repo)
+        wanted = name.lower()
+
+        def wf_key(w):
+            n = (w.get('name') or '').lower()
+            p = (w.get('path') or '').lower()
+            s = 0
+            if 'nightly' in wanted and ('nightly' in n or 'nightly' in p):
+                s += 50
+            if any(x in wanted for x in ['alpha', 'beta']) and any(x in n or x in p for x in ['alpha', 'beta']):
+                s += 20
+            if any(x in n or x in p for x in ['ios', 'iphone', 'apple']):
+                s += 10
+            if any(x in n or x in p for x in ['xcode', 'build', 'archive']):
+                s += 5
+            return -s
+
+        workflows = sorted(workflows, key=wf_key)[:12]
+        for w in workflows:
+            wf_path = w.get('path') or ''
+            wf_file = os.path.basename(wf_path)
+            if not wf_file:
+                continue
+            runs, _ = client.get_workflow_runs(repo, workflow_file=wf_file, branch=preferred_branch, status='success', per_page=10)
+            if not runs and preferred_branch:
+                runs, _ = client.get_workflow_runs(repo, workflow_file=wf_file, branch=None, status='success', per_page=10)
+            if not runs:
+                continue
+            for run in runs:
+                arts = client.get_workflow_run_artifacts(repo, run.get('id'))
+                if any((a.get('name') or '').lower().endswith('.ipa') for a in (arts or [])):
+                    workflow_file = wf_file
+                    break
+            if workflow_file:
+                break
+
     runs, workflow_file = client.get_workflow_runs(repo, workflow_file=workflow_file, branch=preferred_branch, status='success', per_page=20)
     if not runs and preferred_branch:
         runs, workflow_file = client.get_workflow_runs(repo, workflow_file=workflow_file, branch=None, status='success', per_page=20)
@@ -206,9 +259,6 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
             release_date = dt.split('T')[0] if dt else ''
             release_timestamp = dt
 
-            wf_name_clean = (app_config.get('github_workflow') or 'action').replace('.yml', '').replace('.yaml', '')
-            download_url = f"https://nightly.link/{repo}/workflows/{wf_name_clean}/{preferred_branch}/{artifact_name_hint}.zip"
-
             release_tag = None
             asset_name = None
             direct_url = None
@@ -228,7 +278,7 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
                 workflow_file=app_config.get('github_workflow'),
                 workflow_run=None,
                 artifact={'name': artifact_name_hint},
-                download_url=download_url,
+                download_url=direct_url or "",
                 direct_url=direct_url,
                 asset_name=asset_name,
                 release_tag=release_tag,
@@ -251,8 +301,21 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
             logger.warning(f"Invalid artifact_name regex for {name}: {e}")
             artifact = next((a for a in artifacts if a.get('name') == artifact_name), None)
     else:
-        artifact = next((a for a in artifacts if a['name'].lower().endswith('.ipa')), None)
-        if not artifact:
+        ipa_artifacts = [a for a in artifacts if isinstance(a, dict) and (a.get('name') or '').lower().endswith('.ipa')]
+        if ipa_artifacts:
+            if len(ipa_artifacts) == 1:
+                artifact = ipa_artifacts[0]
+            else:
+                wanted = re.sub(r'[^a-z0-9]', '', (name or '').lower())
+
+                def _score(a):
+                    n = (a.get('name') or '').lower()
+                    base = n[:-4] if n.endswith('.ipa') else n
+                    base = re.sub(r'[^a-z0-9]', '', base)
+                    return SequenceMatcher(None, wanted, base).ratio()
+
+                artifact = max(ipa_artifacts, key=_score)
+        else:
             keywords = ['ipa', 'ios', 'app']
             artifact = next((a for a in artifacts if any(k in a['name'].lower() for k in keywords)), None)
         if not artifact:
@@ -272,10 +335,6 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
     release_date = created_at.split('T')[0] if created_at else ''
     release_timestamp = created_at
     version_desc = f"Nightly build from commit {head_sha}" if head_sha else "Nightly build"
-
-    wf_name_clean = (workflow_file or 'action').replace('.yml', '').replace('.yaml', '')
-    branch = workflow_run.get('head_branch') or preferred_branch or 'main'
-    download_url = f"https://nightly.link/{repo}/workflows/{wf_name_clean}/{branch}/{artifact['name']}.zip"
 
     release_tag = None
     asset_name = None
@@ -298,7 +357,7 @@ def resolve_artifact_candidate(app_config, client, repo, name, is_coexist, curre
         workflow_file=workflow_file,
         workflow_run=workflow_run,
         artifact=artifact,
-        download_url=download_url,
+        download_url=direct_url or "",
         direct_url=direct_url,
         asset_name=asset_name,
         release_tag=release_tag,

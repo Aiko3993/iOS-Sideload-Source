@@ -27,3 +27,62 @@ icon_scoring:
     - watch
     - macos
     - tvos
+
+# Release asset selection rules (GitHub Releases)
+# Goal: pick iOS IPA assets and avoid non-iOS multi-platform builds.
+release_asset_scoring:
+  allowed_direct_extensions:
+    - .ipa
+  allowed_archive_extensions:
+    - .ipa.zip
+    - .zip
+    - .tar
+    - .tar.gz
+    - .tgz
+  archive_hint_tokens:
+    - ipa
+    - ios
+    - iphone
+    - ipad
+  exclude_extensions:
+    - .apk
+    - .aab
+    - .appx
+    - .msix
+    - .exe
+    - .msi
+    - .dmg
+    - .pkg
+    - .deb
+    - .rpm
+    - .appimage
+    - .nro
+    - .7z
+    - .rar
+    - .zst
+  exclude_tokens:
+    - android
+    - windows
+    - win32
+    - win64
+    - macos
+    - osx
+    - darwin
+    - linux
+    - ubuntu
+    - debian
+    - fedora
+    - arch
+    - dsym
+    - dsyms
+    - symbol
+    - symbols
+    - debug
+    - log
+    - logs
+    - build-log
+    - build-logs
+    - x86
+    - x64
+    - amd64
+    - i386
