@@ -79,14 +79,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst.coexist",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.d40fb11",
-      "versionDate": "2026-02-25T04:58:23Z",
-      "versionDescription": "Nightly build from commit d40fb1117124b9a8ec848a76f4775ea31ff33848",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260225/Amethyst_Nightly_1.0.d40fb11_Coexist.ipa",
+      "version": "1.0.e49c3fa",
+      "versionDate": "2026-03-03T15:13:02Z",
+      "versionDescription": "Nightly build from commit e49c3fa8d50bea43265781a896ff6de2a2c921ea",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/Amethyst_Nightly_1.0.e49c3fa_Coexist.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 150357232,
+      "size": 150357674,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -104,6 +104,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.e49c3fa",
+          "date": "2026-03-03T15:13:02Z",
+          "localizedDescription": "Nightly build from commit e49c3fa8d50bea43265781a896ff6de2a2c921ea",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/Amethyst_Nightly_1.0.e49c3fa_Coexist.ipa",
+          "size": 150357674,
+          "sha256": "7c487c99aec4d2afbe9626aa295b0e4330fb092fd2764010b99a24fa61d3af18",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "1.0.d40fb11",
           "date": "2026-02-25T04:58:23Z",
           "localizedDescription": "Nightly build from commit d40fb1117124b9a8ec848a76f4775ea31ff33848",
@@ -113,7 +122,7 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "a4bd77113254f2265ff756a8591b31e9ecc7db1d16e52d5a04c614b7496aaa91",
+      "sha256": "7c487c99aec4d2afbe9626aa295b0e4330fb092fd2764010b99a24fa61d3af18",
       "category": "other"
     },
     {
@@ -1102,6 +1111,56 @@
         }
       ],
       "sha256": "3a2ea5ebde33c6514a6bdc325a3111584390aaa995bc723e7053c3054317ffda",
+      "category": "other"
+    },
+    {
+      "name": "PPSSPP",
+      "githubRepo": "hrydgard/ppsspp",
+      "bundleIdentifier": "org.ppsspp.ppsspp.coexist",
+      "developerName": "hrydgard",
+      "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
+      "version": "1.20.1",
+      "versionDate": "2026-03-03T15:09:20Z",
+      "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/PPSSPP_1.20.1_Coexist.ipa",
+      "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
+      "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
+      "tintColor": "#2D4553",
+      "size": 30976383,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.security.container-required",
+          "com.apple.private.security.no-container",
+          "com.apple.private.security.no-sandbox",
+          "com.apple.private.security.storage.AppDataContainers",
+          "com.apple.private.security.storage.MobileDocuments",
+          "com.apple.security.iokit-user-client-class",
+          "get-task-allow",
+          "platform-application"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Your camera may be used to emulate Go!Cam, a camera accessory",
+          "NSLocalNetworkUsageDescription": "Your local network needs to be accessed by PPSSPP for network multiplayer support.",
+          "NSLocationWhenInUseUsageDescription": "Your location may be used to emulate Go!Explore, a GPS accessory",
+          "NSMicrophoneUsageDescription": "Your microphone may be used to emulate Go!Cam/Talkman, a microphone accessory",
+          "NSPhotoLibraryUsageDescription": "Access to your photos is needed to allow setting a background image."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.20.1",
+          "date": "2026-03-03T15:09:20Z",
+          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/PPSSPP_1.20.1_Coexist.ipa",
+          "size": 30976383,
+          "sha256": "57a9bc170d1dd15fd8debe1815e57aecef4d964318dc9073bef469321bcdf6b9",
+          "minOSVersion": "11.0"
+        }
+      ],
+      "sha256": "57a9bc170d1dd15fd8debe1815e57aecef4d964318dc9073bef469321bcdf6b9",
       "category": "other"
     },
     {
