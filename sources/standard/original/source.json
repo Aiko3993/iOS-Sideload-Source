@@ -871,56 +871,6 @@
       "category": "other"
     },
     {
-      "name": "PPSSPP",
-      "githubRepo": "hrydgard/ppsspp",
-      "bundleIdentifier": "org.ppsspp.ppsspp",
-      "developerName": "hrydgard",
-      "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
-      "version": "1.19.3",
-      "versionDate": "2025-07-15T10:21:14Z",
-      "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/PPSSPP-iOS-v1.19.3.ipa",
-      "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
-      "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
-      "tintColor": "#2D4553",
-      "size": 29930616,
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.developer.kernel.extended-virtual-addressing",
-          "com.apple.developer.kernel.increased-memory-limit",
-          "com.apple.private.security.container-required",
-          "com.apple.private.security.no-container",
-          "com.apple.private.security.no-sandbox",
-          "com.apple.private.security.storage.AppDataContainers",
-          "com.apple.private.security.storage.MobileDocuments",
-          "com.apple.security.iokit-user-client-class",
-          "get-task-allow",
-          "platform-application"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Your camera may be used to emulate Go!Cam, a camera accessory",
-          "NSLocalNetworkUsageDescription": "Your local network needs to be accessed by PPSSPP for network multiplayer support.",
-          "NSLocationWhenInUseUsageDescription": "Your location may be used to emulate Go!Explore, a GPS accessory",
-          "NSMicrophoneUsageDescription": "Your microphone may be used to emulate Go!Cam/Talkman, a microphone accessory",
-          "NSPhotoLibraryUsageDescription": "Access to your photos is needed to allow setting a background image."
-        }
-      },
-      "screenshotURLs": [],
-      "versions": [
-        {
-          "version": "1.19.3",
-          "date": "2025-07-15T10:21:14Z",
-          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.19.3/PPSSPP-iOS-v1.19.3.ipa",
-          "size": 29930616,
-          "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc",
-          "minOSVersion": "11.0"
-        }
-      ],
-      "sha256": "e604412d637a9e3d52b0cbde4e39213f7d85a609256b400d77491b10566a18bc",
-      "category": "other"
-    },
-    {
       "name": "SideStore",
       "githubRepo": "SideStore/SideStore",
       "bundleIdentifier": "com.SideStore.SideStore",
