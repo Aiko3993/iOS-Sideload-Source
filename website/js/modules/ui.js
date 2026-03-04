@@ -529,26 +529,125 @@ export function updateSourceUI(activeKey) {
 export function updateCopyButtonUI(mode) {
     const wrapper = document.getElementById('copy-btn-wrapper');
     if (!wrapper) return;
-    wrapper.style.transform = 'scale(1)';
-    wrapper.style.opacity = '1';
 
-    if (mode === 'all') {
-        wrapper.className = "flex flex-row items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px] h-10";
-        const btnClass = 'hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
-        const btnClass2 = 'hover:bg-pink-50 dark:hover:bg-pink-900/30';
+    const prevMode = wrapper.dataset.copyMode || null;
+    wrapper.dataset.copyMode = mode;
+    const isCompact = window.innerWidth >= 1000;
 
-        wrapper.innerHTML = `
-            <button onclick="window.copySourceURL('standard')" class="w-10 h-10 flex items-center justify-center rounded-xl text-emerald-500 ${btnClass} transition-all active:scale-95 group/std" title="Copy Standard Source">${getIcon('copy', 'w-5 h-5')}</button>
-            <button onclick="window.copySourceURL('nsfw')" class="w-10 h-10 flex items-center justify-center rounded-xl text-pink-500 ${btnClass2} transition-all active:scale-95 group/nsfw" title="Copy NSFW Source">${getIcon('copy', 'w-5 h-5')}</button>
-        `;
-    } else {
-        wrapper.className = "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px] h-10";
-        // Standard (or others) now gets colored by default (Emerald) instead of gray
-        let colorClass = mode === 'nsfw'
+    const singleBtn = (targetMode) => {
+        const colorClass = targetMode === 'nsfw'
             ? 'text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/30'
             : 'text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
+        return `<button onclick="window.copySourceURL('${targetMode}')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl ${colorClass} transition-all duration-300 active:scale-95" title="Copy Source URL">${getIcon('copy', 'w-5 h-5')}</button>`;
+    };
 
-        wrapper.innerHTML = `<button onclick="window.copySourceURL('${mode}')" class="w-10 h-10 flex items-center justify-center rounded-xl ${colorClass} transition-all active:scale-95" title="Copy Source URL">${getIcon('copy', 'w-5 h-5')}</button>`;
+    const dualBtns = (s1 = '', s2 = '') => {
+        const bc1 = 'hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
+        const bc2 = 'hover:bg-pink-50 dark:hover:bg-pink-900/30';
+        if (isCompact) {
+            return `
+                <button onclick="window.copySourceURL('standard')" class="copy-btn w-10 h-[18px] flex items-center justify-center rounded-md text-emerald-500 ${bc1} transition-all duration-300 active:scale-95" title="Copy Standard Source" style="${s1}">${getIcon('copy', 'w-3.5 h-3.5')}</button>
+                <button onclick="window.copySourceURL('nsfw')" class="copy-btn w-10 h-[18px] flex items-center justify-center rounded-md text-pink-500 ${bc2} transition-all duration-300 active:scale-95" title="Copy NSFW Source" style="${s2}">${getIcon('copy', 'w-3.5 h-3.5')}</button>`;
+        }
+        return `
+            <button onclick="window.copySourceURL('standard')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl text-emerald-500 ${bc1} transition-all duration-300 active:scale-95" title="Copy Standard Source" style="${s1}">${getIcon('copy', 'w-5 h-5')}</button>
+            <button onclick="window.copySourceURL('nsfw')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl text-pink-500 ${bc2} transition-all duration-300 active:scale-95" title="Copy NSFW Source" style="${s2}">${getIcon('copy', 'w-5 h-5')}</button>`;
+    };
+
+    const wrapAll = isCompact
+        ? "flex flex-col items-center justify-center gap-1 transition-all duration-300 ease-out flex-shrink-0 h-12 min-w-[40px]"
+        : "flex flex-row items-center justify-end gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+    const wrapSingle = isCompact
+        ? "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 h-12 min-w-[40px]"
+        : "flex flex-row items-center justify-end gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+
+    // Split/merge offset: vertical on desktop, horizontal on mobile
+    const splitIn = isCompact ? 'translateY(9px)' : 'translateX(22px)';
+    const splitOut = isCompact ? 'translateY(-9px)' : 'translateX(0)';
+    const mergeIn = isCompact ? 'translateY(9px)' : 'translateX(22px)';
+    const mergeOut = isCompact ? 'translateY(-9px)' : 'translateX(0)';
+
+    // --- Initial load ---
+    if (!prevMode) {
+        wrapper.className = mode === 'all' ? wrapAll : wrapSingle;
+        wrapper.innerHTML = mode === 'all' ? dualBtns() : singleBtn(mode);
+        return;
+    }
+
+    // --- Split (single → dual): e.g. NSFW → All ---
+    if (prevMode !== 'all' && mode === 'all') {
+        const oldBtn = wrapper.querySelector('.copy-btn');
+        if (oldBtn) {
+            oldBtn.style.transform = 'scale(0.5)';
+            oldBtn.style.opacity = '0';
+        }
+        setTimeout(() => {
+            wrapper.className = wrapAll;
+            wrapper.innerHTML = dualBtns(
+                `transform: ${splitIn} scale(0.5); opacity: 0;`,
+                `transform: ${splitOut} scale(0.5); opacity: 0;`
+            );
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    wrapper.querySelectorAll('.copy-btn').forEach(btn => {
+                        btn.style.transform = 'translate(0,0) scale(1)';
+                        btn.style.opacity = '1';
+                    });
+                });
+            });
+        }, 200);
+        return;
+    }
+
+    // --- Merge (dual → single): e.g. All → Standard ---
+    if (prevMode === 'all' && mode !== 'all') {
+        const btns = wrapper.querySelectorAll('.copy-btn');
+        if (btns.length === 2) {
+            btns[0].style.transform = `${mergeIn} scale(0.7)`;
+            btns[0].style.opacity = '0';
+            btns[1].style.transform = `${mergeOut} scale(0.7)`;
+            btns[1].style.opacity = '0';
+        }
+        setTimeout(() => {
+            wrapper.className = wrapSingle;
+            wrapper.innerHTML = singleBtn(mode);
+            const btn = wrapper.querySelector('.copy-btn');
+            if (btn) {
+                btn.style.transform = 'scale(0.7)';
+                btn.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        btn.style.transform = 'scale(1)';
+                        btn.style.opacity = '1';
+                    });
+                });
+            }
+        }, 300);
+        return;
+    }
+
+    // --- Color swap (single → single): Standard ↔ NSFW ---
+    wrapper.className = wrapSingle;
+    const existingBtn = wrapper.querySelector('.copy-btn');
+    if (existingBtn) {
+        existingBtn.style.transform = 'scale(0.85)';
+        existingBtn.style.opacity = '0';
+        setTimeout(() => {
+            wrapper.innerHTML = singleBtn(mode);
+            const newBtn = wrapper.querySelector('.copy-btn');
+            if (newBtn) {
+                newBtn.style.transform = 'scale(0.85)';
+                newBtn.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        newBtn.style.transform = 'scale(1)';
+                        newBtn.style.opacity = '1';
+                    });
+                });
+            }
+        }, 200);
+    } else {
+        wrapper.innerHTML = singleBtn(mode);
     }
 }
 

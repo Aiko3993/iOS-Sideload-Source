@@ -170,19 +170,6 @@ def normalize_source_data(source_data, apps_config, allowed_app_fields, allowed_
                 final_apps_list.append(a)
     source_data['apps'] = final_apps_list
 
-    if not is_coexist:
-        seen_bundle_ids = set()
-        unique_apps = []
-        for a in source_data['apps']:
-            bid = a.get('bundleIdentifier')
-            if not bid:
-                continue
-            if bid in seen_bundle_ids:
-                continue
-            seen_bundle_ids.add(bid)
-            unique_apps.append(a)
-        source_data['apps'] = unique_apps
-
     app_order = {}
     for idx, app in enumerate(apps_config):
         key = f"{app['github_repo']}::{app['name']}"
