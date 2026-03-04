@@ -124,7 +124,7 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 18px;
+    width: 10px;
     pointer-events: none;
     opacity: 0;
     transition: opacity 200ms ease;
@@ -148,6 +148,7 @@ body {
     .category-fade-left {
         background: linear-gradient(to right, rgba(39, 39, 42, 0.78), rgba(39, 39, 42, 0));
     }
+
     .category-fade-right {
         background: linear-gradient(to left, rgba(39, 39, 42, 0.78), rgba(39, 39, 42, 0));
     }

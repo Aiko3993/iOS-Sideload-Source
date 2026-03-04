@@ -113,7 +113,7 @@
     <!-- Main Container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-32">
 
-        <header id="header-bar" class="relative z-40 mb-8 transition-all duration-300">
+        <header id="header-bar" class="relative z-40 mb-5 transition-all duration-300">
             <div
                 class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200/60 dark:border-gray-800/60 shadow-lg shadow-gray-200/20 dark:shadow-black/20 rounded-3xl p-4 flex flex-row flex-wrap items-center gap-4 justify-between">
 
@@ -125,8 +125,8 @@
                             <div id="source-icon"
                                 class="relative w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-inner flex-shrink-0 overflow-hidden transition-colors duration-500">
                                 <!-- Dynamic Icon Image -->
-                                <img id="dynamic-source-icon" class="no-drag w-full h-full object-cover hidden" draggable="false"
-                                    alt="Source Icon">
+                                <img id="dynamic-source-icon" class="no-drag w-full h-full object-cover hidden"
+                                    draggable="false" alt="Source Icon">
 
                                 <!-- Standard Icon -->
                                 <svg id="icon-standard" class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500"
@@ -207,7 +207,8 @@
 
                         <!-- Source Switcher -->
                         <div class="relative min-w-0" id="source-container">
-                            <button onclick="toggleSource()" id="source-trigger" class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[120px] group">
+                            <button onclick="toggleSource()" id="source-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[120px] group">
                                 <div class="relative h-6 w-full sm:w-28 overflow-hidden text-center">
                                     <div id="source-label-track"
                                         class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
@@ -248,7 +249,9 @@
 
                         <!-- Sort Button -->
                         <div class="relative min-w-0" id="sort-container">
-                            <button onclick="cycleSort()" id="sort-trigger" class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]" title="Sort">
+                            <button onclick="cycleSort()" id="sort-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                title="Sort">
                                 <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
                                     <div id="sort-label-track"
                                         class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
@@ -288,7 +291,9 @@
 
                         <!-- Coexist Toggle -->
                         <div class="relative min-w-0" id="coexist-container">
-                            <button onclick="toggleCoexist()" id="coexist-trigger" class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]" title="Toggle coexist mode">
+                            <button onclick="toggleCoexist()" id="coexist-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                title="Toggle coexist mode">
                                 <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
                                     <div id="coexist-label-track"
                                         class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
@@ -322,7 +327,7 @@
             </div>
         </header>
 
-        <div id="category-bar" class="mb-6">
+        <div id="category-bar" class="mb-5">
             <div
                 class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 rounded-2xl px-3 py-2 shadow-sm">
                 <div class="relative">
@@ -451,8 +456,8 @@
                             </div>
                         </div>
                     </div>
-                <button onclick="closeModal()"
-                    class="flex-shrink-0 w-10 h-10 p-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 text-gray-500 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 active:scale-95 active:bg-white dark:active:bg-white/10 transition-all shadow-sm mt-1 self-start flex items-center justify-center">
+                    <button onclick="closeModal()"
+                        class="flex-shrink-0 w-10 h-10 p-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 text-gray-500 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 active:scale-95 active:bg-white dark:active:bg-white/10 transition-all shadow-sm mt-1 self-start flex items-center justify-center">
                         <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M6 18L18 6M6 6l12 12">
