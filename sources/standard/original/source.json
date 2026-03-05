@@ -812,14 +812,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.1",
-      "versionDate": "2026-02-02T12:06:52Z",
-      "versionDescription": "## What's Changed\r\n* fix/reader-single-pages by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/654\r\n* added option to exclude categories from mass update by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/655\r\n* fix #643 EPUB fails to load when nav.xhtml references missing script (../js/kobo.js)\r\n* feat: update entitlements and plist for file access permissions\r\n* feat: add DNS-over-HTTPS (DoH) support (experimental)\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.0...v0.7.1",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.1/Mangayomi-v0.7.1-ios.ipa",
+      "version": "0.7.2",
+      "versionDate": "2026-03-05T16:10:10Z",
+      "versionDescription": "## What's Changed\r\n* Fix shouldUpdate button in categories view by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/657\r\n* Improve extension service lifecycle, isolate robustness, dedupe lists, and UI/lifecycle cleanups by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/644\r\n* Improve failure message by using itemType.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/661\r\n* Change 'Игрок' to 'Плеер' in Russian localization by @userkilled in https://github.com/kodjodevf/mangayomi/pull/662\r\n* Improve Kitsu login dialog with autofill, input validation by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/664\r\n* [removing history entry removes manga from library #663](https://github.com/kodjodevf/mangayomi/issues/663)\r\n* [Refactor](https://github.com/kodjodevf/mangayomi/commit/1256e608c7599f12be9b4f1ad03d7aa71eed599f)\r\n* [feat: Implement app lock feature with biometric authentication](https://github.com/kodjodevf/mangayomi/commit/f7293802234ee00a78f1132b9ec1463f93b016c3)\r\n* [feat(reader): add navigation layout options and settings for screen behavior](https://github.com/kodjodevf/mangayomi/commit/2f0fc853161c74552bc14f187fb39f683f9eb906)\r\n* [feat(reader): implement bidirectional chapter preloading and enhance memory management](https://github.com/kodjodevf/mangayomi/commit/87028ea8f599204ac3a81d39a3e2784b72b52d9b)\r\n* [feat: Implement upcoming manga calendar feature](https://github.com/kodjodevf/mangayomi/commit/95a55d5f81c5e42075048ec53540b06f1952c496)\r\n\r\n## New Contributors\r\n* @userkilled made their first contribution in https://github.com/kodjodevf/mangayomi/pull/662\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.1...v0.7.2\r\n",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.2/Mangayomi-v0.7.2-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 45081197,
+      "size": 43596384,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -830,6 +830,7 @@
         ],
         "privacy": {
           "NSDocumentUsageDescription": "Mangayomi needs access to your files to create and restore backups.",
+          "NSFaceIDUsageDescription": "Mangayomi needs to authenticate using Face ID.",
           "NSPhotoLibraryUsageDescription": "Mangayomi needs access to your photo library to save and restore backups."
         }
       },
@@ -839,6 +840,15 @@
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
       ],
       "versions": [
+        {
+          "version": "0.7.2",
+          "date": "2026-03-05T16:10:10Z",
+          "localizedDescription": "## What's Changed\r\n* Fix shouldUpdate button in categories view by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/657\r\n* Improve extension service lifecycle, isolate robustness, dedupe lists, and UI/lifecycle cleanups by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/644\r\n* Improve failure message by using itemType.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/661\r\n* Change 'Игрок' to 'Плеер' in Russian localization by @userkilled in https://github.com/kodjodevf/mangayomi/pull/662\r\n* Improve Kitsu login dialog with autofill, input validation by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/664\r\n* [removing history entry removes manga from library #663](https://github.com/kodjodevf/mangayomi/issues/663)\r\n* [Refactor](https://github.com/kodjodevf/mangayomi/commit/1256e608c7599f12be9b4f1ad03d7aa71eed599f)\r\n* [feat: Implement app lock feature with biometric authentication](https://github.com/kodjodevf/mangayomi/commit/f7293802234ee00a78f1132b9ec1463f93b016c3)\r\n* [feat(reader): add navigation layout options and settings for screen behavior](https://github.com/kodjodevf/mangayomi/commit/2f0fc853161c74552bc14f187fb39f683f9eb906)\r\n* [feat(reader): implement bidirectional chapter preloading and enhance memory management](https://github.com/kodjodevf/mangayomi/commit/87028ea8f599204ac3a81d39a3e2784b72b52d9b)\r\n* [feat: Implement upcoming manga calendar feature](https://github.com/kodjodevf/mangayomi/commit/95a55d5f81c5e42075048ec53540b06f1952c496)\r\n\r\n## New Contributors\r\n* @userkilled made their first contribution in https://github.com/kodjodevf/mangayomi/pull/662\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.1...v0.7.2\r\n",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.2/Mangayomi-v0.7.2-ios.ipa",
+          "size": 43596384,
+          "sha256": "b2739bd626a32852e9847cd58f14955d106edc0b1b3f89c47ac077751446ebc7",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "0.7.1",
           "date": "2026-02-02T12:06:52Z",
@@ -850,7 +860,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "ceaba7c34f52ed351d67b138da66f142ebb0e615ac9807d9acb3e1ff32d9cc8d",
+      "sha256": "b2739bd626a32852e9847cd58f14955d106edc0b1b3f89c47ac077751446ebc7",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
