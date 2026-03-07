@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://Aiko3993.github.io/iOS-Sideload-Source/sitemap.xml
