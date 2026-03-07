@@ -401,20 +401,29 @@
       "bundleIdentifier": "com.example.kazumi.coexist",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.0.4",
-      "versionDate": "2026-03-03T02:21:44Z",
-      "versionDescription": "- 修复离线缓存视频播放位置记忆错误的问题 (@Predidit) (#1833)\r\n- 修复 android 平台 vulkan1.1 设备播放视频一段时间后崩溃的问题 (@Predidit) (#1756)\r\n- 修复 android 平台 vulkan1.1 设备超分辨率不生效的问题 (@Predidit)\r\n- 修复 windows 平台自旋锁处理不当导致的性能问题 (@Predidit) (#1779)\r\n- 修复 macos 平台启动时窗体闪烁的问题 (@Zhoucheng133)",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/Kazumi_2.0.4_Coexist.ipa",
+      "version": "2.0.5",
+      "versionDate": "2026-03-07T10:24:46Z",
+      "versionDescription": "- 新增网页验证接管功能 (#1823) (@Predidit)\r\n> [!IMPORTANT]\r\n> 规则API级别从5升级到6，向前兼容",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260307/Kazumi_2.0.5_Coexist.ipa",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 27646804,
+      "size": 27688382,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.5",
+          "date": "2026-03-07T10:24:46Z",
+          "localizedDescription": "- 新增网页验证接管功能 (#1823) (@Predidit)\r\n> [!IMPORTANT]\r\n> 规则API级别从5升级到6，向前兼容",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260307/Kazumi_2.0.5_Coexist.ipa",
+          "size": 27688382,
+          "sha256": "424f7fc71420d4514a269af5f3496e98e59a249c177b9dff9bef277559b90ef3",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.4",
           "date": "2026-03-03T02:21:44Z",
@@ -434,7 +443,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "6c9d49986964521fb41d7b3841141fe7745f35fd56b83f8b2998c9e6091c398b",
+      "sha256": "424f7fc71420d4514a269af5f3496e98e59a249c177b9dff9bef277559b90ef3",
       "category": "other"
     },
     {
