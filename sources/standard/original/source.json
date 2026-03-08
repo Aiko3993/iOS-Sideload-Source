@@ -1295,14 +1295,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.0.0",
-      "versionDate": "2026-02-25T21:24:15Z",
-      "versionDescription": "## What's New in 3.0.0\r\n\r\n> [!WARNING]\r\n> **Known Issue:** This update does not fix the iOS 26.4 issue that most users are currently experiencing. If you are having trouble on that specific version, this update will not resolve them.\r\n\r\n### New Features & Enhancements\r\n* **Interface Rework:** Simplified the UI with iOS 26 in mind and introduced a brand new Tools view. ([#328](https://github.com/StephenDev0/StikDebug/pull/328) by @StephenDev0)\r\n* **Background Support:** Added background audio and location persistence capabilities. ([#328](https://github.com/StephenDev0/StikDebug/pull/328) by @StephenDev0)\r\n* **App Expiry Tab:** Turned the Profiles tab into the new App Expiry tab. ([16f6615](https://github.com/StephenDev0/StikDebug/commit/16f6615e66627d0e4cba905f511db3de0193246d) by @hugeBlack)\r\n\r\n### Under the Hood\r\n* **Massive Codebase Cleanup:** Completed a semi-rewrite, removing approximately 10,000 lines of dead code, unused views, themes, feature flags, and placeholders. ([#328](https://github.com/StephenDev0/StikDebug/pull/328) by @StephenDev0)\r\n* **Improved `idevice` Handling:** Significantly improved the handling of JIT, mounts, profiles, and heartbeats, alongside better script organization and execution flow. ([#328](https://github.com/StephenDev0/StikDebug/pull/328) by @StephenDev0)\r\n* **Repository Improvements:** Updated the README, GitHub templates, and the CI workflow. ([#328](https://github.com/StephenDev0/StikDebug/pull/328) by @StephenDev0)\r\n\r\n### Deprecations & Removals\r\n* **Minitool Removal:** Removed the minitool utility as it is outdated and no longer useful. ([e9d9f35](https://github.com/StephenDev0/StikDebug/commit/e9d9f3578eb5558a18823559b0dabca0b501506d) by @hugeBlack)\r\n\r\n---\r\n**Full Changelog**: [2.3.7...3.0.0](https://github.com/StephenDev0/StikDebug/compare/2.3.7...3.0.0)",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.0.0/StikDebug-3.0.0.ipa",
+      "version": "3.0.1",
+      "versionDate": "2026-03-08T18:56:35Z",
+      "versionDescription": "The update is pretty cool. I’ll update the release notes later.",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.0.1/StikDebug-3.0.1.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 10456365,
+      "size": 10461243,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1314,7 +1314,7 @@
       "screenshotURLs": [],
       "versions": [],
       "category": "other",
-      "sha256": "5cc099a7111c5e4d06f6866e068fe55cbdd8c83798cf102b4fd04a03abd359f9"
+      "sha256": "8e901f7f99e5887118a60e73dd5815c0be63e2550a160c0b3ff547e7d9f09d8c"
     },
     {
       "name": "UTM",
