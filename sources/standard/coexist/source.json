@@ -1425,14 +1425,14 @@
       "bundleIdentifier": "com.github.wgh136.venera.coexist",
       "developerName": "venera-app",
       "subtitle": "A comic reader that supports reading local and network comics",
-      "version": "1.6.2",
-      "versionDate": "2026-01-01T08:55:21Z",
-      "versionDescription": "## What's Changed\r\n* Set status bar transparent when startup. by @lings03 in https://github.com/venera-app/venera/pull/664\r\n* Jump to last page when continuously flipping to previous chapter.  by @lings03 in https://github.com/venera-app/venera/pull/665\r\n* Show chapter comments at end of chapter. by @lings03 in https://github.com/venera-app/venera/pull/666\r\n* Save file name: {comic}_EP{chapter}_P{page}.{ext} to avoid conflict. by @lings03 in https://github.com/venera-app/venera/pull/669\r\n* Enable to refresh history info. by @lings03 in https://github.com/venera-app/venera/pull/722\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/651\r\n* Update comic source URL to use jsdelivr CDN for improved reliability by @wgh136 in https://github.com/venera-app/venera/pull/734\r\n* Improve layout of buttons in reader by @wgh136 in https://github.com/venera-app/venera/pull/735\r\n\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.1...v1.6.2",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260101/Venera_1.6.2_Coexist.ipa",
+      "version": "1.6.3",
+      "versionDate": "2026-03-08T10:19:43Z",
+      "versionDescription": "## What's Changed\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/736\r\n* deps: flutter 3.41.4 and upgrade dependencies by @ynyxx in https://github.com/venera-app/venera/pull/809\r\n* Add downloaded comic restore in import comic by @bustesoul in https://github.com/venera-app/venera/pull/765\r\n* chore: update Android Gradle plugin to version 8.12.3 and upgrade Gra… by @ynyxx in https://github.com/venera-app/venera/pull/810\r\n* Fix customImageProcessing not triggering due to async keyword mismatch by @UCPr251 in https://github.com/venera-app/venera/pull/763\r\n* Add device-specific settings by @Arkalin in https://github.com/venera-app/venera/pull/808\r\n* Fix: reader swipe gesture causing  back navigation when image is loading by @boa-z in https://github.com/venera-app/venera/pull/764\r\n* Enhance image resizing logic. Close #800 by @ynyxx in https://github.com/venera-app/venera/pull/812\r\n\r\n## New Contributors\r\n* @UCPr251 made their first contribution in https://github.com/venera-app/venera/pull/763\r\n* @Arkalin made their first contribution in https://github.com/venera-app/venera/pull/808\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.2...v1.6.3",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260308/Venera_1.6.3_Coexist.ipa",
       "localizedDescription": "A comic reader that supports reading local and network comics",
       "iconURL": "https://raw.githubusercontent.com/venera-app/venera/refs/heads/master/assets/app_icon.png",
       "tintColor": "#0784FC",
-      "size": 15146890,
+      "size": 15422324,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1442,6 +1442,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.6.3",
+          "date": "2026-03-08T10:19:43Z",
+          "localizedDescription": "## What's Changed\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/736\r\n* deps: flutter 3.41.4 and upgrade dependencies by @ynyxx in https://github.com/venera-app/venera/pull/809\r\n* Add downloaded comic restore in import comic by @bustesoul in https://github.com/venera-app/venera/pull/765\r\n* chore: update Android Gradle plugin to version 8.12.3 and upgrade Gra… by @ynyxx in https://github.com/venera-app/venera/pull/810\r\n* Fix customImageProcessing not triggering due to async keyword mismatch by @UCPr251 in https://github.com/venera-app/venera/pull/763\r\n* Add device-specific settings by @Arkalin in https://github.com/venera-app/venera/pull/808\r\n* Fix: reader swipe gesture causing  back navigation when image is loading by @boa-z in https://github.com/venera-app/venera/pull/764\r\n* Enhance image resizing logic. Close #800 by @ynyxx in https://github.com/venera-app/venera/pull/812\r\n\r\n## New Contributors\r\n* @UCPr251 made their first contribution in https://github.com/venera-app/venera/pull/763\r\n* @Arkalin made their first contribution in https://github.com/venera-app/venera/pull/808\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.2...v1.6.3",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260308/Venera_1.6.3_Coexist.ipa",
+          "size": 15422324,
+          "sha256": "5d6071322518571b9e2e348b8a8785173872d23f1cfdedca687b31ff39604745",
+          "minOSVersion": "14.0"
+        },
         {
           "version": "1.6.2",
           "date": "2026-01-01T08:55:21Z",
@@ -1453,7 +1462,7 @@
         }
       ],
       "category": "utilities",
-      "sha256": "dd8d968486ccbb09d570660487bcefa91424a82d938be4f88a11e8ab378cd39b"
+      "sha256": "5d6071322518571b9e2e348b8a8785173872d23f1cfdedca687b31ff39604745"
     }
   ],
   "news": [],
