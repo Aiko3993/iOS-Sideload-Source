@@ -972,14 +972,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260310.9.US.runner.a10c453",
-      "versionDate": "2026-03-10T11:33:35Z",
-      "versionDescription": "Nightly build from commit a10c4534d9a4546ede460fa08c1a3b897dc56d47",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260302/ProjectNyxian_Nyxian_nyxian_313d4f5.ipa",
+      "version": "0.9.0.20260310.13.US.runner.768ef64",
+      "versionDate": "2026-03-10T11:57:15Z",
+      "versionDescription": "Nightly build from commit 768ef645c77c1cd261477bc59f3743fb4d6eb2fd",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/ProjectNyxian_Nyxian_nyxian_768ef64.ipa",
       "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88332116,
+      "size": 88335182,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1037,6 +1037,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.0.20260310.13.US.runner.768ef64",
+          "date": "2026-03-10T11:57:15Z",
+          "localizedDescription": "Nightly build from commit 768ef645c77c1cd261477bc59f3743fb4d6eb2fd",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/ProjectNyxian_Nyxian_nyxian_768ef64.ipa",
+          "size": 88335182,
+          "sha256": "3ef7813298e5b9877c3903e7102886998c3401bc0e1734a724ffdb0c39988f26",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "0.9.0.20260310.9.US.runner.a10c453",
           "date": "2026-03-10T11:33:35Z",
           "localizedDescription": "Nightly build from commit a10c4534d9a4546ede460fa08c1a3b897dc56d47",
@@ -1076,7 +1085,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "31c27b160a611640c64cfd0c5942639a3a275e05995e26d75b80b9582c450a88"
+      "sha256": "3ef7813298e5b9877c3903e7102886998c3401bc0e1734a724ffdb0c39988f26"
     },
     {
       "name": "PiliPlus",
@@ -1174,14 +1183,14 @@
       "bundleIdentifier": "org.ppsspp.ppsspp",
       "developerName": "hrydgard",
       "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
-      "version": "1.20.1",
-      "versionDate": "2026-03-03T15:09:20Z",
+      "version": "1.20.2",
+      "versionDate": "2026-03-10T13:50:36Z",
       "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.1/PPSSPP-iOS-v1.20.1.ipa",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.2/PPSSPP-iOS-v1.20.2.ipa",
       "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
       "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
       "tintColor": "#2D4553",
-      "size": 30928281,
+      "size": 30962097,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -1206,6 +1215,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.20.2",
+          "date": "2026-03-10T13:50:36Z",
+          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.2/PPSSPP-iOS-v1.20.2.ipa",
+          "size": 30962097,
+          "sha256": "b350842b49e8ed094f9da66bf12422e93521434488151308ffcc659473af62f5",
+          "minOSVersion": "11.0"
+        },
+        {
           "version": "1.20.1",
           "date": "2026-03-03T15:09:20Z",
           "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
@@ -1215,7 +1233,7 @@
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "69d63c7063f44ee7f33e17825b50cca7294945ac32a1ee1fee2b92f6fd5f788d",
+      "sha256": "b350842b49e8ed094f9da66bf12422e93521434488151308ffcc659473af62f5",
       "category": "other"
     },
     {
