@@ -173,14 +173,14 @@
       "bundleIdentifier": "com.christianselig.Apollo",
       "developerName": "Balackburn",
       "subtitle": "The award-winning Reddit app",
-      "version": "1.15.11_2.0.0",
-      "versionDate": "2026-03-08T06:50:55Z",
-      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.0.0`\n\n## Release Notes\n🎉 ***Massive*** update that enables Ultra features like saved categories, new app icons and Pixel Pals! This also brings new features like recently read posts and fixes for some longstanding Apollo bugs.\r\n\r\nThe Custom API settings view has also been redesigned and is now accessible directly from Settings.\r\n\r\n> [!NOTE]\r\n> Ultra features that rely on push notifications **still do not work**, and are unlikely to ever be supported.\r\n\r\n| | | |\r\n|:--:|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/c7d8cae4-93d8-41e6-89d7-b35d264b2ceb\" alt=\"Settings\" width=\"200\"> | <img src=\"https://github.com/user-attachments/assets/c70ee993-dc15-4986-86e4-ea75f7f48324\" alt=\"Custom API Settings\" width=\"200\"> | <img src=\"https://github.com/user-attachments/assets/e1769f1f-28d7-4df0-b691-a7c0ab31ef87\" alt=\"Recently Read\" width=\"200\"> |\r\n\r\n### Saved Categories\r\n- To enable saved categories, set \"Allow Saved Categories\" in Settings > General > Other\r\n- New \"Saved Categories\" section in Settings tab to edit and delete saved categories\r\n- Fixed: Saved category names are now consistently sorted in menus\r\n- **Note:** Saved categories are global, while saved items are tied to individual accounts\r\n\r\n### Recently Read\r\n- New \"Recently Read\" button in Profile tab to view and clear all recently read posts\r\n- \"Disable Marking Posts Read\" **must be unchecked** in Settings > General > Mark Read / Hiding Posts\r\n- **Note:** Recently read is global (not account-specific)\r\n\r\n### Media Playback\r\n- New \"Unmute Videos in Comments\" setting (Settings > General > Custom API)\r\n    - **Default**: Default Apollo behaviour\r\n    - **Remember from Fullscreen Player**: If you unmute a video in the fullscreen player, it stays unmuted when you navigate into comments\r\n    - **Always**: Header videos are always automatically unmuted after opening comments \r\n- New \"Preferred GIF Fallback Format\" setting (Settings > General > Custom API)\r\n    - Choose between GIF or MP4 when Apollo fetches certain animated images from Reddit API\r\n    - Try setting to \"GIF\" if you find certain animated images get stuck with loading spinner\r\n\r\n### Other Issues Fixed\r\n- Interacting with Ultra features and settings no longer causes app to crash\r\n    - \"New Comments Highlightifier\" can be toggled normally in Settings > General, and is removed from Custom API settings\r\n- Fix multi-image Imgur uploads failing the first time\r\n- Fix share links opening in webview on iOS 26\r\n- Fix album image count label placement on newer iPhone models\r\n- Fix \"Processing img\" in self-posts\r\n- Liquid Glass: fix clipping when collapsing long comment chains\r\n- Add support for YouTube Shorts links\r\n- Various video playback fixes and improvements\r\n\r\n### Pixel Pals\r\n- Pixel Pals are now available on newer iPhone models\r\n- Unlock hidden \"Artificial Superintelligence\" Pixel Pal\r\n\r\n### App Icons & Themes\r\n- Unlock hidden \"Chumbus\" theme\r\n- Unlock all app icons, including:\r\n    - Community Icon Pack\r\n    - SPCA Animals Pack\r\n    - Ultra Icons\r\n    - <details>\r\n      <summary>22 Sekrit Icons (click to expand)</summary>\r\n\r\n        - Beans (Black Friday 2022)\r\n        - Sloth-kun\r\n        - iJustine / Wrapping Paper\r\n        - America!\r\n        - Super America\r\n        - UK / Hugh Laurie\r\n        - Yo. Jonathan Here. (TLD Today)\r\n        - ApolloBook Pro\r\n        - Wallpapers\r\n        - ATP\r\n        - Phil Schiller\r\n        - Canada D'Eh\r\n        - Ukraine\r\n        - Ernest\r\n        - Sus (Among Us)\r\n        - Dave2D\r\n        - MKBHD (Keith)\r\n        - Peachy (Neon Peach)\r\n        - Linus Tech Tips\r\n        - Andru Edwards\r\n        - Everything Apple Pro (Icons Drop Test) - does not show up in App Icons. To set, go to **Settings > About**, shake device, and input `everythingapplepro`.\r\n        - Rene Ritchie\r\n        - Snazzy Labs\r\n      </details>\r\n\r\n> [!NOTE]\r\n> Most of the credit goes to GitHub Copilot and Claude Code, which did most of the investigation and code generation. Models used: Claude Opus 4.6, OpenAI GPT-5.3-Codex and GPT-5.4.\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_2.0.0/Apollo-1.15.11_ImprovedCustomApi-2.0.0.ipa",
+      "version": "1.15.11_2.1.0",
+      "versionDate": "2026-03-13T06:59:17Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.1.0`\n\n## Release Notes\n- Add Steam store deep linking support (thanks @wdeezy for the contribution!) (#110)\r\n    - To enable, toggle \"Open Steam Links in App\" in Custom API > General\r\n- Update default recently read posts limit to be unlimited\r\n- Fix share links opening in different Apollo app (#113)\r\n- Fix Pixel Pals making dynamic island taller than expected on newer iPhone models (#111)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_2.1.0/Apollo-1.15.11_ImprovedCustomApi-2.1.0.ipa",
       "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp",
       "tintColor": "#4453f4",
-      "size": 114784907,
+      "size": 114788836,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -213,6 +213,15 @@
       ],
       "versions": [
         {
+          "version": "1.15.11_2.1.0",
+          "date": "2026-03-13T06:59:17Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.1.0`\n\n## Release Notes\n- Add Steam store deep linking support (thanks @wdeezy for the contribution!) (#110)\r\n    - To enable, toggle \"Open Steam Links in App\" in Custom API > General\r\n- Update default recently read posts limit to be unlimited\r\n- Fix share links opening in different Apollo app (#113)\r\n- Fix Pixel Pals making dynamic island taller than expected on newer iPhone models (#111)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_2.1.0/Apollo-1.15.11_ImprovedCustomApi-2.1.0.ipa",
+          "size": 114788836,
+          "sha256": "cba63d8631411e5ad78aa3b2df94a209a6e16bd7d17e4af923a5ceab694d626c",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "1.15.11_2.0.0",
           "date": "2026-03-08T06:50:55Z",
           "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.0.0`\n\n## Release Notes\n🎉 ***Massive*** update that enables Ultra features like saved categories, new app icons and Pixel Pals! This also brings new features like recently read posts and fixes for some longstanding Apollo bugs.\r\n\r\nThe Custom API settings view has also been redesigned and is now accessible directly from Settings.\r\n\r\n> [!NOTE]\r\n> Ultra features that rely on push notifications **still do not work**, and are unlikely to ever be supported.\r\n\r\n| | | |\r\n|:--:|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/c7d8cae4-93d8-41e6-89d7-b35d264b2ceb\" alt=\"Settings\" width=\"200\"> | <img src=\"https://github.com/user-attachments/assets/c70ee993-dc15-4986-86e4-ea75f7f48324\" alt=\"Custom API Settings\" width=\"200\"> | <img src=\"https://github.com/user-attachments/assets/e1769f1f-28d7-4df0-b691-a7c0ab31ef87\" alt=\"Recently Read\" width=\"200\"> |\r\n\r\n### Saved Categories\r\n- To enable saved categories, set \"Allow Saved Categories\" in Settings > General > Other\r\n- New \"Saved Categories\" section in Settings tab to edit and delete saved categories\r\n- Fixed: Saved category names are now consistently sorted in menus\r\n- **Note:** Saved categories are global, while saved items are tied to individual accounts\r\n\r\n### Recently Read\r\n- New \"Recently Read\" button in Profile tab to view and clear all recently read posts\r\n- \"Disable Marking Posts Read\" **must be unchecked** in Settings > General > Mark Read / Hiding Posts\r\n- **Note:** Recently read is global (not account-specific)\r\n\r\n### Media Playback\r\n- New \"Unmute Videos in Comments\" setting (Settings > General > Custom API)\r\n    - **Default**: Default Apollo behaviour\r\n    - **Remember from Fullscreen Player**: If you unmute a video in the fullscreen player, it stays unmuted when you navigate into comments\r\n    - **Always**: Header videos are always automatically unmuted after opening comments \r\n- New \"Preferred GIF Fallback Format\" setting (Settings > General > Custom API)\r\n    - Choose between GIF or MP4 when Apollo fetches certain animated images from Reddit API\r\n    - Try setting to \"GIF\" if you find certain animated images get stuck with loading spinner\r\n\r\n### Other Issues Fixed\r\n- Interacting with Ultra features and settings no longer causes app to crash\r\n    - \"New Comments Highlightifier\" can be toggled normally in Settings > General, and is removed from Custom API settings\r\n- Fix multi-image Imgur uploads failing the first time\r\n- Fix share links opening in webview on iOS 26\r\n- Fix album image count label placement on newer iPhone models\r\n- Fix \"Processing img\" in self-posts\r\n- Liquid Glass: fix clipping when collapsing long comment chains\r\n- Add support for YouTube Shorts links\r\n- Various video playback fixes and improvements\r\n\r\n### Pixel Pals\r\n- Pixel Pals are now available on newer iPhone models\r\n- Unlock hidden \"Artificial Superintelligence\" Pixel Pal\r\n\r\n### App Icons & Themes\r\n- Unlock hidden \"Chumbus\" theme\r\n- Unlock all app icons, including:\r\n    - Community Icon Pack\r\n    - SPCA Animals Pack\r\n    - Ultra Icons\r\n    - <details>\r\n      <summary>22 Sekrit Icons (click to expand)</summary>\r\n\r\n        - Beans (Black Friday 2022)\r\n        - Sloth-kun\r\n        - iJustine / Wrapping Paper\r\n        - America!\r\n        - Super America\r\n        - UK / Hugh Laurie\r\n        - Yo. Jonathan Here. (TLD Today)\r\n        - ApolloBook Pro\r\n        - Wallpapers\r\n        - ATP\r\n        - Phil Schiller\r\n        - Canada D'Eh\r\n        - Ukraine\r\n        - Ernest\r\n        - Sus (Among Us)\r\n        - Dave2D\r\n        - MKBHD (Keith)\r\n        - Peachy (Neon Peach)\r\n        - Linus Tech Tips\r\n        - Andru Edwards\r\n        - Everything Apple Pro (Icons Drop Test) - does not show up in App Icons. To set, go to **Settings > About**, shake device, and input `everythingapplepro`.\r\n        - Rene Ritchie\r\n        - Snazzy Labs\r\n      </details>\r\n\r\n> [!NOTE]\r\n> Most of the credit goes to GitHub Copilot and Claude Code, which did most of the investigation and code generation. Models used: Claude Opus 4.6, OpenAI GPT-5.3-Codex and GPT-5.4.\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
@@ -242,7 +251,7 @@
         "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
       ],
       "category": "social",
-      "sha256": "59a67cb8906e5edd8ba2134374e8c06e4168abd698fc62d1cc3fc0056dc93fc7"
+      "sha256": "cba63d8631411e5ad78aa3b2df94a209a6e16bd7d17e4af923a5ceab694d626c"
     },
     {
       "name": "Asspp",
@@ -972,14 +981,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260312.28.US.runner.ce1933e",
-      "versionDate": "2026-03-12T20:55:53Z",
-      "versionDescription": "Nightly build from commit ce1933e040384c4690ef68c6cb89996fffab7011",
+      "version": "0.9.0.20260313.7.US.runner.97be455",
+      "versionDate": "2026-03-13T06:02:36Z",
+      "versionDescription": "Nightly build from commit 97be455a449f9becf1d0ffd194fa8b411375a724",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260312/ProjectNyxian_Nyxian_nyxian_ce1933e.ipa",
       "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88315350,
+      "size": 88310058,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1036,6 +1045,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260313.7.US.runner.97be455",
+          "date": "2026-03-13T06:02:36Z",
+          "localizedDescription": "Nightly build from commit 97be455a449f9becf1d0ffd194fa8b411375a724",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260312/ProjectNyxian_Nyxian_nyxian_ce1933e.ipa",
+          "size": 88310058,
+          "sha256": "5a1c0573eed1aa53d1d9dd264f897b90db665e0bedbc074cf02cad06a853b922",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260312.28.US.runner.ce1933e",
           "date": "2026-03-12T20:55:53Z",
@@ -1157,7 +1175,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "bfed4adf9430d3863a18bb46873264b0a04478148396340973d35cf82d053114"
+      "sha256": "5a1c0573eed1aa53d1d9dd264f897b90db665e0bedbc074cf02cad06a853b922"
     },
     {
       "name": "PiliPlus",
