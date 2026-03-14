@@ -1210,14 +1210,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.0.1",
-      "versionDate": "2026-03-04T04:07:16Z",
-      "versionDescription": "修复部分动态富文本显示\r\n修复触摸板调节音量没有检查`滑动调节音量`属性\r\n修复 bug\r\n\r\n## 2.0.0\r\n听视频支持定时关闭\r\n听视频支持 Sponsor Block\r\nmacOS 响应 CMD+Q #1834 by @cnctem\r\nLinux 支持设置使用SSD #1839 by @just-a-pony\r\n添加播放顺序设置 #1830 by @My-Responsitories\r\n私信视频消息支持显示 UP 主赠言 #1849 by @barmxds6ch\r\n\r\n优化页面\r\n优化收起顶/底栏\r\n优化取消下拉刷新\r\n优化分享视频链接 #1835 co-by @gujial\r\n优化 #1829 #1831 #1832 #1840 #1846 #1854 by @My-Responsitories\r\n\r\n重构播放组件 #1848 by @My-Responsitories\r\n重构查看大图、长图 by @bggRGjQaUbCoE @My-Responsitories\r\n其他\r\n\r\n修复冷启动无法处理 URL Scheme \r\n修复校验 loudnorm 参数 #1838 by @Starfallan\r\n\r\nCI 调整 #1852 by @nlsdt \r\n其他",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260304/PiliPlus_2.0.0.1_Coexist.ipa",
+      "version": "2.0.1",
+      "versionDate": "2026-03-14T09:59:40Z",
+      "versionDescription": "页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/PiliPlus_2.0.1_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24957377,
+      "size": 24986907,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1228,6 +1228,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.1",
+          "date": "2026-03-14T09:59:40Z",
+          "localizedDescription": "页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/PiliPlus_2.0.1_Coexist.ipa",
+          "size": 24986907,
+          "sha256": "f03c41dc41bd0deafa997350252162b83dd41e0d77cbf3e84528090a9f6c5ba6",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.0.1",
           "date": "2026-03-04T04:07:16Z",
@@ -1256,7 +1265,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "183841c1d458bc382093c0be8143a3b0ef94164746f5decc8eed973e53730a6e",
+      "sha256": "f03c41dc41bd0deafa997350252162b83dd41e0d77cbf3e84528090a9f6c5ba6",
       "category": "other"
     },
     {
