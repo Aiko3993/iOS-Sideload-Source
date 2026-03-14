@@ -981,14 +981,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260314.47.US.runner.028451f",
-      "versionDate": "2026-03-14T15:37:49Z",
-      "versionDescription": "Nightly build from commit 028451f6595dda7f6e60286ea553691098782d40",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/Nyxian_Nightly_0.9.0.20260314.47.US.runner.028451f_Coexist.ipa",
+      "version": "0.9.0.20260314.72.US.runner.edeb207",
+      "versionDate": "2026-03-14T17:25:39Z",
+      "versionDescription": "Nightly build from commit edeb2074817954aa61516f4ff4c66e227b81c2e6",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/Nyxian_Nightly_0.9.0.20260314.72.US.runner.edeb207_Coexist.ipa",
       "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88540517,
+      "size": 88539079,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1045,6 +1045,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260314.72.US.runner.edeb207",
+          "date": "2026-03-14T17:25:39Z",
+          "localizedDescription": "Nightly build from commit edeb2074817954aa61516f4ff4c66e227b81c2e6",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/Nyxian_Nightly_0.9.0.20260314.72.US.runner.edeb207_Coexist.ipa",
+          "size": 88539079,
+          "sha256": "7b57b76450d0e685ee9cccc77af3276faae8e1c3f289f8976b1e2fbf7601b423",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260314.47.US.runner.028451f",
           "date": "2026-03-14T15:37:49Z",
@@ -1238,7 +1247,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "a140497fa38646461c294857fd5836be2edd3fd91b1dfdacbb71323664e4a1f1"
+      "sha256": "7b57b76450d0e685ee9cccc77af3276faae8e1c3f289f8976b1e2fbf7601b423"
     },
     {
       "name": "PiliPlus",
