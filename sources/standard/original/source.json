@@ -1166,14 +1166,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "developerName": "Eslzzyl",
       "subtitle": "一个 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.12.0",
-      "versionDate": "2026-03-14T03:06:13Z",
-      "versionDescription": "由于用户凭据存储位置变更，更新到此版本后需要重新登录一次，全新安装不受影响。\r\n\r\n## 新功能\r\n\r\n1. 搜索增强（ @ButaiKirin ）\r\n    - 伪热门排序: 新增伪人气搜索排序功能\r\n    - AI 过滤器: 添加搜索 AI 过滤器选项\r\n    - 默认搜索排序: 支持设置默认搜索排序选项\r\n\r\n2. 背景预览模糊（ @ButaiKirin ）\r\n    - 背景预览模糊: 添加本地化背景预览模糊选项\r\n\r\n3. 数据同步\r\n    - WebDAV 同步: 初步实现 WebDAV 同步功能（尚未优化，暂时不建议使用）\r\n\r\n## 优化和改进\r\n\r\n- 图片缓存复用: 下载图片时复用图片缓存\r\n- 搜索响应性: 改进伪人气搜索的响应速度\r\n- 钥匙串存储: 将 refresh_token 和 PHPSESSID 移动到钥匙串中存储\r\n- 账号隔离: 修复搜索历史未按照账号隔离的问题\r\n- 修复历史插画详情导航问题\r\n",
-      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.0/Pixiv-SwiftUI.ipa",
+      "version": "0.12.1",
+      "versionDate": "2026-03-15T13:29:23Z",
+      "versionDescription": "这个版本仅涉及 iPad 上的一个布局修复，iPhone 和 Mac 用户可以跳过。\r\n\r\n## bug 修复\r\n\r\n修复了 iPad 上旋转屏幕导致的插画瀑布流超宽问题",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.1/Pixiv-SwiftUI.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7253168,
+      "size": 7251046,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1182,6 +1182,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.12.1",
+          "date": "2026-03-15T13:29:23Z",
+          "localizedDescription": "这个版本仅涉及 iPad 上的一个布局修复，iPhone 和 Mac 用户可以跳过。\r\n\r\n## bug 修复\r\n\r\n修复了 iPad 上旋转屏幕导致的插画瀑布流超宽问题",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.1/Pixiv-SwiftUI.ipa",
+          "size": 7251046,
+          "sha256": "262b533903b9599976fade60f8d37d438617b83c3e03816abb011127f152b313",
+          "minOSVersion": "17.0"
+        },
         {
           "version": "0.12.0",
           "date": "2026-03-14T03:06:13Z",
@@ -1192,7 +1201,7 @@
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "6a24c2a2ea4d9394c42dd78aed9165279ba25db7bab6fce492b7bfdb03981307",
+      "sha256": "262b533903b9599976fade60f8d37d438617b83c3e03816abb011127f152b313",
       "category": "other"
     },
     {
