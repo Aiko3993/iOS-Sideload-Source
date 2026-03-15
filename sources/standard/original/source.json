@@ -986,7 +986,7 @@
       "versionDescription": "Nightly build from commit edeb2074817954aa61516f4ff4c66e227b81c2e6",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_edeb207.ipa",
       "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
-      "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
+      "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
       "size": 88311328,
       "appPermissions": {
@@ -1052,177 +1052,6 @@
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_edeb207.ipa",
           "size": 88311328,
           "sha256": "0fddd444eb10960f933fbd2b4e4f1cffd08b3ac9030d5803617db4c358d6f6c6",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.47.US.runner.028451f",
-          "date": "2026-03-14T15:37:49Z",
-          "localizedDescription": "Nightly build from commit 028451f6595dda7f6e60286ea553691098782d40",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_028451f.ipa",
-          "size": 88313147,
-          "sha256": "b4a46c9c050609b994fc7db1a2cb2dcc100345bd5ff8391d83e13171aa4a854a",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.40.US.runner.c878fbf",
-          "date": "2026-03-14T15:15:36Z",
-          "localizedDescription": "Nightly build from commit c878fbfaa0d7f85b171dc261d744c7f34168016c",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_c878fbf.ipa",
-          "size": 88313644,
-          "sha256": "63d97de13c37fcbe31dd8ae3b38e5ebb3715c9b79003325549cb22ed8c3dc686",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.28.US.runner.cae2fcc",
-          "date": "2026-03-14T14:29:27Z",
-          "localizedDescription": "Nightly build from commit cae2fcc9b8cce54c5b74d719c20167a25e0011e5",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_cae2fcc.ipa",
-          "size": 88310550,
-          "sha256": "82bc8d750ed9417a4d4cb3eb5411cb68b6508162372510df0bee64704fd41be8",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.18.US.runner.c3a2d78",
-          "date": "2026-03-14T13:26:44Z",
-          "localizedDescription": "Nightly build from commit c3a2d78b1b48df5bb0f798bc79bbba065b0af85e",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_c3a2d78.ipa",
-          "size": 88309876,
-          "sha256": "f0cb7a5b5396af43804f6e43f302182cd511e0f5b2a3bcdecd16aa33b0401eff",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.5.US.runner.0ec01ec",
-          "date": "2026-03-14T08:13:11Z",
-          "localizedDescription": "Nightly build from commit 0ec01ec73c233f431dfc3a49917b3268915fb110",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/ProjectNyxian_Nyxian_nyxian_0ec01ec.ipa",
-          "size": 88311223,
-          "sha256": "4fbeb2fcf5e21ca18f44ba8c611f08a4e0378f2984e4f6a44d88507dc630dd60",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260314.2.US.runner.d1c1848",
-          "date": "2026-03-14T07:32:10Z",
-          "localizedDescription": "Nightly build from commit d1c1848a7431a9c28d586345b0ddb96fc431ee8e",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260313/ProjectNyxian_Nyxian_nyxian_82c384a.ipa",
-          "size": 88312310,
-          "sha256": "001b10e39d7bb4b33884eec7514a7ead1e905d424e37b949cd0fedc5f05eccd2",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260313.16.US.runner.82c384a",
-          "date": "2026-03-13T07:01:55Z",
-          "localizedDescription": "Nightly build from commit 82c384a435635abc214dc3e8eb16603e6f51cc3c",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260313/ProjectNyxian_Nyxian_nyxian_82c384a.ipa",
-          "size": 88309563,
-          "sha256": "ca695b7fa2faf250ec5a8238cc2eae670751c39f4da911f13b92a1c7d4f009ed",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260313.7.US.runner.97be455",
-          "date": "2026-03-13T06:02:36Z",
-          "localizedDescription": "Nightly build from commit 97be455a449f9becf1d0ffd194fa8b411375a724",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260312/ProjectNyxian_Nyxian_nyxian_ce1933e.ipa",
-          "size": 88310058,
-          "sha256": "5a1c0573eed1aa53d1d9dd264f897b90db665e0bedbc074cf02cad06a853b922",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260312.28.US.runner.ce1933e",
-          "date": "2026-03-12T20:55:53Z",
-          "localizedDescription": "Nightly build from commit ce1933e040384c4690ef68c6cb89996fffab7011",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260312/ProjectNyxian_Nyxian_nyxian_ce1933e.ipa",
-          "size": 88315350,
-          "sha256": "bfed4adf9430d3863a18bb46873264b0a04478148396340973d35cf82d053114",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260312.25.US.runner.aaf5c50",
-          "date": "2026-03-12T20:01:44Z",
-          "localizedDescription": "Nightly build from commit aaf5c5087b485fb6876513e9ac5a03de2772f9f3",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260312/ProjectNyxian_Nyxian_nyxian_aaf5c50.ipa",
-          "size": 88316263,
-          "sha256": "54c7ec45d311893960004b39e3d1581f22b7dff3038f32784d5d5e16cde604ab",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260312.16.US.runner.fbfab20",
-          "date": "2026-03-12T19:13:18Z",
-          "localizedDescription": "Nightly build from commit fbfab206b306827e4fb51f2a1e0b8719a41bfe44",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260311/ProjectNyxian_Nyxian_nyxian_b334df1.ipa",
-          "size": 88312245,
-          "sha256": "2deda19b344eef4412358e77d234964dd5c2033ecc0b1bf8b1951bf20652fb01",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260311.43.US.runner.b334df1",
-          "date": "2026-03-11T14:27:57Z",
-          "localizedDescription": "Nightly build from commit b334df1d5b816e4ac0c4c381c44ee505a35d57bc",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260311/ProjectNyxian_Nyxian_nyxian_b334df1.ipa",
-          "size": 88318707,
-          "sha256": "e5a0c18b0f6d8007fdc0002afb56475ec18b2abc465e8a0c3744192b970c822c",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260311.36.US.runner.2822f87",
-          "date": "2026-03-11T12:55:30Z",
-          "localizedDescription": "Nightly build from commit 2822f87089830ff7dea878e1df5c659381596e41",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260311/ProjectNyxian_Nyxian_nyxian_2822f87.ipa",
-          "size": 88316410,
-          "sha256": "77e9efd74d22e024da76fceb0352c713c5bb507eaf293ba390ebb78c0cc31cde",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260311.24.US.runner.8d21b4c",
-          "date": "2026-03-11T11:24:34Z",
-          "localizedDescription": "Nightly build from commit 8d21b4c5eec798bd903260506b54cd3fea18ffc6",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260311/ProjectNyxian_Nyxian_nyxian_8d21b4c.ipa",
-          "size": 88320020,
-          "sha256": "16560c531be735f97399574ab9ce737db52b02647a10b2875e04523fcd789506",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260311.7.US.runner.228b58f",
-          "date": "2026-03-11T01:42:21Z",
-          "localizedDescription": "Nightly build from commit 228b58fa7fa130ceca434ba732ca513af889947e",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/ProjectNyxian_Nyxian_nyxian_3dc3fad.ipa",
-          "size": 88334934,
-          "sha256": "fc71e8bcb980b48e4582068c34c26cd7ff1c2b93aa72bbe1a023ec3711dc01f1",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260310.16.US.runner.3dc3fad",
-          "date": "2026-03-10T14:29:01Z",
-          "localizedDescription": "Nightly build from commit 3dc3fad1a9bade032c767e97acf484c4e3ce2dce",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/ProjectNyxian_Nyxian_nyxian_3dc3fad.ipa",
-          "size": 88330043,
-          "sha256": "8de9f5fa7680ad33ddc839e8b557a41aa062e0a2a20e0aa9caa9dc9ba99d4538",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260310.13.US.runner.768ef64",
-          "date": "2026-03-10T11:57:15Z",
-          "localizedDescription": "Nightly build from commit 768ef645c77c1cd261477bc59f3743fb4d6eb2fd",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/ProjectNyxian_Nyxian_nyxian_768ef64.ipa",
-          "size": 88335182,
-          "sha256": "3ef7813298e5b9877c3903e7102886998c3401bc0e1734a724ffdb0c39988f26",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260310.9.US.runner.a10c453",
-          "date": "2026-03-10T11:33:35Z",
-          "localizedDescription": "Nightly build from commit a10c4534d9a4546ede460fa08c1a3b897dc56d47",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260302/ProjectNyxian_Nyxian_nyxian_313d4f5.ipa",
-          "size": 88332116,
-          "sha256": "31c27b160a611640c64cfd0c5942639a3a275e05995e26d75b80b9582c450a88",
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "0.9.0.20260302.7.US.runner.313d4f5",
-          "date": "2026-03-02T03:33:13Z",
-          "localizedDescription": "Nightly build from commit 313d4f58991a0330232099429c045d25d1dbf477",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260302/ProjectNyxian_Nyxian_nyxian_313d4f5.ipa",
-          "size": 88339600,
-          "sha256": "82541c9c5836fea3f6af257872bd82978997c33c6f12ae9cccb3d8620a282aef",
           "minOSVersion": "16.0"
         }
       ],
@@ -1311,6 +1140,41 @@
         }
       ],
       "sha256": "de8584ae302a53eace00ec611e4406d11679fcc122adada805e32f82e4050a4a",
+      "category": "other"
+    },
+    {
+      "name": "Pixiv-SwiftUI",
+      "githubRepo": "Eslzzyl/Pixiv-SwiftUI",
+      "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
+      "developerName": "Eslzzyl",
+      "subtitle": "一个 Pixiv 客户端，支持 iOS/iPadOS/macOS",
+      "version": "0.12.0",
+      "versionDate": "2026-03-14T03:06:13Z",
+      "versionDescription": "由于用户凭据存储位置变更，更新到此版本后需要重新登录一次，全新安装不受影响。\r\n\r\n## 新功能\r\n\r\n1. 搜索增强（ @ButaiKirin ）\r\n    - 伪热门排序: 新增伪人气搜索排序功能\r\n    - AI 过滤器: 添加搜索 AI 过滤器选项\r\n    - 默认搜索排序: 支持设置默认搜索排序选项\r\n\r\n2. 背景预览模糊（ @ButaiKirin ）\r\n    - 背景预览模糊: 添加本地化背景预览模糊选项\r\n\r\n3. 数据同步\r\n    - WebDAV 同步: 初步实现 WebDAV 同步功能（尚未优化，暂时不建议使用）\r\n\r\n## 优化和改进\r\n\r\n- 图片缓存复用: 下载图片时复用图片缓存\r\n- 搜索响应性: 改进伪人气搜索的响应速度\r\n- 钥匙串存储: 将 refresh_token 和 PHPSESSID 移动到钥匙串中存储\r\n- 账号隔离: 修复搜索历史未按照账号隔离的问题\r\n- 修复历史插画详情导航问题\r\n",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.0/Pixiv-SwiftUI.ipa",
+      "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
+      "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
+      "tintColor": "#0094FA",
+      "size": 7253168,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSPhotoLibraryAddUsageDescription": "需要访问相册以保存插画图片"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.12.0",
+          "date": "2026-03-14T03:06:13Z",
+          "localizedDescription": "由于用户凭据存储位置变更，更新到此版本后需要重新登录一次，全新安装不受影响。\r\n\r\n## 新功能\r\n\r\n1. 搜索增强（ @ButaiKirin ）\r\n    - 伪热门排序: 新增伪人气搜索排序功能\r\n    - AI 过滤器: 添加搜索 AI 过滤器选项\r\n    - 默认搜索排序: 支持设置默认搜索排序选项\r\n\r\n2. 背景预览模糊（ @ButaiKirin ）\r\n    - 背景预览模糊: 添加本地化背景预览模糊选项\r\n\r\n3. 数据同步\r\n    - WebDAV 同步: 初步实现 WebDAV 同步功能（尚未优化，暂时不建议使用）\r\n\r\n## 优化和改进\r\n\r\n- 图片缓存复用: 下载图片时复用图片缓存\r\n- 搜索响应性: 改进伪人气搜索的响应速度\r\n- 钥匙串存储: 将 refresh_token 和 PHPSESSID 移动到钥匙串中存储\r\n- 账号隔离: 修复搜索历史未按照账号隔离的问题\r\n- 修复历史插画详情导航问题\r\n",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.0/Pixiv-SwiftUI.ipa",
+          "size": 7253168,
+          "sha256": "6a24c2a2ea4d9394c42dd78aed9165279ba25db7bab6fce492b7bfdb03981307",
+          "minOSVersion": "17.0"
+        }
+      ],
+      "sha256": "6a24c2a2ea4d9394c42dd78aed9165279ba25db7bab6fce492b7bfdb03981307",
       "category": "other"
     },
     {
