@@ -79,14 +79,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.287e821",
-      "versionDate": "2026-03-07T03:15:42Z",
-      "versionDescription": "Nightly build from commit 287e821c49f0daf1c787707659f430f952dedd03",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260303/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_e49c3fa.ipa",
+      "version": "1.0.ba4a002",
+      "versionDate": "2026-03-15T05:00:50Z",
+      "versionDescription": "Nightly build from commit ba4a002b006b052d170b9573bd1d5fc4897d702e",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_ba4a002.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148600361,
+      "size": 148600983,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -103,6 +103,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.0.ba4a002",
+          "date": "2026-03-15T05:00:50Z",
+          "localizedDescription": "Nightly build from commit ba4a002b006b052d170b9573bd1d5fc4897d702e",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_ba4a002.ipa",
+          "size": 148600983,
+          "sha256": "7562dc85887980f859e87399da66ff17f4fea12d0648ec2765f832cdac7d8e81",
+          "minOSVersion": "14.0"
+        },
         {
           "version": "1.0.287e821",
           "date": "2026-03-07T03:15:42Z",
@@ -131,7 +140,7 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "5a7f5d56b45072eb222dfb1bc2533e3d516a629df165424611a76aefce7ae90d",
+      "sha256": "7562dc85887980f859e87399da66ff17f4fea12d0648ec2765f832cdac7d8e81",
       "category": "other"
     },
     {
