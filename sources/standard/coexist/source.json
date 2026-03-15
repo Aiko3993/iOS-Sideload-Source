@@ -978,7 +978,7 @@
     {
       "name": "Nyxian (Nightly)",
       "githubRepo": "ProjectNyxian/Nyxian",
-      "bundleIdentifier": "com.cr4zy.nyxian.nightly.coexist",
+      "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "version": "0.9.0.20260314.72.US.runner.edeb207",
@@ -1084,14 +1084,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.1",
-      "versionDate": "2026-03-14T09:59:40Z",
-      "versionDescription": "页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/PiliPlus_2.0.1_Coexist.ipa",
+      "version": "2.0.1.1",
+      "versionDate": "2026-03-15T02:11:09Z",
+      "versionDescription": "修复自动全屏\r\n修复有音频流时才启用音量均衡 #1865 by @HeXis-YS\r\n其他\r\n\r\n## 2.0.1\r\n页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/PiliPlus_2.0.1.1_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24986907,
+      "size": 24989382,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1102,6 +1102,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.1.1",
+          "date": "2026-03-15T02:11:09Z",
+          "localizedDescription": "修复自动全屏\r\n修复有音频流时才启用音量均衡 #1865 by @HeXis-YS\r\n其他\r\n\r\n## 2.0.1\r\n页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/PiliPlus_2.0.1.1_Coexist.ipa",
+          "size": 24989382,
+          "sha256": "42433e6a6e5e2e2bd8d4a1a9a0a27a79236c6416379d81ae508aa755bf5d8b55",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.1",
           "date": "2026-03-14T09:59:40Z",
@@ -1139,7 +1148,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "f03c41dc41bd0deafa997350252162b83dd41e0d77cbf3e84528090a9f6c5ba6",
+      "sha256": "42433e6a6e5e2e2bd8d4a1a9a0a27a79236c6416379d81ae508aa755bf5d8b55",
       "category": "other"
     },
     {
