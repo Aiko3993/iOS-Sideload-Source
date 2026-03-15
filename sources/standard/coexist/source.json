@@ -990,14 +990,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260314.72.US.runner.edeb207",
-      "versionDate": "2026-03-14T17:25:39Z",
-      "versionDescription": "Nightly build from commit edeb2074817954aa61516f4ff4c66e227b81c2e6",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260314/Nyxian_Nightly_0.9.0.20260314.72.US.runner.edeb207_Coexist.ipa",
+      "version": "0.9.0.20260315.20.US.runner.62ace8d",
+      "versionDate": "2026-03-15T17:34:17Z",
+      "versionDescription": "Nightly build from commit 62ace8d76e6036ab16dff5a6733ae1defae26d9e",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/Nyxian_Nightly_0.9.0.20260315.20.US.runner.62ace8d_Coexist.ipa",
       "localizedDescription": "Nyxian is a iOS application for iOS 16.0 and above(iOS 26.3 latest beta tested) that empowers iOS users to code, compile, link, sign and even execute/rapid test iOS applications directly on their device! It is the successor of the former FridaCodeManager project, which was deprecated in favor of Nyxian, because FridaCodeManager requires a jailbreak to work while Nyxian does not. It also includes a kernel virtualisation layer that fixes inter process stuff like signaling, enumeration, killing and spawning of processes, which also handles unsigned binaries and sends a request to the host process to sign it. This kernel virtualisation layer also has its own entitlement enforcement system the user can change directly for each individual app. Nyxian doesnt require any special entitlements, nor shared app groups.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88539086,
+      "size": 88860336,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1055,6 +1055,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.9.0.20260315.20.US.runner.62ace8d",
+          "date": "2026-03-15T17:34:17Z",
+          "localizedDescription": "Nightly build from commit 62ace8d76e6036ab16dff5a6733ae1defae26d9e",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/Nyxian_Nightly_0.9.0.20260315.20.US.runner.62ace8d_Coexist.ipa",
+          "size": 88860336,
+          "sha256": "d268bbe0bc618b47eea5190b1c6d5b789babe7b0c76989991e880153c70237db",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "0.9.0.20260314.72.US.runner.edeb207",
           "date": "2026-03-14T17:25:39Z",
           "localizedDescription": "Nightly build from commit edeb2074817954aa61516f4ff4c66e227b81c2e6",
@@ -1085,7 +1094,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "2a72e0463b85851877804884083c249a712f2f6c7a8c9047969fd087c21f265c"
+      "sha256": "d268bbe0bc618b47eea5190b1c6d5b789babe7b0c76989991e880153c70237db"
     },
     {
       "name": "PiliPlus",
@@ -1245,14 +1254,14 @@
       "bundleIdentifier": "org.ppsspp.ppsspp.coexist",
       "developerName": "hrydgard",
       "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
-      "version": "1.20.2",
-      "versionDate": "2026-03-10T13:50:36Z",
+      "version": "1.20.3",
+      "versionDate": "2026-03-15T18:02:06Z",
       "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260310/PPSSPP_1.20.2_Coexist.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/PPSSPP_1.20.3_Coexist.ipa",
       "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
       "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
       "tintColor": "#2D4553",
-      "size": 31010160,
+      "size": 31029238,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -1277,6 +1286,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.20.3",
+          "date": "2026-03-15T18:02:06Z",
+          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/PPSSPP_1.20.3_Coexist.ipa",
+          "size": 31029238,
+          "sha256": "bebc1a2e4a8c9a888334a8ad19ded675e55fcbaea90b4883726ee37fb76b478d",
+          "minOSVersion": "11.0"
+        },
+        {
           "version": "1.20.2",
           "date": "2026-03-10T13:50:36Z",
           "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
@@ -1295,7 +1313,7 @@
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "1c028c86f20d78aab2ba2b7c0a0797ecc147fe86c79afa7ff1111655b03e484c",
+      "sha256": "bebc1a2e4a8c9a888334a8ad19ded675e55fcbaea90b4883726ee37fb76b478d",
       "category": "other"
     },
     {
