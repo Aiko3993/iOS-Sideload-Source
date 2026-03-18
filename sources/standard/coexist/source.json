@@ -13,14 +13,14 @@
       "bundleIdentifier": "app.aidoku.Aidoku.coexist",
       "developerName": "Aidoku",
       "subtitle": "Free and open source manga reader for iOS and iPadOS",
-      "version": "0.8.1",
-      "versionDate": "2026-02-12T14:20:11Z",
-      "versionDescription": "- Pinned sources should stay pinned\r\n- Error when restoring chapters from backup resolved\r\n- Insights page more accurately determines chapter read count\r\n- Kavita source login issues resolved\r\n- Lots of other fixes (30+)! Check [the website](https://aidoku.app/release-notes/) for a more complete list.",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260212/Aidoku_0.8.1_Coexist.ipa",
+      "version": "0.8.2",
+      "versionDate": "2026-03-18T13:45:05Z",
+      "versionDescription": "- Filter groups: save library filter configurations to categories library items.\r\n- Saved source searches: save and load search text and filter configurations in sources.\r\n- MangaBaka tracker: log in and track items with mangabaka.org.\r\n- Hide bars on swipe setting: automatically dismiss bars in the reader after swiping to the next page.\r\n- Missing source list indicator: displays a warning if a source was removed from a source list and will no longer receive updates.\r\n- Improved text reader (experimental): now with a paged reading style and font configuration for text-only chapters.\r\n- Scanlator affinity: prefers next chapters from the scanlator you're already reading.\r\n- Komga/Kavita mirror list option and various source improvements\r\n- Various bug fixes and stability improvements: see [the website](https://aidoku.app/release-notes/) for a more complete list.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Aidoku_0.8.2_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
-      "size": 8624808,
+      "size": 9106403,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -29,6 +29,7 @@
           "com.apple.developer.icloud-services",
           "com.apple.developer.ubiquity-container-identifiers",
           "com.apple.developer.ubiquity-kvstore-identifier",
+          "com.apple.developer.user-fonts",
           "get-task-allow"
         ],
         "privacy": {
@@ -43,6 +44,15 @@
         "https://aidoku.app/images/reader.png"
       ],
       "versions": [
+        {
+          "version": "0.8.2",
+          "date": "2026-03-18T13:45:05Z",
+          "localizedDescription": "- Filter groups: save library filter configurations to categories library items.\r\n- Saved source searches: save and load search text and filter configurations in sources.\r\n- MangaBaka tracker: log in and track items with mangabaka.org.\r\n- Hide bars on swipe setting: automatically dismiss bars in the reader after swiping to the next page.\r\n- Missing source list indicator: displays a warning if a source was removed from a source list and will no longer receive updates.\r\n- Improved text reader (experimental): now with a paged reading style and font configuration for text-only chapters.\r\n- Scanlator affinity: prefers next chapters from the scanlator you're already reading.\r\n- Komga/Kavita mirror list option and various source improvements\r\n- Various bug fixes and stability improvements: see [the website](https://aidoku.app/release-notes/) for a more complete list.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Aidoku_0.8.2_Coexist.ipa",
+          "size": 9106403,
+          "sha256": "469f9cc7ec99efb4bd8f3afb5f1603f2ab57edf369682a8c59647c67eba2f1c8",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.8.1",
           "date": "2026-02-12T14:20:11Z",
@@ -71,7 +81,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "4afb2804b49670abce47606cda599013ce890c28cc4b427e1c902511b954511e"
+      "sha256": "469f9cc7ec99efb4bd8f3afb5f1603f2ab57edf369682a8c59647c67eba2f1c8"
     },
     {
       "name": "Amethyst (Nightly)",
@@ -990,14 +1000,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260318.49.US.runner.59ed20c",
-      "versionDate": "2026-03-18T11:22:57Z",
-      "versionDescription": "Nightly build from commit 59ed20cf3d583ff5de3e4ffbcd600491d67e18ad",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Nyxian_Nightly_0.9.0.20260318.49.US.runner.59ed20c_Coexist.ipa",
+      "version": "0.9.0.20260318.53.US.runner.f9af413",
+      "versionDate": "2026-03-18T12:14:27Z",
+      "versionDescription": "Nightly build from commit f9af413bb67c7df58e94cbb0b9b78d75ca367404",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Nyxian_Nightly_0.9.0.20260318.53.US.runner.f9af413_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88866428,
+      "size": 88866284,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1054,6 +1064,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260318.53.US.runner.f9af413",
+          "date": "2026-03-18T12:14:27Z",
+          "localizedDescription": "Nightly build from commit f9af413bb67c7df58e94cbb0b9b78d75ca367404",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Nyxian_Nightly_0.9.0.20260318.53.US.runner.f9af413_Coexist.ipa",
+          "size": 88866284,
+          "sha256": "8e455ac10ff5790777176be18cc9772d11a62aedeb87d02633b7557bdfa86892",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260318.49.US.runner.59ed20c",
           "date": "2026-03-18T11:22:57Z",
@@ -1265,7 +1284,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "257a0d14fff85d91dcd4060f88b8498ff34dd1d7c1492e3aa1c973145ee2d87d"
+      "sha256": "8e455ac10ff5790777176be18cc9772d11a62aedeb87d02633b7557bdfa86892"
     },
     {
       "name": "PiliPlus",
