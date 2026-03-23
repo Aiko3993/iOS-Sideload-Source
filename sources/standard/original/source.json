@@ -912,14 +912,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.2",
-      "versionDate": "2026-03-05T16:10:10Z",
-      "versionDescription": "## What's Changed\r\n* Fix shouldUpdate button in categories view by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/657\r\n* Improve extension service lifecycle, isolate robustness, dedupe lists, and UI/lifecycle cleanups by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/644\r\n* Improve failure message by using itemType.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/661\r\n* Change 'Игрок' to 'Плеер' in Russian localization by @userkilled in https://github.com/kodjodevf/mangayomi/pull/662\r\n* Improve Kitsu login dialog with autofill, input validation by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/664\r\n* [removing history entry removes manga from library #663](https://github.com/kodjodevf/mangayomi/issues/663)\r\n* [Refactor](https://github.com/kodjodevf/mangayomi/commit/1256e608c7599f12be9b4f1ad03d7aa71eed599f)\r\n* [feat: Implement app lock feature with biometric authentication](https://github.com/kodjodevf/mangayomi/commit/f7293802234ee00a78f1132b9ec1463f93b016c3)\r\n* [feat(reader): add navigation layout options and settings for screen behavior](https://github.com/kodjodevf/mangayomi/commit/2f0fc853161c74552bc14f187fb39f683f9eb906)\r\n* [feat(reader): implement bidirectional chapter preloading and enhance memory management](https://github.com/kodjodevf/mangayomi/commit/87028ea8f599204ac3a81d39a3e2784b72b52d9b)\r\n* [feat: Implement upcoming manga calendar feature](https://github.com/kodjodevf/mangayomi/commit/95a55d5f81c5e42075048ec53540b06f1952c496)\r\n\r\n## New Contributors\r\n* @userkilled made their first contribution in https://github.com/kodjodevf/mangayomi/pull/662\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.1...v0.7.2\r\n",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.2/Mangayomi-v0.7.2-ios.ipa",
+      "version": "0.7.3",
+      "versionDate": "2026-03-23T14:51:40Z",
+      "versionDescription": "Update",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.3/Mangayomi-v0.7.3-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 43596384,
+      "size": 43589596,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -941,6 +941,15 @@
       ],
       "versions": [
         {
+          "version": "0.7.3",
+          "date": "2026-03-23T14:51:40Z",
+          "localizedDescription": "Update",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.3/Mangayomi-v0.7.3-ios.ipa",
+          "size": 43589596,
+          "sha256": "df2896c35c57a243205682828363d3bfb1448f540850fda3ed204e7e944b2e28",
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.7.2",
           "date": "2026-03-05T16:10:10Z",
           "localizedDescription": "## What's Changed\r\n* Fix shouldUpdate button in categories view by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/657\r\n* Improve extension service lifecycle, isolate robustness, dedupe lists, and UI/lifecycle cleanups by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/644\r\n* Improve failure message by using itemType.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/661\r\n* Change 'Игрок' to 'Плеер' in Russian localization by @userkilled in https://github.com/kodjodevf/mangayomi/pull/662\r\n* Improve Kitsu login dialog with autofill, input validation by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/664\r\n* [removing history entry removes manga from library #663](https://github.com/kodjodevf/mangayomi/issues/663)\r\n* [Refactor](https://github.com/kodjodevf/mangayomi/commit/1256e608c7599f12be9b4f1ad03d7aa71eed599f)\r\n* [feat: Implement app lock feature with biometric authentication](https://github.com/kodjodevf/mangayomi/commit/f7293802234ee00a78f1132b9ec1463f93b016c3)\r\n* [feat(reader): add navigation layout options and settings for screen behavior](https://github.com/kodjodevf/mangayomi/commit/2f0fc853161c74552bc14f187fb39f683f9eb906)\r\n* [feat(reader): implement bidirectional chapter preloading and enhance memory management](https://github.com/kodjodevf/mangayomi/commit/87028ea8f599204ac3a81d39a3e2784b72b52d9b)\r\n* [feat: Implement upcoming manga calendar feature](https://github.com/kodjodevf/mangayomi/commit/95a55d5f81c5e42075048ec53540b06f1952c496)\r\n\r\n## New Contributors\r\n* @userkilled made their first contribution in https://github.com/kodjodevf/mangayomi/pull/662\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.1...v0.7.2\r\n",
@@ -960,7 +969,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "b2739bd626a32852e9847cd58f14955d106edc0b1b3f89c47ac077751446ebc7",
+      "sha256": "df2896c35c57a243205682828363d3bfb1448f540850fda3ed204e7e944b2e28",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
@@ -1045,14 +1054,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260323.2.US.runner.87a573b",
-      "versionDate": "2026-03-23T12:37:41Z",
-      "versionDescription": "Nightly build from commit 87a573b5478e7eafb1ff105b7d483489029bbfb6",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260321/ProjectNyxian_Nyxian_nyxian_2c47bf0.ipa",
+      "version": "0.9.0.20260323.15.US.runner.84f4154",
+      "versionDate": "2026-03-23T14:11:35Z",
+      "versionDescription": "Nightly build from commit 84f4154574b2948d44247ce60b8489197df78d69",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260323/ProjectNyxian_Nyxian_nyxian_84f4154.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 88617771,
+      "size": 88623400,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1109,6 +1118,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260323.15.US.runner.84f4154",
+          "date": "2026-03-23T14:11:35Z",
+          "localizedDescription": "Nightly build from commit 84f4154574b2948d44247ce60b8489197df78d69",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260323/ProjectNyxian_Nyxian_nyxian_84f4154.ipa",
+          "size": 88623400,
+          "sha256": "ed08de60ebc205e3cf7915d1477100e5db672265559f8f8d84e33fdde0a7d638",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260323.2.US.runner.87a573b",
           "date": "2026-03-23T12:37:41Z",
@@ -1482,7 +1500,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "342a649c506dfb3615542e8f0cab788328bf2d7039d29930b7b53cf8e1b6472d"
+      "sha256": "ed08de60ebc205e3cf7915d1477100e5db672265559f8f8d84e33fdde0a7d638"
     },
     {
       "name": "PiliPlus",
