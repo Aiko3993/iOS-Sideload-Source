@@ -1108,14 +1108,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.0.20260329.31.US.runner.58f51c5",
-      "versionDate": "2026-03-29T05:07:31Z",
-      "versionDescription": "Nightly build from commit 58f51c54185a1d43026ea4a7e6ce3dc227501156",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260329/Nyxian_Nightly_0.9.0.20260329.31.US.runner.58f51c5_Coexist.ipa",
+      "version": "0.9.0.20260329.44.US.runner.007cbd9",
+      "versionDate": "2026-03-29T06:56:06Z",
+      "versionDescription": "Nightly build from commit 007cbd9e8b33908847e7a6af7039effb990d5db1",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260329/Nyxian_Nightly_0.9.0.20260329.44.US.runner.007cbd9_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 76838634,
+      "size": 76832477,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1172,6 +1172,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.0.20260329.44.US.runner.007cbd9",
+          "date": "2026-03-29T06:56:06Z",
+          "localizedDescription": "Nightly build from commit 007cbd9e8b33908847e7a6af7039effb990d5db1",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260329/Nyxian_Nightly_0.9.0.20260329.44.US.runner.007cbd9_Coexist.ipa",
+          "size": 76832477,
+          "sha256": "621171127851894a1c29bae5e9bc1b76373da249c79b5d70dac806a9c482c417",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.0.20260329.31.US.runner.58f51c5",
           "date": "2026-03-29T05:07:31Z",
@@ -1860,7 +1869,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "16579f9a96dd8effcb6630927776a1a52468018b1e5e9e44f8d45786ff55bdf0"
+      "sha256": "621171127851894a1c29bae5e9bc1b76373da249c79b5d70dac806a9c482c417"
     },
     {
       "name": "PiliPlus",
