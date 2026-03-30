@@ -2267,14 +2267,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.0.1",
-      "versionDate": "2026-03-08T18:56:35Z",
-      "versionDescription": "The update is pretty cool. I’ll update the release notes later.",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.0.1/StikDebug-3.0.1.ipa",
+      "version": "3.1.0",
+      "versionDate": "2026-03-30T16:59:48Z",
+      "versionDescription": "## What's Changed\r\n\r\n* Added support for iOS 26.4. A new pairing file must be created using [idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest)\r\n* Replaced the lockdown implementation with rppairing by @jkcoxson in #354\r\n* Fixed the port used for `location_simulation` via rppairing by @jkcoxson in #355\r\n* Added support for freezing and resuming processes\r\n* Improved location simulation stability and added route simulation based on local speed limits\r\n* Rewrote parts of the app in Swift and improved overall stability by @StephenDev0 in #358\r\n\r\n## Known Issues\r\n\r\n* DDI mounting is currently not working. This is planned to be fixed in the next update. As a workaround, you can use [idevice pair](https://github.com/jkcoxson/idevice_pair/releases/latest) to mount the DDI.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.0.1...3.1.0",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.0/StikDebug-3.1.0.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 10461243,
+      "size": 10889554,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -2286,7 +2286,7 @@
       "screenshotURLs": [],
       "versions": [],
       "category": "other",
-      "sha256": "8e901f7f99e5887118a60e73dd5815c0be63e2550a160c0b3ff547e7d9f09d8c"
+      "sha256": "13d3873e66a23f1ea6ce2c41c4036d39a914e6d093f6d8737f18995620a00c3b"
     },
     {
       "name": "UTM",
