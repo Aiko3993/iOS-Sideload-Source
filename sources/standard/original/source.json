@@ -1994,24 +1994,34 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.1.1",
-      "versionDate": "2026-03-15T02:11:09Z",
-      "versionDescription": "修复自动全屏\r\n修复有音频流时才启用音量均衡 #1865 by @HeXis-YS\r\n其他\r\n\r\n## 2.0.1\r\n页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.1.1/PiliPlus_ios_2.0.1%2B4775.ipa",
+      "version": "2.0.2",
+      "versionDate": "2026-03-31T10:33:43Z",
+      "versionDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.2/PiliPlus_ios_2.0.2%2B4814.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 25000751,
+      "size": 24978956,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
           "NSAppleMusicUsageDescription": "App需要您的同意,才能访问媒体资料库",
           "NSCameraUsageDescription": "App需要您的同意,才能访问相册",
+          "NSLocalNetworkUsageDescription": "需要访问本地网络以发现和连接 DLNA 投屏设备",
           "NSPhotoLibraryUsageDescription": "请允许APP保存图片到相册"
         }
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.2",
+          "date": "2026-03-31T10:33:43Z",
+          "localizedDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.2/PiliPlus_ios_2.0.2%2B4814.ipa",
+          "size": 24978956,
+          "sha256": "cc60eb243cd62b1cd58dd19630052879e9ff785f077b0ec71eefa31665acdd20",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.1.1",
           "date": "2026-03-15T02:11:09Z",
@@ -2058,7 +2068,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "8331fc579b075b3b733ed6851d3ae26502849d0c503d9de3181b3b288dac6489",
+      "sha256": "cc60eb243cd62b1cd58dd19630052879e9ff785f077b0ec71eefa31665acdd20",
       "category": "other"
     },
     {
