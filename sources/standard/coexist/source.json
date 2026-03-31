@@ -1994,24 +1994,34 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.1.1",
-      "versionDate": "2026-03-15T02:11:09Z",
-      "versionDescription": "修复自动全屏\r\n修复有音频流时才启用音量均衡 #1865 by @HeXis-YS\r\n其他\r\n\r\n## 2.0.1\r\n页面优化\r\n优化收起顶栏\r\n优化 #1864 by @My-Responsitories\r\n优化加载搜索历史 #1858 by @My-Responsitories\r\n\r\niOS 支持添加 UP 至桌面\r\n支持显示用户收藏集头图\r\n直播封面支持切换预览首帧\r\n支持显示`精选评论`标识 #1857 co-by @Dxee-e\r\n支持记录评论，默认开 by @bggRGjQaUbCoE @My-Responsitories\r\n\r\n修复自动全屏\r\n修复动态链接显示",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/PiliPlus_2.0.1.1_Coexist.ipa",
+      "version": "2.0.2",
+      "versionDate": "2026-03-31T10:33:43Z",
+      "versionDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260331/PiliPlus_2.0.2_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24989382,
+      "size": 24963888,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
           "NSAppleMusicUsageDescription": "App需要您的同意,才能访问媒体资料库",
           "NSCameraUsageDescription": "App需要您的同意,才能访问相册",
+          "NSLocalNetworkUsageDescription": "需要访问本地网络以发现和连接 DLNA 投屏设备",
           "NSPhotoLibraryUsageDescription": "请允许APP保存图片到相册"
         }
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.2",
+          "date": "2026-03-31T10:33:43Z",
+          "localizedDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260331/PiliPlus_2.0.2_Coexist.ipa",
+          "size": 24963888,
+          "sha256": "13c58b935249c4d0b87f10eef52cc69909f328ba047458834acc63ded2681be1",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.1.1",
           "date": "2026-03-15T02:11:09Z",
@@ -2058,7 +2068,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "42433e6a6e5e2e2bd8d4a1a9a0a27a79236c6416379d81ae508aa755bf5d8b55",
+      "sha256": "13c58b935249c4d0b87f10eef52cc69909f328ba047458834acc63ded2681be1",
       "category": "other"
     },
     {
