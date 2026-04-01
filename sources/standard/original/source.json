@@ -2300,14 +2300,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260321.972+75edfad1.0603",
-      "versionDate": "2026-03-21T07:34:22Z",
-      "versionDescription": "Nightly build from commit 75edfad1322fb9dc3752ef6b0e2ded74154acbed",
+      "version": "0.6.3-20260401.984+0b072e35.0603",
+      "versionDate": "2026-04-01T22:57:51Z",
+      "versionDescription": "Nightly build from commit 0b072e358a7ae146bda692b0d3b931b682a3e8d9",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260321/SideStore_SideStore_SideStore-0.6.3-20260321.972%2B75edfad1_75edfad.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 29024298,
+      "size": 26553154,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -2321,6 +2321,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260401.984+0b072e35.0603",
+          "date": "2026-04-01T22:57:51Z",
+          "localizedDescription": "Nightly build from commit 0b072e358a7ae146bda692b0d3b931b682a3e8d9",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260321/SideStore_SideStore_SideStore-0.6.3-20260321.972%2B75edfad1_75edfad.ipa",
+          "size": 26553154,
+          "sha256": "0c3f45a73f42a3c3185ab64f4d96c18c0caacc7ba91977de9fce56915933c33a",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260321.972+75edfad1.0603",
           "date": "2026-03-21T07:34:22Z",
@@ -2367,7 +2376,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "5dc3f55a70766d8964da6b5f13100835627291539060fb820f84588ed6d06a0d",
+      "sha256": "0c3f45a73f42a3c3185ab64f4d96c18c0caacc7ba91977de9fce56915933c33a",
       "category": "other"
     },
     {
