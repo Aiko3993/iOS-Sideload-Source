@@ -14,13 +14,13 @@
       "developerName": "Aidoku",
       "subtitle": "Free and open source manga reader for iOS and iPadOS",
       "version": "0.8.2",
-      "versionDate": "2026-03-18T13:45:05Z",
+      "versionDate": "2026-03-20T18:11:05Z",
       "versionDescription": "- Filter groups: save library filter configurations to categories library items.\r\n- Saved source searches: save and load search text and filter configurations in sources.\r\n- MangaBaka tracker: log in and track items with mangabaka.org.\r\n- Hide bars on swipe setting: automatically dismiss bars in the reader after swiping to the next page.\r\n- Missing source list indicator: displays a warning if a source was removed from a source list and will no longer receive updates.\r\n- Improved text reader (experimental): now with a paged reading style and font configuration for text-only chapters.\r\n- Scanlator affinity: prefers next chapters from the scanlator you're already reading.\r\n- Komga/Kavita mirror list option and various source improvements\r\n- Various bug fixes and stability improvements: see [the website](https://aidoku.app/release-notes/) for a more complete list.",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260318/Aidoku_0.8.2_Coexist.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260320/Aidoku_0.8.2_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
-      "size": 9106403,
+      "size": 9108423,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -44,6 +44,15 @@
         "https://aidoku.app/images/reader.png"
       ],
       "versions": [
+        {
+          "version": "0.8.2",
+          "date": "2026-03-20T18:11:05Z",
+          "localizedDescription": "- Filter groups: save library filter configurations to categories library items.\r\n- Saved source searches: save and load search text and filter configurations in sources.\r\n- MangaBaka tracker: log in and track items with mangabaka.org.\r\n- Hide bars on swipe setting: automatically dismiss bars in the reader after swiping to the next page.\r\n- Missing source list indicator: displays a warning if a source was removed from a source list and will no longer receive updates.\r\n- Improved text reader (experimental): now with a paged reading style and font configuration for text-only chapters.\r\n- Scanlator affinity: prefers next chapters from the scanlator you're already reading.\r\n- Komga/Kavita mirror list option and various source improvements\r\n- Various bug fixes and stability improvements: see [the website](https://aidoku.app/release-notes/) for a more complete list.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260320/Aidoku_0.8.2_Coexist.ipa",
+          "size": 9108423,
+          "sha256": "07213a0f1fe192b510cdc10863c441e40b33882c943aaa751a26534406199cad",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.8.2",
           "date": "2026-03-18T13:45:05Z",
@@ -81,7 +90,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "469f9cc7ec99efb4bd8f3afb5f1603f2ab57edf369682a8c59647c67eba2f1c8"
+      "sha256": "07213a0f1fe192b510cdc10863c441e40b33882c943aaa751a26534406199cad"
     },
     {
       "name": "Amethyst (Nightly)",
@@ -1144,14 +1153,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.1.20260404.34.US.runner.b229747",
-      "versionDate": "2026-04-04T03:01:38Z",
-      "versionDescription": "Nightly build from commit b2297470239ebd6a90e36662bd38438dafde6cf4",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/ProjectNyxian_Nyxian_nyxian_b229747_Coexist.ipa",
+      "version": "0.9.1.20260404.47.US.runner.7d04700",
+      "versionDate": "2026-04-04T12:59:42Z",
+      "versionDescription": "Nightly build from commit 7d047003d4875a77505601c5f988d92eb0e51f0d",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/Nyxian_Nightly_0.9.1.20260404.47.US.runner.7d04700_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 70446280,
+      "size": 70647636,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1208,6 +1217,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.1.20260404.47.US.runner.7d04700",
+          "date": "2026-04-04T12:59:42Z",
+          "localizedDescription": "Nightly build from commit 7d047003d4875a77505601c5f988d92eb0e51f0d",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/Nyxian_Nightly_0.9.1.20260404.47.US.runner.7d04700_Coexist.ipa",
+          "size": 70647636,
+          "sha256": "5a915264bb890f06ef9dcb07bdc67729b6b56c7ddc2741538c54f0e700912cf9",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.1.20260404.34.US.runner.b229747",
           "date": "2026-04-04T03:01:38Z",
@@ -2166,7 +2184,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "65c2e8d7f8a18c9d28d29ce61dd861067da91c2be2577b7967bebb99e6462e6f"
+      "sha256": "5a915264bb890f06ef9dcb07bdc67729b6b56c7ddc2741538c54f0e700912cf9"
     },
     {
       "name": "PiliPlus",
