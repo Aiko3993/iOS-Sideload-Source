@@ -2523,11 +2523,11 @@
       "version": "3.1.1",
       "versionDate": "2026-04-04T00:49:27Z",
       "versionDescription": "## Changes\r\n\r\n- Updated the universal script\r\n- Added support for mounting the DDI over RSD",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.1/StikDebug-3.1.1.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/StikDebug_3.1.1_Coexist.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 10973374,
+      "size": 10971537,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
