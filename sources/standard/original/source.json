@@ -331,14 +331,14 @@
       "bundleIdentifier": "thewonderofyou.Feather",
       "developerName": "khcrysalis",
       "subtitle": "On-device signing application",
-      "version": "2.6.0",
-      "versionDate": "2026-02-04T07:54:07Z",
-      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
-      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.6.0/Feather.ipa",
+      "version": "2.7.0",
+      "versionDate": "2026-04-05T15:58:54Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for using remote pairing on 17.4+, for 17.3 and below, use a standard pairing file.\r\n* Added more recommended sources by @CelloSerenity in https://github.com/CLARATION/Feather/pull/585\r\n* Added option to inject into all available extensions within an app by @waruhachi in https://github.com/CLARATION/Feather/pull/592\r\n\r\n## New Contributors\r\n* @waruhachi made their first contribution in https://github.com/CLARATION/Feather/pull/592\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.6.0...v2.7.0",
+      "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.7.0/Feather.ipa",
       "localizedDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
       "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
       "tintColor": "848ef9",
-      "size": 14118478,
+      "size": 14154834,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -351,6 +351,15 @@
       ],
       "versions": [
         {
+          "version": "2.7.0",
+          "date": "2026-04-05T15:58:54Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for using remote pairing on 17.4+, for 17.3 and below, use a standard pairing file.\r\n* Added more recommended sources by @CelloSerenity in https://github.com/CLARATION/Feather/pull/585\r\n* Added option to inject into all available extensions within an app by @waruhachi in https://github.com/CLARATION/Feather/pull/592\r\n\r\n## New Contributors\r\n* @waruhachi made their first contribution in https://github.com/CLARATION/Feather/pull/592\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.6.0...v2.7.0",
+          "downloadURL": "https://github.com/CLARATION/Feather/releases/download/v2.7.0/Feather.ipa",
+          "size": 14154834,
+          "sha256": "ae4ec9bf6def2632834df5ba6c76adc8659d07dec749d993e36254a209d7e036",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "2.6.0",
           "date": "2026-02-04T07:54:07Z",
           "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [PlumeImpactor](https://github.com/khcrysalis/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Migrated codebase to use the *OS 26 SDK with help from @Nyasami.\r\n* Added Liquid Glass icon.\r\n* Added iOS 26 BackgroundTasks API for background downloads.\r\n* Added appearance options for changing library icon appearance (Light/Dark) on iOS 18.0+ with help from @hugeBlack.\r\n  * Tinting options are available on iOS 18.2+.\r\n* Added appearance options for custom tint color.\r\n* Added success alert when updating SSL certificates by @planeklm.\r\n* Fixed issue where bundle was using outdated SSL certificates, causing common issues regarding being stuck on \"Ready\".\r\n* Fixed incorrect handling of `NSExtension` modifications by @Nyasami.\r\n* Fixed issue where certain app names would not appear in Library by @Nyasami.\r\n* Fixed an issue where certain apps weren't able to install by deleting a leftover `_CodeSignature` directory by @Nyasami.\r\n* Fixed issue where a malicious `.deb` was able to make Feather crash on launch.\r\n* Made the iOS 26+ arm64e slice fixup run regardless of version, mainly for exports.\r\n\r\n## Preview\r\n\r\n| <img width=\"3306\" height=\"1788\" alt=\"MERGED_IMAGE\" src=\"https://github.com/user-attachments/assets/6a0b6981-0b94-4b4b-9199-f14a4c1ffe61\" /> |\r\n|:-:|\r\n\r\n## New Contributors\r\n* @binnichtaktiv made their first contribution in https://github.com/khcrysalis/Feather/pull/548\r\n* @planeklm made their first contribution in https://github.com/khcrysalis/Feather/pull/572\r\n\r\n**Full Changelog**: https://github.com/khcrysalis/Feather/compare/v2.5.0...v2.6.0",
@@ -360,7 +369,7 @@
           "minOSVersion": "16.0"
         }
       ],
-      "sha256": "01f4d8dc7c8ae97ed82943d668d1937b8ec8009dbfa0b6f45375b815c842a191",
+      "sha256": "ae4ec9bf6def2632834df5ba6c76adc8659d07dec749d993e36254a209d7e036",
       "category": "other",
       "screenshots": [
         "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
@@ -1162,14 +1171,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.1.20260405.12.US.runner.69f1282",
-      "versionDate": "2026-04-05T14:25:23Z",
-      "versionDescription": "Nightly build from commit 69f12821a2522427a76811fc9be01305f8108734",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/ProjectNyxian_Nyxian_nyxian_69f1282.ipa",
+      "version": "0.9.1.20260405.27.US.runner.5097f01",
+      "versionDate": "2026-04-05T15:17:18Z",
+      "versionDescription": "Nightly build from commit 5097f01caaa2863c09410d8da0d532f0925ae0a8",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/ProjectNyxian_Nyxian_nyxian_5097f01.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 70445259,
+      "size": 70440011,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1226,6 +1235,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.1.20260405.27.US.runner.5097f01",
+          "date": "2026-04-05T15:17:18Z",
+          "localizedDescription": "Nightly build from commit 5097f01caaa2863c09410d8da0d532f0925ae0a8",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/ProjectNyxian_Nyxian_nyxian_5097f01.ipa",
+          "size": 70440011,
+          "sha256": "739178a003faa428a200dbe39fb46592a5fb09ab4c1012bc09f467234a709278",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.1.20260405.12.US.runner.69f1282",
           "date": "2026-04-05T14:25:23Z",
@@ -2238,7 +2256,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "947a2be5e4fbbc5ed1a067e2fa3c4195a0ff06f428c5059f3aaef2756cf96a5d"
+      "sha256": "739178a003faa428a200dbe39fb46592a5fb09ab4c1012bc09f467234a709278"
     },
     {
       "name": "PiliPlus",
