@@ -98,14 +98,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst.coexist",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.ba4a002",
-      "versionDate": "2026-03-15T05:00:50Z",
-      "versionDescription": "Nightly build from commit ba4a002b006b052d170b9573bd1d5fc4897d702e",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/Amethyst_Nightly_1.0.ba4a002_Coexist.ipa",
+      "version": "1.0.ed267f5",
+      "versionDate": "2026-04-05T09:40:30Z",
+      "versionDescription": "Nightly build from commit ed267f52dafa24219f1166c542294b0e682ebc64",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/Amethyst_Nightly_1.0.ed267f5_Coexist.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 150357653,
+      "size": 150342909,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -113,7 +113,7 @@
           "com.apple.private.memorystatus",
           "com.apple.private.security.container-required",
           "get-task-allow",
-          "jb.pmap_cs_custom_trust"
+          "jb.pmap_cs.custom_trust"
         ],
         "privacy": {
           "NSLocalNetworkUsageDescription": "Angel Aura Amethyst uses the local network to find and communicate with AltServer and LAN servers.",
@@ -122,6 +122,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "1.0.ed267f5",
+          "date": "2026-04-05T09:40:30Z",
+          "localizedDescription": "Nightly build from commit ed267f52dafa24219f1166c542294b0e682ebc64",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/Amethyst_Nightly_1.0.ed267f5_Coexist.ipa",
+          "size": 150342909,
+          "sha256": "3f8ea22db1799fbcaa3bdf7e5a39c5968a819e3137ae6feb0072237e113cf4c5",
+          "minOSVersion": "14.0"
+        },
         {
           "version": "1.0.ba4a002",
           "date": "2026-03-15T05:00:50Z",
@@ -159,7 +168,7 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "ef1208f717837b3e88931cdc50964957ccdcb9f4d12d2aa58654678018fca6df",
+      "sha256": "3f8ea22db1799fbcaa3bdf7e5a39c5968a819e3137ae6feb0072237e113cf4c5",
       "category": "other"
     },
     {
