@@ -2444,14 +2444,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.2",
-      "versionDate": "2026-03-31T10:33:43Z",
-      "versionDescription": "性能优化\r\n优化查看图片\r\n优化滑动隐藏 FAB\r\n\r\n支持显示粉丝勋章，默认开\r\n校验 loudnorm 参数 #1871 by @Starfallan\r\n优化 #1868 #1877 by @My-Responsitories\r\nmacOS 启用媒体通知管理 #1872 by @stephen-zeng\r\n添加 Web 端用户投稿，支持页码跳转，按`最多收藏`排序\r\n缓存视频固定使用 HTTP/1.1 #1870 by @HeXis-YS @My-Responsitories\r\n\r\n修复解析动态页 UP 列表 #1876 co-by @ninatan777\r\n修复 bug",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.2/PiliPlus_ios_2.0.2%2B4814.ipa",
+      "version": "2.0.3",
+      "versionDate": "2026-04-08T05:13:41Z",
+      "versionDescription": "重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3/PiliPlus_ios_2.0.3%2B4833.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24978956,
+      "size": 24944932,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -2463,6 +2463,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.3",
+          "date": "2026-04-08T05:13:41Z",
+          "localizedDescription": "重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3/PiliPlus_ios_2.0.3%2B4833.ipa",
+          "size": 24944932,
+          "sha256": "f814108769207ef0e1437efffb05946e9529b527e6e3c6ce9c594791bd2a7428",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.2",
           "date": "2026-03-31T10:33:43Z",
@@ -2518,7 +2527,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "cc60eb243cd62b1cd58dd19630052879e9ff785f077b0ec71eefa31665acdd20",
+      "sha256": "f814108769207ef0e1437efffb05946e9529b527e6e3c6ce9c594791bd2a7428",
       "category": "other"
     },
     {
