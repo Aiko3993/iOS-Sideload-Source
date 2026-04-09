@@ -2462,14 +2462,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.3",
-      "versionDate": "2026-04-08T05:13:41Z",
-      "versionDescription": "重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260408/PiliPlus_2.0.3_Coexist.ipa",
+      "version": "2.0.3.1",
+      "versionDate": "2026-04-09T03:15:58Z",
+      "versionDescription": "修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260409/PiliPlus_2.0.3.1_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24926781,
+      "size": 24939600,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -2481,6 +2481,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.3.1",
+          "date": "2026-04-09T03:15:58Z",
+          "localizedDescription": "修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260409/PiliPlus_2.0.3.1_Coexist.ipa",
+          "size": 24939600,
+          "sha256": "52d25d0aea393b995b42401fe083490a0154782c556f0339630aa0b4719099cc",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.3",
           "date": "2026-04-08T05:13:41Z",
@@ -2545,7 +2554,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "ce4b9f64b3131af7346f91c3465eb6383af722c91042b141c9972dfacd52711d",
+      "sha256": "52d25d0aea393b995b42401fe083490a0154782c556f0339630aa0b4719099cc",
       "category": "other"
     },
     {
