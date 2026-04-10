@@ -1261,14 +1261,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.2.20260409.145.US.runner.52c9db6",
-      "versionDate": "2026-04-09T09:51:26Z",
-      "versionDescription": "Nightly build from commit 52c9db61c4d91470fa57af0b8a8346f88ea1e6cd",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260409/Nyxian_Nightly_0.9.2.20260409.145.US.runner.52c9db6_Coexist.ipa",
+      "version": "0.9.2.20260410.6.US.runner.7bf57b1",
+      "versionDate": "2026-04-10T12:02:56Z",
+      "versionDescription": "Nightly build from commit 7bf57b13c20b25e9879ad696cc9ae7164f0aac53",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260410/Nyxian_Nightly_0.9.2.20260410.6.US.runner.7bf57b1_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 70633117,
+      "size": 70632139,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1278,9 +1278,7 @@
           "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSCameraUsageDescription": "The guest app is requesting for this permission.",
           "NSContactsUsageDescription": "The guest app is requesting for this permission.",
           "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
@@ -1309,7 +1307,6 @@
           "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
           "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
           "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
-          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
           "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
           "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
@@ -1325,6 +1322,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.2.20260410.6.US.runner.7bf57b1",
+          "date": "2026-04-10T12:02:56Z",
+          "localizedDescription": "Nightly build from commit 7bf57b13c20b25e9879ad696cc9ae7164f0aac53",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260410/Nyxian_Nightly_0.9.2.20260410.6.US.runner.7bf57b1_Coexist.ipa",
+          "size": 70632139,
+          "sha256": "32f55f5f6f9333283cf9797ad8efd020baf583d996c5f6a9420ffeb7913e5661",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.2.20260409.145.US.runner.52c9db6",
           "date": "2026-04-09T09:51:26Z",
@@ -2499,7 +2505,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "3de58c1dc0b2b16b261388f608f31293e4c4a210ec9a3698b51dc669314799ea"
+      "sha256": "32f55f5f6f9333283cf9797ad8efd020baf583d996c5f6a9420ffeb7913e5661"
     },
     {
       "name": "PiliPlus",
