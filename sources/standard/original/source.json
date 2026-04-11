@@ -2567,14 +2567,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.3.1",
-      "versionDate": "2026-04-09T03:15:58Z",
-      "versionDescription": "修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3.1/PiliPlus_ios_2.0.3%2B4836.ipa",
+      "version": "2.0.3.2",
+      "versionDate": "2026-04-11T02:06:32Z",
+      "versionDescription": "优化视频旋转方向\r\n\r\n## 2.0.3.1\r\n修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3.2/PiliPlus_ios_2.0.3%2B4841.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24957955,
+      "size": 24957050,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -2586,6 +2586,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.3.2",
+          "date": "2026-04-11T02:06:32Z",
+          "localizedDescription": "优化视频旋转方向\r\n\r\n## 2.0.3.1\r\n修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3.2/PiliPlus_ios_2.0.3%2B4841.ipa",
+          "size": 24957050,
+          "sha256": "d66e9831b352ecdaec810f9292ebb2c2d30cf50838080d1e77a82e5a92306757",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.3.1",
           "date": "2026-04-09T03:15:58Z",
@@ -2659,7 +2668,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "f6d1ce4b2f6f612d27c687bf7edb9b89ff01d15ecb665364e92be70765d45b69",
+      "sha256": "d66e9831b352ecdaec810f9292ebb2c2d30cf50838080d1e77a82e5a92306757",
       "category": "other"
     },
     {
@@ -2855,14 +2864,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260410.998+5efed9df.0603",
-      "versionDate": "2026-04-10T00:36:02Z",
-      "versionDescription": "Nightly build from commit 5efed9df089a757577f8c4276d9a72956d28a382",
+      "version": "0.6.3-20260411.1000+f8e199b3.0603",
+      "versionDate": "2026-04-11T03:31:24Z",
+      "versionDescription": "Nightly build from commit f8e199b3d41f723d93053162fef6b8c72be38214",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/SideStore_SideStore_SideStore-0.6.3-20260404.991%2Bae380e48_ae380e4.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 26918533,
+      "size": 26918556,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -2876,6 +2885,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260411.1000+f8e199b3.0603",
+          "date": "2026-04-11T03:31:24Z",
+          "localizedDescription": "Nightly build from commit f8e199b3d41f723d93053162fef6b8c72be38214",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/SideStore_SideStore_SideStore-0.6.3-20260404.991%2Bae380e48_ae380e4.ipa",
+          "size": 26918556,
+          "sha256": "f78f9c72edd86b7fd38dd552187883273c26520f4e32dc4e54fcbdaa284acb21",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260410.998+5efed9df.0603",
           "date": "2026-04-10T00:36:02Z",
@@ -2958,7 +2976,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "dfd021223e4fe08c574e87644ef77f6d9bde69a352e68c1b29ab84bbc7657510",
+      "sha256": "f78f9c72edd86b7fd38dd552187883273c26520f4e32dc4e54fcbdaa284acb21",
       "category": "other"
     },
     {
