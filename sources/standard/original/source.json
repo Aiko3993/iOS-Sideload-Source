@@ -699,14 +699,14 @@
       "bundleIdentifier": "com.kdt.livecontainer",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.4.0e5bbfe",
-      "versionDate": "2026-04-11T09:14:41Z",
-      "versionDescription": "Nightly build from commit 0e5bbfe586ba6dfba81d0e0e03fb323fb55bcdfd",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260411/LiveContainer_LiveContainer_LiveContainer_0e5bbfe.ipa",
+      "version": "3.7.5.5586bba",
+      "versionDate": "2026-04-12T07:10:39Z",
+      "versionDescription": "Nightly build from commit 5586bba8c3e46a7615ee1198901806f2792fb0ec",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/LiveContainer_LiveContainer_LiveContainer_5586bba.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4489815,
+      "size": 4551136,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -755,6 +755,15 @@
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ],
       "versions": [
+        {
+          "version": "3.7.5.5586bba",
+          "date": "2026-04-12T07:10:39Z",
+          "localizedDescription": "Nightly build from commit 5586bba8c3e46a7615ee1198901806f2792fb0ec",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/LiveContainer_LiveContainer_LiveContainer_5586bba.ipa",
+          "size": 4551136,
+          "sha256": "cab7912d45c0e969ef845ea8e54fbd92975a7c27568b159098c6961690fc40c2",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.4.0e5bbfe",
           "date": "2026-04-11T09:14:41Z",
@@ -847,7 +856,7 @@
         }
       ],
       "category": "utilities",
-      "sha256": "d730c281ee14b435738f4e319b51f9c087659a27a89a68db16d596ba6e686e71",
+      "sha256": "cab7912d45c0e969ef845ea8e54fbd92975a7c27568b159098c6961690fc40c2",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -936,14 +945,14 @@
       "bundleIdentifier": "com.kdt.livecontainer",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.4.0e5bbfe",
-      "versionDate": "2026-04-11T09:14:41Z",
-      "versionDescription": "Nightly build from commit 0e5bbfe586ba6dfba81d0e0e03fb323fb55bcdfd",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260411/LiveContainer_LiveContainer_LiveContainer%2BSideStore_0e5bbfe.ipa",
+      "version": "3.7.5.5586bba",
+      "versionDate": "2026-04-12T07:10:39Z",
+      "versionDescription": "Nightly build from commit 5586bba8c3e46a7615ee1198901806f2792fb0ec",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/LiveContainer_LiveContainer_LiveContainer%2BSideStore_5586bba.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 34396597,
+      "size": 34459960,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -992,6 +1001,15 @@
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ],
       "versions": [
+        {
+          "version": "3.7.5.5586bba",
+          "date": "2026-04-12T07:10:39Z",
+          "localizedDescription": "Nightly build from commit 5586bba8c3e46a7615ee1198901806f2792fb0ec",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/LiveContainer_LiveContainer_LiveContainer%2BSideStore_5586bba.ipa",
+          "size": 34459960,
+          "sha256": "9a1fe5e00ffb9b0c3ab35261f2b93662058e7fdcd783b9581d6409ca7006994d",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "3.7.4.0e5bbfe",
           "date": "2026-04-11T09:14:41Z",
@@ -1084,7 +1102,7 @@
         }
       ],
       "category": "utilities",
-      "sha256": "50d3792538e9a90d287513bc1ae36b0974ff4251d66b2053446d771ecd37090d",
+      "sha256": "9a1fe5e00ffb9b0c3ab35261f2b93662058e7fdcd783b9581d6409ca7006994d",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -2981,14 +2999,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.3-20260411.1000+f8e199b3.0603",
-      "versionDate": "2026-04-11T03:31:24Z",
-      "versionDescription": "Nightly build from commit f8e199b3d41f723d93053162fef6b8c72be38214",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/SideStore_SideStore_SideStore-0.6.3-20260404.991%2Bae380e48_ae380e4.ipa",
+      "version": "0.6.3-20260412.1002+4deda922.0603",
+      "versionDate": "2026-04-12T06:25:11Z",
+      "versionDescription": "Nightly build from commit 4deda9229c6746234f1ace7df16eb9af9e19f3fd",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/SideStore_SideStore_SideStore-0.6.3-20260412.1002%2B4deda922_4deda92.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 26918556,
+      "size": 26919740,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -3002,6 +3020,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.6.3-20260412.1002+4deda922.0603",
+          "date": "2026-04-12T06:25:11Z",
+          "localizedDescription": "Nightly build from commit 4deda9229c6746234f1ace7df16eb9af9e19f3fd",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/SideStore_SideStore_SideStore-0.6.3-20260412.1002%2B4deda922_4deda92.ipa",
+          "size": 26919740,
+          "sha256": "0fb6f7d7475d0785b1dec19729b993b317c2f3c187a8872980c115fe1b64d9dc",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.6.3-20260411.1000+f8e199b3.0603",
           "date": "2026-04-11T03:31:24Z",
@@ -3093,7 +3120,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "f78f9c72edd86b7fd38dd552187883273c26520f4e32dc4e54fcbdaa284acb21",
+      "sha256": "0fb6f7d7475d0785b1dec19729b993b317c2f3c187a8872980c115fe1b64d9dc",
       "category": "other"
     },
     {
@@ -3102,14 +3129,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.1",
-      "versionDate": "2026-04-04T00:49:27Z",
-      "versionDescription": "## Changes\r\n\r\n- Updated the universal script\r\n- Added support for mounting the DDI over RSD",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.1/StikDebug-3.1.1.ipa",
+      "version": "3.1.2",
+      "versionDate": "2026-04-12T06:41:17Z",
+      "versionDescription": "Improved iOS 26/TXM JIT reliability.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.1...3.1.2",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.2/StikDebug-3.1.2.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 10973374,
+      "size": 10974298,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -3121,7 +3148,7 @@
       "screenshotURLs": [],
       "versions": [],
       "category": "other",
-      "sha256": "445530781459da52f347c34dc6faa5c1f50dbb1e049155c59a2b9d0f79025bd3"
+      "sha256": "db242453219b9b554a4c02fdcdc114c4381442f9d554a9206a5668abedc524bb"
     },
     {
       "name": "UTM",
