@@ -489,14 +489,14 @@
       "bundleIdentifier": "com.xitrix.iTorrent2.coexist",
       "developerName": "XITRIX",
       "subtitle": "Torrent client for iOS",
-      "version": "2.1.1-1",
-      "versionDate": "2025-12-18T09:43:35Z",
-      "versionDescription": "## What’s new\r\n* Import/Export of RSS channels\r\n\r\n## Improvements\r\n* Files thumbnails now looks properly\r\n* Minor UI changes\r\n\r\n## Fixes\r\n* HTTPS trackers now works!\r\n* App crash on launch fixed\r\n* RSS magnet links now works\r\n\r\n**Full Changelog**: https://github.com/XITRIX/iTorrent/compare/v2.1.0-1...v2.1.1-1",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251218/iTorrent_2.1.1-1_Coexist.ipa",
+      "version": "2.1.1.1.33629b6",
+      "versionDate": "2026-03-23T22:26:34Z",
+      "versionDescription": "Nightly build from commit 33629b6ef3085dfcffc134dcc3cc5660580bd9e7",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260323/iTorrent_2.1.1.1.33629b6_Coexist.ipa",
       "localizedDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
       "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon-Blue.appiconset/AppIcon-Blue.png",
       "tintColor": "#F19E69",
-      "size": 8341028,
+      "size": 8352397,
       "appPermissions": {
         "entitlements": [
           "com.apple.security.application-groups",
@@ -512,6 +512,15 @@
         "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/5.png"
       ],
       "versions": [
+        {
+          "version": "2.1.1.1.33629b6",
+          "date": "2026-03-23T22:26:34Z",
+          "localizedDescription": "Nightly build from commit 33629b6ef3085dfcffc134dcc3cc5660580bd9e7",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260323/iTorrent_2.1.1.1.33629b6_Coexist.ipa",
+          "size": 8352397,
+          "sha256": "7492c1b214ed4d69bc4593bcbf79a071e661d34d611b25d4aeeb177ec2512648",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "2.1.1-1",
           "date": "2025-12-18T09:43:35Z",
@@ -529,7 +538,7 @@
         "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/4.PNG"
       ],
       "category": "utilities",
-      "sha256": "896d0dab018cf080a2d793f00df2a24273587a41be82d6895135f3bedd297010"
+      "sha256": "7492c1b214ed4d69bc4593bcbf79a071e661d34d611b25d4aeeb177ec2512648"
     },
     {
       "name": "Kazumi",
