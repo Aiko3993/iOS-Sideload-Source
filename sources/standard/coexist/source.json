@@ -2846,14 +2846,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.3.2",
-      "versionDate": "2026-04-11T02:06:32Z",
-      "versionDescription": "优化视频旋转方向\r\n\r\n## 2.0.3.1\r\n修复视频返回按钮 @1883 by @HChaZZY\r\n\r\n## 2.0.3\r\n重写视频方向控制逻辑:\r\n解决 iOS 横屏从后台返回自动切换为竖屏问题\r\n解决 iOS 横屏关闭自动旋转自动切换为竖屏问题\r\n解决 Android 横屏返回键切换为竖屏自动切换回横屏问题\r\n\r\n支持悬浮底栏，默认关\r\n用户主页显示预约按钮\r\n添加 Android Shortcut\r\nAndroid 支持添加 UP 至桌面\r\n桌面端离线视频支持在本地文件夹打开\r\n\r\n修复 AppSign\r\n修复弹幕等级屏蔽无效 #1879 by @HChaZZY",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.3.2/PiliPlus_ios_2.0.3%2B4841.ipa",
+      "version": "2.0.4",
+      "versionDate": "2026-04-14T06:09:40Z",
+      "versionDescription": "播放页优化\r\n优化视频旋转方向\r\n优化视频进度条显示 #1887 co-by @cnctem\r\n移动端屏蔽列表底部边缘滑动，避免和系统手势冲突\r\n其他",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/PiliPlus_2.0.4_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24957050,
+      "size": 24944743,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -2865,6 +2865,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.4",
+          "date": "2026-04-14T06:09:40Z",
+          "localizedDescription": "播放页优化\r\n优化视频旋转方向\r\n优化视频进度条显示 #1887 co-by @cnctem\r\n移动端屏蔽列表底部边缘滑动，避免和系统手势冲突\r\n其他",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/PiliPlus_2.0.4_Coexist.ipa",
+          "size": 24944743,
+          "sha256": "213d2c1ff5cde33b44ef5bcbd1d3b26f63f5a376d775c27edc24845d1d059913",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.3.2",
           "date": "2026-04-11T02:06:32Z",
@@ -2947,7 +2956,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "fe349df55d3758b8206c0fd47cf347817e3d2f828894cf607b363a7cbcfcf791",
+      "sha256": "213d2c1ff5cde33b44ef5bcbd1d3b26f63f5a376d775c27edc24845d1d059913",
       "category": "other"
     },
     {
