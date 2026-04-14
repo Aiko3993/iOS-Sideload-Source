@@ -1173,14 +1173,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.45",
-      "versionDate": "2026-04-08T09:14:28Z",
-      "versionDescription": "## What's Changed\r\n* Fix Backup Restore by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/692\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.4...v0.7.45",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.45/Mangayomi-v0.7.45-ios.ipa",
+      "version": "0.7.50",
+      "versionDate": "2026-04-14T17:10:48Z",
+      "versionDescription": "## What's Changed\r\n* make ts readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/693\r\n* add Novel TTS\r\n* fix spelling by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/694\r\n* Potential fix for gray screen bug on vertical reading mode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/695\r\n* Pass sanitized chapterName instead chapter.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/696\r\n* fix page jumps in vertical/webtoon mode + performance improvements in library/reader by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/697\r\n* enhance BT server functionality and performance\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.45...v0.7.50",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.50/Mangayomi-v0.7.50-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 44983139,
+      "size": 48006758,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1201,6 +1201,15 @@
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
       ],
       "versions": [
+        {
+          "version": "0.7.50",
+          "date": "2026-04-14T17:10:48Z",
+          "localizedDescription": "## What's Changed\r\n* make ts readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/693\r\n* add Novel TTS\r\n* fix spelling by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/694\r\n* Potential fix for gray screen bug on vertical reading mode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/695\r\n* Pass sanitized chapterName instead chapter.name by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/696\r\n* fix page jumps in vertical/webtoon mode + performance improvements in library/reader by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/697\r\n* enhance BT server functionality and performance\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.45...v0.7.50",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.50/Mangayomi-v0.7.50-ios.ipa",
+          "size": 48006758,
+          "sha256": "75c01d30d2a84b87dbe727e1127d4332eb680c7d958f4ab9c6fb42467f303662",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "0.7.45",
           "date": "2026-04-08T09:14:28Z",
@@ -1248,7 +1257,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "178214d3fa8ecabe5e614d9819dc845b693b2a67d465826ea8f42e38d0b63697",
+      "sha256": "75c01d30d2a84b87dbe727e1127d4332eb680c7d958f4ab9c6fb42467f303662",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
@@ -1333,14 +1342,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.2.20260414.10.US.runner.c874821",
-      "versionDate": "2026-04-14T13:16:39Z",
-      "versionDescription": "Nightly build from commit c87482198457ff2109d6dd2645184033422e16dc",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/ProjectNyxian_Nyxian_nyxian_c874821.ipa",
+      "version": "0.9.2.20260414.22.US.runner.ffefe2e",
+      "versionDate": "2026-04-14T16:28:29Z",
+      "versionDescription": "Nightly build from commit ffefe2e64b7bfb3be94f6a51a20f3fce81dfa543",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/ProjectNyxian_Nyxian_nyxian_ffefe2e.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 50420837,
+      "size": 50424060,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1394,6 +1403,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.2.20260414.22.US.runner.ffefe2e",
+          "date": "2026-04-14T16:28:29Z",
+          "localizedDescription": "Nightly build from commit ffefe2e64b7bfb3be94f6a51a20f3fce81dfa543",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/ProjectNyxian_Nyxian_nyxian_ffefe2e.ipa",
+          "size": 50424060,
+          "sha256": "fb92b1a4ca9a1a350c5dad7761030eead68ffdc0080d670dfa504619442fc9a8",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.2.20260414.10.US.runner.c874821",
           "date": "2026-04-14T13:16:39Z",
@@ -2829,7 +2847,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "57b5652ce10968ddd9471d337045c377c1dc8e4b48f907c3bda77abca1e4f312"
+      "sha256": "fb92b1a4ca9a1a350c5dad7761030eead68ffdc0080d670dfa504619442fc9a8"
     },
     {
       "name": "PiliPlus",
