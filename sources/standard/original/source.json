@@ -1414,14 +1414,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.2.20260420.19.US.runner.111ce77",
-      "versionDate": "2026-04-20T03:26:55Z",
-      "versionDescription": "Nightly build from commit 111ce777255df07c5bad7355d4ea29326342067b",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260417/ProjectNyxian_Nyxian_nyxian_d958511.ipa",
+      "version": "0.9.2.20260420.19.US.runner.8152334",
+      "versionDate": "2026-04-20T11:41:36Z",
+      "versionDescription": "Nightly build from commit 815233438cbc675ed61958812b6bf8b39409e1ed",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260420/ProjectNyxian_Nyxian_nyxian_8152334.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 55769611,
+      "size": 55771683,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1475,6 +1475,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.9.2.20260420.19.US.runner.8152334",
+          "date": "2026-04-20T11:41:36Z",
+          "localizedDescription": "Nightly build from commit 815233438cbc675ed61958812b6bf8b39409e1ed",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260420/ProjectNyxian_Nyxian_nyxian_8152334.ipa",
+          "size": 55771683,
+          "sha256": "393e25bf781c82e15d109ecfea10738b517b6067dbf8ff401e3740645657caaf",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.9.2.20260420.19.US.runner.111ce77",
           "date": "2026-04-20T03:26:55Z",
@@ -3108,7 +3117,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "3f145c0b1752912de558b12440bfed6db4d21b376bfd4b0b7261904aee23fec6"
+      "sha256": "393e25bf781c82e15d109ecfea10738b517b6067dbf8ff401e3740645657caaf"
     },
     {
       "name": "PiliPlus",
@@ -3235,14 +3244,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "developerName": "Eslzzyl",
       "subtitle": "一个 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.12.1",
-      "versionDate": "2026-03-15T13:29:23Z",
-      "versionDescription": "这个版本仅涉及 iPad 上的一个布局修复，iPhone 和 Mac 用户可以跳过。\r\n\r\n## bug 修复\r\n\r\n修复了 iPad 上旋转屏幕导致的插画瀑布流超宽问题",
-      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.12.1/Pixiv-SwiftUI.ipa",
+      "version": "0.13.0",
+      "versionDate": "2026-04-20T12:16:54Z",
+      "versionDescription": "## 新功能\r\n\r\n 1. 插画详情页图片过渡加载：先显示缓存的低画质图片，高画质下载完成后自动替换为高清图，从而减少白屏空等的情况\r\n 2. 默认私密书签设置：新增「默认私密收藏」设置选项，可选择默认以私密方式收藏插画/小说 ( @ButaiKirin )\r\n 3. 排行页优化：排行页面支持更多排行模式选择，改进了最新内容加载逻辑 ( @ButaiKirin )\r\n     - 由于屏幕空间有限，iOS 平台不显示排行 Tab。可通过设置页的排行部分进入该页面。\r\n 4. 小说系列章节导航：修复了小说系列章节跳转问题，改善了小说系列阅读导航体验 ( @Ding-Kyoma )\r\n\r\n## 优化和 bug 修复\r\n\r\n 1. 修复了插画详情、小说详情、用户页面的分享动作 ( @ButaiKirin )\r\n 2. 漫画画质设置：详情页图片现在会根据类型（插画/漫画）应用对应的画质设置 ( @ButaiKirin )\r\n 3. 修复了小说中图片解析和加载诊断问题 ( @Ding-Kyoma )\r\n 4. 修复了从部分页面下载图片时未正确使用「作者名+标题」命名格式的问题 ( #10 )",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.13.0/Pixiv-SwiftUI.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7251046,
+      "size": 7375451,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -3251,6 +3260,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.13.0",
+          "date": "2026-04-20T12:16:54Z",
+          "localizedDescription": "## 新功能\r\n\r\n 1. 插画详情页图片过渡加载：先显示缓存的低画质图片，高画质下载完成后自动替换为高清图，从而减少白屏空等的情况\r\n 2. 默认私密书签设置：新增「默认私密收藏」设置选项，可选择默认以私密方式收藏插画/小说 ( @ButaiKirin )\r\n 3. 排行页优化：排行页面支持更多排行模式选择，改进了最新内容加载逻辑 ( @ButaiKirin )\r\n     - 由于屏幕空间有限，iOS 平台不显示排行 Tab。可通过设置页的排行部分进入该页面。\r\n 4. 小说系列章节导航：修复了小说系列章节跳转问题，改善了小说系列阅读导航体验 ( @Ding-Kyoma )\r\n\r\n## 优化和 bug 修复\r\n\r\n 1. 修复了插画详情、小说详情、用户页面的分享动作 ( @ButaiKirin )\r\n 2. 漫画画质设置：详情页图片现在会根据类型（插画/漫画）应用对应的画质设置 ( @ButaiKirin )\r\n 3. 修复了小说中图片解析和加载诊断问题 ( @Ding-Kyoma )\r\n 4. 修复了从部分页面下载图片时未正确使用「作者名+标题」命名格式的问题 ( #10 )",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.13.0/Pixiv-SwiftUI.ipa",
+          "size": 7375451,
+          "sha256": "19a7779909e2e512eaddc0cdace4689b32e5d4e92034a411ffcc9d2ea5bc549b",
+          "minOSVersion": "17.0"
+        },
         {
           "version": "0.12.1",
           "date": "2026-03-15T13:29:23Z",
@@ -3270,7 +3288,7 @@
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "262b533903b9599976fade60f8d37d438617b83c3e03816abb011127f152b313",
+      "sha256": "19a7779909e2e512eaddc0cdace4689b32e5d4e92034a411ffcc9d2ea5bc549b",
       "category": "other"
     },
     {
