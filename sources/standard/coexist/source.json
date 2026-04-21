@@ -1254,14 +1254,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.55",
-      "versionDate": "2026-04-15T13:30:52Z",
-      "versionDescription": "* fix: improve app lock screen handling and mouse back button support\r\n* fix: turning pages issue on vertical mode #702 \r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.50...v0.7.55",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260415/Mangayomi_0.7.55_Coexist.ipa",
+      "version": "0.7.60",
+      "versionDate": "2026-04-21T16:29:27Z",
+      "versionDescription": "## What's Changed\r\n* updated grpc fields for Aniyomi backup by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/707\r\n* Improve performance of library, manga home, and tracker screens by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/705\r\n* Fix reader and Code Cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/703\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.55...v0.7.60\r\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260421/Mangayomi_0.7.60_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47874604,
+      "size": 47796106,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1282,6 +1282,15 @@
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
       ],
       "versions": [
+        {
+          "version": "0.7.60",
+          "date": "2026-04-21T16:29:27Z",
+          "localizedDescription": "## What's Changed\r\n* updated grpc fields for Aniyomi backup by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/707\r\n* Improve performance of library, manga home, and tracker screens by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/705\r\n* Fix reader and Code Cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/703\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.55...v0.7.60\r\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260421/Mangayomi_0.7.60_Coexist.ipa",
+          "size": 47796106,
+          "sha256": "4f0fe214e7d0375c17a4f038441fc2109e21ed669fa388f091d595601a4b8c3d",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "0.7.55",
           "date": "2026-04-15T13:30:52Z",
@@ -1347,7 +1356,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "18854fbbabb378974a5317a27e799ae1c5dacf8126d63cdab8f2182527837f1d",
+      "sha256": "4f0fe214e7d0375c17a4f038441fc2109e21ed669fa388f091d595601a4b8c3d",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
