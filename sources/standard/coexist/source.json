@@ -412,14 +412,14 @@
       "bundleIdentifier": "thewonderofyou.Feather.coexist",
       "developerName": "khcrysalis",
       "subtitle": "On-device signing application",
-      "version": "2.7.0",
-      "versionDate": "2026-04-05T15:58:54Z",
-      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for using remote pairing on 17.4+, for 17.3 and below, use a standard pairing file.\r\n* Added more recommended sources by @CelloSerenity in https://github.com/CLARATION/Feather/pull/585\r\n* Added option to inject into all available extensions within an app by @waruhachi in https://github.com/CLARATION/Feather/pull/592\r\n\r\n## New Contributors\r\n* @waruhachi made their first contribution in https://github.com/CLARATION/Feather/pull/592\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.6.0...v2.7.0",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260405/Feather_2.7.0_Coexist.ipa",
+      "version": "2.8.2",
+      "versionDate": "2026-04-22T09:37:04Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for Catalyst targets.\r\n* Added ability to rename existing certificates.\r\n* Added Arabic localizations by @mohammed1d1 in https://github.com/CLARATION/Feather/pull/624\r\n\r\n## New Contributors\r\n* @mohammed1d1 made their first contribution in https://github.com/CLARATION/Feather/pull/624\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.7.0...v2.8.2",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260422/Feather_2.8.2_Coexist.ipa",
       "localizedDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
       "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
       "tintColor": "848ef9",
-      "size": 14157340,
+      "size": 14232458,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -431,6 +431,15 @@
         "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Store.png?raw=true"
       ],
       "versions": [
+        {
+          "version": "2.8.2",
+          "date": "2026-04-22T09:37:04Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added support for Catalyst targets.\r\n* Added ability to rename existing certificates.\r\n* Added Arabic localizations by @mohammed1d1 in https://github.com/CLARATION/Feather/pull/624\r\n\r\n## New Contributors\r\n* @mohammed1d1 made their first contribution in https://github.com/CLARATION/Feather/pull/624\r\n\r\n**Full Changelog**: https://github.com/CLARATION/Feather/compare/v2.7.0...v2.8.2",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260422/Feather_2.8.2_Coexist.ipa",
+          "size": 14232458,
+          "sha256": "9f284992946d2f7776e86c4eb9995f226d48cf8a51c61e7280e46f9daecfdb4c",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "2.7.0",
           "date": "2026-04-05T15:58:54Z",
@@ -450,7 +459,7 @@
           "minOSVersion": "16.0"
         }
       ],
-      "sha256": "4fd26c9206eb6802bed93381fc2a8c010ded16ed1f0bb134c96bb3ad50828f20",
+      "sha256": "9f284992946d2f7776e86c4eb9995f226d48cf8a51c61e7280e46f9daecfdb4c",
       "category": "other",
       "screenshots": [
         "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
