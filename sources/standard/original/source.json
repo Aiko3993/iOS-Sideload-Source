@@ -3498,6 +3498,15 @@
           "minOSVersion": "15.0"
         },
         {
+          "version": "0.6.3-pr.1240+48cfa68.0603",
+          "date": "2026-04-11T08:27:55Z",
+          "localizedDescription": "Nightly build from commit 48cfa683a402b5237b4dfe3d5de1b815234ad059",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260411/SideStore_SideStore_SideStore-0.6.3-pr.1240%2B48cfa68_48cfa68.ipa",
+          "size": 26972161,
+          "sha256": "c90a31a8de0f5f3325c3efe8c44abb8693424f8efad60df8e6334bcce4f18fde",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.3-20260411.1000+f8e199b3.0603",
           "date": "2026-04-11T03:31:24Z",
           "localizedDescription": "Nightly build from commit f8e199b3d41f723d93053162fef6b8c72be38214",
