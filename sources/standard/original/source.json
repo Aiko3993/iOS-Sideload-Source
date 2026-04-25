@@ -3233,14 +3233,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.4",
-      "versionDate": "2026-04-14T06:09:40Z",
-      "versionDescription": "播放页优化\r\n优化视频旋转方向\r\n优化视频进度条显示 #1887 co-by @cnctem\r\n移动端屏蔽列表底部边缘滑动，避免和系统手势冲突\r\n其他",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.4/PiliPlus_ios_2.0.4%2B4848.ipa",
+      "version": "2.0.5",
+      "versionDate": "2026-04-25T06:43:47Z",
+      "versionDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.5/PiliPlus_ios_2.0.5%2B4886.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24961961,
+      "size": 24956612,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -3252,6 +3252,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.5",
+          "date": "2026-04-25T06:43:47Z",
+          "localizedDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.5/PiliPlus_ios_2.0.5%2B4886.ipa",
+          "size": 24956612,
+          "sha256": "c4062fa655e00356bfd5b6fac78f1cbc3d798fa63a310c939daddfe559b99216",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.4",
           "date": "2026-04-14T06:09:40Z",
@@ -3343,7 +3352,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "5cbef593b77151e5b6fb138ae3376c67017aeea95928b043121567fed34fd2a8",
+      "sha256": "c4062fa655e00356bfd5b6fac78f1cbc3d798fa63a310c939daddfe559b99216",
       "category": "other"
     },
     {

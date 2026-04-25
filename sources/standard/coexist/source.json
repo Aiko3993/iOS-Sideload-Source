@@ -3251,14 +3251,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.4",
-      "versionDate": "2026-04-14T06:09:40Z",
-      "versionDescription": "播放页优化\r\n优化视频旋转方向\r\n优化视频进度条显示 #1887 co-by @cnctem\r\n移动端屏蔽列表底部边缘滑动，避免和系统手势冲突\r\n其他",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260414/PiliPlus_2.0.4_Coexist.ipa",
+      "version": "2.0.5",
+      "versionDate": "2026-04-25T06:43:47Z",
+      "versionDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260425/PiliPlus_2.0.5_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24944743,
+      "size": 24939176,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -3270,6 +3270,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.0.5",
+          "date": "2026-04-25T06:43:47Z",
+          "localizedDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260425/PiliPlus_2.0.5_Coexist.ipa",
+          "size": 24939176,
+          "sha256": "a06adf0950afdf8c4445a2b75878e60ef4eff7dcf3a8de3c02471d237c348ba3",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.0.4",
           "date": "2026-04-14T06:09:40Z",
@@ -3361,7 +3370,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "213d2c1ff5cde33b44ef5bcbd1d3b26f63f5a376d775c27edc24845d1d059913",
+      "sha256": "a06adf0950afdf8c4445a2b75878e60ef4eff7dcf3a8de3c02471d237c348ba3",
       "category": "other"
     },
     {
