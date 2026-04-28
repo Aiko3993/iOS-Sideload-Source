@@ -386,6 +386,7 @@ class GitHubClient:
     def create_release(self, repo, tag, name=None, body=None, prerelease=False):
         """Create a new release."""
         url = f"https://api.github.com/repos/{repo}/releases"
+        cache_url = f"https://api.github.com/repos/{repo}/releases/tags/{tag}"
         data = {
             "tag_name": tag,
             "name": name or tag,
@@ -395,7 +396,17 @@ class GitHubClient:
         try:
             resp = self.session.post(url, headers=self.headers, json=data, timeout=15)
             resp.raise_for_status()
-            return resp.json()
+            result = resp.json()
+            self._json_cache[cache_url] = result
+            return result
+        except HTTPError as e:
+            status = getattr(e.response, 'status_code', None)
+            if status == 422:
+                logger.info(f"Release {tag} already exists (concurrent creation), fetching existing...")
+                self._json_cache.pop(cache_url, None)
+                return self._get_json_cached(cache_url)
+            logger.error(f"Failed to create release {tag}: {e}")
+            return None
         except Exception as e:
             logger.error(f"Failed to create release {tag}: {e}")
             return None
@@ -475,7 +486,7 @@ class GitHubClient:
                     if not should_delete and app_name:
                         norm_app = normalize_name(app_name)
                         norm_asset = normalize_name(asset['name'])
-                        if norm_app == norm_asset or norm_app + "nightly" == norm_asset:
+                        if norm_app and len(norm_app) >= 3 and norm_asset.startswith(norm_app):
                             should_delete = True
 
                 if should_delete:
@@ -513,10 +524,9 @@ class GitHubClient:
             return None
 
     def get_all_releases(self, repo):
-        """Fetch all releases for a repository."""
+        """Fetch all releases for a repository (paginated, up to 1000)."""
         url = f"https://api.github.com/repos/{repo}/releases"
-        data = self._get_json_cached(url)
-        return data if isinstance(data, list) else []
+        return self._paginate(url, per_page=100, max_pages=10)
 
     def delete_release(self, repo, release_id, tag):
         """Delete a release and its associated tag."""
