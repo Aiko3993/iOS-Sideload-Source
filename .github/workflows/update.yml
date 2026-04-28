@@ -52,6 +52,9 @@ jobs:
       - name: Run update script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RECONCILE_CACHED_ASSETS: '1'
+          RECONCILE_APPLY: '1'
+          RECONCILE_MIN_AGE_DAYS: '1'
         run: |
           echo "Running update_source.py..."
           python .github/scripts/update_source.py

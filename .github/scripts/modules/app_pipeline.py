@@ -228,6 +228,23 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
             if url_is_alive:
                 config_icon = app_config.get('icon_url')
+
+                if not config_icon:
+                    current_icon_url = app_entry.get('iconURL')
+                    if current_icon_url:
+                        head_resp = client.head(current_icon_url, allow_redirects=True, timeout=15)
+                        if head_resp is None or head_resp.status_code >= 400:
+                            repo_icons = find_best_icon(repo, client)
+                            if repo_icons:
+                                best_icon = max(repo_icons, key=lambda u: score_icon_path(u))
+                                logger.info(f"Replaced broken icon for {name}: {best_icon}")
+                                app_entry['iconURL'] = best_icon
+                                found_icon_auto = best_icon
+
+                if found_icon_auto:
+                    metadata_updates['icon_url'] = found_icon_auto
+
+                config_icon = app_config.get('icon_url')
                 if config_icon and config_icon not in ['None', '_No response_'] and app_entry.get('iconURL') != config_icon:
                     app_entry['iconURL'] = config_icon
                     logger.info(f"Updated icon for {name} from config")
@@ -258,7 +275,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
                 _apply_passthrough_fields(app_entry, app_config)
                 logger.info(f"Skipping {name} (Already up to date at version {version})")
-                return app_entry, {}
+                return app_entry, metadata_updates
 
         if 'bundleIdentifier' in app_entry:
             old_id = app_entry['bundleIdentifier']
@@ -307,8 +324,8 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                     curr_q, _, _ = get_image_quality(current_icon, client)
                     curr_path = score_icon_path(current_icon)
                     curr_total = curr_q + curr_path
-                    if best_repo_score > curr_total + 15:
-                        logger.info(f"Replacing icon with better version from repo: {best_repo_icon}")
+                    if curr_q < 0 or best_repo_score > curr_total + 15:
+                        logger.info(f"Replacing icon for {name}: broken={curr_q < 0}, score={best_repo_score}>{curr_total + 15}")
                         app_entry['iconURL'] = best_repo_icon
                         found_icon_auto = best_repo_icon
 

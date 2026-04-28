@@ -1,5 +1,8 @@
 # Sideload Source Configuration
 
+version_retention_days: 7
+max_versions_per_app: 2
+
 # Versions to treat as "meaningless channel names" and skip updating
 # if found as the main version string.
 skip_versions:

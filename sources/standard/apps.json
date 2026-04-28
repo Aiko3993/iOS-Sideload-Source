@@ -23,8 +23,7 @@
   {
     "name": "Apollo",
     "github_repo": "Balackburn/Apollo",
-    "bundle_id": "com.christianselig.Apollo",
-    "icon_url": "https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp"
+    "bundle_id": "com.christianselig.Apollo"
   },
   {
     "name": "Asspp",
@@ -107,11 +106,10 @@
     "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png"
   },
   {
-    "name": "Nyxian (Nightly)",
+    "name": "Nyxian",
     "github_repo": "ProjectNyxian/Nyxian",
     "bundle_id": "com.cr4zy.nyxian",
-    "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
-    "artifact_only": true
+    "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png"
   },
   {
     "name": "PiliPlus",

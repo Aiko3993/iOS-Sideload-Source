@@ -1,6 +1,7 @@
 import copy
 import json
 import re
+from datetime import datetime, timedelta
 from urllib.parse import urlparse, unquote
 
 from utils import logger, save_json, GLOBAL_CONFIG
@@ -50,6 +51,39 @@ def deduplicate_versions(versions, app_name):
         unique_versions.append(v)
 
     unique_versions.sort(key=lambda x: x.get('date', ''), reverse=True)
+
+    retention_days = int((GLOBAL_CONFIG or {}).get('version_retention_days', 7))
+    if retention_days > 0 and unique_versions:
+        latest_date_str = unique_versions[0].get('date', '')
+        if latest_date_str:
+            try:
+                latest_date = datetime.fromisoformat(latest_date_str.replace('Z', '+00:00'))
+                cutoff = latest_date - timedelta(days=retention_days)
+                kept = []
+                seen_date = set()
+                for v in unique_versions:
+                    v_date_str = v.get('date', '')
+                    if not v_date_str:
+                        continue
+                    date_prefix = v_date_str[:10]
+                    if date_prefix in seen_date:
+                        continue
+                    try:
+                        v_date = datetime.fromisoformat(v_date_str.replace('Z', '+00:00'))
+                    except Exception:
+                        continue
+                    if v_date >= cutoff:
+                        seen_date.add(date_prefix)
+                        kept.append(v)
+                if kept:
+                    max_versions = int((GLOBAL_CONFIG or {}).get('max_versions_per_app', 0))
+                    if max_versions > 0:
+                        kept = kept[:max_versions]
+                    return kept
+                return unique_versions[:1]
+            except Exception:
+                return unique_versions
+
     return unique_versions
 
 def _is_allowed_version_url(url):
@@ -68,10 +102,10 @@ def _is_allowed_version_url(url):
     exclude_tokens = tuple(scoring_cfg.get('exclude_tokens', []))
     if exclude_exts and lower_name.endswith(exclude_exts):
         return False
-    if exclude_tokens and any(t in lower_name for t in exclude_tokens):
-        return False
     if allowed_direct_exts and lower_name.endswith(allowed_direct_exts):
         return True
+    if exclude_tokens and any(t in lower_name for t in exclude_tokens):
+        return False
     if allowed_archive_exts and lower_name.endswith(allowed_archive_exts):
         return any(t in lower_name for t in archive_hint_tokens)
     return False
