@@ -3787,7 +3787,7 @@
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
       "version": "3.1.2",
-      "versionDate": "2026-04-12",
+      "versionDate": "2026-04-12T06:41:17Z",
       "versionDescription": "Improved iOS 26/TXM JIT reliability.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.1...3.1.2",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/StikDebug_3.1.2_Coexist.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
@@ -3804,7 +3804,8 @@
       },
       "screenshotURLs": [],
       "versions": [],
-      "category": "other"
+      "category": "other",
+      "sha256": "fc5d24f8697c7a9a11f7c7d313b0a0306044b41ede32d8b52b7feb881b4e1492"
     },
     {
       "name": "UTM",
