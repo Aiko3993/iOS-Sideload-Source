@@ -1,0 +1,468 @@
+name: Process App Request
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  validate-request:
+    if: |
+      (github.event.action == 'opened' || github.event.action == 'edited') && 
+      contains(github.event.issue.labels.*.name, 'app-request') && 
+      !contains(github.event.issue.labels.*.name, 'approved') && 
+      !contains(github.event.issue.labels.*.name, 'rejected')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r .github/requirements.txt
+
+      - name: Parse Issue Body
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            
+            const extract = (key) => {
+              const regex = new RegExp(`### ${key}\\s+([\\s\\S]*?)(?=(###|$))`);
+              const match = body.match(regex);
+              return match ? match[1].trim() : null;
+            };
+
+            const apps = [];
+            
+            const tryExtract = (suffix) => {
+                const s = suffix ? ` ${suffix}` : '';
+                const name = extract(`App Name${s}`);
+                const repo = extract(`GitHub Repository${s}`);
+                const cat = extract(`Category${s}`);
+                const icon = extract(`Icon URL${s} (Optional)`);
+                const relChan = extract(`Release Channel${s} (Optional)`);
+                const mode = extract(`Build Source Mode${s} (Optional)`);
+                const tagRegex = extract(`Release Tag Regex${s} (Optional)`);
+                const workflow = extract(`GitHub Workflow File${s} (Optional)`);
+                const artifactName = extract(`Artifact Name / Regex${s} (Optional)`);
+                const branch = extract(`GitHub Branch${s} (Optional)`);
+                const ipaRegex = extract(`Release Asset Regex${s} (Optional)`);
+                
+                const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
+                const artifactOnly = (mode && mode.toLowerCase().includes('artifacts')) ? true : undefined;
+                const preRelease = (relChan && relChan.toLowerCase().includes('pre')) ? true : undefined;
+
+                if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
+                    apps.push({
+                        name: name,
+                        repo: repo,
+                        category: cat,
+                        icon_url: cleanIcon,
+                        pre_release: preRelease,
+                        artifact_only: artifactOnly,
+                        tag_regex: (tagRegex && tagRegex !== '_No response_') ? tagRegex : undefined,
+                        github_workflow: (workflow && workflow !== '_No response_') ? workflow : undefined,
+                        artifact_name: (artifactName && artifactName !== '_No response_') ? artifactName : undefined,
+                        github_branch: (branch && branch !== '_No response_') ? branch : undefined,
+                        ipa_regex: (ipaRegex && ipaRegex !== '_No response_') ? ipaRegex : undefined
+                    });
+                }
+            };
+
+            tryExtract('');
+            tryExtract('2');
+            tryExtract('3');
+
+            if (apps.length === 0) {
+              core.setFailed('No valid app data found in issue body.');
+              return;
+            }
+
+            core.setOutput('apps_json', JSON.stringify(apps));
+
+      - name: Dry-run Validation
+        id: validate
+        env:
+          APPS_JSON: ${{ steps.parse.outputs.apps_json }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/validate_app_request_sandbox.py
+
+      - name: Ensure working tree unchanged
+        run: git diff --exit-code
+
+      - name: Comment Validation Result
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const resultsStr = '${{ steps.validate.outputs.results }}';
+            let results = [];
+            try {
+              results = JSON.parse(resultsStr || '[]');
+            } catch (e) {
+              console.log('Error parsing results:', e);
+            }
+            
+            let message = '';
+            let hasError = false;
+            
+            for (const res of results) {
+               if (res.status === 'error') {
+                   hasError = true;
+                   message += `❌ **${res.repo}**: ${res.message}\n`;
+               } else {
+                   message += `✅ **${res.repo}**: ${res.message}\n`;
+               }
+            }
+            
+            if (hasError) {
+                message = "### ⚠️ Validation Failed\nPlease check the repository name or input format.\n\n" + message;
+                await github.rest.issues.addLabels({
+                   owner: context.repo.owner,
+                   repo: context.repo.repo,
+                   issue_number: context.issue.number,
+                   labels: ['invalid']
+                });
+                try {
+                   await github.rest.issues.removeLabel({
+                     owner: context.repo.owner,
+                     repo: context.repo.repo,
+                     issue_number: context.issue.number,
+                     name: 'validated'
+                   });
+                } catch (e) {}
+            } else {
+                message = "### ✅ Validation Passed\nAutomated checks completed! Awaiting maintainer review. If approved, this will be added automatically.\n\n" + message;
+                await github.rest.issues.addLabels({
+                   owner: context.repo.owner,
+                   repo: context.repo.repo,
+                   issue_number: context.issue.number,
+                   labels: ['validated']
+                });
+                try {
+                   await github.rest.issues.removeLabel({
+                     owner: context.repo.owner,
+                     repo: context.repo.repo,
+                     issue_number: context.issue.number,
+                     name: 'invalid'
+                   });
+                } catch (e) {}
+            }
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: message
+            });
+
+  process-app:
+    if: github.event.action == 'labeled' && github.event.label.name == 'approved' && contains(github.event.issue.labels.*.name, 'app-request')
+    runs-on: ubuntu-latest
+    concurrency: 
+      group: process-app-request
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r .github/requirements.txt
+
+      - name: Parse Issue Body
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            
+            const extract = (key) => {
+              const regex = new RegExp(`### ${key}\\s+([\\s\\S]*?)(?=(###|$))`);
+              const match = body.match(regex);
+              return match ? match[1].trim() : null;
+            };
+
+            const apps = [];
+            let formIndex = 0;
+            
+            // Function to try extract app data with suffix
+            const tryExtract = (suffix) => {
+                formIndex++;
+                const s = suffix ? ` ${suffix}` : '';
+                const name = extract(`App Name${s}`);
+                const repo = extract(`GitHub Repository${s}`);
+                const cat = extract(`Category${s}`);
+                const icon = extract(`Icon URL${s} (Optional)`);
+                const relChan = extract(`Release Channel${s} (Optional)`);
+                const mode = extract(`Build Source Mode${s} (Optional)`);
+                const tagRegex = extract(`Release Tag Regex${s} (Optional)`);
+                const workflow = extract(`GitHub Workflow File${s} (Optional)`);
+                const artifactName = extract(`Artifact Name / Regex${s} (Optional)`);
+                const branch = extract(`GitHub Branch${s} (Optional)`);
+                const ipaRegex = extract(`Release Asset Regex${s} (Optional)`);
+                
+                // Allow icon to be empty string if not found or placeholder
+                const cleanIcon = (icon === '_No response_' || icon === 'None' || !icon) ? '' : icon;
+                const artifactOnly = (mode && mode.toLowerCase().includes('artifacts')) ? true : undefined;
+                const preRelease = (relChan && relChan.toLowerCase().includes('pre')) ? true : undefined;
+
+                if (name && repo && cat && name !== '_No response_' && repo !== '_No response_' && cat !== '_No response_') {
+                    apps.push({
+                        name: name,
+                        repo: repo,
+                        category: cat,
+                        icon_url: cleanIcon,
+                        pre_release: preRelease,
+                        artifact_only: artifactOnly,
+                        tag_regex: (tagRegex && tagRegex !== '_No response_') ? tagRegex : undefined,
+                        github_workflow: (workflow && workflow !== '_No response_') ? workflow : undefined,
+                        artifact_name: (artifactName && artifactName !== '_No response_') ? artifactName : undefined,
+                        github_branch: (branch && branch !== '_No response_') ? branch : undefined,
+                        ipa_regex: (ipaRegex && ipaRegex !== '_No response_') ? ipaRegex : undefined,
+                        source_issue: context.issue.number,
+                        form_index: formIndex
+                    });
+                }
+            };
+
+            // Try 1, 2, 3
+            tryExtract('');
+            tryExtract('2');
+            tryExtract('3');
+
+            if (apps.length === 0) {
+              core.setFailed('No valid app data found in issue body.');
+              return;
+            }
+
+            console.log(`Found ${apps.length} apps to process.`);
+            
+            // Pass as JSON string
+            core.setOutput('apps_json', JSON.stringify(apps));
+
+      - name: Add or Update App
+        id: add
+        env:
+          APPS_JSON: ${{ steps.parse.outputs.apps_json }}
+        run: python3 .github/scripts/add_app.py
+
+      - name: Generate Commit Message
+        id: msg
+        run: |
+          APP_NAME=$(python3 -c "import json, os; print(json.loads(os.environ['APPS_JSON'])[0]['name'])" 2>/dev/null || echo "App")
+          REPO_NAME=$(python3 -c "import json, os; print(json.loads(os.environ['APPS_JSON'])[0]['repo'])" 2>/dev/null || echo "Unknown")
+          
+          echo "app_name=$APP_NAME" >> $GITHUB_OUTPUT
+          echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
+        env:
+          APPS_JSON: ${{ steps.parse.outputs.apps_json }}
+
+      - name: Validate Changes
+        run: python3 .github/scripts/validate_apps.py
+
+      - name: Auto-format files (EOF, trailing spaces, blanks)
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
+
+      - name: Commit and Close Issue
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
+            
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            
+            push_with_recovery() {
+              if git pull --rebase origin main && git push origin main; then
+                return 0
+              fi
+              
+              echo "Rebase failed, attempting recovery..."
+              git rebase --abort 2>/dev/null || true
+              git reset --hard HEAD~1 2>/dev/null || true
+              
+              git fetch origin main
+              git checkout origin/main -B main
+              
+              python3 .github/scripts/add_app.py
+              
+              for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+                if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+                  sed -i 's/[[:space:]]*$//' "$f"
+                fi
+                perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+                if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+                  echo "" >> "$f"
+                fi
+              done
+              
+              git add .
+              if ! git diff --staged --quiet; then
+                git commit -m "feat: ${{ steps.add.outputs.action }} ${{ steps.msg.outputs.app_name }} (${{ steps.msg.outputs.repo_name }}) from #${{ github.event.issue.number }}"
+                git push origin main
+                return $?
+              fi
+              return 0
+            }
+            
+            until push_with_recovery; do
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
+                echo "Failed to push after $MAX_RETRIES attempts."
+                exit 1
+              fi
+              echo "Push failed, retrying in $((RETRY_COUNT * 3)) seconds..."
+              sleep $((RETRY_COUNT * 3))
+            done
+          fi
+
+      - name: Comment and Close
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const action = '${{ steps.add.outputs.action }}';
+            let body = '';
+            
+            if (action === 'updated') {
+               body = '✅ App details have been updated in the source list!';
+            } else {
+               body = '✅ Automatically added to the source list!';
+            }
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              state_reason: 'completed'
+            });
+
+  reject-app:
+    if: github.event.action == 'labeled' && github.event.label.name == 'rejected' && contains(github.event.issue.labels.*.name, 'app-request') && github.event.sender.id == github.event.repository.owner.id
+    runs-on: ubuntu-latest
+    concurrency:
+      group: process-app-request
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Parse Issue Body (For Removal)
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body;
+            const escapeRegExp = (string) => {
+              return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            };
+            const extract = (key) => {
+              const escapedKey = escapeRegExp(key);
+              const regex = new RegExp(`### ${escapedKey}\\s+([\\s\\S]*?)(?=(###|$))`);
+              const match = body.match(regex);
+              return match ? match[1].trim() : null;
+            };
+            const repo = extract('GitHub Repository');
+            if (repo) {
+              core.setOutput('repo', repo);
+            } else {
+              core.setFailed('Could not parse repo from issue body');
+            }
+
+      - name: Remove App from JSON
+        id: remove
+        env:
+          REPO: ${{ steps.parse.outputs.repo }}
+        run: python3 .github/scripts/add_app.py --remove
+
+      - name: Auto-format files (EOF, trailing spaces, blanks)
+        if: steps.remove.outputs.removed == 'true'
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
+
+      - name: Commit Changes (If Removed)
+        if: steps.remove.outputs.removed == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "chore: remove app ${{ steps.parse.outputs.repo }} (rejected)"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Close Issue (Rejected)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              state_reason: 'not_planned'
+            });
+            if ('${{ steps.remove.outputs.removed }}' === 'true') {
+               await github.rest.issues.createComment({
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+                 issue_number: context.issue.number,
+                 body: '⚠️ App removed from the list because the request was rejected.'
+               })
+            }
