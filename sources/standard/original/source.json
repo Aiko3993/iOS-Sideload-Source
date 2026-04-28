@@ -1495,14 +1495,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.10.0.20260427.57.US.runner.66fcb95",
-      "versionDate": "2026-04-27T03:37:15Z",
-      "versionDescription": "Nightly build from commit 66fcb9570c8006bf386becec3dd213dfd1864784",
+      "version": "0.10.0.20260428.34.US.runner.50bd6f2",
+      "versionDate": "2026-04-28T04:12:02Z",
+      "versionDescription": "Nightly build from commit 50bd6f22cb9c7032e120807500332a14f10cce5d",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260425/ProjectNyxian_Nyxian_nyxian_2065590.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#9978c8",
-      "size": 85438632,
+      "size": 85438071,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1556,6 +1556,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.10.0.20260428.34.US.runner.50bd6f2",
+          "date": "2026-04-28T04:12:02Z",
+          "localizedDescription": "Nightly build from commit 50bd6f22cb9c7032e120807500332a14f10cce5d",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260425/ProjectNyxian_Nyxian_nyxian_2065590.ipa",
+          "size": 85438071,
+          "sha256": "e19c14fdcf7f239fa660ce816bb3fae7f744b5773e107f21094d4d6568c663fd",
+          "minOSVersion": "16.0"
+        },
         {
           "version": "0.10.0.20260427.57.US.runner.66fcb95",
           "date": "2026-04-27T03:37:15Z",
@@ -3288,7 +3297,7 @@
         ]
       },
       "category": "developer",
-      "sha256": "21f4ceef6adf7dab8ea99877b275eef07ca8dcd627f7a0a20526a0d092408faf"
+      "sha256": "e19c14fdcf7f239fa660ce816bb3fae7f744b5773e107f21094d4d6568c663fd"
     },
     {
       "name": "PiliPlus",
