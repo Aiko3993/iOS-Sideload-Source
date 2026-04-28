@@ -50,7 +50,9 @@ def deduplicate_versions(versions, app_name):
         unique_versions.append(v)
 
     unique_versions.sort(key=lambda x: x.get('date', ''), reverse=True)
-    return unique_versions
+
+    max_versions = int((GLOBAL_CONFIG or {}).get('max_versions_per_app', 5))
+    return unique_versions[:max_versions]
 
 def _is_allowed_version_url(url):
     if not url or not isinstance(url, str):
@@ -68,10 +70,10 @@ def _is_allowed_version_url(url):
     exclude_tokens = tuple(scoring_cfg.get('exclude_tokens', []))
     if exclude_exts and lower_name.endswith(exclude_exts):
         return False
-    if exclude_tokens and any(t in lower_name for t in exclude_tokens):
-        return False
     if allowed_direct_exts and lower_name.endswith(allowed_direct_exts):
         return True
+    if exclude_tokens and any(t in lower_name for t in exclude_tokens):
+        return False
     if allowed_archive_exts and lower_name.endswith(allowed_archive_exts):
         return any(t in lower_name for t in archive_hint_tokens)
     return False
