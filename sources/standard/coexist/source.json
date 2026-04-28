@@ -1213,7 +1213,7 @@
     {
       "name": "Nyxian (Nightly)",
       "githubRepo": "ProjectNyxian/Nyxian",
-      "bundleIdentifier": "com.cr4zy.nyxian.nightly.coexist",
+      "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "version": "0.10.0.20260428.34.US.runner.50bd6f2",
