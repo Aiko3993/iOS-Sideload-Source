@@ -153,11 +153,18 @@ class BuildCandidate:
     size: int
 
 def resolve_release_candidate(app_config, client, repo):
+    preferred = app_config.get('pre_release', False)
     release = client.get_latest_release(
         repo,
-        prefer_pre_release=app_config.get('pre_release', False),
+        prefer_pre_release=preferred,
         tag_regex=app_config.get('tag_regex')
     )
+    if not release and not preferred:
+        release = client.get_latest_release(
+            repo,
+            prefer_pre_release=True,
+            tag_regex=app_config.get('tag_regex')
+        )
     if not release:
         return None
 

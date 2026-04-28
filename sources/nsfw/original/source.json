@@ -114,15 +114,6 @@
           "size": 23158011,
           "sha256": "ed374dccaff95ba2f9df32c32fd26c914c56787b789ddeb4c8d7c19fd6c3dad2",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.4.3",
-          "date": "2026-03-02T04:45:13Z",
-          "localizedDescription": "# 🚀 Release Notes for Version 0.4.3\r\n\r\n## 🔥 Highlights\r\n\r\n* **Smoother Back Gestures**: We've rebuilt the navigation system from the ground up. Android users with predictive back gestures enabled will now see a preview animation when swiping back, and iOS users will enjoy swipe-back interactions that feel much closer to native apps. Overall navigation is now faster and more fluid.\r\n\r\n## 🐛 Bug Fixes\r\n\r\n* **Crash Fix for Some Devices**: Fixed crashes on certain devices caused by incorrect Impeller rendering engine configuration. ([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows Video Playback Freeze**: Removed Windows zip build artifacts and now use installer only. This resolves the issue where the app would freeze during video playback while audio kept playing. ([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n```The Windows version will be uploaded again later```\r\n## 🛠 Optimizations\r\n\r\n* **Better List & Detail Pages**: Common list pages and detail pages now have improved layouts and interactions for a cleaner, more intuitive experience.\r\n* **Performance & Stability**: Various under-the-hood optimizations to improve smoothness and fix bugs.\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the GitHub issues section\r\n* Or join the [discussion group](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n\r\n---\r\n\r\n# 🚀 0.4.3 版本发布说明\r\n\r\n## 🔥 重点更新\r\n\r\n* **更流畅的返回手势**：我们对导航系统进行了全面重构。开启预测性返回手势的安卓用户，滑动返回时可以看到预览动画；iOS 用户则能享受更接近原生应用的手势返回体验。整体导航更快更流畅。\r\n\r\n## 🐛 问题修复\r\n```Windows版本在稍后会重新上传```\r\n* **部分机型闪退修复**：修复了因 Impeller 渲染引擎配置错误导致部分机型闪退的问题。([#79](https://github.com/FoxSensei001/LoveIwara/issues/79))\r\n* **Windows 视频播放卡死**：移除 Windows zip 构建产物，统一使用安装器进行安装，解决了视频播放时应用卡死（但音频仍在播放）的问题。([#80](https://github.com/FoxSensei001/LoveIwara/issues/80))\r\n\r\n## 🛠 优化改进\r\n\r\n* **列表与详情页优化**：常用列表页和详情页的布局与交互得到优化，界面更简洁，操作更直观。\r\n* **流畅度与稳定性提升**：多项底层优化，提升整体流畅度，修复已知问题。\r\n\r\n## 📢 反馈方式\r\n\r\n* 在 GitHub issues 区留言\r\n* 加入[用户讨论群](https://t.me/+ITH4CV6Z_sc2ZWVl)\r\n\r\n你的每一条反馈都对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
-          "downloadURL": "https://github.com/FoxSensei001/LoveIwara/releases/download/0.4.3/i_iwara-0.4.3-ios.ipa",
-          "size": 22979138,
-          "sha256": "30bebab4c31eca0ce3a0fb21fcd53249423ca2615a865e570d439e4c79305e24",
-          "minOSVersion": "13.0"
         }
       ],
       "sha256": "ed374dccaff95ba2f9df32c32fd26c914c56787b789ddeb4c8d7c19fd6c3dad2",
@@ -159,15 +150,6 @@
           "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.11/PicaComic-4.2.11-app-ios.ipa",
           "size": 13583375,
           "sha256": "59feb6edf2a3591901028faabb3e86dfd96c97efebada5c98665495e34152f32",
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "4.2.10",
-          "date": "2026-01-11T06:24:07Z",
-          "localizedDescription": "## 4.2.10 (2026-01-11)\r\n\r\n### 更新说明\r\n* 修复 ehentai 登录, 补全高级搜索项 #194 \r\n* 补全 hitomi tags 显示, 改进搜索 #175\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.9...v4.2.10",
-          "downloadURL": "https://github.com/Pacalini/PicaComic/releases/download/v4.2.10/PicaComic-4.2.10-app-ios.ipa",
-          "size": 13517258,
-          "sha256": "baa62c6feef68e76c71643637558f995f8c75f42719a902408006474b2cd6116",
           "minOSVersion": "13.0"
         }
       ],

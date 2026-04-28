@@ -1,5 +1,6 @@
 import argparse
 import os
+from urllib.parse import unquote
 import re
 from datetime import datetime, timezone, timedelta
 
@@ -43,7 +44,7 @@ def collect_referenced_cached_assets(project_root, only_repo=None):
                 m = _GH_RELEASE_ASSET_RE.match(url)
                 if not m:
                     continue
-                repo, tag, asset = m.group(1), m.group(2), m.group(3)
+                repo, tag, asset = m.group(1), m.group(2), unquote(m.group(3))
                 if only_repo and repo.lower() != only_repo.lower():
                     continue
                 refs.setdefault(tag, set()).add(asset)

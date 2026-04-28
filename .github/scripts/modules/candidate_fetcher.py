@@ -217,6 +217,8 @@ def download_from_artifact(client, repo, artifact, name, app_entry,
 
     if not upload_success:
         if download_url and download_url.lower().endswith('.ipa'):
+            if not local_ready and release_tag and release_tag in download_url:
+                raise Exception(f"Artifact unavailable and no cached upload exists for {name}")
             _download_with_cache(client, download_url, temp_path, timeout=300, tries=3)
             return download_url
 

@@ -62,10 +62,14 @@ function renderCategoryBar() {
     const inactive = 'bg-white/70 text-gray-700 border-gray-200/70 hover:bg-white/90 hover:border-primary-500/40 active:bg-white dark:bg-white/5 dark:text-gray-100 dark:border-white/5 dark:hover:bg-white/10 dark:hover:border-primary-500/40 dark:active:bg-white/10';
     const activeCls = 'bg-primary-600/20 text-primary-800 border-primary-500/35 hover:bg-primary-600/25 active:bg-primary-600/25 shadow-sm dark:bg-primary-500/30 dark:text-primary-100 dark:border-primary-500/45 dark:hover:bg-primary-500/35 dark:active:bg-primary-500/35';
 
+    const totalCount = groups.size;
     const allBtn = `
         <button type="button" data-category="all"
             class="${baseBtn} ${active === 'all' ? activeCls : inactive}">
             ${categoryLabel('all')}
+            <span class="ml-2 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-[10px] font-bold bg-white/90 text-gray-700 ring-1 ring-black/5 dark:bg-gray-900/70 dark:text-gray-200 dark:ring-white/10">
+                ${totalCount}
+            </span>
         </button>
     `;
 
