@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-04-28 14:19:35 (UTC)*
+> *Last Updated: 2026-04-28 15:05:37 (UTC)*
 
 ## Standard Apps
 
@@ -9,7 +9,7 @@
 | <img src="https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **Aidoku** | Free and open source manga reader for iOS and iPadOS | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) |
 | <img src="https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png" width="48" height="48"> | **Amethyst (Nightly)** | A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform. | [AngelAuraMC/Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS) |
 | <img src="https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png" width="48" height="48"> | **Animeko** | 集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform | [open-ani/animeko](https://github.com/open-ani/animeko) |
-| <img src="https://raw.githubusercontent.com/Balackburn/Apollo/refs/heads/main/apollo_icons/icon_91.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
+| <img src="https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
 | <img src="https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png" width="48" height="48"> | **Asspp** | The App Store for your multi-account eco system. | [Lakr233/Asspp](https://github.com/Lakr233/Asspp) |
 | <img src="https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png" width="48" height="48"> | **Feather** | On-device signing application | [khcrysalis/Feather](https://github.com/khcrysalis/Feather) |
 | <img src="https://raw.githubusercontent.com/Ferrite-iOS/Ferrite/next/Ferrite/Assets.xcassets/AppIcon.appiconset/Ferrite-lg.png" width="48" height="48"> | **Ferrite** | A media search engine for iOS with debrid support | [Ferrite-iOS/Ferrite](https://github.com/Ferrite-iOS/Ferrite) |
