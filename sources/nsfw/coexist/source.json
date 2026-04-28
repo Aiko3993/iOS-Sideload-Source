@@ -1,0 +1,162 @@
+{
+  "name": "iOS Sideload Source (NSFW Coexist)",
+  "identifier": "io.github.aiko3993.ios-sideload-source.nsfw.coexist",
+  "subtitle": "iOS Sideload Source by Aiko3993",
+  "description": "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source.",
+  "tintColor": "#db2777",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/nsfw.png",
+  "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
+  "apps": [
+    {
+      "name": "JHentai",
+      "githubRepo": "jiangtian616/JHenTai",
+      "bundleIdentifier": "top.jtmonster.jhentai.coexist",
+      "developerName": "jiangtian616",
+      "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
+      "version": "8.0.12",
+      "versionDate": "2026-02-24T12:24:22Z",
+      "versionDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
+      "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
+      "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "#E6E623",
+      "size": 15750837,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Auth identity",
+          "NSPhotoLibraryAddUsageDescription": "Pick up image to search",
+          "NSPhotoLibraryUsageDescription": "Pick up image to search"
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+        "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg"
+      ],
+      "versions": [
+        {
+          "version": "8.0.12",
+          "date": "2026-02-24T12:24:22Z",
+          "localizedDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
+          "size": 15750837,
+          "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db",
+          "minOSVersion": "12.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/archive.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/detail.png",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/download.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/mobile_v2.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/read.jpg",
+          "width": 795,
+          "height": 1633
+        },
+        {
+          "imageURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/refs/heads/master/screenshot/search.jpg",
+          "width": 795,
+          "height": 1633
+        }
+      ],
+      "category": "entertainment",
+      "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db"
+    },
+    {
+      "name": "LoveIwara",
+      "githubRepo": "FoxSensei001/LoveIwara",
+      "bundleIdentifier": "m.c.g.a.i_iwara.coexist",
+      "developerName": "FoxSensei001",
+      "subtitle": "Love Iwara (i-iwara or 2i). An unofficial iwara flutter app - Supporting multiple platforms and devices including mobile phones, tablets and computers. Compatible with Android, Windows and other systems. 第三方的Iwara应用 - 支持多个平台和设备，包括手机、平板和计算机。兼容 安卓、IOS、Windows、MacOS等系统。",
+      "version": "0.4.4",
+      "versionDate": "2026-03-15T10:14:42Z",
+      "versionDescription": "# 🚀 Release Notes for Version 0.4.4\r\n\r\n## 🔥 Highlights\r\n\r\n* **AI Site Switching**: You can now switch between the AI site and the main site directly in the app, making it easier to move between different browsing contexts.\r\n* **Better Gallery Experience**: Added a default gallery viewer quality setting, so you can choose between Standard and Original quality more conveniently.\r\n* **Clearer Media Feedback**: Video and gallery cards now show like-state indicators, and the video detail page now displays real-time loading speed for more transparent playback feedback.\r\n* **Fullscreen Quick Switching**: When you open a video from places like subscriptions, search results, favorites, author pages, or playlist details, the player can carry over the current source video list into the fullscreen inner playlist, making it easier to switch to other videos without leaving playback.\r\n* **Official News in App**: Added support for the official news site, so you can browse official news updates and article details directly inside the app.\r\n\r\n## 🐛 Bug Fixes\r\n\r\n* **Android Predictive Back Rollback**: Due to an unknown issue that could cause the app to appear frozen on some Android devices after enabling predictive back gesture animations, this behavior has currently been rolled back to the default system effect.\r\n* **Deep Link Fixes**: Fixed deep link issues to improve route handling and page opening behavior.\r\n\r\n## 🛠 Optimizations\r\n\r\n* **Smoother Playback Status Feedback**: Improved loading-state presentation on the video detail page so playback progress is easier to understand.\r\n* **General Stability Improvements**: Fixed several bugs and further optimized overall system stability.\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the [GitHub issues section](https://github.com/FoxSensei001/LoveIwara/issues)\r\n* Or join the [discussion group](https://t.me/+OtpMbe9DkjYzMGM1)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n---\r\n\r\n# 🚀 0.4.4 版本发布说明\r\n\r\n## 🔥 重点更新\r\n\r\n* **新增 AI 站与主站切换**：现在可以在应用内更方便地切换 AI 站和主站，浏览不同内容时会更加顺手。\r\n* **更好的图库浏览体验**：新增图库查看器默认画质设置，可更方便地在标清和原画之间进行选择。\r\n* **更直观的内容反馈**：视频和图库卡片新增点赞状态显示，视频详情页也新增了实时加载速率展示，播放状态一目了然。\r\n* **全屏内置列表快速切换**：从订阅页、搜索结果、收藏夹、作者页或播放列表详情等视频列表进入详情页时，播放器会自动带入当前来源列表，在全屏下可通过内置列表快速切换到其他视频。\r\n* **应用内新闻站适配**：现已支持在应用内查看官方新闻站发布的动态与详情内容。\r\n\r\n## 🐛 问题修复\r\n\r\n* **安卓预测返回手势回滚**：由于未知原因，安卓端在开启预测返回手势动画后，会导致部分设备出现应用假死的问题，因此目前已回滚为系统默认效果。\r\n* **Deeplink 问题修复**：修复了 deeplink 相关问题，优化页面跳转和打开行为。\r\n\r\n## 🛠 优化内容\r\n\r\n* **播放状态反馈优化**：进一步优化视频详情页的加载状态展示，让播放过程中的反馈更加清晰。\r\n* **整体稳定性提升**：修复若干 bug，并进一步优化系统稳定性。\r\n\r\n## 📢 如何反馈问题\r\n\r\n* 欢迎在 [GitHub Issues](https://github.com/FoxSensei001/LoveIwara/issues) 中留言反馈\r\n* 或加入 [讨论群](https://t.me/+OtpMbe9DkjYzMGM1)\r\n\r\n你的反馈对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/LoveIwara_0.4.4_Coexist.ipa",
+      "localizedDescription": "Thank you for your understanding and support! If you're also a Flutter beginner, I hope we can progress together in our learning journey.",
+      "iconURL": "https://raw.githubusercontent.com/FoxSensei001/LoveIwara/refs/heads/master/assets/icon/launcher_icon_v2.png",
+      "tintColor": "#F89032",
+      "size": 23088342,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "App需要访问本地网络",
+          "NSLocationWhenInUseUsageDescription": "App需要访问位置来获取WiFi信息"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.4.4",
+          "date": "2026-03-15T10:14:42Z",
+          "localizedDescription": "# 🚀 Release Notes for Version 0.4.4\r\n\r\n## 🔥 Highlights\r\n\r\n* **AI Site Switching**: You can now switch between the AI site and the main site directly in the app, making it easier to move between different browsing contexts.\r\n* **Better Gallery Experience**: Added a default gallery viewer quality setting, so you can choose between Standard and Original quality more conveniently.\r\n* **Clearer Media Feedback**: Video and gallery cards now show like-state indicators, and the video detail page now displays real-time loading speed for more transparent playback feedback.\r\n* **Fullscreen Quick Switching**: When you open a video from places like subscriptions, search results, favorites, author pages, or playlist details, the player can carry over the current source video list into the fullscreen inner playlist, making it easier to switch to other videos without leaving playback.\r\n* **Official News in App**: Added support for the official news site, so you can browse official news updates and article details directly inside the app.\r\n\r\n## 🐛 Bug Fixes\r\n\r\n* **Android Predictive Back Rollback**: Due to an unknown issue that could cause the app to appear frozen on some Android devices after enabling predictive back gesture animations, this behavior has currently been rolled back to the default system effect.\r\n* **Deep Link Fixes**: Fixed deep link issues to improve route handling and page opening behavior.\r\n\r\n## 🛠 Optimizations\r\n\r\n* **Smoother Playback Status Feedback**: Improved loading-state presentation on the video detail page so playback progress is easier to understand.\r\n* **General Stability Improvements**: Fixed several bugs and further optimized overall system stability.\r\n\r\n## 📢 How to Provide Feedback\r\n\r\n* Leave a comment in the [GitHub issues section](https://github.com/FoxSensei001/LoveIwara/issues)\r\n* Or join the [discussion group](https://t.me/+OtpMbe9DkjYzMGM1)\r\n\r\nYour feedback is extremely valuable to us. Thank you for your continued support and help! 🚀\r\n\r\n---\r\n\r\n# 🚀 0.4.4 版本发布说明\r\n\r\n## 🔥 重点更新\r\n\r\n* **新增 AI 站与主站切换**：现在可以在应用内更方便地切换 AI 站和主站，浏览不同内容时会更加顺手。\r\n* **更好的图库浏览体验**：新增图库查看器默认画质设置，可更方便地在标清和原画之间进行选择。\r\n* **更直观的内容反馈**：视频和图库卡片新增点赞状态显示，视频详情页也新增了实时加载速率展示，播放状态一目了然。\r\n* **全屏内置列表快速切换**：从订阅页、搜索结果、收藏夹、作者页或播放列表详情等视频列表进入详情页时，播放器会自动带入当前来源列表，在全屏下可通过内置列表快速切换到其他视频。\r\n* **应用内新闻站适配**：现已支持在应用内查看官方新闻站发布的动态与详情内容。\r\n\r\n## 🐛 问题修复\r\n\r\n* **安卓预测返回手势回滚**：由于未知原因，安卓端在开启预测返回手势动画后，会导致部分设备出现应用假死的问题，因此目前已回滚为系统默认效果。\r\n* **Deeplink 问题修复**：修复了 deeplink 相关问题，优化页面跳转和打开行为。\r\n\r\n## 🛠 优化内容\r\n\r\n* **播放状态反馈优化**：进一步优化视频详情页的加载状态展示，让播放过程中的反馈更加清晰。\r\n* **整体稳定性提升**：修复若干 bug，并进一步优化系统稳定性。\r\n\r\n## 📢 如何反馈问题\r\n\r\n* 欢迎在 [GitHub Issues](https://github.com/FoxSensei001/LoveIwara/issues) 中留言反馈\r\n* 或加入 [讨论群](https://t.me/+OtpMbe9DkjYzMGM1)\r\n\r\n你的反馈对我们非常重要，感谢一直以来的支持与帮助！🚀\r\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260315/LoveIwara_0.4.4_Coexist.ipa",
+          "size": 23088342,
+          "sha256": "0f5fcd31da8c4a5c8f251b5e509c715c49528ef2031ace35bb00092c12bf3aef",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "0f5fcd31da8c4a5c8f251b5e509c715c49528ef2031ace35bb00092c12bf3aef",
+      "category": "other"
+    },
+    {
+      "name": "Pica Comic",
+      "githubRepo": "Pacalini/PicaComic",
+      "bundleIdentifier": "com.github.pacalini.picaComic.coexist",
+      "developerName": "Pacalini",
+      "subtitle": "A comic app built with Flutter, supporting multiple comic sources.",
+      "version": "4.2.11",
+      "versionDate": "2026-04-06T12:59:59Z",
+      "versionDescription": "## 4.2.11 (2026-04-06)\r\n\r\n### 更新说明\r\n* 修复 jm 搜索 #232 by [AriaArcadia](https://github.com/AriaArcadia)\r\n* 修复 nhentai 的若干功能\r\n* 修复下载漫画时预期页数与实际不符的问题\r\n* 改进 hitomi 的语言过滤 https://github.com/Pacalini/PicaComic/issues/199#issuecomment-3738159264\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.10...v4.2.11",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260406/Pica_Comic_4.2.11_Coexist.ipa",
+      "localizedDescription": "A comic app with multiple sources built with flutter.",
+      "iconURL": "https://raw.githubusercontent.com/Pacalini/PicaComic/master/images/app_icon.png",
+      "tintColor": "#FCE4E4",
+      "size": 13527150,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Protect user's privacy",
+          "NSPhotoLibraryAddUsageDescription": "Save the images selected by user",
+          "NSPhotoLibraryUsageDescription": "Allow user to Choose image as his avatar"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.2.11",
+          "date": "2026-04-06T12:59:59Z",
+          "localizedDescription": "## 4.2.11 (2026-04-06)\r\n\r\n### 更新说明\r\n* 修复 jm 搜索 #232 by [AriaArcadia](https://github.com/AriaArcadia)\r\n* 修复 nhentai 的若干功能\r\n* 修复下载漫画时预期页数与实际不符的问题\r\n* 改进 hitomi 的语言过滤 https://github.com/Pacalini/PicaComic/issues/199#issuecomment-3738159264\r\n\r\n### 安装&更新\r\n* (Android) 安装时不会覆盖 4.0.4 及之前的版本。用户数据通用，请在设置中手动迁移。\r\n* IOS、MacOS 版本未经任何测试，不受任何支持.\r\n\r\n**Full Changelog**: https://github.com/Pacalini/PicaComic/compare/v4.2.10...v4.2.11",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260406/Pica_Comic_4.2.11_Coexist.ipa",
+          "size": 13527150,
+          "sha256": "5a2a5739a50723fa51369ea670f52898bbea3f96bbf2fb257e7873661d2fa515",
+          "minOSVersion": "13.0"
+        }
+      ],
+      "sha256": "5a2a5739a50723fa51369ea670f52898bbea3f96bbf2fb257e7873661d2fa515",
+      "category": "other"
+    }
+  ],
+  "news": [],
+  "headerURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/og-image.png"
+}
