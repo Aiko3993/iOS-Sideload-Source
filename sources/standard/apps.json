@@ -109,6 +109,7 @@
   {
     "name": "Nyxian (Nightly)",
     "github_repo": "ProjectNyxian/Nyxian",
+    "pre_release": true,
     "bundle_id": "com.cr4zy.nyxian",
     "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
     "artifact_only": true
