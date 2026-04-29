@@ -174,14 +174,14 @@
       "bundleIdentifier": "com.christianselig.Apollo.coexist",
       "developerName": "Balackburn",
       "subtitle": "The award-winning Reddit app",
-      "version": "1.15.11_2.4.0",
-      "versionDate": "2026-04-18T18:56:28Z",
-      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.4.0`\n\n## Release Notes\n- Add option to proxy Imgur images through DuckDuckGo for regional blocks (#138)\r\n    - Enable in **Settings > General > Custom API > Media**\r\n    - Only supports viewing single images; albums are not supported\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260418/Apollo_1.15.11_2.4.0_Coexist.ipa",
+      "version": "1.15.11_2.5.0",
+      "versionDate": "2026-04-29T08:24:02Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.5.0`\n\n## Release Notes\n- New bulk translation feature for comment threads and self posts (thanks @icpryde for implementing this feature!) (#140)\r\n    - When enabled, loaded comments are translated in-place. Configure in **Settings > Translation**\r\n    - Adds a per-thread globe toggle to switch between translated and original text in comments view\r\n    - Supports both Google and LibreTranslate, with custom LibreTranslate URL and API key\r\n    - Translations persist in place while voting, collapsing and expanding comments, opening previews, scrolling, and refreshing the thread\r\n    - Preserves links while translated and leaves code or preformatted content untranslated\r\n\r\n| | |\r\n|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/68801917-e489-4999-99cf-88dbaf0588c5\" alt=\"Translation\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/ba8c530b-727d-4d64-a332-2e1ce648e7b7\" alt=\"Tread\" width=\"500\"> |\r\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260429/Apollo_1.15.11_2.5.0_Coexist.ipa",
       "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp",
       "tintColor": "#4453f4",
-      "size": 114731765,
+      "size": 114772289,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -214,12 +214,12 @@
       ],
       "versions": [
         {
-          "version": "1.15.11_2.4.0",
-          "date": "2026-04-18T18:56:28Z",
-          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.4.0`\n\n## Release Notes\n- Add option to proxy Imgur images through DuckDuckGo for regional blocks (#138)\r\n    - Enable in **Settings > General > Custom API > Media**\r\n    - Only supports viewing single images; albums are not supported\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260418/Apollo_1.15.11_2.4.0_Coexist.ipa",
-          "size": 114731765,
-          "sha256": "3faee3a56921fd3ad2a06a92599b81863ee92ad05f4e83e8542ec67bd59df34d",
+          "version": "1.15.11_2.5.0",
+          "date": "2026-04-29T08:24:02Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.5.0`\n\n## Release Notes\n- New bulk translation feature for comment threads and self posts (thanks @icpryde for implementing this feature!) (#140)\r\n    - When enabled, loaded comments are translated in-place. Configure in **Settings > Translation**\r\n    - Adds a per-thread globe toggle to switch between translated and original text in comments view\r\n    - Supports both Google and LibreTranslate, with custom LibreTranslate URL and API key\r\n    - Translations persist in place while voting, collapsing and expanding comments, opening previews, scrolling, and refreshing the thread\r\n    - Preserves links while translated and leaves code or preformatted content untranslated\r\n\r\n| | |\r\n|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/68801917-e489-4999-99cf-88dbaf0588c5\" alt=\"Translation\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/ba8c530b-727d-4d64-a332-2e1ce648e7b7\" alt=\"Tread\" width=\"500\"> |\r\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260429/Apollo_1.15.11_2.5.0_Coexist.ipa",
+          "size": 114772289,
+          "sha256": "016fa87b52ec321a9818ce365089bbbffa25f415b570d1d443ab35caf7a06c32",
           "minOSVersion": "15.0"
         }
       ],
@@ -234,7 +234,7 @@
         "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
       ],
       "category": "social",
-      "sha256": "3faee3a56921fd3ad2a06a92599b81863ee92ad05f4e83e8542ec67bd59df34d"
+      "sha256": "016fa87b52ec321a9818ce365089bbbffa25f415b570d1d443ab35caf7a06c32"
     },
     {
       "name": "Asspp",
