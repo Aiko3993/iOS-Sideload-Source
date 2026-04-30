@@ -822,14 +822,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.60",
-      "versionDate": "2026-04-21T16:29:27Z",
-      "versionDescription": "## What's Changed\r\n* updated grpc fields for Aniyomi backup by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/707\r\n* Improve performance of library, manga home, and tracker screens by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/705\r\n* Fix reader and Code Cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/703\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.55...v0.7.60\r\n",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.60/Mangayomi-v0.7.60-ios.ipa",
+      "version": "0.7.70",
+      "versionDate": "2026-04-30T13:18:17Z",
+      "versionDescription": "## What's Changed\r\n* Fix RenderFlex/RenderBox layout exceptions in ChapterTransitionPage on horizontal reading modes by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/710\r\n* Only init discordRPC when not in debugMode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/711\r\n* Fix AppLogger Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/712\r\n* Reorder code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/713\r\n* New Setting: Mark duplicate chapter as read by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/715\r\n* Rewrite chapter update & sorting; Preserve read state & improve ChapterRecognition & adapt EndOfMangaCard to reading mode & Clean Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/714\r\n* Refactor page navigation handling in reader view by @5y3b in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n## New Contributors\r\n* @5y3b made their first contribution in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.60...v0.7.70",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.70/Mangayomi-v0.7.70-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47933138,
+      "size": 47935133,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -851,26 +851,17 @@
       ],
       "versions": [
         {
-          "version": "0.7.60",
-          "date": "2026-04-21T16:29:27Z",
-          "localizedDescription": "## What's Changed\r\n* updated grpc fields for Aniyomi backup by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/707\r\n* Improve performance of library, manga home, and tracker screens by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/705\r\n* Fix reader and Code Cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/703\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.55...v0.7.60\r\n",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.60/Mangayomi-v0.7.60-ios.ipa",
-          "size": 47933138,
-          "sha256": "870279889e0fd7ebdb638b09ea6b5758aaa007087fa2d181282a145bff0b8880",
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.7.55",
-          "date": "2026-04-15T13:30:52Z",
-          "localizedDescription": "* fix: improve app lock screen handling and mouse back button support\r\n* fix: turning pages issue on vertical mode #702 \r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.50...v0.7.55",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.55/Mangayomi-v0.7.55-ios.ipa",
-          "size": 48006980,
-          "sha256": "ab8cfd8ec28ff2cd6dda17b6c718d295a2294b0e21510f330fee3c08881c4680",
+          "version": "0.7.70",
+          "date": "2026-04-30T13:18:17Z",
+          "localizedDescription": "## What's Changed\r\n* Fix RenderFlex/RenderBox layout exceptions in ChapterTransitionPage on horizontal reading modes by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/710\r\n* Only init discordRPC when not in debugMode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/711\r\n* Fix AppLogger Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/712\r\n* Reorder code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/713\r\n* New Setting: Mark duplicate chapter as read by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/715\r\n* Rewrite chapter update & sorting; Preserve read state & improve ChapterRecognition & adapt EndOfMangaCard to reading mode & Clean Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/714\r\n* Refactor page navigation handling in reader view by @5y3b in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n## New Contributors\r\n* @5y3b made their first contribution in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.60...v0.7.70",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.70/Mangayomi-v0.7.70-ios.ipa",
+          "size": 47935133,
+          "sha256": "0f38414d9386c3f271f45980678636e75f932793b100d8c51634dc8d49f537e2",
           "minOSVersion": "13.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "870279889e0fd7ebdb638b09ea6b5758aaa007087fa2d181282a145bff0b8880",
+      "sha256": "0f38414d9386c3f271f45980678636e75f932793b100d8c51634dc8d49f537e2",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
