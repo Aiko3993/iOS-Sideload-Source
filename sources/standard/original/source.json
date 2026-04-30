@@ -1038,14 +1038,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.5",
-      "versionDate": "2026-04-25T06:43:47Z",
-      "versionDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.5/PiliPlus_ios_2.0.5%2B4886.ipa",
+      "version": "2.0.6",
+      "versionDate": "2026-04-30T10:01:06Z",
+      "versionDescription": "支持关注分组排序\r\n支持从关注面板创建分组\r\n支持调节全屏 SC 大小 #1910\r\n查看大图时隐藏状态栏、导航栏\r\n优化安卓平板、小窗播放界面 #1908\r\niOS 打开二级页面时支持侧滑关闭整个页面 #1906\r\n评论自由复制面板支持选词屏蔽 #1903 by @My-Responsitories\r\n\r\n优化退出播放页音频停止播放迟缓问题\r\n\r\n修复 #1901\r\n修复 #1904\r\n修复 #1917\r\n修复连接蓝牙键鼠闪退\r\n修复 bug",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.6/PiliPlus_ios_2.0.6%2B4915.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24956612,
+      "size": 24972236,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1058,6 +1058,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.6",
+          "date": "2026-04-30T10:01:06Z",
+          "localizedDescription": "支持关注分组排序\r\n支持从关注面板创建分组\r\n支持调节全屏 SC 大小 #1910\r\n查看大图时隐藏状态栏、导航栏\r\n优化安卓平板、小窗播放界面 #1908\r\niOS 打开二级页面时支持侧滑关闭整个页面 #1906\r\n评论自由复制面板支持选词屏蔽 #1903 by @My-Responsitories\r\n\r\n优化退出播放页音频停止播放迟缓问题\r\n\r\n修复 #1901\r\n修复 #1904\r\n修复 #1917\r\n修复连接蓝牙键鼠闪退\r\n修复 bug",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.6/PiliPlus_ios_2.0.6%2B4915.ipa",
+          "size": 24972236,
+          "sha256": "5309d59ad4c46f2e5f175b3aa3d9ebc897f4a7f813db050279c19348ff7d6344",
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "2.0.5",
           "date": "2026-04-25T06:43:47Z",
           "localizedDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
@@ -1067,7 +1076,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "c4062fa655e00356bfd5b6fac78f1cbc3d798fa63a310c939daddfe559b99216",
+      "sha256": "5309d59ad4c46f2e5f175b3aa3d9ebc897f4a7f813db050279c19348ff7d6344",
       "category": "other"
     },
     {
