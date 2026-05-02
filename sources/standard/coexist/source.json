@@ -411,14 +411,14 @@
       "bundleIdentifier": "com.example.kazumi.coexist",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.0.8",
-      "versionDate": "2026-04-24T11:49:23Z",
-      "versionDescription": "Update",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260424/Kazumi_2.0.8_Coexist.ipa",
+      "version": "2.0.9",
+      "versionDate": "2026-05-02T07:37:37Z",
+      "versionDescription": "- 新增以图搜番功能 (@LiggMax)\r\n- 新增 Bangumi 收藏同步功能 (@bgzo @melancholyFishAndWater)\r\n- 现在可以在存在检索结果时进行别名检索 (@x1renn)\r\n- 优化画中画功能视频比例 (@x1renn)\r\n- 优化 windows 平台视频播放器性能 (@Predidit)\r\n- 其他 UI 调整",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/Kazumi_2.0.9_Coexist.ipa",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 27815694,
+      "size": 27923866,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -426,16 +426,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "2.0.8",
-          "date": "2026-04-24T11:49:23Z",
-          "localizedDescription": "Update",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260424/Kazumi_2.0.8_Coexist.ipa",
-          "size": 27815694,
-          "sha256": "c30d273ea8e403a1784acdd268b66ab1ff0aae87001ce30d38da0b024507bbb7",
+          "version": "2.0.9",
+          "date": "2026-05-02T07:37:37Z",
+          "localizedDescription": "- 新增以图搜番功能 (@LiggMax)\r\n- 新增 Bangumi 收藏同步功能 (@bgzo @melancholyFishAndWater)\r\n- 现在可以在存在检索结果时进行别名检索 (@x1renn)\r\n- 优化画中画功能视频比例 (@x1renn)\r\n- 优化 windows 平台视频播放器性能 (@Predidit)\r\n- 其他 UI 调整",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/Kazumi_2.0.9_Coexist.ipa",
+          "size": 27923866,
+          "sha256": "c48ed45eeab5f8435cd4b2c9e237ac0a63a0c8f52b4e269cbc96e97b2adc39eb",
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "c30d273ea8e403a1784acdd268b66ab1ff0aae87001ce30d38da0b024507bbb7",
+      "sha256": "c48ed45eeab5f8435cd4b2c9e237ac0a63a0c8f52b4e269cbc96e97b2adc39eb",
       "category": "other"
     },
     {
