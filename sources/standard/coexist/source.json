@@ -174,14 +174,14 @@
       "bundleIdentifier": "com.christianselig.Apollo.coexist",
       "developerName": "Balackburn",
       "subtitle": "The award-winning Reddit app",
-      "version": "1.15.11_2.6.0",
-      "versionDate": "2026-05-01T08:16:21Z",
-      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.6.0`\n\n## Release Notes\n- Bulk translation improvements (thanks @icpryde for continuing to refine this!)\r\n    - New **Don't Translate** languages list in **Settings > Translation** to keep selected languages untranslated\r\n    - New option to translate post titles in **Settings > Translation**\r\n    - Various bug fixes and stability improvements\r\n- Tap a comment or post's relative-time label (e.g. \"2.8y\") to show an alert with the absolute creation date and time, mirroring Apollo's existing \"Edited\" alert (#144)\r\n- iOS 26/Liquid Glass: fix tab bar not reappearing on scrolling up when \"Hide Bars on Scroll\" is enabled (thanks @icpryde for the fix!) (#131, #73)\r\n- Liquid Glass: hide translucent status bar background strip that appears at the top of the screen when \"Hide Bars on Scroll\" is enabled\r\n- Liquid Glass: fix first list row being clipped under nav bar in subreddit list view when \"Hide Bars on Scroll\" is enabled\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/Apollo_1.15.11_2.6.0_Coexist.ipa",
+      "version": "1.15.11_2.6.1",
+      "versionDate": "2026-05-02T02:56:02Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.6.1`\n\n## Release Notes\nFix tab bar disappearing after using iOS share sheet\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/Apollo_1.15.11_2.6.1_Coexist.ipa",
       "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp",
       "tintColor": "#4453f4",
-      "size": 114815421,
+      "size": 114814162,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -214,21 +214,21 @@
       ],
       "versions": [
         {
+          "version": "1.15.11_2.6.1",
+          "date": "2026-05-02T02:56:02Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.6.1`\n\n## Release Notes\nFix tab bar disappearing after using iOS share sheet\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/Apollo_1.15.11_2.6.1_Coexist.ipa",
+          "size": 114814162,
+          "sha256": "ef877d752a94dba0f96f6a1d94ad7cb2c522e6385d8eaebb27262a9db6c7ab16",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "1.15.11_2.6.0",
           "date": "2026-05-01T08:16:21Z",
           "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.6.0`\n\n## Release Notes\n- Bulk translation improvements (thanks @icpryde for continuing to refine this!)\r\n    - New **Don't Translate** languages list in **Settings > Translation** to keep selected languages untranslated\r\n    - New option to translate post titles in **Settings > Translation**\r\n    - Various bug fixes and stability improvements\r\n- Tap a comment or post's relative-time label (e.g. \"2.8y\") to show an alert with the absolute creation date and time, mirroring Apollo's existing \"Edited\" alert (#144)\r\n- iOS 26/Liquid Glass: fix tab bar not reappearing on scrolling up when \"Hide Bars on Scroll\" is enabled (thanks @icpryde for the fix!) (#131, #73)\r\n- Liquid Glass: hide translucent status bar background strip that appears at the top of the screen when \"Hide Bars on Scroll\" is enabled\r\n- Liquid Glass: fix first list row being clipped under nav bar in subreddit list view when \"Hide Bars on Scroll\" is enabled\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/Apollo_1.15.11_2.6.0_Coexist.ipa",
           "size": 114815421,
           "sha256": "269ab82d8566fbc0e422de7956d16aede2f8ecbbc58d2d379088cac0e1475e7f",
-          "minOSVersion": "15.0"
-        },
-        {
-          "version": "1.15.11_2.5.0",
-          "date": "2026-04-29T08:24:02Z",
-          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.5.0`\n\n## Release Notes\n- New bulk translation feature for comment threads and self posts (thanks @icpryde for implementing this feature!) (#140)\r\n    - When enabled, loaded comments are translated in-place. Configure in **Settings > Translation**\r\n    - Adds a per-thread globe toggle to switch between translated and original text in comments view\r\n    - Supports both Google and LibreTranslate, with custom LibreTranslate URL and API key\r\n    - Translations persist in place while voting, collapsing and expanding comments, opening previews, scrolling, and refreshing the thread\r\n    - Preserves links while translated and leaves code or preformatted content untranslated\r\n\r\n| | |\r\n|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/68801917-e489-4999-99cf-88dbaf0588c5\" alt=\"Translation\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/ba8c530b-727d-4d64-a332-2e1ce648e7b7\" alt=\"Tread\" width=\"500\"> |\r\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260429/Apollo_1.15.11_2.5.0_Coexist.ipa",
-          "size": 114772289,
-          "sha256": "016fa87b52ec321a9818ce365089bbbffa25f415b570d1d443ab35caf7a06c32",
           "minOSVersion": "15.0"
         }
       ],
@@ -243,7 +243,7 @@
         "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
       ],
       "category": "social",
-      "sha256": "269ab82d8566fbc0e422de7956d16aede2f8ecbbc58d2d379088cac0e1475e7f"
+      "sha256": "ef877d752a94dba0f96f6a1d94ad7cb2c522e6385d8eaebb27262a9db6c7ab16"
     },
     {
       "name": "Asspp",
@@ -555,14 +555,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.6.a9bfe93",
-      "versionDate": "2026-05-01T07:33:46Z",
-      "versionDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/LiveContainer_Nightly_3.7.6.a9bfe93_Coexist.ipa",
+      "version": "3.7.6.57dac9e",
+      "versionDate": "2026-05-02T04:18:02Z",
+      "versionDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer_Nightly_3.7.6.57dac9e_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4581305,
+      "size": 4581244,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -612,6 +612,15 @@
       ],
       "versions": [
         {
+          "version": "3.7.6.57dac9e",
+          "date": "2026-05-02T04:18:02Z",
+          "localizedDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer_Nightly_3.7.6.57dac9e_Coexist.ipa",
+          "size": 4581244,
+          "sha256": "55d294487be8eda01530e3db1ebcbebc491d06792523854c9b3324658c536728",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.7.6.a9bfe93",
           "date": "2026-05-01T07:33:46Z",
           "localizedDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
@@ -619,19 +628,10 @@
           "size": 4581305,
           "sha256": "6366683c2e39cb0570ebae6bc97448da2b0ee0d9938d15dbb36d2a060aeaddae",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.5.5aeac88",
-          "date": "2026-04-30T07:31:12Z",
-          "localizedDescription": "Nightly build from commit 5aeac88df32109365cb1692221235a5a0cb31395",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260430/LiveContainer_Nightly_3.7.5.5aeac88_Coexist.ipa",
-          "size": 4580939,
-          "sha256": "985385f05ac5c44de18155a1338ef2ddefb94f80b8ff4b9961626a117f9e5317",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "6366683c2e39cb0570ebae6bc97448da2b0ee0d9938d15dbb36d2a060aeaddae",
+      "sha256": "55d294487be8eda01530e3db1ebcbebc491d06792523854c9b3324658c536728",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -720,14 +720,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.6.a9bfe93",
-      "versionDate": "2026-05-01T07:33:46Z",
-      "versionDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/LiveContainer%2BSideStore_Nightly_3.7.6.a9bfe93_Coexist.ipa",
+      "version": "3.7.6.57dac9e",
+      "versionDate": "2026-05-02T04:18:02Z",
+      "versionDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer%2BSideStore_Nightly_3.7.6.57dac9e_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 34595003,
+      "size": 34594950,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -777,6 +777,15 @@
       ],
       "versions": [
         {
+          "version": "3.7.6.57dac9e",
+          "date": "2026-05-02T04:18:02Z",
+          "localizedDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer%2BSideStore_Nightly_3.7.6.57dac9e_Coexist.ipa",
+          "size": 34594950,
+          "sha256": "91361fdaaa5696b1f119e37ecada26ac5c471b8c7543872a30b480edd9c6609d",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.7.6.a9bfe93",
           "date": "2026-05-01T07:33:46Z",
           "localizedDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
@@ -784,19 +793,10 @@
           "size": 34595003,
           "sha256": "82e2272bc8cf01c85b68595abcabec84bd4ca1279b62aeb2c08795096f54d3f1",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.5.5aeac88",
-          "date": "2026-04-30T07:31:12Z",
-          "localizedDescription": "Nightly build from commit 5aeac88df32109365cb1692221235a5a0cb31395",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260430/LiveContainer%2BSideStore_Nightly_3.7.5.5aeac88_Coexist.ipa",
-          "size": 34594644,
-          "sha256": "b8c61bb78ccfe5f65438a054c823c57ebca0a9300b103529b90504caf20e7c28",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "82e2272bc8cf01c85b68595abcabec84bd4ca1279b62aeb2c08795096f54d3f1",
+      "sha256": "91361fdaaa5696b1f119e37ecada26ac5c471b8c7543872a30b480edd9c6609d",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
