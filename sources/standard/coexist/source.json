@@ -564,14 +564,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.6.57dac9e",
-      "versionDate": "2026-05-02T04:18:02Z",
-      "versionDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer_Nightly_3.7.6.57dac9e_Coexist.ipa",
+      "version": "3.7.6.2e04312",
+      "versionDate": "2026-05-05T03:33:51Z",
+      "versionDescription": "Nightly build from commit 2e04312804d834c0eecb97f9a761125d24ff6100",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/LiveContainer_Nightly_3.7.6.2e04312_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4581244,
+      "size": 4583212,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -621,6 +621,15 @@
       ],
       "versions": [
         {
+          "version": "3.7.6.2e04312",
+          "date": "2026-05-05T03:33:51Z",
+          "localizedDescription": "Nightly build from commit 2e04312804d834c0eecb97f9a761125d24ff6100",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/LiveContainer_Nightly_3.7.6.2e04312_Coexist.ipa",
+          "size": 4583212,
+          "sha256": "7bc821d13854c2014858f402afeb980c3e0689959defd3c8baae735ccfd64560",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.7.6.57dac9e",
           "date": "2026-05-02T04:18:02Z",
           "localizedDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
@@ -628,19 +637,10 @@
           "size": 4581244,
           "sha256": "55d294487be8eda01530e3db1ebcbebc491d06792523854c9b3324658c536728",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.6.a9bfe93",
-          "date": "2026-05-01T07:33:46Z",
-          "localizedDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/LiveContainer_Nightly_3.7.6.a9bfe93_Coexist.ipa",
-          "size": 4581305,
-          "sha256": "6366683c2e39cb0570ebae6bc97448da2b0ee0d9938d15dbb36d2a060aeaddae",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "55d294487be8eda01530e3db1ebcbebc491d06792523854c9b3324658c536728",
+      "sha256": "7bc821d13854c2014858f402afeb980c3e0689959defd3c8baae735ccfd64560",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -729,14 +729,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.7.6.57dac9e",
-      "versionDate": "2026-05-02T04:18:02Z",
-      "versionDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260502/LiveContainer%2BSideStore_Nightly_3.7.6.57dac9e_Coexist.ipa",
+      "version": "3.7.6.2e04312",
+      "versionDate": "2026-05-05T03:33:51Z",
+      "versionDescription": "Nightly build from commit 2e04312804d834c0eecb97f9a761125d24ff6100",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/LiveContainer%2BSideStore_Nightly_3.7.6.2e04312_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 34594950,
+      "size": 34596918,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -786,6 +786,15 @@
       ],
       "versions": [
         {
+          "version": "3.7.6.2e04312",
+          "date": "2026-05-05T03:33:51Z",
+          "localizedDescription": "Nightly build from commit 2e04312804d834c0eecb97f9a761125d24ff6100",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/LiveContainer%2BSideStore_Nightly_3.7.6.2e04312_Coexist.ipa",
+          "size": 34596918,
+          "sha256": "5a45eb77054fe2db686861cf2750b353a600c1d0ecbc807d3b64f731b37ec04d",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.7.6.57dac9e",
           "date": "2026-05-02T04:18:02Z",
           "localizedDescription": "Nightly build from commit 57dac9e3ccdda9d86b217b6871dfa9b0b30a462c",
@@ -793,19 +802,10 @@
           "size": 34594950,
           "sha256": "91361fdaaa5696b1f119e37ecada26ac5c471b8c7543872a30b480edd9c6609d",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.6.a9bfe93",
-          "date": "2026-05-01T07:33:46Z",
-          "localizedDescription": "Nightly build from commit a9bfe930b22be5975cf03fdfdea1f569a7835957",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260501/LiveContainer%2BSideStore_Nightly_3.7.6.a9bfe93_Coexist.ipa",
-          "size": 34595003,
-          "sha256": "82e2272bc8cf01c85b68595abcabec84bd4ca1279b62aeb2c08795096f54d3f1",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "91361fdaaa5696b1f119e37ecada26ac5c471b8c7543872a30b480edd9c6609d",
+      "sha256": "5a45eb77054fe2db686861cf2750b353a600c1d0ecbc807d3b64f731b37ec04d",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -1056,14 +1056,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.6",
-      "versionDate": "2026-04-30T10:01:06Z",
-      "versionDescription": "支持关注分组排序\r\n支持从关注面板创建分组\r\n支持调节全屏 SC 大小 #1910\r\n查看大图时隐藏状态栏、导航栏\r\n优化安卓平板、小窗播放界面 #1908\r\niOS 打开二级页面时支持侧滑关闭整个页面 #1906\r\n评论自由复制面板支持选词屏蔽 #1903 by @My-Responsitories\r\n\r\n优化退出播放页音频停止播放迟缓问题\r\n\r\n修复 #1901\r\n修复 #1904\r\n修复 #1917\r\n修复连接蓝牙键鼠闪退\r\n修复 bug",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260430/PiliPlus_2.0.6_Coexist.ipa",
+      "version": "2.0.7",
+      "versionDate": "2026-05-05T02:49:50Z",
+      "versionDescription": "优化安卓倾斜角度切视频换方向 #1953\r\n桌面端音频播放页支持调节音量 #1950\r\n评论转发到动态文字按钮改成图标按钮 #1937\r\n直播发送弹幕面板半透明背景改为透明 #1944\r\n\r\n修复评论布局 #1925\r\n修复 iOS 侧滑手势冲突 #1929\r\n修复一些安卓设备无法降低系统亮度\r\n修复关闭二级页面时其余手势被取消 #1947\r\n修复视频方向切换 #1956 by @My-Responsitories\r\n修复搜索结果标题符号显示 #1926 by @My-Responsitories",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/PiliPlus_2.0.7_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 24952957,
+      "size": 23932876,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1076,6 +1076,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.7",
+          "date": "2026-05-05T02:49:50Z",
+          "localizedDescription": "优化安卓倾斜角度切视频换方向 #1953\r\n桌面端音频播放页支持调节音量 #1950\r\n评论转发到动态文字按钮改成图标按钮 #1937\r\n直播发送弹幕面板半透明背景改为透明 #1944\r\n\r\n修复评论布局 #1925\r\n修复 iOS 侧滑手势冲突 #1929\r\n修复一些安卓设备无法降低系统亮度\r\n修复关闭二级页面时其余手势被取消 #1947\r\n修复视频方向切换 #1956 by @My-Responsitories\r\n修复搜索结果标题符号显示 #1926 by @My-Responsitories",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/PiliPlus_2.0.7_Coexist.ipa",
+          "size": 23932876,
+          "sha256": "5e3fbf7e79668529f98e51a953a3761b21aaa64fbc03627cf16b335a19213c37",
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "2.0.6",
           "date": "2026-04-30T10:01:06Z",
           "localizedDescription": "支持关注分组排序\r\n支持从关注面板创建分组\r\n支持调节全屏 SC 大小 #1910\r\n查看大图时隐藏状态栏、导航栏\r\n优化安卓平板、小窗播放界面 #1908\r\niOS 打开二级页面时支持侧滑关闭整个页面 #1906\r\n评论自由复制面板支持选词屏蔽 #1903 by @My-Responsitories\r\n\r\n优化退出播放页音频停止播放迟缓问题\r\n\r\n修复 #1901\r\n修复 #1904\r\n修复 #1917\r\n修复连接蓝牙键鼠闪退\r\n修复 bug",
@@ -1083,18 +1092,9 @@
           "size": 24952957,
           "sha256": "a69aa5164d268641ff633b0fcad08759fdc995478da570ac738870ccc56d059f",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.0.5",
-          "date": "2026-04-25T06:43:47Z",
-          "localizedDescription": "重新支持移除播放页安全边距\r\n支持评论翻译 #1894 co-by @leset0ng\r\n定时关闭退出 APP 时同步视频进度 #1896 by @cnctem\r\nLinux 支持密码、验证码登录 #1889 by @Tobiichi-Origuchi\r\niOS 切换网络时重置网络链接 #1885 by @stephen-zeng @My-Responsitories\r\n\r\n页面优化\r\n优化音量指示器显示 #1899 by @Starfallan\r\n优化处理专栏字体大小 #1897 by @Starfallan\r\n\r\n修复触摸板滑动\r\n修复桌面端富文本插入编辑\r\n修复 bug\r\n\r\n其他",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260425/PiliPlus_2.0.5_Coexist.ipa",
-          "size": 24939176,
-          "sha256": "a06adf0950afdf8c4445a2b75878e60ef4eff7dcf3a8de3c02471d237c348ba3",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "a69aa5164d268641ff633b0fcad08759fdc995478da570ac738870ccc56d059f",
+      "sha256": "5e3fbf7e79668529f98e51a953a3761b21aaa64fbc03627cf16b335a19213c37",
       "category": "other"
     },
     {
@@ -1232,21 +1232,16 @@
       "bundleIdentifier": "com.SideStore.SideStore.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.2",
-      "versionDate": "2025-07-01T01:20:21Z",
-      "versionDescription": "## Build Info\r\nBuilt at (UTC): `Tue Jul  1 01:20:17 2025`\r\nBuilt at (UTC date): `2025-07-01`\r\nCommit SHA: `685d9567752c6b7396304f8b64f0f713f52cf936`\r\nVersion: `0.6.2`\r\n\r\n## What's Changed\r\n* Rebase 2.0 wip by @nythepegasus in https://github.com/SideStore/SideStore/pull/794\r\n* [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in https://github.com/SideStore/SideStore/pull/846\r\n* [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in https://github.com/SideStore/SideStore/pull/850\r\n* Update trustedapps.json by @neoarz in https://github.com/SideStore/SideStore/pull/853\r\n* [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in https://github.com/SideStore/SideStore/pull/857\r\n* Fix Repository App Previews by @neoarz in https://github.com/SideStore/SideStore/pull/871\r\n* Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in https://github.com/SideStore/SideStore/pull/888\r\n* Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in https://github.com/SideStore/SideStore/pull/894\r\n* Feature: Render in-app update description as (full) markdown by @mahee96 in https://github.com/SideStore/SideStore/pull/897\r\n* fix: typo in hasUpdate comparison by @l2dy in https://github.com/SideStore/SideStore/pull/900\r\n* Update SettingsViewController.swift by @neoarz in https://github.com/SideStore/SideStore/pull/915\r\n* WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0  by @mahee96 in https://github.com/SideStore/SideStore/pull/920\r\n* Fix typo \"levaraging\" -> \"leveraging\" by @lafrenierejm in https://github.com/SideStore/SideStore/pull/926\r\n* Added StosVPN to the EM Proxy part. by @Br0des in https://github.com/SideStore/SideStore/pull/940\r\n* StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in https://github.com/SideStore/SideStore/pull/945\r\n* Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in https://github.com/SideStore/SideStore/pull/935\r\n* Add iOS 17.4+ JIT and mounting by @jkcoxson in https://github.com/SideStore/SideStore/pull/953\r\n* Add export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/959\r\n* Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in https://github.com/SideStore/SideStore/pull/962\r\n* Change front-facing references to AltStore by @owoellen in https://github.com/SideStore/SideStore/pull/987\r\n* Update OperationError.swift for idevice_pair by @CelloSerenity in https://github.com/SideStore/SideStore/pull/995\r\n* Add import/export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/1008\r\n* Fix pairing file doc link by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1011\r\n* Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in https://github.com/SideStore/SideStore/pull/1012\r\n* Use main profile when refreshing by @hugeBlack in https://github.com/SideStore/SideStore/pull/1013\r\n\r\n## New Contributors\r\n* @l2dy made their first contribution in https://github.com/SideStore/SideStore/pull/900\r\n* @lafrenierejm made their first contribution in https://github.com/SideStore/SideStore/pull/926\r\n* @Br0des made their first contribution in https://github.com/SideStore/SideStore/pull/940\r\n* @hugeBlack made their first contribution in https://github.com/SideStore/SideStore/pull/959\r\n* @owoellen made their first contribution in https://github.com/SideStore/SideStore/pull/987\r\n* @CelloSerenity made their first contribution in https://github.com/SideStore/SideStore/pull/995\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.5.9...0.6.2",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20250701/SideStore_0.6.2_Coexist.ipa",
+      "version": "0.6.3",
+      "versionDate": "2026-05-05T04:31:20Z",
+      "versionDescription": "# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\r\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\r\n## What's Changed\r\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\r\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\r\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\r\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\r\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\r\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\r\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\r\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\r\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\r\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\r\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\r\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\r\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\r\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\r\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\r\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\r\n\r\n## New Contributors\r\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\r\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\r\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\r\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/SideStore_0.6.3_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 28876828,
+      "size": 28250711,
       "appPermissions": {
-        "entitlements": [
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.security.application-groups",
-          "get-task-allow"
-        ],
+        "entitlements": [],
         "privacy": {
           "NSLocalNetworkUsageDescription": "SideStore uses the local network to find and communicate with your device."
         }
@@ -1254,16 +1249,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.6.2",
-          "date": "2025-07-01T01:20:21Z",
-          "localizedDescription": "## Build Info\r\nBuilt at (UTC): `Tue Jul  1 01:20:17 2025`\r\nBuilt at (UTC date): `2025-07-01`\r\nCommit SHA: `685d9567752c6b7396304f8b64f0f713f52cf936`\r\nVersion: `0.6.2`\r\n\r\n## What's Changed\r\n* Rebase 2.0 wip by @nythepegasus in https://github.com/SideStore/SideStore/pull/794\r\n* [Refresh]: Remove install stuffs from refresh since in refresh should only renew provisioning profiles by @mahee96 in https://github.com/SideStore/SideStore/pull/846\r\n* [Settings]: Fix: DisableAppLimit switch reverting back to off state even if on iOS where sparseRestore is not patched yet by @mahee96 in https://github.com/SideStore/SideStore/pull/850\r\n* Update trustedapps.json by @neoarz in https://github.com/SideStore/SideStore/pull/853\r\n* [Backup]: Fix: update logic during install missed since override keyword was missing by @mahee96 in https://github.com/SideStore/SideStore/pull/857\r\n* Fix Repository App Previews by @neoarz in https://github.com/SideStore/SideStore/pull/871\r\n* Feature: Bulk sources-add in sources screen with capability to stage them before persisting into database by @mahee96 in https://github.com/SideStore/SideStore/pull/888\r\n* Version 0.6.0: CoreData Migrations fix including xcdatamodels and xcmappingmodels by @mahee96 in https://github.com/SideStore/SideStore/pull/894\r\n* Feature: Render in-app update description as (full) markdown by @mahee96 in https://github.com/SideStore/SideStore/pull/897\r\n* fix: typo in hasUpdate comparison by @l2dy in https://github.com/SideStore/SideStore/pull/900\r\n* Update SettingsViewController.swift by @neoarz in https://github.com/SideStore/SideStore/pull/915\r\n* WIP: Fixes for migration issues when migrating from 0.5.9 to 0.6.0  by @mahee96 in https://github.com/SideStore/SideStore/pull/920\r\n* Fix typo \"levaraging\" -> \"leveraging\" by @lafrenierejm in https://github.com/SideStore/SideStore/pull/926\r\n* Added StosVPN to the EM Proxy part. by @Br0des in https://github.com/SideStore/SideStore/pull/940\r\n* StosVPN-integration: Removed em_proxy and EmotionalDamage module in favour of stosVPN by @mahee96 in https://github.com/SideStore/SideStore/pull/945\r\n* Disable minimuxer ready check which shows NO WIFI/VPN error since stosVPN can work on cellular too by @mahee96 in https://github.com/SideStore/SideStore/pull/935\r\n* Add iOS 17.4+ JIT and mounting by @jkcoxson in https://github.com/SideStore/SideStore/pull/953\r\n* Add export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/959\r\n* Feat: Add Pairing File Export URL callback and replace Wireguard with StosVPN by @stossy11 in https://github.com/SideStore/SideStore/pull/962\r\n* Change front-facing references to AltStore by @owoellen in https://github.com/SideStore/SideStore/pull/987\r\n* Update OperationError.swift for idevice_pair by @CelloSerenity in https://github.com/SideStore/SideStore/pull/995\r\n* Add import/export certificate feature by @hugeBlack in https://github.com/SideStore/SideStore/pull/1008\r\n* Fix pairing file doc link by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1011\r\n* Add option for using main bundle's profile for app extensions, update AltSign & libmd by @hugeBlack in https://github.com/SideStore/SideStore/pull/1012\r\n* Use main profile when refreshing by @hugeBlack in https://github.com/SideStore/SideStore/pull/1013\r\n\r\n## New Contributors\r\n* @l2dy made their first contribution in https://github.com/SideStore/SideStore/pull/900\r\n* @lafrenierejm made their first contribution in https://github.com/SideStore/SideStore/pull/926\r\n* @Br0des made their first contribution in https://github.com/SideStore/SideStore/pull/940\r\n* @hugeBlack made their first contribution in https://github.com/SideStore/SideStore/pull/959\r\n* @owoellen made their first contribution in https://github.com/SideStore/SideStore/pull/987\r\n* @CelloSerenity made their first contribution in https://github.com/SideStore/SideStore/pull/995\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.5.9...0.6.2",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20250701/SideStore_0.6.2_Coexist.ipa",
-          "size": 28876828,
-          "sha256": "fa5b1510c1eb6850bd43efb47fbb6ab7f4181ebea9046ab1ac254028a4940179",
+          "version": "0.6.3",
+          "date": "2026-05-05T04:31:20Z",
+          "localizedDescription": "# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\r\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\r\n## What's Changed\r\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\r\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\r\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\r\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\r\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\r\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\r\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\r\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\r\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\r\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\r\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\r\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\r\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\r\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\r\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\r\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\r\n\r\n## New Contributors\r\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\r\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\r\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\r\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/SideStore_0.6.3_Coexist.ipa",
+          "size": 28250711,
+          "sha256": "4c9ab7b1c049dc3c448e4663d3f9ddf12434a6a65eb6b63e4bef866b9c6357b6",
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "fa5b1510c1eb6850bd43efb47fbb6ab7f4181ebea9046ab1ac254028a4940179",
+      "sha256": "4c9ab7b1c049dc3c448e4663d3f9ddf12434a6a65eb6b63e4bef866b9c6357b6",
       "category": "other"
     },
     {
