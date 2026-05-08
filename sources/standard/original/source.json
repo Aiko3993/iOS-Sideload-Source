@@ -402,20 +402,29 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.1.0",
-      "versionDate": "2026-05-03T14:30:41Z",
-      "versionDescription": "- 修复 Bangumi 同步可能导致评分数据清空的问题 (#2034) (@bgzo)\r\n- 修复特定情况下分集评论内容重复的问题 (#2038) (@Predidit)\r\n- 修复 macOS 平台以图搜番功能无法导入图片的问题 (#2032) (@LiggMax)\r\n- 现在可以禁用播放器音量与亮度调节手势 (@B-2U)\r\n- 其他 UI 调整 (@Predidit)\r\n> [!NOTE]\r\n> 这是 2.0.9 的热修复版本，更多更新日志参考 2.0.9",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.0/Kazumi_ios_2.1.0_no_sign.ipa",
+      "version": "2.1.1",
+      "versionDate": "2026-05-08T07:41:10Z",
+      "versionDescription": "- 重新设计的历史记录同步功能 (#1999) (@Predidit)\r\n- 优化弹幕性能 (#1146) (#1518) (@Predidit)\r\n- 修复番剧详情页面过渡动画卡顿的问题 (@Predidit)\r\n- 修复番剧海报点击时闪烁的问题 (@Predidit)\r\n- 修复 Android 平台应用后台可能导致播放器画面丢失的问题 (#1921) (@Predidit)\r\n- 用户友好的错误提示 (@Predidit) \r\n- 现在 Android 平台使用 Impeller 渲染引擎 (#821) (@Predidit)\r\n- 其他错误修复 (@LiggMax)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.1/Kazumi_ios_2.1.1_no_sign.ipa",
       "localizedDescription": "通过本页面 releases 选项卡下载：",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 27997661,
+      "size": 28029329,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.1.1",
+          "date": "2026-05-08T07:41:10Z",
+          "localizedDescription": "- 重新设计的历史记录同步功能 (#1999) (@Predidit)\r\n- 优化弹幕性能 (#1146) (#1518) (@Predidit)\r\n- 修复番剧详情页面过渡动画卡顿的问题 (@Predidit)\r\n- 修复番剧海报点击时闪烁的问题 (@Predidit)\r\n- 修复 Android 平台应用后台可能导致播放器画面丢失的问题 (#1921) (@Predidit)\r\n- 用户友好的错误提示 (@Predidit) \r\n- 现在 Android 平台使用 Impeller 渲染引擎 (#821) (@Predidit)\r\n- 其他错误修复 (@LiggMax)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.1/Kazumi_ios_2.1.1_no_sign.ipa",
+          "size": 28029329,
+          "sha256": "004f57e7fce800b4eee6c7f9dde6d10e67b3c7ca79f61fd9bcb5e4591524d51c",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.1.0",
           "date": "2026-05-03T14:30:41Z",
@@ -424,18 +433,9 @@
           "size": 27997661,
           "sha256": "f9b6d8d33f4d388c01f81f485f8cbcec54f9eee95cdbd6a3710b6ed6979fcf22",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.0.9",
-          "date": "2026-05-02T07:37:37Z",
-          "localizedDescription": "- 新增以图搜番功能 (@LiggMax)\r\n- 新增 Bangumi 收藏同步功能 (@bgzo @melancholyFishAndWater)\r\n- 现在可以在存在检索结果时进行别名检索 (@x1renn)\r\n- 优化画中画功能视频比例 (@x1renn)\r\n- 优化 windows 平台视频播放器性能 (@Predidit)\r\n- 其他 UI 调整",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.0.9/Kazumi_ios_2.0.9_no_sign.ipa",
-          "size": 27997089,
-          "sha256": "433547a3f0200bbb2fe0ab0c2d60665d3c5a52a6b0afb1b8485cc822184c4242",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "f9b6d8d33f4d388c01f81f485f8cbcec54f9eee95cdbd6a3710b6ed6979fcf22",
+      "sha256": "004f57e7fce800b4eee6c7f9dde6d10e67b3c7ca79f61fd9bcb5e4591524d51c",
       "category": "other"
     },
     {
