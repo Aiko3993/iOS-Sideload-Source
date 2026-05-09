@@ -174,14 +174,14 @@
       "bundleIdentifier": "com.christianselig.Apollo.coexist",
       "developerName": "Balackburn",
       "subtitle": "The award-winning Reddit app",
-      "version": "1.15.11_2.7.2",
-      "versionDate": "2026-05-08T03:25:15Z",
-      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.7.2`\n\n## Release Notes\n- Bulk translation: add Bosnian language support (thanks @hllvc!) (#154)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260508/Apollo_1.15.11_2.7.2_Coexist.ipa",
+      "version": "1.15.11_2.8.0",
+      "versionDate": "2026-05-09T08:00:29Z",
+      "versionDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.8.0`\n\n## Release Notes\n- Support for uploading images directly to Reddit instead of Imgur (thanks @icpryde for the implementation!) (#123)\r\n    - Configure in **Settings > Custom API > Media > Image Upload Host**\r\n    - Reddit image upload is **experimental** and does not currently support multi-image or video uploads\r\n    - It's normal to see an `amazonaws.com` URL after attaching an image - it is replaced after posting\r\n    - Right after posting, Apollo may briefly show a generic preview icon while Reddit finishes processing the image. Pull to refresh and the real thumbnail should appear\r\n\r\n| | | |\r\n|:--:|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/9c129cc9-3580-4c4d-8696-591308fc4a70\" alt=\"\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/3e689a33-6ff7-4263-bb0e-ac2208d60a9b\" alt=\"\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/10f87933-db5c-4d16-aabf-396a8332d1c0\" alt=\"\" width=\"500\"> |\r\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260509/Apollo_1.15.11_2.8.0_Coexist.ipa",
       "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp",
       "tintColor": "#4453f4",
-      "size": 114834560,
+      "size": 114873393,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -214,21 +214,21 @@
       ],
       "versions": [
         {
+          "version": "1.15.11_2.8.0",
+          "date": "2026-05-09T08:00:29Z",
+          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.8.0`\n\n## Release Notes\n- Support for uploading images directly to Reddit instead of Imgur (thanks @icpryde for the implementation!) (#123)\r\n    - Configure in **Settings > Custom API > Media > Image Upload Host**\r\n    - Reddit image upload is **experimental** and does not currently support multi-image or video uploads\r\n    - It's normal to see an `amazonaws.com` URL after attaching an image - it is replaced after posting\r\n    - Right after posting, Apollo may briefly show a generic preview icon while Reddit finishes processing the image. Pull to refresh and the real thumbnail should appear\r\n\r\n| | | |\r\n|:--:|:--:|:--:|\r\n| <img src=\"https://github.com/user-attachments/assets/9c129cc9-3580-4c4d-8696-591308fc4a70\" alt=\"\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/3e689a33-6ff7-4263-bb0e-ac2208d60a9b\" alt=\"\" width=\"500\"> | <img src=\"https://github.com/user-attachments/assets/10f87933-db5c-4d16-aabf-396a8332d1c0\" alt=\"\" width=\"500\"> |\r\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260509/Apollo_1.15.11_2.8.0_Coexist.ipa",
+          "size": 114873393,
+          "sha256": "aec8059b78f2241235816a0c44f8ba54a0110cd7fd33128e2c1aa29c497eb92a",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "1.15.11_2.7.2",
           "date": "2026-05-08T03:25:15Z",
           "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.7.2`\n\n## Release Notes\n- Bulk translation: add Bosnian language support (thanks @hllvc!) (#154)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
           "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260508/Apollo_1.15.11_2.7.2_Coexist.ipa",
           "size": 114834560,
           "sha256": "ec4525688a0b5396a0765fb400c76619a6fa965772cfeb9e5366e25ab79adb4c",
-          "minOSVersion": "15.0"
-        },
-        {
-          "version": "1.15.11_2.7.1",
-          "date": "2026-05-07T03:28:17Z",
-          "localizedDescription": "Apollo version: `v1.15.11`\nImprovedCustomApi version: `v2.7.1`\n\n## Release Notes\n- Bulk translation: fix post titles getting automatically translated when Auto Translate is off (thanks @icpryde!) (#150)\r\n- Fix crash when searching for a URL in the Search tab. URL searches now return posts that link to that URL. (#152)\n## Known Issues\n- Apollo Ultra features may cause app to crash\n- Imgur multi-image upload\n- Uploads usually fail on the first attempt but subsequent retries should succeed\n- Share URLs in private messages and long-tapping them still open in the in-app browser\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260507/Apollo_1.15.11_2.7.1_Coexist.ipa",
-          "size": 114834479,
-          "sha256": "173b33b8a32484d67e583629698be5699b33a3983928714663681406e9e2835f",
           "minOSVersion": "15.0"
         }
       ],
@@ -243,7 +243,7 @@
         "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
       ],
       "category": "social",
-      "sha256": "ec4525688a0b5396a0765fb400c76619a6fa965772cfeb9e5366e25ab79adb4c"
+      "sha256": "aec8059b78f2241235816a0c44f8ba54a0110cd7fd33128e2c1aa29c497eb92a"
     },
     {
       "name": "Asspp",
