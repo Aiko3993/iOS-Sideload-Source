@@ -1047,14 +1047,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.7",
-      "versionDate": "2026-05-05T02:49:50Z",
-      "versionDescription": "优化安卓倾斜角度切视频换方向 #1953\r\n桌面端音频播放页支持调节音量 #1950\r\n评论转发到动态文字按钮改成图标按钮 #1937\r\n直播发送弹幕面板半透明背景改为透明 #1944\r\n\r\n修复评论布局 #1925\r\n修复 iOS 侧滑手势冲突 #1929\r\n修复一些安卓设备无法降低系统亮度\r\n修复关闭二级页面时其余手势被取消 #1947\r\n修复视频方向切换 #1956 by @My-Responsitories\r\n修复搜索结果标题符号显示 #1926 by @My-Responsitories",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7/PiliPlus_ios_2.0.7%2B4940.ipa",
+      "version": "2.0.7.1",
+      "versionDate": "2026-05-10T11:03:41Z",
+      "versionDescription": "修复 #2002\r\n修复 #2020 by @My-Responsitories\r\n其他调整 #2032 by @My-Responsitories",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7.1/PiliPlus_ios_2.0.7%2B4946.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23938472,
+      "size": 23949646,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1067,6 +1067,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.7.1",
+          "date": "2026-05-10T11:03:41Z",
+          "localizedDescription": "修复 #2002\r\n修复 #2020 by @My-Responsitories\r\n其他调整 #2032 by @My-Responsitories",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7.1/PiliPlus_ios_2.0.7%2B4946.ipa",
+          "size": 23949646,
+          "sha256": "99e19c7441b2bd5a785501d8edab1ba2f53873c663b835187af778b3397ec3de",
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "2.0.7",
           "date": "2026-05-05T02:49:50Z",
           "localizedDescription": "优化安卓倾斜角度切视频换方向 #1953\r\n桌面端音频播放页支持调节音量 #1950\r\n评论转发到动态文字按钮改成图标按钮 #1937\r\n直播发送弹幕面板半透明背景改为透明 #1944\r\n\r\n修复评论布局 #1925\r\n修复 iOS 侧滑手势冲突 #1929\r\n修复一些安卓设备无法降低系统亮度\r\n修复关闭二级页面时其余手势被取消 #1947\r\n修复视频方向切换 #1956 by @My-Responsitories\r\n修复搜索结果标题符号显示 #1926 by @My-Responsitories",
@@ -1074,18 +1083,9 @@
           "size": 23938472,
           "sha256": "cbb618c093e10b59ea9e529227df093b1dca16cc8c3dd5942e5459c7f9fcb828",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.0.6",
-          "date": "2026-04-30T10:01:06Z",
-          "localizedDescription": "支持关注分组排序\r\n支持从关注面板创建分组\r\n支持调节全屏 SC 大小 #1910\r\n查看大图时隐藏状态栏、导航栏\r\n优化安卓平板、小窗播放界面 #1908\r\niOS 打开二级页面时支持侧滑关闭整个页面 #1906\r\n评论自由复制面板支持选词屏蔽 #1903 by @My-Responsitories\r\n\r\n优化退出播放页音频停止播放迟缓问题\r\n\r\n修复 #1901\r\n修复 #1904\r\n修复 #1917\r\n修复连接蓝牙键鼠闪退\r\n修复 bug",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.6/PiliPlus_ios_2.0.6%2B4915.ipa",
-          "size": 24972236,
-          "sha256": "5309d59ad4c46f2e5f175b3aa3d9ebc897f4a7f813db050279c19348ff7d6344",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "cbb618c093e10b59ea9e529227df093b1dca16cc8c3dd5942e5459c7f9fcb828",
+      "sha256": "99e19c7441b2bd5a785501d8edab1ba2f53873c663b835187af778b3397ec3de",
       "category": "other"
     },
     {
