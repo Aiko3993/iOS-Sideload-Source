@@ -849,14 +849,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.70",
-      "versionDate": "2026-04-30T13:18:17Z",
-      "versionDescription": "## What's Changed\r\n* Fix RenderFlex/RenderBox layout exceptions in ChapterTransitionPage on horizontal reading modes by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/710\r\n* Only init discordRPC when not in debugMode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/711\r\n* Fix AppLogger Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/712\r\n* Reorder code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/713\r\n* New Setting: Mark duplicate chapter as read by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/715\r\n* Rewrite chapter update & sorting; Preserve read state & improve ChapterRecognition & adapt EndOfMangaCard to reading mode & Clean Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/714\r\n* Refactor page navigation handling in reader view by @5y3b in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n## New Contributors\r\n* @5y3b made their first contribution in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.60...v0.7.70",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260430/Mangayomi_0.7.70_Coexist.ipa",
+      "version": "0.7.75",
+      "versionDate": "2026-05-11T09:19:08Z",
+      "versionDescription": "## What's Changed\r\n* Improve _handlePageNavigation() by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/717\r\n* Fix android app crash with certain Mihon extensions\r\n* Fix downloadedChapterIdsProvider by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/720\r\n* Fix null pointer exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/722\r\n* Improve updates by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/721\r\n* fix(downloads): unstall anime downloads on URLs with query strings + 206 responses by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/724\r\n* perf(statistics): aggregate inside Isar to fix #543 crash on large libraries by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/726\r\n* perf(images): cap decoded image cache by platform (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/727\r\n* Make Code More Readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/719\r\n* New file to reduce code duplication by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/723\r\n* perf(library): decode covers at thumbnail resolution to cut image-cache RAM (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/728\r\n* fix(macos): host libmdbx DB under Application Support to avoid TCC EACCES on launch by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/725\r\n\r\n## New Contributors\r\n* @mrandhawa14 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/724\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.70...v0.7.75",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260511/Mangayomi_0.7.75_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47800353,
+      "size": 47802415,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -878,17 +878,17 @@
       ],
       "versions": [
         {
-          "version": "0.7.70",
-          "date": "2026-04-30T13:18:17Z",
-          "localizedDescription": "## What's Changed\r\n* Fix RenderFlex/RenderBox layout exceptions in ChapterTransitionPage on horizontal reading modes by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/710\r\n* Only init discordRPC when not in debugMode by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/711\r\n* Fix AppLogger Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/712\r\n* Reorder code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/713\r\n* New Setting: Mark duplicate chapter as read by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/715\r\n* Rewrite chapter update & sorting; Preserve read state & improve ChapterRecognition & adapt EndOfMangaCard to reading mode & Clean Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/714\r\n* Refactor page navigation handling in reader view by @5y3b in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n## New Contributors\r\n* @5y3b made their first contribution in https://github.com/kodjodevf/mangayomi/pull/716\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.60...v0.7.70",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260430/Mangayomi_0.7.70_Coexist.ipa",
-          "size": 47800353,
-          "sha256": "b1a83244d4df0b450731dc901340c42aea599f370b49ec271b7c8da26aecf95a",
+          "version": "0.7.75",
+          "date": "2026-05-11T09:19:08Z",
+          "localizedDescription": "## What's Changed\r\n* Improve _handlePageNavigation() by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/717\r\n* Fix android app crash with certain Mihon extensions\r\n* Fix downloadedChapterIdsProvider by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/720\r\n* Fix null pointer exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/722\r\n* Improve updates by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/721\r\n* fix(downloads): unstall anime downloads on URLs with query strings + 206 responses by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/724\r\n* perf(statistics): aggregate inside Isar to fix #543 crash on large libraries by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/726\r\n* perf(images): cap decoded image cache by platform (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/727\r\n* Make Code More Readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/719\r\n* New file to reduce code duplication by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/723\r\n* perf(library): decode covers at thumbnail resolution to cut image-cache RAM (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/728\r\n* fix(macos): host libmdbx DB under Application Support to avoid TCC EACCES on launch by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/725\r\n\r\n## New Contributors\r\n* @mrandhawa14 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/724\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.70...v0.7.75",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260511/Mangayomi_0.7.75_Coexist.ipa",
+          "size": 47802415,
+          "sha256": "9735e55a4e8cdd893e5e2fdcbb487c22f0607b1b6f5e2129f809efeac1e7497d",
           "minOSVersion": "13.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "b1a83244d4df0b450731dc901340c42aea599f370b49ec271b7c8da26aecf95a",
+      "sha256": "9735e55a4e8cdd893e5e2fdcbb487c22f0607b1b6f5e2129f809efeac1e7497d",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
