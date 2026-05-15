@@ -964,14 +964,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.9.1",
-      "versionDate": "2026-04-04T23:05:54Z",
-      "versionDescription": "# Changelog\r\n## Nyxian\r\n- Theming patches (1cc4c63d09a0648a5356c90d0e22837f14d9b186)\r\n- fixed objc utility generation (bff7e4d0a1f60ac97cd981aaf9ee03c2869afa8a)\r\n- fixed window handling on iPhone (ded2d5c29b4d3dc0b34ca57f44e0b6e5b4674bfb)\r\n- rethought application install (c87a607ed2c747fae3cc57cea5c95ad480f256c3, dc5cb0379ea08b2801c7ffaf0df15e0d3da42070, 1ee59d120148cc4eb4be1e4d7c97cc422ea2e6d3, c205dc236d1209a951cd187b0ee2f52cffdd2856, be12d71c08d40d6d1fbbf12d8a5453c6140938cf, b2297470239ebd6a90e36662bd38438dafde6cf4, f35d83be62ec4ba0eb081039726ad25775e6bac3, 7d047003d4875a77505601c5f988d92eb0e51f0d, 2aeb1381ba015c8f0cf9c52dd81f5a14bef28d4e, 7ee7cbefc5b97655189b38677f3a42daa4d8e292, 6cda7de5eb4b323249d739c05b3403cb71d0a0e8, f73b0bdad3c7324190b35fc8383494f4ece28f86)\r\n- fixed write access in SDK paths in file manager (ad2450e01ff615a00bb341c96218fe90c968bba5)\r\n- fixed issue navigator on iPhone (e75c170772104547525a25b10ad2f786256d6f93)\r\n- patched DOS in zip extraction (695e37ed3cd5e47cf3554396e0dabee80a0e5eb5)\r\n- corrected some appearance issues with GUI project configurator (a3b22fa8e7b28e0ac20ea5609bdfe266968b0373, fb619f5f5c536ec95325b4e8f147831a0c530786, 6e6471aeb5014d877b55035904feea8c2728563a, c57ef22fa53a15b2a4bd002f8c7c14b19e1b97fd)\r\n- improved dependency scan performance (d5f9fe71353ca41ae7cc97bf87a8ae3e0c42a3f7)\r\n- fixed window double close bug on iPadOS (344524e99222d4df83c23cf796b4cdb55c0215cd)\r\n## Kernel Virtualization Layer (ksurface)\r\n- Improved entitlement patching to Applications menu (8cb891dd3395b5dde279e102135d86b19d75e976, 8e16df8a179ef1ef5e173f290b5604ae2214f22c, e4efbcf7c1d24e42b18d4971a3fe3425f127614d)\r\n- PEObject patches (a20eae5da97b97b1a6150909833f94b30dfc2842)\r\n- Radix tree patches (ddfce454e9674b79f70e9c6bd679e143fb31aa1f)\r\n- Vulnerability fix: unexpected system termination due to null ptr deref (d9d2c9321b8be6bde482f78f1abb67d383ee7c93)\r\n- Vulnerability fix: improper cleanup path in tty initialization leading to a use-after-free (6ce364889adb53ccba19236fe782acefc023f379)\r\n- Vulnerability fix: improper action order in tty deinitilization leading to a race condition (8ae5e4d513129a3f6cfdfe12c87df8022b07fa3f)\r\n- Resource leak fix: resource exhaustion due to improper cleanup (c5b100443d4683d83c5efaa7d87a7c66678c68ec)\r\n- Improvement: added PEEntitlementPlatformRoot (926a259e9dc48d94473e007c4adb09c7e47a0199, 1d536641508a652c58e746c4b8fb1711e4b8fbbd, 3226ee6b16e44800d749b0e5d713fd1f731e1cde)\r\n- Improvement: better trust and entitlement code (9c1cf66a03691939d8b3099f363585ef2106d833, 766434a22dc0141178c17c3634224cd23dde876a, b5fe7975a2eaf3b699a7eaef979bef0c91a0fea9)\r\n- Security hardening: nerfing capability of root user process to automatically be able to enumerate processes (ad4a9e63dd96e00dbaa1853e255465b70aeeeeeb)\r\n- Bug fix: use correct path for the CFPrefsPlistSource hook (990bc47a3c33867c83f5f025280837b3c9af39c5)\r\n## nxtool (resign trollstore apps on macOS to nyxian apps, basically embed nyxian entitlements into ipa's)\r\n- initial release",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/Nyxian_0.9.1_Coexist.ipa",
+      "version": "0.10.0",
+      "versionDate": "2026-05-15T06:10:42Z",
+      "versionDescription": "# Changelog\r\n## Nyxian\r\n- feature: added Swift 6.3.1!!!\r\n- feature: autosaving of files (62f99a753061b6a42728f453baf83b84507f7f1f, 4bbcbdb60bac40f1ffc7f84c144babb57818b723, 0be6e7c0dcf5a1857381b177b065304877bc79a3, 5e00ecec9e1f6fdd03ff8462f5cd0690875113d3, 17dcc379a0789fe9d98bac9055615eab88dec105, 7a85d33e601c11242ba99d4053a2c12aa1a2d80a)\r\n- feature: added NXOSVersion for better checks (5757f67dfe7a061f3ae5c39b6f2f7565dfe4ac8a, 200493de00ea4b8d25f5b0d54e621d6786e7d72d, 03ff0beb810abdf486e22dd1d3842157e8c4148c, d588d6a789eafe7f66e5610fe053d428ce3970d1, f94cf175798a68eaf55a90d086ed7a583c1234eb, 0b10e6319e5ca7a9bf06066e1c71b61f71f74ba7)\r\n- feature: added UI Onboarding (e1d50d13a77ae14ce0193edc69866b372e3a7c4b)\r\n- fix: calculate keyboard height correctly in code editor (7a0cb6bf8f85217d55c5fa88f793070ed947f8ea, 690dd2245afc0119d9570a3f4a7b24e789fde0cc, 690dd2245afc0119d9570a3f4a7b24e789fde0cc)\r\n- fix: using LLVM's crash recovery context for safe LLD usage (72fdc0021252ccf742bfc1072f8b63d666874699)\r\n- fix: better threading (cbc0033f48d4a8144728742198470c53cd15fbaa)\r\n- fix: don't force load every file thrown at the CodeEditor (5063e712e8d7fe717d36f6f603a049152f369a1d)\r\n- fix: don't delete the path extension when generating object file paths (72b4d841bf24e5e6087c5eab8c3606a60a7cef83)\r\n- performance: only reload project's variables once (9575b2bf83b9f1a12d92a55f8b21dc774941b734, 7764602973de2dc661f337bfd3dc133984a89809)\r\n- feature: take supported deployment targets straight from SDK (9575b2bf83b9f1a12d92a55f8b21dc774941b734)\r\n- feature: redesigned project creation experience\r\n- feature: added buttons to clear project and swift module cache (eb0a5f77a0995c14d4f85e0f616bcf126acc043a)\r\n\r\n## Kernel Virtualization Layer (ksurface)\r\n- vulnerability fix: removed a code signature bypass from inbuilt installd (1cb57a141bb70fc0d7fccd0f4c0c0dc79e119551)\r\n- vulnerability fix: patched a deadlock in `SYS_sysctl` (16e667a6a34164d462de069203c89c704aa27e44)\r\n- vulnerability fix: patched information disclosure vulnerability from permission over pid check (471e2ee84c4c575a3671d51f891d7a9211ecb6e3)\r\n- vulnerability fix: patched a race condition in PEProcessManager (memory corruption) (111f56656241be75d9d341ca44ceb68a917e2bd2)\r\n- vulnerability fix: patched a resource exhaustion vector regarding FBProcessManager (5b08d63ec255931c024dab299bb981f908eb0590)\r\n- vulnerability fix: added forgotten cleanup path in PEProcess (a0cdd40a56d81911610a5369c6dd4031a0c71783)\r\n- vulnerability fix: patched a use-after-free caused by a reference underflow (b6e1011e50d345e24e66151ee59772560ed42660)\r\n- vulnerability fix: patched a lenient memory corruption vulnerability (845fa60d02bb87ed43793d8dc335fe3a5f5bd2b4)\r\n- vulnerability fix: patched a use-after-free in kvobject allocation API (1fe578d672a79b174bdbceb11e1ed5d4e76bd3a1)\r\n- vulnerability fix: patched a memory leak in process list API (09c423c5d2f2b050f26bc25b3b1daa86001bfef9)\r\n- vulnerability fix: handling EAGAIN on rdlock's (e592fc08e30b14baf5453e766e978bc3e585187d)\r\n- vulnerability fix: patched buffer overflow in `SYS_handoffep` found by @zipgod24 (ebd6c2881f205caddf31d051cbbe22c9e3d0fcf7)\r\n- vulnerability fix: patched use-after-free in `proc_zombify(1)` found by @zipgod24 (4337d89c55abfa737efae4182836ad6e653c8e3b)\r\n- vulnerability fix: patched a severe buffer over-read leading to information disclosure (ef6fb7c45844a566251637a1bc56021c03619432)\r\n- vulnerability fix: patched ksurface termination vulnerability (1deeccb738ab89ad11f36946d82cd11168e461e9)\r\n- vulnerability fix: patched a OOB vulnerability in ZSign by @orbisai0security (c8786557086ab811bd6356186eab91f5aeadf2a5)\r\n- feature: using FBProcess for process state change handling (9d00fb1de0e389481544fc6ec68266aa9827dfb2)\r\n- performance: faster MachOObject (f37c7c6857fc90b87f34ec58d3da2483cc79f55a, cc0ac371f26fb181b92a2c72b65c4bf77c788c09, 5097f01caaa2863c09410d8da0d532f0925ae0a8, c4612ceb7682739fbcfefd5a1472e8719f5370ee, b03e161d30f0a78d15358cdd1fac4192aa088051)\r\n- performance: faster write in and out in FDObject (4d42ed5d790c188051a8dbf37194b8716e8849a0)\r\n- performance: slightly faster PEProcessManager (fbc9911b34a4d6394f07bfae1737e53f74159364)\r\n- performance: using faster NSExtension invocation method (b1dd4d78cd70754484886f590b5c9a6070bf25bf, 61e3c1dbff32b591476e48c8d654b4804227330f, 21939afc3893cf884231b1699844116c7db94c6e)\r\n- performance: removed redundant delay in PELaunchService (6731ed79702f75f170fb19e77461199f7e139fd7)\r\n- performance: made object allocation slightly faster (f325e0cf608587db6ecbfb1daa9b8072ec4fee9c)\r\n- hardening: removed PEEntitlementProcessElevate from some presets (6a335611b506113f867a11d4c6210bd260236fb4)\r\n- fix: disabled darwinbg simulation cuz apple might just freeze parts of iOS for what ever reason (ae26edbece9ca0a38ba920f94c54de5165976d00)\r\n\r\n> [!NOTE]\r\n> standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n> [!WARNING]\r\n> Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260515/Nyxian_0.10.0_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#D8AAFE",
-      "size": 70648460,
+      "size": 104806108,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -981,9 +981,7 @@
           "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
-          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSCameraUsageDescription": "The guest app is requesting for this permission.",
           "NSContactsUsageDescription": "The guest app is requesting for this permission.",
           "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
@@ -1012,7 +1010,6 @@
           "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
           "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
           "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
-          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
           "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
           "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
           "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
@@ -1029,16 +1026,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.9.1",
-          "date": "2026-04-04T23:05:54Z",
-          "localizedDescription": "# Changelog\r\n## Nyxian\r\n- Theming patches (1cc4c63d09a0648a5356c90d0e22837f14d9b186)\r\n- fixed objc utility generation (bff7e4d0a1f60ac97cd981aaf9ee03c2869afa8a)\r\n- fixed window handling on iPhone (ded2d5c29b4d3dc0b34ca57f44e0b6e5b4674bfb)\r\n- rethought application install (c87a607ed2c747fae3cc57cea5c95ad480f256c3, dc5cb0379ea08b2801c7ffaf0df15e0d3da42070, 1ee59d120148cc4eb4be1e4d7c97cc422ea2e6d3, c205dc236d1209a951cd187b0ee2f52cffdd2856, be12d71c08d40d6d1fbbf12d8a5453c6140938cf, b2297470239ebd6a90e36662bd38438dafde6cf4, f35d83be62ec4ba0eb081039726ad25775e6bac3, 7d047003d4875a77505601c5f988d92eb0e51f0d, 2aeb1381ba015c8f0cf9c52dd81f5a14bef28d4e, 7ee7cbefc5b97655189b38677f3a42daa4d8e292, 6cda7de5eb4b323249d739c05b3403cb71d0a0e8, f73b0bdad3c7324190b35fc8383494f4ece28f86)\r\n- fixed write access in SDK paths in file manager (ad2450e01ff615a00bb341c96218fe90c968bba5)\r\n- fixed issue navigator on iPhone (e75c170772104547525a25b10ad2f786256d6f93)\r\n- patched DOS in zip extraction (695e37ed3cd5e47cf3554396e0dabee80a0e5eb5)\r\n- corrected some appearance issues with GUI project configurator (a3b22fa8e7b28e0ac20ea5609bdfe266968b0373, fb619f5f5c536ec95325b4e8f147831a0c530786, 6e6471aeb5014d877b55035904feea8c2728563a, c57ef22fa53a15b2a4bd002f8c7c14b19e1b97fd)\r\n- improved dependency scan performance (d5f9fe71353ca41ae7cc97bf87a8ae3e0c42a3f7)\r\n- fixed window double close bug on iPadOS (344524e99222d4df83c23cf796b4cdb55c0215cd)\r\n## Kernel Virtualization Layer (ksurface)\r\n- Improved entitlement patching to Applications menu (8cb891dd3395b5dde279e102135d86b19d75e976, 8e16df8a179ef1ef5e173f290b5604ae2214f22c, e4efbcf7c1d24e42b18d4971a3fe3425f127614d)\r\n- PEObject patches (a20eae5da97b97b1a6150909833f94b30dfc2842)\r\n- Radix tree patches (ddfce454e9674b79f70e9c6bd679e143fb31aa1f)\r\n- Vulnerability fix: unexpected system termination due to null ptr deref (d9d2c9321b8be6bde482f78f1abb67d383ee7c93)\r\n- Vulnerability fix: improper cleanup path in tty initialization leading to a use-after-free (6ce364889adb53ccba19236fe782acefc023f379)\r\n- Vulnerability fix: improper action order in tty deinitilization leading to a race condition (8ae5e4d513129a3f6cfdfe12c87df8022b07fa3f)\r\n- Resource leak fix: resource exhaustion due to improper cleanup (c5b100443d4683d83c5efaa7d87a7c66678c68ec)\r\n- Improvement: added PEEntitlementPlatformRoot (926a259e9dc48d94473e007c4adb09c7e47a0199, 1d536641508a652c58e746c4b8fb1711e4b8fbbd, 3226ee6b16e44800d749b0e5d713fd1f731e1cde)\r\n- Improvement: better trust and entitlement code (9c1cf66a03691939d8b3099f363585ef2106d833, 766434a22dc0141178c17c3634224cd23dde876a, b5fe7975a2eaf3b699a7eaef979bef0c91a0fea9)\r\n- Security hardening: nerfing capability of root user process to automatically be able to enumerate processes (ad4a9e63dd96e00dbaa1853e255465b70aeeeeeb)\r\n- Bug fix: use correct path for the CFPrefsPlistSource hook (990bc47a3c33867c83f5f025280837b3c9af39c5)\r\n## nxtool (resign trollstore apps on macOS to nyxian apps, basically embed nyxian entitlements into ipa's)\r\n- initial release",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260404/Nyxian_0.9.1_Coexist.ipa",
-          "size": 70648460,
-          "sha256": "064ffc562938d4e65242be3167240328d84b3ca4b247f259f6f7efb66f19f05b",
+          "version": "0.10.0",
+          "date": "2026-05-15T06:10:42Z",
+          "localizedDescription": "# Changelog\r\n## Nyxian\r\n- feature: added Swift 6.3.1!!!\r\n- feature: autosaving of files (62f99a753061b6a42728f453baf83b84507f7f1f, 4bbcbdb60bac40f1ffc7f84c144babb57818b723, 0be6e7c0dcf5a1857381b177b065304877bc79a3, 5e00ecec9e1f6fdd03ff8462f5cd0690875113d3, 17dcc379a0789fe9d98bac9055615eab88dec105, 7a85d33e601c11242ba99d4053a2c12aa1a2d80a)\r\n- feature: added NXOSVersion for better checks (5757f67dfe7a061f3ae5c39b6f2f7565dfe4ac8a, 200493de00ea4b8d25f5b0d54e621d6786e7d72d, 03ff0beb810abdf486e22dd1d3842157e8c4148c, d588d6a789eafe7f66e5610fe053d428ce3970d1, f94cf175798a68eaf55a90d086ed7a583c1234eb, 0b10e6319e5ca7a9bf06066e1c71b61f71f74ba7)\r\n- feature: added UI Onboarding (e1d50d13a77ae14ce0193edc69866b372e3a7c4b)\r\n- fix: calculate keyboard height correctly in code editor (7a0cb6bf8f85217d55c5fa88f793070ed947f8ea, 690dd2245afc0119d9570a3f4a7b24e789fde0cc, 690dd2245afc0119d9570a3f4a7b24e789fde0cc)\r\n- fix: using LLVM's crash recovery context for safe LLD usage (72fdc0021252ccf742bfc1072f8b63d666874699)\r\n- fix: better threading (cbc0033f48d4a8144728742198470c53cd15fbaa)\r\n- fix: don't force load every file thrown at the CodeEditor (5063e712e8d7fe717d36f6f603a049152f369a1d)\r\n- fix: don't delete the path extension when generating object file paths (72b4d841bf24e5e6087c5eab8c3606a60a7cef83)\r\n- performance: only reload project's variables once (9575b2bf83b9f1a12d92a55f8b21dc774941b734, 7764602973de2dc661f337bfd3dc133984a89809)\r\n- feature: take supported deployment targets straight from SDK (9575b2bf83b9f1a12d92a55f8b21dc774941b734)\r\n- feature: redesigned project creation experience\r\n- feature: added buttons to clear project and swift module cache (eb0a5f77a0995c14d4f85e0f616bcf126acc043a)\r\n\r\n## Kernel Virtualization Layer (ksurface)\r\n- vulnerability fix: removed a code signature bypass from inbuilt installd (1cb57a141bb70fc0d7fccd0f4c0c0dc79e119551)\r\n- vulnerability fix: patched a deadlock in `SYS_sysctl` (16e667a6a34164d462de069203c89c704aa27e44)\r\n- vulnerability fix: patched information disclosure vulnerability from permission over pid check (471e2ee84c4c575a3671d51f891d7a9211ecb6e3)\r\n- vulnerability fix: patched a race condition in PEProcessManager (memory corruption) (111f56656241be75d9d341ca44ceb68a917e2bd2)\r\n- vulnerability fix: patched a resource exhaustion vector regarding FBProcessManager (5b08d63ec255931c024dab299bb981f908eb0590)\r\n- vulnerability fix: added forgotten cleanup path in PEProcess (a0cdd40a56d81911610a5369c6dd4031a0c71783)\r\n- vulnerability fix: patched a use-after-free caused by a reference underflow (b6e1011e50d345e24e66151ee59772560ed42660)\r\n- vulnerability fix: patched a lenient memory corruption vulnerability (845fa60d02bb87ed43793d8dc335fe3a5f5bd2b4)\r\n- vulnerability fix: patched a use-after-free in kvobject allocation API (1fe578d672a79b174bdbceb11e1ed5d4e76bd3a1)\r\n- vulnerability fix: patched a memory leak in process list API (09c423c5d2f2b050f26bc25b3b1daa86001bfef9)\r\n- vulnerability fix: handling EAGAIN on rdlock's (e592fc08e30b14baf5453e766e978bc3e585187d)\r\n- vulnerability fix: patched buffer overflow in `SYS_handoffep` found by @zipgod24 (ebd6c2881f205caddf31d051cbbe22c9e3d0fcf7)\r\n- vulnerability fix: patched use-after-free in `proc_zombify(1)` found by @zipgod24 (4337d89c55abfa737efae4182836ad6e653c8e3b)\r\n- vulnerability fix: patched a severe buffer over-read leading to information disclosure (ef6fb7c45844a566251637a1bc56021c03619432)\r\n- vulnerability fix: patched ksurface termination vulnerability (1deeccb738ab89ad11f36946d82cd11168e461e9)\r\n- vulnerability fix: patched a OOB vulnerability in ZSign by @orbisai0security (c8786557086ab811bd6356186eab91f5aeadf2a5)\r\n- feature: using FBProcess for process state change handling (9d00fb1de0e389481544fc6ec68266aa9827dfb2)\r\n- performance: faster MachOObject (f37c7c6857fc90b87f34ec58d3da2483cc79f55a, cc0ac371f26fb181b92a2c72b65c4bf77c788c09, 5097f01caaa2863c09410d8da0d532f0925ae0a8, c4612ceb7682739fbcfefd5a1472e8719f5370ee, b03e161d30f0a78d15358cdd1fac4192aa088051)\r\n- performance: faster write in and out in FDObject (4d42ed5d790c188051a8dbf37194b8716e8849a0)\r\n- performance: slightly faster PEProcessManager (fbc9911b34a4d6394f07bfae1737e53f74159364)\r\n- performance: using faster NSExtension invocation method (b1dd4d78cd70754484886f590b5c9a6070bf25bf, 61e3c1dbff32b591476e48c8d654b4804227330f, 21939afc3893cf884231b1699844116c7db94c6e)\r\n- performance: removed redundant delay in PELaunchService (6731ed79702f75f170fb19e77461199f7e139fd7)\r\n- performance: made object allocation slightly faster (f325e0cf608587db6ecbfb1daa9b8072ec4fee9c)\r\n- hardening: removed PEEntitlementProcessElevate from some presets (6a335611b506113f867a11d4c6210bd260236fb4)\r\n- fix: disabled darwinbg simulation cuz apple might just freeze parts of iOS for what ever reason (ae26edbece9ca0a38ba920f94c54de5165976d00)\r\n\r\n> [!NOTE]\r\n> standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n> [!WARNING]\r\n> Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260515/Nyxian_0.10.0_Coexist.ipa",
+          "size": 104806108,
+          "sha256": "d25875369d405079e4026e080437fa8c877497d96860da730059da6f866f1fda",
           "minOSVersion": "16.0"
         }
       ],
-      "sha256": "064ffc562938d4e65242be3167240328d84b3ca4b247f259f6f7efb66f19f05b",
+      "sha256": "d25875369d405079e4026e080437fa8c877497d96860da730059da6f866f1fda",
       "category": "other"
     },
     {
@@ -1047,14 +1044,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.7.1",
-      "versionDate": "2026-05-10T11:03:41Z",
-      "versionDescription": "修复 #2002\r\n修复 #2020 by @My-Responsitories\r\n其他调整 #2032 by @My-Responsitories",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260510/PiliPlus_2.0.7.1_Coexist.ipa",
+      "version": "2.0.7.2",
+      "versionDate": "2026-05-15T03:22:55Z",
+      "versionDescription": "修复 #2075 #2087\r\n其他调整 #2100 by @My-Responsitories\r\n定时发布动态不立即检查是否可见 #2059 by @uhiovk",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260515/PiliPlus_2.0.7.2_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23938924,
+      "size": 23827081,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1067,6 +1064,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.7.2",
+          "date": "2026-05-15T03:22:55Z",
+          "localizedDescription": "修复 #2075 #2087\r\n其他调整 #2100 by @My-Responsitories\r\n定时发布动态不立即检查是否可见 #2059 by @uhiovk",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260515/PiliPlus_2.0.7.2_Coexist.ipa",
+          "size": 23827081,
+          "sha256": "b2dd9d03e8298ae79759fea2505037fb30905de76aaf9c61d7c70affc619d183",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "2.0.7.1",
           "date": "2026-05-10T11:03:41Z",
           "localizedDescription": "修复 #2002\r\n修复 #2020 by @My-Responsitories\r\n其他调整 #2032 by @My-Responsitories",
@@ -1074,18 +1080,9 @@
           "size": 23938924,
           "sha256": "44fcb59d2fa85b62abbe5f1f763d897c09e1fb03021f876af4cc79dcc8011f32",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.0.7",
-          "date": "2026-05-05T02:49:50Z",
-          "localizedDescription": "优化安卓倾斜角度切视频换方向 #1953\r\n桌面端音频播放页支持调节音量 #1950\r\n评论转发到动态文字按钮改成图标按钮 #1937\r\n直播发送弹幕面板半透明背景改为透明 #1944\r\n\r\n修复评论布局 #1925\r\n修复 iOS 侧滑手势冲突 #1929\r\n修复一些安卓设备无法降低系统亮度\r\n修复关闭二级页面时其余手势被取消 #1947\r\n修复视频方向切换 #1956 by @My-Responsitories\r\n修复搜索结果标题符号显示 #1926 by @My-Responsitories",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/PiliPlus_2.0.7_Coexist.ipa",
-          "size": 23932876,
-          "sha256": "5e3fbf7e79668529f98e51a953a3761b21aaa64fbc03627cf16b335a19213c37",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "44fcb59d2fa85b62abbe5f1f763d897c09e1fb03021f876af4cc79dcc8011f32",
+      "sha256": "b2dd9d03e8298ae79759fea2505037fb30905de76aaf9c61d7c70affc619d183",
       "category": "other"
     },
     {
