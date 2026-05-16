@@ -1133,15 +1133,15 @@
       "githubRepo": "hrydgard/ppsspp",
       "bundleIdentifier": "org.ppsspp.ppsspp",
       "developerName": "hrydgard",
-      "subtitle": "A PSP emulator for Android, Windows, Mac and Linux, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. For discussion use the forums at forums.ppsspp.org.",
-      "version": "1.20.3",
-      "versionDate": "2026-03-15T18:02:06Z",
+      "subtitle": "A PSP emulator for Android, Windows, Mac, Linux and iOS, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues.",
+      "version": "1.20.4",
+      "versionDate": "2026-05-16T12:42:59Z",
       "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.3/PPSSPP-iOS-v1.20.3.ipa",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
       "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
       "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
       "tintColor": "#2D4553",
-      "size": 30981742,
+      "size": 31124277,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -1166,25 +1166,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "1.20.3",
-          "date": "2026-03-15T18:02:06Z",
+          "version": "1.20.4",
+          "date": "2026-05-16T12:42:59Z",
           "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.3/PPSSPP-iOS-v1.20.3.ipa",
-          "size": 30981742,
-          "sha256": "463b9e004ab939f5a70b565344553aeb0beff665c48e85603083ec247c972d70",
-          "minOSVersion": "11.0"
-        },
-        {
-          "version": "1.20.2",
-          "date": "2026-03-10T13:50:36Z",
-          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
-          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.2/PPSSPP-iOS-v1.20.2.ipa",
-          "size": 30962097,
-          "sha256": "b350842b49e8ed094f9da66bf12422e93521434488151308ffcc659473af62f5",
+          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+          "size": 31124277,
+          "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "463b9e004ab939f5a70b565344553aeb0beff665c48e85603083ec247c972d70",
+      "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
       "category": "other"
     },
     {
