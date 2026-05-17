@@ -946,14 +946,14 @@
       "bundleIdentifier": "com.cr4zy.nyxian.coexist",
       "developerName": "ProjectNyxian",
       "subtitle": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "version": "0.10.1",
-      "versionDate": "2026-05-15T06:59:48Z",
-      "versionDescription": "## Changelog\r\n## Nyxian\r\n- fix: creating SwiftUI project correctly by generating info.plist key's in SwiftUI interface projects (lol, blame me) (98710fa)\r\n\r\n> [!NOTE]\r\n> This is a emergency patch created because of serious bugs.\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n> [!WARNING]\r\n> Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260515/Nyxian_0.10.1_Coexist.ipa",
+      "version": "0.10.2",
+      "versionDate": "2026-05-17T19:39:05Z",
+      "versionDescription": "## Changelog\r\n## emexDE\r\n- fixed project GUI (c937bba253648b7f80ff10845c5cfe1259eb3672)\r\n- updated credits (0dcfc06a2dc6438384090da38255304bdb6ecc98, 439915ba50cab8120fa8b8a1ec2f227c0c87d89a, 6229a0dba63d3b2b1df4914bfb922d2482dd03c4)\r\n- emexDE rebranding (45b2f30a88793ab1f2ad2ec2fded78f69c32ba73, 5573ce8139adf905d74315aeef679ea75dd6571a, d464ed10e60f84f2f7274a4efdd88cd697e8dcef, 56e554fa9cbc87f5fb6a270a1e2ab5b449c925be, ed85577f9a5c9aad3d3167b07dde27449e2c61f6, 271633e69824678cfcec750b40a7f7628e2111a5)\r\n- fixed issues with window state management (012b5d4f58c9cebe0da708d1bff4e30b382ecde2, 6f97cbbc4e9c83ceea059ae7565bf98c3cd309df, e11733ba0e40716a7f382bc5c17e545d54cf8daa, 972cf1c1447def70a5fb117219dc7db57ea8ee5c, 9dd1f0e18a53c856f245a75dff3cc3ec73b45010, 9b4e25d8d8b5bc8e3662c7abcfd0104ddffcda3d)\r\n\r\n## ksurface (pre-rebrand)\r\n- vulnerability fix: heap buffer overflow in archo Zsign, discovered by @orbisai0security (00975c47e89089e46ad278ca1c88dfd4ba4ab39d)\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of emexDE is iPhoneOS26.4\r\n\r\nThanks to contributions from @orbisai0security, @LucaVmu, @L0tsen and @mimalloc",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260517/Nyxian_0.10.2_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png",
       "tintColor": "#D8AAFE",
-      "size": 104806117,
+      "size": 104884782,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1008,6 +1008,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.10.2",
+          "date": "2026-05-17T19:39:05Z",
+          "localizedDescription": "## Changelog\r\n## emexDE\r\n- fixed project GUI (c937bba253648b7f80ff10845c5cfe1259eb3672)\r\n- updated credits (0dcfc06a2dc6438384090da38255304bdb6ecc98, 439915ba50cab8120fa8b8a1ec2f227c0c87d89a, 6229a0dba63d3b2b1df4914bfb922d2482dd03c4)\r\n- emexDE rebranding (45b2f30a88793ab1f2ad2ec2fded78f69c32ba73, 5573ce8139adf905d74315aeef679ea75dd6571a, d464ed10e60f84f2f7274a4efdd88cd697e8dcef, 56e554fa9cbc87f5fb6a270a1e2ab5b449c925be, ed85577f9a5c9aad3d3167b07dde27449e2c61f6, 271633e69824678cfcec750b40a7f7628e2111a5)\r\n- fixed issues with window state management (012b5d4f58c9cebe0da708d1bff4e30b382ecde2, 6f97cbbc4e9c83ceea059ae7565bf98c3cd309df, e11733ba0e40716a7f382bc5c17e545d54cf8daa, 972cf1c1447def70a5fb117219dc7db57ea8ee5c, 9dd1f0e18a53c856f245a75dff3cc3ec73b45010, 9b4e25d8d8b5bc8e3662c7abcfd0104ddffcda3d)\r\n\r\n## ksurface (pre-rebrand)\r\n- vulnerability fix: heap buffer overflow in archo Zsign, discovered by @orbisai0security (00975c47e89089e46ad278ca1c88dfd4ba4ab39d)\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of emexDE is iPhoneOS26.4\r\n\r\nThanks to contributions from @orbisai0security, @LucaVmu, @L0tsen and @mimalloc",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260517/Nyxian_0.10.2_Coexist.ipa",
+          "size": 104884782,
+          "sha256": "bbd005292eba7bb0d11e9b1d512e1378376f16a77efda9c3d85bc45ddbbee850",
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "0.10.1",
           "date": "2026-05-15T06:59:48Z",
           "localizedDescription": "## Changelog\r\n## Nyxian\r\n- fix: creating SwiftUI project correctly by generating info.plist key's in SwiftUI interface projects (lol, blame me) (98710fa)\r\n\r\n> [!NOTE]\r\n> This is a emergency patch created because of serious bugs.\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of Nyxian is iPhoneOS26.4\r\n\r\n> [!WARNING]\r\n> Jailbreak and trollstore support might be broken in this first release. In the case you wanna use them, don't downgrade, make sure to backup all app data and then upgrade.",
@@ -1017,7 +1026,7 @@
           "minOSVersion": "16.0"
         }
       ],
-      "sha256": "3d7dddfe26311fb953d6002671aef78178d15b01d00c463e850cfa2700b3ccd6",
+      "sha256": "bbd005292eba7bb0d11e9b1d512e1378376f16a77efda9c3d85bc45ddbbee850",
       "category": "other"
     },
     {
