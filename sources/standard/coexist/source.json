@@ -1286,14 +1286,14 @@
       "bundleIdentifier": "com.stik.stikdebug.coexist",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.2",
-      "versionDate": "2026-04-12T06:41:17Z",
-      "versionDescription": "Improved iOS 26/TXM JIT reliability.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.1...3.1.2",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/StikDebug_3.1.2_Coexist.ipa",
+      "version": "3.1.3",
+      "versionDate": "2026-05-18T14:50:17Z",
+      "versionDescription": "Includes performance improvements, bug fixes, quality of life improvements, a new news tab, and more.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.2...3.1.3",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260518/StikDebug_3.1.3_Coexist.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 10971202,
+      "size": 11125317,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1305,16 +1305,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "3.1.2",
-          "date": "2026-04-12T06:41:17Z",
-          "localizedDescription": "Improved iOS 26/TXM JIT reliability.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.1...3.1.2",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260412/StikDebug_3.1.2_Coexist.ipa",
-          "size": 10971202,
-          "sha256": "fc5d24f8697c7a9a11f7c7d313b0a0306044b41ede32d8b52b7feb881b4e1492",
+          "version": "3.1.3",
+          "date": "2026-05-18T14:50:17Z",
+          "localizedDescription": "Includes performance improvements, bug fixes, quality of life improvements, a new news tab, and more.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.2...3.1.3",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260518/StikDebug_3.1.3_Coexist.ipa",
+          "size": 11125317,
+          "sha256": "9b880b21ebd191a8be0c6dfca096ed2f023fbd6d061086dcb3f7e5a1132c342c",
           "minOSVersion": "17.4"
         }
       ],
-      "sha256": "fc5d24f8697c7a9a11f7c7d313b0a0306044b41ede32d8b52b7feb881b4e1492",
+      "sha256": "9b880b21ebd191a8be0c6dfca096ed2f023fbd6d061086dcb3f7e5a1132c342c",
       "category": "other"
     },
     {
