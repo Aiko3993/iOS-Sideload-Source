@@ -1064,14 +1064,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI.coexist",
       "developerName": "Eslzzyl",
       "subtitle": "一个 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.13.0",
-      "versionDate": "2026-04-20T12:16:54Z",
-      "versionDescription": "## 新功能\r\n\r\n 1. 插画详情页图片过渡加载：先显示缓存的低画质图片，高画质下载完成后自动替换为高清图，从而减少白屏空等的情况\r\n 2. 默认私密书签设置：新增「默认私密收藏」设置选项，可选择默认以私密方式收藏插画/小说 ( @ButaiKirin )\r\n 3. 排行页优化：排行页面支持更多排行模式选择，改进了最新内容加载逻辑 ( @ButaiKirin )\r\n     - 由于屏幕空间有限，iOS 平台不显示排行 Tab。可通过设置页的排行部分进入该页面。\r\n 4. 小说系列章节导航：修复了小说系列章节跳转问题，改善了小说系列阅读导航体验 ( @Ding-Kyoma )\r\n\r\n## 优化和 bug 修复\r\n\r\n 1. 修复了插画详情、小说详情、用户页面的分享动作 ( @ButaiKirin )\r\n 2. 漫画画质设置：详情页图片现在会根据类型（插画/漫画）应用对应的画质设置 ( @ButaiKirin )\r\n 3. 修复了小说中图片解析和加载诊断问题 ( @Ding-Kyoma )\r\n 4. 修复了从部分页面下载图片时未正确使用「作者名+标题」命名格式的问题 ( #10 )",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260420/Pixiv-SwiftUI_0.13.0_Coexist.ipa",
+      "version": "0.14.0",
+      "versionDate": "2026-05-21T14:06:13Z",
+      "versionDescription": "## 新功能\r\n\r\n### 小说关键词屏蔽（PR #14）\r\n- 新增三个本地小说关键词屏蔽列表：标题、系列名、简介\r\n- 屏蔽规则已获取的小说条目也生效（本地过滤）\r\n- 关键词匹配为大小写不敏感的子串匹配\r\n- 简介内容先清理 HTML 再匹配\r\n- 设置页新增关键词屏蔽管理 UI\r\n- 屏蔽规则纳入同步/导出/导入流程\r\n\r\n### 小说内容过滤国际化（PR #11，@rayriffy）\r\n- 内容过滤设置新增本地化支持\r\n\r\n### 图标浅色模式修复（PR #13，@Kanscape）\r\n- 修复浅色模式下应用图标颜色异常的问题\r\n\r\n### 插画收藏状态同步修复（PR #12，@rayriffy）\r\n- 修复收藏状态变更时的 actor isolation 问题\r\n\r\n## UI 改进\r\n\r\n### 搜索筛选控件布局（PR #17）\r\n- 搜索结果页的筛选控件重新布局，iPhone 上不再挤在右上角\r\n- 筛选条件更易读、不易误触\r\n\r\n### 小说列表行布局统一（PR #19）\r\n- 新增共享组件 `NovelInfoTableRow`，统一排行榜、列表卡片、作者详情页的小说行布局\r\n- 规范标题、标签、统计数据的排列和对齐\r\n- 压缩统计标签文字，防止 iPhone 上异常折行\r\n- 统一标签使用 Capsule 圆角样式\r\n- `NovelCard` 和 `NovelRankingPreview` 提取魔数尺寸为 `Layout` 枚举常量\r\n- 作者详情页小说瀑布流改用 `NovelListCard`，消除重复布局代码\r\n\r\n### 小说行显示字数\r\n- 排行榜、列表卡片行恢复显示作者名 + 字数（`Shiki · 12.3万字`）\r\n\r\n## Bug 修复\r\n\r\n### 搜索键盘回归（PR #15）\r\n- 从搜索结果页返回时，键盘不再自动弹出\r\n- 修复键入搜索后返回文字不显示的问题（与搜索框收起动画冲突）\r\n\r\n### 搜索历史交互（PR #18）\r\n- 修复浏览历史点击无响应的问题\r\n- 浏览历史列表改用直接传 `illust`/`novel` 实例而非仅 ID，配合 `NavigationStack` 类型匹配\r\n- 修复清除历史确认弹窗的展示上下文\r\n- 搜索历史项中的\"屏蔽\"按钮限制仅单词标签可屏蔽\r\n- 移除过时的搜索建议回调\r\n\r\n### 多标签搜索（PR #18）\r\n- 优化多词搜索的输入规范化（合并内部连续空格）\r\n- 修复搜索建议补全逻辑：正确区分追加与替换最后一个词\r\n- 搜索建议只对当前正在输入的词发起请求，避免频繁刷新\r\n- 搜索结果页也应用相同的搜索词规范化\r\n\r\n### 小说评论导航（PR #18）\r\n- 修复小说详情页评论面板无法弹出的回归问题\r\n- `ProfilePanelView` 注册 `Novel` 类型导航目标，使个人面板中的小说可跳转\r\n\r\n### 搜索词过滤优化（PR #14）\r\n- 关键词过滤逻辑标记为 `nonisolated`，修复 Swift 6 并发检查\r\n\r\n## 重构\r\n\r\n- `SearchResultView.swift`：将散落的 5 个筛选 `@State` 合并为 `SearchFilterState` 结构体\r\n- `SearchStore.swift`：抽取 `activeSuggestionToken` 方法，优化建议查询逻辑\r\n- 删除 `#available(iOS 26.0)` 的多余 `ToolbarSpacer`（清除按钮移出 toolbar 后不再需要）\r\n\r\n## 其他\r\n\r\n- 更新本地化文件\r\n- 更新 tag 优化翻译数据\r\n\r\n**贡献者：** @shikiroot, @rayriffy, @Kanscape, @ButaiKirin\r\n",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260521/Pixiv-SwiftUI_0.14.0_Coexist.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7386930,
+      "size": 7198978,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1081,16 +1081,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.13.0",
-          "date": "2026-04-20T12:16:54Z",
-          "localizedDescription": "## 新功能\r\n\r\n 1. 插画详情页图片过渡加载：先显示缓存的低画质图片，高画质下载完成后自动替换为高清图，从而减少白屏空等的情况\r\n 2. 默认私密书签设置：新增「默认私密收藏」设置选项，可选择默认以私密方式收藏插画/小说 ( @ButaiKirin )\r\n 3. 排行页优化：排行页面支持更多排行模式选择，改进了最新内容加载逻辑 ( @ButaiKirin )\r\n     - 由于屏幕空间有限，iOS 平台不显示排行 Tab。可通过设置页的排行部分进入该页面。\r\n 4. 小说系列章节导航：修复了小说系列章节跳转问题，改善了小说系列阅读导航体验 ( @Ding-Kyoma )\r\n\r\n## 优化和 bug 修复\r\n\r\n 1. 修复了插画详情、小说详情、用户页面的分享动作 ( @ButaiKirin )\r\n 2. 漫画画质设置：详情页图片现在会根据类型（插画/漫画）应用对应的画质设置 ( @ButaiKirin )\r\n 3. 修复了小说中图片解析和加载诊断问题 ( @Ding-Kyoma )\r\n 4. 修复了从部分页面下载图片时未正确使用「作者名+标题」命名格式的问题 ( #10 )",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260420/Pixiv-SwiftUI_0.13.0_Coexist.ipa",
-          "size": 7386930,
-          "sha256": "e12c49f2e1c13370936279afb4e90dd33059f9b0fe6b636800dcd4210cd68803",
+          "version": "0.14.0",
+          "date": "2026-05-21T14:06:13Z",
+          "localizedDescription": "## 新功能\r\n\r\n### 小说关键词屏蔽（PR #14）\r\n- 新增三个本地小说关键词屏蔽列表：标题、系列名、简介\r\n- 屏蔽规则已获取的小说条目也生效（本地过滤）\r\n- 关键词匹配为大小写不敏感的子串匹配\r\n- 简介内容先清理 HTML 再匹配\r\n- 设置页新增关键词屏蔽管理 UI\r\n- 屏蔽规则纳入同步/导出/导入流程\r\n\r\n### 小说内容过滤国际化（PR #11，@rayriffy）\r\n- 内容过滤设置新增本地化支持\r\n\r\n### 图标浅色模式修复（PR #13，@Kanscape）\r\n- 修复浅色模式下应用图标颜色异常的问题\r\n\r\n### 插画收藏状态同步修复（PR #12，@rayriffy）\r\n- 修复收藏状态变更时的 actor isolation 问题\r\n\r\n## UI 改进\r\n\r\n### 搜索筛选控件布局（PR #17）\r\n- 搜索结果页的筛选控件重新布局，iPhone 上不再挤在右上角\r\n- 筛选条件更易读、不易误触\r\n\r\n### 小说列表行布局统一（PR #19）\r\n- 新增共享组件 `NovelInfoTableRow`，统一排行榜、列表卡片、作者详情页的小说行布局\r\n- 规范标题、标签、统计数据的排列和对齐\r\n- 压缩统计标签文字，防止 iPhone 上异常折行\r\n- 统一标签使用 Capsule 圆角样式\r\n- `NovelCard` 和 `NovelRankingPreview` 提取魔数尺寸为 `Layout` 枚举常量\r\n- 作者详情页小说瀑布流改用 `NovelListCard`，消除重复布局代码\r\n\r\n### 小说行显示字数\r\n- 排行榜、列表卡片行恢复显示作者名 + 字数（`Shiki · 12.3万字`）\r\n\r\n## Bug 修复\r\n\r\n### 搜索键盘回归（PR #15）\r\n- 从搜索结果页返回时，键盘不再自动弹出\r\n- 修复键入搜索后返回文字不显示的问题（与搜索框收起动画冲突）\r\n\r\n### 搜索历史交互（PR #18）\r\n- 修复浏览历史点击无响应的问题\r\n- 浏览历史列表改用直接传 `illust`/`novel` 实例而非仅 ID，配合 `NavigationStack` 类型匹配\r\n- 修复清除历史确认弹窗的展示上下文\r\n- 搜索历史项中的\"屏蔽\"按钮限制仅单词标签可屏蔽\r\n- 移除过时的搜索建议回调\r\n\r\n### 多标签搜索（PR #18）\r\n- 优化多词搜索的输入规范化（合并内部连续空格）\r\n- 修复搜索建议补全逻辑：正确区分追加与替换最后一个词\r\n- 搜索建议只对当前正在输入的词发起请求，避免频繁刷新\r\n- 搜索结果页也应用相同的搜索词规范化\r\n\r\n### 小说评论导航（PR #18）\r\n- 修复小说详情页评论面板无法弹出的回归问题\r\n- `ProfilePanelView` 注册 `Novel` 类型导航目标，使个人面板中的小说可跳转\r\n\r\n### 搜索词过滤优化（PR #14）\r\n- 关键词过滤逻辑标记为 `nonisolated`，修复 Swift 6 并发检查\r\n\r\n## 重构\r\n\r\n- `SearchResultView.swift`：将散落的 5 个筛选 `@State` 合并为 `SearchFilterState` 结构体\r\n- `SearchStore.swift`：抽取 `activeSuggestionToken` 方法，优化建议查询逻辑\r\n- 删除 `#available(iOS 26.0)` 的多余 `ToolbarSpacer`（清除按钮移出 toolbar 后不再需要）\r\n\r\n## 其他\r\n\r\n- 更新本地化文件\r\n- 更新 tag 优化翻译数据\r\n\r\n**贡献者：** @shikiroot, @rayriffy, @Kanscape, @ButaiKirin\r\n",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260521/Pixiv-SwiftUI_0.14.0_Coexist.ipa",
+          "size": 7198978,
+          "sha256": "139998cbc4c857ef4e7c133d8a62927f6907c96b510ceb5893b5ad17578fe119",
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "e12c49f2e1c13370936279afb4e90dd33059f9b0fe6b636800dcd4210cd68803",
+      "sha256": "139998cbc4c857ef4e7c133d8a62927f6907c96b510ceb5893b5ad17578fe119",
       "category": "other"
     },
     {
