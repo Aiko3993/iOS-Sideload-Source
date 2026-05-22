@@ -13,14 +13,14 @@
       "bundleIdentifier": "top.jtmonster.jhentai.coexist",
       "developerName": "jiangtian616",
       "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
-      "version": "8.0.12",
-      "versionDate": "2026-02-24T12:24:22Z",
-      "versionDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
+      "version": "8.0.12+310",
+      "versionDate": "2026-05-22T12:47:20Z",
+      "versionDescription": "- 修复画廊详情页部分场景下刷新页面后，缩略图无法正常全部加载的bug。\n\n--------------------\n\n- Fix a bug where thumbnails fail to fully load after refreshing the gallery detail page in certain scenarios.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260522/JHentai_8.0.12%2B310_Coexist.ipa",
       "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15750837,
+      "size": 15757967,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -39,12 +39,12 @@
       ],
       "versions": [
         {
-          "version": "8.0.12",
-          "date": "2026-02-24T12:24:22Z",
-          "localizedDescription": "- 优化webview相关登录的表现\n\n--------------------\n\n- Optimize the performance of webview related login",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260224/JHentai_8.0.12_Coexist.ipa",
-          "size": 15750837,
-          "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db",
+          "version": "8.0.12+310",
+          "date": "2026-05-22T12:47:20Z",
+          "localizedDescription": "- 修复画廊详情页部分场景下刷新页面后，缩略图无法正常全部加载的bug。\n\n--------------------\n\n- Fix a bug where thumbnails fail to fully load after refreshing the gallery detail page in certain scenarios.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260522/JHentai_8.0.12%2B310_Coexist.ipa",
+          "size": 15757967,
+          "sha256": "198d8938015285c598695ce664d2fd4f2935060185eb7228821fc084d4f3e574",
           "minOSVersion": "12.0"
         }
       ],
@@ -81,7 +81,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "2e99132307d4d549718e18040ae00efbd6b6ceb9f23a58791e45ec69dfd7f7db"
+      "sha256": "198d8938015285c598695ce664d2fd4f2935060185eb7228821fc084d4f3e574"
     },
     {
       "name": "LoveIwara",
