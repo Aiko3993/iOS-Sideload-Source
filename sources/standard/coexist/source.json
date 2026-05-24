@@ -1073,14 +1073,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI.coexist",
       "developerName": "Eslzzyl",
       "subtitle": "一个 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.14.0",
-      "versionDate": "2026-05-21T14:06:13Z",
-      "versionDescription": "## 新功能\r\n\r\n### 小说关键词屏蔽（PR #14）\r\n- 新增三个本地小说关键词屏蔽列表：标题、系列名、简介\r\n- 屏蔽规则已获取的小说条目也生效（本地过滤）\r\n- 关键词匹配为大小写不敏感的子串匹配\r\n- 简介内容先清理 HTML 再匹配\r\n- 设置页新增关键词屏蔽管理 UI\r\n- 屏蔽规则纳入同步/导出/导入流程\r\n\r\n### 小说内容过滤国际化（PR #11，@rayriffy）\r\n- 内容过滤设置新增本地化支持\r\n\r\n### 图标浅色模式修复（PR #13，@Kanscape）\r\n- 修复浅色模式下应用图标颜色异常的问题\r\n\r\n### 插画收藏状态同步修复（PR #12，@rayriffy）\r\n- 修复收藏状态变更时的 actor isolation 问题\r\n\r\n## UI 改进\r\n\r\n### 搜索筛选控件布局（PR #17）\r\n- 搜索结果页的筛选控件重新布局，iPhone 上不再挤在右上角\r\n- 筛选条件更易读、不易误触\r\n\r\n### 小说列表行布局统一（PR #19）\r\n- 新增共享组件 `NovelInfoTableRow`，统一排行榜、列表卡片、作者详情页的小说行布局\r\n- 规范标题、标签、统计数据的排列和对齐\r\n- 压缩统计标签文字，防止 iPhone 上异常折行\r\n- 统一标签使用 Capsule 圆角样式\r\n- `NovelCard` 和 `NovelRankingPreview` 提取魔数尺寸为 `Layout` 枚举常量\r\n- 作者详情页小说瀑布流改用 `NovelListCard`，消除重复布局代码\r\n\r\n### 小说行显示字数\r\n- 排行榜、列表卡片行恢复显示作者名 + 字数（`Shiki · 12.3万字`）\r\n\r\n## Bug 修复\r\n\r\n### 搜索键盘回归（PR #15）\r\n- 从搜索结果页返回时，键盘不再自动弹出\r\n- 修复键入搜索后返回文字不显示的问题（与搜索框收起动画冲突）\r\n\r\n### 搜索历史交互（PR #18）\r\n- 修复浏览历史点击无响应的问题\r\n- 浏览历史列表改用直接传 `illust`/`novel` 实例而非仅 ID，配合 `NavigationStack` 类型匹配\r\n- 修复清除历史确认弹窗的展示上下文\r\n- 搜索历史项中的\"屏蔽\"按钮限制仅单词标签可屏蔽\r\n- 移除过时的搜索建议回调\r\n\r\n### 多标签搜索（PR #18）\r\n- 优化多词搜索的输入规范化（合并内部连续空格）\r\n- 修复搜索建议补全逻辑：正确区分追加与替换最后一个词\r\n- 搜索建议只对当前正在输入的词发起请求，避免频繁刷新\r\n- 搜索结果页也应用相同的搜索词规范化\r\n\r\n### 小说评论导航（PR #18）\r\n- 修复小说详情页评论面板无法弹出的回归问题\r\n- `ProfilePanelView` 注册 `Novel` 类型导航目标，使个人面板中的小说可跳转\r\n\r\n### 搜索词过滤优化（PR #14）\r\n- 关键词过滤逻辑标记为 `nonisolated`，修复 Swift 6 并发检查\r\n\r\n## 重构\r\n\r\n- `SearchResultView.swift`：将散落的 5 个筛选 `@State` 合并为 `SearchFilterState` 结构体\r\n- `SearchStore.swift`：抽取 `activeSuggestionToken` 方法，优化建议查询逻辑\r\n- 删除 `#available(iOS 26.0)` 的多余 `ToolbarSpacer`（清除按钮移出 toolbar 后不再需要）\r\n\r\n## 其他\r\n\r\n- 更新本地化文件\r\n- 更新 tag 优化翻译数据\r\n\r\n**贡献者：** @shikiroot, @rayriffy, @Kanscape, @ButaiKirin\r\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260521/Pixiv-SwiftUI_0.14.0_Coexist.ipa",
+      "version": "0.14.1",
+      "versionDate": "2026-05-24T14:40:51Z",
+      "versionDescription": "此版本聚焦于性能优化和 bug 修复。\r\n\r\n性能优化\r\n- 启动速度优化\r\n- 瀑布流滚动性能优化（仍未完成）\r\n- 插画卡片渲染优化\r\n- 图片预取\r\n- 其他杂项优化\r\n\r\nBug 修复\r\n- Ajax API 会话持久化（解决重启后 Ajax 显示未登录）\r\n- Token 刷新后 Keychain 同步 — 修复 token 刷新后未同步保存到 Keychain 的问题\r\n- 以图搜图线程安全 — 后台线程读取文件，避免阻塞主线程\r\n- iOS 26 Toolbar 头像按钮样式 — 头像按钮去掉液态玻璃描边，与系统按钮大小一致\r\n- 「已经到底了」文本修复未居中的问题\r\n- macOS 预览窗口 — 插画/动图 toolbar 按钮移至右上角\r\n- macOS 工具栏 Menu — 隐藏向下箭头指示器\r\n- 热门标签布局 — 改用最短列优先分配算法，避免分配不均\r\n\r\n重构\r\n- ellipsis.circle 全局替换为 ellipsis（无圈版本）\r\n- 搜索结果页工具栏图标同步更新，清理未使用的组件",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260524/Pixiv-SwiftUI_0.14.1_Coexist.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7198978,
+      "size": 7240046,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1089,6 +1089,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.14.1",
+          "date": "2026-05-24T14:40:51Z",
+          "localizedDescription": "此版本聚焦于性能优化和 bug 修复。\r\n\r\n性能优化\r\n- 启动速度优化\r\n- 瀑布流滚动性能优化（仍未完成）\r\n- 插画卡片渲染优化\r\n- 图片预取\r\n- 其他杂项优化\r\n\r\nBug 修复\r\n- Ajax API 会话持久化（解决重启后 Ajax 显示未登录）\r\n- Token 刷新后 Keychain 同步 — 修复 token 刷新后未同步保存到 Keychain 的问题\r\n- 以图搜图线程安全 — 后台线程读取文件，避免阻塞主线程\r\n- iOS 26 Toolbar 头像按钮样式 — 头像按钮去掉液态玻璃描边，与系统按钮大小一致\r\n- 「已经到底了」文本修复未居中的问题\r\n- macOS 预览窗口 — 插画/动图 toolbar 按钮移至右上角\r\n- macOS 工具栏 Menu — 隐藏向下箭头指示器\r\n- 热门标签布局 — 改用最短列优先分配算法，避免分配不均\r\n\r\n重构\r\n- ellipsis.circle 全局替换为 ellipsis（无圈版本）\r\n- 搜索结果页工具栏图标同步更新，清理未使用的组件",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260524/Pixiv-SwiftUI_0.14.1_Coexist.ipa",
+          "size": 7240046,
+          "sha256": "4b72856ee04cce9ba3cf3f1bf2ff7878cd18d36572253dda575f6ac48f159c09",
+          "minOSVersion": "17.0"
+        },
         {
           "version": "0.14.0",
           "date": "2026-05-21T14:06:13Z",
@@ -1099,7 +1108,7 @@
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "139998cbc4c857ef4e7c133d8a62927f6907c96b510ceb5893b5ad17578fe119",
+      "sha256": "4b72856ee04cce9ba3cf3f1bf2ff7878cd18d36572253dda575f6ac48f159c09",
       "category": "other"
     },
     {
