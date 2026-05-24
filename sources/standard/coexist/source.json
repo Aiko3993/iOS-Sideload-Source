@@ -435,14 +435,14 @@
       "bundleIdentifier": "nya.asami.ksign.coexist",
       "developerName": "Nyasami",
       "subtitle": "The \"cleaner\" Esign app.",
-      "version": "1.5.1",
-      "versionDate": "2025-12-18T06:21:51Z",
-      "versionDescription": "Hawwo everywan its been a while since last update so here's a small update for this time !\r\n\r\n## What's Changed\r\n* Notification when finished downloading in background (you can enable in App Features settings) \r\n* Button that filled bundle ID with certificate's App ID\r\n* add share button to export in logs tab by @Am1nCmd in https://github.com/Nyasami/Ksign/pull/59\r\n* remove support of ksign certificate file\r\n* prefix / suffix for app name in signing config\r\n* refactored the IPA Downloader to just Downloads and new features\r\n* some UI changes and better UX\r\n\r\n## New Contributors\r\n* @Am1nCmd made their first contribution in https://github.com/Nyasami/Ksign/pull/59\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5...v1.5.1",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251218/Ksign_1.5.1_Coexist.ipa",
+      "version": "1.6",
+      "versionDate": "2026-05-24T22:10:06Z",
+      "versionDescription": "Hawoo everywan its been half a year since the last release I'm really sorry because ever since beta build I got lazy from release a new version, anyways \r\n\r\n## What's Changed\r\n* fix: handle empty display name in info.plist\r\n* fix: url scheme for ksign\r\n* fix: signing on a few apps with weird bundles\r\n* feat: injection path & inject into extensions\r\n* feat: optimized for iOS 26 by @Nyasami in https://github.com/Nyasami/Ksign/pull/87\r\n* feat: bulk install by @Nyasami in https://github.com/Nyasami/Ksign/pull/88\r\n* feat: idevice installation method by @Nyasami in https://github.com/Nyasami/Ksign/pull/96\r\n* feat: Add support for .bundle files as tweaks (copy into .app) by @Mikasa-san in https://github.com/Nyasami/Ksign/pull/112\r\n* chore: update language: German, Russian by @MrCookie-For-Programmers in https://github.com/Nyasami/Ksign/pull/105\r\n* chore: update Arabic translation by @mohammed1d1 in https://github.com/Nyasami/Ksign/pull/108\r\n* chore: update Vietnamese localizations by @Astear17 in https://github.com/Nyasami/Ksign/pull/109\r\n* feat: rsd support by @claration in https://github.com/Nyasami/Ksign/pull/117\r\n\r\n## New Contributors\r\n* @MrCookie-For-Programmers made their first contribution in https://github.com/Nyasami/Ksign/pull/76\r\n* @mohammed1d1 made their first contribution in https://github.com/Nyasami/Ksign/pull/108\r\n* @Mikasa-san made their first contribution in https://github.com/Nyasami/Ksign/pull/112\r\n* @Astear17 made their first contribution in https://github.com/Nyasami/Ksign/pull/109\r\n* @claration made their first contribution in https://github.com/Nyasami/Ksign/pull/117\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5.1...v1.6",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260524/Ksign_1.6_Coexist.ipa",
       "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
       "iconURL": "https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png",
       "tintColor": "3c94fc",
-      "size": 14030847,
+      "size": 16398762,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -450,17 +450,17 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "1.5.1",
-          "date": "2025-12-18T06:21:51Z",
-          "localizedDescription": "Hawwo everywan its been a while since last update so here's a small update for this time !\r\n\r\n## What's Changed\r\n* Notification when finished downloading in background (you can enable in App Features settings) \r\n* Button that filled bundle ID with certificate's App ID\r\n* add share button to export in logs tab by @Am1nCmd in https://github.com/Nyasami/Ksign/pull/59\r\n* remove support of ksign certificate file\r\n* prefix / suffix for app name in signing config\r\n* refactored the IPA Downloader to just Downloads and new features\r\n* some UI changes and better UX\r\n\r\n## New Contributors\r\n* @Am1nCmd made their first contribution in https://github.com/Nyasami/Ksign/pull/59\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5...v1.5.1",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251218/Ksign_1.5.1_Coexist.ipa",
-          "size": 14030847,
-          "sha256": "1f68e5d8342a6d1b740ea75845e104cdfba026454c43f70d031b7446d13dff2c",
+          "version": "1.6",
+          "date": "2026-05-24T22:10:06Z",
+          "localizedDescription": "Hawoo everywan its been half a year since the last release I'm really sorry because ever since beta build I got lazy from release a new version, anyways \r\n\r\n## What's Changed\r\n* fix: handle empty display name in info.plist\r\n* fix: url scheme for ksign\r\n* fix: signing on a few apps with weird bundles\r\n* feat: injection path & inject into extensions\r\n* feat: optimized for iOS 26 by @Nyasami in https://github.com/Nyasami/Ksign/pull/87\r\n* feat: bulk install by @Nyasami in https://github.com/Nyasami/Ksign/pull/88\r\n* feat: idevice installation method by @Nyasami in https://github.com/Nyasami/Ksign/pull/96\r\n* feat: Add support for .bundle files as tweaks (copy into .app) by @Mikasa-san in https://github.com/Nyasami/Ksign/pull/112\r\n* chore: update language: German, Russian by @MrCookie-For-Programmers in https://github.com/Nyasami/Ksign/pull/105\r\n* chore: update Arabic translation by @mohammed1d1 in https://github.com/Nyasami/Ksign/pull/108\r\n* chore: update Vietnamese localizations by @Astear17 in https://github.com/Nyasami/Ksign/pull/109\r\n* feat: rsd support by @claration in https://github.com/Nyasami/Ksign/pull/117\r\n\r\n## New Contributors\r\n* @MrCookie-For-Programmers made their first contribution in https://github.com/Nyasami/Ksign/pull/76\r\n* @mohammed1d1 made their first contribution in https://github.com/Nyasami/Ksign/pull/108\r\n* @Mikasa-san made their first contribution in https://github.com/Nyasami/Ksign/pull/112\r\n* @Astear17 made their first contribution in https://github.com/Nyasami/Ksign/pull/109\r\n* @claration made their first contribution in https://github.com/Nyasami/Ksign/pull/117\r\n\r\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5.1...v1.6",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260524/Ksign_1.6_Coexist.ipa",
+          "size": 16398762,
+          "sha256": "14133d1ceaccb1d909f0a8c131cbe242266689c68dd466957ddd85aaa5bdd1c0",
           "minOSVersion": "16.0"
         }
       ],
       "category": "utilities",
-      "sha256": "1f68e5d8342a6d1b740ea75845e104cdfba026454c43f70d031b7446d13dff2c"
+      "sha256": "14133d1ceaccb1d909f0a8c131cbe242266689c68dd466957ddd85aaa5bdd1c0"
     },
     {
       "name": "LiveContainer",
