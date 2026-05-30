@@ -215,11 +215,9 @@ class GitHubClient:
             url = f"https://api.github.com/repos/{repo}/releases/latest"
             return self._get_json_cached(url)
 
-        url = f"https://api.github.com/repos/{repo}/releases"
+        url = f"https://api.github.com/repos/{repo}/releases?per_page=30"
         releases = self._get_json_cached(url)
-        if not releases:
-            return None
-        if not isinstance(releases, list):
+        if not releases or not isinstance(releases, list):
             return None
 
         active_releases = [r for r in releases if not r.get('draft', False)]

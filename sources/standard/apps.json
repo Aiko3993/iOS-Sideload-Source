@@ -107,10 +107,9 @@
     "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png"
   },
   {
-    "name": "Nyxian",
-    "github_repo": "ProjectNyxian/Nyxian",
-    "bundle_id": "com.cr4zy.nyxian",
-    "icon_url": "https://raw.githubusercontent.com/ProjectNyxian/Nyxian/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/lightmode nyx.png"
+    "name": "emexDE",
+    "github_repo": "emexlab/emexDE",
+    "bundle_id": "com.cr4zy.nyxian"
   },
   {
     "name": "PiliPlus",
@@ -124,13 +123,7 @@
     "bundle_id": "org.eu.eslzzyl.Pixiv-SwiftUI",
     "icon_url": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png"
   },
-  {
-    "name": "Play! (Nightly)",
-    "github_repo": "jpd002/Play-",
-    "bundle_id": "com.virtualapplications.play",
-    "icon_url": "https://raw.githubusercontent.com/jpd002/Play-/master/tools/ElfView/qt_ui/assets/app_icon.png",
-    "artifact_only": true
-  },
+
   {
     "name": "PPSSPP",
     "github_repo": "hrydgard/ppsspp",
