@@ -17,7 +17,7 @@
   {
     "name": "Animeko",
     "github_repo": "open-ani/animeko",
-    "bundle_id": "org.openani.Animeko",
+    "bundle_id": "org.animeko.animeko",
     "icon_url": "https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png"
   },
   {
@@ -31,6 +31,12 @@
     "github_repo": "Lakr233/Asspp",
     "bundle_id": "wiki.qaq.Asspp",
     "icon_url": "https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png"
+  },
+  {
+    "name": "emexDE",
+    "github_repo": "emexlab/emexDE",
+    "bundle_id": "com.cr4zy.nyxian",
+    "icon_url": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/dark.png.png"
   },
   {
     "name": "Feather",
@@ -107,11 +113,6 @@
     "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png"
   },
   {
-    "name": "emexDE",
-    "github_repo": "emexlab/emexDE",
-    "bundle_id": "com.cr4zy.nyxian"
-  },
-  {
     "name": "PiliPlus",
     "github_repo": "bggRGjQaUbCoE/PiliPlus",
     "bundle_id": "com.example.piliplus",
@@ -123,7 +124,6 @@
     "bundle_id": "org.eu.eslzzyl.Pixiv-SwiftUI",
     "icon_url": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png"
   },
-
   {
     "name": "PPSSPP",
     "github_repo": "hrydgard/ppsspp",
@@ -147,7 +147,7 @@
     "name": "StikDebug",
     "github_repo": "StephenDev0/StikDebug",
     "bundle_id": "com.stik.stikdebug",
-    "icon_url": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikJIT/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png"
+    "icon_url": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png"
   },
   {
     "name": "UTM",
