@@ -229,25 +229,29 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
             if url_is_alive:
                 config_icon = app_config.get('icon_url')
 
-                if not config_icon:
-                    current_icon_url = app_entry.get('iconURL')
-                    if current_icon_url:
-                        head_resp = client.head(current_icon_url, allow_redirects=True, timeout=15)
-                        if head_resp is None or head_resp.status_code >= 400:
-                            repo_icons = find_best_icon(repo, client)
-                            if repo_icons:
-                                best_icon = max(repo_icons, key=lambda u: score_icon_path(u))
-                                logger.info(f"Replaced broken icon for {name}: {best_icon}")
-                                app_entry['iconURL'] = best_icon
-                                found_icon_auto = best_icon
+                current_icon_url = app_entry.get('iconURL')
+                if current_icon_url:
+                    head_resp = client.head(current_icon_url, allow_redirects=True, timeout=15)
+                    if head_resp is None or head_resp.status_code >= 400:
+                        logger.info(f"Icon URL for {name} returned HTTP {head_resp.status_code if head_resp else 'None'}, searching for replacement...")
+                        repo_icons = find_best_icon(repo, client)
+                        if repo_icons:
+                            best_icon = max(repo_icons, key=lambda u: score_icon_path(u))
+                            logger.info(f"Replaced broken icon for {name}: {best_icon}")
+                            app_entry['iconURL'] = best_icon
+                            found_icon_auto = best_icon
 
                 if found_icon_auto:
                     metadata_updates['icon_url'] = found_icon_auto
 
                 config_icon = app_config.get('icon_url')
                 if config_icon and config_icon not in ['None', '_No response_'] and app_entry.get('iconURL') != config_icon:
-                    app_entry['iconURL'] = config_icon
-                    logger.info(f"Updated icon for {name} from config")
+                    head_cfg = client.head(config_icon, allow_redirects=True, timeout=15)
+                    if head_cfg and head_cfg.status_code < 400:
+                        app_entry['iconURL'] = config_icon
+                        logger.info(f"Updated icon for {name} from config")
+                    else:
+                        logger.warning(f"Configured icon for {name} is broken (HTTP {head_cfg.status_code if head_cfg else 'None'}), keeping current icon")
 
                 config_tint = app_config.get('tint_color')
                 if config_tint and app_entry.get('tintColor') != config_tint:
@@ -301,8 +305,14 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
         current_icon = app_entry.get('iconURL')
 
         if config_icon and config_icon not in ['None', '_No response_']:
-            app_entry['iconURL'] = config_icon
-        else:
+            head_cfg = client.head(config_icon, allow_redirects=True, timeout=15)
+            if head_cfg and head_cfg.status_code < 400:
+                app_entry['iconURL'] = config_icon
+            else:
+                logger.warning(f"Configured icon for {name} is broken (HTTP {head_cfg.status_code if head_cfg else 'None'}), falling back to auto-discovery")
+                config_icon = None
+
+        if not config_icon or config_icon in ['None', '_No response_']:
             repo_icons = find_best_icon(repo, client)
             best_repo_score = -1
             best_repo_icon = None

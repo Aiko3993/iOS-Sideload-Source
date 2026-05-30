@@ -117,22 +117,18 @@ def update_repo_pair(
                     if target_config:
                         for k, v in metadata_updates.items():
                             if k == 'icon_url':
-                                if not target_config.get('icon_url'):
-                                    logger.info(f"Syncing found icon back to apps.json for {name}")
-                                    target_config['icon_url'] = v
+                                logger.info(f"Syncing icon back to apps.json for {name}")
+                                target_config['icon_url'] = v
                             elif k == 'bundle_id':
-                                if not target_config.get('bundle_id'):
-                                    logger.info(f"Syncing found bundle_id back to apps.json for {name}")
-                                    target_config['bundle_id'] = v
+                                logger.info(f"Syncing bundle_id back to apps.json for {name}")
+                                target_config['bundle_id'] = v
                             elif k == 'tag_regex':
-                                if not target_config.get('tag_regex'):
-                                    logger.info(f"Syncing computed tag_regex back to apps.json for {name}")
+                                logger.info(f"Syncing computed tag_regex back to apps.json for {name}")
+                                target_config['tag_regex'] = v
                             elif k == 'pre_release':
-                                if 'pre_release' not in target_config:
-                                    target_config['pre_release'] = v
+                                target_config['pre_release'] = v
                             elif k == 'artifact_only':
-                                if target_config.get('artifact_only') is not True:
-                                    target_config['artifact_only'] = bool(v)
+                                target_config['artifact_only'] = bool(v)
                             elif k == 'name':
                                 target_config['name'] = v
 
