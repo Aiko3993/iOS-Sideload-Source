@@ -1251,14 +1251,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.4",
-      "versionDate": "2026-06-01T01:12:08Z",
-      "versionDescription": "Fixed issues with TXM detection and fixed a few other weird issues.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.3...3.1.4",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.4/StikDebug-3.1.4.ipa",
+      "version": "3.1.5",
+      "versionDate": "2026-06-01T11:32:37Z",
+      "versionDescription": "Fixed a bug that prevented the location simulator from starting.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.4...3.1.5",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.5/StikDebug-3.1.5.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 11028217,
+      "size": 11027579,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1270,16 +1270,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "3.1.4",
-          "date": "2026-06-01T01:12:08Z",
-          "localizedDescription": "Fixed issues with TXM detection and fixed a few other weird issues.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.3...3.1.4",
-          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.4/StikDebug-3.1.4.ipa",
-          "size": 11028217,
-          "sha256": "6dc6ebc7842ee3f0683dd5d581c726cf1266be5ef755bf002079949311bc652d",
+          "version": "3.1.5",
+          "date": "2026-06-01T11:32:37Z",
+          "localizedDescription": "Fixed a bug that prevented the location simulator from starting.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.4...3.1.5",
+          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.5/StikDebug-3.1.5.ipa",
+          "size": 11027579,
+          "sha256": "808271b7e83ca93c89f8b10996502a05ae82d4cc6d1adf34693c7d1510a6b2e2",
           "minOSVersion": "17.4"
         }
       ],
-      "sha256": "6dc6ebc7842ee3f0683dd5d581c726cf1266be5ef755bf002079949311bc652d",
+      "sha256": "808271b7e83ca93c89f8b10996502a05ae82d4cc6d1adf34693c7d1510a6b2e2",
       "category": "other"
     },
     {
