@@ -13,14 +13,14 @@
       "bundleIdentifier": "top.jtmonster.jhentai",
       "developerName": "jiangtian616",
       "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
-      "version": "8.0.12+310",
-      "versionDate": "2026-05-22T12:47:20Z",
-      "versionDescription": "- 修复画廊详情页部分场景下刷新页面后，缩略图无法正常全部加载的bug。\n\n--------------------\n\n- Fix a bug where thumbnails fail to fully load after refreshing the gallery detail page in certain scenarios.",
-      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.12%2B310/JHenTai_8.0.12%2B310.ipa",
+      "version": "8.0.13",
+      "versionDate": "2026-06-03T13:48:49Z",
+      "versionDescription": "- 支持 [archive-at-home](https://t.me/ArchiveAtHome_bot)\n\n--------------------\n\n- Support [archive-at-home](https://t.me/ArchiveAtHome_bot)",
+      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.13/JHenTai_8.0.13%2B311.ipa",
       "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15745602,
+      "size": 15744223,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -39,12 +39,12 @@
       ],
       "versions": [
         {
-          "version": "8.0.12+310",
-          "date": "2026-05-22T12:47:20Z",
-          "localizedDescription": "- 修复画廊详情页部分场景下刷新页面后，缩略图无法正常全部加载的bug。\n\n--------------------\n\n- Fix a bug where thumbnails fail to fully load after refreshing the gallery detail page in certain scenarios.",
-          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.12%2B310/JHenTai_8.0.12%2B310.ipa",
-          "size": 15745602,
-          "sha256": "48cc54deb106a591fac123adc64e6519dce17927345459a77782716745b45d8e",
+          "version": "8.0.13",
+          "date": "2026-06-03T13:48:49Z",
+          "localizedDescription": "- 支持 [archive-at-home](https://t.me/ArchiveAtHome_bot)\n\n--------------------\n\n- Support [archive-at-home](https://t.me/ArchiveAtHome_bot)",
+          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.13/JHenTai_8.0.13%2B311.ipa",
+          "size": 15744223,
+          "sha256": "dbfdb51b2d38a683815ad9b529c9a8b75c53085d448a75c3e873c631b5cd8dff",
           "minOSVersion": "12.0"
         }
       ],
@@ -81,7 +81,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "48cc54deb106a591fac123adc64e6519dce17927345459a77782716745b45d8e"
+      "sha256": "dbfdb51b2d38a683815ad9b529c9a8b75c53085d448a75c3e873c631b5cd8dff"
     },
     {
       "name": "LoveIwara",
