@@ -1035,14 +1035,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.7.2",
-      "versionDate": "2026-05-15T03:22:55Z",
-      "versionDescription": "修复 #2075 #2087\r\n其他调整 #2100 by @My-Responsitories\r\n定时发布动态不立即检查是否可见 #2059 by @uhiovk",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7.2/PiliPlus_ios_2.0.7%2B4956.ipa",
+      "version": "2.0.8",
+      "versionDate": "2026-06-04T06:25:52Z",
+      "versionDescription": "更多 FAB 动画 #2265\r\n优化专栏视频跳转 #2148\r\n发布页发布按钮防抖 #2152\r\n限制视频弹出面板宽度 #2277\r\n锁定模式不处理分段跳转 #2143\r\n安卓画中画添加快进/快退按钮 #2251\r\n桌面端`可选文本`调整为横向触发 #2106\r\n安卓关闭系统动画时支持播放 GIF #2107\r\n安卓支持调节倾斜角度切换视频方向 #2140\r\n重构 Log #2216 by @My-Responsitories\r\n优化账号描述 #2280 by @My-Responsitories\r\njni 重构 #2244 #2255 by @My-Responsitories\r\n优化 win32 api #2246 by @My-Responsitories\r\n移除未用的图片资源 #2267 by @My-Responsitories\r\n重构缓存管理 #2266 #2276 by @My-Responsitories\r\n处理投票 URL Scheme #2105 by @My-Responsitories\r\n\r\n修复超分失效 #2112\r\n修复投币上限 #2192\r\n修复手势调节系统亮度幅度不一致 #2134\r\n修复 #2196 #2208 #2209 #2226 #2233 #2239 #2249\r\n修复部分设备无法播放 #2117 by @My-Responsitories",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8/PiliPlus_ios_2.0.8%2B5014.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23837357,
+      "size": 23458920,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1055,25 +1055,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "2.0.7.2",
-          "date": "2026-05-15T03:22:55Z",
-          "localizedDescription": "修复 #2075 #2087\r\n其他调整 #2100 by @My-Responsitories\r\n定时发布动态不立即检查是否可见 #2059 by @uhiovk",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7.2/PiliPlus_ios_2.0.7%2B4956.ipa",
-          "size": 23837357,
-          "sha256": "22c93c56743df9435d4db4364e2105eb36e6dbc823c491957fe5b6aa3f688abf",
+          "version": "2.0.8",
+          "date": "2026-06-04T06:25:52Z",
+          "localizedDescription": "更多 FAB 动画 #2265\r\n优化专栏视频跳转 #2148\r\n发布页发布按钮防抖 #2152\r\n限制视频弹出面板宽度 #2277\r\n锁定模式不处理分段跳转 #2143\r\n安卓画中画添加快进/快退按钮 #2251\r\n桌面端`可选文本`调整为横向触发 #2106\r\n安卓关闭系统动画时支持播放 GIF #2107\r\n安卓支持调节倾斜角度切换视频方向 #2140\r\n重构 Log #2216 by @My-Responsitories\r\n优化账号描述 #2280 by @My-Responsitories\r\njni 重构 #2244 #2255 by @My-Responsitories\r\n优化 win32 api #2246 by @My-Responsitories\r\n移除未用的图片资源 #2267 by @My-Responsitories\r\n重构缓存管理 #2266 #2276 by @My-Responsitories\r\n处理投票 URL Scheme #2105 by @My-Responsitories\r\n\r\n修复超分失效 #2112\r\n修复投币上限 #2192\r\n修复手势调节系统亮度幅度不一致 #2134\r\n修复 #2196 #2208 #2209 #2226 #2233 #2239 #2249\r\n修复部分设备无法播放 #2117 by @My-Responsitories",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8/PiliPlus_ios_2.0.8%2B5014.ipa",
+          "size": 23458920,
+          "sha256": "3c5bbff38aae00e71f52671fc7501d0ddccba39246bc99c87e843c5683ca7726",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "2.0.7.1",
-          "date": "2026-05-10T11:03:41Z",
-          "localizedDescription": "修复 #2002\r\n修复 #2020 by @My-Responsitories\r\n其他调整 #2032 by @My-Responsitories",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.7.1/PiliPlus_ios_2.0.7%2B4946.ipa",
-          "size": 23949646,
-          "sha256": "99e19c7441b2bd5a785501d8edab1ba2f53873c663b835187af778b3397ec3de",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "22c93c56743df9435d4db4364e2105eb36e6dbc823c491957fe5b6aa3f688abf",
+      "sha256": "3c5bbff38aae00e71f52671fc7501d0ddccba39246bc99c87e843c5683ca7726",
       "category": "other"
     },
     {
