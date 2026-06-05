@@ -1073,14 +1073,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "developerName": "Eslzzyl",
       "subtitle": "为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.14.2",
-      "versionDate": "2026-05-26T14:17:42Z",
-      "versionDescription": "## 修复\r\n\r\n- **搜索页本地过滤后分页卡死** (e46cb9e)\r\n  修复在搜索结果页使用评级、书签数等本地过滤条件后，翻页永远卡住无法加载更多的问题，同时优化了自动加载机制和重复结果去重。\r\n- **小说搜索无限加载** (26bc7b7, @shikiroot)\r\n  修复小说搜索结果页面在某些情况下会陷入无限加载循环的问题。\r\n- **小说搜索分页恢复** (c9d81ab, @shikiroot)\r\n  改善小说搜索在应用本地过滤条件后的分页恢复逻辑。\r\n- **账户恢复后用户设置不加载** (fe52914, @shikiroot)\r\n  修复从 iCloud Keychain 恢复账户后，用户偏好设置未能同步加载的问题。\r\n- **用户详情页所有插画错误显示已屏蔽** (bf58bd9)\r\n  修复进入用户详情页时，所有插画被错误标记为\"已屏蔽\"的问题。\r\n- **Web 登录弹窗首次点击无响应** (3ce5b95)\r\n  修复 Web 登录页面首次点击时弹窗显示空白的问题。\r\n\r\n## 功能\r\n\r\n- **标签翻译支持多语言** (1c9d9cc)\r\n  标签翻译导出工具现在支持多语言格式，标签翻译将根据系统语言精确匹配显示对应译文。\r\n\r\n## 其他\r\n\r\n- **调整头像按钮尺寸** (3b77046)\r\n  微调用户头像按钮在界面中的尺寸。\r\n",
-      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.2/Pixiv-SwiftUI.ipa",
+      "version": "0.14.3",
+      "versionDate": "2026-06-05T09:22:30Z",
+      "versionDescription": "## 新特性\r\n\r\n- 全屏浏览体验升级 — 从插画详情页进入全屏图片/动图查看器时，新增平滑过渡动画。动图（Ugoira）与静态图的全屏交互体验已统一。\r\n- 骨架屏淡入动画 — 所有页面的骨架屏加载现在带有淡入过渡。\r\n\r\n## 问题修复\r\n\r\n- 详情页布局修正 — 调整了插画详情页的图片位置，放在了工具栏下面，现在图片不会被遮挡。如果对布局有更好的建议可以发 issue。\r\n- 统一了小说详情页、作者详情页的导航栏标题和背景风格。\r\n- 用户详情页修复 — 修复了取消关注时按钮文字折行的问题。\r\n- 搜索结果分页提前结束 — 修复了搜索结果翻页时提前终止的 bug (@shikiroot )\r\n- 微调了推荐标签详情页中标题的样式\r\n\r\n## 国际化\r\n\r\n- 动态语言适配 — Pixiv 标签 API 现在会根据系统语言动态设置 Accept-Language，中文用户优先展示中文标签，提升本地化体验。同时 pixivision.net 的 URL 路径也会根据语言自动切换 /zh/ 与 /en/。(@rayriffy )\r\n",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.3/Pixiv-SwiftUI.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7249553,
+      "size": 7288082,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1090,25 +1090,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.14.2",
-          "date": "2026-05-26T14:17:42Z",
-          "localizedDescription": "## 修复\r\n\r\n- **搜索页本地过滤后分页卡死** (e46cb9e)\r\n  修复在搜索结果页使用评级、书签数等本地过滤条件后，翻页永远卡住无法加载更多的问题，同时优化了自动加载机制和重复结果去重。\r\n- **小说搜索无限加载** (26bc7b7, @shikiroot)\r\n  修复小说搜索结果页面在某些情况下会陷入无限加载循环的问题。\r\n- **小说搜索分页恢复** (c9d81ab, @shikiroot)\r\n  改善小说搜索在应用本地过滤条件后的分页恢复逻辑。\r\n- **账户恢复后用户设置不加载** (fe52914, @shikiroot)\r\n  修复从 iCloud Keychain 恢复账户后，用户偏好设置未能同步加载的问题。\r\n- **用户详情页所有插画错误显示已屏蔽** (bf58bd9)\r\n  修复进入用户详情页时，所有插画被错误标记为\"已屏蔽\"的问题。\r\n- **Web 登录弹窗首次点击无响应** (3ce5b95)\r\n  修复 Web 登录页面首次点击时弹窗显示空白的问题。\r\n\r\n## 功能\r\n\r\n- **标签翻译支持多语言** (1c9d9cc)\r\n  标签翻译导出工具现在支持多语言格式，标签翻译将根据系统语言精确匹配显示对应译文。\r\n\r\n## 其他\r\n\r\n- **调整头像按钮尺寸** (3b77046)\r\n  微调用户头像按钮在界面中的尺寸。\r\n",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.2/Pixiv-SwiftUI.ipa",
-          "size": 7249553,
-          "sha256": "ee851bf327ea8d505fd0a930bfcec371561da73b323ad7ee14645944320d4dfd",
-          "minOSVersion": "17.0"
-        },
-        {
-          "version": "0.14.1",
-          "date": "2026-05-24T14:40:51Z",
-          "localizedDescription": "此版本聚焦于性能优化和 bug 修复。\r\n\r\n性能优化\r\n- 启动速度优化\r\n- 瀑布流滚动性能优化（仍未完成）\r\n- 插画卡片渲染优化\r\n- 图片预取\r\n- 其他杂项优化\r\n\r\nBug 修复\r\n- Ajax API 会话持久化（解决重启后 Ajax 显示未登录）\r\n- Token 刷新后 Keychain 同步 — 修复 token 刷新后未同步保存到 Keychain 的问题\r\n- 以图搜图线程安全 — 后台线程读取文件，避免阻塞主线程\r\n- iOS 26 Toolbar 头像按钮样式 — 头像按钮去掉液态玻璃描边，与系统按钮大小一致\r\n- 「已经到底了」文本修复未居中的问题\r\n- macOS 预览窗口 — 插画/动图 toolbar 按钮移至右上角\r\n- macOS 工具栏 Menu — 隐藏向下箭头指示器\r\n- 热门标签布局 — 改用最短列优先分配算法，避免分配不均\r\n\r\n重构\r\n- ellipsis.circle 全局替换为 ellipsis（无圈版本）\r\n- 搜索结果页工具栏图标同步更新，清理未使用的组件",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.1/Pixiv-SwiftUI.ipa",
-          "size": 7228289,
-          "sha256": "160bcbdae3beac37660b56029d19eb91795fe2424333029e7d3625c69e2b9003",
+          "version": "0.14.3",
+          "date": "2026-06-05T09:22:30Z",
+          "localizedDescription": "## 新特性\r\n\r\n- 全屏浏览体验升级 — 从插画详情页进入全屏图片/动图查看器时，新增平滑过渡动画。动图（Ugoira）与静态图的全屏交互体验已统一。\r\n- 骨架屏淡入动画 — 所有页面的骨架屏加载现在带有淡入过渡。\r\n\r\n## 问题修复\r\n\r\n- 详情页布局修正 — 调整了插画详情页的图片位置，放在了工具栏下面，现在图片不会被遮挡。如果对布局有更好的建议可以发 issue。\r\n- 统一了小说详情页、作者详情页的导航栏标题和背景风格。\r\n- 用户详情页修复 — 修复了取消关注时按钮文字折行的问题。\r\n- 搜索结果分页提前结束 — 修复了搜索结果翻页时提前终止的 bug (@shikiroot )\r\n- 微调了推荐标签详情页中标题的样式\r\n\r\n## 国际化\r\n\r\n- 动态语言适配 — Pixiv 标签 API 现在会根据系统语言动态设置 Accept-Language，中文用户优先展示中文标签，提升本地化体验。同时 pixivision.net 的 URL 路径也会根据语言自动切换 /zh/ 与 /en/。(@rayriffy )\r\n",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.3/Pixiv-SwiftUI.ipa",
+          "size": 7288082,
+          "sha256": "dd8f0d29d87188c0cff28693014ac1ca5c6c2f9bd08a300b05a571989e087807",
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "ee851bf327ea8d505fd0a930bfcec371561da73b323ad7ee14645944320d4dfd",
+      "sha256": "dd8f0d29d87188c0cff28693014ac1ca5c6c2f9bd08a300b05a571989e087807",
       "category": "other"
     },
     {
