@@ -911,14 +911,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.7.75",
-      "versionDate": "2026-05-11T09:19:08Z",
-      "versionDescription": "## What's Changed\r\n* Improve _handlePageNavigation() by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/717\r\n* Fix android app crash with certain Mihon extensions\r\n* Fix downloadedChapterIdsProvider by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/720\r\n* Fix null pointer exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/722\r\n* Improve updates by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/721\r\n* fix(downloads): unstall anime downloads on URLs with query strings + 206 responses by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/724\r\n* perf(statistics): aggregate inside Isar to fix #543 crash on large libraries by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/726\r\n* perf(images): cap decoded image cache by platform (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/727\r\n* Make Code More Readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/719\r\n* New file to reduce code duplication by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/723\r\n* perf(library): decode covers at thumbnail resolution to cut image-cache RAM (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/728\r\n* fix(macos): host libmdbx DB under Application Support to avoid TCC EACCES on launch by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/725\r\n\r\n## New Contributors\r\n* @mrandhawa14 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/724\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.70...v0.7.75",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.75/Mangayomi-v0.7.75-ios.ipa",
+      "version": "0.7.80",
+      "versionDate": "2026-06-07T17:35:17Z",
+      "versionDescription": "## What's Changed\r\n* Add startup error screen by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/731\r\n* Refactor evaluateJavascriptViaWebviewto use HTTP post request and remove deprecated method\r\n* fix(m3u8): add missing / separator in segment and key URI construction by @Mallyd11 in https://github.com/kodjodevf/mangayomi/pull/735\r\n* Fix: reader no longer jumps to duplicate scanlator chapters by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/738\r\n* Recognize \"S<n>\" as a season prefix by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/741\r\n* fix bug by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/742\r\n* chore: update dependencies by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/743\r\n* reset the selection state when going back to the library by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/745\r\n* Fix Flutter Framework Warning by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/744\r\n* fix: delete downloaded chapters from detail view & fix library dialog bugs by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/746\r\n* Remove unnecessary outer Consumer wrapper by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/747\r\n\r\n## New Contributors\r\n* @Mallyd11 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/735\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.75...v0.7.80",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.80/Mangayomi-v0.7.80-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47937763,
+      "size": 47981955,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -940,17 +940,17 @@
       ],
       "versions": [
         {
-          "version": "0.7.75",
-          "date": "2026-05-11T09:19:08Z",
-          "localizedDescription": "## What's Changed\r\n* Improve _handlePageNavigation() by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/717\r\n* Fix android app crash with certain Mihon extensions\r\n* Fix downloadedChapterIdsProvider by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/720\r\n* Fix null pointer exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/722\r\n* Improve updates by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/721\r\n* fix(downloads): unstall anime downloads on URLs with query strings + 206 responses by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/724\r\n* perf(statistics): aggregate inside Isar to fix #543 crash on large libraries by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/726\r\n* perf(images): cap decoded image cache by platform (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/727\r\n* Make Code More Readable by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/719\r\n* New file to reduce code duplication by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/723\r\n* perf(library): decode covers at thumbnail resolution to cut image-cache RAM (refs #609) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/728\r\n* fix(macos): host libmdbx DB under Application Support to avoid TCC EACCES on launch by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/725\r\n\r\n## New Contributors\r\n* @mrandhawa14 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/724\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.70...v0.7.75",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.75/Mangayomi-v0.7.75-ios.ipa",
-          "size": 47937763,
-          "sha256": "7312526d11e9d736298615ab276d52241855fb831b7d012656c56147156e47e7",
+          "version": "0.7.80",
+          "date": "2026-06-07T17:35:17Z",
+          "localizedDescription": "## What's Changed\r\n* Add startup error screen by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/731\r\n* Refactor evaluateJavascriptViaWebviewto use HTTP post request and remove deprecated method\r\n* fix(m3u8): add missing / separator in segment and key URI construction by @Mallyd11 in https://github.com/kodjodevf/mangayomi/pull/735\r\n* Fix: reader no longer jumps to duplicate scanlator chapters by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/738\r\n* Recognize \"S<n>\" as a season prefix by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/741\r\n* fix bug by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/742\r\n* chore: update dependencies by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/743\r\n* reset the selection state when going back to the library by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/745\r\n* Fix Flutter Framework Warning by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/744\r\n* fix: delete downloaded chapters from detail view & fix library dialog bugs by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/746\r\n* Remove unnecessary outer Consumer wrapper by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/747\r\n\r\n## New Contributors\r\n* @Mallyd11 made their first contribution in https://github.com/kodjodevf/mangayomi/pull/735\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.7.75...v0.7.80",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.7.80/Mangayomi-v0.7.80-ios.ipa",
+          "size": 47981955,
+          "sha256": "6d3bd0c6c4b28478a231c4cbb1ac62c09e5c66b868e211874b97ff10a460426c",
           "minOSVersion": "13.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "7312526d11e9d736298615ab276d52241855fb831b7d012656c56147156e47e7",
+      "sha256": "6d3bd0c6c4b28478a231c4cbb1ac62c09e5c66b868e211874b97ff10a460426c",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
