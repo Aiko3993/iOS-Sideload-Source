@@ -1082,14 +1082,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "developerName": "Eslzzyl",
       "subtitle": "为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.14.3",
-      "versionDate": "2026-06-05T09:22:30Z",
-      "versionDescription": "## 新特性\r\n\r\n- 全屏浏览体验升级 — 从插画详情页进入全屏图片/动图查看器时，新增平滑过渡动画。动图（Ugoira）与静态图的全屏交互体验已统一。\r\n- 骨架屏淡入动画 — 所有页面的骨架屏加载现在带有淡入过渡。\r\n\r\n## 问题修复\r\n\r\n- 详情页布局修正 — 调整了插画详情页的图片位置，放在了工具栏下面，现在图片不会被遮挡。如果对布局有更好的建议可以发 issue。\r\n- 统一了小说详情页、作者详情页的导航栏标题和背景风格。\r\n- 用户详情页修复 — 修复了取消关注时按钮文字折行的问题。\r\n- 搜索结果分页提前结束 — 修复了搜索结果翻页时提前终止的 bug (@shikiroot )\r\n- 微调了推荐标签详情页中标题的样式\r\n\r\n## 国际化\r\n\r\n- 动态语言适配 — Pixiv 标签 API 现在会根据系统语言动态设置 Accept-Language，中文用户优先展示中文标签，提升本地化体验。同时 pixivision.net 的 URL 路径也会根据语言自动切换 /zh/ 与 /en/。(@rayriffy )\r\n",
-      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.3/Pixiv-SwiftUI.ipa",
+      "version": "0.14.4",
+      "versionDate": "2026-06-09T13:47:48Z",
+      "versionDescription": "## 新功能\r\n\r\n- 应用预览隐私模糊优化显示效果，提升性能与视觉一致性\r\n- 翻译设置目标语言新增「系统语言」选项，并设为默认值\r\n- 推荐页画师标签新增箭头按钮，点击可进入推荐画师全量列表\r\n\r\n## 界面改进\r\n\r\n- 升级部分 UI 组件为 Liquid Glass 材质\r\n- 重新设计插画系列页，采用瀑布流网格与主题入口卡片\r\n- 重新设计插画排行页，将选择器替换为菜单样式，移除刷新按钮\r\n- 统一搜索页卡片样式，排行卡片标签与瀑布流对齐\r\n- 优化亮点搜索框样式，统一高度并应用 Liquid Glass 分裂动画\r\n- 收藏页公开/非公开筛选从筛选菜单中拆分为独立按钮\r\n- 小说收藏页/关注列表页替换筛选按钮为公开/非公开切换\r\n- 统一插画卡片上徽章的毛玻璃效果\r\n\r\n## 动画优化\r\n\r\n- 为图片加载组件添加淡入过渡动画\r\n- 补齐缺失的骨架屏动画和过渡动画\r\n- 用户列表页新增骨架屏、过渡动画并优化关注按钮\r\n\r\n## 性能优化\r\n\r\n优化了插画瀑布流的渲染性能。在 iPhone 17 真机上实测已经基本不会掉帧。\r\n- 替换 KFImage 为轻量级 `@State + .task` 加载器，减少图片加载开销\r\n- 更新 Kingfisher 至 8.9.0，启用 `asyncCacheTypeCheck`，简化 `CachedAsyncImage`\r\n- 用 `CardShadowView`（CALayer shadowPath）替代 `.shadow()`，降低 GPU 合成开销\r\n- 用字典查找替代 O(n) 的 shouldBlur 遍历，移除多余 `NavigationLink` 包装\r\n- 合并 badge modifier 并使用 background(in:) 避免离屏渲染\r\n- 移除 iOS 端 contextMenu 以减少视图树节点数\r\n- 修复 KFImage 容器尺寸，使用显式 frame 稳定 LazyVStack 布局\r\n- 优化 IllustCard GPU 合成开销\r\n- 优化图片滚动加载性能\r\n- 优化 WaterfallGrid 使用增量列更新并移除 GeometryReader\r\n\r\n## 问题修复\r\n\r\n- 修复推荐页为你推荐的标签骨架屏与插画/用户骨架屏没有同时出现的问题\r\n- 修复搜索页推荐标签标题错位的问题\r\n- 修复 Token 导出 sheet 没有正确显示 token 内容的问题\r\n- 修复检测到版本更新后弹出空白 sheet 的问题（未验证）\r\n",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.4/Pixiv-SwiftUI.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7288082,
+      "size": 7414080,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1098,6 +1098,15 @@
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "0.14.4",
+          "date": "2026-06-09T13:47:48Z",
+          "localizedDescription": "## 新功能\r\n\r\n- 应用预览隐私模糊优化显示效果，提升性能与视觉一致性\r\n- 翻译设置目标语言新增「系统语言」选项，并设为默认值\r\n- 推荐页画师标签新增箭头按钮，点击可进入推荐画师全量列表\r\n\r\n## 界面改进\r\n\r\n- 升级部分 UI 组件为 Liquid Glass 材质\r\n- 重新设计插画系列页，采用瀑布流网格与主题入口卡片\r\n- 重新设计插画排行页，将选择器替换为菜单样式，移除刷新按钮\r\n- 统一搜索页卡片样式，排行卡片标签与瀑布流对齐\r\n- 优化亮点搜索框样式，统一高度并应用 Liquid Glass 分裂动画\r\n- 收藏页公开/非公开筛选从筛选菜单中拆分为独立按钮\r\n- 小说收藏页/关注列表页替换筛选按钮为公开/非公开切换\r\n- 统一插画卡片上徽章的毛玻璃效果\r\n\r\n## 动画优化\r\n\r\n- 为图片加载组件添加淡入过渡动画\r\n- 补齐缺失的骨架屏动画和过渡动画\r\n- 用户列表页新增骨架屏、过渡动画并优化关注按钮\r\n\r\n## 性能优化\r\n\r\n优化了插画瀑布流的渲染性能。在 iPhone 17 真机上实测已经基本不会掉帧。\r\n- 替换 KFImage 为轻量级 `@State + .task` 加载器，减少图片加载开销\r\n- 更新 Kingfisher 至 8.9.0，启用 `asyncCacheTypeCheck`，简化 `CachedAsyncImage`\r\n- 用 `CardShadowView`（CALayer shadowPath）替代 `.shadow()`，降低 GPU 合成开销\r\n- 用字典查找替代 O(n) 的 shouldBlur 遍历，移除多余 `NavigationLink` 包装\r\n- 合并 badge modifier 并使用 background(in:) 避免离屏渲染\r\n- 移除 iOS 端 contextMenu 以减少视图树节点数\r\n- 修复 KFImage 容器尺寸，使用显式 frame 稳定 LazyVStack 布局\r\n- 优化 IllustCard GPU 合成开销\r\n- 优化图片滚动加载性能\r\n- 优化 WaterfallGrid 使用增量列更新并移除 GeometryReader\r\n\r\n## 问题修复\r\n\r\n- 修复推荐页为你推荐的标签骨架屏与插画/用户骨架屏没有同时出现的问题\r\n- 修复搜索页推荐标签标题错位的问题\r\n- 修复 Token 导出 sheet 没有正确显示 token 内容的问题\r\n- 修复检测到版本更新后弹出空白 sheet 的问题（未验证）\r\n",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.4/Pixiv-SwiftUI.ipa",
+          "size": 7414080,
+          "sha256": "5aa9e00afa9a0b4a6da362cfb30dc79649c7c4918a75d1ab8ea6d80b4babbfd8",
+          "minOSVersion": "17.0"
+        },
         {
           "version": "0.14.3",
           "date": "2026-06-05T09:22:30Z",
@@ -1108,7 +1117,7 @@
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "dd8f0d29d87188c0cff28693014ac1ca5c6c2f9bd08a300b05a571989e087807",
+      "sha256": "5aa9e00afa9a0b4a6da362cfb30dc79649c7c4918a75d1ab8ea6d80b4babbfd8",
       "category": "other"
     },
     {
