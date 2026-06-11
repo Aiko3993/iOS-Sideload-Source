@@ -482,20 +482,29 @@
       "bundleIdentifier": "com.example.kazumi.coexist",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.1.4",
-      "versionDate": "2026-06-07T02:32:11Z",
-      "versionDescription": "Update",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260607/Kazumi_2.1.4_Coexist.ipa",
+      "version": "2.1.5",
+      "versionDate": "2026-06-11T14:31:02Z",
+      "versionDescription": "- 现在批量下载功能支持并行视频解析 (@liangyuR @Predidit)\r\n- 修复更新功能不可用的问题 (@Predidit)\r\n- 修复下载文件大小计量不准确的问题 (#2177) (@Predidit)\r\n- 修复 android 平台手势快进可能导致崩溃的问题 (#2197) (@Predidit)\r\n- 修复特定情况下 webdav 同步无法正确更新选集位置的问题 (#2207) (@Predidit)\r\n- 代码结构优化 (@wqnmlgb151)",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260611/Kazumi_2.1.5_Coexist.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 27964698,
+      "size": 27970055,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.1.5",
+          "date": "2026-06-11T14:31:02Z",
+          "localizedDescription": "- 现在批量下载功能支持并行视频解析 (@liangyuR @Predidit)\r\n- 修复更新功能不可用的问题 (@Predidit)\r\n- 修复下载文件大小计量不准确的问题 (#2177) (@Predidit)\r\n- 修复 android 平台手势快进可能导致崩溃的问题 (#2197) (@Predidit)\r\n- 修复特定情况下 webdav 同步无法正确更新选集位置的问题 (#2207) (@Predidit)\r\n- 代码结构优化 (@wqnmlgb151)",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260611/Kazumi_2.1.5_Coexist.ipa",
+          "size": 27970055,
+          "sha256": "b116272a4044455c0f288c51d838c97bb5608355247ec208b08c0564ae968c47",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.1.4",
           "date": "2026-06-07T02:32:11Z",
@@ -506,7 +515,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "12538bac1261076c4b07f116162053bf092cd84b72b48334a26e2ada29844daa",
+      "sha256": "b116272a4044455c0f288c51d838c97bb5608355247ec208b08c0564ae968c47",
       "category": "other"
     },
     {
