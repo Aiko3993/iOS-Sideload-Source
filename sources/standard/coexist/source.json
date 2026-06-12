@@ -1044,14 +1044,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.8.1",
-      "versionDate": "2026-06-06T04:22:15Z",
-      "versionDescription": "增加私信消息点击范围 #2292\r\n\r\n修复专栏解析\r\n修复 #2295 #2308\r\n修复界面缩放时无法显示滚动弹幕 #2305",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260606/PiliPlus_2.0.8.1_Coexist.ipa",
+      "version": "2.0.9.1",
+      "versionDate": "2026-06-12T04:22:47Z",
+      "versionDescription": "直播支持切换线路\r\n桌面端支持自定义最大音量 #2199\r\n移动端支持设置播放器音量 #2358\r\n优化视频字幕、截图 #2364 by @My-Responsitories\r\n音乐页面显示全部标签 #2363 by @My-Responsitories\r\n支持自定义播放缓存大小、缓存时长 #2370 by @My-Responsitories\r\n\r\n修复 #2342 #2350 #2351 #2386\r\n修复桌面端富文本输入 #2123 #2215 #2300\r\n修复安卓端验证码窗口显示 #2341 by @My-Responsitories",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260612/PiliPlus_2.0.9.1_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23460759,
+      "size": 23389381,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1064,6 +1064,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.9.1",
+          "date": "2026-06-12T04:22:47Z",
+          "localizedDescription": "直播支持切换线路\r\n桌面端支持自定义最大音量 #2199\r\n移动端支持设置播放器音量 #2358\r\n优化视频字幕、截图 #2364 by @My-Responsitories\r\n音乐页面显示全部标签 #2363 by @My-Responsitories\r\n支持自定义播放缓存大小、缓存时长 #2370 by @My-Responsitories\r\n\r\n修复 #2342 #2350 #2351 #2386\r\n修复桌面端富文本输入 #2123 #2215 #2300\r\n修复安卓端验证码窗口显示 #2341 by @My-Responsitories",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260612/PiliPlus_2.0.9.1_Coexist.ipa",
+          "size": 23389381,
+          "sha256": "05b91033fe8e94c34bdbf90169e5ab0132c129380aeee217c5c8be89975eea53",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "2.0.8.1",
           "date": "2026-06-06T04:22:15Z",
           "localizedDescription": "增加私信消息点击范围 #2292\r\n\r\n修复专栏解析\r\n修复 #2295 #2308\r\n修复界面缩放时无法显示滚动弹幕 #2305",
@@ -1071,18 +1080,9 @@
           "size": 23460759,
           "sha256": "c35eb5353ea7b974e51794e5e05dc53ec0963bb9a24d1b6d300850bc36b005d4",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "2.0.8",
-          "date": "2026-06-04T06:25:52Z",
-          "localizedDescription": "更多 FAB 动画 #2265\r\n优化专栏视频跳转 #2148\r\n发布页发布按钮防抖 #2152\r\n限制视频弹出面板宽度 #2277\r\n锁定模式不处理分段跳转 #2143\r\n安卓画中画添加快进/快退按钮 #2251\r\n桌面端`可选文本`调整为横向触发 #2106\r\n安卓关闭系统动画时支持播放 GIF #2107\r\n安卓支持调节倾斜角度切换视频方向 #2140\r\n重构 Log #2216 by @My-Responsitories\r\n优化账号描述 #2280 by @My-Responsitories\r\njni 重构 #2244 #2255 by @My-Responsitories\r\n优化 win32 api #2246 by @My-Responsitories\r\n移除未用的图片资源 #2267 by @My-Responsitories\r\n重构缓存管理 #2266 #2276 by @My-Responsitories\r\n处理投票 URL Scheme #2105 by @My-Responsitories\r\n\r\n修复超分失效 #2112\r\n修复投币上限 #2192\r\n修复手势调节系统亮度幅度不一致 #2134\r\n修复 #2196 #2208 #2209 #2226 #2233 #2239 #2249\r\n修复部分设备无法播放 #2117 by @My-Responsitories",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260604/PiliPlus_2.0.8_Coexist.ipa",
-          "size": 23464471,
-          "sha256": "bf0980fdf2b1713235683ed79cf44ab0a08906215f3bcd0aa3861ab8b8a641c8",
-          "minOSVersion": "14.0"
         }
       ],
-      "sha256": "c35eb5353ea7b974e51794e5e05dc53ec0963bb9a24d1b6d300850bc36b005d4",
+      "sha256": "05b91033fe8e94c34bdbf90169e5ab0132c129380aeee217c5c8be89975eea53",
       "category": "other"
     },
     {
