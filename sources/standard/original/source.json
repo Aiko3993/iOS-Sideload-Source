@@ -1044,14 +1044,14 @@
       "bundleIdentifier": "com.example.piliplus",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.0.9.1",
-      "versionDate": "2026-06-12T04:22:47Z",
-      "versionDescription": "直播支持切换线路\r\n桌面端支持自定义最大音量 #2199\r\n移动端支持设置播放器音量 #2358\r\n优化视频字幕、截图 #2364 by @My-Responsitories\r\n音乐页面显示全部标签 #2363 by @My-Responsitories\r\n支持自定义播放缓存大小、缓存时长 #2370 by @My-Responsitories\r\n\r\n修复 #2342 #2350 #2351 #2386\r\n修复桌面端富文本输入 #2123 #2215 #2300\r\n修复安卓端验证码窗口显示 #2341 by @My-Responsitories",
-      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.9.1/PiliPlus_ios_2.0.9%2B5047.ipa",
+      "version": "2.0.9.2",
+      "versionDate": "2026-06-13T09:41:32Z",
+      "versionDescription": "修复 bug\r\n其他调整 #2404 by @My-Responsitories",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.9.2/PiliPlus_ios_2.0.9%2B5051.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23386570,
+      "size": 23393835,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1064,6 +1064,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "2.0.9.2",
+          "date": "2026-06-13T09:41:32Z",
+          "localizedDescription": "修复 bug\r\n其他调整 #2404 by @My-Responsitories",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.9.2/PiliPlus_ios_2.0.9%2B5051.ipa",
+          "size": 23393835,
+          "sha256": "e2859de0a074450be6eceadd77c1cca1bf24bf545ca45692ef24cab219a71a59",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "2.0.9.1",
           "date": "2026-06-12T04:22:47Z",
           "localizedDescription": "直播支持切换线路\r\n桌面端支持自定义最大音量 #2199\r\n移动端支持设置播放器音量 #2358\r\n优化视频字幕、截图 #2364 by @My-Responsitories\r\n音乐页面显示全部标签 #2363 by @My-Responsitories\r\n支持自定义播放缓存大小、缓存时长 #2370 by @My-Responsitories\r\n\r\n修复 #2342 #2350 #2351 #2386\r\n修复桌面端富文本输入 #2123 #2215 #2300\r\n修复安卓端验证码窗口显示 #2341 by @My-Responsitories",
@@ -1071,18 +1080,9 @@
           "size": 23386570,
           "sha256": "33c1463c23a735a6d7a1c6153fbede4d59c2b6d9913423daef7070ab64aa1469",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "2.0.8.1",
-          "date": "2026-06-06T04:22:15Z",
-          "localizedDescription": "增加私信消息点击范围 #2292\r\n\r\n修复专栏解析\r\n修复 #2295 #2308\r\n修复界面缩放时无法显示滚动弹幕 #2305",
-          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.0.8.1/PiliPlus_ios_2.0.8%2B5024.ipa",
-          "size": 23460325,
-          "sha256": "74dcc16db5ce80565110f2c8481e5b290adb7a82a302dc2cc218f27395614b9a",
-          "minOSVersion": "14.0"
         }
       ],
-      "sha256": "33c1463c23a735a6d7a1c6153fbede4d59c2b6d9913423daef7070ab64aa1469",
+      "sha256": "e2859de0a074450be6eceadd77c1cca1bf24bf545ca45692ef24cab219a71a59",
       "category": "other"
     },
     {
