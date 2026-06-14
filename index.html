@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Sideload Source | Discover & Install Apps</title>
+    <meta name="description" content="An iOS sideload source to discover, download and install your favorite apps.">
+    <meta name="keywords" content="iOS Sideload Source, IPA download, Sideloading apps, iOS apps, source.json">
+    <meta name="color-scheme" content="light dark">
+    <meta name="darkreader-lock">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="gkevAkhhxHnxu6kT_SP_i07BWyRauueck-E9Ixr_uKE" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Aiko3993.github.io/iOS-Sideload-Source/">
+    <meta property="og:title" content="iOS Sideload Source - Discover & Install Apps">
+    <meta property="og:description" content="Discover and install your favorite iOS apps from this source.">
+    <meta property="og:site_name" content="iOS Sideload Source">
+    <meta property="og:image" content="https://Aiko3993.github.io/iOS-Sideload-Source//assets/og-image.png">
+    <meta property="og:image:alt" content="iOS Sideload Source Preview Image">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="iOS Sideload Source - Discover & Install IPA Apps">
+    <meta name="twitter:description" content="Discover and install your favorite iOS apps from this source.">
+    <meta name="twitter:image" content="https://Aiko3993.github.io/iOS-Sideload-Source//assets/og-image.png">
+
+    <!-- Favicon & App Icons -->
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/apple-touch-icon.png">
+
+    <!-- PWA & Add to Home Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="iOS Sideload Source">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Canonical URL injected by CI -->
+    <link rel="canonical" href="https://Aiko3993.github.io/iOS-Sideload-Source/">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/flat.css">
+    <style>
+        /* Hit area expansion for the status dot */
+        #status-dot-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            #status-dot-wrapper::after {
+                top: -20px;
+                bottom: -20px;
+                left: -20px;
+                right: -20px;
+            }
+        }
+
+        /* Text Roll Animation */
+        @keyframes text-roll {
+
+            0%,
+            35% {
+                transform: translateY(0);
+            }
+
+            40%,
+            85% {
+                transform: translateY(-16px);
+            }
+
+            90%,
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-text-roll {
+            animation: text-roll 6s ease-in-out infinite;
+        }
+    </style>
+
+    <script src="js/tailwind-config.js"></script>
+    <script>
+        tailwind.config = window.tailwindConfig;
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 min-h-screen transition-colors duration-300">
+
+    <!-- Toast Notification -->
+    <div id="toast-container"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Debug Log -->
+    <div id="debug-log"
+        class="hidden fixed top-0 left-0 right-0 bg-red-600 text-white text-xs p-2 z-50 font-mono break-all"></div>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-32">
+
+        <header id="header-bar" class="relative z-40 mb-5 transition-all duration-300">
+            <div
+                class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200/60 dark:border-gray-800/60 shadow-lg shadow-gray-200/20 dark:shadow-black/20 rounded-3xl p-4 flex flex-row flex-wrap items-center gap-4 justify-between">
+
+                <!-- Brand Section -->
+                <div class="flex items-center justify-between w-full min-[1000px]:w-auto flex-shrink-0 min-w-0 gap-4">
+                    <div class="flex items-center gap-4 min-w-0 flex-1">
+                        <!-- Icon -->
+                        <div class="relative group flex-shrink-0">
+                            <div id="source-icon"
+                                class="relative w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-inner flex-shrink-0 overflow-hidden transition-colors duration-500">
+                                <!-- Dynamic Icon Image -->
+                                <img id="dynamic-source-icon" class="no-drag w-full h-full object-cover hidden"
+                                    draggable="false" alt="Source Icon">
+
+                                <!-- Standard Icon -->
+                                <svg id="icon-standard" class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500"
+                                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                                </svg>
+
+                                <!-- NSFW Icon -->
+                                <svg id="icon-nsfw"
+                                    class="w-5 h-5 md:w-6 md:h-6 hidden transition-transform duration-500" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21">
+                                    </path>
+                                </svg>
+
+                                <!-- All Icon -->
+                                <svg id="icon-all" class="w-5 h-5 md:w-6 h-6 hidden transition-transform duration-500"
+                                    fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Title & Meta -->
+                        <div class="flex flex-col min-w-0 flex-1">
+                            <h1
+                                class="text-lg lg:text-xl font-bold text-gray-900 dark:text-white tracking-tight leading-snug lg:whitespace-nowrap">
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600"
+                                    data-i18n="title">iOS Sideload Source</span>
+                            </h1>
+                            <p
+                                class="text-[11px] lg:text-xs font-medium text-gray-500 dark:text-gray-400 truncate mt-1 max-[340px]:hidden">
+                                Discover & Install Apps</p>
+                        </div>
+                    </div>
+
+                    <!-- Copy Button Wrapper (Independent Column) -->
+                    <div id="copy-btn-wrapper"
+                        class="flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]">
+                        <button onclick="copySourceURL()"
+                            class="p-2 rounded-xl text-gray-400 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-all active:scale-95 shadow-sm border border-transparent hover:border-primary-100 dark:hover:border-primary-800"
+                            title="Copy Source URL">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Controls Section -->
+                <div
+                    class="flex flex-col sm:flex-row flex-wrap sm:flex-nowrap items-stretch sm:items-center gap-3 w-full min-[1000px]:w-auto flex-1 min-[1000px]:justify-end">
+
+                    <!-- Search Bar -->
+                    <div class="relative flex-[1_1_100%] sm:flex-1 min-w-[150px] group">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-4 w-4 text-gray-400 group-focus-within:text-primary-500 transition-colors"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="search-input" placeholder="Search..."
+                            class="block w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl text-sm focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition placeholder-gray-400 focus:bg-white dark:focus:bg-white/10"
+                            autocomplete="off">
+                    </div>
+
+                    <!-- Actions Row -->
+                    <div
+                        class="grid grid-cols-3 sm:flex sm:flex-wrap items-center gap-1.5 sm:gap-2 flex-shrink-0 w-full sm:w-auto">
+
+                        <!-- Source Switcher -->
+                        <div class="relative min-w-0" id="source-container">
+                            <button onclick="toggleSource()" id="source-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[120px] group">
+                                <div class="relative h-6 w-full sm:w-28 overflow-hidden text-center">
+                                    <div id="source-label-track"
+                                        class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sourceAll">All Apps</span>
+                                        </div>
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sourceStandard">Standard</span>
+                                        </div>
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sourceNSFW">NSFW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Sort Button -->
+                        <div class="relative min-w-0" id="sort-container">
+                            <button onclick="cycleSort()" id="sort-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                title="Sort">
+                                <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
+                                    <div id="sort-label-track"
+                                        class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sortLatest">Latest</span>
+                                        </div>
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sortName">Name</span>
+                                        </div>
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="sortSize">Size</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Coexist Toggle -->
+                        <div class="relative min-w-0" id="coexist-container">
+                            <button onclick="toggleCoexist()" id="coexist-trigger"
+                                class="w-full flex items-center justify-center gap-1 sm:gap-2 px-1 sm:px-3 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 hover:border-primary-500/60 dark:hover:border-primary-500/40 hover:text-primary-600 dark:hover:text-primary-300 active:bg-white dark:active:bg-white/10 transition-all active:scale-95 shadow-sm min-w-0 sm:min-w-[100px]"
+                                title="Toggle coexist mode">
+                                <div class="relative h-6 w-full sm:w-24 overflow-hidden text-center">
+                                    <div id="coexist-label-track"
+                                        class="flex flex-col items-center transition-transform duration-300 ease-out w-full">
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="coexistOff">Original</span>
+                                        </div>
+                                        <div
+                                            class="h-6 flex-shrink-0 flex items-center justify-center font-medium truncate w-full">
+                                            <svg class="w-4 h-4 mr-1.5 max-[340px]:mr-0 opacity-70" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                                </path>
+                                            </svg>
+                                            <span class="max-[340px]:hidden" data-i18n="coexistOn">Coexist</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="category-bar" class="mb-5">
+            <div
+                class="bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 rounded-2xl px-3 py-2 shadow-sm">
+                <div class="relative">
+                    <div id="category-bar-scroll" class="flex gap-2 overflow-x-auto no-scrollbar px-1"></div>
+                    <div id="category-fade-left" class="category-fade category-fade-left"></div>
+                    <div id="category-fade-right" class="category-fade category-fade-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps Grid -->
+        <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
+            <!-- Loading State -->
+            <div class="col-span-full flex flex-col items-center justify-center py-24 text-center animate-pulse">
+                <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-4"></div>
+                <div class="h-4 w-48 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+                <div class="h-3 w-32 bg-gray-200 dark:bg-gray-800 rounded"></div>
+            </div>
+        </div>
+
+        <!-- Empty State (Hidden by default) -->
+        <div id="empty-state"
+            class="hidden col-span-full flex flex-col items-center justify-center py-24 text-center animate-fade-in">
+            <div class="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100" data-i18n="noApps">No apps found</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mt-1" data-i18n="noAppsDesc">Try adjusting your search or
+                switching sources.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 animate-fade-in w-auto max-w-[90%]">
+        <div
+            class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/30 dark:border-gray-700/30 rounded-full shadow-lg px-4 py-2 flex flex-row items-center gap-3 transition-transform duration-300 hover:bg-white dark:hover:bg-gray-900 hover:shadow-xl hover:scale-105">
+
+            <!-- Maintainer -->
+            <div class="flex items-center gap-1.5 whitespace-nowrap">
+                <span id="status-dot-wrapper"
+                    class="relative flex h-1.5 w-1.5 cursor-pointer select-none group items-center justify-center"
+                    onclick="handleEasterEgg()" style="touch-action: manipulation;">
+                    <span id="status-dot-ping"
+                        class="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-green-400 group-hover:bg-yellow-400 opacity-75 transition-colors duration-300"></span>
+                    <span id="status-dot-core"
+                        class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500 group-hover:bg-yellow-500 transition-all duration-300"></span>
+                </span>
+                <span class="text-xs font-medium text-gray-600 dark:text-gray-300">
+                    By <a id="maintainer-link" href="https://github.com/Aiko3993" target="_blank"
+                        class="font-bold text-primary-600 dark:text-primary-400 hover:underline transition-colors"
+                        data-i18n="sourceTitle">Aiko3993</a>
+                </span>
+            </div>
+
+            <!-- Divider -->
+            <div class="h-3 w-px bg-gray-300 dark:bg-gray-600 max-[340px]:hidden"></div>
+
+            <!-- Risk Warning (Rolling) -->
+            <div
+                class="flex items-center gap-1 text-[10px] text-gray-400 dark:text-gray-500 font-medium whitespace-nowrap max-[340px]:hidden">
+                <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                    </path>
+                </svg>
+                <div class="relative h-4 overflow-hidden">
+                    <div class="flex flex-col animate-text-roll">
+                        <span data-i18n="thirdParty" class="h-4 flex items-center leading-none">Third-party
+                            Source</span>
+                        <span data-i18n="riskOwnRisk" class="h-4 flex items-center leading-none">Use at your own
+                            risk</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-20 right-6 p-3 rounded-full bg-primary-600 dark:bg-primary-500 text-white shadow-lg shadow-primary-600/30 hover:shadow-primary-600/50 hover:-translate-y-1 transition-all duration-300 opacity-0 pointer-events-none z-40 transform translate-y-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Details Modal -->
+    <div id="modal-backdrop"
+        class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-500 touch-none"
+        onclick="closeModal()"></div>
+    <div id="modal-panel"
+        class="fixed top-0 inset-x-0 h-[100dvh] z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 pt-16 sm:pt-4 hidden pointer-events-none">
+        <div class="bg-white dark:bg-gray-900 w-full max-w-2xl max-h-[80dvh] sm:max-h-[85dvh] rounded-t-[2rem] sm:rounded-b-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform translate-y-full sm:translate-y-0 sm:scale-95 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu will-change-transform"
+            onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div
+                class="px-6 py-4 border-b border-gray-100 dark:border-white/5 flex flex-col gap-3 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl shrink-0 z-10">
+                <!-- Top Row: Icon, Title, Close -->
+                <div class="flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4 flex-1 min-w-0">
+                        <img id="modal-icon" src="" draggable="false"
+                            class="no-drag w-14 h-14 rounded-xl bg-gray-100 dark:bg-gray-800 object-cover shadow-sm flex-shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5 w-full">
+                                <h3 id="modal-title"
+                                    class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight line-clamp-2 break-words">
+                                </h3>
+                                <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer"
+                                    class="hidden text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white transition-colors shrink-0 items-center justify-center -mt-0.5"
+                                    title="View Source on GitHub">
+                                    <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-2 mt-1 min-w-0">
+                                <span id="modal-version-badge"
+                                    class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 truncate max-w-[120px] sm:max-w-[200px]"></span>
+                                <span id="modal-size" class="text-xs text-gray-500 dark:text-gray-400"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="closeModal()"
+                        class="flex-shrink-0 w-10 h-10 p-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 text-gray-500 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 active:scale-95 active:bg-white dark:active:bg-white/10 transition-all shadow-sm mt-1 self-start flex items-center justify-center">
+                        <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12">
+                            </path>
+                        </svg>
+                </div>
+                <!-- Bottom Row: Subtitle -->
+                <p id="modal-subtitle" class="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed pb-0.5"
+                    style="display:none"></p>
+            </div>
+
+            <!-- Modal Content -->
+            <div
+                class="flex-1 overflow-y-auto p-0 custom-scrollbar bg-white dark:bg-gray-900 relative overscroll-contain">
+                <!-- Metadata Grid -->
+                <div id="modal-meta-grid"
+                    class="grid grid-cols-2 gap-3 p-5 border-b border-gray-100 dark:border-white/5">
+                    <!-- Injected by JS -->
+                </div>
+
+                <div class="p-6 pb-[max(1.5rem,calc(env(safe-area-inset-bottom)+1.5rem))]">
+                    <div id="modal-content" class="markdown-body text-sm bg-transparent">
+                        <!-- Markdown content will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Versions Modal -->
+    <div id="versions-modal-backdrop"
+        class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-500 touch-none"
+        onclick="closeVersionsModal()"></div>
+    <div id="versions-modal-panel"
+        class="fixed top-0 inset-x-0 h-[100dvh] z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 pt-16 sm:pt-4 hidden pointer-events-none">
+        <div class="bg-gray-50 dark:bg-gray-900 w-full max-w-lg max-h-[80dvh] sm:max-h-[85dvh] rounded-t-[2rem] sm:rounded-b-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto transform translate-y-full sm:translate-y-0 sm:scale-95 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] transform-gpu will-change-transform"
+            onclick="event.stopPropagation()">
+            <!-- Header -->
+            <div
+                class="px-6 py-4 border-b border-gray-200 dark:border-white/5 flex items-center justify-between bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl shrink-0 z-20">
+                <div class="flex items-center gap-3">
+                    <img id="versions-modal-icon" src="" draggable="false"
+                        class="no-drag w-12 h-12 rounded-[0.875rem] bg-gray-100 dark:bg-gray-800 object-cover shadow-sm">
+                    <div>
+                        <h3 id="versions-modal-title"
+                            class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight">Versions</h3>
+                        <p id="versions-modal-count" class="text-xs text-gray-500 dark:text-gray-400 font-medium"></p>
+                    </div>
+                </div>
+                <button onclick="closeVersionsModal()"
+                    class="flex-shrink-0 w-10 h-10 p-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/70 dark:border-white/10 text-gray-500 dark:text-gray-200 hover:bg-white/90 dark:hover:bg-white/10 active:scale-95 active:bg-white dark:active:bg-white/10 transition-all shadow-sm mt-1 self-start flex items-center justify-center">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Content -->
+            <div id="versions-modal-list"
+                class="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-3 pb-[max(2rem,calc(env(safe-area-inset-bottom)+1rem))] relative overscroll-contain">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Logic -->
+    <script type="module" src="js/modules/main.js"></script>
+</body>
+
+</html>

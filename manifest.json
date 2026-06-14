@@ -1,0 +1,17 @@
+{
+    "name": "iOS Sideload Source",
+    "short_name": "iOS Sideload Source",
+    "description": "AltStore, SideStore & LiveContainer app sources.",
+    "start_url": "./?source=pwa",
+    "display": "standalone",
+    "background_color": "#111827",
+    "theme_color": "#2563eb",
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/apple-touch-icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
