@@ -482,20 +482,29 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.1.5",
-      "versionDate": "2026-06-11T14:31:02Z",
-      "versionDescription": "- 现在批量下载功能支持并行视频解析 (@liangyuR @Predidit)\r\n- 修复更新功能不可用的问题 (@Predidit)\r\n- 修复下载文件大小计量不准确的问题 (#2177) (@Predidit)\r\n- 修复 android 平台手势快进可能导致崩溃的问题 (#2197) (@Predidit)\r\n- 修复特定情况下 webdav 同步无法正确更新选集位置的问题 (#2207) (@Predidit)\r\n- 代码结构优化 (@wqnmlgb151)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.5/Kazumi_ios_2.1.5_no_sign.ipa",
+      "version": "2.1.6",
+      "versionDate": "2026-06-18T08:12:09Z",
+      "versionDescription": "- 新增高级搜索支持 (@UzawaReisaQwQ @Predidit)\r\n- 图片预览现在支持多图浏览 (@LiggMax)\r\n- 新增播放器控制层自动隐藏时间设置 (@hl1282456555 @Predidit)\r\n- 改进桌面端触摸屏播放器交互 (#722 #2224) (@Predidit)\r\n- 新增播放调试信息中的视频码率显示 (@Predidit)\r\n- 修复特定情况下弹幕开关状态无法立即生效的问题 (@Predidit)\r\n- 新增 Linux arm64 构建支持 (#721) (@Yohane-Mashiro @Predidit)\r\n- 修复 Android 平台快进手势可能导致崩溃的问题 (#2211) (@Predidit)\r\n- 调整 Android 播放渲染路径，改善播放兼容性与超分辨率性能 (@Predidit)\r\n- 其他代码结构与构建系统改进 (@LiggMax)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.6/Kazumi_ios_2.1.6_no_sign.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 28035611,
+      "size": 28334562,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.1.6",
+          "date": "2026-06-18T08:12:09Z",
+          "localizedDescription": "- 新增高级搜索支持 (@UzawaReisaQwQ @Predidit)\r\n- 图片预览现在支持多图浏览 (@LiggMax)\r\n- 新增播放器控制层自动隐藏时间设置 (@hl1282456555 @Predidit)\r\n- 改进桌面端触摸屏播放器交互 (#722 #2224) (@Predidit)\r\n- 新增播放调试信息中的视频码率显示 (@Predidit)\r\n- 修复特定情况下弹幕开关状态无法立即生效的问题 (@Predidit)\r\n- 新增 Linux arm64 构建支持 (#721) (@Yohane-Mashiro @Predidit)\r\n- 修复 Android 平台快进手势可能导致崩溃的问题 (#2211) (@Predidit)\r\n- 调整 Android 播放渲染路径，改善播放兼容性与超分辨率性能 (@Predidit)\r\n- 其他代码结构与构建系统改进 (@LiggMax)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.6/Kazumi_ios_2.1.6_no_sign.ipa",
+          "size": 28334562,
+          "sha256": "51e0beb93f0fc69693bfc6b3ad4c604099c1f6bcb0fd8337bcd22c6ff052ced1",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.1.5",
           "date": "2026-06-11T14:31:02Z",
@@ -504,18 +513,9 @@
           "size": 28035611,
           "sha256": "bde8cc8f58eec4d9096aeeae20a6377b02a7ab5e7136ca8034845769c0aee9c6",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.1.4",
-          "date": "2026-06-07T02:32:11Z",
-          "localizedDescription": "Update",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.4/Kazumi_ios_2.1.4_no_sign.ipa",
-          "size": 28025683,
-          "sha256": "29dce1744dae61ebc00d963ba830c978851eeaa247f99abd1058a40a988d4919",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "bde8cc8f58eec4d9096aeeae20a6377b02a7ab5e7136ca8034845769c0aee9c6",
+      "sha256": "51e0beb93f0fc69693bfc6b3ad4c604099c1f6bcb0fd8337bcd22c6ff052ced1",
       "category": "other"
     },
     {
