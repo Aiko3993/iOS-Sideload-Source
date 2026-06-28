@@ -283,7 +283,7 @@
       "downloadURL": "https://github.com/emexlab/emexDE/releases/download/0.10.3/emexDE.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/dark.png.png",
-      "tintColor": "#D5D5D5",
+      "tintColor": "#000",
       "size": 105968899,
       "appPermissions": {
         "entitlements": [],
@@ -349,7 +349,27 @@
         }
       ],
       "sha256": "34928252a086971d3b3cfd724b4ddd15e057e4ac5da22af85a307eb14ba55e67",
-      "category": "other"
+      "category": "other",
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/1.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/2.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/3.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      }
     },
     {
       "name": "Feather",
