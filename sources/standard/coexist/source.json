@@ -283,7 +283,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260523/emexDE_0.10.3_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
       "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/dark.png.png",
-      "tintColor": "#D5D5D5",
+      "tintColor": "#000",
       "size": 105517631,
       "appPermissions": {
         "entitlements": [],
@@ -349,7 +349,27 @@
         }
       ],
       "sha256": "036480355896b1cf7e68fa067eb179ab6725f84299e0b17fc30ce86e76cdfb5e",
-      "category": "other"
+      "category": "other",
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/1.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/2.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/3.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      }
     },
     {
       "name": "Feather",
