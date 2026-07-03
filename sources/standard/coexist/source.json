@@ -13,14 +13,14 @@
       "bundleIdentifier": "app.aidoku.Aidoku.coexist",
       "developerName": "Aidoku",
       "subtitle": "Free and open source manga reader for iOS and iPadOS",
-      "version": "0.8.3",
-      "versionDate": "2026-05-18T19:01:42Z",
-      "versionDescription": "- New migration flow: view series details and optionally copy data instead of completely migrating.\r\n- Kavita API key login: in addition to OIDC and basic auth, use an API key if it works better for you.\r\n- Continuous with gaps reading mode: like the Webtoon mode, but with gaps between pages.\r\n- Fixed tracker search bar: should show again on iOS 26.4+.\r\n- Improved double page reader: new page offset setting and double page handling fixes.\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260518/Aidoku_0.8.3_Coexist.ipa",
+      "version": "0.8.4",
+      "versionDate": "2026-07-03T05:26:01Z",
+      "versionDescription": "- Fixes for iOS 27: fixed settings pages freezing the app, along with other minor visual issues.\r\n- Improved backup restore time: restores should now take seconds instead of minutes. (@Amqx)\r\n- Failed download page retrying: less chance of missing pages in downloaded chapters from sources with aggressive rate limits. (@pxseu)\r\n- New chapter notifications (experimental): when Aidoku refreshes in the background, notification(s) of new chapters should be sent if enabled. (@Zareix)\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260703/Aidoku_0.8.4_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
-      "size": 9268674,
+      "size": 10125380,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -45,12 +45,12 @@
       ],
       "versions": [
         {
-          "version": "0.8.3",
-          "date": "2026-05-18T19:01:42Z",
-          "localizedDescription": "- New migration flow: view series details and optionally copy data instead of completely migrating.\r\n- Kavita API key login: in addition to OIDC and basic auth, use an API key if it works better for you.\r\n- Continuous with gaps reading mode: like the Webtoon mode, but with gaps between pages.\r\n- Fixed tracker search bar: should show again on iOS 26.4+.\r\n- Improved double page reader: new page offset setting and double page handling fixes.\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260518/Aidoku_0.8.3_Coexist.ipa",
-          "size": 9268674,
-          "sha256": "809fcd543bf8bc5ba135115a17e2e95cea1c0588f88fa3ae1de348babbf81f3f",
+          "version": "0.8.4",
+          "date": "2026-07-03T05:26:01Z",
+          "localizedDescription": "- Fixes for iOS 27: fixed settings pages freezing the app, along with other minor visual issues.\r\n- Improved backup restore time: restores should now take seconds instead of minutes. (@Amqx)\r\n- Failed download page retrying: less chance of missing pages in downloaded chapters from sources with aggressive rate limits. (@pxseu)\r\n- New chapter notifications (experimental): when Aidoku refreshes in the background, notification(s) of new chapters should be sent if enabled. (@Zareix)\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260703/Aidoku_0.8.4_Coexist.ipa",
+          "size": 10125380,
+          "sha256": "8d49e5d581219fcd2c8ba4ef098303ab5576014c3af288416ebd2e9121a55e42",
           "minOSVersion": "15.0"
         }
       ],
@@ -72,7 +72,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "809fcd543bf8bc5ba135115a17e2e95cea1c0588f88fa3ae1de348babbf81f3f"
+      "sha256": "8d49e5d581219fcd2c8ba4ef098303ab5576014c3af288416ebd2e9121a55e42"
     },
     {
       "name": "Amethyst (Nightly)",
@@ -1222,14 +1222,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260701.1121+5c992aa8.0604",
-      "versionDate": "2026-07-01T17:21:17Z",
-      "versionDescription": "Nightly build from commit 5c992aa88ed5482964d8a28dfe523e04ec318a50",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260701/SideStore_Nightly_0.6.4-20260701.1121%2B5c992aa8.0604_Coexist.ipa",
+      "version": "0.6.4-20260703.1125+f841749a.0604",
+      "versionDate": "2026-07-03T05:13:35Z",
+      "versionDescription": "Nightly build from commit f841749af1b510f0767ff9fba1d42d04b5d061ce",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260703/SideStore_Nightly_0.6.4-20260703.1125%2Bf841749a.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27233540,
+      "size": 27412655,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1244,6 +1244,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.4-20260703.1125+f841749a.0604",
+          "date": "2026-07-03T05:13:35Z",
+          "localizedDescription": "Nightly build from commit f841749af1b510f0767ff9fba1d42d04b5d061ce",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260703/SideStore_Nightly_0.6.4-20260703.1125%2Bf841749a.0604_Coexist.ipa",
+          "size": 27412655,
+          "sha256": "c3ad15dd1df93f46d78bfba7b61822cfdadab86c2030b1f86f5831afd3a2e408",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.4-20260701.1121+5c992aa8.0604",
           "date": "2026-07-01T17:21:17Z",
           "localizedDescription": "Nightly build from commit 5c992aa88ed5482964d8a28dfe523e04ec318a50",
@@ -1251,18 +1260,9 @@
           "size": 27233540,
           "sha256": "9f1f73e91f8c60a71c7630f498ab349e2d8ede1b0780aaced35cdf8c8991684d",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.6.4-20260629.1118+905fe5b4.0604",
-          "date": "2026-06-29T19:19:05Z",
-          "localizedDescription": "Nightly build from commit 905fe5b4d544c275825b9b933be442d170fb7c53",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260629/SideStore_Nightly_0.6.4-20260629.1118%2B905fe5b4.0604_Coexist.ipa",
-          "size": 27202195,
-          "sha256": "de3c01f8fa170e9096efc5809270e91630acd7826db45d3ffdc2361acfca4c17",
-          "minOSVersion": "15.0"
         }
       ],
-      "sha256": "9f1f73e91f8c60a71c7630f498ab349e2d8ede1b0780aaced35cdf8c8991684d",
+      "sha256": "c3ad15dd1df93f46d78bfba7b61822cfdadab86c2030b1f86f5831afd3a2e408",
       "category": "other"
     },
     {
