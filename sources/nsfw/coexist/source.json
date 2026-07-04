@@ -95,7 +95,7 @@
     {
       "name": "LoveIwara",
       "githubRepo": "FoxSensei001/LoveIwara",
-      "bundleIdentifier": "m.c.g.a.i_iwara.coexist",
+      "bundleIdentifier": "m.c.g.a.i-iwara.coexist",
       "developerName": "FoxSensei001",
       "subtitle": "Love Iwara (i-iwara or 2i). An unofficial iwara flutter app - Supporting multiple platforms and devices including mobile phones, tablets and computers. Compatible with Android, Windows and other systems. 第三方的Iwara应用 - 支持多个平台和设备，包括手机、平板和计算机。兼容 安卓、IOS、Windows、MacOS等系统。",
       "version": "0.5.0",
