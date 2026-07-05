@@ -13,14 +13,14 @@
       "bundleIdentifier": "top.jtmonster.jhentai",
       "developerName": "jiangtian616",
       "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
-      "version": "8.0.14+321",
-      "versionDate": "2026-07-04T17:55:14Z",
-      "versionDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
-      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.14%2B321/JHenTai_8.0.14%2B321.ipa",
+      "version": "8.0.14+323",
+      "versionDate": "2026-07-05T06:28:02Z",
+      "versionDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- 桌面端支持ctrl+鼠标滚轮缩放图片\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- Desktop supports ctrl + mouse wheel to zoom images\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
+      "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.14%2B323/JHenTai_8.0.14%2B323.ipa",
       "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15836453,
+      "size": 15692732,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -39,21 +39,21 @@
       ],
       "versions": [
         {
+          "version": "8.0.14+323",
+          "date": "2026-07-05T06:28:02Z",
+          "localizedDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- 桌面端支持ctrl+鼠标滚轮缩放图片\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- Desktop supports ctrl + mouse wheel to zoom images\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
+          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.14%2B323/JHenTai_8.0.14%2B323.ipa",
+          "size": 15692732,
+          "sha256": "f95896fc5d958bf86f3525e8120f670ce5855e0ce83cdcd5d36853a21c193d10",
+          "minOSVersion": "12.0"
+        },
+        {
           "version": "8.0.14+321",
           "date": "2026-07-04T17:55:14Z",
           "localizedDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
           "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.14%2B321/JHenTai_8.0.14%2B321.ipa",
           "size": 15836453,
           "sha256": "6cf232983f24b2f044705c5405306e0b8b045c42c9a76bc4fad8623f0c60b2e0",
-          "minOSVersion": "12.0"
-        },
-        {
-          "version": "8.0.14",
-          "date": "2026-07-01T12:55:15Z",
-          "localizedDescription": "- 修改桌面端阅读页右键菜单逻辑\n- 修改桌面端阅读页分享图片逻辑\n- 阅读页增加复制图片页链接功能\n- 优化注销弹窗UI展示\n- 桌面端部分按钮新增右键触发逻辑\n- 资产页面支持展示hath\n- 优化阅读页缩略图中展示webp动图的性能\n- 优化阅读页缩略图展示的逻辑\n- 优化cookie页面点击单项cookie的复制逻辑\n- 优化profile设置组件的展示\n- 优化桌面端阅读页打开阅读设置时的展示逻辑\n- 修复Linux下无法正确获取系统代理的bug\n\n--------------------\n\n- Modify the right-click menu logic on the desktop reading page\n- Modify the share image logic on the desktop reading page\n- Add the ability to copy the image page link on the reading page\n- Optimize the UI display of the logout pop-up window\n- Add right-click trigger logic to some buttons on the desktop side\n- Support displaying hath on the asset page\n- Optimize the performance of displaying webp animations in the thumbnail of the reading page\n- Optimize the logic of displaying thumbnails on the reading page\n- Optimize the logic of copying single cookies when clicking on the cookie page\n- Optimize the display of profile settings components\n- Optimize the display logic when opening reading settings on the desktop reading page\n- Fix the bug that prevents Linux from correctly obtaining the system proxy",
-          "downloadURL": "https://github.com/jiangtian616/JHenTai/releases/download/v8.0.14/JHenTai_8.0.14%2B317.ipa",
-          "size": 15767125,
-          "sha256": "0da4b3532037e61620543eb61056da25b4647f2d1de479cbe79b864ac4a65165",
           "minOSVersion": "12.0"
         }
       ],
@@ -90,7 +90,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "6cf232983f24b2f044705c5405306e0b8b045c42c9a76bc4fad8623f0c60b2e0"
+      "sha256": "f95896fc5d958bf86f3525e8120f670ce5855e0ce83cdcd5d36853a21c193d10"
     },
     {
       "name": "LoveIwara",
