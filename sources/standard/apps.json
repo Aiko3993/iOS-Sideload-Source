@@ -3,7 +3,7 @@
     "name": "Aidoku",
     "github_repo": "Aidoku/Aidoku",
     "bundle_id": "app.aidoku.Aidoku",
-    "icon_url": "https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png"
+    "icon_url": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png"
   },
   {
     "name": "Amethyst (Nightly)",
@@ -110,7 +110,7 @@
     "name": "NeoFreeBird",
     "github_repo": "NeoFreeBird/app",
     "bundle_id": "com.atebits.Tweetie2",
-    "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png"
+    "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png"
   },
   {
     "name": "PiliPlus",
