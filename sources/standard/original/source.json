@@ -80,14 +80,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.0e98ca0",
-      "versionDate": "2026-07-07T13:07:09Z",
-      "versionDescription": "Nightly build from commit 0e98ca0ff3156cdb37ed191fe5314b7662f25b89",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260707/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_0e98ca0.ipa",
+      "version": "1.0.1617724",
+      "versionDate": "2026-07-08T04:01:26Z",
+      "versionDescription": "Nightly build from commit 1617724505c2348cb9eb9ba8686534008bac6dec",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260708/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_1617724.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148591722,
+      "size": 148591522,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -105,6 +105,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.1617724",
+          "date": "2026-07-08T04:01:26Z",
+          "localizedDescription": "Nightly build from commit 1617724505c2348cb9eb9ba8686534008bac6dec",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260708/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_1617724.ipa",
+          "size": 148591522,
+          "sha256": "aee90194e89f16ea92581c67aff223db02cd1b4a45834859807bf872ac337b97",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "1.0.0e98ca0",
           "date": "2026-07-07T13:07:09Z",
           "localizedDescription": "Nightly build from commit 0e98ca0ff3156cdb37ed191fe5314b7662f25b89",
@@ -114,7 +123,7 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "a087476a415ee463e598048c35183254f8ede523f19493e361d84aa2b29b561d",
+      "sha256": "aee90194e89f16ea92581c67aff223db02cd1b4a45834859807bf872ac337b97",
       "category": "other"
     },
     {
