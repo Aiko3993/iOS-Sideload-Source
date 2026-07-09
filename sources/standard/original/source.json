@@ -80,14 +80,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.1617724",
-      "versionDate": "2026-07-08T04:01:26Z",
-      "versionDescription": "Nightly build from commit 1617724505c2348cb9eb9ba8686534008bac6dec",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260708/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_1617724.ipa",
+      "version": "1.0.640e516",
+      "versionDate": "2026-07-09T14:02:46Z",
+      "versionDescription": "Nightly build from commit 640e51624c2e256837a8882e7abb3081780c03cc",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_640e516.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148591522,
+      "size": 148591532,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -105,6 +105,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.640e516",
+          "date": "2026-07-09T14:02:46Z",
+          "localizedDescription": "Nightly build from commit 640e51624c2e256837a8882e7abb3081780c03cc",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_640e516.ipa",
+          "size": 148591532,
+          "sha256": "e560fbba447a3c972e0504b498dd0a2d739ec744f4851d227ad37fd59def6974",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "1.0.1617724",
           "date": "2026-07-08T04:01:26Z",
           "localizedDescription": "Nightly build from commit 1617724505c2348cb9eb9ba8686534008bac6dec",
@@ -112,18 +121,9 @@
           "size": 148591522,
           "sha256": "aee90194e89f16ea92581c67aff223db02cd1b4a45834859807bf872ac337b97",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "1.0.0e98ca0",
-          "date": "2026-07-07T13:07:09Z",
-          "localizedDescription": "Nightly build from commit 0e98ca0ff3156cdb37ed191fe5314b7662f25b89",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260707/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_0e98ca0.ipa",
-          "size": 148591722,
-          "sha256": "a087476a415ee463e598048c35183254f8ede523f19493e361d84aa2b29b561d",
-          "minOSVersion": "14.0"
         }
       ],
-      "sha256": "aee90194e89f16ea92581c67aff223db02cd1b4a45834859807bf872ac337b97",
+      "sha256": "e560fbba447a3c972e0504b498dd0a2d739ec744f4851d227ad37fd59def6974",
       "category": "other"
     },
     {
@@ -502,14 +502,14 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.1.8",
-      "versionDate": "2026-07-02T13:54:09Z",
-      "versionDescription": "- 新增 4:3 画面比例模式 (#2240) (@Predidit)\r\n- 桌面端播放器现在会记忆音量与静音状态 (#1599 #2046) (@liangyuR)\r\n- 长按倍速现在会跟随默认方向键/长按倍速设置 (#2248) (@UzawaReisaQwQ)\r\n- 改进特殊集数的识别与切集体验 (@liangyuR)\r\n- 改进弹幕时间偏移设置与相关底部面板 (@Predidit)\r\n- 调整 Android 默认硬件解码器为 MediaCodec，并升级播放组件 (@Predidit)\r\n- 修复部分地区Github规则镜像不生效的问题 (@Predidit)\r\n- 修复特定情况下多次快进可能导致弹幕冻结的问题 (@Predidit)\r\n- 优化项目文档 (@ChouChiu)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.8/Kazumi_ios_2.1.8_no_sign.ipa",
+      "version": "2.2.0",
+      "versionDate": "2026-07-09T14:36:23Z",
+      "versionDescription": "- 新增API规则支持 (@Predidit)\r\n- 新增 Windows 平台系统代理支持 (@Predidit)\r\n- 修复历史记录较多时应用启动卡顿的问题 (#2293) (#2233) (@Predidit)\r\n- 修复已经已完播剧集重复观看从结尾处开始的问题 (#2222) (@Predidit)\r\n- 修复部分 Android 设备硬件解码不生效的问题 (@Predidit)\r\n- 修复特定情况下播放器控制面板不会自动隐藏的问题 (@liangyuR)\r\n- 修复部分地区规则仓库镜像不可用的问题 (@Predidit)\r\n- 修复HTTP站点不可用的问题 (#2292) (@Predidit)\r\n- 更多的播放器控制面板动效 (@LiggMax)\r\n- 其他代码结构调整 (@Predidit)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.0/Kazumi_ios_2.2.0_no_sign.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 28346335,
+      "size": 28150602,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -517,16 +517,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "2.1.8",
-          "date": "2026-07-02T13:54:09Z",
-          "localizedDescription": "- 新增 4:3 画面比例模式 (#2240) (@Predidit)\r\n- 桌面端播放器现在会记忆音量与静音状态 (#1599 #2046) (@liangyuR)\r\n- 长按倍速现在会跟随默认方向键/长按倍速设置 (#2248) (@UzawaReisaQwQ)\r\n- 改进特殊集数的识别与切集体验 (@liangyuR)\r\n- 改进弹幕时间偏移设置与相关底部面板 (@Predidit)\r\n- 调整 Android 默认硬件解码器为 MediaCodec，并升级播放组件 (@Predidit)\r\n- 修复部分地区Github规则镜像不生效的问题 (@Predidit)\r\n- 修复特定情况下多次快进可能导致弹幕冻结的问题 (@Predidit)\r\n- 优化项目文档 (@ChouChiu)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.1.8/Kazumi_ios_2.1.8_no_sign.ipa",
-          "size": 28346335,
-          "sha256": "282d2a6f04a400b6b1aae74175a88b307e799394be3acc49506fb827f4abfe1e",
+          "version": "2.2.0",
+          "date": "2026-07-09T14:36:23Z",
+          "localizedDescription": "- 新增API规则支持 (@Predidit)\r\n- 新增 Windows 平台系统代理支持 (@Predidit)\r\n- 修复历史记录较多时应用启动卡顿的问题 (#2293) (#2233) (@Predidit)\r\n- 修复已经已完播剧集重复观看从结尾处开始的问题 (#2222) (@Predidit)\r\n- 修复部分 Android 设备硬件解码不生效的问题 (@Predidit)\r\n- 修复特定情况下播放器控制面板不会自动隐藏的问题 (@liangyuR)\r\n- 修复部分地区规则仓库镜像不可用的问题 (@Predidit)\r\n- 修复HTTP站点不可用的问题 (#2292) (@Predidit)\r\n- 更多的播放器控制面板动效 (@LiggMax)\r\n- 其他代码结构调整 (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.0/Kazumi_ios_2.2.0_no_sign.ipa",
+          "size": 28150602,
+          "sha256": "8258be4a1ba8577a82d098e88bd0593830c95a7346fa21e6e7c6ff13a9e93783",
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "282d2a6f04a400b6b1aae74175a88b307e799394be3acc49506fb827f4abfe1e",
+      "sha256": "8258be4a1ba8577a82d098e88bd0593830c95a7346fa21e6e7c6ff13a9e93783",
       "category": "other"
     },
     {
