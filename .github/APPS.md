@@ -1,12 +1,12 @@
 # Supported Apps
 
-> *Last Updated: 2026-07-08 23:01:21 (UTC)*
+> *Last Updated: 2026-07-09 01:50:58 (UTC)*
 
 ## Standard Apps
 
 | Icon | Name | Description | Source |
 | :---: | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/Aidoku/Aidoku/refs/heads/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **Aidoku** | Free and open source manga reader for iOS and iPadOS | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) |
+| <img src="https://raw.githubusercontent.com/Aidoku/Aidoku/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **Aidoku** | Free and open source manga reader for iOS and iPadOS | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) |
 | <img src="https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png" width="48" height="48"> | **Amethyst (Nightly)** | A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform. | [AngelAuraMC/Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS) |
 | <img src="https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png" width="48" height="48"> | **Animeko** | 集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform | [open-ani/animeko](https://github.com/open-ani/animeko) |
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
@@ -23,7 +23,7 @@
 | <img src="https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png" width="48" height="48"> | **LiveContainer+SideStore (Nightly)** | Run iOS apps without actually installing them! | [LiveContainer/LiveContainer](https://github.com/LiveContainer/LiveContainer) |
 | <img src="https://raw.githubusercontent.com/cranci1/Luna/main/Luna/Assets.xcassets/AppIcon.appiconset/Default.png" width="48" height="48"> | **Luna** | No description available. | [cranci1/Luna](https://github.com/cranci1/Luna) |
 | <img src="https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="48" height="48"> | **Mangayomi** | Read manga, novels, and watch anime | [kodjodevf/mangayomi](https://github.com/kodjodevf/mangayomi) |
-| <img src="https://raw.githubusercontent.com/NeoFreeBird/app/refs/heads/main/Branding/Icon.png" width="48" height="48"> | **NeoFreeBird** | A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications. | [NeoFreeBird/app](https://github.com/NeoFreeBird/app) |
+| <img src="https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png" width="48" height="48"> | **NeoFreeBird** | A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications. | [NeoFreeBird/app](https://github.com/NeoFreeBird/app) |
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
 | <img src="https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png" width="48" height="48"> | **Pixiv-SwiftUI** | 为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS | [Eslzzyl/Pixiv-SwiftUI](https://github.com/Eslzzyl/Pixiv-SwiftUI) |
 | <img src="https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png" width="48" height="48"> | **PPSSPP** | A PSP emulator for Android, Windows, Mac, Linux and iOS, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. | [hrydgard/ppsspp](https://github.com/hrydgard/ppsspp) |
