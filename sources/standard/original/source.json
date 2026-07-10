@@ -80,14 +80,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.640e516",
-      "versionDate": "2026-07-09T14:02:46Z",
-      "versionDescription": "Nightly build from commit 640e51624c2e256837a8882e7abb3081780c03cc",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_640e516.ipa",
+      "version": "1.0.a38100a",
+      "versionDate": "2026-07-10T04:53:19Z",
+      "versionDescription": "Nightly build from commit a38100ad88b460aa22b2b6153ce729c5697b101c",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_a38100a.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148591532,
+      "size": 148593786,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -105,6 +105,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.a38100a",
+          "date": "2026-07-10T04:53:19Z",
+          "localizedDescription": "Nightly build from commit a38100ad88b460aa22b2b6153ce729c5697b101c",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_a38100a.ipa",
+          "size": 148593786,
+          "sha256": "6831b6b33fd6d025ea697cc79a250ee8baeea1bd9c0420632ee43986b085cf4b",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "1.0.640e516",
           "date": "2026-07-09T14:02:46Z",
           "localizedDescription": "Nightly build from commit 640e51624c2e256837a8882e7abb3081780c03cc",
@@ -112,18 +121,9 @@
           "size": 148591532,
           "sha256": "e560fbba447a3c972e0504b498dd0a2d739ec744f4851d227ad37fd59def6974",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "1.0.1617724",
-          "date": "2026-07-08T04:01:26Z",
-          "localizedDescription": "Nightly build from commit 1617724505c2348cb9eb9ba8686534008bac6dec",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260708/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_1617724.ipa",
-          "size": 148591522,
-          "sha256": "aee90194e89f16ea92581c67aff223db02cd1b4a45834859807bf872ac337b97",
-          "minOSVersion": "14.0"
         }
       ],
-      "sha256": "e560fbba447a3c972e0504b498dd0a2d739ec744f4851d227ad37fd59def6974",
+      "sha256": "6831b6b33fd6d025ea697cc79a250ee8baeea1bd9c0420632ee43986b085cf4b",
       "category": "other"
     },
     {
@@ -1213,14 +1213,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260709.1144+c2293058.0604",
-      "versionDate": "2026-07-09T23:01:40Z",
-      "versionDescription": "Nightly build from commit c2293058e65f513ba44ddcb6cae6ed5c3be3f74d",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/SideStore_SideStore_SideStore-0.6.4-20260709.1144%2Bc2293058_c229305.ipa",
+      "version": "0.6.4-20260710.1148+d3768e2f.0604",
+      "versionDate": "2026-07-10T05:32:14Z",
+      "versionDescription": "Nightly build from commit d3768e2fa4ad3fd38e2fe037bba975607d9bf0e2",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/SideStore_SideStore_SideStore-0.6.4-20260710.1148%2Bd3768e2f_d3768e2.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27147604,
+      "size": 27149193,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1235,6 +1235,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.4-20260710.1148+d3768e2f.0604",
+          "date": "2026-07-10T05:32:14Z",
+          "localizedDescription": "Nightly build from commit d3768e2fa4ad3fd38e2fe037bba975607d9bf0e2",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/SideStore_SideStore_SideStore-0.6.4-20260710.1148%2Bd3768e2f_d3768e2.ipa",
+          "size": 27149193,
+          "sha256": "d38e87e6a3bcb57d9d7168928db2f72131b9623df3bfeda10ff6c4bf30787bf1",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.4-20260709.1144+c2293058.0604",
           "date": "2026-07-09T23:01:40Z",
           "localizedDescription": "Nightly build from commit c2293058e65f513ba44ddcb6cae6ed5c3be3f74d",
@@ -1242,18 +1251,9 @@
           "size": 27147604,
           "sha256": "24406444e4f48cc294e30d3d00e226ba5849c77b15da5d72a8469a50d46fb00e",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.6.4-20260705.1138+53da8074.0604",
-          "date": "2026-07-05T11:27:07Z",
-          "localizedDescription": "Nightly build from commit 53da8074e1a9e97bc59851a4d0f5beced6874e08",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260705/SideStore_SideStore_SideStore-0.6.4-20260705.1138%2B53da8074_53da807.ipa",
-          "size": 26560837,
-          "sha256": "e29def6702f8b4630afe2748a541959de49b5e6691ddd5d30820978432261941",
-          "minOSVersion": "15.0"
         }
       ],
-      "sha256": "24406444e4f48cc294e30d3d00e226ba5849c77b15da5d72a8469a50d46fb00e",
+      "sha256": "d38e87e6a3bcb57d9d7168928db2f72131b9623df3bfeda10ff6c4bf30787bf1",
       "category": "other"
     },
     {
