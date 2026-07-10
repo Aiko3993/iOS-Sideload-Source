@@ -80,14 +80,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.a38100a",
-      "versionDate": "2026-07-10T04:53:19Z",
-      "versionDescription": "Nightly build from commit a38100ad88b460aa22b2b6153ce729c5697b101c",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_a38100a.ipa",
+      "version": "1.0.325144b",
+      "versionDate": "2026-07-10T07:28:30Z",
+      "versionDescription": "Nightly build from commit 325144ba916ae118b3f4f3ab335a39cfa8ab62e5",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_325144b.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 148593786,
+      "size": 148593776,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -105,12 +105,12 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "1.0.a38100a",
-          "date": "2026-07-10T04:53:19Z",
-          "localizedDescription": "Nightly build from commit a38100ad88b460aa22b2b6153ce729c5697b101c",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_a38100a.ipa",
-          "size": 148593786,
-          "sha256": "6831b6b33fd6d025ea697cc79a250ee8baeea1bd9c0420632ee43986b085cf4b",
+          "version": "1.0.325144b",
+          "date": "2026-07-10T07:28:30Z",
+          "localizedDescription": "Nightly build from commit 325144ba916ae118b3f4f3ab335a39cfa8ab62e5",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_325144b.ipa",
+          "size": 148593776,
+          "sha256": "9d85764c179ca5c5addc3d4c036f781514ff2ea66aa8682c9849955411b4042f",
           "minOSVersion": "14.0"
         },
         {
@@ -123,7 +123,7 @@
           "minOSVersion": "14.0"
         }
       ],
-      "sha256": "6831b6b33fd6d025ea697cc79a250ee8baeea1bd9c0420632ee43986b085cf4b",
+      "sha256": "9d85764c179ca5c5addc3d4c036f781514ff2ea66aa8682c9849955411b4042f",
       "category": "other"
     },
     {
