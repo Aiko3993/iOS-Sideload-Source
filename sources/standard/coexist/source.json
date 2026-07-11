@@ -80,14 +80,14 @@
       "bundleIdentifier": "org.angelauramc.amethyst.coexist",
       "developerName": "AngelAuraMC",
       "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
-      "version": "1.0.325144b",
-      "versionDate": "2026-07-10T07:28:30Z",
-      "versionDescription": "Nightly build from commit 325144ba916ae118b3f4f3ab335a39cfa8ab62e5",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260710/Amethyst_Nightly_1.0.325144b_Coexist.ipa",
+      "version": "1.0.f62f673",
+      "versionDate": "2026-07-11T11:30:20Z",
+      "versionDescription": "Nightly build from commit f62f6739c5a29be24d43f9ebb93916ecaed9bc20",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/Amethyst_Nightly_1.0.f62f673_Coexist.ipa",
       "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
       "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
       "tintColor": "#2F2F2F",
-      "size": 150354078,
+      "size": 150354223,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.kernel.extended-virtual-addressing",
@@ -105,6 +105,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.f62f673",
+          "date": "2026-07-11T11:30:20Z",
+          "localizedDescription": "Nightly build from commit f62f6739c5a29be24d43f9ebb93916ecaed9bc20",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/Amethyst_Nightly_1.0.f62f673_Coexist.ipa",
+          "size": 150354223,
+          "sha256": "711adf4002971a8b13223812b8e7ca1b9fe69477491803e464be4669b9f5bc8a",
+          "minOSVersion": "14.0"
+        },
+        {
           "version": "1.0.325144b",
           "date": "2026-07-10T07:28:30Z",
           "localizedDescription": "Nightly build from commit 325144ba916ae118b3f4f3ab335a39cfa8ab62e5",
@@ -112,18 +121,9 @@
           "size": 150354078,
           "sha256": "1ab9c26f9ca5cbf153b48a6b1b4e161d86d7b6cf7a454e7866f041430ddf51db",
           "minOSVersion": "14.0"
-        },
-        {
-          "version": "1.0.640e516",
-          "date": "2026-07-09T14:02:46Z",
-          "localizedDescription": "Nightly build from commit 640e51624c2e256837a8882e7abb3081780c03cc",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/Amethyst_Nightly_1.0.640e516_Coexist.ipa",
-          "size": 150351195,
-          "sha256": "a7406a61cd5bc5b5ee1ebc7133b3645c64255e1bb55601cb0e7d6268e33ff026",
-          "minOSVersion": "14.0"
         }
       ],
-      "sha256": "1ab9c26f9ca5cbf153b48a6b1b4e161d86d7b6cf7a454e7866f041430ddf51db",
+      "sha256": "711adf4002971a8b13223812b8e7ca1b9fe69477491803e464be4669b9f5bc8a",
       "category": "other"
     },
     {
@@ -1231,14 +1231,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260711.1153+81abc562.0604",
-      "versionDate": "2026-07-11T10:09:21Z",
-      "versionDescription": "Nightly build from commit 81abc5624e1e2c8c322ef73123655c5c80dbb9ca",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/SideStore_Nightly_0.6.4-20260711.1153%2B81abc562.0604_Coexist.ipa",
+      "version": "0.6.4-20260711.1154+c0f4af70.0604",
+      "versionDate": "2026-07-11T11:14:36Z",
+      "versionDescription": "Nightly build from commit c0f4af70ad0e7beee44172ff18c03ef6f38e934f",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/SideStore_Nightly_0.6.4-20260711.1154%2Bc0f4af70.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27230289,
+      "size": 27235367,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1253,12 +1253,12 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.6.4-20260711.1153+81abc562.0604",
-          "date": "2026-07-11T10:09:21Z",
-          "localizedDescription": "Nightly build from commit 81abc5624e1e2c8c322ef73123655c5c80dbb9ca",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/SideStore_Nightly_0.6.4-20260711.1153%2B81abc562.0604_Coexist.ipa",
-          "size": 27230289,
-          "sha256": "fa906b14645683633ff6202fb38267fea6b6d31d0d4c4ede51045d73e8248560",
+          "version": "0.6.4-20260711.1154+c0f4af70.0604",
+          "date": "2026-07-11T11:14:36Z",
+          "localizedDescription": "Nightly build from commit c0f4af70ad0e7beee44172ff18c03ef6f38e934f",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260711/SideStore_Nightly_0.6.4-20260711.1154%2Bc0f4af70.0604_Coexist.ipa",
+          "size": 27235367,
+          "sha256": "1a11e6fbbce9e9e618f1aa5457495566dc4dd33312f19e4b9671a0c48e54862a",
           "minOSVersion": "15.0"
         },
         {
@@ -1271,7 +1271,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "fa906b14645683633ff6202fb38267fea6b6d31d0d4c4ede51045d73e8248560",
+      "sha256": "1a11e6fbbce9e9e618f1aa5457495566dc4dd33312f19e4b9671a0c48e54862a",
       "category": "other"
     },
     {
