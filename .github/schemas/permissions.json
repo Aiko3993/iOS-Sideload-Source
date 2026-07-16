@@ -1,0 +1,634 @@
+{
+  "entitlements": {
+    "com.apple.developer.authentication-services.autofill-credential-provider": {
+      "name": "AutoFill Credential Provider",
+      "description": "Allows app to provide user names and passwords for AutoFill.",
+      "key": "com.apple.developer.authentication-services.autofill-credential-provider",
+      "symbol": "wallet.pass"
+    },
+    "com.apple.developer.applesignin": {
+      "name": "Sign in with Apple",
+      "description": "Allows sign in with Apple.",
+      "key": "com.apple.developer.applesignin",
+      "symbol": "apple.logo"
+    },
+    "com.apple.developer.parent-application-identifiers": {
+      "name": "App Clips - Parent Identifiers",
+      "description": "Allows app to use App Clips.",
+      "key": "com.apple.developer.parent-application-identifiers",
+      "symbol": "appclip"
+    },
+    "com.apple.developer.associated-appclip-app-identifiers": {
+      "name": "App Clips - Associated Identifiers",
+      "description": "Allows app to use App Clips with other apps.",
+      "key": "com.apple.developer.associated-appclip-app-identifiers",
+      "symbol": "appclip"
+    },
+    "com.apple.developer.on-demand-install-capable": {
+      "name": "App Clips - Install",
+      "description": "App can install App Clips.",
+      "key": "com.apple.developer.on-demand-install-capable",
+      "symbol": "appclip"
+    },
+    "com.apple.developer.carplay-audio": {
+      "name": "CarPlay Audio",
+      "description": "Allows the app to provide audio content for CarPlay.",
+      "key": "com.apple.developer.carplay-audio",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-charging": {
+      "name": "CarPlay Charging",
+      "description": "Allows charging capabilities for CarPlay.",
+      "key": "com.apple.developer.carplay-charging",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-communication": {
+      "name": "CarPlay Communication",
+      "description": "Allows the app to make and receive phone calls, messages, and other communications through CarPlay.",
+      "key": "com.apple.developer.carplay-communication",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-maps": {
+      "name": "CarPlay Maps",
+      "description": "Allows use of maps and navigation services for CarPlay.",
+      "key": "com.apple.developer.carplay-maps",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-parking": {
+      "name": "CarPlay Parking",
+      "description": "Allows the app to provide parking-related services for CarPlay.",
+      "key": "com.apple.developer.carplay-parking",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-quick-ordering": {
+      "name": "CarPlay Quick Ordering",
+      "description": "Allows quick ordering capabilities for CarPlay.",
+      "key": "com.apple.developer.carplay-quick-ordering",
+      "symbol": "car"
+    },
+    "com.apple.developer.carplay-messaging": {
+      "name": "CarPlay Messaging",
+      "description": "Allows sending and receiving messages through CarPlay.",
+      "key": "com.apple.developer.carplay-messaging",
+      "symbol": "car"
+    },
+    "com.apple.developer.contact.notes": {
+      "name": "Contact Notes",
+      "description": "Grants access to the notes in contact entries.",
+      "key": "com.apple.developer.contact.notes",
+      "symbol": "person.crop.circle"
+    },
+    "com.apple.developer.automated-device-enrollment.add-devices": {
+      "name": "Automated Device Enrollment",
+      "description": "Grants access to add a device to Automated Device Enrollment.",
+      "key": "com.apple.developer.automated-device-enrollment.add-devices",
+      "symbol": "macbook.and.iphone"
+    },
+    "com.apple.developer.ClassKit-environment": {
+      "name": "ClassKit",
+      "description": "Grants access to the ClassKit development or production environment for an education app that works with the Schoolwork app.",
+      "key": "com.apple.developer.ClassKit-environment",
+      "symbol": "books.vertical"
+    },
+    "com.apple.developer.automatic-assessment-configuration": {
+      "name": "Automatic Assessment Configuration",
+      "description": "Allows app to create an assessment session.",
+      "key": "com.apple.developer.automatic-assessment-configuration",
+      "symbol": "books.vertical"
+    },
+    "com.apple.developer.mail-client": {
+      "name": "Mail Client",
+      "description": "Allows app to act as a user's default email client.",
+      "key": "com.apple.developer.mail-client",
+      "symbol": "envelope"
+    },
+    "com.apple.developer.exposure-notification": {
+      "name": "Exposure Notification",
+      "description": "App may use exposure notification.",
+      "key": "com.apple.developer.exposure-notification",
+      "symbol": "microbe.fill"
+    },
+    "com.apple.developer.family-controls": {
+      "name": "Family Controls",
+      "description": "App can request or revoke authorization to provide parental controls.",
+      "key": "com.apple.developer.family-controls",
+      "symbol": "figure.and.child.holdinghands"
+    },
+    "com.apple.developer.fileprovider.testing-mode": {
+      "name": "Testing Mode",
+      "description": "App can enter testing mode.",
+      "key": "com.apple.developer.fileprovider.testing-mode",
+      "symbol": "testtube.2"
+    },
+    "com.apple.developer.game-center": {
+      "name": "Game Center",
+      "description": "App may see and compare achievements on a leaderboard, invite friends, and start multiplayer games.",
+      "key": "com.apple.developer.game-center",
+      "symbol": "gamecontroller"
+    },
+    "com.apple.developer.group-session": {
+      "name": "Group Activities",
+      "description": "Allows the app to schedule and participate in group activities.",
+      "key": "com.apple.developer.group-session",
+      "symbol": "person.3"
+    },
+    "com.apple.developer.healthkit": {
+      "name": "Health",
+      "description": "Allows the app to access your Health data.",
+      "key": "com.apple.developer.healthkit",
+      "symbol": "heart.text.square"
+    },
+    "com.apple.developer.healthkit.access": {
+      "name": "Sensitive Health Data",
+      "description": "Allows the app to access your sensitive Health data.",
+      "key": "com.apple.developer.healthkit.access",
+      "symbol": "heart.text.square"
+    },
+    "healthkit.background-delivery": {
+      "name": "Health - Background Updates",
+      "description": "App may receive health updates while running in the background.",
+      "key": "com.apple.developer.healthkit.background-delivery",
+      "symbol": "heart.text.square"
+    },
+    "com.apple.developer.healthkit.recalibrate-estimates": {
+      "name": "Health - Recalibrate",
+      "description": "App may recalibrate Health data.",
+      "key": "com.apple.developer.healthkit.recalibrate-estimates",
+      "symbol": "heart.text.square"
+    },
+    "com.apple.developer.homekit": {
+      "name": "HomeKit",
+      "description": "App may perform setup and management tasks for HomeKit accessories.",
+      "key": "com.apple.developer.homekit",
+      "symbol": "house"
+    },
+    "com.apple.developer.homekit.matter.allow-setup-payload": {
+      "name": "HomeKit - Matter",
+      "description": "Allows app to provide the setup of a Matter device.",
+      "key": "com.apple.developer.homekit.matter.allow-setup-payload",
+      "symbol": "house"
+    },
+    "com.apple.security.hypervisor": {
+      "name": "Virtual Machine",
+      "description": "Allows app to create and manage virtual machines.",
+      "key": "com.apple.security.hypervisor",
+      "symbol": "externaldrive.connected.to.line.below"
+    },
+    "com.apple.vm.device-access": {
+      "name": "Device Access",
+      "description": "App can capture USB devices and uses them in the guest-operating system.",
+      "key": "com.apple.vm.device-access",
+      "symbol": "mediastick"
+    },
+    "com.apple.vm.networking": {
+      "name": "Virtual Networking",
+      "description": "App can manage virtual network interfaces without escalating privileges to the root user.",
+      "key": "com.apple.vm.networking",
+      "symbol": "network"
+    },
+    "com.apple.security.virtualization": {
+      "name": "Virtualization",
+      "description": "App can use the Virtualization framework.",
+      "key": "com.apple.security.virtualization",
+      "symbol": "server.rack"
+    },
+    "com.apple.developer.icloud-container-development-container-identifiers": {
+      "name": "iCloud Container Development Container Identifiers",
+      "description": "App can use iCloud containers for testing environments.",
+      "key": "com.apple.developer.icloud-container-development-container-identifiers",
+      "symbol": "icloud"
+    },
+    "com.apple.developer.icloud-container-environment": {
+      "name": "iCloud Container Environment",
+      "description": "App can set up iCloud testing environment.",
+      "key": "com.apple.developer.icloud-container-environment",
+      "symbol": "icloud"
+    },
+    "com.apple.developer.icloud-container-identifiers": {
+      "name": "iCloud Container Identifiers",
+      "description": "App can set up iCloud identifiers used for testing environments.",
+      "key": "com.apple.developer.icloud-container-identifiers",
+      "symbol": "icloud"
+    },
+    "com.apple.developer.icloud-services": {
+      "name": "iCloud Services",
+      "description": "Grants access to iCloud services.",
+      "key": "com.apple.developer.icloud-services",
+      "symbol": "icloud"
+    },
+    "com.apple.developer.ubiquity-kvstore-identifier": {
+      "name": "iCloud Key-Value Store",
+      "description": "The container identifier to use for iCloud key-value storage.",
+      "key": "com.apple.developer.ubiquity-kvstore-identifier",
+      "symbol": "icloud"
+    },
+    "com.apple.developer.location.push": {
+      "name": "Location Sharing Push Notifications",
+      "description": "Enables location-sharing app to query someone’s location in response to a push notification.",
+      "key": "com.apple.developer.location.push",
+      "symbol": "location"
+    },
+    "com.apple.developer.media-device-discovery-extension": {
+      "name": "Media Device Discovery Extension",
+      "description": "App extension that adds a third-party media receiver to a system device-picker UI.",
+      "key": "com.apple.developer.media-device-discovery-extension",
+      "symbol": "display.2"
+    },
+    "com.apple.developer.avfoundation.multitasking-camera-access": {
+      "name": "Multitasking Camera Access",
+      "description": "App may continue using the camera at the same time as another foreground app.",
+      "key": "com.apple.developer.avfoundation.multitasking-camera-access",
+      "symbol": "camera.on.rectangle"
+    },
+    "com.apple.developer.kernel.increased-memory-limit": {
+      "name": "Increased Memory Limit",
+      "description": "Allows app to perform better with a higher memory limit on supported devices.",
+      "key": "com.apple.developer.kernel.increased-memory-limit",
+      "symbol": "memorychip"
+    },
+    "com.apple.developer.kernel.extended-virtual-addressing": {
+      "name": "Extended Virtual Addressing",
+      "description": "App may access an extended address space.",
+      "key": "com.apple.developer.kernel.extended-virtual-addressing",
+      "symbol": "memorychip"
+    },
+    "com.apple.developer.networking.networkextension": {
+      "name": "Network Extensions",
+      "description": "App can customize networking features.",
+      "key": "com.apple.developer.networking.networkextension",
+      "symbol": "network"
+    },
+    "com.apple.developer.networking.vpn.api": {
+      "name": "Personal VPN",
+      "description": "App can create and control a custom system VPN configuration.",
+      "key": "com.apple.developer.networking.vpn.api",
+      "symbol": "network"
+    },
+    "com.apple.developer.associated-domains": {
+      "name": "Associated Domains",
+      "description": "The associated domains for specific services, such as shared web credentials, universal links, and App Clips.",
+      "key": "com.apple.developer.associated-domains",
+      "symbol": "network"
+    },
+    "com.apple.developer.networking.multicast": {
+      "name": "Multicast",
+      "description": "App can send or receive IP multicast traffic.",
+      "key": "com.apple.developer.networking.multicast",
+      "symbol": "network"
+    },
+    "com.apple.developer.associated-domains.applinks.read-write": {
+      "name": "Applinks",
+      "description": "Grants app read/write access to Applinks.",
+      "key": "com.apple.developer.associated-domains.applinks.read-write",
+      "symbol": "network"
+    },
+    "com.apple.developer.networking.manage-thread-network-credentials": {
+      "name": "ThreadNetwork",
+      "description": "Grants access to the ThreadNetwork API.",
+      "key": "com.apple.developer.networking.manage-thread-network-credentials",
+      "symbol": "network"
+    },
+    "aps-environment": {
+      "name": "Push Notifications",
+      "description": "App can send push notifications.",
+      "key": "aps-environment",
+      "symbol": "app.badge"
+    },
+    "com.apple.developer.usernotifications.filtering": {
+      "name": "Notification Filtering",
+      "description": "App can receive notifications without displaying them to the user.",
+      "key": "com.apple.developer.usernotifications.filtering",
+      "symbol": "platter.filled.top.and.arrow.up.iphone"
+    },
+    "com.apple.developer.device-information.user-assigned-device-name": {
+      "name": "Device Name",
+      "description": "Grants access to the user-assigned device name instead of a generic device name.",
+      "key": "com.apple.developer.device-information.user-assigned-device-name",
+      "symbol": "ipad.and.iphone"
+    },
+    "com.apple.developer.severe-vehicular-crash-event": {
+      "name": "Crash Detection",
+      "description": "Grants access to Crash Detection events.",
+      "key": "com.apple.developer.severe-vehicular-crash-event",
+      "symbol": "car.side.and.exclamationmark"
+    },
+    "com.apple.security.application-groups": {
+      "name": "App Groups",
+      "description": "Allows app to share files with other apps and app extensions in same App Group.",
+      "key": "com.apple.security.application-groups",
+      "symbol": "rectangle.3.group"
+    },
+    "keychain-access-groups": {
+      "name": "Keychain",
+      "description": "Allows app to read and write secure data to the system's keychain.",
+      "key": "keychain-access-groups",
+      "symbol": "key.horizontal"
+    },
+    "com.apple.developer.default-data-protection": {
+      "name": "Data Protection",
+      "description": "App can set the level of data protection for sensitive user data when accessed on a device.",
+      "key": "com.apple.developer.default-data-protection",
+      "symbol": "lock.doc"
+    },
+    "com.apple.developer.devicecheck.appattest-environment": {
+      "name": "App Attest Environment",
+      "description": "Allows app to use the App Attest service to validate itself.",
+      "key": "com.apple.developer.devicecheck.appattest-environment",
+      "symbol": "app.badge.checkmark"
+    },
+    "com.apple.security.smartcard": {
+      "name": "Smart Card Access",
+      "description": "Grants access to smart card slots and smart cards.",
+      "key": "com.apple.security.smartcard",
+      "symbol": "greetingcard"
+    },
+    "com.apple.developer.sensorkit.reader.allow": {
+      "name": "Sensor Data",
+      "description": "Grants access to sensor data that's required by a preapproved research study.",
+      "key": "com.apple.developer.sensorkit.reader.allow",
+      "symbol": "sensor"
+    },
+    "com.apple.developer.siri": {
+      "name": "Siri",
+      "description": "Allows app to handle Siri requests.",
+      "key": "com.apple.developer.siri",
+      "symbol": "mic.circle"
+    },
+    "com.apple.developer.storekit.external-link.account": {
+      "name": "External Website Account Linking",
+      "description": "App can link to an external website for account creation or management.",
+      "key": "com.apple.developer.storekit.external-link.account",
+      "symbol": "link.badge.plus"
+    },
+    "com.apple.developer.storekit.external-purchase": {
+      "name": "External Purchases",
+      "description": "App can offer external purchases.",
+      "key": "com.apple.developer.storekit.external-purchase",
+      "symbol": "dollarsign.circle"
+    },
+    "com.apple.developer.storekit.external-purchase-link": {
+      "name": "External Purchase Website Link",
+      "description": "App can include a link that directs users to a website to make an external purchase.",
+      "key": "com.apple.developer.storekit.external-purchase-link",
+      "symbol": "link.badge.plus"
+    },
+    "com.apple.developer.video-subscriber-single-sign-on": {
+      "name": "Subscriber Single Sign-On",
+      "description": "Allows app to use single sign-on.",
+      "key": "com.apple.developer.video-subscriber-single-sign-on",
+      "symbol": "rectangle.and.pencil.and.ellipsis"
+    },
+    "com.apple.smoot.subscriptionservice": {
+      "name": "Subscriptions Verification",
+      "description": "Allows app to check for TV subscriptions.",
+      "key": "com.apple.smoot.subscriptionservice",
+      "symbol": "person.crop.circle.badge.checkmark"
+    },
+    "com.apple.developer.pass-type-identifiers": {
+      "name": "Pass Type",
+      "description": "Allows app to check for passes in Apple Wallet.",
+      "key": "com.apple.developer.pass-type-identifiers",
+      "symbol": "wallet.pass"
+    },
+    "com.apple.developer.in-app-payments": {
+      "name": "Apple Pay",
+      "description": "Allows app to use Apple Pay.",
+      "key": "com.apple.developer.in-app-payments",
+      "symbol": "dollarsign.circle"
+    },
+    "com.apple.developer.in-app-identity-presentment": {
+      "name": "Apple Pay - User Verification",
+      "description": "Allows app to verify user for Apple Pay.",
+      "key": "com.apple.developer.in-app-identity-presentment",
+      "symbol": "dollarsign.circle"
+    },
+    "com.apple.developer.in-app-identity-presentment.merchant-identifiers": {
+      "name": "Apple Pay - Merchant Verification",
+      "description": "Allows app to verify merchant for Apple Pay.",
+      "key": "com.apple.developer.in-app-identity-presentment.merchant-identifiers",
+      "symbol": "dollarsign.circle"
+    },
+    "com.apple.developer.weatherkit": {
+      "name": "Weather Data",
+      "description": "Allows app to use WeatherKit.",
+      "key": "com.apple.developer.weatherkit",
+      "symbol": "cloud.sun"
+    },
+    "com.apple.developer.web-browser": {
+      "name": "Default Web Browser",
+      "description": "Allows app to be set as the user's default web browser.",
+      "key": "com.apple.developer.web-browser",
+      "symbol": "globe.europe.africa"
+    },
+    "com.apple.developer.web-browser.public-key-credential": {
+      "name": "Passkeys",
+      "description": "Allows app to access passkeys.",
+      "key": "com.apple.developer.web-browser.public-key-credential",
+      "symbol": "key.viewfinder"
+    },
+    "com.apple.developer.networking.wifi-info": {
+      "name": "Wi-Fi Information Access",
+      "description": "Allows app to access information about the connected Wi-Fi network.",
+      "key": "com.apple.developer.networking.wifi-info",
+      "symbol": "wifi"
+    },
+    "com.apple.external-accessory.wireless-configuration": {
+      "name": "Wireless Accessory Configuration",
+      "description": "App may configure MFi Wi-Fi accessories.",
+      "key": "com.apple.external-accessory.wireless-configuration",
+      "symbol": "wifi"
+    },
+    "com.apple.developer.networking.multipath": {
+      "name": "Multipath Support",
+      "description": "App may use Multipath protocols to seamlessly transition between Wi-Fi and cellular networks.",
+      "key": "com.apple.developer.networking.multipath",
+      "symbol": "antenna.radiowaves.left.and.right"
+    },
+    "com.apple.developer.networking.HotspotConfiguration": {
+      "name": "Hotspots",
+      "description": "App can use the hotspot manager to configure Wi-Fi networks.",
+      "key": "com.apple.developer.networking.HotspotConfiguration",
+      "symbol": "personalhotspot"
+    },
+    "com.apple.developer.nfc.readersession.formats": {
+      "name": "NFC Tag Reader Session Formats",
+      "description": "The Near Field Communication data formats an app can read.",
+      "key": "com.apple.developer.nfc.readersession.formats",
+      "symbol": "iphone.gen1.radiowaves.left.and.right.circle"
+    },
+    "get-task-allow": {
+      "name": "Debuggable",
+      "description": "Allows developers to attach a debugger to this app. This permission is required for JIT to work.",
+      "key": "get-task-allow",
+      "symbol": "hammer"
+    },
+    "inter-app-audio": {
+      "name": "Inter-App Audio",
+      "description": "Allows sharing real-time audio between apps.",
+      "key": "inter-app-audio",
+      "symbol": "hifispeaker.2"
+    }
+  },
+  "privacy": {
+    "NSBluetoothAlwaysUsageDescription": {
+      "name": "Bluetooth",
+      "key": "NSBluetoothAlwaysUsageDescription",
+      "symbol": "antenna.radiowaves.left.and.right"
+    },
+    "NSBluetoothPeripheralUsageDescription": {
+      "name": "Bluetooth (Peripherals)",
+      "key": "NSBluetoothPeripheralUsageDescription",
+      "symbol": "antenna.radiowaves.left.and.right"
+    },
+    "NSCalendarsUsageDescription": {
+      "name": "Calendars",
+      "key": "NSCalendarsUsageDescription",
+      "symbol": "calendar"
+    },
+    "NSRemindersUsageDescription": {
+      "name": "Reminders",
+      "key": "NSRemindersUsageDescription",
+      "symbol": "note.text"
+    },
+    "NSCameraUsageDescription": {
+      "name": "Camera",
+      "key": "NSCameraUsageDescription",
+      "symbol": "camera"
+    },
+    "NSMicrophoneUsageDescription": {
+      "name": "Microphone",
+      "key": "NSMicrophoneUsageDescription",
+      "symbol": "mic"
+    },
+    "NSContactsUsageDescription": {
+      "name": "Contacts",
+      "key": "NSContactsUsageDescription",
+      "symbol": "person.crop.circle"
+    },
+    "NSFaceIDUsageDescription": {
+      "name": "Face ID",
+      "key": "NSFaceIDUsageDescription",
+      "symbol": "faceid"
+    },
+    "NSGKFriendListUsageDescription": {
+      "name": "Game Center Friends List",
+      "key": "NSGKFriendListUsageDescription",
+      "symbol": "gamecontroller"
+    },
+    "NSHealthClinicalHealthRecordsShareUsageDescription": {
+      "name": "Health (Clinical Records)",
+      "key": "NSHealthClinicalHealthRecordsShareUsageDescription",
+      "symbol": "heart.text.square"
+    },
+    "NSHealthShareUsageDescription": {
+      "name": "Health",
+      "key": "NSHealthShareUsageDescription",
+      "symbol": "heart.text.square"
+    },
+    "NSHealthUpdateUsageDescription": {
+      "name": "Health (Add)",
+      "key": "NSHealthUpdateUsageDescription",
+      "symbol": "heart.text.square"
+    },
+    "NSHomeKitUsageDescription": {
+      "name": "HomeKit",
+      "key": "NSHomeKitUsageDescription",
+      "symbol": "homekit"
+    },
+    "NSLocationAlwaysUsageDescription": {
+      "name": "Location (Background)",
+      "key": "NSLocationAlwaysUsageDescription",
+      "symbol": "location.fill"
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription": {
+      "name": "Location (Always)",
+      "key": "NSLocationAlwaysAndWhenInUseUsageDescription",
+      "symbol": "location.fill"
+    },
+    "NSLocationUsageDescription": {
+      "name": "Location",
+      "key": "NSLocationUsageDescription",
+      "symbol": "location.fill"
+    },
+    "NSLocationWhenInUseUsageDescription": {
+      "name": "Location (When Using)",
+      "key": "NSLocationWhenInUseUsageDescription",
+      "symbol": "location"
+    },
+    "NSLocationTemporaryUsageDescription": {
+      "name": "Location (Temporary)",
+      "key": "NSLocationTemporaryUsageDescription",
+      "symbol": "location"
+    },
+    "NSAppleMusicUsageDescription": {
+      "name": "Apple Music",
+      "key": "NSAppleMusicUsageDescription",
+      "symbol": "music.note"
+    },
+    "NSMotionUsageDescription": {
+      "name": "Motion",
+      "key": "NSMotionUsageDescription",
+      "symbol": "figure.run"
+    },
+    "NSFallDetectionUsageDescription": {
+      "name": "Fall Detection",
+      "key": "NSFallDetectionUsageDescription",
+      "symbol": "figure.fall"
+    },
+    "NSLocalNetworkUsageDescription": {
+      "name": "Local Network",
+      "key": "NSLocalNetworkUsageDescription",
+      "symbol": "network"
+    },
+    "NSNearbyInteractionUsageDescription": {
+      "name": "Nearby Interaction",
+      "key": "NSNearbyInteractionUsageDescription",
+      "symbol": "dot.radiowaves.left.and.right"
+    },
+    "NSNearbyInteractionAllowOnceUsageDescription": {
+      "name": "Nearby Interaction (Once)",
+      "key": "NSNearbyInteractionAllowOnceUsageDescription",
+      "symbol": "dot.radiowaves.left.and.right"
+    },
+    "NFCReaderUsageDescription": {
+      "name": "NFC",
+      "key": "NSNFCReaderUsageDescription",
+      "symbol": "sensor.tag.radiowaves.forward"
+    },
+    "NSPhotoLibraryAddUsageDescription": {
+      "name": "Photos (Add)",
+      "key": "NSPhotoLibraryAddUsageDescription",
+      "symbol": "photo"
+    },
+    "NSPhotoLibraryUsageDescription": {
+      "name": "Photos",
+      "key": "NSPhotoLibraryUsageDescription",
+      "symbol": "photo.stack"
+    },
+    "NSUserTrackingUsageDescription": {
+      "name": "User Tracking",
+      "key": "NSUserTrackingUsageDescription",
+      "symbol": "location.magnifyingglass"
+    },
+    "NSSensorKitUsageDescription": {
+      "name": "SensorKit",
+      "key": "NSSensorKitUsageDescription",
+      "symbol": "sensor"
+    },
+    "NSSiriUsageDescription": {
+      "name": "Siri",
+      "key": "NSSiriUsageDescription",
+      "symbol": "mic.circle"
+    },
+    "NSSpeechRecognitionUsageDescription": {
+      "name": "Speech Recognition",
+      "key": "NSSpeechRecognitionUsageDescription",
+      "symbol": "waveform.and.mic"
+    },
+    "NSIdentityUsageDescription": {
+      "name": "ID Cards",
+      "key": "NSIdentityUsageDescription",
+      "symbol": "wallet.pass"
+    }
+  }
+}

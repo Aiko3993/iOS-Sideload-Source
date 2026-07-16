@@ -1,0 +1,22 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+
+# Build & Temporary Artifacts
+/public/
+/website/assets/
+**/source.json
+*.tmp
+*.bak
