@@ -1,0 +1,132 @@
+name: Deploy to GitHub Pages
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+          cache-dependency-path: '.github/requirements.txt'
+
+      - name: Install dependencies
+        run: pip install -r .github/requirements.txt
+
+      - name: Validate Apps JSON
+        run: python3 .github/scripts/validate_apps.py
+
+      - name: Run update script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RECONCILE_CACHED_ASSETS: '1'
+          RECONCILE_APPLY: '1'
+          RECONCILE_MIN_AGE_DAYS: '1'
+        run: python .github/scripts/update_source.py
+
+      - name: Build site
+        run: |
+          mkdir public
+          cp website/index.html public/
+          cp -r website/css public/
+          cp -r website/js public/
+          cp -r .github/assets public/assets
+
+          mkdir -p public/sources/standard/original public/sources/standard/coexist public/sources/nsfw/original public/sources/nsfw/coexist
+          cp sources/standard/original/source.json public/sources/standard/original/
+          cp sources/standard/coexist/source.json public/sources/standard/coexist/
+          cp sources/nsfw/original/source.json public/sources/nsfw/original/
+          cp sources/nsfw/coexist/source.json public/sources/nsfw/coexist/
+
+          BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          AUTHOR="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+
+          sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
+          sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/index.html
+
+          sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
+          sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
+
+          CACHE_BUST=$(date +%s)
+          sed -i "s|js/modules/main.js|js/modules/main.js?v=$CACHE_BUST|g" public/index.html
+          sed -i "s|css/flat.css|css/flat.css?v=$CACHE_BUST|g" public/index.html
+
+          cat <<EOF > public/manifest.json
+          {
+              "name": "iOS Sideload Source",
+              "short_name": "iOS Sideload Source",
+              "description": "AltStore, SideStore & LiveContainer app sources.",
+              "start_url": "./?source=pwa",
+              "display": "standalone",
+              "background_color": "#111827",
+              "theme_color": "#2563eb",
+              "icons": [
+                  {
+                      "src": "assets/apple-touch-icon.png",
+                      "sizes": "1024x1024",
+                      "type": "image/png",
+                      "purpose": "any"
+                  }
+              ]
+          }
+          EOF
+
+          cat <<EOF > public/robots.txt
+          User-agent: *
+          Allow: /
+
+          Sitemap: ${BASE_URL}sitemap.xml
+          EOF
+
+          CURRENT_DATE=$(date +"%Y-%m-%d")
+          cat <<EOF > public/sitemap.xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+             <url>
+                <loc>${BASE_URL}</loc>
+                <lastmod>${CURRENT_DATE}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>1.0</priority>
+             </url>
+          </urlset>
+          EOF
+
+          touch public/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
