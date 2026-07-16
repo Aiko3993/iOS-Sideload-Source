@@ -1,0 +1,141 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["Update Source"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check if deploy needed
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            LAST_COMMIT_TIME=$(git log -1 --format="%ct")
+            NOW=$(date +%s)
+            DIFF=$((NOW - LAST_COMMIT_TIME))
+            
+            echo "Last commit was $DIFF seconds ago"
+            
+            if [ $DIFF -gt 300 ]; then
+              echo "No recent commits, skipping deployment"
+              echo "skip=true" >> $GITHUB_OUTPUT
+            else
+              echo "Recent commit detected, proceeding with deployment"
+              echo "skip=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Prepare deployment
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          mkdir public
+          
+          cp website/index.html public/
+          cp -r website/css public/
+          cp -r website/js public/
+          
+          mkdir -p public/sources/standard/original public/sources/standard/coexist public/sources/nsfw/original public/sources/nsfw/coexist
+          [ -f sources/standard/original/source.json ] && cp sources/standard/original/source.json public/sources/standard/original/
+          [ -f sources/standard/coexist/source.json ] && cp sources/standard/coexist/source.json public/sources/standard/coexist/
+          [ -f sources/nsfw/original/source.json ] && cp sources/nsfw/original/source.json public/sources/nsfw/original/
+          [ -f sources/nsfw/coexist/source.json ] && cp sources/nsfw/coexist/source.json public/sources/nsfw/coexist/
+          
+          BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          AUTHOR="${GITHUB_REPOSITORY_OWNER}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          
+          sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
+          sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/index.html
+          sed -i "s|{{BASE_URL}}/assets/|https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
+          sed -i "s|\"assets/|\"https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
+          
+          sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
+          sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
+
+          cat <<EOF > public/manifest.json
+          {
+              "name": "iOS Sideload Source",
+              "short_name": "iOS Sideload Source",
+              "description": "AltStore, SideStore & LiveContainer app sources.",
+              "start_url": "./?source=pwa",
+              "display": "standalone",
+              "background_color": "#111827",
+              "theme_color": "#2563eb",
+              "icons": [
+                  {
+                      "src": "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/apple-touch-icon.png",
+                      "sizes": "1024x1024",
+                      "type": "image/png",
+                      "purpose": "any"
+                  }
+              ]
+          }
+          EOF
+          
+          cat <<EOF > public/robots.txt
+          User-agent: *
+          Allow: /
+
+          Sitemap: ${BASE_URL}sitemap.xml
+          EOF
+          
+          CURRENT_DATE=$(date +"%Y-%m-%d")
+          cat <<EOF > public/sitemap.xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+             <url>
+                <loc>${BASE_URL}</loc>
+                <lastmod>${CURRENT_DATE}</lastmod>
+                <changefreq>daily</changefreq>
+                <priority>1.0</priority>
+             </url>
+          </urlset>
+          EOF
+          
+          touch public/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        if: steps.check.outputs.skip != 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd public
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          
+          git fetch origin gh-pages --depth=1 || true
+          
+          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git commit -m "Temp"
+            
+            if git diff origin/gh-pages --quiet; then
+              echo "No changes detected compared to gh-pages. Skipping deployment."
+              exit 0
+            fi
+            
+            git reset --soft HEAD~1
+          fi
+
+          git commit -m "Deploy to GitHub Pages (Automated)"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
