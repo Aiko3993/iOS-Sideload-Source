@@ -1,0 +1,38 @@
+{
+  "allowed_app_fields": [
+    "name",
+    "bundleIdentifier",
+    "marketplaceID",
+    "developerName",
+    "localizedDescription",
+    "iconURL",
+    "versions",
+    "appPermissions",
+    "subtitle",
+    "tintColor",
+    "category",
+    "screenshots",
+    "screenshotURLs",
+    "patreon",
+    "version",
+    "versionDate",
+    "versionDescription",
+    "downloadURL",
+    "size",
+    "sha256",
+    "githubRepo"
+  ],
+  "allowed_version_fields": [
+    "version",
+    "buildVersion",
+    "marketingVersion",
+    "date",
+    "localizedDescription",
+    "downloadURL",
+    "assetURLs",
+    "minOSVersion",
+    "maxOSVersion",
+    "size",
+    "sha256"
+  ]
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Aidoku",
+    "github_repo": "Aidoku/Aidoku"
+  },
+  {
+    "name": "Aidoku (Nightly)",
+    "github_repo": "Aidoku/Aidoku",
+    "github_workflow": "nightly.yml",
+    "artifact_only": true
+  },
+  {
+    "name": "Amethyst (Nightly)",
+    "github_repo": "AngelAuraMC/Amethyst-iOS",
+    "artifact_name": "org.angelauramc.amethyst-ios.ipa",
+    "github_workflow": "development.yml",
+    "artifact_only": true
+  },
+  {
+    "name": "Animeko",
+    "github_repo": "open-ani/animeko"
+  },
+  {
+    "name": "Apollo",
+    "github_repo": "Balackburn/Apollo"
+  },
+  {
+    "name": "Asspp",
+    "github_repo": "Lakr233/Asspp"
+  },
+  {
+    "name": "emexDE",
+    "github_repo": "emexlab/emexDE"
+  },
+  {
+    "name": "Feather",
+    "github_repo": "khcrysalis/Feather"
+  },
+  {
+    "name": "Ferrite",
+    "github_repo": "Ferrite-iOS/Ferrite"
+  },
+  {
+    "name": "iSH (Pre-release)",
+    "github_repo": "ish-app/ish",
+    "pre_release": true
+  },
+  {
+    "name": "iTorrent",
+    "github_repo": "XITRIX/iTorrent"
+  },
+  {
+    "name": "Kazumi",
+    "github_repo": "Predidit/Kazumi"
+  },
+  {
+    "name": "Ksign",
+    "github_repo": "Nyasami/Ksign"
+  },
+  {
+    "name": "LiveContainer",
+    "github_repo": "LiveContainer/LiveContainer"
+  },
+  {
+    "name": "LiveContainer (Nightly)",
+    "github_repo": "LiveContainer/LiveContainer",
+    "artifact_only": true
+  },
+  {
+    "name": "LiveContainer+SideStore",
+    "github_repo": "LiveContainer/LiveContainer"
+  },
+  {
+    "name": "LiveContainer+SideStore (Nightly)",
+    "github_repo": "LiveContainer/LiveContainer",
+    "artifact_only": true
+  },
+  {
+    "name": "Luna",
+    "github_repo": "cranci1/Luna"
+  },
+  {
+    "name": "Mangayomi",
+    "github_repo": "kodjodevf/mangayomi"
+  },
+  {
+    "name": "NeoFreeBird",
+    "github_repo": "NeoFreeBird/app"
+  },
+  {
+    "name": "NeoFreeBird (Twitter)",
+    "github_repo": "orionblur/NeoFreeBird",
+    "ipa_regex": "sideloaded-Twitter"
+  },
+  {
+    "name": "NeoFreeBird (X)",
+    "github_repo": "orionblur/NeoFreeBird",
+    "ipa_regex": "sideloaded-X"
+  },
+  {
+    "name": "PiliPlus",
+    "github_repo": "bggRGjQaUbCoE/PiliPlus"
+  },
+  {
+    "name": "Pixiv-SwiftUI",
+    "github_repo": "Eslzzyl/Pixiv-SwiftUI"
+  },
+  {
+    "name": "PPSSPP",
+    "github_repo": "hrydgard/ppsspp"
+  },
+  {
+    "name": "SideStore",
+    "github_repo": "SideStore/SideStore"
+  },
+  {
+    "name": "SideStore (Nightly)",
+    "github_repo": "SideStore/SideStore",
+    "artifact_only": true
+  },
+  {
+    "name": "StikDebug",
+    "github_repo": "StephenDev0/StikDebug"
+  },
+  {
+    "name": "UTM",
+    "github_repo": "utmapp/UTM"
+  },
+  {
+    "name": "UTM HV",
+    "github_repo": "utmapp/UTM"
+  },
+  {
+    "name": "Venera",
+    "github_repo": "venera-app/venera"
+  }
+]
