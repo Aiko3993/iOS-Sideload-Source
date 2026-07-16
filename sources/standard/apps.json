@@ -9,10 +9,10 @@
     "name": "Amethyst (Nightly)",
     "github_repo": "AngelAuraMC/Amethyst-iOS",
     "artifact_name": "org.angelauramc.amethyst-ios.ipa",
-    "artifact_only": true,
-    "bundle_id": "org.angelauramc.amethyst",
     "github_workflow": "development.yml",
-    "icon_url": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png"
+    "bundle_id": "org.angelauramc.amethyst",
+    "icon_url": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
+    "artifact_only": true
   },
   {
     "name": "Animeko",
@@ -53,6 +53,8 @@
   {
     "name": "iSH (Pre-release)",
     "github_repo": "ish-app/ish",
+    "bundle_id": "app.ish.iSH",
+    "icon_url": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
     "pre_release": true
   },
   {
@@ -82,9 +84,9 @@
   {
     "name": "LiveContainer (Nightly)",
     "github_repo": "LiveContainer/LiveContainer",
-    "artifact_only": true,
     "bundle_id": "com.kdt.livecontainer",
-    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png"
+    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+    "artifact_only": true
   },
   {
     "name": "LiveContainer+SideStore",
@@ -95,9 +97,9 @@
   {
     "name": "LiveContainer+SideStore (Nightly)",
     "github_repo": "LiveContainer/LiveContainer",
-    "artifact_only": true,
     "bundle_id": "com.kdt.livecontainer",
-    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png"
+    "icon_url": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+    "artifact_only": true
   },
   {
     "name": "Luna",
@@ -144,9 +146,9 @@
   {
     "name": "SideStore (Nightly)",
     "github_repo": "SideStore/SideStore",
-    "artifact_only": true,
     "bundle_id": "com.SideStore.SideStore",
-    "icon_url": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png"
+    "icon_url": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+    "artifact_only": true
   },
   {
     "name": "StikDebug",

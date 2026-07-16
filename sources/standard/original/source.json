@@ -449,6 +449,49 @@
       "category": "other"
     },
     {
+      "name": "iSH (Pre-release)",
+      "githubRepo": "ish-app/ish",
+      "bundleIdentifier": "app.ish.iSH",
+      "developerName": "ish-app",
+      "subtitle": "Linux shell for iOS",
+      "version": "builds/810",
+      "versionDate": "2026-07-14T14:10:57Z",
+      "versionDescription": "Automated daily build",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/810/iSH.ipa",
+      "localizedDescription": "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
+      "iconURL": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
+      "tintColor": "#BCBCBC",
+      "size": 4595929,
+      "appPermissions": {
+        "entitlements": [
+          "beta-reports-active",
+          "com.apple.developer.user-fonts",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "This is required for connecting to localhost and using the ping command.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "Programs running in iSH will be allowed to track your location in the background.",
+          "NSLocationAlwaysUsageDescription": "Programs running in iSH will be allowed to track your location in the background.",
+          "NSLocationWhenInUseUsageDescription": "Programs running in iSH will be allowed to see your location."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "builds/810",
+          "date": "2026-07-14T14:10:57Z",
+          "localizedDescription": "Automated daily build",
+          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/810/iSH.ipa",
+          "size": 4595929,
+          "sha256": "ca2a1ce9780e55e39f188b2fad452139882f6a442155341f0a046968fe01fa8f",
+          "minOSVersion": "11.0"
+        }
+      ],
+      "sha256": "ca2a1ce9780e55e39f188b2fad452139882f6a442155341f0a046968fe01fa8f",
+      "category": "other"
+    },
+    {
       "name": "iTorrent",
       "githubRepo": "XITRIX/iTorrent",
       "bundleIdentifier": "com.xitrix.iTorrent2",
@@ -502,20 +545,29 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.2.0",
-      "versionDate": "2026-07-09T14:36:23Z",
-      "versionDescription": "- 新增API规则支持 (@Predidit)\r\n- 新增 Windows 平台系统代理支持 (@Predidit)\r\n- 修复历史记录较多时应用启动卡顿的问题 (#2293) (#2233) (@Predidit)\r\n- 修复已经已完播剧集重复观看从结尾处开始的问题 (#2222) (@Predidit)\r\n- 修复部分 Android 设备硬件解码不生效的问题 (@Predidit)\r\n- 修复特定情况下播放器控制面板不会自动隐藏的问题 (@liangyuR)\r\n- 修复部分地区规则仓库镜像不可用的问题 (@Predidit)\r\n- 修复HTTP站点不可用的问题 (#2292) (@Predidit)\r\n- 更多的播放器控制面板动效 (@LiggMax)\r\n- 其他代码结构调整 (@Predidit)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.0/Kazumi_ios_2.2.0_no_sign.ipa",
+      "version": "2.2.1",
+      "versionDate": "2026-07-16T06:29:25Z",
+      "versionDescription": "- 重新设计启动向导及多个页面 (@Predidit)\r\n- 新增 windows/macOS 平台缓存目录自定义功能 (#2237) (@NanoShiki @0Chencc)\r\n- 修复 android 平台动态取色不稳定的问题 (@Predidit)\r\n- 增强一起看功能可靠性 (#1710 #1850 #1992) (@ChEnylnti)\r\n- 增强桌面平台播放器快捷键的可靠性 (@Predidit)\r\n- 现在 Linux 平台支持外部播放器功能 (@Predidit)\r\n- 增强规则更新可靠性 (@Predidit)\r\n- 修复调试模式下热重载不可用的问题 (@Predidit)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.1/Kazumi_ios_2.2.1_no_sign.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 28150602,
+      "size": 29172455,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.2.1",
+          "date": "2026-07-16T06:29:25Z",
+          "localizedDescription": "- 重新设计启动向导及多个页面 (@Predidit)\r\n- 新增 windows/macOS 平台缓存目录自定义功能 (#2237) (@NanoShiki @0Chencc)\r\n- 修复 android 平台动态取色不稳定的问题 (@Predidit)\r\n- 增强一起看功能可靠性 (#1710 #1850 #1992) (@ChEnylnti)\r\n- 增强桌面平台播放器快捷键的可靠性 (@Predidit)\r\n- 现在 Linux 平台支持外部播放器功能 (@Predidit)\r\n- 增强规则更新可靠性 (@Predidit)\r\n- 修复调试模式下热重载不可用的问题 (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.1/Kazumi_ios_2.2.1_no_sign.ipa",
+          "size": 29172455,
+          "sha256": "404e675c2e675266ef7b5471c2779f820267dab65e51bbe1707233294bd59650",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.2.0",
           "date": "2026-07-09T14:36:23Z",
@@ -526,7 +578,7 @@
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "8258be4a1ba8577a82d098e88bd0593830c95a7346fa21e6e7c6ff13a9e93783",
+      "sha256": "404e675c2e675266ef7b5471c2779f820267dab65e51bbe1707233294bd59650",
       "category": "other"
     },
     {
