@@ -716,14 +716,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.0.e370a92",
-      "versionDate": "2026-07-17T07:40:46Z",
-      "versionDescription": "Nightly build from commit e370a92dfc03ce109ebce00ed4a7cfc64ad1c801",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260717/LiveContainer_Nightly_3.8.0.e370a92_Coexist.ipa",
+      "version": "3.8.0.257d3fe",
+      "versionDate": "2026-07-18T02:57:47Z",
+      "versionDescription": "Nightly build from commit 257d3fea71a5812ed7d82fece9296ecb199c0353",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/LiveContainer_Nightly_3.8.0.257d3fe_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4691450,
+      "size": 4691473,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -773,6 +773,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.0.257d3fe",
+          "date": "2026-07-18T02:57:47Z",
+          "localizedDescription": "Nightly build from commit 257d3fea71a5812ed7d82fece9296ecb199c0353",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/LiveContainer_Nightly_3.8.0.257d3fe_Coexist.ipa",
+          "size": 4691473,
+          "sha256": "c5f329c6d4d657b4d75552435473752bc39339e8c367245df898d8533526e86e",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.0.e370a92",
           "date": "2026-07-17T07:40:46Z",
           "localizedDescription": "Nightly build from commit e370a92dfc03ce109ebce00ed4a7cfc64ad1c801",
@@ -780,19 +789,10 @@
           "size": 4691450,
           "sha256": "cb2cb95fbd88f53036eed10fe9c416d23ac75dfc773b2d955e95917de5c37391",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.14.c2f3017",
-          "date": "2026-07-15T02:24:56Z",
-          "localizedDescription": "Nightly build from commit c2f30175822a9e15c4c55d06e776512750f3d526",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260715/LiveContainer_Nightly_3.7.14.c2f3017_Coexist.ipa",
-          "size": 4689192,
-          "sha256": "6997a3d7325601c0a9d1517643cfdbeea4a2262763f5a991f5052f571a5e96cf",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "cb2cb95fbd88f53036eed10fe9c416d23ac75dfc773b2d955e95917de5c37391",
+      "sha256": "c5f329c6d4d657b4d75552435473752bc39339e8c367245df898d8533526e86e",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -890,14 +890,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.0.e370a92",
-      "versionDate": "2026-07-17T07:40:46Z",
-      "versionDescription": "Nightly build from commit e370a92dfc03ce109ebce00ed4a7cfc64ad1c801",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260717/LiveContainer%2BSideStore_Nightly_3.8.0.e370a92_Coexist.ipa",
+      "version": "3.8.0.257d3fe",
+      "versionDate": "2026-07-18T02:57:47Z",
+      "versionDescription": "Nightly build from commit 257d3fea71a5812ed7d82fece9296ecb199c0353",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/LiveContainer%2BSideStore_Nightly_3.8.0.257d3fe_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 35386270,
+      "size": 35386296,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -947,6 +947,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.0.257d3fe",
+          "date": "2026-07-18T02:57:47Z",
+          "localizedDescription": "Nightly build from commit 257d3fea71a5812ed7d82fece9296ecb199c0353",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/LiveContainer%2BSideStore_Nightly_3.8.0.257d3fe_Coexist.ipa",
+          "size": 35386296,
+          "sha256": "5a37fd55d177d36e4947785769cfa612013f9dfc8eb48a6c295ce5f913e80bb8",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.0.e370a92",
           "date": "2026-07-17T07:40:46Z",
           "localizedDescription": "Nightly build from commit e370a92dfc03ce109ebce00ed4a7cfc64ad1c801",
@@ -954,19 +963,10 @@
           "size": 35386270,
           "sha256": "cf7abac4b68309c23704bc45fc2d21abc5247994b30e46d828482d2b59cdeea5",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.7.14.c2f3017",
-          "date": "2026-07-15T02:24:56Z",
-          "localizedDescription": "Nightly build from commit c2f30175822a9e15c4c55d06e776512750f3d526",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260715/LiveContainer%2BSideStore_Nightly_3.7.14.c2f3017_Coexist.ipa",
-          "size": 35384014,
-          "sha256": "853a13608d6d946039297e109932efa565c4222cb078392d5b39f30ba7f2507a",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "cf7abac4b68309c23704bc45fc2d21abc5247994b30e46d828482d2b59cdeea5",
+      "sha256": "5a37fd55d177d36e4947785769cfa612013f9dfc8eb48a6c295ce5f913e80bb8",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
