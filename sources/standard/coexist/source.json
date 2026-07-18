@@ -463,14 +463,14 @@
       "bundleIdentifier": "app.ish.iSH.coexist",
       "developerName": "ish-app",
       "subtitle": "Linux shell for iOS",
-      "version": "builds/810",
-      "versionDate": "2026-07-14T14:10:57Z",
+      "version": "builds/811",
+      "versionDate": "2026-07-18T06:54:57Z",
       "versionDescription": "Automated daily build",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260714/iSH_Pre-release_builds.810_Coexist.ipa",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/iSH_Pre-release_builds.811_Coexist.ipa",
       "localizedDescription": "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
       "iconURL": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
       "tintColor": "#BCBCBC",
-      "size": 4584863,
+      "size": 4584882,
       "appPermissions": {
         "entitlements": [
           "beta-reports-active",
@@ -488,6 +488,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "builds/811",
+          "date": "2026-07-18T06:54:57Z",
+          "localizedDescription": "Automated daily build",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260718/iSH_Pre-release_builds.811_Coexist.ipa",
+          "size": 4584882,
+          "sha256": "b20fa214307cf63b480995281591dfd3efd5421c2f05fc3e1c9afafdb604c5fa",
+          "minOSVersion": "11.0"
+        },
+        {
           "version": "builds/810",
           "date": "2026-07-14T14:10:57Z",
           "localizedDescription": "Automated daily build",
@@ -497,7 +506,7 @@
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "33f5d06d0fbc7ce890f192e10ecdddd8217daa2c4b4b215d573928826ef534ac",
+      "sha256": "b20fa214307cf63b480995281591dfd3efd5421c2f05fc3e1c9afafdb604c5fa",
       "category": "other"
     },
     {
