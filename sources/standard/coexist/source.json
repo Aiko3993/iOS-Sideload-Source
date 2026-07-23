@@ -574,20 +574,29 @@
       "bundleIdentifier": "com.example.kazumi.coexist",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.2.1",
-      "versionDate": "2026-07-16T06:29:25Z",
-      "versionDescription": "- 重新设计启动向导及多个页面 (@Predidit)\r\n- 新增 windows/macOS 平台缓存目录自定义功能 (#2237) (@NanoShiki @0Chencc)\r\n- 修复 android 平台动态取色不稳定的问题 (@Predidit)\r\n- 增强一起看功能可靠性 (#1710 #1850 #1992) (@ChEnylnti)\r\n- 增强桌面平台播放器快捷键的可靠性 (@Predidit)\r\n- 现在 Linux 平台支持外部播放器功能 (@Predidit)\r\n- 增强规则更新可靠性 (@Predidit)\r\n- 修复调试模式下热重载不可用的问题 (@Predidit)",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260716/Kazumi_2.2.1_Coexist.ipa",
+      "version": "2.2.3",
+      "versionDate": "2026-07-23T05:09:53Z",
+      "versionDescription": "> [!NOTE]\r\n> 这是 2.2.2 的热修复版本，更多更新日志参考 2.2.2",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260723/Kazumi_2.2.3_Coexist.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 29082289,
+      "size": 29093800,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.2.3",
+          "date": "2026-07-23T05:09:53Z",
+          "localizedDescription": "> [!NOTE]\r\n> 这是 2.2.2 的热修复版本，更多更新日志参考 2.2.2",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260723/Kazumi_2.2.3_Coexist.ipa",
+          "size": 29093800,
+          "sha256": "1f38356aa294d508722380bf360a0416cbc5557414cbb8506e8a838976cb5bb2",
+          "minOSVersion": "13.0"
+        },
         {
           "version": "2.2.1",
           "date": "2026-07-16T06:29:25Z",
@@ -596,18 +605,9 @@
           "size": 29082289,
           "sha256": "973b882f2306eb659b2811504089ac850f10ef601a51b0a068a86f1b958a7f50",
           "minOSVersion": "13.0"
-        },
-        {
-          "version": "2.2.0",
-          "date": "2026-07-09T14:36:23Z",
-          "localizedDescription": "- 新增API规则支持 (@Predidit)\r\n- 新增 Windows 平台系统代理支持 (@Predidit)\r\n- 修复历史记录较多时应用启动卡顿的问题 (#2293) (#2233) (@Predidit)\r\n- 修复已经已完播剧集重复观看从结尾处开始的问题 (#2222) (@Predidit)\r\n- 修复部分 Android 设备硬件解码不生效的问题 (@Predidit)\r\n- 修复特定情况下播放器控制面板不会自动隐藏的问题 (@liangyuR)\r\n- 修复部分地区规则仓库镜像不可用的问题 (@Predidit)\r\n- 修复HTTP站点不可用的问题 (#2292) (@Predidit)\r\n- 更多的播放器控制面板动效 (@LiggMax)\r\n- 其他代码结构调整 (@Predidit)",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260709/Kazumi_2.2.0_Coexist.ipa",
-          "size": 28080858,
-          "sha256": "b74d3399bc51e1d01b2e677f5d31ab275b34b901a6e65193fe7441205b047772",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "973b882f2306eb659b2811504089ac850f10ef601a51b0a068a86f1b958a7f50",
+      "sha256": "1f38356aa294d508722380bf360a0416cbc5557414cbb8506e8a838976cb5bb2",
       "category": "other"
     },
     {
