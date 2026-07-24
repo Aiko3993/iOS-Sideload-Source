@@ -1,0 +1,917 @@
+import { TRANSLATIONS, APP_MODES, getDisplayBundleId, resolveDownloadURL, RESOLVED_AUTHOR } from './config.js';
+import { getIcon, formatBytes, timeAgo, cleanMarkdown, copyToClipboard, getPublicUrl, roundRect } from './utils.js';
+import { getAppTheme, applyModalTheme } from './theme.js';
+import { getState, setState } from './state.js';
+const grid = document.getElementById('apps-grid');
+const searchInput = document.getElementById('search-input');
+const emptyState = document.getElementById('empty-state');
+const toastContainer = document.getElementById('toast-container');
+const categoryBar = document.getElementById('category-bar');
+const categoryBarScroll = document.getElementById('category-bar-scroll');
+const categoryFadeLeft = document.getElementById('category-fade-left');
+const categoryFadeRight = document.getElementById('category-fade-right');
+
+function normalizeCategory(c) {
+    if (!c || typeof c !== 'string') return 'other';
+    const v = c.trim().toLowerCase();
+    return v || 'other';
+}
+
+function categoryLabel(c) {
+    const v = normalizeCategory(c);
+    if (v === 'all') return 'All';
+    const parts = v.replace(/[_-]+/g, ' ').split(' ').filter(Boolean);
+    return parts.map(x => x.charAt(0).toUpperCase() + x.slice(1)).join(' ');
+}
+
+function renderCategoryBar() {
+    if (!categoryBar || !categoryBarScroll) return;
+
+    const { currentApps, currentCategory } = getState();
+    const groups = new Map();
+    for (const app of (currentApps || [])) {
+        const key = app.githubRepo || `${app.developerName}::${app.name}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(app);
+    }
+
+    const counts = new Map();
+    for (const apps of groups.values()) {
+        const cats = new Set(apps.map(a => normalizeCategory(a?.category)));
+        for (const c of cats) {
+            counts.set(c, (counts.get(c) || 0) + 1);
+        }
+    }
+
+    const entries = Array.from(counts.entries());
+    if (entries.length <= 1) {
+        categoryBar.classList.add('hidden');
+        return;
+    }
+
+    entries.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    const sortedCats = entries.map(([c]) => c).filter(c => c !== 'other');
+    if (counts.has('other')) sortedCats.push('other');
+
+    const isValidSelection = currentCategory === 'all' || counts.has(currentCategory);
+    if (!isValidSelection) setState('currentCategory', 'all');
+
+    const active = getState().currentCategory;
+
+    const baseBtn = 'flex-shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200 active:scale-[0.98] select-none whitespace-nowrap border focus:outline-none focus:ring-2 focus:ring-primary-500/15 backdrop-blur-xl';
+    const inactive = 'bg-white/70 text-gray-700 border-gray-200/70 hover:bg-white/90 hover:border-primary-500/40 active:bg-white dark:bg-white/5 dark:text-gray-100 dark:border-white/5 dark:hover:bg-white/10 dark:hover:border-primary-500/40 dark:active:bg-white/10';
+    const activeCls = 'bg-primary-600/20 text-primary-800 border-primary-500/35 hover:bg-primary-600/25 active:bg-primary-600/25 shadow-sm dark:bg-primary-500/30 dark:text-primary-100 dark:border-primary-500/45 dark:hover:bg-primary-500/35 dark:active:bg-primary-500/35';
+
+    const totalCount = groups.size;
+    const allBtn = `
+        <button type="button" data-category="all"
+            class="${baseBtn} ${active === 'all' ? activeCls : inactive}">
+            ${categoryLabel('all')}
+            <span class="ml-2 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-[10px] font-bold bg-white/90 text-gray-700 ring-1 ring-black/5 dark:bg-gray-900/70 dark:text-gray-200 dark:ring-white/10">
+                ${totalCount}
+            </span>
+        </button>
+    `;
+
+    const catBtns = sortedCats.map(c => {
+        const count = counts.get(c) || 0;
+        return `
+            <button type="button" data-category="${c}"
+                class="${baseBtn} ${active === c ? activeCls : inactive}">
+                ${categoryLabel(c)}
+                <span class="ml-2 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full text-[10px] font-bold bg-white/90 text-gray-700 ring-1 ring-black/5 dark:bg-gray-900/70 dark:text-gray-200 dark:ring-white/10">
+                    ${count}
+                </span>
+            </button>
+        `;
+    }).join('');
+
+    categoryBarScroll.innerHTML = allBtn + catBtns;
+    categoryBar.classList.remove('hidden');
+
+    const updateFades = () => {
+        if (!categoryFadeLeft || !categoryFadeRight) return;
+        const el = categoryBarScroll;
+        const maxScrollLeft = Math.max(0, el.scrollWidth - el.clientWidth);
+        const left = el.scrollLeft;
+        const showLeft = maxScrollLeft > 2 && left > 2;
+        const showRight = maxScrollLeft > 2 && left < maxScrollLeft - 2;
+        categoryFadeLeft.classList.toggle('category-fade--show', showLeft);
+        categoryFadeRight.classList.toggle('category-fade--show', showRight);
+    };
+
+    if (!categoryBarScroll.dataset.bound) {
+        categoryBarScroll.addEventListener('click', (e) => {
+            const btn = e.target.closest('button[data-category]');
+            if (!btn) return;
+            const key = btn.getAttribute('data-category') || 'all';
+            setState('currentCategory', key);
+            renderCategoryBar();
+            filterApps(false);
+        });
+        categoryBarScroll.addEventListener('scroll', () => updateFades(), { passive: true });
+        window.addEventListener('resize', () => updateFades());
+        categoryBarScroll.dataset.bound = '1';
+    }
+
+    requestAnimationFrame(updateFades);
+}
+
+export function createInstallButtons(app, isModal = false) {
+    const ic = 'w-5 h-5 flex-shrink-0 transition-transform duration-500 transform-gpu';
+    const lc = 'max-w-0 opacity-0 group-hover/btn:max-w-[200px] group-hover/btn:opacity-100 group-hover/btn:ml-2 group-focus/btn:max-w-[200px] group-focus/btn:opacity-100 group-focus/btn:ml-2 group-data-[expanded=true]/btn:max-w-[200px] group-data-[expanded=true]/btn:opacity-100 group-data-[expanded=true]/btn:ml-2 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] whitespace-nowrap font-bold text-xs truncate';
+    const bc = 'group/btn flex-1 h-10 rounded-xl flex items-center justify-center gap-0 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] active:scale-95 shadow-sm overflow-hidden hover:shadow-md min-w-0';
+    const url = resolveDownloadURL(app);
+
+    return `<div class="flex gap-2 w-full">
+                    <a href="${url}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                       class="${bc} bg-gray-500/5 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-500/10 dark:hover:bg-white/10 focus:bg-gray-500/10 dark:focus:bg-white/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-gray-500/20 dark:ring-white/10 hover:ring-gray-500/40 dark:hover:ring-white/20"
+                       title="IPA">
+                        ${getIcon('download', ic)}
+                        <span class="${lc}">IPA</span>
+                    </a>
+                    <a href="altstore://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                       class="${bc} bg-[#00A97F]/5 text-[#00A97F] hover:bg-[#00A97F]/10 focus:bg-[#00A97F]/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-[#00A97F]/20 hover:ring-[#00A97F]/40"
+                       title="AltStore">
+                        ${getIcon('altstore', ic)}
+                        <span class="${lc}">AltStore</span>
+                    </a>
+                    <a href="sidestore://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                       class="${bc} bg-[#A359FF]/5 text-[#A359FF] hover:bg-[#A359FF]/10 focus:bg-[#A359FF]/10 hover:flex-[3] focus:flex-[3] data-[expanded=true]:flex-[3] ring-1 ring-[#A359FF]/20 hover:ring-[#A359FF]/40"
+                       title="SideStore">
+                        ${getIcon('sidestore', ic)}
+                        <span class="${lc}">SideStore</span>
+                    </a>
+                    <a href="livecontainer://install?url=${encodeURIComponent(url)}" onclick="window.handleDownloadClick(event)" data-is-modal="${isModal}"
+                       class="${bc} bg-[#2563EB]/5 text-[#2563EB] hover:bg-[#2563EB]/10 focus:bg-[#2563EB]/10 hover:flex-[4] focus:flex-[4] data-[expanded=true]:flex-[4] ring-1 ring-[#2563EB]/20 hover:ring-[#2563EB]/40"
+                       title="LiveContainer">
+                        ${getIcon('livecontainer', ic)}
+                        <span class="${lc}">LiveContainer</span>
+                    </a>
+                </div>`;
+}
+
+export function createFlatCard(app, index) {
+    const { tint, accessibleColors, glowRgbLight, glowRgbDark } = getAppTheme(app);
+    const { currentLang } = getState();
+    const t = TRANSLATIONS[currentLang];
+
+    let descSummary = app.subtitle || app.localizedDescription || app.description || "";
+    descSummary = descSummary.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1').replace(/!\[[^\]]*\]\([^\)]+\)/g, '');
+    if (descSummary.length > 60) descSummary = descSummary.substring(0, 60) + '...';
+
+    const searchStr = [app.name, app.developerName, getDisplayBundleId(app), app.bundleIdentifier, app.localizedDescription, app.description].filter(Boolean).join(' ').toLowerCase().replace(/"/g, '&quot;');
+    const categoriesStr = normalizeCategory(app.category);
+
+    return `
+        <div class="app-card group relative bg-white dark:bg-gray-900 rounded-3xl p-5 hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full animate-slide-up ring-1 ring-gray-100 dark:ring-gray-800 hover:ring-2 hover:ring-primary-500/20 dark:hover:ring-primary-500/20 dynamic-app-glow group-hover:glow-active"
+             data-search="${searchStr}"
+             data-categories="${categoriesStr}"
+             style="animation-delay: ${index * 50}ms; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
+
+            <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div class="flex items-start justify-between mb-4 z-10">
+                <div class="relative">
+                     <img src="${app.iconURL}" alt="${app.name}" loading="lazy" draggable="false"
+                         class="no-drag w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover:shadow-md transition duration-300 group-hover:scale-105"
+                         style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
+                </div>
+
+                <div class="flex flex-col items-end gap-1.5">
+                     <span class="badge-dynamic-text inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold shadow-sm border tracking-wide uppercase"
+                           title="v${app.version}"
+                           style="--badge-text-light: ${accessibleColors.textLight}; --badge-text-dark: ${accessibleColors.textDark}; border-color: rgba(var(--current-glow), 0.3); background-color: rgba(var(--current-glow), 0.15); color: rgb(var(--current-text));">
+                        v${app.version.length > 12 ? app.version.substring(0, 10) + '...' : app.version}
+                    </span>
+                    <span class="text-[10px] font-medium text-gray-400 dark:text-gray-300 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-md">
+                        ${formatBytes(app.size)}
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-4 z-10 flex-grow">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight mb-1 line-clamp-1 group-hover:text-[var(--app-tint-light)] dark:group-hover:text-[var(--app-tint-dark)] transition-colors duration-300"
+                    title="${app.name}"
+                    style="--app-tint-light: rgb(${accessibleColors.textLight}); --app-tint-dark: rgb(${accessibleColors.textDark});">
+                    ${app.name}
+                </h3>
+                <p class="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5 line-clamp-1 flex items-center gap-1">
+                    <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    ${app.developerName}
+                </p>
+                ${descSummary ? `<p class="text-xs text-gray-400 dark:text-gray-500 line-clamp-2 leading-relaxed">${descSummary}</p>` : ''}
+            </div>
+
+            <div class="mt-auto space-y-3 z-10">
+                <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-white/5 pt-3 mb-1">
+                     <div class="flex items-center gap-2">
+                         <button onclick="window.openModal('${app.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                                 style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
+                                 onmouseover="this.style.color='var(--hover-color)'"
+                                 onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
+                            <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
+                                <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </span>
+                            <span class="font-medium max-[340px]:hidden">${t.details}</span>
+                        </button>
+
+                     </div>
+                    <span class="font-medium opacity-70" title="${new Date(app.versionDate).toLocaleDateString()}">${timeAgo(app.versionDate, currentLang)}</span>
+                </div>
+
+                ${createInstallButtons(app)}
+            </div>
+        </div>
+    `;
+}
+
+export function createStackCard(group, index) {
+    const sortedGroup = [...group].sort((a, b) => a.name.length - b.name.length);
+    const primaryApp = sortedGroup[0] || group[0];
+    const { accessibleColors, glowRgbLight, glowRgbDark } = getAppTheme(primaryApp);
+    const { currentLang } = getState();
+    const t = TRANSLATIONS[currentLang];
+
+    let descSummary = primaryApp.subtitle || primaryApp.localizedDescription || primaryApp.description || "";
+    descSummary = descSummary.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1').replace(/!\[[^\]]*\]\([^\)]+\)/g, '');
+    if (descSummary.length > 60) descSummary = descSummary.substring(0, 60) + '...';
+
+    const repoKey = primaryApp.githubRepo || `${primaryApp.developerName}::${primaryApp.name}`;
+    const searchStr = group.map(a => [a.name, a.developerName, getDisplayBundleId(a), a.bundleIdentifier, a.localizedDescription, a.description].filter(Boolean).join(' ')).join(' ').toLowerCase().replace(/"/g, '&quot;');
+    const categoriesStr = Array.from(new Set(group.map(a => normalizeCategory(a.category)))).sort().join(',');
+
+    const bgHTML = `
+        <div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition duration-300 stack-bg-1 shadow-sm"></div>
+        ${group.length > 2 ? '<div class="absolute inset-0 bg-white dark:bg-gray-900 rounded-3xl ring-1 ring-gray-200 dark:ring-gray-800 transition duration-300 stack-bg-2 shadow-sm"></div>' : ''}
+    `;
+
+    return `
+        <div class="app-card group/stack relative h-full animate-slide-up select-none hover:-translate-y-1 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+             data-search="${searchStr}"
+             data-categories="${categoriesStr}"
+             style="animation-delay: ${index * 50}ms;">
+
+            ${bgHTML}
+
+            <div class="relative bg-white dark:bg-gray-900 rounded-3xl p-5 transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col h-full ring-1 ring-gray-100 dark:ring-gray-800 group-hover/stack:ring-2 group-hover/stack:ring-primary-500/20 dark:group-hover/stack:ring-primary-500/20 dynamic-app-glow group-hover/stack:glow-active z-10"
+                 style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); --app-glow-light: ${glowRgbLight}; --app-glow-dark: ${glowRgbDark};">
+
+                <div class="glow-target absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="flex items-start justify-between mb-4 z-10">
+                    <div class="relative">
+                         <img src="${primaryApp.iconURL}" alt="${primaryApp.name}" loading="lazy" draggable="false"
+                             class="no-drag w-16 h-16 rounded-[1.25rem] object-cover bg-gray-100 dark:bg-gray-800 shadow-sm group-hover/stack:shadow-md transition duration-300 group-hover/stack:scale-105"
+                             style="box-shadow: 0 4px 12px -2px rgba(var(--current-glow), var(--icon-glow-opacity));">
+                    </div>
+
+                    <div class="flex flex-col items-end gap-1.5">
+                         <span class="badge-dynamic-text inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-bold shadow-sm border tracking-wide uppercase"
+                               title="v${primaryApp.version}"
+                               style="--badge-text-light: ${accessibleColors.textLight}; --badge-text-dark: ${accessibleColors.textDark}; border-color: rgba(var(--current-glow), 0.3); background-color: rgba(var(--current-glow), 0.15); color: rgb(var(--current-text));">
+                            v${primaryApp.version.length > 12 ? primaryApp.version.substring(0, 10) + '...' : primaryApp.version}
+                        </span>
+                        <span class="text-[10px] font-medium text-gray-400 dark:text-gray-300 bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-md">
+                            ${formatBytes(primaryApp.size)}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mb-4 z-10 flex-grow">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight mb-1 line-clamp-1 group-hover/stack:text-[var(--app-tint-light)] dark:group-hover/stack:text-[var(--app-tint-dark)] transition-colors duration-300"
+                        title="${primaryApp.name}"
+                        style="--app-tint-light: rgb(${accessibleColors.textLight}); --app-tint-dark: rgb(${accessibleColors.textDark});">
+                        ${primaryApp.name}
+                    </h3>
+                    <p class="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5 line-clamp-1 flex items-center gap-1">
+                        <svg class="w-3 h-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        ${primaryApp.developerName}
+                    </p>
+                    ${descSummary ? `<p class="text-xs text-gray-400 dark:text-gray-500 line-clamp-2 leading-relaxed">${descSummary}</p>` : ''}
+                </div>
+
+                <div class="mt-auto space-y-3 z-10">
+                    <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-white/5 pt-3 mb-1">
+                         <div class="flex items-center gap-2">
+                             <button onclick="window.openModal('${primaryApp.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                                     style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
+                                     onmouseover="this.style.color='var(--hover-color)'"
+                                     onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
+                                <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
+                                    <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </span>
+                                <span class="font-medium max-[340px]:hidden">${t.details}</span>
+                            </button>
+                            <button onclick="window.openVersionsModal('${repoKey}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                                     style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
+                                     onmouseover="this.style.color='var(--hover-color)'"
+                                     onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
+                                <span class="bg-gray-100 dark:bg-white/10 p-1 rounded-md group-hover/btn:bg-[rgba(var(--current-glow),0.1)] transition-colors">
+                                    <svg class="w-3.5 h-3.5 transition-transform transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                </span>
+                                <span class="font-medium max-[340px]:hidden">${t.variantsButton.replace('{0}', group.length)}</span>
+                            </button>
+                         </div>
+                         <span class="font-medium opacity-70" title="${new Date(primaryApp.versionDate).toLocaleDateString()}">${timeAgo(primaryApp.versionDate, currentLang)}</span>
+                    </div>
+
+                    ${createInstallButtons(primaryApp)}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+export function openVersionsModal(repoKey) {
+    const { currentApps, currentLang } = getState();
+    const t = TRANSLATIONS[currentLang];
+
+    // Exact match the group key created in renderApps()
+    const group = currentApps.filter(a => (a.githubRepo || `${a.developerName}::${a.name}`) === repoKey);
+    if (!group.length) return;
+
+    group.sort((a, b) => a.name.length - b.name.length);
+    const primaryApp = group[0];
+
+    document.getElementById('versions-modal-icon').src = primaryApp.iconURL;
+    document.getElementById('versions-modal-title').textContent = t.variantsTitle || t.versions;
+    document.getElementById('versions-modal-count').textContent = t.variantsAvailable.replace('{0}', group.length);
+
+    const listHtml = group.map(app => {
+        return `
+            <div class="bg-white dark:bg-white/5 p-4 rounded-[1.25rem] flex flex-col gap-4 ring-1 ring-gray-100 dark:ring-white/5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-[17px] text-gray-900 dark:text-gray-100 truncate">${app.name}</h4>
+                        <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1.5 flex items-center flex-wrap gap-1.5 min-w-0">
+                            <span class="font-bold bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-md text-[10px] uppercase text-gray-600 dark:text-gray-300 truncate max-w-[100px] sm:max-w-[150px]" title="v${app.version}">v${app.version}</span>
+                            <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                            <span>${formatBytes(app.size)}</span>
+                            <span class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></span>
+                            <span>${new Date(app.versionDate).toLocaleDateString()}</span>
+                        </p>
+                    </div>
+                    <button onclick="window.closeVersionsModal(); setTimeout(() => window.openModal('${app.bundleIdentifier}'), 300);" class="flex-shrink-0 p-2 rounded-xl bg-gray-100 dark:bg-white/10 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-200 transition-colors mt-0.5" title="${t.details || 'Details'}">
+                        ${getIcon('details', 'w-5 h-5')}
+                    </button>
+                </div>
+                <div class="w-full">
+                    ${createInstallButtons(app, true)}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    document.getElementById('versions-modal-list').innerHTML = listHtml;
+
+    const backdrop = document.getElementById('versions-modal-backdrop');
+    const panel = document.getElementById('versions-modal-panel');
+    const panelInner = panel.firstElementChild;
+
+    document.body.style.overflow = 'hidden';
+    backdrop.classList.remove('hidden');
+    panel.classList.remove('hidden');
+
+    void panel.offsetWidth;
+
+    backdrop.classList.remove('opacity-0');
+    panelInner.classList.remove('translate-y-full', 'sm:scale-95', 'opacity-0');
+    panelInner.classList.add('translate-y-0', 'sm:scale-100', 'opacity-100');
+}
+
+export function closeVersionsModal() {
+    const backdrop = document.getElementById('versions-modal-backdrop');
+    const panel = document.getElementById('versions-modal-panel');
+    if (!panel) return;
+    const panelInner = panel.firstElementChild;
+    if (!backdrop || backdrop.classList.contains('hidden')) return;
+
+    backdrop.classList.add('opacity-0');
+    panelInner.classList.remove('translate-y-0', 'sm:scale-100', 'opacity-100');
+    panelInner.classList.add('translate-y-full', 'sm:scale-95', 'opacity-0');
+
+    setTimeout(() => {
+        backdrop.classList.add('hidden');
+        panel.classList.add('hidden');
+        if (!document.getElementById('modal-backdrop') || document.getElementById('modal-backdrop').classList.contains('opacity-0')) {
+            document.body.style.overflow = '';
+        }
+    }, 500);
+}
+
+export function renderApps() {
+    const { currentApps, currentSort, currentLang } = getState();
+
+    let sorted = [...currentApps];
+
+    sorted.sort((a, b) => {
+        switch (currentSort) {
+            case 'date': return new Date(b.versionDate) - new Date(a.versionDate);
+            case 'name': return a.name.localeCompare(b.name);
+            case 'size': return b.size - a.size;
+            default: return 0;
+        }
+    });
+
+    // Group apps by githubRepo (or developerName::name if omitted)
+    const groups = new Map();
+    sorted.forEach(app => {
+        const key = app.githubRepo || `${app.developerName}::${app.name}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(app);
+    });
+
+    const groupedArray = Array.from(groups.values());
+    grid.innerHTML = groupedArray.map((group, index) => {
+        if (group.length > 1) {
+            return createStackCard(group, index);
+        }
+        return createFlatCard(group[0], index);
+    }).join('');
+
+    renderCategoryBar();
+    filterApps();
+}
+
+export function filterApps(isSearchEvent = false) {
+    if (!searchInput) return;
+    const query = searchInput.value.toLowerCase().trim();
+    const { currentCategory } = getState();
+    let visibleCount = 0;
+    const cards = grid.querySelectorAll('.app-card');
+
+    cards.forEach(card => {
+        if (isSearchEvent) card.classList.remove('animate-slide-up');
+        const catKey = currentCategory || 'all';
+        const cats = (card.dataset.categories || 'other').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+        const categoryOk = (catKey === 'all') || cats.includes(catKey);
+        const searchOk = (!query || card.dataset.search.includes(query));
+        if (categoryOk && searchOk) {
+            card.style.display = '';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+    } else {
+        emptyState.classList.add('hidden');
+    }
+}
+
+export function updateLanguage(lang) {
+    setState('currentLang', lang);
+    const t = TRANSLATIONS[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) {
+            let text = t[key];
+            if (text.includes('{{AUTHOR}}')) text = text.replace(/\{\{AUTHOR\}\}/g, RESOLVED_AUTHOR);
+            el.textContent = text;
+        }
+    });
+
+    const maintainerLink = document.getElementById('maintainer-link');
+    if (maintainerLink) {
+        if (RESOLVED_AUTHOR === 'Local Environment') {
+            maintainerLink.removeAttribute('href');
+            maintainerLink.removeAttribute('target');
+            maintainerLink.classList.remove('hover:underline');
+            maintainerLink.style.cursor = 'text';
+        } else {
+            maintainerLink.href = `https://github.com/${RESOLVED_AUTHOR}`;
+        }
+    }
+    if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+
+    const { currentSource, currentApps } = getState();
+    updateSourceUI(currentSource);
+    if (currentApps.length > 0) renderApps();
+}
+
+export function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-xl border backdrop-blur-md animate-slide-up transform transition-all duration-300 ${type === 'success'
+        ? 'bg-white/90 dark:bg-gray-800/90 border-green-200 dark:border-green-900 text-green-700 dark:text-green-400'
+        : 'bg-white/90 dark:bg-gray-800/90 border-red-200 dark:border-red-900 text-red-700 dark:text-red-400'
+        }`;
+    const icon = type === 'success' ? getIcon('check', 'w-5 h-5') : getIcon('close', 'w-5 h-5');
+    toast.innerHTML = `${icon}<span class="text-sm font-medium">${message}</span>`;
+    toastContainer.appendChild(toast);
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+export function copySourceURL(specificSource = null) {
+    const { currentSource, currentLang, coexistMode } = getState();
+    const targetMode = specificSource || currentSource;
+    const key = (targetMode === 'all') ? 'standard' : targetMode;
+    const basePath = APP_MODES[key]?.path || APP_MODES['standard'].path;
+    const subDir = coexistMode ? 'coexist' : 'original';
+    const jsonPath = `${basePath}/${subDir}/source.json`;
+    const fullUrl = getPublicUrl(jsonPath);
+    const t = TRANSLATIONS[currentLang];
+    const name = t[APP_MODES[key].labelKey];
+    copyToClipboard(fullUrl, `${name} ${t.sourceCopied}`, t.copyFailed, showToast);
+}
+
+export function updateSourceUI(activeKey) {
+    const track = document.getElementById('source-label-track');
+    const mode = APP_MODES[activeKey];
+    if (track && mode) {
+        track.style.transform = `translateY(${mode.uiOffset}px)`;
+        updateCopyButtonUI(activeKey);
+    }
+}
+
+export function updateCopyButtonUI(mode) {
+    const wrapper = document.getElementById('copy-btn-wrapper');
+    if (!wrapper) return;
+
+    const prevMode = wrapper.dataset.copyMode || null;
+    wrapper.dataset.copyMode = mode;
+    const isCompact = window.innerWidth >= 1000;
+
+    const singleBtn = (targetMode) => {
+        const colorClass = targetMode === 'nsfw'
+            ? 'text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/30'
+            : 'text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
+        return `<button onclick="window.copySourceURL('${targetMode}')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl ${colorClass} transition-all duration-300 active:scale-95" title="Copy Source URL">${getIcon('copy', 'w-5 h-5')}</button>`;
+    };
+
+    const dualBtns = (s1 = '', s2 = '') => {
+        const bc1 = 'hover:bg-emerald-50 dark:hover:bg-emerald-900/30';
+        const bc2 = 'hover:bg-pink-50 dark:hover:bg-pink-900/30';
+        if (isCompact) {
+            return `
+                <button onclick="window.copySourceURL('standard')" class="copy-btn w-10 h-[18px] flex items-center justify-center rounded-md text-emerald-500 ${bc1} transition-all duration-300 active:scale-95" title="Copy Standard Source" style="${s1}">${getIcon('copy', 'w-3.5 h-3.5')}</button>
+                <button onclick="window.copySourceURL('nsfw')" class="copy-btn w-10 h-[18px] flex items-center justify-center rounded-md text-pink-500 ${bc2} transition-all duration-300 active:scale-95" title="Copy NSFW Source" style="${s2}">${getIcon('copy', 'w-3.5 h-3.5')}</button>`;
+        }
+        return `
+            <button onclick="window.copySourceURL('standard')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl text-emerald-500 ${bc1} transition-all duration-300 active:scale-95" title="Copy Standard Source" style="${s1}">${getIcon('copy', 'w-5 h-5')}</button>
+            <button onclick="window.copySourceURL('nsfw')" class="copy-btn w-10 h-10 flex items-center justify-center rounded-xl text-pink-500 ${bc2} transition-all duration-300 active:scale-95" title="Copy NSFW Source" style="${s2}">${getIcon('copy', 'w-5 h-5')}</button>`;
+    };
+
+    const wrapAll = isCompact
+        ? "flex flex-col items-center justify-center gap-1 transition-all duration-300 ease-out flex-shrink-0 h-12 min-w-[40px]"
+        : "flex flex-row items-center justify-end gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+    const wrapSingle = isCompact
+        ? "flex flex-col items-center justify-center gap-1.5 transition-all duration-300 ease-out flex-shrink-0 h-12 min-w-[40px]"
+        : "flex flex-row items-center justify-end gap-1.5 transition-all duration-300 ease-out flex-shrink-0 min-w-[40px]";
+
+    // Split/merge offset: vertical on desktop, horizontal on mobile
+    const splitIn = isCompact ? 'translateY(9px)' : 'translateX(22px)';
+    const splitOut = isCompact ? 'translateY(-9px)' : 'translateX(0)';
+    const mergeIn = isCompact ? 'translateY(9px)' : 'translateX(22px)';
+    const mergeOut = isCompact ? 'translateY(-9px)' : 'translateX(0)';
+
+    // --- Initial load ---
+    if (!prevMode) {
+        wrapper.className = mode === 'all' ? wrapAll : wrapSingle;
+        wrapper.innerHTML = mode === 'all' ? dualBtns() : singleBtn(mode);
+        return;
+    }
+
+    // --- Split (single → dual): e.g. NSFW → All ---
+    if (prevMode !== 'all' && mode === 'all') {
+        const oldBtn = wrapper.querySelector('.copy-btn');
+        if (oldBtn) {
+            oldBtn.style.transform = 'scale(0.5)';
+            oldBtn.style.opacity = '0';
+        }
+        setTimeout(() => {
+            wrapper.className = wrapAll;
+            wrapper.innerHTML = dualBtns(
+                `transform: ${splitIn} scale(0.5); opacity: 0;`,
+                `transform: ${splitOut} scale(0.5); opacity: 0;`
+            );
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    wrapper.querySelectorAll('.copy-btn').forEach(btn => {
+                        btn.style.transform = 'translate(0,0) scale(1)';
+                        btn.style.opacity = '1';
+                    });
+                });
+            });
+        }, 200);
+        return;
+    }
+
+    // --- Merge (dual → single): e.g. All → Standard ---
+    if (prevMode === 'all' && mode !== 'all') {
+        const btns = wrapper.querySelectorAll('.copy-btn');
+        if (btns.length === 2) {
+            btns[0].style.transform = `${mergeIn} scale(0.7)`;
+            btns[0].style.opacity = '0';
+            btns[1].style.transform = `${mergeOut} scale(0.7)`;
+            btns[1].style.opacity = '0';
+        }
+        setTimeout(() => {
+            wrapper.className = wrapSingle;
+            wrapper.innerHTML = singleBtn(mode);
+            const btn = wrapper.querySelector('.copy-btn');
+            if (btn) {
+                btn.style.transform = 'scale(0.7)';
+                btn.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        btn.style.transform = 'scale(1)';
+                        btn.style.opacity = '1';
+                    });
+                });
+            }
+        }, 300);
+        return;
+    }
+
+    // --- Color swap (single → single): Standard ↔ NSFW ---
+    wrapper.className = wrapSingle;
+    const existingBtn = wrapper.querySelector('.copy-btn');
+    if (existingBtn) {
+        existingBtn.style.transform = 'scale(0.85)';
+        existingBtn.style.opacity = '0';
+        setTimeout(() => {
+            wrapper.innerHTML = singleBtn(mode);
+            const newBtn = wrapper.querySelector('.copy-btn');
+            if (newBtn) {
+                newBtn.style.transform = 'scale(0.85)';
+                newBtn.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        newBtn.style.transform = 'scale(1)';
+                        newBtn.style.opacity = '1';
+                    });
+                });
+            }
+        }, 200);
+    } else {
+        wrapper.innerHTML = singleBtn(mode);
+    }
+}
+
+export function updateHeaderIcon(sourceKey) {
+    const mode = APP_MODES[sourceKey];
+    ['icon-standard', 'icon-nsfw', 'icon-all'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            if (id === mode.iconId) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+    });
+}
+
+export function updateFavicon(sourceKey) {
+    const mode = APP_MODES[sourceKey];
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    const canvas = document.createElement('canvas');
+    canvas.width = 64; canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return; // Safety check
+    ctx.fillStyle = mode.themeColor;
+    ctx.clearRect(0, 0, 64, 64);
+    ctx.beginPath();
+    roundRect(ctx, 0, 0, 64, 64, 14);
+    ctx.fill();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.fillStyle = 'none';
+    ctx.save();
+    ctx.translate(32, 32); ctx.scale(1.6, 1.6); ctx.translate(-12, -12);
+    const p = new Path2D(mode.faviconPath);
+    ctx.stroke(p);
+    ctx.restore();
+    link.href = canvas.toDataURL();
+}
+
+export function openModal(identifier) {
+    const { currentApps, currentLang } = getState();
+    const app = currentApps.find(a => a.bundleIdentifier === identifier || a.name === identifier);
+    if (!app) return;
+    const theme = getAppTheme(app);
+    applyModalTheme(theme);
+    renderModalHeader(app);
+    document.getElementById('modal-meta-grid').innerHTML = buildModalMeta(app, currentLang);
+    document.getElementById('modal-content').innerHTML = buildModalContent(app, currentLang);
+
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalPanel = document.getElementById('modal-panel');
+    const modalContentPanel = modalPanel.querySelector('div');
+
+    document.body.style.overflow = 'hidden';
+    modalBackdrop.classList.remove('hidden');
+    modalPanel.classList.remove('hidden');
+
+    void modalPanel.offsetWidth;
+
+    modalBackdrop.classList.remove('opacity-0');
+    modalContentPanel.classList.remove('translate-y-full', 'sm:scale-95', 'opacity-0');
+    modalContentPanel.classList.add('translate-y-0', 'sm:scale-100', 'opacity-100');
+}
+
+export function closeModal() {
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalPanel = document.getElementById('modal-panel');
+    const modalContentPanel = modalPanel.querySelector('div');
+    modalBackdrop.classList.add('opacity-0');
+    modalContentPanel.classList.remove('translate-y-0', 'sm:scale-100', 'opacity-100');
+    modalContentPanel.classList.add('translate-y-full', 'sm:scale-95', 'opacity-0');
+    setTimeout(() => {
+        modalBackdrop.classList.add('hidden');
+        modalPanel.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 500);
+}
+
+function renderModalHeader(app) {
+    const modalTitle = document.getElementById('modal-title');
+    const modalVersionBadge = document.getElementById('modal-version-badge');
+    const modalSize = document.getElementById('modal-size');
+    const modalIcon = document.getElementById('modal-icon');
+
+    modalTitle.textContent = app.name;
+    modalTitle.className = "text-2xl font-bold leading-tight mb-0.5 text-[var(--modal-tint-light)] dark:text-[var(--modal-tint-dark)] transition-colors duration-300 line-clamp-2 break-words";
+
+    const githubLink = document.getElementById('modal-github-link');
+    if (githubLink) {
+        if (app.githubRepo) {
+            githubLink.href = `https://github.com/${app.githubRepo}`;
+            githubLink.classList.remove('hidden');
+            githubLink.classList.add('flex');
+        } else {
+            githubLink.classList.add('hidden');
+            githubLink.classList.remove('flex');
+        }
+    }
+
+    const subtitleEl = document.getElementById('modal-subtitle');
+    if (subtitleEl) {
+        if (app.subtitle) {
+            subtitleEl.textContent = app.subtitle;
+            subtitleEl.className = "text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed pb-0.5";
+            subtitleEl.style.display = '';
+        } else {
+            subtitleEl.style.display = 'none';
+        }
+    }
+
+    modalVersionBadge.textContent = `v${app.version}`;
+    modalVersionBadge.title = `v${app.version}`;
+    modalVersionBadge.style.cssText = `background-color: rgba(var(--current-modal-glow), 0.15); color: rgb(var(--current-modal-text)); border-color: rgba(var(--current-modal-glow), 0.3);`;
+    modalSize.textContent = formatBytes(app.size);
+    modalIcon.src = app.iconURL;
+    modalIcon.className = "w-14 h-14 rounded-xl bg-gray-100 dark:bg-gray-800 object-cover shadow-sm modal-icon-shadow-glow";
+}
+
+function buildModalMeta(app, currentLang) {
+    const t = TRANSLATIONS[currentLang];
+    let html = `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5 ${app.minOSVersion ? '' : 'col-span-2'}">
+            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.bundleId}</div>
+            <div class="text-xs font-mono text-gray-600 dark:text-gray-200 break-all select-all">${getDisplayBundleId(app)}</div>
+        </div>`;
+    if (app.minOSVersion) html += `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.minOS}</div>
+            <div class="text-xs font-medium text-gray-600 dark:text-gray-200">${app.minOSVersion}</div>
+        </div>`;
+    if (app.versionDate) html += `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.updated}</div>
+            <div class="text-xs font-medium text-gray-600 dark:text-gray-200">${new Date(app.versionDate).toLocaleDateString()}</div>
+        </div>`;
+    if (app.developerName) html += `<div class="bg-gray-50 dark:bg-white/5 p-3 rounded-xl border border-gray-100 dark:border-white/5">
+            <div class="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold mb-0.5">${t.developer}</div>
+            <div class="text-xs font-medium text-gray-600 dark:text-gray-200 truncate">${app.developerName}</div>
+        </div>`;
+    return html;
+}
+
+function buildModalContent(app, currentLang) {
+    const t = TRANSLATIONS[currentLang];
+    const desc = app.localizedDescription || app.description || t.noDescription;
+    const changelog = app.versionDescription || t.noChangelog;
+    let html = `<div class="mb-8">
+            <h4 class="text-xs font-bold uppercase tracking-wider mb-3 opacity-70" style="color: rgb(var(--current-modal-text))">${t.description}</h4>
+            <div class="markdown-body text-sm bg-transparent leading-relaxed text-gray-600 dark:text-gray-300">${marked.parse(cleanMarkdown(desc), { breaks: true, gfm: true })}</div>
+        </div>`;
+    if (changelog && changelog !== t.noChangelog) html += `<div class="mb-4 pt-6 border-t border-gray-100 dark:border-white/5">
+            <h4 class="text-xs font-bold uppercase tracking-wider mb-3 opacity-70" style="color: rgb(var(--current-modal-text))">${t.whatsNew}</h4>
+            <div class="markdown-body text-sm bg-transparent leading-relaxed text-gray-600 dark:text-gray-300">${marked.parse(cleanMarkdown(changelog), { breaks: true, gfm: true })}</div>
+        </div>`;
+    return html;
+}
+
+function buildModalFooter(currentLang) {
+    const t = TRANSLATIONS[currentLang];
+    return `<button onclick="window.closeModal()" class="w-full py-3.5 rounded-xl font-bold shadow-sm active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20"><span class="tracking-wide">${t.close}</span></button>`;
+}
+
+export function collapseAllExpanded() {
+    document.querySelectorAll('[data-expanded="true"]').forEach(el => delete el.dataset.expanded);
+}
+
+export function handleDownloadClick(e) {
+    const { isMobile } = window;
+    if (typeof isMobile === 'function' && !isMobile()) return;
+    const btn = e.currentTarget;
+    const isExpanded = btn.dataset.expanded === 'true';
+    if (!isExpanded) {
+        e.preventDefault();
+        e.stopPropagation();
+        collapseAllExpanded();
+        btn.dataset.expanded = 'true';
+        if (navigator.vibrate) navigator.vibrate(10);
+    } else {
+        if (navigator.vibrate) navigator.vibrate(20);
+        setTimeout(() => delete btn.dataset.expanded, 1000);
+        if (btn.dataset.isModal === 'true' && typeof window.closeVersionsModal === 'function') {
+            window.closeVersionsModal();
+        }
+    }
+}
+
+function setupSwipeToDismiss(panelId, contentId, closeFunction) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+    const inner = panel.querySelector('div');
+    const scrollContent = document.getElementById(contentId);
+
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+    let isScrollableTarget = false;
+    const threshold = 120; // Distance needed to close
+
+    inner.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) return;
+
+        const target = e.target;
+        isScrollableTarget = scrollContent && scrollContent.contains(target);
+
+        if (isScrollableTarget && scrollContent.scrollTop > 0) return;
+
+        startY = e.touches[0].clientY;
+        isDragging = true;
+        currentY = 0;
+
+        inner.style.transition = 'none';
+    }, { passive: true });
+
+    inner.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+
+        if (isScrollableTarget && scrollContent && scrollContent.scrollTop > 0) {
+            isDragging = false;
+            inner.style.transform = '';
+            return;
+        }
+
+        const y = e.touches[0].clientY;
+        const deltaY = y - startY;
+
+        if (deltaY > 0) {
+            if (isScrollableTarget && e.cancelable) {
+                e.preventDefault();
+            }
+
+            currentY = deltaY;
+            const resistanceStr = currentY * 0.85;
+            inner.style.transform = `translateY(${resistanceStr}px)`;
+        } else {
+            currentY = 0;
+            inner.style.transform = '';
+        }
+    }, { passive: false });
+
+    const handleTouchEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        inner.style.transition = 'all 0.4s cubic-bezier(0.32,0.72,0,1)';
+
+        if (currentY > threshold) {
+            closeFunction();
+            setTimeout(() => {
+                inner.style.transform = '';
+            }, 500);
+        } else {
+            inner.style.transform = 'translateY(0px)';
+        }
+        currentY = 0;
+    };
+
+    inner.addEventListener('touchend', handleTouchEnd);
+    inner.addEventListener('touchcancel', handleTouchEnd);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupSwipeToDismiss('modal-panel', 'modal-content', closeModal);
+    setupSwipeToDismiss('versions-modal-panel', 'versions-modal-list', closeVersionsModal);
+});
