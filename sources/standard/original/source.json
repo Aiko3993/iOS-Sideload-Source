@@ -1370,14 +1370,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.6",
-      "versionDate": "2026-06-17T04:07:17Z",
-      "versionDescription": "Fixes TXM checks for devices with A13/A14/M1 chips on iOS 27. Apps you want to enable JIT for require their own patches to work on those versions as well.",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.6/StikDebug-3.1.6.ipa",
+      "version": "3.1.7",
+      "versionDate": "2026-07-26T00:24:23Z",
+      "versionDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.7/StikDebug-3.1.7.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 11028710,
+      "size": 12815045,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1389,16 +1389,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "3.1.6",
-          "date": "2026-06-17T04:07:17Z",
-          "localizedDescription": "Fixes TXM checks for devices with A13/A14/M1 chips on iOS 27. Apps you want to enable JIT for require their own patches to work on those versions as well.",
-          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.6/StikDebug-3.1.6.ipa",
-          "size": 11028710,
-          "sha256": "8525e946e40168f5be6b7b5289a6fc973ada79ffe344775643409be52316962f",
+          "version": "3.1.7",
+          "date": "2026-07-26T00:24:23Z",
+          "localizedDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
+          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.7/StikDebug-3.1.7.ipa",
+          "size": 12815045,
+          "sha256": "6c9ce2ef056c92604fed75d5253ee2b39bbd0a1f092ce5e7b613c21bbbbe11a1",
           "minOSVersion": "17.4"
         }
       ],
-      "sha256": "8525e946e40168f5be6b7b5289a6fc973ada79ffe344775643409be52316962f",
+      "sha256": "6c9ce2ef056c92604fed75d5253ee2b39bbd0a1f092ce5e7b613c21bbbbe11a1",
       "category": "other"
     },
     {
