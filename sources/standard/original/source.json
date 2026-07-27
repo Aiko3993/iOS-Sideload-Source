@@ -472,14 +472,14 @@
       "bundleIdentifier": "app.ish.iSH",
       "developerName": "ish-app",
       "subtitle": "Linux shell for iOS",
-      "version": "builds/811",
-      "versionDate": "2026-07-18T06:54:57Z",
+      "version": "builds/812",
+      "versionDate": "2026-07-27T07:29:23Z",
       "versionDescription": "Automated daily build",
-      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/811/iSH.ipa",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/812/iSH.ipa",
       "localizedDescription": "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
       "iconURL": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
       "tintColor": "#BCBCBC",
-      "size": 4595946,
+      "size": 4596003,
       "appPermissions": {
         "entitlements": [
           "beta-reports-active",
@@ -497,25 +497,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "builds/811",
-          "date": "2026-07-18T06:54:57Z",
+          "version": "builds/812",
+          "date": "2026-07-27T07:29:23Z",
           "localizedDescription": "Automated daily build",
-          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/811/iSH.ipa",
-          "size": 4595946,
-          "sha256": "946df62d111431e15d979998b0e5845f9a342c3e51fe9dad3af9a469b51cf50a",
-          "minOSVersion": "11.0"
-        },
-        {
-          "version": "builds/810",
-          "date": "2026-07-14T14:10:57Z",
-          "localizedDescription": "Automated daily build",
-          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/810/iSH.ipa",
-          "size": 4595929,
-          "sha256": "ca2a1ce9780e55e39f188b2fad452139882f6a442155341f0a046968fe01fa8f",
+          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/812/iSH.ipa",
+          "size": 4596003,
+          "sha256": "4aa4c19b99bd0d5d9715107f15d7645b85daf079c8a00b684302962e088f1986",
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "946df62d111431e15d979998b0e5845f9a342c3e51fe9dad3af9a469b51cf50a",
+      "sha256": "4aa4c19b99bd0d5d9715107f15d7645b85daf079c8a00b684302962e088f1986",
       "category": "other"
     },
     {
