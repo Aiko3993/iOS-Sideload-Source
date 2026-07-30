@@ -565,14 +565,14 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.2.4",
-      "versionDate": "2026-07-30T06:36:59Z",
-      "versionDescription": "- 重新设计的设置页 (@Predidit)\r\n- 新增番剧关联选项卡 (@liangyuR)\r\n- 优化验证码规则检索速度 (@Predidit)\r\n- 现在在移动数据网络下自动启用节流模式 (@Predidit)\r\n- 优化Linux平台软件解码功能 (@Predidit)\r\n- 修复镜像模式下评论区GIF只显示第一帧的问题 (@Predidit)\r\n- 修复一起看功能在大陆地区不稳定的问题 (#2388) (@Predidit)",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.4/Kazumi_ios_2.2.4_no_sign.ipa",
+      "version": "2.2.5",
+      "versionDate": "2026-07-30T17:01:00Z",
+      "versionDescription": "> [!NOTE]\r\n> 这是 2.2.4 的热修复版本，更多更新日志参考 2.2.4",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.5/Kazumi_ios_2.2.5_no_sign.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 29243380,
+      "size": 29556445,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
@@ -580,16 +580,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "2.2.4",
-          "date": "2026-07-30T06:36:59Z",
-          "localizedDescription": "- 重新设计的设置页 (@Predidit)\r\n- 新增番剧关联选项卡 (@liangyuR)\r\n- 优化验证码规则检索速度 (@Predidit)\r\n- 现在在移动数据网络下自动启用节流模式 (@Predidit)\r\n- 优化Linux平台软件解码功能 (@Predidit)\r\n- 修复镜像模式下评论区GIF只显示第一帧的问题 (@Predidit)\r\n- 修复一起看功能在大陆地区不稳定的问题 (#2388) (@Predidit)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.4/Kazumi_ios_2.2.4_no_sign.ipa",
-          "size": 29243380,
-          "sha256": "2bea4b4fe7ecf70cce7eef0c6257d291e879eee552265da7ce012f0eb2983431",
+          "version": "2.2.5",
+          "date": "2026-07-30T17:01:00Z",
+          "localizedDescription": "> [!NOTE]\r\n> 这是 2.2.4 的热修复版本，更多更新日志参考 2.2.4",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.5/Kazumi_ios_2.2.5_no_sign.ipa",
+          "size": 29556445,
+          "sha256": "571d3cc2ccff147d8c20fa94aeab9ad91177011fdc81021e71c57354e11e22f4",
           "minOSVersion": "13.0"
         }
       ],
-      "sha256": "2bea4b4fe7ecf70cce7eef0c6257d291e879eee552265da7ce012f0eb2983431",
+      "sha256": "571d3cc2ccff147d8c20fa94aeab9ad91177011fdc81021e71c57354e11e22f4",
       "category": "other"
     },
     {
