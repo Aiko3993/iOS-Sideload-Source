@@ -1343,14 +1343,14 @@
       "bundleIdentifier": "com.stik.stikdebug",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.7",
-      "versionDate": "2026-07-26T00:24:23Z",
-      "versionDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
-      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.7/StikDebug-3.1.7.ipa",
+      "version": "3.1.8",
+      "versionDate": "2026-07-31T15:00:49Z",
+      "versionDescription": "Fix pairing file import, improve bounce-back reliability",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.8/StikDebug-3.1.8.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 12815045,
+      "size": 12818495,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1362,6 +1362,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "3.1.8",
+          "date": "2026-07-31T15:00:49Z",
+          "localizedDescription": "Fix pairing file import, improve bounce-back reliability",
+          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.8/StikDebug-3.1.8.ipa",
+          "size": 12818495,
+          "sha256": "e0f06619c083771facd327a4f0358b39324120af846fd1602368dfaf3967f74d",
+          "minOSVersion": "17.4"
+        },
+        {
           "version": "3.1.7",
           "date": "2026-07-26T00:24:23Z",
           "localizedDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
@@ -1371,7 +1380,7 @@
           "minOSVersion": "17.4"
         }
       ],
-      "sha256": "6c9ce2ef056c92604fed75d5253ee2b39bbd0a1f092ce5e7b613c21bbbbe11a1",
+      "sha256": "e0f06619c083771facd327a4f0358b39324120af846fd1602368dfaf3967f74d",
       "category": "other"
     },
     {
