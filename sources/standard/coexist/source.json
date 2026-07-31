@@ -1343,14 +1343,14 @@
       "bundleIdentifier": "com.stik.stikdebug.coexist",
       "developerName": "StephenDev0",
       "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
-      "version": "3.1.7",
-      "versionDate": "2026-07-26T00:24:23Z",
-      "versionDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260726/StikDebug_3.1.7_Coexist.ipa",
+      "version": "3.1.8",
+      "versionDate": "2026-07-31T15:00:49Z",
+      "versionDescription": "Fix pairing file import, improve bounce-back reliability",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260731/StikDebug_3.1.8_Coexist.ipa",
       "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
       "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
       "tintColor": "#61C9FA",
-      "size": 12817197,
+      "size": 12819315,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1362,6 +1362,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "3.1.8",
+          "date": "2026-07-31T15:00:49Z",
+          "localizedDescription": "Fix pairing file import, improve bounce-back reliability",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260731/StikDebug_3.1.8_Coexist.ipa",
+          "size": 12819315,
+          "sha256": "df25d2997e1a4dfd54a6c8777682eff0a4995e57a291e3da9250ad318df38737",
+          "minOSVersion": "17.4"
+        },
+        {
           "version": "3.1.7",
           "date": "2026-07-26T00:24:23Z",
           "localizedDescription": "Remove old screenshot scripts, rename UTM-Dolphin.js to legacy.js, fixes for the `script-name` query of the url scheme.",
@@ -1371,7 +1380,7 @@
           "minOSVersion": "17.4"
         }
       ],
-      "sha256": "07e3fa3403f8f3667eb64cb4519bcfe52e207515c27b065ecb0ed6f8734865e3",
+      "sha256": "df25d2997e1a4dfd54a6c8777682eff0a4995e57a291e3da9250ad318df38737",
       "category": "other"
     },
     {
