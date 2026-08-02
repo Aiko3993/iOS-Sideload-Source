@@ -13,14 +13,14 @@
       "bundleIdentifier": "top.jtmonster.jhentai.coexist",
       "developerName": "jiangtian616",
       "subtitle": "A cross-platform manga app made for e-hentai & exhentai by Flutter.",
-      "version": "8.0.14+323",
-      "versionDate": "2026-07-05T06:28:02Z",
-      "versionDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- 桌面端支持ctrl+鼠标滚轮缩放图片\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- Desktop supports ctrl + mouse wheel to zoom images\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260705/JHentai_8.0.14%2B323_Coexist.ipa",
+      "version": "8.0.14+328",
+      "versionDate": "2026-08-02T05:10:44Z",
+      "versionDescription": "- 升级Flutter 3.44.8(实验性)\n- 优化阅读页动图的展示性能，未在屏幕内的动图将只展示静态帧(实验性)\n- 优化ios音量键翻页的逻辑，增加音量为0或100时的提示。\n- 优化桌面端长按/右键唤起CupertinoActionSheet的逻辑，统一替换为在鼠标点击位置展示选项菜单。\n- 优化标签搜索建议的逻辑，识别\"-\"操作符。\n- 偏好设置中增加优先展示最近下载分组功能。 [@lliPtiL](https://github.com/lliPtiL)\n- 偏好设置中支持自定义首次进入下载页时默认展示的tab。\n- 偏好设置中支持为破坏性操作加入二次确认提示。\n- 资产展示里新增hath展示。\n- 去除EhArBot的自动签到功能。\n- 修复部分设备上阅读页双击放大无效的bug。\n\n--------------------\n\n- Upgrade Flutter to 3.44.8 (experimental)\n- Optimize animated image display performance on the reading page; animated images off-screen will only show their static frame (experimental)\n- Optimize the iOS volume-key page-turning logic and add a prompt when the volume is at 0 or 100\n- Optimize desktop long-press/right-click menu behavior; a context menu now appears at the mouse position instead of a bottom sheet\n- Optimize tag search suggestion logic to recognize the \"-\" operator\n- Add a preference to prioritize showing the most recently downloaded groups [@lliPtiL](https://github.com/lliPtiL)\n- Add a preference to customize the default tab shown when first entering the download page\n- Add a preference for a confirmation prompt before destructive actions\n- Add Hath display to the Assets view\n- Remove EhArBot's automatic check-in feature\n- Fix a bug where double-tap zoom doesn't work on the reading page on some devices",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260802/JHentai_8.0.14%2B328_Coexist.ipa",
       "localizedDescription": "A manga app for E-Hentai, supporting Android & iOS & Windows & MacOS & Linux.\n\nStill in development stage, welcome to submit issues or feature requests.",
       "iconURL": "https://raw.githubusercontent.com/jiangtian616/JHenTai/master/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#E6E623",
-      "size": 15700214,
+      "size": 12886843,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -39,22 +39,13 @@
       ],
       "versions": [
         {
-          "version": "8.0.14+323",
-          "date": "2026-07-05T06:28:02Z",
-          "localizedDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- 桌面端支持ctrl+鼠标滚轮缩放图片\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- Desktop supports ctrl + mouse wheel to zoom images\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260705/JHentai_8.0.14%2B323_Coexist.ipa",
-          "size": 15700214,
-          "sha256": "9f34d1ec9bdb257540dfc28454ecfa5e985e7214a5b7e8c7cc7eabf9ffcdbf44",
-          "minOSVersion": "12.0"
-        },
-        {
-          "version": "8.0.14+321",
-          "date": "2026-07-04T17:55:14Z",
-          "localizedDescription": "注意：本次更新后在启动时会优化本地下载索引，以解决部分画廊标题过长的画廊无法下载归档的bug，如下载内容较多可提前备份应用目录下db.sqlite文件\n\n- 桌面端阅读页支持自定义快捷键\n- ios支持音量键翻页\n- 现在打开快速搜索列表时会记忆上一次打开时的偏移量\n- 移动端支持为横屏和竖屏单独设置阅读方向\n- 移动端支持为横屏和竖屏单独设置图片宽度比例\n- 移动端阅读页支持复制图片\n- 支持撤销标签投票结果\n- 修复部分标题过长的画廊无法下载归档的bug\n\n--------------------\n\nAttention: After this update, the local download index will be optimized at startup to fix the bug where galleries with\noverly long titles could not download archives. If you have a lot of downloaded content, you can back up the db.sqlite\nfile in the application directory in advance.\n\n- Desktop reading page supports customizable keyboard shortcuts\n- iOS supports volume key page turning\n- Quick search list now remembers the scroll position from the last visit\n- Mobile now supports setting reading direction separately for landscape and portrait orientations\n- Mobile now supports setting image width ratio separately for landscape and portrait orientations\n- Mobile reading page supports copying images\n- Support undoing tag vote results\n- Fixed bug where galleries with overly long titles could not download archives",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260704/JHentai_8.0.14%2B321_Coexist.ipa",
-          "size": 15844617,
-          "sha256": "9603bca4accd0b2456d5484a6a99085121defcee610dc3fb97cd09f28b1c1b8c",
-          "minOSVersion": "12.0"
+          "version": "8.0.14+328",
+          "date": "2026-08-02T05:10:44Z",
+          "localizedDescription": "- 升级Flutter 3.44.8(实验性)\n- 优化阅读页动图的展示性能，未在屏幕内的动图将只展示静态帧(实验性)\n- 优化ios音量键翻页的逻辑，增加音量为0或100时的提示。\n- 优化桌面端长按/右键唤起CupertinoActionSheet的逻辑，统一替换为在鼠标点击位置展示选项菜单。\n- 优化标签搜索建议的逻辑，识别\"-\"操作符。\n- 偏好设置中增加优先展示最近下载分组功能。 [@lliPtiL](https://github.com/lliPtiL)\n- 偏好设置中支持自定义首次进入下载页时默认展示的tab。\n- 偏好设置中支持为破坏性操作加入二次确认提示。\n- 资产展示里新增hath展示。\n- 去除EhArBot的自动签到功能。\n- 修复部分设备上阅读页双击放大无效的bug。\n\n--------------------\n\n- Upgrade Flutter to 3.44.8 (experimental)\n- Optimize animated image display performance on the reading page; animated images off-screen will only show their static frame (experimental)\n- Optimize the iOS volume-key page-turning logic and add a prompt when the volume is at 0 or 100\n- Optimize desktop long-press/right-click menu behavior; a context menu now appears at the mouse position instead of a bottom sheet\n- Optimize tag search suggestion logic to recognize the \"-\" operator\n- Add a preference to prioritize showing the most recently downloaded groups [@lliPtiL](https://github.com/lliPtiL)\n- Add a preference to customize the default tab shown when first entering the download page\n- Add a preference for a confirmation prompt before destructive actions\n- Add Hath display to the Assets view\n- Remove EhArBot's automatic check-in feature\n- Fix a bug where double-tap zoom doesn't work on the reading page on some devices",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260802/JHentai_8.0.14%2B328_Coexist.ipa",
+          "size": 12886843,
+          "sha256": "fffd44c2b2db16fe1e931f67026eeb5e499db24557243ba39f26cb817c3c1d2b",
+          "minOSVersion": "13.0"
         }
       ],
       "screenshots": [
@@ -90,7 +81,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "9f34d1ec9bdb257540dfc28454ecfa5e985e7214a5b7e8c7cc7eabf9ffcdbf44"
+      "sha256": "fffd44c2b2db16fe1e931f67026eeb5e499db24557243ba39f26cb817c3c1d2b"
     },
     {
       "name": "LoveIwara",
