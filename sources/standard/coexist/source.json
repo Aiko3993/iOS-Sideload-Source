@@ -1303,14 +1303,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260803.1225+b3ba86cd.0604",
-      "versionDate": "2026-08-03T17:37:14Z",
-      "versionDescription": "Nightly build from commit b3ba86cd107806dbf2aed10bcc06a3ffe6e62473",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1225%2Bb3ba86cd.0604_Coexist.ipa",
+      "version": "0.6.4-20260803.1226+5b4c15d1.0604",
+      "versionDate": "2026-08-03T18:43:32Z",
+      "versionDescription": "Nightly build from commit 5b4c15d13f77d9a317f4462b415bb0467b974955",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1226%2B5b4c15d1.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27766246,
+      "size": 27766747,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1325,12 +1325,12 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.6.4-20260803.1225+b3ba86cd.0604",
-          "date": "2026-08-03T17:37:14Z",
-          "localizedDescription": "Nightly build from commit b3ba86cd107806dbf2aed10bcc06a3ffe6e62473",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1225%2Bb3ba86cd.0604_Coexist.ipa",
-          "size": 27766246,
-          "sha256": "21f2c7427ac87da92adf78eb827e887e888889c5a9d710d808f3ed8e6d1612b5",
+          "version": "0.6.4-20260803.1226+5b4c15d1.0604",
+          "date": "2026-08-03T18:43:32Z",
+          "localizedDescription": "Nightly build from commit 5b4c15d13f77d9a317f4462b415bb0467b974955",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1226%2B5b4c15d1.0604_Coexist.ipa",
+          "size": 27766747,
+          "sha256": "b9abc748530928c16e52d052d063f3e5b74adedf9bc43e28ca83b40c91212fc6",
           "minOSVersion": "15.0"
         },
         {
@@ -1343,7 +1343,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "21f2c7427ac87da92adf78eb827e887e888889c5a9d710d808f3ed8e6d1612b5",
+      "sha256": "b9abc748530928c16e52d052d063f3e5b74adedf9bc43e28ca83b40c91212fc6",
       "category": "other"
     },
     {
