@@ -1003,14 +1003,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.1",
-      "versionDate": "2026-07-31T16:19:36Z",
-      "versionDescription": "## What's Changed\r\n* feat: custom network endpoints (DoH + proxy) and CI checks by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/816\r\n* fix #814 [This image couldn't be loaded on desktop]\r\n* fix bugs and optimize reader\r\n* feat: consolidate library, browse, player and download features by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/815\r\n* Fix tracker date/status sync bugs by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/826\r\n* Mark chapters as read when reached via scroll-through transition by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/827\r\n* feat(downloads): stall/truncation/resume fixes + concurrency and rate controls (#621) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/824\r\n* fix: offline novel reading, episode duplication on update, tracker sheet padding by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/818\r\n* feat(library): let a running library update be stopped by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/819\r\n* feat(android-tv): adaptable UI scale + remote focus fixes by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/821\r\n* Add filter-by-source to library settings by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/828\r\n* fix(player): stop the mobile controls hiding instantly on tap by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/829\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.0...v0.8.1\r\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260731/Mangayomi_0.8.1_Coexist.ipa",
+      "version": "0.8.2",
+      "versionDate": "2026-08-03T12:25:33Z",
+      "versionDescription": "## What's Changed\r\n* fix #832: mangayomi consumes 100% cpu while fetching every font from google fonts\r\n* fix #814 This image couldn't be loaded on desktop\r\n* feat: rebuild recommendations and watch order on AniList by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/825\r\n* perf: fix v8.0 Android jank (Skia renderer + cover thumbnail resampling) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/830\r\n* Streamline mpv config extraction by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/833\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.1...v0.8.2",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/Mangayomi_0.8.2_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47640976,
+      "size": 47606433,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1032,6 +1032,15 @@
       ],
       "versions": [
         {
+          "version": "0.8.2",
+          "date": "2026-08-03T12:25:33Z",
+          "localizedDescription": "## What's Changed\r\n* fix #832: mangayomi consumes 100% cpu while fetching every font from google fonts\r\n* fix #814 This image couldn't be loaded on desktop\r\n* feat: rebuild recommendations and watch order on AniList by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/825\r\n* perf: fix v8.0 Android jank (Skia renderer + cover thumbnail resampling) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/830\r\n* Streamline mpv config extraction by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/833\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.1...v0.8.2",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/Mangayomi_0.8.2_Coexist.ipa",
+          "size": 47606433,
+          "sha256": "6fccc1163f439e425b1dafc15e9be15f403c320400d90dfb108f7d2bcf877b37",
+          "minOSVersion": "13.0"
+        },
+        {
           "version": "0.8.1",
           "date": "2026-07-31T16:19:36Z",
           "localizedDescription": "## What's Changed\r\n* feat: custom network endpoints (DoH + proxy) and CI checks by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/816\r\n* fix #814 [This image couldn't be loaded on desktop]\r\n* fix bugs and optimize reader\r\n* feat: consolidate library, browse, player and download features by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/815\r\n* Fix tracker date/status sync bugs by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/826\r\n* Mark chapters as read when reached via scroll-through transition by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/827\r\n* feat(downloads): stall/truncation/resume fixes + concurrency and rate controls (#621) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/824\r\n* fix: offline novel reading, episode duplication on update, tracker sheet padding by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/818\r\n* feat(library): let a running library update be stopped by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/819\r\n* feat(android-tv): adaptable UI scale + remote focus fixes by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/821\r\n* Add filter-by-source to library settings by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/828\r\n* fix(player): stop the mobile controls hiding instantly on tap by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/829\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.0...v0.8.1\r\n",
@@ -1042,7 +1051,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "4121da4bc05088677f62d926400898f3eb82a25a1ca94d8f9d74733b292aa16b",
+      "sha256": "6fccc1163f439e425b1dafc15e9be15f403c320400d90dfb108f7d2bcf877b37",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
@@ -1294,14 +1303,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260729.1218+4bd2fbf6.0604",
-      "versionDate": "2026-07-29T08:42:42Z",
-      "versionDescription": "Nightly build from commit 4bd2fbf6e5e368ddc3d3317b50401a9ffd83adde",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260729/SideStore_Nightly_0.6.4-20260729.1218%2B4bd2fbf6.0604_Coexist.ipa",
+      "version": "0.6.4-20260803.1224+5ca7f190.0604",
+      "versionDate": "2026-08-03T14:40:26Z",
+      "versionDescription": "Nightly build from commit 5ca7f190af948f669b715c86219143e887a657d5",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1224%2B5ca7f190.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27417448,
+      "size": 27767353,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1316,6 +1325,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.4-20260803.1224+5ca7f190.0604",
+          "date": "2026-08-03T14:40:26Z",
+          "localizedDescription": "Nightly build from commit 5ca7f190af948f669b715c86219143e887a657d5",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/SideStore_Nightly_0.6.4-20260803.1224%2B5ca7f190.0604_Coexist.ipa",
+          "size": 27767353,
+          "sha256": "b6d3ff0353ff10bcaf360b55d79aa49d49323f4cd0cde662de7d92b579e52db5",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.4-20260729.1218+4bd2fbf6.0604",
           "date": "2026-07-29T08:42:42Z",
           "localizedDescription": "Nightly build from commit 4bd2fbf6e5e368ddc3d3317b50401a9ffd83adde",
@@ -1323,18 +1341,9 @@
           "size": 27417448,
           "sha256": "a6d257141bacb816133d7d7160e6851127508faad9f51eb9957648ec0d50d223",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.6.4-20260727.1214+37161826.0604",
-          "date": "2026-07-27T23:17:14Z",
-          "localizedDescription": "Nightly build from commit 3716182678af66ae6b2c75dfb52ba0c6f60d616b",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260727/SideStore_Nightly_0.6.4-20260727.1214%2B37161826.0604_Coexist.ipa",
-          "size": 27388357,
-          "sha256": "34e4614043c7ee05738ca5a1359dc33b8f339f5341333377392b5d3b89f44736",
-          "minOSVersion": "15.0"
         }
       ],
-      "sha256": "a6d257141bacb816133d7d7160e6851127508faad9f51eb9957648ec0d50d223",
+      "sha256": "b6d3ff0353ff10bcaf360b55d79aa49d49323f4cd0cde662de7d92b579e52db5",
       "category": "other"
     },
     {
