@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-08-06 07:32:11 (UTC)*
+> *Last Updated: 2026-08-06 23:48:16 (UTC)*
 
 ## Standard Apps
 
@@ -11,7 +11,7 @@
 | <img src="https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png" width="48" height="48"> | **Animeko** | 集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform | [open-ani/animeko](https://github.com/open-ani/animeko) |
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |
 | <img src="https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png" width="48" height="48"> | **Asspp** | The App Store for your multi-account eco system. | [Lakr233/Asspp](https://github.com/Lakr233/Asspp) |
-| <img src="https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/dark.png.png" width="48" height="48"> | **emexDE** | IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps. | [emexlab/emexDE](https://github.com/emexlab/emexDE) |
+| <img src="https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png" width="48" height="48"> | **emexDE** | IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps. | [emexlab/emexDE](https://github.com/emexlab/emexDE) |
 | <img src="https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png" width="48" height="48"> | **Feather** | On-device signing application | [khcrysalis/Feather](https://github.com/khcrysalis/Feather) |
 | <img src="https://raw.githubusercontent.com/Ferrite-iOS/Ferrite/next/Ferrite/Assets.xcassets/AppIcon.appiconset/Ferrite-lg.png" width="48" height="48"> | **Ferrite** | A media search engine for iOS with debrid support | [Ferrite-iOS/Ferrite](https://github.com/Ferrite-iOS/Ferrite) |
 | <img src="https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png" width="48" height="48"> | **iSH (Pre-release)** | Linux shell for iOS | [ish-app/ish](https://github.com/ish-app/ish) |

@@ -282,7 +282,7 @@
       "versionDescription": "## Changelog\r\n## emexDE\r\n- better sheet dismissal detection (da744a2573159629d5fcd79226b371bd644e236e)\r\n- updated to swift 6.3.2 (b5f527616ae6442a686fcfb88b392e6b7368213e, 9c44afb0731667d23da2bb00b80c93fa1beb72b3)\r\n- updated to iPhoneOS26.5.sdk (eb30c07a84fa504a01611c4f0c5ed7fbe10f2531)\r\n- rewritten more UI in Swift UIKit (24246c5608395318785e2cb6f2888bb4f82df58c)\r\n- other UI improvements (8fa8d1d882893e6830b94411b6abc8a9fad0a31a, 942fa702e41193fdd159f8514ae5c8bb63baec83, ee2ad3bec626fde0ef6e1a4495689380d1d65fa6, d9782931e492a602e35abb826e54a73484e3c8ff, cece9c7bb20a07f305df8200a40f33aae56d6353, 512a468ed5964a2dff94df96582551476409ebc7)\r\n- fix: weird window server glitches (fa81b3c97f45c07af205552b911a7a681c076442, d09e0528a841c4fcad0b8cb8c031c02f30ba6085)\r\n- fix: actually present windows on iOS 26 (cece9c7bb20a07f305df8200a40f33aae56d6353)\r\n- feature: build projects for iOS versions newer than host version(only exporting product) (99a1e9cc64130ce6668858cce4bed7733f35c573)\r\n- feature: added cache browsing feature to projects (3b133c77ff3cc2253c24ecb67542e3ad221bd073)\r\n- feature: slightly better project creation popup (c6f95d3950a6c4c79331ab7cf83151b171ef475d, 11e5bc78a5982d7aa3f97de2f16de2579e69d0a8)",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260523/emexDE_0.10.3_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps on unjailbroken iOS it self just via a certificate and a kernel virtualization layer for those apps.",
-      "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/dark.png.png",
+      "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
       "tintColor": "#000",
       "size": 105517631,
       "appPermissions": {
@@ -1303,14 +1303,14 @@
       "bundleIdentifier": "com.SideStore.SideStore.nightly.coexist",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260805.1237+a9238cb9.0604",
-      "versionDate": "2026-08-05T02:56:55Z",
-      "versionDescription": "Nightly build from commit a9238cb974ae56cf0f17d14dc517d5e06e21b52a",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260805/SideStore_Nightly_0.6.4-20260805.1237%2Ba9238cb9.0604_Coexist.ipa",
+      "version": "0.6.4-20260806.1239+e1524a3a.0604",
+      "versionDate": "2026-08-06T23:30:02Z",
+      "versionDescription": "Nightly build from commit e1524a3a71e2e4a76f33463cd543ac7c29a2ec94",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260806/SideStore_Nightly_0.6.4-20260806.1239%2Be1524a3a.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27633400,
+      "size": 27639274,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1325,6 +1325,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.4-20260806.1239+e1524a3a.0604",
+          "date": "2026-08-06T23:30:02Z",
+          "localizedDescription": "Nightly build from commit e1524a3a71e2e4a76f33463cd543ac7c29a2ec94",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260806/SideStore_Nightly_0.6.4-20260806.1239%2Be1524a3a.0604_Coexist.ipa",
+          "size": 27639274,
+          "sha256": "e81a718fd2aef7f74a0a4040d59a3c8c8375cc3035ac9f2162a948af5fe21683",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.4-20260805.1237+a9238cb9.0604",
           "date": "2026-08-05T02:56:55Z",
           "localizedDescription": "Nightly build from commit a9238cb974ae56cf0f17d14dc517d5e06e21b52a",
@@ -1332,18 +1341,9 @@
           "size": 27633400,
           "sha256": "506e2b5e3538b256befbdb7c2fb00003a07fcd16ae93a9ac2c11d6a7e8c238d1",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.6.4-20260804.1235+85309961.0604",
-          "date": "2026-08-04T07:39:04Z",
-          "localizedDescription": "Nightly build from commit 8530996161f0182643beb46301b6a14fa41f31fe",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260804/SideStore_Nightly_0.6.4-20260804.1235%2B85309961.0604_Coexist.ipa",
-          "size": 27599749,
-          "sha256": "d7a7772346f1f95751e9d1fc5dbb82dab4e7288f982d576867e10383844787be",
-          "minOSVersion": "15.0"
         }
       ],
-      "sha256": "506e2b5e3538b256befbdb7c2fb00003a07fcd16ae93a9ac2c11d6a7e8c238d1",
+      "sha256": "e81a718fd2aef7f74a0a4040d59a3c8c8375cc3035ac9f2162a948af5fe21683",
       "category": "other"
     },
     {
