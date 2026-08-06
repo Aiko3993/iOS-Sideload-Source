@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-08-05 04:54:07 (UTC)*
+> *Last Updated: 2026-08-06 07:32:11 (UTC)*
 
 ## Standard Apps
 
