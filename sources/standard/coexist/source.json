@@ -994,14 +994,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.2",
-      "versionDate": "2026-08-03T12:25:33Z",
-      "versionDescription": "## What's Changed\r\n* fix #832: mangayomi consumes 100% cpu while fetching every font from google fonts\r\n* fix #814 This image couldn't be loaded on desktop\r\n* feat: rebuild recommendations and watch order on AniList by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/825\r\n* perf: fix v8.0 Android jank (Skia renderer + cover thumbnail resampling) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/830\r\n* Streamline mpv config extraction by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/833\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.1...v0.8.2",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/Mangayomi_0.8.2_Coexist.ipa",
+      "version": "0.8.3",
+      "versionDate": "2026-08-11T13:54:36Z",
+      "versionDescription": "## What's Changed\r\n* Add support for repo url that end with .pb\r\n* A few optimizations\r\n* Fix library UI jank + related header/user-agent cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/835\r\n* Remove Dead Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/836\r\n* Revert ChapterCount badge style by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/837\r\n* include notes in extension by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/839\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.2...v0.8.3",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260811/Mangayomi_0.8.3_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "EF4444",
-      "size": 47606433,
+      "size": 47643859,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1023,26 +1023,17 @@
       ],
       "versions": [
         {
-          "version": "0.8.2",
-          "date": "2026-08-03T12:25:33Z",
-          "localizedDescription": "## What's Changed\r\n* fix #832: mangayomi consumes 100% cpu while fetching every font from google fonts\r\n* fix #814 This image couldn't be loaded on desktop\r\n* feat: rebuild recommendations and watch order on AniList by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/825\r\n* perf: fix v8.0 Android jank (Skia renderer + cover thumbnail resampling) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/830\r\n* Streamline mpv config extraction by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/833\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.1...v0.8.2",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260803/Mangayomi_0.8.2_Coexist.ipa",
-          "size": 47606433,
-          "sha256": "6fccc1163f439e425b1dafc15e9be15f403c320400d90dfb108f7d2bcf877b37",
-          "minOSVersion": "13.0"
-        },
-        {
-          "version": "0.8.1",
-          "date": "2026-07-31T16:19:36Z",
-          "localizedDescription": "## What's Changed\r\n* feat: custom network endpoints (DoH + proxy) and CI checks by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/816\r\n* fix #814 [This image couldn't be loaded on desktop]\r\n* fix bugs and optimize reader\r\n* feat: consolidate library, browse, player and download features by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/815\r\n* Fix tracker date/status sync bugs by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/826\r\n* Mark chapters as read when reached via scroll-through transition by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/827\r\n* feat(downloads): stall/truncation/resume fixes + concurrency and rate controls (#621) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/824\r\n* fix: offline novel reading, episode duplication on update, tracker sheet padding by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/818\r\n* feat(library): let a running library update be stopped by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/819\r\n* feat(android-tv): adaptable UI scale + remote focus fixes by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/821\r\n* Add filter-by-source to library settings by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/828\r\n* fix(player): stop the mobile controls hiding instantly on tap by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/829\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.0...v0.8.1\r\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260731/Mangayomi_0.8.1_Coexist.ipa",
-          "size": 47640976,
-          "sha256": "4121da4bc05088677f62d926400898f3eb82a25a1ca94d8f9d74733b292aa16b",
+          "version": "0.8.3",
+          "date": "2026-08-11T13:54:36Z",
+          "localizedDescription": "## What's Changed\r\n* Add support for repo url that end with .pb\r\n* A few optimizations\r\n* Fix library UI jank + related header/user-agent cleanup by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/835\r\n* Remove Dead Code by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/836\r\n* Revert ChapterCount badge style by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/837\r\n* include notes in extension by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/839\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.2...v0.8.3",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260811/Mangayomi_0.8.3_Coexist.ipa",
+          "size": 47643859,
+          "sha256": "02d49aafa4a66502569be6d6f3fa06f7a505ca3e5364bf4a68bb374eeb7febb2",
           "minOSVersion": "13.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "6fccc1163f439e425b1dafc15e9be15f403c320400d90dfb108f7d2bcf877b37",
+      "sha256": "02d49aafa4a66502569be6d6f3fa06f7a505ca3e5364bf4a68bb374eeb7febb2",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
