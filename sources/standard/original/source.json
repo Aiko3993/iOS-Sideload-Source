@@ -700,14 +700,14 @@
       "bundleIdentifier": "com.kdt.livecontainer",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.5.8a610cd",
-      "versionDate": "2026-08-11T15:01:54Z",
-      "versionDescription": "Nightly build from commit 8a610cd14d93f8a012fa40a5ac25849c9b96a00d",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260811/LiveContainer_LiveContainer_LiveContainer_8a610cd.ipa",
+      "version": "3.8.5.746b88f",
+      "versionDate": "2026-08-12T02:39:58Z",
+      "versionDescription": "Nightly build from commit 746b88f5262084355d723687c34bcaf36f738b26",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/LiveContainer_LiveContainer_LiveContainer_746b88f.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4684565,
+      "size": 4683774,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -757,6 +757,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.5.746b88f",
+          "date": "2026-08-12T02:39:58Z",
+          "localizedDescription": "Nightly build from commit 746b88f5262084355d723687c34bcaf36f738b26",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/LiveContainer_LiveContainer_LiveContainer_746b88f.ipa",
+          "size": 4683774,
+          "sha256": "5d764a503c8dada2730d4899e8690fee6f1c01dc28f463aa0b645b6218f56766",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.5.8a610cd",
           "date": "2026-08-11T15:01:54Z",
           "localizedDescription": "Nightly build from commit 8a610cd14d93f8a012fa40a5ac25849c9b96a00d",
@@ -764,19 +773,10 @@
           "size": 4684565,
           "sha256": "fc09e3347ba38902bd466a1a18dac90d9c347d0f64d6b441ce4bf8ec9a366862",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.8.4.fe4c0ea",
-          "date": "2026-08-08T16:45:49Z",
-          "localizedDescription": "Nightly build from commit fe4c0ea7607322f7a2c7aa3111d7082054b14c8b",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260808/LiveContainer_LiveContainer_LiveContainer_fe4c0ea.ipa",
-          "size": 4684594,
-          "sha256": "dd8bd9e5a4580791014f5e50a4a3726a643ba3a36f4884fb74a7bd2ae1618dd2",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "fc09e3347ba38902bd466a1a18dac90d9c347d0f64d6b441ce4bf8ec9a366862",
+      "sha256": "5d764a503c8dada2730d4899e8690fee6f1c01dc28f463aa0b645b6218f56766",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -874,14 +874,14 @@
       "bundleIdentifier": "com.kdt.livecontainer",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.5.8a610cd",
-      "versionDate": "2026-08-11T15:01:54Z",
-      "versionDescription": "Nightly build from commit 8a610cd14d93f8a012fa40a5ac25849c9b96a00d",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260811/LiveContainer_LiveContainer_LiveContainer%2BSideStore_8a610cd.ipa",
+      "version": "3.8.5.746b88f",
+      "versionDate": "2026-08-12T02:39:58Z",
+      "versionDescription": "Nightly build from commit 746b88f5262084355d723687c34bcaf36f738b26",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/LiveContainer_LiveContainer_LiveContainer%2BSideStore_746b88f.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 35972256,
+      "size": 35971598,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -931,6 +931,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.5.746b88f",
+          "date": "2026-08-12T02:39:58Z",
+          "localizedDescription": "Nightly build from commit 746b88f5262084355d723687c34bcaf36f738b26",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/LiveContainer_LiveContainer_LiveContainer%2BSideStore_746b88f.ipa",
+          "size": 35971598,
+          "sha256": "dc8615e1ee722ed3d795a1582e2d6bd66c3df0031b938c6856ae0ad2535c03c4",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.5.8a610cd",
           "date": "2026-08-11T15:01:54Z",
           "localizedDescription": "Nightly build from commit 8a610cd14d93f8a012fa40a5ac25849c9b96a00d",
@@ -938,19 +947,10 @@
           "size": 35972256,
           "sha256": "714a08921cd79f0d42ee6b04bfd7b37cc4b32690acb736af40b3039d7c92ee50",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.8.4.fe4c0ea",
-          "date": "2026-08-08T16:45:49Z",
-          "localizedDescription": "Nightly build from commit fe4c0ea7607322f7a2c7aa3111d7082054b14c8b",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260808/LiveContainer_LiveContainer_LiveContainer%2BSideStore_fe4c0ea.ipa",
-          "size": 35779524,
-          "sha256": "9c7ac4b33f3aef9020e9af2e950a950e4a52b6e43d89feab1178c1c5dddd858e",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "714a08921cd79f0d42ee6b04bfd7b37cc4b32690acb736af40b3039d7c92ee50",
+      "sha256": "dc8615e1ee722ed3d795a1582e2d6bd66c3df0031b938c6856ae0ad2535c03c4",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -1285,14 +1285,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260811.1282+70eb49b5.0604",
-      "versionDate": "2026-08-11T08:09:58Z",
-      "versionDescription": "Nightly build from commit 70eb49b5207659bdde09ba4ae1f322b41b08199e",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260811/SideStore_SideStore_SideStore-0.6.4-20260811.1282%2B70eb49b5_70eb49b.ipa",
+      "version": "0.6.4-20260812.1285+372a7088.0604",
+      "versionDate": "2026-08-12T02:26:45Z",
+      "versionDescription": "Nightly build from commit 372a7088f66679e72aee860a6242c3f867d4b628",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/SideStore_SideStore_SideStore-0.6.4-20260812.1285%2B372a7088_372a708.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 27711464,
+      "size": 27532779,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1307,6 +1307,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "0.6.4-20260812.1285+372a7088.0604",
+          "date": "2026-08-12T02:26:45Z",
+          "localizedDescription": "Nightly build from commit 372a7088f66679e72aee860a6242c3f867d4b628",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260812/SideStore_SideStore_SideStore-0.6.4-20260812.1285%2B372a7088_372a708.ipa",
+          "size": 27532779,
+          "sha256": "5ea84f0fbd805d6148b9d03b329bd38f9df46aecda66eff18f7d5db90609b5a5",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.6.4-20260811.1282+70eb49b5.0604",
           "date": "2026-08-11T08:09:58Z",
           "localizedDescription": "Nightly build from commit 70eb49b5207659bdde09ba4ae1f322b41b08199e",
@@ -1314,18 +1323,9 @@
           "size": 27711464,
           "sha256": "0469288b2937c1092c940801b99ee9ec9f50d7f92429a10b4cf7476d8ea1bedd",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.6.4-20260810.1278+8ff66b8d.0604",
-          "date": "2026-08-10T23:16:02Z",
-          "localizedDescription": "Nightly build from commit 8ff66b8d2e3b31e53e26765ff7f5aaca36f6eed2",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260810/SideStore_SideStore_SideStore-0.6.4-20260810.1278%2B8ff66b8d_8ff66b8.ipa",
-          "size": 27662058,
-          "sha256": "fc091fa9f6db07f7e89be572888ed47c7d000e926b483f23eb333d850d072e19",
-          "minOSVersion": "15.0"
         }
       ],
-      "sha256": "0469288b2937c1092c940801b99ee9ec9f50d7f92429a10b4cf7476d8ea1bedd",
+      "sha256": "5ea84f0fbd805d6148b9d03b329bd38f9df46aecda66eff18f7d5db90609b5a5",
       "category": "other"
     },
     {
