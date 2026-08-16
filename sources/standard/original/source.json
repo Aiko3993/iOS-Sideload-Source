@@ -1174,14 +1174,14 @@
       "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
       "developerName": "Eslzzyl",
       "subtitle": "为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS",
-      "version": "0.14.4",
-      "versionDate": "2026-06-09T13:47:48Z",
-      "versionDescription": "## 新功能\r\n\r\n- 应用预览隐私模糊优化显示效果，提升性能与视觉一致性\r\n- 翻译设置目标语言新增「系统语言」选项，并设为默认值\r\n- 推荐页画师标签新增箭头按钮，点击可进入推荐画师全量列表\r\n\r\n## 界面改进\r\n\r\n- 升级部分 UI 组件为 Liquid Glass 材质\r\n- 重新设计插画系列页，采用瀑布流网格与主题入口卡片\r\n- 重新设计插画排行页，将选择器替换为菜单样式，移除刷新按钮\r\n- 统一搜索页卡片样式，排行卡片标签与瀑布流对齐\r\n- 优化亮点搜索框样式，统一高度并应用 Liquid Glass 分裂动画\r\n- 收藏页公开/非公开筛选从筛选菜单中拆分为独立按钮\r\n- 小说收藏页/关注列表页替换筛选按钮为公开/非公开切换\r\n- 统一插画卡片上徽章的毛玻璃效果\r\n\r\n## 动画优化\r\n\r\n- 为图片加载组件添加淡入过渡动画\r\n- 补齐缺失的骨架屏动画和过渡动画\r\n- 用户列表页新增骨架屏、过渡动画并优化关注按钮\r\n\r\n## 性能优化\r\n\r\n优化了插画瀑布流的渲染性能。在 iPhone 17 真机上实测已经基本不会掉帧。\r\n- 替换 KFImage 为轻量级 `@State + .task` 加载器，减少图片加载开销\r\n- 更新 Kingfisher 至 8.9.0，启用 `asyncCacheTypeCheck`，简化 `CachedAsyncImage`\r\n- 用 `CardShadowView`（CALayer shadowPath）替代 `.shadow()`，降低 GPU 合成开销\r\n- 用字典查找替代 O(n) 的 shouldBlur 遍历，移除多余 `NavigationLink` 包装\r\n- 合并 badge modifier 并使用 background(in:) 避免离屏渲染\r\n- 移除 iOS 端 contextMenu 以减少视图树节点数\r\n- 修复 KFImage 容器尺寸，使用显式 frame 稳定 LazyVStack 布局\r\n- 优化 IllustCard GPU 合成开销\r\n- 优化图片滚动加载性能\r\n- 优化 WaterfallGrid 使用增量列更新并移除 GeometryReader\r\n\r\n## 问题修复\r\n\r\n- 修复推荐页为你推荐的标签骨架屏与插画/用户骨架屏没有同时出现的问题\r\n- 修复搜索页推荐标签标题错位的问题\r\n- 修复 Token 导出 sheet 没有正确显示 token 内容的问题\r\n- 修复检测到版本更新后弹出空白 sheet 的问题（未验证）\r\n",
-      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.4/Pixiv-SwiftUI.ipa",
+      "version": "0.15.0",
+      "versionDate": "2026-08-16T12:51:09Z",
+      "versionDescription": "## 新功能\r\n\r\n- 插画详情和全屏查看新增图片文字翻译，基于 Apple Vision OCR 识别图片文字并显示原文与译文。\r\n- 新增 VLM 图片解释功能，可使用视觉语言模型分析插画内容；设置中支持配置模型、温度、图像细节并测试服务。\r\n- 设置中新增图片磁盘缓存上限选项，超过上限则自动清理。\r\n- 用户详情页新增骨架屏加载动画。\r\n\r\n## 优化\r\n\r\n- 重构全屏图片预览，支持更高效的懒加载、分页和缩放，改善大图及多图浏览性能。\r\n- 优化相关推荐图片预取，减少重复请求并提升滑动浏览体验。\r\n- 统一加载失败提示、错误状态和重试入口，并增加全局 Toast 反馈。\r\n- 优化登录页面布局、文案和输入体验。\r\n- 更新说明弹窗支持本地化 Markdown 内容。\r\n- 优化卡片阴影渲染，降低 GPU 离屏渲染开销。\r\n\r\n## 问题修复\r\n\r\n- 修复 Bing 翻译接口失效问题，并修复小说内容接口请求问题。\r\n- 修复网页登录流程在切换应用、登录失败或已有账号登录时的状态处理问题。\r\n- 修复 macOS 插画详情滚动对齐、图片缩放更新和窗口控件图标请求问题。\r\n- 修复图片淡入动画丢失问题。\r\n- 修复 iOS 插画卡片上下文菜单无法显示的问题。\r\n- 修复推荐页和动态页用户头像点击无响应的问题。\r\n- 修复关注和取消关注用户时请求返回 400 的问题。\r\n- 修复导航返回后多个瀑布流页面滚动位置丢失的问题。\r\n- 修复分页请求使用错误账号令牌的问题。\r\n- 修复切换账号时收藏、关注、下载和阅读等异步状态串用或显示旧数据的问题。\r\n- 修复网络模式切换后请求未取消、页面未刷新的问题。\r\n- 改善并发下载文件完整性校验，并在失败时提供回退处理。\r\n- 修复部分 API 端点及数据解码问题，降低内容加载失败概率。\r\n- 修复 Ugoira 动图播放中的数组越界问题，并将部分缓存初始化失败改为降级处理。",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.15.0/Pixiv-SwiftUI.ipa",
       "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
       "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
       "tintColor": "#0094FA",
-      "size": 7414080,
+      "size": 10437618,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1191,25 +1191,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.14.4",
-          "date": "2026-06-09T13:47:48Z",
-          "localizedDescription": "## 新功能\r\n\r\n- 应用预览隐私模糊优化显示效果，提升性能与视觉一致性\r\n- 翻译设置目标语言新增「系统语言」选项，并设为默认值\r\n- 推荐页画师标签新增箭头按钮，点击可进入推荐画师全量列表\r\n\r\n## 界面改进\r\n\r\n- 升级部分 UI 组件为 Liquid Glass 材质\r\n- 重新设计插画系列页，采用瀑布流网格与主题入口卡片\r\n- 重新设计插画排行页，将选择器替换为菜单样式，移除刷新按钮\r\n- 统一搜索页卡片样式，排行卡片标签与瀑布流对齐\r\n- 优化亮点搜索框样式，统一高度并应用 Liquid Glass 分裂动画\r\n- 收藏页公开/非公开筛选从筛选菜单中拆分为独立按钮\r\n- 小说收藏页/关注列表页替换筛选按钮为公开/非公开切换\r\n- 统一插画卡片上徽章的毛玻璃效果\r\n\r\n## 动画优化\r\n\r\n- 为图片加载组件添加淡入过渡动画\r\n- 补齐缺失的骨架屏动画和过渡动画\r\n- 用户列表页新增骨架屏、过渡动画并优化关注按钮\r\n\r\n## 性能优化\r\n\r\n优化了插画瀑布流的渲染性能。在 iPhone 17 真机上实测已经基本不会掉帧。\r\n- 替换 KFImage 为轻量级 `@State + .task` 加载器，减少图片加载开销\r\n- 更新 Kingfisher 至 8.9.0，启用 `asyncCacheTypeCheck`，简化 `CachedAsyncImage`\r\n- 用 `CardShadowView`（CALayer shadowPath）替代 `.shadow()`，降低 GPU 合成开销\r\n- 用字典查找替代 O(n) 的 shouldBlur 遍历，移除多余 `NavigationLink` 包装\r\n- 合并 badge modifier 并使用 background(in:) 避免离屏渲染\r\n- 移除 iOS 端 contextMenu 以减少视图树节点数\r\n- 修复 KFImage 容器尺寸，使用显式 frame 稳定 LazyVStack 布局\r\n- 优化 IllustCard GPU 合成开销\r\n- 优化图片滚动加载性能\r\n- 优化 WaterfallGrid 使用增量列更新并移除 GeometryReader\r\n\r\n## 问题修复\r\n\r\n- 修复推荐页为你推荐的标签骨架屏与插画/用户骨架屏没有同时出现的问题\r\n- 修复搜索页推荐标签标题错位的问题\r\n- 修复 Token 导出 sheet 没有正确显示 token 内容的问题\r\n- 修复检测到版本更新后弹出空白 sheet 的问题（未验证）\r\n",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.4/Pixiv-SwiftUI.ipa",
-          "size": 7414080,
-          "sha256": "5aa9e00afa9a0b4a6da362cfb30dc79649c7c4918a75d1ab8ea6d80b4babbfd8",
-          "minOSVersion": "17.0"
-        },
-        {
-          "version": "0.14.3",
-          "date": "2026-06-05T09:22:30Z",
-          "localizedDescription": "## 新特性\r\n\r\n- 全屏浏览体验升级 — 从插画详情页进入全屏图片/动图查看器时，新增平滑过渡动画。动图（Ugoira）与静态图的全屏交互体验已统一。\r\n- 骨架屏淡入动画 — 所有页面的骨架屏加载现在带有淡入过渡。\r\n\r\n## 问题修复\r\n\r\n- 详情页布局修正 — 调整了插画详情页的图片位置，放在了工具栏下面，现在图片不会被遮挡。如果对布局有更好的建议可以发 issue。\r\n- 统一了小说详情页、作者详情页的导航栏标题和背景风格。\r\n- 用户详情页修复 — 修复了取消关注时按钮文字折行的问题。\r\n- 搜索结果分页提前结束 — 修复了搜索结果翻页时提前终止的 bug (@shikiroot )\r\n- 微调了推荐标签详情页中标题的样式\r\n\r\n## 国际化\r\n\r\n- 动态语言适配 — Pixiv 标签 API 现在会根据系统语言动态设置 Accept-Language，中文用户优先展示中文标签，提升本地化体验。同时 pixivision.net 的 URL 路径也会根据语言自动切换 /zh/ 与 /en/。(@rayriffy )\r\n",
-          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.14.3/Pixiv-SwiftUI.ipa",
-          "size": 7288082,
-          "sha256": "dd8f0d29d87188c0cff28693014ac1ca5c6c2f9bd08a300b05a571989e087807",
+          "version": "0.15.0",
+          "date": "2026-08-16T12:51:09Z",
+          "localizedDescription": "## 新功能\r\n\r\n- 插画详情和全屏查看新增图片文字翻译，基于 Apple Vision OCR 识别图片文字并显示原文与译文。\r\n- 新增 VLM 图片解释功能，可使用视觉语言模型分析插画内容；设置中支持配置模型、温度、图像细节并测试服务。\r\n- 设置中新增图片磁盘缓存上限选项，超过上限则自动清理。\r\n- 用户详情页新增骨架屏加载动画。\r\n\r\n## 优化\r\n\r\n- 重构全屏图片预览，支持更高效的懒加载、分页和缩放，改善大图及多图浏览性能。\r\n- 优化相关推荐图片预取，减少重复请求并提升滑动浏览体验。\r\n- 统一加载失败提示、错误状态和重试入口，并增加全局 Toast 反馈。\r\n- 优化登录页面布局、文案和输入体验。\r\n- 更新说明弹窗支持本地化 Markdown 内容。\r\n- 优化卡片阴影渲染，降低 GPU 离屏渲染开销。\r\n\r\n## 问题修复\r\n\r\n- 修复 Bing 翻译接口失效问题，并修复小说内容接口请求问题。\r\n- 修复网页登录流程在切换应用、登录失败或已有账号登录时的状态处理问题。\r\n- 修复 macOS 插画详情滚动对齐、图片缩放更新和窗口控件图标请求问题。\r\n- 修复图片淡入动画丢失问题。\r\n- 修复 iOS 插画卡片上下文菜单无法显示的问题。\r\n- 修复推荐页和动态页用户头像点击无响应的问题。\r\n- 修复关注和取消关注用户时请求返回 400 的问题。\r\n- 修复导航返回后多个瀑布流页面滚动位置丢失的问题。\r\n- 修复分页请求使用错误账号令牌的问题。\r\n- 修复切换账号时收藏、关注、下载和阅读等异步状态串用或显示旧数据的问题。\r\n- 修复网络模式切换后请求未取消、页面未刷新的问题。\r\n- 改善并发下载文件完整性校验，并在失败时提供回退处理。\r\n- 修复部分 API 端点及数据解码问题，降低内容加载失败概率。\r\n- 修复 Ugoira 动图播放中的数组越界问题，并将部分缓存初始化失败改为降级处理。",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.15.0/Pixiv-SwiftUI.ipa",
+          "size": 10437618,
+          "sha256": "0207cfabe88112202b6affff0cf6032278079c7179960a720f12dbad04a47537",
           "minOSVersion": "17.0"
         }
       ],
-      "sha256": "5aa9e00afa9a0b4a6da362cfb30dc79649c7c4918a75d1ab8ea6d80b4babbfd8",
+      "sha256": "0207cfabe88112202b6affff0cf6032278079c7179960a720f12dbad04a47537",
       "category": "other"
     },
     {
@@ -1303,14 +1294,14 @@
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore",
       "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
-      "version": "0.6.4-20260816.1319+a15f2f3a.0604",
-      "versionDate": "2026-08-16T07:26:20Z",
-      "versionDescription": "Nightly build from commit a15f2f3a190f08727c7f4bad8562e1dac3b64f91",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/SideStore_SideStore_SideStore-0.6.4-20260816.1319%2Ba15f2f3a_a15f2f3.ipa",
+      "version": "0.6.4-20260816.1321+b9e6201b.0604",
+      "versionDate": "2026-08-16T13:05:06Z",
+      "versionDescription": "Nightly build from commit b9e6201b9eab31712f7be8de7cd632977427c6a5",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/SideStore_SideStore_SideStore-0.6.4-20260816.1321%2Bb9e6201b_b9e6201.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
       "tintColor": "#EDE7FD",
-      "size": 25109098,
+      "size": 25110855,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1325,12 +1316,12 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "0.6.4-20260816.1319+a15f2f3a.0604",
-          "date": "2026-08-16T07:26:20Z",
-          "localizedDescription": "Nightly build from commit a15f2f3a190f08727c7f4bad8562e1dac3b64f91",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/SideStore_SideStore_SideStore-0.6.4-20260816.1319%2Ba15f2f3a_a15f2f3.ipa",
-          "size": 25109098,
-          "sha256": "d0ba15a9eca3b7bc7db5fd47890ca190efa961d0b5433737a7490be0933a1298",
+          "version": "0.6.4-20260816.1321+b9e6201b.0604",
+          "date": "2026-08-16T13:05:06Z",
+          "localizedDescription": "Nightly build from commit b9e6201b9eab31712f7be8de7cd632977427c6a5",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/SideStore_SideStore_SideStore-0.6.4-20260816.1321%2Bb9e6201b_b9e6201.ipa",
+          "size": 25110855,
+          "sha256": "f6e509df614fcaa10f6482ecfbae454f4b3e041e8d784052233fab0284b4a62a",
           "minOSVersion": "15.0"
         },
         {
@@ -1343,7 +1334,7 @@
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "d0ba15a9eca3b7bc7db5fd47890ca190efa961d0b5433737a7490be0933a1298",
+      "sha256": "f6e509df614fcaa10f6482ecfbae454f4b3e041e8d784052233fab0284b4a62a",
       "category": "other"
     },
     {
