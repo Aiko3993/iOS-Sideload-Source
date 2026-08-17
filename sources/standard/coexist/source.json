@@ -502,7 +502,7 @@
       "versionDescription": "GH Actions fix",
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260719/iTorrent_2.2.0-1_Coexist.ipa",
       "localizedDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
-      "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon-Blue.appiconset/AppIcon-Blue.png",
+      "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon.appiconset/tinted_icon.png",
       "tintColor": "#F19E69",
       "size": 24267916,
       "appPermissions": {
@@ -593,7 +593,7 @@
       "versionDate": "2026-07-14T20:15:51Z",
       "versionDescription": "## Commit: `feat: disable liquid glass for apps on ios 26` (03a3a9c86897d79f9faf8106037b9971841d56a0)\n### New in this build (Compared to v1.6):\n* feat: disable liquid glass for apps on ios 26 (03a3a9c)\n* chore: update star history (5d83bcb)\n* feat: remove \"UIDesignRequiresCompatibility\" key for force Liquid Glass (#129) (ae5dc7d)\n* chore: bump to v1.6.1 (7069768)\n* chore: update sources (20125c9)\n* chore: remove piracy sources (61b9e95)\n* chore: update repo (90983ce)\n### Commit SHA: 03a3a9c86897d79f9faf8106037b9971841d56a0",
       "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/beta/Ksign.ipa",
-      "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
+      "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child?",
       "iconURL": "https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png",
       "tintColor": "3c94fc",
       "size": 16231234,
