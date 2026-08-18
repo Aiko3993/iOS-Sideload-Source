@@ -1003,14 +1003,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.5",
-      "versionDate": "2026-08-15T21:21:44Z",
-      "versionDescription": "## What's Changed\r\n* hide warning when no mihon extension is installed by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/845\r\n* fix Restoring Backup deletes all manga library entries #848 \r\n* some optimizations\r\n* remove orphaned obsolete extensions from list by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/847\r\n* correct package names for rpm based distros by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/844\r\n* Add AVIF support to Linux by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/849\r\n* Re add isNsfw by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/850\r\n* hide warning when no mihon extension is installed pt.2 by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/851\r\n* Better performance in code editor by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/852\r\n* fix: show a real error state when startup fails by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/853\r\n* feat: real error states, loading skeletons, and TV-ready recommendations and watch order by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/859\r\n* fix: make the TV layout testable and stop the scaled UI clipping on desktop by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/860\r\n* use different JVM for iOS by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/861\r\n* feat(ios): adopt the UIScene lifecycle by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/862\r\n* Add Edit Metadata button to local extensions by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/863\r\n* feat(ios): dark and tinted app icon variants by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/865\r\n* fix: watch order timeline and global search results by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/864\r\n* fix: guard the native assets hook before reading code config by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/866\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.4...v0.8.5",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.5/Mangayomi-v0.8.5-ios.ipa",
+      "version": "0.8.6",
+      "versionDate": "2026-08-18T12:09:26Z",
+      "versionDescription": "## What's Changed\r\n* fixed flickering when switching to another page by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/872\r\n* added toggle to auto start Zero by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/871\r\n* perf: stop the grouped list re-sorting on every rebuild by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/874\r\n* support render for AVIF images on iOS <16 by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/875\r\n* Continuous‑mode eviction fixes + O(1) evicted‑chapter checks by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/876\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.5...v0.8.6",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.6/Mangayomi-v0.8.6-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
       "tintColor": "EF4444",
-      "size": 105131696,
+      "size": 108058802,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1032,6 +1032,15 @@
       ],
       "versions": [
         {
+          "version": "0.8.6",
+          "date": "2026-08-18T12:09:26Z",
+          "localizedDescription": "## What's Changed\r\n* fixed flickering when switching to another page by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/872\r\n* added toggle to auto start Zero by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/871\r\n* perf: stop the grouped list re-sorting on every rebuild by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/874\r\n* support render for AVIF images on iOS <16 by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/875\r\n* Continuous‑mode eviction fixes + O(1) evicted‑chapter checks by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/876\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.5...v0.8.6",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.6/Mangayomi-v0.8.6-ios.ipa",
+          "size": 108058802,
+          "sha256": "3058f4c65604444c00d572a22caf4de4c2fe616aa4ed3fc1df85307934c7ab08",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.8.5",
           "date": "2026-08-15T21:21:44Z",
           "localizedDescription": "## What's Changed\r\n* hide warning when no mihon extension is installed by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/845\r\n* fix Restoring Backup deletes all manga library entries #848 \r\n* some optimizations\r\n* remove orphaned obsolete extensions from list by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/847\r\n* correct package names for rpm based distros by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/844\r\n* Add AVIF support to Linux by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/849\r\n* Re add isNsfw by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/850\r\n* hide warning when no mihon extension is installed pt.2 by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/851\r\n* Better performance in code editor by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/852\r\n* fix: show a real error state when startup fails by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/853\r\n* feat: real error states, loading skeletons, and TV-ready recommendations and watch order by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/859\r\n* fix: make the TV layout testable and stop the scaled UI clipping on desktop by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/860\r\n* use different JVM for iOS by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/861\r\n* feat(ios): adopt the UIScene lifecycle by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/862\r\n* Add Edit Metadata button to local extensions by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/863\r\n* feat(ios): dark and tinted app icon variants by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/865\r\n* fix: watch order timeline and global search results by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/864\r\n* fix: guard the native assets hook before reading code config by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/866\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.4...v0.8.5",
@@ -1039,19 +1048,10 @@
           "size": 105131696,
           "sha256": "85f0b000c72cdd3f89b9269c8ce31203841290ccd074fcc79bcb554073f9313a",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.8.4",
-          "date": "2026-08-12T16:25:28Z",
-          "localizedDescription": "## What's Changed\r\n* enhance Android image decoding performance by pre-decoding full RGBA and optimizing tile extraction; adjust cache size and implement batch rebuild for tile rendering\r\n* fix libjpg/libpng not linked (linux)\r\n* Revert e0bac9210db2f6d8e6133937e31c3a1460a80cb9 by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/842\r\n* ci: disable Jetifier (app is fully AndroidX) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/841\r\n* Clean up reader_view code duplication and add comments to functions by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/840\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.3...v0.8.4",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.4/Mangayomi-v0.8.4-ios.ipa",
-          "size": 47770028,
-          "sha256": "015f0041594002033dac879157d92acd13e6b511a763509a3c3b192c2af7cda5",
-          "minOSVersion": "13.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "85f0b000c72cdd3f89b9269c8ce31203841290ccd074fcc79bcb554073f9313a",
+      "sha256": "3058f4c65604444c00d572a22caf4de4c2fe616aa4ed3fc1df85307934c7ab08",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
