@@ -1003,14 +1003,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.7",
-      "versionDate": "2026-08-20T12:28:59Z",
-      "versionDescription": "## What's Changed\r\n* Db restore improvements by @not-akari in https://github.com/kodjodevf/mangayomi/pull/880\r\n* fix libjpeg.so.8 Linux fail\r\n* fix Mihon extensions fail on Android\r\n* Fix Isar async write transaction Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/882\r\n\r\n## New Contributors\r\n* @not-akari made their first contribution in https://github.com/kodjodevf/mangayomi/pull/880\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.6...v0.8.7",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.7_Coexist.ipa",
+      "version": "0.8.8",
+      "versionDate": "2026-08-20T20:28:27Z",
+      "versionDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.8_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
       "tintColor": "EF4444",
-      "size": 107963687,
+      "size": 108005396,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1032,12 +1032,12 @@
       ],
       "versions": [
         {
-          "version": "0.8.7",
-          "date": "2026-08-20T12:28:59Z",
-          "localizedDescription": "## What's Changed\r\n* Db restore improvements by @not-akari in https://github.com/kodjodevf/mangayomi/pull/880\r\n* fix libjpeg.so.8 Linux fail\r\n* fix Mihon extensions fail on Android\r\n* Fix Isar async write transaction Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/882\r\n\r\n## New Contributors\r\n* @not-akari made their first contribution in https://github.com/kodjodevf/mangayomi/pull/880\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.6...v0.8.7",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.7_Coexist.ipa",
-          "size": 107963687,
-          "sha256": "ee56e76266faa00dd0c609e6458d0ef9f29c8aa40ec57acdcd9ce38baa41fe34",
+          "version": "0.8.8",
+          "date": "2026-08-20T20:28:27Z",
+          "localizedDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.8_Coexist.ipa",
+          "size": 108005396,
+          "sha256": "d46466a247a334ea209feb38072ea6f93b927c237e0ac3987434e3b3f4ba488f",
           "minOSVersion": "15.0"
         },
         {
@@ -1051,7 +1051,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "ee56e76266faa00dd0c609e6458d0ef9f29c8aa40ec57acdcd9ce38baa41fe34",
+      "sha256": "d46466a247a334ea209feb38072ea6f93b927c237e0ac3987434e3b3f4ba488f",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
