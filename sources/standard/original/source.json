@@ -1003,14 +1003,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.7",
-      "versionDate": "2026-08-20T12:28:59Z",
-      "versionDescription": "## What's Changed\r\n* Db restore improvements by @not-akari in https://github.com/kodjodevf/mangayomi/pull/880\r\n* fix libjpeg.so.8 Linux fail\r\n* fix Mihon extensions fail on Android\r\n* Fix Isar async write transaction Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/882\r\n\r\n## New Contributors\r\n* @not-akari made their first contribution in https://github.com/kodjodevf/mangayomi/pull/880\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.6...v0.8.7",
-      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.7/Mangayomi-v0.8.7-ios.ipa",
+      "version": "0.8.8",
+      "versionDate": "2026-08-20T20:28:27Z",
+      "versionDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.8/Mangayomi-v0.8.8-ios.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
       "tintColor": "EF4444",
-      "size": 108103427,
+      "size": 108136104,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1032,12 +1032,12 @@
       ],
       "versions": [
         {
-          "version": "0.8.7",
-          "date": "2026-08-20T12:28:59Z",
-          "localizedDescription": "## What's Changed\r\n* Db restore improvements by @not-akari in https://github.com/kodjodevf/mangayomi/pull/880\r\n* fix libjpeg.so.8 Linux fail\r\n* fix Mihon extensions fail on Android\r\n* Fix Isar async write transaction Exception by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/882\r\n\r\n## New Contributors\r\n* @not-akari made their first contribution in https://github.com/kodjodevf/mangayomi/pull/880\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.6...v0.8.7",
-          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.7/Mangayomi-v0.8.7-ios.ipa",
-          "size": 108103427,
-          "sha256": "9e73d71764eb06102e43a762c9fd82640ebb32723ed0d0b5499fb28a6af10c24",
+          "version": "0.8.8",
+          "date": "2026-08-20T20:28:27Z",
+          "localizedDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.8/Mangayomi-v0.8.8-ios.ipa",
+          "size": 108136104,
+          "sha256": "9a51450f0a59d2019478bc303bfd5b01bb1d26ed6fc9d17ee145471c5d9b8bc3",
           "minOSVersion": "15.0"
         },
         {
@@ -1051,7 +1051,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "9e73d71764eb06102e43a762c9fd82640ebb32723ed0d0b5499fb28a6af10c24",
+      "sha256": "9a51450f0a59d2019478bc303bfd5b01bb1d26ed6fc9d17ee145471c5d9b8bc3",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
