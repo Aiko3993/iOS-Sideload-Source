@@ -1069,7 +1069,7 @@
       "versionDescription": "NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\r\n\r\n### Change log:\r\n\r\n**Twitter, version 11.35:**\r\n- Updated the Twitter build to 11.35\r\n\r\n**NeoFreeBird, version 2.2:**\r\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\r\n- Localized the Post > Tweet replacer\r\n- Improved the Open in Twitter extension\r\n- Minor bug fixes and other minor improvements\r\n\r\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\r\n\r\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
       "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
       "localizedDescription": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
-      "iconURL": "https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png",
+      "iconURL": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
       "tintColor": "1DA1F2",
       "size": 153108663,
       "appPermissions": {
