@@ -547,20 +547,29 @@
       "bundleIdentifier": "com.example.kazumi",
       "developerName": "Predidit",
       "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
-      "version": "2.2.8",
-      "versionDate": "2026-08-15T01:52:15Z",
-      "versionDescription": "Update",
-      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.8/Kazumi_ios_2.2.8_no_sign.ipa",
+      "version": "2.2.9",
+      "versionDate": "2026-08-21T06:53:23Z",
+      "versionDescription": "- 优化弹幕检索匹配 (#2453) (@walker1211)\r\n- 重做 android 平台画中画实现，修复进出画中画时的布局异常 (@Predidit)\r\n- 修复 android 平台切换到后台后返回时缓冲卡住的问题 (@Predidit)\r\n- 修复 linux 平台重复启动导致本地数据被清空的问题 (#2462 #2027) (@walker1211)\r\n- 修复 macOS 平台窗口失焦后无法再次点击激活的问题 (#2457) (@walker1211)\r\n- 修复规则批量更新结果提示一闪而过的问题 (#2431) (@walker1211)\r\n- 从历史记录进入播放页时选集列表定位到当前集数 (@NanoShiki)\r\n- 其他 UI 调整 (@Predidit)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.9/Kazumi_ios_2.2.9_no_sign.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
       "tintColor": "#F6F5F0",
-      "size": 29635192,
+      "size": 29638292,
       "appPermissions": {
         "entitlements": [],
         "privacy": {}
       },
       "screenshotURLs": [],
       "versions": [
+        {
+          "version": "2.2.9",
+          "date": "2026-08-21T06:53:23Z",
+          "localizedDescription": "- 优化弹幕检索匹配 (#2453) (@walker1211)\r\n- 重做 android 平台画中画实现，修复进出画中画时的布局异常 (@Predidit)\r\n- 修复 android 平台切换到后台后返回时缓冲卡住的问题 (@Predidit)\r\n- 修复 linux 平台重复启动导致本地数据被清空的问题 (#2462 #2027) (@walker1211)\r\n- 修复 macOS 平台窗口失焦后无法再次点击激活的问题 (#2457) (@walker1211)\r\n- 修复规则批量更新结果提示一闪而过的问题 (#2431) (@walker1211)\r\n- 从历史记录进入播放页时选集列表定位到当前集数 (@NanoShiki)\r\n- 其他 UI 调整 (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.9/Kazumi_ios_2.2.9_no_sign.ipa",
+          "size": 29638292,
+          "sha256": "72e294d8dca7dc320c11aed7847a942ac36bb2daa19e94e7218636ff9af979cf",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "2.2.8",
           "date": "2026-08-15T01:52:15Z",
@@ -569,18 +578,9 @@
           "size": 29635192,
           "sha256": "2f15225e095957b2041d29504fdcec2adfaf6296df1d2b658f55c5e9e516276e",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "2.2.7",
-          "date": "2026-08-08T08:17:25Z",
-          "localizedDescription": "- 制作人员列表现在得到正确排序 (#2051) (@ChouChiu)\r\n- 修复 Linux 平台 nvidia 设备启用超分辨率可能出现偏色的问题 (#1547) (@zhn1100)\r\n- 优化 windows 平台视频解析器 (@Predidit)\r\n- 其他 UI 调整 (@Predidit)\r\n- 其他文档调整 (@WhiteXero)",
-          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.7/Kazumi_ios_2.2.7_no_sign.ipa",
-          "size": 29554015,
-          "sha256": "fc19d8ca721aabb540d12bfbae8d872df665b995eccbeca2f8458afc7fe969b5",
-          "minOSVersion": "13.0"
         }
       ],
-      "sha256": "2f15225e095957b2041d29504fdcec2adfaf6296df1d2b658f55c5e9e516276e",
+      "sha256": "72e294d8dca7dc320c11aed7847a942ac36bb2daa19e94e7218636ff9af979cf",
       "category": "other"
     },
     {
