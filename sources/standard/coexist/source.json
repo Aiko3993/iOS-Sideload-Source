@@ -1131,6 +1131,80 @@
       ]
     },
     {
+      "name": "NeoFreeBird",
+      "githubRepo": "orionblur/NeoFreeBird",
+      "bundleIdentifier": "com.atebits.Tweetie2.coexist",
+      "developerName": "orionblur",
+      "subtitle": "NeoFreeBird version 6.5.0",
+      "version": "6.5.0",
+      "versionDate": "2026-08-16T20:21:57Z",
+      "versionDescription": "### Version 6.5.0\r\n\r\nNeoFreeBird has been updated to X version 12.15. In the future, I won’t be updating the app version until XChat or other crucial features, like tweeting and replying, break. This also means that I will not support versions other than the current one, and may not prioritize issues on future versions.\r\n\r\n**New Features**\r\n- Added option to see where an account is located in a tweet. Can spillover into next line at times\r\n- Added option to disable screenshot detection in XChat\r\n\r\n**Fixes**\r\n- Fixes the “Restore Video Timestamp” option to prevent crashing on newer versions (fixes #23)\r\n- Added back the theme color to the horizontal scroll bar (fixes #27)\r\n- Forced the “more” bar to always be present (this was only an iPad issue)\r\n- Fixed the video timestamp not reflecting the custom font\r\n- Moved “Copy Profile Info” to the profile overflow menu. This now means you can’t copy profile info from your own profile, but you can click “Edit profile” and get that, so not a massive loss\r\n- Fixed bookmarked posts from verified accounts not followed not showing when the option to hide verified tweets was on\r\n- Fix Dim theme search and selected-tab colors by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/28\r\n- Fix Dim theme backgrounds after view reuse by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/30\r\n\r\n## New Contributors\r\n* @Thetromboneman1 made their first contribution in https://github.com/orionblur/NeoFreeBird/pull/28\r\n\r\n**Full Changelog**: https://github.com/orionblur/NeoFreeBird/compare/v6.4.0...v6.5.0",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/NeoFreeBird_6.5.0_Coexist.ipa",
+      "localizedDescription": "NeoFreeBird-BHTwitter",
+      "iconURL": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
+      "tintColor": "#000000",
+      "size": 230354756,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.applesignin",
+          "com.apple.developer.associated-appclip-app-identifiers",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.devicecheck.appattest-environment",
+          "com.apple.developer.networking.carrier-constrained.app-optimized",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.pass-type-identifiers",
+          "com.apple.developer.payment-pass-provisioning",
+          "com.apple.developer.siri",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSCalendarsUsageDescription": "Add events to your calendar from X.",
+          "NSCameraUsageDescription": "Capture and post photos and videos from X.",
+          "NSContactsUsageDescription": "We will securely upload your contacts to our servers to help you connect with friends and suggest users to follow on X.",
+          "NSFaceIDUsageDescription": "Use FaceID to authenticate on X.",
+          "NSLocationUsageDescription": "Enjoy the X experience tailored to your location.",
+          "NSLocationWhenInUseUsageDescription": "Enables X to customize your experience based on your current location.",
+          "NSMicrophoneUsageDescription": "Capture and post videos with sound from X.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you download photos and videos to your Photos.",
+          "NSPhotoLibraryUsageDescription": "Allow access to share photos from your camera roll.",
+          "NSSpeechRecognitionUsageDescription": "Going forward, whenever you choose to share captions on this device, Apple will provide the service. Doing so helps make sure people of all hearing abilities can access your content.",
+          "NSUserTrackingUsageDescription": "This helps X show you more relevant ads."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline1.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline2.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline3.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline4.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline5.png"
+      ],
+      "versions": [
+        {
+          "version": "6.5.0",
+          "date": "2026-08-16T20:21:57Z",
+          "localizedDescription": "### Version 6.5.0\r\n\r\nNeoFreeBird has been updated to X version 12.15. In the future, I won’t be updating the app version until XChat or other crucial features, like tweeting and replying, break. This also means that I will not support versions other than the current one, and may not prioritize issues on future versions.\r\n\r\n**New Features**\r\n- Added option to see where an account is located in a tweet. Can spillover into next line at times\r\n- Added option to disable screenshot detection in XChat\r\n\r\n**Fixes**\r\n- Fixes the “Restore Video Timestamp” option to prevent crashing on newer versions (fixes #23)\r\n- Added back the theme color to the horizontal scroll bar (fixes #27)\r\n- Forced the “more” bar to always be present (this was only an iPad issue)\r\n- Fixed the video timestamp not reflecting the custom font\r\n- Moved “Copy Profile Info” to the profile overflow menu. This now means you can’t copy profile info from your own profile, but you can click “Edit profile” and get that, so not a massive loss\r\n- Fixed bookmarked posts from verified accounts not followed not showing when the option to hide verified tweets was on\r\n- Fix Dim theme search and selected-tab colors by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/28\r\n- Fix Dim theme backgrounds after view reuse by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/30\r\n\r\n## New Contributors\r\n* @Thetromboneman1 made their first contribution in https://github.com/orionblur/NeoFreeBird/pull/28\r\n\r\n**Full Changelog**: https://github.com/orionblur/NeoFreeBird/compare/v6.4.0...v6.5.0",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/NeoFreeBird_6.5.0_Coexist.ipa",
+          "size": 230354756,
+          "sha256": "0715cb45b0ca399f7ae1d22842f3a0f6d1d599cf4fa7116335ea161647ddbc18",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline1.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline2.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline3.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline4.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline5.png"
+      ],
+      "category": "lifestyle",
+      "sha256": "0715cb45b0ca399f7ae1d22842f3a0f6d1d599cf4fa7116335ea161647ddbc18"
+    },
+    {
       "name": "PiliPlus",
       "githubRepo": "bggRGjQaUbCoE/PiliPlus",
       "bundleIdentifier": "com.example.piliplus.coexist",
