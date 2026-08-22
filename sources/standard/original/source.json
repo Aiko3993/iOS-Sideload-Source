@@ -1,0 +1,1604 @@
+{
+  "name": "iOS Sideload Source",
+  "identifier": "io.github.aiko3993.ios-sideload-source",
+  "subtitle": "iOS Sideload Source by Aiko3993",
+  "description": "An automated iOS sideload source. Fetches the latest IPAs from GitHub Releases/Artifacts and builds a universal source.",
+  "tintColor": "#10b981",
+  "iconURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/standard.png",
+  "website": "https://Aiko3993.github.io/iOS-Sideload-Source",
+  "apps": [
+    {
+      "name": "Aidoku",
+      "githubRepo": "Aidoku/Aidoku",
+      "bundleIdentifier": "app.aidoku.Aidoku",
+      "developerName": "Aidoku",
+      "subtitle": "Free and open source manga reader for iOS and iPadOS",
+      "version": "0.8.4",
+      "versionDate": "2026-07-03T05:26:01Z",
+      "versionDescription": "- Fixes for iOS 27: fixed settings pages freezing the app, along with other minor visual issues.\r\n- Improved backup restore time: restores should now take seconds instead of minutes. (@Amqx)\r\n- Failed download page retrying: less chance of missing pages in downloaded chapters from sources with aggressive rate limits. (@pxseu)\r\n- New chapter notifications (experimental): when Aidoku refreshes in the background, notification(s) of new chapters should be sent if enabled. (@Zareix)\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
+      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.8.4/Aidoku.ipa",
+      "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
+      "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "ff375f",
+      "size": 10136987,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.icloud-container-environment",
+          "com.apple.developer.icloud-container-identifiers",
+          "com.apple.developer.icloud-services",
+          "com.apple.developer.ubiquity-container-identifiers",
+          "com.apple.developer.ubiquity-kvstore-identifier",
+          "com.apple.developer.user-fonts",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Aidoku needs FaceID permissions for user-defined settings",
+          "NSLocalNetworkUsageDescription": "Aidoku needs permission to connect to local Komga and Kavita servers",
+          "NSPhotoLibraryUsageDescription": "Aidoku needs permission to save pages in your photo library"
+        }
+      },
+      "screenshotURLs": [
+        "https://aidoku.app/images/library.png",
+        "https://aidoku.app/images/source.png",
+        "https://aidoku.app/images/reader.png"
+      ],
+      "versions": [
+        {
+          "version": "0.8.4",
+          "date": "2026-07-03T05:26:01Z",
+          "localizedDescription": "- Fixes for iOS 27: fixed settings pages freezing the app, along with other minor visual issues.\r\n- Improved backup restore time: restores should now take seconds instead of minutes. (@Amqx)\r\n- Failed download page retrying: less chance of missing pages in downloaded chapters from sources with aggressive rate limits. (@pxseu)\r\n- New chapter notifications (experimental): when Aidoku refreshes in the background, notification(s) of new chapters should be sent if enabled. (@Zareix)\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
+          "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.8.4/Aidoku.ipa",
+          "size": 10136987,
+          "sha256": "4629068fac5fe7155e8d0d6eb4dcb594a63eb5485ec754b4d7ebb11371c54947",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://aidoku.app/images/library.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/source.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/reader.png",
+          "width": 450,
+          "height": 908
+        }
+      ],
+      "category": "entertainment",
+      "sha256": "4629068fac5fe7155e8d0d6eb4dcb594a63eb5485ec754b4d7ebb11371c54947"
+    },
+    {
+      "name": "Amethyst (Nightly)",
+      "githubRepo": "AngelAuraMC/Amethyst-iOS",
+      "bundleIdentifier": "org.angelauramc.amethyst",
+      "developerName": "AngelAuraMC",
+      "subtitle": "A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform.",
+      "version": "1.0.9212a18",
+      "versionDate": "2026-08-10T13:18:10Z",
+      "versionDescription": "Nightly build from commit 9212a1894865e7ac0466029e25ddb0d895544c76",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260810/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_9212a18.ipa",
+      "localizedDescription": "This repository contains the code for our iOS and iPadOS port of Amethyst. Looking for Android?",
+      "iconURL": "https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
+      "tintColor": "#2F2F2F",
+      "size": 189022477,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.memorystatus",
+          "com.apple.private.security.container-required",
+          "get-task-allow",
+          "jb.pmap_cs.custom_trust"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Angel Aura Amethyst uses the local network to find and communicate with AltServer and LAN servers.",
+          "NSMicrophoneUsageDescription": "Angel Aura Amethyst uses the microphone to enable support for voice chat mods."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.9212a18",
+          "date": "2026-08-10T13:18:10Z",
+          "localizedDescription": "Nightly build from commit 9212a1894865e7ac0466029e25ddb0d895544c76",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260810/AngelAuraMC_Amethyst-iOS_org.angelauramc.amethyst-ios_9212a18.ipa",
+          "size": 189022477,
+          "sha256": "c11f94ad51bc97abf85466e18a8a78fbd06437f39cba0c271eac3d10461f6438",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "c11f94ad51bc97abf85466e18a8a78fbd06437f39cba0c271eac3d10461f6438",
+      "category": "other"
+    },
+    {
+      "name": "Animeko",
+      "githubRepo": "open-ani/animeko",
+      "bundleIdentifier": "org.animeko.animeko",
+      "developerName": "open-ani",
+      "subtitle": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform",
+      "version": "6.0.0",
+      "versionDate": "2026-08-01T14:51:27Z",
+      "versionDescription": "- 支持与好友一起看番，大幅改善自动选源能力和速度，视频内广告过滤\r\n- 全新条目详情页，支持查看角色和声优的信息和关联条目\r\n- 桌面端切换为 mpv 播放器内核，大幅优化性能\r\n\r\n----\r\n\r\n- `[Desktop]` 新增 Windows arm64 支持\r\n- `[All]` 新增实验性 HLS 贴片广告过滤 (#3097 by @NihilDigit)\r\n- `[All]` 数据源支持多平台图片验证码自动处理 (#3172 by @proffitteoy)\r\n- `[Desktop]` Windows ARM64 桌面端新增构建支持 (#3155 by @NihilDigit)\r\n- `[All]` 新增与好友一起看 (syncplay) (proposed by @qian-xuan)\r\n- `[Desktop]` Windows 桌面端支持原生触控输入 (#3169 by @NihilDigit, #3221 by @NihilDigit, #3234 by @NihilDigit)\r\n- `[All]` 播放进度条支持悬停或拖动时预览画面帧\r\n- `[All]` 新增播放器播放信息叠加面板，可查看码率、解码器等播放状态 (#3120 by @wjb6666)\r\n- `[Mobile]` 移动端快进和进度条拖动交互更顺手 (#3161 by @NihilDigit)\r\n- `[All]` 播放器支持自定义播放速度控制 (#3187 by @NihilDigit)\r\n- `[Mobile]` Android 支持视频截图、改进手势快进，并支持 libass 渲染字幕，WSOLA 倍速引擎 (#3156 by @NihilDigit)\r\n- `[Mobile]` 新增移动端毛玻璃应用栏设置\r\n- `[All]` 新增缓存管理和数据源管理多选模式，悬浮批量操作工具栏\r\n- `[Mobile]` 改进播放器键盘快捷键行为 (#3159 by @NihilDigit)\r\n- `[Desktop]` Linux 桌面端支持动态取色 (#3146 by @NihilDigit)\r\n- `[All]` 支持配置跳过 85s 按钮的时长为 80、 85 和 90 秒\r\n- `[All]` 数据源启用或禁用后保留测试结果 (#3106 by @Mystery406)\r\n- `[All]` 不再在日志中记录 Bangumi 访问令牌 (#3114 by @proffitteoy)\r\n- `[All]` 修复代理认证头未正确使用配置的问题 (#3115 by @proffitteoy)\r\n- `[All]` 改进剧集长按反馈 (#3118 by @TexasOct)\r\n- `[All]` 修复集合列表条目封面不显示的问题 (#3123 by @proffitteoy)\r\n- `[Desktop]` 优化 macOS 和 Linux 的稳定性 (#3144 by @NihilDigit, #3145 by @NihilDigit, #3157 by @W-Nana, #3195 by @NihilDigit, #3214 by @XYenon, #3216 by @NihilDigit)\r\n- `[Desktop]` Linux AppImage 支持增量更新 (#3149 by @NihilDigit)\r\n\r\n**Full Changelog**: https://github.com/open-ani/animeko/compare/v5.7.1...v6.0.0\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-windows-x86_64.zip\r\n\r\n[github-win-aarch64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-windows-aarch64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-windows-x86_64.zip\r\n\r\n[cf-win-aarch64]: https://d.myani.org/v6.0.0/ani-6.0.0-windows-aarch64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v6.0.0/ani-6.0.0-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v6.0.0/ani-6.0.0.ipa\r\n\r\n[cf-android]: https://d.myani.org/v6.0.0/ani-6.0.0-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v6.0.0/ani-6.0.0-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v6.0.0/ani-6.0.0-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v6.0.0/ani-6.0.0-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-windows-x86_64.zip\r\n\r\n[ghproxy-win-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-windows-aarch64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macos-unable-to-open\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/windows-font-bg-color-issue\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/linux-install\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macos-intel-install\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/ios-install\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | 仍在开发中                                            | 现在可以使用平板版接鼠标使用                              |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| Windows (ARM64)  | [主线][cf-win-aarch64] / [备线][ghproxy-win-aarch64] | 同 Windows                                                             |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v6.0.0/ani-6.0.0-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v6.0.0/ani-6.0.0.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n</details>",
+      "downloadURL": "https://github.com/open-ani/animeko/releases/download/v6.0.0/ani-6.0.0.ipa",
+      "localizedDescription": "Animeko 支持云同步观看记录 ([Bangumi][Bangumi])、多视频数据源、缓存、弹幕、以及更多功能，提供尽可能简单且舒适的追番体验。",
+      "iconURL": "https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png",
+      "tintColor": "#2F3943",
+      "size": 41391524,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "6.0.0",
+          "date": "2026-08-01T14:51:27Z",
+          "localizedDescription": "- 支持与好友一起看番，大幅改善自动选源能力和速度，视频内广告过滤\r\n- 全新条目详情页，支持查看角色和声优的信息和关联条目\r\n- 桌面端切换为 mpv 播放器内核，大幅优化性能\r\n\r\n----\r\n\r\n- `[Desktop]` 新增 Windows arm64 支持\r\n- `[All]` 新增实验性 HLS 贴片广告过滤 (#3097 by @NihilDigit)\r\n- `[All]` 数据源支持多平台图片验证码自动处理 (#3172 by @proffitteoy)\r\n- `[Desktop]` Windows ARM64 桌面端新增构建支持 (#3155 by @NihilDigit)\r\n- `[All]` 新增与好友一起看 (syncplay) (proposed by @qian-xuan)\r\n- `[Desktop]` Windows 桌面端支持原生触控输入 (#3169 by @NihilDigit, #3221 by @NihilDigit, #3234 by @NihilDigit)\r\n- `[All]` 播放进度条支持悬停或拖动时预览画面帧\r\n- `[All]` 新增播放器播放信息叠加面板，可查看码率、解码器等播放状态 (#3120 by @wjb6666)\r\n- `[Mobile]` 移动端快进和进度条拖动交互更顺手 (#3161 by @NihilDigit)\r\n- `[All]` 播放器支持自定义播放速度控制 (#3187 by @NihilDigit)\r\n- `[Mobile]` Android 支持视频截图、改进手势快进，并支持 libass 渲染字幕，WSOLA 倍速引擎 (#3156 by @NihilDigit)\r\n- `[Mobile]` 新增移动端毛玻璃应用栏设置\r\n- `[All]` 新增缓存管理和数据源管理多选模式，悬浮批量操作工具栏\r\n- `[Mobile]` 改进播放器键盘快捷键行为 (#3159 by @NihilDigit)\r\n- `[Desktop]` Linux 桌面端支持动态取色 (#3146 by @NihilDigit)\r\n- `[All]` 支持配置跳过 85s 按钮的时长为 80、 85 和 90 秒\r\n- `[All]` 数据源启用或禁用后保留测试结果 (#3106 by @Mystery406)\r\n- `[All]` 不再在日志中记录 Bangumi 访问令牌 (#3114 by @proffitteoy)\r\n- `[All]` 修复代理认证头未正确使用配置的问题 (#3115 by @proffitteoy)\r\n- `[All]` 改进剧集长按反馈 (#3118 by @TexasOct)\r\n- `[All]` 修复集合列表条目封面不显示的问题 (#3123 by @proffitteoy)\r\n- `[Desktop]` 优化 macOS 和 Linux 的稳定性 (#3144 by @NihilDigit, #3145 by @NihilDigit, #3157 by @W-Nana, #3195 by @NihilDigit, #3214 by @XYenon, #3216 by @NihilDigit)\r\n- `[Desktop]` Linux AppImage 支持增量更新 (#3149 by @NihilDigit)\r\n\r\n**Full Changelog**: https://github.com/open-ani/animeko/compare/v5.7.1...v6.0.0\r\n\r\n[//]: # (ANI-SERVER-MAGIC-SEPARATOR)\r\n\r\n[//]: # (注意: api server 依赖这个特殊分隔符)\r\n\r\n[//]: # (对于所有可用的变量列表, 参考 CI release.yml 的 step release-notes)\r\n\r\n[github-win-x64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-windows-x86_64.zip\r\n\r\n[github-win-aarch64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-windows-aarch64.zip\r\n\r\n[github-mac-x64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-macos-x86_64.dmg\r\n\r\n[github-mac-aarch64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-macos-aarch64.dmg\r\n\r\n[github-android]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-universal.apk\r\n\r\n[github-android-arm64-v8a]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-arm64-v8a.apk\r\n\r\n[github-android-armeabi-v7a]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-armeabi-v7a.apk\r\n\r\n[github-android-x86_64]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-x86_64.apk\r\n\r\n[cf-win-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-windows-x86_64.zip\r\n\r\n[cf-win-aarch64]: https://d.myani.org/v6.0.0/ani-6.0.0-windows-aarch64.zip\r\n\r\n[cf-linux-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-linux-x86_64.appimage\r\n\r\n[cf-mac-x64]: https://d.myani.org/v6.0.0/ani-6.0.0-macos-x86_64.zip\r\n\r\n[cf-mac-aarch64]: https://d.myani.org/v6.0.0/ani-6.0.0-macos-aarch64.dmg\r\n\r\n[cf-ios]: https://d.myani.org/v6.0.0/ani-6.0.0.ipa\r\n\r\n[cf-android]: https://d.myani.org/v6.0.0/ani-6.0.0-universal.apk\r\n\r\n[cf-android-arm64-v8a]: https://d.myani.org/v6.0.0/ani-6.0.0-arm64-v8a.apk\r\n\r\n[cf-android-armeabi-v7a]: https://d.myani.org/v6.0.0/ani-6.0.0-armeabi-v7a.apk\r\n\r\n[cf-android-x86_64]: https://d.myani.org/v6.0.0/ani-6.0.0-x86_64.apk\r\n\r\n[ghproxy-win-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-windows-x86_64.zip\r\n\r\n[ghproxy-win-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-windows-aarch64.zip\r\n\r\n[ghproxy-mac-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-macos-x86_64.zip\r\n\r\n[ghproxy-linux-x64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-linux-x86_64.appimage\r\n\r\n[ghproxy-mac-aarch64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-macos-aarch64.dmg\r\n\r\n[ghproxy-ios]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0.ios\r\n\r\n[ghproxy-android]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-universal.apk\r\n\r\n[ghproxy-android-arm64-v8a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-arm64-v8a.apk\r\n\r\n[ghproxy-android-armeabi-v7a]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-armeabi-v7a.apk\r\n\r\n[ghproxy-android-x86_64]: https://ghfast.top/?q=https%3A%2F%2Fgithub.com%2Fopen-ani%2Fani%2Freleases%2Fdownload%2Fv6.0.0%2Fani-6.0.0-x86_64.apk\r\n\r\n[macOS 无法打开解决方案]: https://myani.org/wiki/macos-unable-to-open\r\n\r\n[Windows下字体与背景颜色异常解决方案]: https://myani.org/wiki/windows-font-bg-color-issue\r\n\r\n[Linux 安装说明]: https://myani.org/wiki/linux-install\r\n\r\n[macOS Intel芯片版本安装教程]: https://myani.org/wiki/macos-intel-install\r\n\r\n[macos-intel-issue]: https://github.com/open-ani/animeko/issues/1345\r\n\r\n[linux-issue]: https://github.com/open-ani/animeko/issues/944\r\n\r\n[iOS 自签]: https://myani.org/wiki/ios-install\r\n\r\n|                  | 下载                                               | 常见问题                                        |\r\n|------------------|--------------------------------------------------|---------------------------------------------|\r\n| 安卓 手机/平板         | [主线][cf-android] / [备线][ghproxy-android]         |                                             |\r\n| 安卓 电视            | 仍在开发中                                            | 现在可以使用平板版接鼠标使用                              |\r\n| iOS              | [主线][cf-ios] / [备线][ghproxy-ios]                 | 需要[自签][iOS 自签]                                  |\r\n| Windows          | [主线][cf-win-x64] / [备线][ghproxy-win-x64]         | 1. 目录不要有中文或者空格 <br/> 2. [显示异常][Windows下字体与背景颜色异常解决方案] |\r\n| Windows (ARM64)  | [主线][cf-win-aarch64] / [备线][ghproxy-win-aarch64] | 同 Windows                                                             |\r\n| macOS (M 系列芯片)   | [主线][cf-mac-aarch64] / [备线][ghproxy-mac-aarch64] | ⚠️ [安装后打不开][macOS 无法打开解决方案]                      |\r\n| macOS (Intel 芯片) | [主线][cf-mac-x64] / [备线][ghproxy-mac-x64]         | ⚠️ [安装教程][macOS Intel芯片版本安装教程]                    |\r\n| Linux AppImage   | [主线][cf-linux-x64] / [备线][ghproxy-linux-x64]     | ⚠️ [安装教程][Linux 安装说明]                        |\r\n\r\n[github-android-qr]: https://github.com/open-ani/ani/releases/download/v6.0.0/ani-6.0.0-universal.apk.github.qrcode.png\r\n\r\n[cf-android-qr]: https://d.myani.org/v6.0.0/ani-6.0.0-universal.apk.cloudflare.qrcode.png\r\n\r\n[cf-ios-qr]: https://d.myani.org/v6.0.0/ani-6.0.0.ipa.cloudflare.qrcode.png\r\n\r\n| 安卓 手机/平板                     | iOS IPA (需要[自签][iOS 自签])     | \r\n|------------------------------|--------------------------|\r\n| ![Cloudflare][cf-android-qr] | ![Cloudflare][cf-ios-qr] |\r\n\r\n\r\n<details>\r\n<summary> Android 细分架构下载 </summary>\r\n\r\n[//]: # (@formatter:off  因为\"版本\"前面不能换行)\r\n\r\n如果不知道自己是什么架构，建议下载 `universal` 版本。\r\n\r\n[//]: # (@formatter:on)\r\n\r\n| 处理器架构              | 适用于             | 下载                                                                                                      |\r\n|--------------------|-----------------|---------------------------------------------------------------------------------------------------------|\r\n| universal (推荐)     | 所有设备            | [主线][cf-android] / [备线][ghproxy-android] / [GitHub][github-android]                                     |\r\n| arm64-v8a (64 位)   | 几乎所有手机和平板       | [主线][cf-android-arm64-v8a] / [备线][ghproxy-android-arm64-v8a] / [GitHub][github-android-arm64-v8a]       |\r\n| armeabi-v7a (32 位) | 旧手机             | [主线][cf-android-armeabi-v7a] / [备线][ghproxy-android-armeabi-v7a] / [GitHub][github-android-armeabi-v7a] |\r\n| x86_64             | Chromebook 及模拟器 | [主线][cf-android-x86_64] / [备线][ghproxy-android-x86_64] / [GitHub][github-android-x86_64]                |\r\n\r\n</details>",
+          "downloadURL": "https://github.com/open-ani/animeko/releases/download/v6.0.0/ani-6.0.0.ipa",
+          "size": 41391524,
+          "sha256": "edfee293f3b056440366202d79d97eef62f3f0fbe91be57517b60d4c2b51fdf3",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "edfee293f3b056440366202d79d97eef62f3f0fbe91be57517b60d4c2b51fdf3",
+      "category": "other"
+    },
+    {
+      "name": "Apollo",
+      "githubRepo": "Balackburn/Apollo",
+      "bundleIdentifier": "com.christianselig.Apollo",
+      "developerName": "Balackburn",
+      "subtitle": "The award-winning Reddit app",
+      "version": "1.15.11_3.6.0",
+      "versionDate": "2026-08-19T00:58:55Z",
+      "versionDescription": "Mirrored from [Apollo-Reborn v1.15.11_3.6.0](https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.6.0).\n\nThese IPAs are the **official Apollo-Reborn builds**, re-hosted here so this long-standing AltStore source keeps working for existing users. Apollo-Reborn also runs its own website and sources at https://apolloreborn.app\n\n---\n\n### Features\r\n\r\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\r\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\r\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\r\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\r\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\r\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\r\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\r\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\r\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\r\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\r\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\r\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\r\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\r\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\r\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\r\n\r\n### Fixes\r\n\r\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\r\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\r\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\r\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\r\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\r\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\r\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\r\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\r\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\r\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\r\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\r\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\r\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\r\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\r\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\r\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\r\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)\r\n\n",
+      "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+      "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
+      "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp",
+      "tintColor": "#4453f4",
+      "size": 95474417,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.group-session",
+          "com.apple.developer.icloud-container-identifiers",
+          "com.apple.developer.ubiquity-kvstore-identifier",
+          "com.apple.developer.weatherkit",
+          "com.apple.security.application-groups",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to take photos to upload for sharing.",
+          "NSFaceIDUsageDescription": "Unlock Apollo when re-opening in order to prevent unauthorized access.",
+          "NSLocationWhenInUseUsageDescription": "Checked once to calculate sunset/sunrise times for the location.",
+          "NSMotionUsageDescription": "Detect rotations in Media Viewer and offer corresponding options.",
+          "NSPhotoLibraryAddUsageDescription": "Save media to photo library.",
+          "NSPhotoLibraryUsageDescription": "Used to save media or to select images to upload for sharing."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_1.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_2.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_3.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_4.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_5.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_6.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_7.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
+      ],
+      "versions": [
+        {
+          "version": "1.15.11_3.6.0",
+          "date": "2026-08-19T00:58:55Z",
+          "localizedDescription": "Mirrored from [Apollo-Reborn v1.15.11_3.6.0](https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.6.0).\n\nThese IPAs are the **official Apollo-Reborn builds**, re-hosted here so this long-standing AltStore source keeps working for existing users. Apollo-Reborn also runs its own website and sources at https://apolloreborn.app\n\n---\n\n### Features\r\n\r\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\r\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\r\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\r\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\r\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\r\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\r\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\r\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\r\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\r\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\r\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\r\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\r\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\r\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\r\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\r\n\r\n### Fixes\r\n\r\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\r\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\r\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\r\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\r\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\r\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\r\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\r\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\r\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\r\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\r\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\r\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\r\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\r\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\r\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\r\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\r\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)\r\n\n",
+          "downloadURL": "https://github.com/Balackburn/Apollo/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+          "size": 95474417,
+          "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_1.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_2.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_3.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_4.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_5.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_6.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_7.webp",
+        "https://raw.githubusercontent.com/Balackburn/Apollo/main/images/image_8.webp"
+      ],
+      "category": "social",
+      "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8"
+    },
+    {
+      "name": "Asspp",
+      "githubRepo": "Lakr233/Asspp",
+      "bundleIdentifier": "wiki.qaq.Asspp",
+      "developerName": "Lakr233",
+      "subtitle": "The App Store for your multi-account eco system.",
+      "version": "4.2.1",
+      "versionDate": "2026-06-14T02:47:45Z",
+      "versionDescription": "Release 4.2.1",
+      "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.1/Asspp.ipa",
+      "localizedDescription": "Asspp is a powerful client designed for users who need to manage multiple Apple IDs across different countries and regions. Switch stores instantly, download apps from anywhere, and manage your IPA library—all without logging out of your device.",
+      "iconURL": "https://raw.githubusercontent.com/Lakr233/Asspp/refs/heads/main/Asspp/App/Assets.xcassets/AppIcon.appiconset/asspp_tinted.png",
+      "tintColor": "#52ADE7",
+      "size": 15162563,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Asspp requires this permission to communicate with install service on your device."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "4.2.1",
+          "date": "2026-06-14T02:47:45Z",
+          "localizedDescription": "Release 4.2.1",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.1/Asspp.ipa",
+          "size": 15162563,
+          "sha256": "07119bdc1447406fe8a813ffaf3abc1e735ded83a7c7a14d06ed44cdbc9b6625",
+          "minOSVersion": "17.0"
+        },
+        {
+          "version": "4.2.0",
+          "date": "2026-06-12T04:16:50Z",
+          "localizedDescription": "Release 4.2.0",
+          "downloadURL": "https://github.com/Lakr233/Asspp/releases/download/4.2.0/Asspp.ipa",
+          "size": 15153128,
+          "sha256": "77752335f96479a7c0d86633ece98231b9290136860dc557e4d4ac4b762a7aca",
+          "minOSVersion": "17.0"
+        }
+      ],
+      "sha256": "07119bdc1447406fe8a813ffaf3abc1e735ded83a7c7a14d06ed44cdbc9b6625",
+      "category": "other"
+    },
+    {
+      "name": "emexDE",
+      "githubRepo": "emexlab/emexDE",
+      "bundleIdentifier": "org.emexlabs.nyxian",
+      "developerName": "emexlab",
+      "subtitle": "IDE to develop native code iOS apps and utilities on stock iOS it self just via a certificate and a custom micro kernel for those apps.",
+      "version": "0.11.2",
+      "versionDate": "2026-08-17T20:21:19Z",
+      "versionDescription": "## Changelog\r\n### Nyxian\r\n- Fix: patched apps randomly crashing when project is closed. (a39aef940d180c06862587bf3dee33bfe8e3f6a0)\r\n- Fix: patched delete button was missing from file management. (6ebf56f7bab17c6c30fc7e3a6d4d83bae5c69e31, dfaeab71189d86cf878f7083ef338c68019055b0)\r\n- Fix: now the toolbar doesn't disappear on the phone sometimes in code editor. (22192ef8016a653129dce50b39076ca4d2a2bced)\r\n- Fix: properly reload application management after userspace restore. (430aefc08b3a43d5e618e837a215d073696c9bbf)\r\n- Fix: use bottom insets on iOS on guest apps. (b2477cb90c5837dc52d07d5d4db3cd6e579b0a3d)\r\n- Feat: basic file transfer in browsing guest file system. (697737c1df99796fcbc812b0fd6870d2137e4641)\r\n- Feat: better certificate management (c088ca6cda0f23cb219153a0264f405c4f8fce57, ad816b94e1d27ed75c442d221ba0200a64bd7fa5, d0d2cb2c15fd37ab46c1a36c68fe789900463914, 95864ed9197907b04d79fcf1e3d2add847e488c9, 6c535ee5fbddd373a7843ca47ed6c5015bd5c03e, 68303d4086de2455bf63ec35b05e2eeb3b1b2b58, 0d9ceb4a04ca371b433067dfeea3bfe3e9c11b3c)\r\n- Feat: better window design. (a6b2761db740df2313708ca0d8b1a14120e42e71, 802e5807421dbf4e441f81cf94a0b6df68765b00, 7b63cc61c6542a29dce1665a109824cf6dfd8112, 72d023e3aa14345b474924892941431c24b110fc, 9e7d717e63b16c602997553d2317a64663fc3302, 132514a081b2de8edff7b1a5a8a927ad035c7470)\r\n- Feat: better onboarding UI. (ec0d306f46bf572f24f34e59e098388e808fdf7a)\r\n- Feat: properly prompt the user to \"Set Up Signing\". (f267645543fb9d5f05156c1413388221f9c3e0c7, fc6818ee27a550a26ba68b14c02649fa8e96f31d, 3953f2059f7803a9867764002cdd0574e0f1de21, dd114cc22de85fc9b4d619251e72f12f5774d706, d0abd31a800968f62217caa6722137b7a4e08466)\r\n### CoreCompiler\r\n- Fix: patched a stack buffer overflow in `MDKThreadPool`. (5f493bb08167f002886bc365e67a27928a8b4f49)\r\n### LiveProcess\r\n- Feat: introduced LiveShim.\r\n### Micro Kernel (ksurface)\r\n- Vulnerability Patch: patched a stack buffer overflow in task port transmission. (a7cb2b81339c3464e25f433a97d5592592f4c8b4)\r\n- Vulnerability Patch: patched a privilege escalation in process startup. (132742dcf8584d7e25685d4183ba7e9e631a4527)\r\n- Vulnerability Patch: patched a deadlock + stack buffer overflow vector in daemon launch logic. (21f2406af51d7029dd20dd7bf79dfe9fb24300a6)\r\n- Hardening: Safer init for subsystems. (6fe18980c91982f4950d8da78d190d4074b875e2, 1b23355af68ecf81606b245db8fe6c1d71e11c1d)\r\n- Performance: More efficient copy string in in syscalling. (8c75a46f7eca3c3d98ba99668d8e4334e360c46f)\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of Nyxian is iPhoneOS26.5.",
+      "downloadURL": "https://github.com/emexlab/Nyxian/releases/download/0.11.2/Nyxian.ipa",
+      "localizedDescription": "IDE to develop native code iOS apps and utilities on stock iOS it self just via a certificate and a custom micro kernel for those apps.",
+      "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
+      "tintColor": "#000",
+      "size": 105863683,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleEventsUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothWhileInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSDesktopFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDocumentsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSDownloadsFolderUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderDomainUsageDescription": "The guest app is requesting for this permission.",
+          "NSFileProviderPresenceUsageDescription": "The guest app is requesting for this permission.",
+          "NSFocusStatusUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNetworkVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemovableVolumesUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemAdministrationUsageDescription": "The guest app is requesting for this permission.",
+          "NSSystemExtensionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission.",
+          "NSVideoSubscriberAccountUsageDescription": "The guest app is requesting for this permission.",
+          "NSVoIPUsageDescription": "The guest app is requesting for this permission.",
+          "OSBundleUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.11.2",
+          "date": "2026-08-17T20:21:19Z",
+          "localizedDescription": "## Changelog\r\n### Nyxian\r\n- Fix: patched apps randomly crashing when project is closed. (a39aef940d180c06862587bf3dee33bfe8e3f6a0)\r\n- Fix: patched delete button was missing from file management. (6ebf56f7bab17c6c30fc7e3a6d4d83bae5c69e31, dfaeab71189d86cf878f7083ef338c68019055b0)\r\n- Fix: now the toolbar doesn't disappear on the phone sometimes in code editor. (22192ef8016a653129dce50b39076ca4d2a2bced)\r\n- Fix: properly reload application management after userspace restore. (430aefc08b3a43d5e618e837a215d073696c9bbf)\r\n- Fix: use bottom insets on iOS on guest apps. (b2477cb90c5837dc52d07d5d4db3cd6e579b0a3d)\r\n- Feat: basic file transfer in browsing guest file system. (697737c1df99796fcbc812b0fd6870d2137e4641)\r\n- Feat: better certificate management (c088ca6cda0f23cb219153a0264f405c4f8fce57, ad816b94e1d27ed75c442d221ba0200a64bd7fa5, d0d2cb2c15fd37ab46c1a36c68fe789900463914, 95864ed9197907b04d79fcf1e3d2add847e488c9, 6c535ee5fbddd373a7843ca47ed6c5015bd5c03e, 68303d4086de2455bf63ec35b05e2eeb3b1b2b58, 0d9ceb4a04ca371b433067dfeea3bfe3e9c11b3c)\r\n- Feat: better window design. (a6b2761db740df2313708ca0d8b1a14120e42e71, 802e5807421dbf4e441f81cf94a0b6df68765b00, 7b63cc61c6542a29dce1665a109824cf6dfd8112, 72d023e3aa14345b474924892941431c24b110fc, 9e7d717e63b16c602997553d2317a64663fc3302, 132514a081b2de8edff7b1a5a8a927ad035c7470)\r\n- Feat: better onboarding UI. (ec0d306f46bf572f24f34e59e098388e808fdf7a)\r\n- Feat: properly prompt the user to \"Set Up Signing\". (f267645543fb9d5f05156c1413388221f9c3e0c7, fc6818ee27a550a26ba68b14c02649fa8e96f31d, 3953f2059f7803a9867764002cdd0574e0f1de21, dd114cc22de85fc9b4d619251e72f12f5774d706, d0abd31a800968f62217caa6722137b7a4e08466)\r\n### CoreCompiler\r\n- Fix: patched a stack buffer overflow in `MDKThreadPool`. (5f493bb08167f002886bc365e67a27928a8b4f49)\r\n### LiveProcess\r\n- Feat: introduced LiveShim.\r\n### Micro Kernel (ksurface)\r\n- Vulnerability Patch: patched a stack buffer overflow in task port transmission. (a7cb2b81339c3464e25f433a97d5592592f4c8b4)\r\n- Vulnerability Patch: patched a privilege escalation in process startup. (132742dcf8584d7e25685d4183ba7e9e631a4527)\r\n- Vulnerability Patch: patched a deadlock + stack buffer overflow vector in daemon launch logic. (21f2406af51d7029dd20dd7bf79dfe9fb24300a6)\r\n- Hardening: Safer init for subsystems. (6fe18980c91982f4950d8da78d190d4074b875e2, 1b23355af68ecf81606b245db8fe6c1d71e11c1d)\r\n- Performance: More efficient copy string in in syscalling. (8c75a46f7eca3c3d98ba99668d8e4334e360c46f)\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of Nyxian is iPhoneOS26.5.",
+          "downloadURL": "https://github.com/emexlab/Nyxian/releases/download/0.11.2/Nyxian.ipa",
+          "size": 105863683,
+          "sha256": "3a5eeb1ddaeaa8ab89d502a166bb887585ef590c9228f334db2d8d6dedaa96b4",
+          "minOSVersion": "18.4"
+        },
+        {
+          "version": "0.11.1",
+          "date": "2026-08-13T21:49:16Z",
+          "localizedDescription": "## Changelog\r\n### Nyxian\r\n- Feat: Browsing/deleting files directly in the guest file system (through `MoltenFileManager`, note this feature is still in early development) (dc5ecdbc25980a2c07212a95a02865c1d61a5c12, 41bba653dd39b8f05dacbd99bafed1062ed35630, f940a0b0343aa238eea85a785f0a51f44acbaa39)\r\n- Feat: added more Virtual Environment settings features such as restore, reload daemons, browsing files, clearing application caches, etc (056b062d8d2c27b8055bf6d6dacb0840a2aa74a9, 6047bb9be26be3433186dd9658b380927c899fd4, d0a3b4f417b7d0ba3401cf84186ee83bc2dc4ac6, 7983d7d0dfc4a8d870c5d1dd904eb932b2958aa8, 0a7789e444aa5879087446802e5a53b6f3be0f76, 92bbb4b64adb0eec143bdbe76864f0a4cf629d4a, 62a8381728086bd251073f9c878f6bc9b5a28d21, ec45b9af540d193cf417206c9d6146c55a4026ac, 61aa4a4768e087a05b667ab30ca5da0db70e759a, 9aab755eb5d838a219fdbfd4ed4cd68aa285386e)\r\n- Fix: Nyxian opens again on iOS 18 (idk which commit, one commit fixed it tho xD)\r\n### LiveProcess\r\n- Fix: Properly restore exception ports in ktfp after handoff of task port (537075b32c80cbea9f2caa97e2d4076c4ab24124)\r\n- Hardening: enhanced launch service validation (baefff1031c40a18c65c915550d61d1dd3a9863a)\r\n### Micro Kernel (ksurface)\r\n- Vulnerability Patch: patched Mach IPC type Confusion (found by @semvis123) (5f3511397a9a03ea13f50874d4d2d7dddf61ef06)\r\n- Vulnerability Patch: patched attacker controlled OOB write in `LCPatchExecutableSlice` (found by @semvis123) (662a9c12b4d3261026e641290e2affa2fa2df9cb)\r\n- Vulnerability Patch: patched 1 byte NULL overflow in `KERN_HOSTNAME` setting mechanism in `SYS_sysctl` (found by @semvis123) (8ae7ec7ed687c8efc57c7a61d7e640d46df1936b)\r\n- Vulnerability Patch: patched `SYS_wait4` async event handler leaks mach port send rights (found by @semvis123) (9af771c95d7ed32eb057a41fe57dcec01eb16926, d99bb10c985d365807f81228f35de121e84ed301)\r\n- Vulnerability Patch: patched another OOB write in `LCPatchExecutableSlice` (2952a33e2d69506c0c325846074b48552af69194)\r\n- Vulnerability Patch: patched attacker controlled stack buffer overflow in `SYS_sysctl` (found by @semvis123) (1e75dcbe37c1791b4661bc0b746650d5333c4771, dee96942f73bb70717affc7a73863673649ce5b1)\r\n- Vulnerability Patch: patched attacker controlled stack buffer overflow in `macho_read_token` (found by @semvis123) (f89090c26be65008cb3ddce9993e489e6c8c4a6f)\r\n- Vulnerability Patch: patched deadlock in `SYS_setreuid` and `SYS_setregid` (found by @semvis123) (cd2d67ad2959f9d1aaefa16672583712d0e47ee7)\r\n- Vulnerability Patch: patched data corruption vulnerability in key.m (found by @semvis123) (068cf744cfa10099176acbf783b4f4a7144fb0ff)\r\n- Vulnerability Patch: patched null ptr deref in `proc_list` (found by @semvis123) (068cf744cfa10099176acbf783b4f4a7144fb0ff)\r\n- Vulnerability Patch: patched task port confusion (found by @semvis123) (e4d70d7606059616235afccd4373eb4235a4600e)\r\n- Vulnerability Entry Patch: patched a reference/lock leak in `kvobject_snapshot` (found by @semvis123) (4905e2ae0ba65c5ae8a81c2bba23061dc4945381)\r\n- Hardening: swapped binaries will now cause `PECTL_CS_FALLBACK_ENT` (shall fix some appstore apps failing to open properly) (f26cfdb46473aaa6b909c36c403733c582afa464)\r\n- Hardening: added `os_unfair_lock` to DYLD cdhash verifier in LiveProcess (1b6b161ffc0abf22339eaa563c698257ece1f9c6)\r\n- Hardening: applying LC hooks before constructors run (0d88cc3d4f451a8d6c94548951f80ffbd1879a73, ae31522b895886501cb3136c2bdc14468225e6b2)\r\n- Hardening: entitlement sanitization (strips all entitlements that make no sense in a certain collection of entitlements) (6754f51a88cafd2c937b34e357cffbee3236f6fd, b370fba5aef6ca3245a8784419994ab84e35833d)\r\n- Feat: more `PEUserspaceManager` features (056b062d8d2c27b8055bf6d6dacb0840a2aa74a9, 6047bb9be26be3433186dd9658b380927c899fd4, d0a3b4f417b7d0ba3401cf84186ee83bc2dc4ac6, 7983d7d0dfc4a8d870c5d1dd904eb932b2958aa8, 0a7789e444aa5879087446802e5a53b6f3be0f76, 92bbb4b64adb0eec143bdbe76864f0a4cf629d4a, 62a8381728086bd251073f9c878f6bc9b5a28d21, ec45b9af540d193cf417206c9d6146c55a4026ac, 61aa4a4768e087a05b667ab30ca5da0db70e759a)\r\n\r\nContributors: @semvis123, @ruri1208\r\n\r\n> [!NOTE]\r\n> Standard SDK used in this version of Nyxian is iPhoneOS26.5.\r\n\r\n> [!NOTE]\r\n> This update is very recommended to install, it features a ton of patched to a ton of vulnerabilities @semvis123 collected over the last 3 months.\r\n",
+          "downloadURL": "https://github.com/emexlab/Nyxian/releases/download/0.11.1/Nyxian.ipa",
+          "size": 105848138,
+          "sha256": "eccb7bfeb60d80214f61bd4cb0607e79fc81c2cd211eb84f786fccd59339b7d5",
+          "minOSVersion": "18.4"
+        }
+      ],
+      "sha256": "3a5eeb1ddaeaa8ab89d502a166bb887585ef590c9228f334db2d8d6dedaa96b4",
+      "category": "other",
+      "screenshots": {
+        "iphone": [],
+        "ipad": [
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/1.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/2.png",
+            "width": 2360,
+            "height": 1640
+          },
+          {
+            "imageURL": "https://emexlabs.org/emexDE/img/screenshots/3.png",
+            "width": 2360,
+            "height": 1640
+          }
+        ]
+      }
+    },
+    {
+      "name": "Feather",
+      "githubRepo": "khcrysalis/Feather",
+      "bundleIdentifier": "thewonderofyou.Feather",
+      "developerName": "khcrysalis",
+      "subtitle": "On-device signing application",
+      "version": "2.9.0",
+      "versionDate": "2026-07-05T02:11:19Z",
+      "versionDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added tweak options in default signing options.\r\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\r\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\r\n* Fixed credit links.\r\n* Fixed duplicate repository in recommended repositories.\r\n\r\n## New Contributors\r\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\r\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\r\n\r\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+      "localizedDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
+      "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
+      "tintColor": "848ef9",
+      "size": 14241853,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Repos.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Sign.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Store.png?raw=true"
+      ],
+      "versions": [
+        {
+          "version": "2.9.0",
+          "date": "2026-07-05T02:11:19Z",
+          "localizedDescription": "Thank you for all your feedback and contributions!\r\n\r\n> [!TIP]\r\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\r\n\r\n## What's Changed\r\n* Added tweak options in default signing options.\r\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\r\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\r\n* Fixed credit links.\r\n* Fixed duplicate repository in recommended repositories.\r\n\r\n## New Contributors\r\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\r\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\r\n\r\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+          "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+          "size": 14241853,
+          "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+      "category": "other",
+      "screenshots": [
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Library.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Repos.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Sign.png?raw=true",
+        "https://github.com/khcrysalis/Feather/blob/v1.x/Images/Store.png?raw=true"
+      ]
+    },
+    {
+      "name": "Ferrite",
+      "githubRepo": "Ferrite-iOS/Ferrite",
+      "bundleIdentifier": "me.kingbri.Ferrite",
+      "developerName": "Ferrite-iOS",
+      "subtitle": "A media search engine for iOS with debrid support",
+      "version": "0.7.4",
+      "versionDate": "2025-11-28T20:36:12Z",
+      "versionDescription": "Ferrite v0.7.4 has been released.\r\n\r\nDownloading from releases? Get the zip file. The ipa file may not work!\r\n\r\nChangelog:\r\n\r\n- Fix encoding URLs with POST queries. The app was not percent encoding URLEncoded POST request bodies. Fix this to avoid errors from websites expecting these encoded strings.\r\n- Temporarily disable liquid glass. Liquid glass breaks some parts of Ferrite's UI. Disable it for now and fix this in the future.\r\n- Make TorBox a more prominent debrid option. TorBox is a way better service and API than RealDebrid at this point and should get more traction.",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251128/Ferrite-iOS_Ferrite_Ferrite_0.7.4.ipa",
+      "localizedDescription": "A media search engine for iOS with a plugin API to extend its functionality.",
+      "iconURL": "https://raw.githubusercontent.com/Ferrite-iOS/Ferrite/next/Ferrite/Assets.xcassets/AppIcon.appiconset/Ferrite-lg.png",
+      "tintColor": "#D56B4D",
+      "size": 1929231,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.7.4",
+          "date": "2025-11-28T20:36:12Z",
+          "localizedDescription": "Ferrite v0.7.4 has been released.\r\n\r\nDownloading from releases? Get the zip file. The ipa file may not work!\r\n\r\nChangelog:\r\n\r\n- Fix encoding URLs with POST queries. The app was not percent encoding URLEncoded POST request bodies. Fix this to avoid errors from websites expecting these encoded strings.\r\n- Temporarily disable liquid glass. Liquid glass breaks some parts of Ferrite's UI. Disable it for now and fix this in the future.\r\n- Make TorBox a more prominent debrid option. TorBox is a way better service and API than RealDebrid at this point and should get more traction.",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251128/Ferrite-iOS_Ferrite_Ferrite_0.7.4.ipa",
+          "size": 1929231,
+          "sha256": "cf5160bab3c8308c0062d6e71f32f6a551c81922812538000f4673ffe1f7922a",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "sha256": "cf5160bab3c8308c0062d6e71f32f6a551c81922812538000f4673ffe1f7922a",
+      "category": "other"
+    },
+    {
+      "name": "iSH (Pre-release)",
+      "githubRepo": "ish-app/ish",
+      "bundleIdentifier": "app.ish.iSH",
+      "developerName": "ish-app",
+      "subtitle": "Linux shell for iOS",
+      "version": "builds/813",
+      "versionDate": "2026-08-22T06:20:16Z",
+      "versionDescription": "Automated daily build",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "localizedDescription": "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
+      "iconURL": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
+      "tintColor": "#BCBCBC",
+      "size": 4602446,
+      "appPermissions": {
+        "entitlements": [
+          "beta-reports-active",
+          "com.apple.developer.user-fonts",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "This is required for connecting to localhost and using the ping command.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "Programs running in iSH will be allowed to track your location in the background.",
+          "NSLocationAlwaysUsageDescription": "Programs running in iSH will be allowed to track your location in the background.",
+          "NSLocationWhenInUseUsageDescription": "Programs running in iSH will be allowed to see your location."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "builds/813",
+          "date": "2026-08-22T06:20:16Z",
+          "localizedDescription": "Automated daily build",
+          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+          "size": 4602446,
+          "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+          "minOSVersion": "11.0"
+        }
+      ],
+      "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+      "category": "other"
+    },
+    {
+      "name": "iTorrent",
+      "githubRepo": "XITRIX/iTorrent",
+      "bundleIdentifier": "com.xitrix.iTorrent2",
+      "developerName": "XITRIX",
+      "subtitle": "Torrent client for iOS",
+      "version": "2.2.0-1",
+      "versionDate": "2026-07-19T09:59:39Z",
+      "versionDescription": "GH Actions fix",
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+      "localizedDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
+      "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon.appiconset/tinted_icon.png",
+      "tintColor": "#F19E69",
+      "size": 24288935,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "iTorrent uses the local network to discover playback devices and cast video on your network."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/1.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/2.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/3.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/4.png",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/sidestore/5.png"
+      ],
+      "versions": [
+        {
+          "version": "2.2.0-1",
+          "date": "2026-07-19T09:59:39Z",
+          "localizedDescription": "GH Actions fix",
+          "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+          "size": 24288935,
+          "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/1.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/2.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/3.PNG",
+        "https://raw.githubusercontent.com/XITRIX/xitrix.github.io/master/screenshots/4.PNG"
+      ],
+      "category": "utilities",
+      "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7"
+    },
+    {
+      "name": "Kazumi",
+      "githubRepo": "Predidit/Kazumi",
+      "bundleIdentifier": "com.example.kazumi",
+      "developerName": "Predidit",
+      "subtitle": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。",
+      "version": "2.2.9",
+      "versionDate": "2026-08-21T06:53:23Z",
+      "versionDescription": "- 优化弹幕检索匹配 (#2453) (@walker1211)\r\n- 重做 android 平台画中画实现，修复进出画中画时的布局异常 (@Predidit)\r\n- 修复 android 平台切换到后台后返回时缓冲卡住的问题 (@Predidit)\r\n- 修复 linux 平台重复启动导致本地数据被清空的问题 (#2462 #2027) (@walker1211)\r\n- 修复 macOS 平台窗口失焦后无法再次点击激活的问题 (#2457) (@walker1211)\r\n- 修复规则批量更新结果提示一闪而过的问题 (#2431) (@walker1211)\r\n- 从历史记录进入播放页时选集列表定位到当前集数 (@NanoShiki)\r\n- 其他 UI 调整 (@Predidit)",
+      "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.9/Kazumi_ios_2.2.9_no_sign.ipa",
+      "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
+      "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
+      "tintColor": "#F6F5F0",
+      "size": 29638292,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "2.2.9",
+          "date": "2026-08-21T06:53:23Z",
+          "localizedDescription": "- 优化弹幕检索匹配 (#2453) (@walker1211)\r\n- 重做 android 平台画中画实现，修复进出画中画时的布局异常 (@Predidit)\r\n- 修复 android 平台切换到后台后返回时缓冲卡住的问题 (@Predidit)\r\n- 修复 linux 平台重复启动导致本地数据被清空的问题 (#2462 #2027) (@walker1211)\r\n- 修复 macOS 平台窗口失焦后无法再次点击激活的问题 (#2457) (@walker1211)\r\n- 修复规则批量更新结果提示一闪而过的问题 (#2431) (@walker1211)\r\n- 从历史记录进入播放页时选集列表定位到当前集数 (@NanoShiki)\r\n- 其他 UI 调整 (@Predidit)",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.9/Kazumi_ios_2.2.9_no_sign.ipa",
+          "size": 29638292,
+          "sha256": "72e294d8dca7dc320c11aed7847a942ac36bb2daa19e94e7218636ff9af979cf",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "2.2.8",
+          "date": "2026-08-15T01:52:15Z",
+          "localizedDescription": "Update",
+          "downloadURL": "https://github.com/Predidit/Kazumi/releases/download/2.2.8/Kazumi_ios_2.2.8_no_sign.ipa",
+          "size": 29635192,
+          "sha256": "2f15225e095957b2041d29504fdcec2adfaf6296df1d2b658f55c5e9e516276e",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "72e294d8dca7dc320c11aed7847a942ac36bb2daa19e94e7218636ff9af979cf",
+      "category": "other"
+    },
+    {
+      "name": "Ksign",
+      "githubRepo": "Nyasami/Ksign",
+      "bundleIdentifier": "nya.asami.ksign",
+      "developerName": "Nyasami",
+      "subtitle": "The \"cleaner\" Esign app.",
+      "version": "1.6.1.1",
+      "versionDate": "2026-07-14T20:15:51Z",
+      "versionDescription": "## Commit: `feat: disable liquid glass for apps on ios 26` (03a3a9c86897d79f9faf8106037b9971841d56a0)\n### New in this build (Compared to v1.6):\n* feat: disable liquid glass for apps on ios 26 (03a3a9c)\n* chore: update star history (5d83bcb)\n* feat: remove \"UIDesignRequiresCompatibility\" key for force Liquid Glass (#129) (ae5dc7d)\n* chore: bump to v1.6.1 (7069768)\n* chore: update sources (20125c9)\n* chore: remove piracy sources (61b9e95)\n* chore: update repo (90983ce)\n### Commit SHA: 03a3a9c86897d79f9faf8106037b9971841d56a0",
+      "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/beta/Ksign.ipa",
+      "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
+      "iconURL": "https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png",
+      "tintColor": "3c94fc",
+      "size": 16231234,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.6.1.1",
+          "date": "2026-07-14T20:15:51Z",
+          "localizedDescription": "## Commit: `feat: disable liquid glass for apps on ios 26` (03a3a9c86897d79f9faf8106037b9971841d56a0)\n### New in this build (Compared to v1.6):\n* feat: disable liquid glass for apps on ios 26 (03a3a9c)\n* chore: update star history (5d83bcb)\n* feat: remove \"UIDesignRequiresCompatibility\" key for force Liquid Glass (#129) (ae5dc7d)\n* chore: bump to v1.6.1 (7069768)\n* chore: update sources (20125c9)\n* chore: remove piracy sources (61b9e95)\n* chore: update repo (90983ce)\n### Commit SHA: 03a3a9c86897d79f9faf8106037b9971841d56a0",
+          "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/beta/Ksign.ipa",
+          "size": 16231234,
+          "sha256": "1932bfd9615d0511045474fa3d11be1f1040776969f872507d57ebf36fa5f8e4",
+          "minOSVersion": "16.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "1932bfd9615d0511045474fa3d11be1f1040776969f872507d57ebf36fa5f8e4"
+    },
+    {
+      "name": "LiveContainer",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.8.0",
+      "versionDate": "2026-07-17T07:44:09Z",
+      "versionDescription": "# LiveContainer 3.8.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n# New Features\r\n\r\n## Storage Management\r\n\r\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\r\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\r\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\r\n\r\n## Multiple LiveContainers\r\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\r\n\r\n## Share to Apps in LiveContainer\r\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\r\n\r\n## Multitasking\r\n\r\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\r\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\r\n- Added more multitask window animations and improved native-window scene handling.\r\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\r\n\r\n## JIT\r\n- Added StosDebug support as a JIT enabler.\r\n\r\n## TweakLoader\r\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\r\n\r\n# Improvements\r\n- Added support for manually setting a container's IDFV. (#1194)\r\n- IDFV spoofing works even when Tweakloader is not loaded.\r\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\r\n- Download alerts now block tab switching while a download is in progress.\r\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\r\n- Add a \"Clear Notification\" button (#1388)\r\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\r\n\r\n# Bug Fixes\r\n\r\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\r\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\r\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\r\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\r\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\r\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\r\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\r\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\r\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\r\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\r\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\r\n\r\n# Localization\r\n\r\n- Updated translations. Added Spanish translation by @Deci8BelioS\r\n\r\n# Credits\r\n\r\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\r\n\r\nGreat thanks to everyone who helped translate LiveContainer.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+      "localizedDescription": "Run iOS apps without actually installing them!",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 4707271,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.8.0",
+          "date": "2026-07-17T07:44:09Z",
+          "localizedDescription": "# LiveContainer 3.8.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n# New Features\r\n\r\n## Storage Management\r\n\r\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\r\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\r\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\r\n\r\n## Multiple LiveContainers\r\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\r\n\r\n## Share to Apps in LiveContainer\r\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\r\n\r\n## Multitasking\r\n\r\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\r\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\r\n- Added more multitask window animations and improved native-window scene handling.\r\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\r\n\r\n## JIT\r\n- Added StosDebug support as a JIT enabler.\r\n\r\n## TweakLoader\r\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\r\n\r\n# Improvements\r\n- Added support for manually setting a container's IDFV. (#1194)\r\n- IDFV spoofing works even when Tweakloader is not loaded.\r\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\r\n- Download alerts now block tab switching while a download is in progress.\r\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\r\n- Add a \"Clear Notification\" button (#1388)\r\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\r\n\r\n# Bug Fixes\r\n\r\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\r\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\r\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\r\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\r\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\r\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\r\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\r\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\r\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\r\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\r\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\r\n\r\n# Localization\r\n\r\n- Updated translations. Added Spanish translation by @Deci8BelioS\r\n\r\n# Credits\r\n\r\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\r\n\r\nGreat thanks to everyone who helped translate LiveContainer.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+          "size": 4707271,
+          "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.7.14",
+          "date": "2026-07-15T02:26:57Z",
+          "localizedDescription": "**Commit:** [c2f30175822a9e15c4c55d06e776512750f3d526](https://github.com/LiveContainer/LiveContainer/commit/c2f30175822a9e15c4c55d06e776512750f3d526)\n**Message:** Should fix #1450\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/29384030390/attempts/1).",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer.ipa",
+          "size": 4705362,
+          "sha256": "a3cbe012eacb8b48f506c16c059ed82f48fedbebc1a8d76e661b19b224009ff1",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
+    },
+    {
+      "name": "LiveContainer (Nightly)",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.8.7.1a87ea9",
+      "versionDate": "2026-08-22T13:21:39Z",
+      "versionDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_LiveContainer_LiveContainer_1a87ea9.ipa",
+      "localizedDescription": "Run iOS apps without actually installing them!",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 4685408,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAlarmKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.8.7.1a87ea9",
+          "date": "2026-08-22T13:21:39Z",
+          "localizedDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_LiveContainer_LiveContainer_1a87ea9.ipa",
+          "size": 4685408,
+          "sha256": "e3760111019bb477129595052b894720b34a2f959b8216f4f75ed3b00e0c6dd6",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.8.6.c635b52",
+          "date": "2026-08-16T06:14:10Z",
+          "localizedDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/LiveContainer_LiveContainer_LiveContainer_c635b52.ipa",
+          "size": 4685834,
+          "sha256": "2a9c2f82bff3e968fb1eed3fadc17385ae1fa2fdacbf2af8441cd284c2fccfe5",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "e3760111019bb477129595052b894720b34a2f959b8216f4f75ed3b00e0c6dd6",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
+    },
+    {
+      "name": "LiveContainer+SideStore",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.8.0",
+      "versionDate": "2026-07-17T07:44:08Z",
+      "versionDescription": "# LiveContainer 3.8.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n# New Features\r\n\r\n## Storage Management\r\n\r\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\r\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\r\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\r\n\r\n## Multiple LiveContainers\r\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\r\n\r\n## Share to Apps in LiveContainer\r\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\r\n\r\n## Multitasking\r\n\r\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\r\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\r\n- Added more multitask window animations and improved native-window scene handling.\r\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\r\n\r\n## JIT\r\n- Added StosDebug support as a JIT enabler.\r\n\r\n## TweakLoader\r\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\r\n\r\n# Improvements\r\n- Added support for manually setting a container's IDFV. (#1194)\r\n- IDFV spoofing works even when Tweakloader is not loaded.\r\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\r\n- Download alerts now block tab switching while a download is in progress.\r\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\r\n- Add a \"Clear Notification\" button (#1388)\r\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\r\n\r\n# Bug Fixes\r\n\r\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\r\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\r\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\r\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\r\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\r\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\r\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\r\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\r\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\r\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\r\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\r\n\r\n# Localization\r\n\r\n- Updated translations. Added Spanish translation by @Deci8BelioS\r\n\r\n# Credits\r\n\r\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\r\n\r\nGreat thanks to everyone who helped translate LiveContainer.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer%2BSideStore.ipa",
+      "localizedDescription": "Run iOS apps without actually installing them!",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 35403538,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.8.0",
+          "date": "2026-07-17T07:44:08Z",
+          "localizedDescription": "# LiveContainer 3.8.0\r\n\r\n> [!Warning]\r\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\r\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\r\n\r\n# New Features\r\n\r\n## Storage Management\r\n\r\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\r\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\r\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\r\n\r\n## Multiple LiveContainers\r\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\r\n\r\n## Share to Apps in LiveContainer\r\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\r\n\r\n## Multitasking\r\n\r\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\r\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\r\n- Added more multitask window animations and improved native-window scene handling.\r\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\r\n\r\n## JIT\r\n- Added StosDebug support as a JIT enabler.\r\n\r\n## TweakLoader\r\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\r\n\r\n# Improvements\r\n- Added support for manually setting a container's IDFV. (#1194)\r\n- IDFV spoofing works even when Tweakloader is not loaded.\r\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\r\n- Download alerts now block tab switching while a download is in progress.\r\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\r\n- Add a \"Clear Notification\" button (#1388)\r\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\r\n\r\n# Bug Fixes\r\n\r\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\r\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\r\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\r\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\r\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\r\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\r\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\r\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\r\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\r\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\r\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\r\n\r\n# Localization\r\n\r\n- Updated translations. Added Spanish translation by @Deci8BelioS\r\n\r\n# Credits\r\n\r\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\r\n\r\nGreat thanks to everyone who helped translate LiveContainer.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer%2BSideStore.ipa",
+          "size": 35403538,
+          "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.7.14",
+          "date": "2026-07-15T02:26:58Z",
+          "localizedDescription": "**Commit:** [c2f30175822a9e15c4c55d06e776512750f3d526](https://github.com/LiveContainer/LiveContainer/commit/c2f30175822a9e15c4c55d06e776512750f3d526)\n**Message:** Should fix #1450\n\nThis is a nightly release [created automatically with GitHub Actions workflow](https://github.com/LiveContainer/LiveContainer/actions/runs/29384030390/attempts/1).",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/nightly/LiveContainer%2BSideStore.ipa",
+          "size": 35401631,
+          "sha256": "4f29af3ca268a481864ba509e7768d5f6099b1d52be070fcb23c321fab44489b",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
+    },
+    {
+      "name": "LiveContainer+SideStore (Nightly)",
+      "githubRepo": "LiveContainer/LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them!",
+      "version": "3.8.7.1a87ea9",
+      "versionDate": "2026-08-22T13:21:39Z",
+      "versionDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_LiveContainer_LiveContainer%2BSideStore_1a87ea9.ipa",
+      "localizedDescription": "Run iOS apps without actually installing them!",
+      "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
+      "tintColor": "#0784FC",
+      "size": 32905062,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.healthkit",
+          "com.apple.developer.healthkit.access",
+          "com.apple.developer.healthkit.background-delivery",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAlarmKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
+          "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCalendarsWriteOnlyAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSCameraUsageDescription": "The guest app is requesting for this permission.",
+          "NSContactsUsageDescription": "The guest app is requesting for this permission.",
+          "NSFaceIDUsageDescription": "The guest app is requesting for this permission.",
+          "NSFallDetectionUsageDescription": "The guest app is requesting for this permission.",
+          "NSGKFriendListUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthClinicalHealthRecordsShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthShareUsageDescription": "The guest app is requesting for this permission.",
+          "NSHealthUpdateUsageDescription": "The guest app is requesting for this permission.",
+          "NSHomeKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSIdentityUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocalNetworkUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationUsageDescription": "The guest app is requesting for this permission.",
+          "NSLocationWhenInUseUsageDescription": "The guest app is requesting for this permission.",
+          "NSMicrophoneUsageDescription": "The guest app is requesting for this permission.",
+          "NSMotionUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionAllowOnceUsageDescription": "The guest app is requesting for this permission.",
+          "NSNearbyInteractionUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryAddUsageDescription": "The guest app is requesting for this permission.",
+          "NSPhotoLibraryUsageDescription": "The guest app is requesting for this permission.",
+          "NSRemindersFullAccessUsageDescription": "The guest app is requesting for this permission.",
+          "NSSensorKitUsageDescription": "The guest app is requesting for this permission.",
+          "NSSiriUsageDescription": "The guest app is requesting for this permission.",
+          "NSSpeechRecognitionUsageDescription": "The guest app is requesting for this permission.",
+          "NSUserTrackingUsageDescription": "The guest app is requesting for this permission."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "versions": [
+        {
+          "version": "3.8.7.1a87ea9",
+          "date": "2026-08-22T13:21:39Z",
+          "localizedDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_LiveContainer_LiveContainer%2BSideStore_1a87ea9.ipa",
+          "size": 32905062,
+          "sha256": "0c5b458f5efc97c304aa86c53efa09483e500fbfe247875d8953efe35eab761a",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.8.6.c635b52",
+          "date": "2026-08-16T06:14:10Z",
+          "localizedDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/LiveContainer_LiveContainer_LiveContainer%2BSideStore_c635b52.ipa",
+          "size": 32293041,
+          "sha256": "14c08c8d78c542b75081a6ff1dfec8d8733167d78ce8f28769949a3c40511ef3",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "0c5b458f5efc97c304aa86c53efa09483e500fbfe247875d8953efe35eab761a",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ]
+    },
+    {
+      "name": "Luna",
+      "githubRepo": "cranci1/Luna",
+      "bundleIdentifier": "me.cranci.solar",
+      "developerName": "cranci1",
+      "subtitle": "No description available.",
+      "version": "1.0.0",
+      "versionDate": "2026-02-22T16:48:41Z",
+      "versionDescription": "# Luna 1.0.0\r\n\r\nLuna first release is here and it's packed with plenty of features, that include:\r\n\r\n- _**TMDB support**_\r\n- _**mpv**_ based player\r\n- _**module settings**_ for customization\r\n- _**Kazen**_ loader for manga to @DawudOsman \r\n- Fully working and modular _**continue watching**_\r\n- AniList & Trakt login with _**push updates**_ working\r\n\r\n> [!Note]\r\n> Subtitles in mpv can cause overheating!\r\n\r\nother features to come are:\r\n- [ ]  external subtitles provider\r\n- [ ] _**chromecast**_ support for streams\r\n- [ ]  _**VideoLAN**_ player thanks to @soupy-dev\r\n\r\nand more to come!\r\n\r\n## New Contributors\r\n* @50n50 made their first contribution in https://github.com/cranci1/Luna/pull/1\r\n* @SuperFico2100 made their first contribution in https://github.com/cranci1/Luna/pull/11\r\n* @undeaDD made their first contribution in https://github.com/cranci1/Luna/pull/18\r\n* @DawudOsman made their first contribution in https://github.com/cranci1/Luna/pull/23\r\n* @686udjie made their first contribution in https://github.com/cranci1/Luna/pull/24\r\n* @soupy-dev made their first contribution in https://github.com/cranci1/Luna/pull/34\r\n\r\n**Full Changelog**: https://github.com/cranci1/Luna/commits/v1.0.0",
+      "downloadURL": "https://github.com/cranci1/Luna/releases/download/v1.0.0/Luna.ipa",
+      "localizedDescription": "You can download Luna using Xcode or using the .ipa file, which you can find in the Nightly build page.",
+      "iconURL": "https://raw.githubusercontent.com/cranci1/Luna/main/Luna/Assets.xcassets/AppIcon.appiconset/Default.png",
+      "tintColor": "#696969",
+      "size": 16273075,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-02-22T16:48:41Z",
+          "localizedDescription": "# Luna 1.0.0\r\n\r\nLuna first release is here and it's packed with plenty of features, that include:\r\n\r\n- _**TMDB support**_\r\n- _**mpv**_ based player\r\n- _**module settings**_ for customization\r\n- _**Kazen**_ loader for manga to @DawudOsman \r\n- Fully working and modular _**continue watching**_\r\n- AniList & Trakt login with _**push updates**_ working\r\n\r\n> [!Note]\r\n> Subtitles in mpv can cause overheating!\r\n\r\nother features to come are:\r\n- [ ]  external subtitles provider\r\n- [ ] _**chromecast**_ support for streams\r\n- [ ]  _**VideoLAN**_ player thanks to @soupy-dev\r\n\r\nand more to come!\r\n\r\n## New Contributors\r\n* @50n50 made their first contribution in https://github.com/cranci1/Luna/pull/1\r\n* @SuperFico2100 made their first contribution in https://github.com/cranci1/Luna/pull/11\r\n* @undeaDD made their first contribution in https://github.com/cranci1/Luna/pull/18\r\n* @DawudOsman made their first contribution in https://github.com/cranci1/Luna/pull/23\r\n* @686udjie made their first contribution in https://github.com/cranci1/Luna/pull/24\r\n* @soupy-dev made their first contribution in https://github.com/cranci1/Luna/pull/34\r\n\r\n**Full Changelog**: https://github.com/cranci1/Luna/commits/v1.0.0",
+          "downloadURL": "https://github.com/cranci1/Luna/releases/download/v1.0.0/Luna.ipa",
+          "size": 16273075,
+          "sha256": "da3c7e77f9fb1e689fdb0e9a5d4c208a2e2910a84d9e8533f0993abff13fa17e",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "da3c7e77f9fb1e689fdb0e9a5d4c208a2e2910a84d9e8533f0993abff13fa17e",
+      "category": "other"
+    },
+    {
+      "name": "Mangayomi",
+      "githubRepo": "kodjodevf/mangayomi",
+      "bundleIdentifier": "com.kodjodevf.mangayomi",
+      "developerName": "kodjodevf",
+      "subtitle": "Read manga, novels, and watch anime",
+      "version": "0.8.8",
+      "versionDate": "2026-08-20T20:28:27Z",
+      "versionDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.8/Mangayomi-v0.8.8-ios.ipa",
+      "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
+      "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
+      "tintColor": "EF4444",
+      "size": 108136104,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSDocumentUsageDescription": "Mangayomi needs access to your files to create and restore backups.",
+          "NSFaceIDUsageDescription": "Mangayomi needs to authenticate using Face ID.",
+          "NSPhotoLibraryUsageDescription": "Mangayomi needs access to your photo library to save and restore backups."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
+      ],
+      "versions": [
+        {
+          "version": "0.8.8",
+          "date": "2026-08-20T20:28:27Z",
+          "localizedDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.8/Mangayomi-v0.8.8-ios.ipa",
+          "size": 108136104,
+          "sha256": "9a51450f0a59d2019478bc303bfd5b01bb1d26ed6fc9d17ee145471c5d9b8bc3",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.8.6",
+          "date": "2026-08-18T12:09:26Z",
+          "localizedDescription": "## What's Changed\r\n* fixed flickering when switching to another page by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/872\r\n* added toggle to auto start Zero by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/871\r\n* perf: stop the grouped list re-sorting on every rebuild by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/874\r\n* support render for AVIF images on iOS <16 by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/875\r\n* Continuous‑mode eviction fixes + O(1) evicted‑chapter checks by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/876\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.5...v0.8.6",
+          "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.8.6/Mangayomi-v0.8.6-ios.ipa",
+          "size": 108058802,
+          "sha256": "3058f4c65604444c00d572a22caf4de4c2fe616aa4ed3fc1df85307934c7ab08",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "category": "entertainment",
+      "sha256": "9a51450f0a59d2019478bc303bfd5b01bb1d26ed6fc9d17ee145471c5d9b8bc3",
+      "screenshots": [
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
+        "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_2_default.webp"
+      ]
+    },
+    {
+      "name": "NeoFreeBird",
+      "githubRepo": "NeoFreeBird/app",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird",
+      "subtitle": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
+      "version": "2.2",
+      "versionDate": "2025-11-03T01:40:11Z",
+      "versionDescription": "NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\r\n\r\n### Change log:\r\n\r\n**Twitter, version 11.35:**\r\n- Updated the Twitter build to 11.35\r\n\r\n**NeoFreeBird, version 2.2:**\r\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\r\n- Localized the Post > Tweet replacer\r\n- Improved the Open in Twitter extension\r\n- Minor bug fixes and other minor improvements\r\n\r\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\r\n\r\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+      "localizedDescription": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
+      "iconURL": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
+      "tintColor": "1DA1F2",
+      "size": 153108663,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.applesignin",
+          "com.apple.developer.associated-appclip-app-identifiers",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.devicecheck.appattest-environment",
+          "com.apple.developer.networking.carrier-constrained.app-optimized",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.networking.wifi-info",
+          "com.apple.developer.pass-type-identifiers",
+          "com.apple.developer.payment-pass-provisioning",
+          "com.apple.developer.replace-plugin",
+          "com.apple.developer.siri",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSBluetoothAlwaysUsageDescription": "Twitter uses Bluetooth to discover Cast-enabled devices near you.",
+          "NSCalendarsUsageDescription": "Add events to your calendar from Twitter.",
+          "NSCameraUsageDescription": "Capture and post photos and videos from Twitter.",
+          "NSContactsUsageDescription": "We will securely upload your contacts to our servers to help you connect with friends and suggest users to follow on X.",
+          "NSFaceIDUsageDescription": "Use FaceID to authenticate on Twitter.",
+          "NSLocalNetworkUsageDescription": "Twitter uses the local network to discover Cast-enabled devices on your WiFi network.",
+          "NSLocationUsageDescription": "Enjoy Twitter tailored to your location.",
+          "NSLocationWhenInUseUsageDescription": "Enables X to customize your experience based on your current location.",
+          "NSMicrophoneUsageDescription": "Capture and post videos with sound from Twitter.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you download photos and videos to your Photos.",
+          "NSPhotoLibraryUsageDescription": "Allow access to share photos from your camera roll.",
+          "NSSpeechRecognitionUsageDescription": "Going forward, whenever you choose to share captions on this device, Apple will provide the service. Doing so helps make sure people of all hearing abilities can access your content.",
+          "NSUserTrackingUsageDescription": "This helps Twitter show you more relevant ads."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9189.png",
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9190.png"
+      ],
+      "versions": [
+        {
+          "version": "2.2",
+          "date": "2025-11-03T01:40:11Z",
+          "localizedDescription": "NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\r\n\r\n### Change log:\r\n\r\n**Twitter, version 11.35:**\r\n- Updated the Twitter build to 11.35\r\n\r\n**NeoFreeBird, version 2.2:**\r\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\r\n- Localized the Post > Tweet replacer\r\n- Improved the Open in Twitter extension\r\n- Minor bug fixes and other minor improvements\r\n\r\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\r\n\r\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+          "size": 153108663,
+          "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
+      "category": "other",
+      "screenshots": [
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9189.png",
+        "https://raw.githubusercontent.com/actuallyaridan/NeoFreeBird/refs/heads/main/Branding/screenshots/IMG_9190.png"
+      ]
+    },
+    {
+      "name": "NeoFreeBird",
+      "githubRepo": "orionblur/NeoFreeBird",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "orionblur",
+      "subtitle": "NeoFreeBird version 6.5.0",
+      "version": "6.5.0",
+      "versionDate": "2026-08-16T20:21:57Z",
+      "versionDescription": "### Version 6.5.0\r\n\r\nNeoFreeBird has been updated to X version 12.15. In the future, I won’t be updating the app version until XChat or other crucial features, like tweeting and replying, break. This also means that I will not support versions other than the current one, and may not prioritize issues on future versions.\r\n\r\n**New Features**\r\n- Added option to see where an account is located in a tweet. Can spillover into next line at times\r\n- Added option to disable screenshot detection in XChat\r\n\r\n**Fixes**\r\n- Fixes the “Restore Video Timestamp” option to prevent crashing on newer versions (fixes #23)\r\n- Added back the theme color to the horizontal scroll bar (fixes #27)\r\n- Forced the “more” bar to always be present (this was only an iPad issue)\r\n- Fixed the video timestamp not reflecting the custom font\r\n- Moved “Copy Profile Info” to the profile overflow menu. This now means you can’t copy profile info from your own profile, but you can click “Edit profile” and get that, so not a massive loss\r\n- Fixed bookmarked posts from verified accounts not followed not showing when the option to hide verified tweets was on\r\n- Fix Dim theme search and selected-tab colors by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/28\r\n- Fix Dim theme backgrounds after view reuse by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/30\r\n\r\n## New Contributors\r\n* @Thetromboneman1 made their first contribution in https://github.com/orionblur/NeoFreeBird/pull/28\r\n\r\n**Full Changelog**: https://github.com/orionblur/NeoFreeBird/compare/v6.4.0...v6.5.0",
+      "downloadURL": "https://github.com/orionblur/NeoFreeBird/releases/download/v6.5.0/orionblur-NFB-BHTwitter-sideloaded-X_6.5.0_12.15.ipa",
+      "localizedDescription": "NeoFreeBird-BHTwitter",
+      "iconURL": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
+      "tintColor": "#000000",
+      "size": 231135076,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.applesignin",
+          "com.apple.developer.associated-appclip-app-identifiers",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.devicecheck.appattest-environment",
+          "com.apple.developer.networking.carrier-constrained.app-optimized",
+          "com.apple.developer.networking.carrier-constrained.appcategory",
+          "com.apple.developer.pass-type-identifiers",
+          "com.apple.developer.payment-pass-provisioning",
+          "com.apple.developer.siri",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups"
+        ],
+        "privacy": {
+          "NSCalendarsUsageDescription": "Add events to your calendar from X.",
+          "NSCameraUsageDescription": "Capture and post photos and videos from X.",
+          "NSContactsUsageDescription": "We will securely upload your contacts to our servers to help you connect with friends and suggest users to follow on X.",
+          "NSFaceIDUsageDescription": "Use FaceID to authenticate on X.",
+          "NSLocationUsageDescription": "Enjoy the X experience tailored to your location.",
+          "NSLocationWhenInUseUsageDescription": "Enables X to customize your experience based on your current location.",
+          "NSMicrophoneUsageDescription": "Capture and post videos with sound from X.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you download photos and videos to your Photos.",
+          "NSPhotoLibraryUsageDescription": "Allow access to share photos from your camera roll.",
+          "NSSpeechRecognitionUsageDescription": "Going forward, whenever you choose to share captions on this device, Apple will provide the service. Doing so helps make sure people of all hearing abilities can access your content.",
+          "NSUserTrackingUsageDescription": "This helps X show you more relevant ads."
+        }
+      },
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline1.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline2.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline3.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline4.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline5.png"
+      ],
+      "versions": [
+        {
+          "version": "6.5.0",
+          "date": "2026-08-16T20:21:57Z",
+          "localizedDescription": "### Version 6.5.0\r\n\r\nNeoFreeBird has been updated to X version 12.15. In the future, I won’t be updating the app version until XChat or other crucial features, like tweeting and replying, break. This also means that I will not support versions other than the current one, and may not prioritize issues on future versions.\r\n\r\n**New Features**\r\n- Added option to see where an account is located in a tweet. Can spillover into next line at times\r\n- Added option to disable screenshot detection in XChat\r\n\r\n**Fixes**\r\n- Fixes the “Restore Video Timestamp” option to prevent crashing on newer versions (fixes #23)\r\n- Added back the theme color to the horizontal scroll bar (fixes #27)\r\n- Forced the “more” bar to always be present (this was only an iPad issue)\r\n- Fixed the video timestamp not reflecting the custom font\r\n- Moved “Copy Profile Info” to the profile overflow menu. This now means you can’t copy profile info from your own profile, but you can click “Edit profile” and get that, so not a massive loss\r\n- Fixed bookmarked posts from verified accounts not followed not showing when the option to hide verified tweets was on\r\n- Fix Dim theme search and selected-tab colors by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/28\r\n- Fix Dim theme backgrounds after view reuse by @Thetromboneman1 in https://github.com/orionblur/NeoFreeBird/pull/30\r\n\r\n## New Contributors\r\n* @Thetromboneman1 made their first contribution in https://github.com/orionblur/NeoFreeBird/pull/28\r\n\r\n**Full Changelog**: https://github.com/orionblur/NeoFreeBird/compare/v6.4.0...v6.5.0",
+          "downloadURL": "https://github.com/orionblur/NeoFreeBird/releases/download/v6.5.0/orionblur-NFB-BHTwitter-sideloaded-X_6.5.0_12.15.ipa",
+          "size": 231135076,
+          "sha256": "60e9605e47178008c677a130db4e2f415d439839a9f968f92d958b5b87560c60",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline1.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline2.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline3.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline4.png",
+        "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/images/timeline/timeline5.png"
+      ],
+      "category": "lifestyle",
+      "sha256": "60e9605e47178008c677a130db4e2f415d439839a9f968f92d958b5b87560c60"
+    },
+    {
+      "name": "PiliPlus",
+      "githubRepo": "bggRGjQaUbCoE/PiliPlus",
+      "bundleIdentifier": "com.example.piliplus",
+      "developerName": "bggRGjQaUbCoE",
+      "subtitle": "PiliPlus",
+      "version": "2.1.1.2",
+      "versionDate": "2026-08-22T14:49:12Z",
+      "versionDescription": "自定义定时关闭时长改为滑动选择 #2632\r\n\r\n修复 #2631 #2636\r\n修复 #1967 #2634 by @My-Responsitories\r\n修复复制 VideoTrack 信息 #2633 by @My-Responsitories",
+      "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.1.2/PiliPlus_ios_2.1.1%2B5231.ipa",
+      "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
+      "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
+      "tintColor": "#5CB67B",
+      "size": 23906848,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "App需要您的同意,才能访问媒体资料库",
+          "NSCameraUsageDescription": "App需要您的同意,才能访问相册",
+          "NSLocalNetworkUsageDescription": "需要访问本地网络以发现和连接 DLNA 投屏设备",
+          "NSPhotoLibraryUsageDescription": "请允许APP保存图片到相册"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "2.1.1.2",
+          "date": "2026-08-22T14:49:12Z",
+          "localizedDescription": "自定义定时关闭时长改为滑动选择 #2632\r\n\r\n修复 #2631 #2636\r\n修复 #1967 #2634 by @My-Responsitories\r\n修复复制 VideoTrack 信息 #2633 by @My-Responsitories",
+          "downloadURL": "https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/2.1.1.2/PiliPlus_ios_2.1.1%2B5231.ipa",
+          "size": 23906848,
+          "sha256": "ed16456afb81fcea47f47b098940f8e9dc6fb85d697385dddd90ba0d81f28224",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "ed16456afb81fcea47f47b098940f8e9dc6fb85d697385dddd90ba0d81f28224",
+      "category": "other"
+    },
+    {
+      "name": "Pixiv-SwiftUI",
+      "githubRepo": "Eslzzyl/Pixiv-SwiftUI",
+      "bundleIdentifier": "org.eu.eslzzyl.Pixiv-SwiftUI",
+      "developerName": "Eslzzyl",
+      "subtitle": "为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS",
+      "version": "0.15.0",
+      "versionDate": "2026-08-16T12:51:09Z",
+      "versionDescription": "## 新功能\r\n\r\n- 插画详情和全屏查看新增图片文字翻译，基于 Apple Vision OCR 识别图片文字并显示原文与译文。\r\n- 新增 VLM 图片解释功能，可使用视觉语言模型分析插画内容；设置中支持配置模型、温度、图像细节并测试服务。\r\n- 设置中新增图片磁盘缓存上限选项，超过上限则自动清理。\r\n- 用户详情页新增骨架屏加载动画。\r\n\r\n## 优化\r\n\r\n- 重构全屏图片预览，支持更高效的懒加载、分页和缩放，改善大图及多图浏览性能。\r\n- 优化相关推荐图片预取，减少重复请求并提升滑动浏览体验。\r\n- 统一加载失败提示、错误状态和重试入口，并增加全局 Toast 反馈。\r\n- 优化登录页面布局、文案和输入体验。\r\n- 更新说明弹窗支持本地化 Markdown 内容。\r\n- 优化卡片阴影渲染，降低 GPU 离屏渲染开销。\r\n\r\n## 问题修复\r\n\r\n- 修复 Bing 翻译接口失效问题，并修复小说内容接口请求问题。\r\n- 修复网页登录流程在切换应用、登录失败或已有账号登录时的状态处理问题。\r\n- 修复 macOS 插画详情滚动对齐、图片缩放更新和窗口控件图标请求问题。\r\n- 修复图片淡入动画丢失问题。\r\n- 修复 iOS 插画卡片上下文菜单无法显示的问题。\r\n- 修复推荐页和动态页用户头像点击无响应的问题。\r\n- 修复关注和取消关注用户时请求返回 400 的问题。\r\n- 修复导航返回后多个瀑布流页面滚动位置丢失的问题。\r\n- 修复分页请求使用错误账号令牌的问题。\r\n- 修复切换账号时收藏、关注、下载和阅读等异步状态串用或显示旧数据的问题。\r\n- 修复网络模式切换后请求未取消、页面未刷新的问题。\r\n- 改善并发下载文件完整性校验，并在失败时提供回退处理。\r\n- 修复部分 API 端点及数据解码问题，降低内容加载失败概率。\r\n- 修复 Ugoira 动图播放中的数组越界问题，并将部分缓存初始化失败改为降级处理。",
+      "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.15.0/Pixiv-SwiftUI.ipa",
+      "localizedDescription": "项目同时支持 iOS、iPadOS 和 macOS。",
+      "iconURL": "https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png",
+      "tintColor": "#0094FA",
+      "size": 10437618,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSPhotoLibraryAddUsageDescription": "需要访问相册以保存插画图片"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.15.0",
+          "date": "2026-08-16T12:51:09Z",
+          "localizedDescription": "## 新功能\r\n\r\n- 插画详情和全屏查看新增图片文字翻译，基于 Apple Vision OCR 识别图片文字并显示原文与译文。\r\n- 新增 VLM 图片解释功能，可使用视觉语言模型分析插画内容；设置中支持配置模型、温度、图像细节并测试服务。\r\n- 设置中新增图片磁盘缓存上限选项，超过上限则自动清理。\r\n- 用户详情页新增骨架屏加载动画。\r\n\r\n## 优化\r\n\r\n- 重构全屏图片预览，支持更高效的懒加载、分页和缩放，改善大图及多图浏览性能。\r\n- 优化相关推荐图片预取，减少重复请求并提升滑动浏览体验。\r\n- 统一加载失败提示、错误状态和重试入口，并增加全局 Toast 反馈。\r\n- 优化登录页面布局、文案和输入体验。\r\n- 更新说明弹窗支持本地化 Markdown 内容。\r\n- 优化卡片阴影渲染，降低 GPU 离屏渲染开销。\r\n\r\n## 问题修复\r\n\r\n- 修复 Bing 翻译接口失效问题，并修复小说内容接口请求问题。\r\n- 修复网页登录流程在切换应用、登录失败或已有账号登录时的状态处理问题。\r\n- 修复 macOS 插画详情滚动对齐、图片缩放更新和窗口控件图标请求问题。\r\n- 修复图片淡入动画丢失问题。\r\n- 修复 iOS 插画卡片上下文菜单无法显示的问题。\r\n- 修复推荐页和动态页用户头像点击无响应的问题。\r\n- 修复关注和取消关注用户时请求返回 400 的问题。\r\n- 修复导航返回后多个瀑布流页面滚动位置丢失的问题。\r\n- 修复分页请求使用错误账号令牌的问题。\r\n- 修复切换账号时收藏、关注、下载和阅读等异步状态串用或显示旧数据的问题。\r\n- 修复网络模式切换后请求未取消、页面未刷新的问题。\r\n- 改善并发下载文件完整性校验，并在失败时提供回退处理。\r\n- 修复部分 API 端点及数据解码问题，降低内容加载失败概率。\r\n- 修复 Ugoira 动图播放中的数组越界问题，并将部分缓存初始化失败改为降级处理。",
+          "downloadURL": "https://github.com/Eslzzyl/Pixiv-SwiftUI/releases/download/v0.15.0/Pixiv-SwiftUI.ipa",
+          "size": 10437618,
+          "sha256": "0207cfabe88112202b6affff0cf6032278079c7179960a720f12dbad04a47537",
+          "minOSVersion": "17.0"
+        }
+      ],
+      "sha256": "0207cfabe88112202b6affff0cf6032278079c7179960a720f12dbad04a47537",
+      "category": "other"
+    },
+    {
+      "name": "PPSSPP",
+      "githubRepo": "hrydgard/ppsspp",
+      "bundleIdentifier": "org.ppsspp.ppsspp",
+      "developerName": "hrydgard",
+      "subtitle": "A PSP emulator for Android, Windows, Mac, Linux and iOS, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues.",
+      "version": "1.20.4",
+      "versionDate": "2026-05-16T12:42:59Z",
+      "versionDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "localizedDescription": "PPSSPP - a fast and portable PSP emulator =========================================",
+      "iconURL": "https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png",
+      "tintColor": "#2D4553",
+      "size": 31124277,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.security.container-required",
+          "com.apple.private.security.no-container",
+          "com.apple.private.security.no-sandbox",
+          "com.apple.private.security.storage.AppDataContainers",
+          "com.apple.private.security.storage.MobileDocuments",
+          "com.apple.security.iokit-user-client-class",
+          "get-task-allow",
+          "platform-application"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Your camera may be used to emulate Go!Cam, a camera accessory",
+          "NSLocalNetworkUsageDescription": "Your local network needs to be accessed by PPSSPP for network multiplayer support.",
+          "NSLocationWhenInUseUsageDescription": "Your location may be used to emulate Go!Explore, a GPS accessory",
+          "NSMicrophoneUsageDescription": "Your microphone may be used to emulate Go!Cam/Talkman, a microphone accessory",
+          "NSPhotoLibraryUsageDescription": "Access to your photos is needed to allow setting a background image."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.20.4",
+          "date": "2026-05-16T12:42:59Z",
+          "localizedDescription": "PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.\n",
+          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+          "size": 31124277,
+          "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+          "minOSVersion": "11.0"
+        }
+      ],
+      "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+      "category": "other"
+    },
+    {
+      "name": "SideStore",
+      "githubRepo": "SideStore/SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore",
+      "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
+      "version": "0.6.3",
+      "versionDate": "2026-05-05T04:31:20Z",
+      "versionDescription": "# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\r\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\r\n## What's Changed\r\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\r\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\r\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\r\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\r\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\r\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\r\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\r\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\r\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\r\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\r\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\r\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\r\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\r\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\r\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\r\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\r\n\r\n## New Contributors\r\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\r\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\r\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\r\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+      "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
+      "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+      "tintColor": "#EDE7FD",
+      "size": 28248216,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore uses the local network to find and communicate with your device."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.6.3",
+          "date": "2026-05-05T04:31:20Z",
+          "localizedDescription": "# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\r\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\r\n## What's Changed\r\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\r\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\r\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\r\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\r\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\r\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\r\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\r\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\r\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\r\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\r\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\r\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\r\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\r\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\r\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\r\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\r\n\r\n## New Contributors\r\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\r\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\r\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\r\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\r\n\r\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+          "size": 28248216,
+          "sha256": "7a5abf4210c577951b04c93ed008937f49d919bcc53e901dece8b1bdfdd01698",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "7a5abf4210c577951b04c93ed008937f49d919bcc53e901dece8b1bdfdd01698",
+      "category": "other"
+    },
+    {
+      "name": "SideStore (Nightly)",
+      "githubRepo": "SideStore/SideStore",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore",
+      "subtitle": "SideStore is a fork of AltStore that doesn't require an AltServer.",
+      "version": "0.6.4-20260822.1332+dbccc11c.0604",
+      "versionDate": "2026-08-22T10:04:47Z",
+      "versionDescription": "Nightly build from commit dbccc11c8561ee2db8bef911ac0ffabf1d0271dd",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/SideStore_SideStore_SideStore-0.6.4-20260822.1332%2Bdbccc11c_dbccc11.ipa",
+      "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
+      "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
+      "tintColor": "#EDE7FD",
+      "size": 25703145,
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore can use local network access to discover Bonjour (mDNS) services on your network. This is not required for core functionality."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "0.6.4-20260822.1332+dbccc11c.0604",
+          "date": "2026-08-22T10:04:47Z",
+          "localizedDescription": "Nightly build from commit dbccc11c8561ee2db8bef911ac0ffabf1d0271dd",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/SideStore_SideStore_SideStore-0.6.4-20260822.1332%2Bdbccc11c_dbccc11.ipa",
+          "size": 25703145,
+          "sha256": "813ea08e625821c46d24088b42ffc66a705ab767f6e81ab80b98b381cfb4824a",
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "0.6.4-20260819.1328+adf730f6.0604",
+          "date": "2026-08-19T05:10:52Z",
+          "localizedDescription": "Nightly build from commit adf730f62136f22d889f1491c4ed0766f8655484",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260819/SideStore_SideStore_SideStore-0.6.4-20260819.1328%2Badf730f6_adf730f.ipa",
+          "size": 25700146,
+          "sha256": "5699eccb6b6942ae63e319be95cdc22f29fb81360f8b9f34af74988109034f71",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "sha256": "813ea08e625821c46d24088b42ffc66a705ab767f6e81ab80b98b381cfb4824a",
+      "category": "other"
+    },
+    {
+      "name": "StikDebug",
+      "githubRepo": "StephenDev0/StikDebug",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StephenDev0",
+      "subtitle": "An on-device debugger/JIT enabler for iOS versions 17.4+, powered by idevice.",
+      "version": "3.1.9",
+      "versionDate": "2026-08-01T20:11:14Z",
+      "versionDescription": "Attempted another fix for pairing files.\r\nRenamed `rp_pairing_file.plist` back to `pairingFile.plist`.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.8...3.1.9",
+      "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.9/StikDebug-3.1.9.ipa",
+      "localizedDescription": "StikDebug enables JIT for sideloaded apps on iOS 17.4+ without needing a computer after the initial pairing setup.",
+      "iconURL": "https://raw.githubusercontent.com/StephenDev0/StikDebug/main/StikDebug/Assets.xcassets/StikDebug.imageset/StikDebug New-iOS-Default-1024x1024@1x.png",
+      "tintColor": "#61C9FA",
+      "size": 12822956,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "StikDebug needs access to devices on your local network so it can connect to the targets you add to the Device Library.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "StikDebug uses location to stay running in the background and maintain your JIT connection.",
+          "NSLocationWhenInUseUsageDescription": "StikDebug uses location to stay running in the background and maintain your JIT connection."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "3.1.9",
+          "date": "2026-08-01T20:11:14Z",
+          "localizedDescription": "Attempted another fix for pairing files.\r\nRenamed `rp_pairing_file.plist` back to `pairingFile.plist`.\r\n\r\n**Full Changelog**: https://github.com/StephenDev0/StikDebug/compare/3.1.8...3.1.9",
+          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.9/StikDebug-3.1.9.ipa",
+          "size": 12822956,
+          "sha256": "897d3f96fa4cc1722b095c5d9cc2bc8e65efd56c0391878bd30c8b183a3474bb",
+          "minOSVersion": "17.4"
+        },
+        {
+          "version": "3.1.8",
+          "date": "2026-07-31T15:00:49Z",
+          "localizedDescription": "Fix pairing file import, improve bounce-back reliability",
+          "downloadURL": "https://github.com/StephenDev0/StikDebug/releases/download/3.1.8/StikDebug-3.1.8.ipa",
+          "size": 12818495,
+          "sha256": "e0f06619c083771facd327a4f0358b39324120af846fd1602368dfaf3967f74d",
+          "minOSVersion": "17.4"
+        }
+      ],
+      "sha256": "897d3f96fa4cc1722b095c5d9cc2bc8e65efd56c0391878bd30c8b183a3474bb",
+      "category": "other"
+    },
+    {
+      "name": "UTM",
+      "githubRepo": "utmapp/UTM",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "developerName": "utmapp",
+      "subtitle": "Virtual machines for iOS and macOS",
+      "version": "5.0.3",
+      "versionDate": "2026-05-03T22:04:44Z",
+      "versionDescription": "## Highlights\r\n* **Improved graphics acceleration for Linux**: Vulkan 1.3 is now supported on Linux guests with VirtIO Venus drivers in Mesa. OpenGL 4.1 is supported with the new Apple Core OpenGL backend (macOS only).\r\n\r\n## Known Issues\r\n* (macOS) Apple CoreGL backend does not support Vulkan.\r\n* KosmicKrisp is provided as a WIP but the current upstream build is incomplete so MoltenVK is the recommended driver\r\n* Linux desktop rendering in Vulkan does not work due to lack of support for indirect draws for geometry shaders. Please configure your guest to use the older VirGL Gallium driver.\r\n\r\n## Changes (v5.0.3)\r\n* Fixed regression in GRUB rendering time due to new graphics backend\r\n* Fixed Vulkan issues on latest Wayland\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Home: Confirm delete when using swipe left (#3086)\r\n* Home: Prevent duplicate VMs from appearing (#7533) (thanks @DevSecTim)\r\n* AVF: Fixed CPU spike and mic loss due to two audio devices (thanks @matapo)\r\n* Scripting: Added ability to get IP address from AVF machines (#7643) (thanks @hellcastter)\r\n* Scripting: Fixed \"update registry\" for AVM backend (#7664) (thanks @EkkoG)\r\n* Scripting: Improve USB device matching logic (thanks @TronickDev)\r\n\r\n## Changes (v5.0.2)\r\n* Environment variables are now logged when debug log is enabled\r\n* Fixed a regression in GL acceleration where desktop might not render correctly (#7626)\r\n* Added geometry shaders support to MoltenVK to enable DXVK (thanks @Anducalliew433) (#7575)\r\n* (iOS) Fixed an issue where EAGL backend boots into a black screen (#7587)\r\n* (iOS) Fixed a crash on iOS 15 due to incompatible symbols (#7593)\r\n* (iOS) Fixed verbose logging for graphics backend\r\n* (iOS) Fixed a crash when GL is enabled due to missing support for glDrawElementsInstancedBaseVertex (#7596)\r\n* (macOS) Fixed an issue when after resizing a window if the guest outputs a different resolution size, the wrong texture resolution is used leading to misaligned cursor and warped graphics (#5781)\r\n* (macOS) Fixed an issue where the window resizes to 0x0 when native scaling is enabled\r\n\r\n## Changes (v5.0.1)\r\n* CocoaSpice: Reworked Metal renderer to be faster and have lower latency\r\n* Fixed an issue where a BIOS file with a comma in the filename will fail to load\r\n* Default FPS will now be the maximum refresh rate of the display on macOS and iPadOS (iPhone with ProMotion will still have 60Hz as the default rate but can be overridden to 120Hz through settings)\r\n* (macOS) Fixed issue causing `HV_UNSUPPORTED` on startup with Vulkan enabled (#7579)\r\n* (iOS) Fixed resolution issue on external displays (#6040)\r\n* (iOS) Pinch to zoom will turn off automatically updating zoom from the guest (until reset with the resize button)\r\n* (iOS) Fixed external display menu not updating\r\n* (iOS) Fixed incorrect scale on external displays and connecting an external display will now automatically scale to fit\r\n* (iOS) Fixed an issue where powering off the VM will show the home screen but not terminate UTM in the background\r\n\r\n## Changes (v5.0.0)\r\n* Add Venus support for Vulkan (#4551)\r\n* Add Apple Core OpenGL support for OpenGL 4.1 (#4285) (thanks @startergo)\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v5.0.3/UTM.ipa",
+      "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
+      "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "#3D7FEB",
+      "size": 133934639,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.hypervisor",
+          "com.apple.private.iokit.IOServiceSetAuthorizationID",
+          "com.apple.private.memorystatus",
+          "com.apple.security.exception.iokit-user-client-class",
+          "com.apple.system.diagnostics.iokit-properties",
+          "com.apple.vm.device-access",
+          "dynamic-codesigning",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "The virtual machine may access the local network. UTM may also use the network to communicate with local servers.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationAlwaysUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSMicrophoneUsageDescription": "Permission is required for any virtual machine to record from the microphone."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "5.0.3",
+          "date": "2026-05-03T22:04:44Z",
+          "localizedDescription": "## Highlights\r\n* **Improved graphics acceleration for Linux**: Vulkan 1.3 is now supported on Linux guests with VirtIO Venus drivers in Mesa. OpenGL 4.1 is supported with the new Apple Core OpenGL backend (macOS only).\r\n\r\n## Known Issues\r\n* (macOS) Apple CoreGL backend does not support Vulkan.\r\n* KosmicKrisp is provided as a WIP but the current upstream build is incomplete so MoltenVK is the recommended driver\r\n* Linux desktop rendering in Vulkan does not work due to lack of support for indirect draws for geometry shaders. Please configure your guest to use the older VirGL Gallium driver.\r\n\r\n## Changes (v5.0.3)\r\n* Fixed regression in GRUB rendering time due to new graphics backend\r\n* Fixed Vulkan issues on latest Wayland\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Home: Confirm delete when using swipe left (#3086)\r\n* Home: Prevent duplicate VMs from appearing (#7533) (thanks @DevSecTim)\r\n* AVF: Fixed CPU spike and mic loss due to two audio devices (thanks @matapo)\r\n* Scripting: Added ability to get IP address from AVF machines (#7643) (thanks @hellcastter)\r\n* Scripting: Fixed \"update registry\" for AVM backend (#7664) (thanks @EkkoG)\r\n* Scripting: Improve USB device matching logic (thanks @TronickDev)\r\n\r\n## Changes (v5.0.2)\r\n* Environment variables are now logged when debug log is enabled\r\n* Fixed a regression in GL acceleration where desktop might not render correctly (#7626)\r\n* Added geometry shaders support to MoltenVK to enable DXVK (thanks @Anducalliew433) (#7575)\r\n* (iOS) Fixed an issue where EAGL backend boots into a black screen (#7587)\r\n* (iOS) Fixed a crash on iOS 15 due to incompatible symbols (#7593)\r\n* (iOS) Fixed verbose logging for graphics backend\r\n* (iOS) Fixed a crash when GL is enabled due to missing support for glDrawElementsInstancedBaseVertex (#7596)\r\n* (macOS) Fixed an issue when after resizing a window if the guest outputs a different resolution size, the wrong texture resolution is used leading to misaligned cursor and warped graphics (#5781)\r\n* (macOS) Fixed an issue where the window resizes to 0x0 when native scaling is enabled\r\n\r\n## Changes (v5.0.1)\r\n* CocoaSpice: Reworked Metal renderer to be faster and have lower latency\r\n* Fixed an issue where a BIOS file with a comma in the filename will fail to load\r\n* Default FPS will now be the maximum refresh rate of the display on macOS and iPadOS (iPhone with ProMotion will still have 60Hz as the default rate but can be overridden to 120Hz through settings)\r\n* (macOS) Fixed issue causing `HV_UNSUPPORTED` on startup with Vulkan enabled (#7579)\r\n* (iOS) Fixed resolution issue on external displays (#6040)\r\n* (iOS) Pinch to zoom will turn off automatically updating zoom from the guest (until reset with the resize button)\r\n* (iOS) Fixed external display menu not updating\r\n* (iOS) Fixed incorrect scale on external displays and connecting an external display will now automatically scale to fit\r\n* (iOS) Fixed an issue where powering off the VM will show the home screen but not terminate UTM in the background\r\n\r\n## Changes (v5.0.0)\r\n* Add Venus support for Vulkan (#4551)\r\n* Add Apple Core OpenGL support for OpenGL 4.1 (#4285) (thanks @startergo)\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+          "downloadURL": "https://github.com/utmapp/UTM/releases/download/v5.0.3/UTM.ipa",
+          "size": 133934639,
+          "sha256": "5d47da1d5eafc02191f39992624e1e51b0e9e7060785c431236f9ae304a20d22",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "5d47da1d5eafc02191f39992624e1e51b0e9e7060785c431236f9ae304a20d22",
+      "category": "other"
+    },
+    {
+      "name": "UTM HV",
+      "githubRepo": "utmapp/UTM",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "developerName": "utmapp",
+      "subtitle": "Virtual machines for iOS and macOS",
+      "version": "5.0.3",
+      "versionDate": "2026-05-03T22:04:02Z",
+      "versionDescription": "## Highlights\r\n* **Improved graphics acceleration for Linux**: Vulkan 1.3 is now supported on Linux guests with VirtIO Venus drivers in Mesa. OpenGL 4.1 is supported with the new Apple Core OpenGL backend (macOS only).\r\n\r\n## Known Issues\r\n* (macOS) Apple CoreGL backend does not support Vulkan.\r\n* KosmicKrisp is provided as a WIP but the current upstream build is incomplete so MoltenVK is the recommended driver\r\n* Linux desktop rendering in Vulkan does not work due to lack of support for indirect draws for geometry shaders. Please configure your guest to use the older VirGL Gallium driver.\r\n\r\n## Changes (v5.0.3)\r\n* Fixed regression in GRUB rendering time due to new graphics backend\r\n* Fixed Vulkan issues on latest Wayland\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Home: Confirm delete when using swipe left (#3086)\r\n* Home: Prevent duplicate VMs from appearing (#7533) (thanks @DevSecTim)\r\n* AVF: Fixed CPU spike and mic loss due to two audio devices (thanks @matapo)\r\n* Scripting: Added ability to get IP address from AVF machines (#7643) (thanks @hellcastter)\r\n* Scripting: Fixed \"update registry\" for AVM backend (#7664) (thanks @EkkoG)\r\n* Scripting: Improve USB device matching logic (thanks @TronickDev)\r\n\r\n## Changes (v5.0.2)\r\n* Environment variables are now logged when debug log is enabled\r\n* Fixed a regression in GL acceleration where desktop might not render correctly (#7626)\r\n* Added geometry shaders support to MoltenVK to enable DXVK (thanks @Anducalliew433) (#7575)\r\n* (iOS) Fixed an issue where EAGL backend boots into a black screen (#7587)\r\n* (iOS) Fixed a crash on iOS 15 due to incompatible symbols (#7593)\r\n* (iOS) Fixed verbose logging for graphics backend\r\n* (iOS) Fixed a crash when GL is enabled due to missing support for glDrawElementsInstancedBaseVertex (#7596)\r\n* (macOS) Fixed an issue when after resizing a window if the guest outputs a different resolution size, the wrong texture resolution is used leading to misaligned cursor and warped graphics (#5781)\r\n* (macOS) Fixed an issue where the window resizes to 0x0 when native scaling is enabled\r\n\r\n## Changes (v5.0.1)\r\n* CocoaSpice: Reworked Metal renderer to be faster and have lower latency\r\n* Fixed an issue where a BIOS file with a comma in the filename will fail to load\r\n* Default FPS will now be the maximum refresh rate of the display on macOS and iPadOS (iPhone with ProMotion will still have 60Hz as the default rate but can be overridden to 120Hz through settings)\r\n* (macOS) Fixed issue causing `HV_UNSUPPORTED` on startup with Vulkan enabled (#7579)\r\n* (iOS) Fixed resolution issue on external displays (#6040)\r\n* (iOS) Pinch to zoom will turn off automatically updating zoom from the guest (until reset with the resize button)\r\n* (iOS) Fixed external display menu not updating\r\n* (iOS) Fixed incorrect scale on external displays and connecting an external display will now automatically scale to fit\r\n* (iOS) Fixed an issue where powering off the VM will show the home screen but not terminate UTM in the background\r\n\r\n## Changes (v5.0.0)\r\n* Add Venus support for Vulkan (#4551)\r\n* Add Apple Core OpenGL support for OpenGL 4.1 (#4285) (thanks @startergo)\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v5.0.3/UTM-HV.ipa",
+      "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
+      "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "#3D7FEB",
+      "size": 133934900,
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.private.hypervisor",
+          "com.apple.private.iokit.IOServiceSetAuthorizationID",
+          "com.apple.private.memorystatus",
+          "com.apple.private.security.no-sandbox",
+          "com.apple.private.security.storage.AppDataContainers",
+          "com.apple.private.security.storage.MobileDocuments",
+          "com.apple.security.exception.iokit-user-client-class",
+          "com.apple.system.diagnostics.iokit-properties",
+          "com.apple.vm.device-access",
+          "get-task-allow",
+          "platform-application"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "The virtual machine may access the local network. UTM may also use the network to communicate with local servers.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationAlwaysUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSMicrophoneUsageDescription": "Permission is required for any virtual machine to record from the microphone."
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "5.0.3",
+          "date": "2026-05-03T22:04:02Z",
+          "localizedDescription": "## Highlights\r\n* **Improved graphics acceleration for Linux**: Vulkan 1.3 is now supported on Linux guests with VirtIO Venus drivers in Mesa. OpenGL 4.1 is supported with the new Apple Core OpenGL backend (macOS only).\r\n\r\n## Known Issues\r\n* (macOS) Apple CoreGL backend does not support Vulkan.\r\n* KosmicKrisp is provided as a WIP but the current upstream build is incomplete so MoltenVK is the recommended driver\r\n* Linux desktop rendering in Vulkan does not work due to lack of support for indirect draws for geometry shaders. Please configure your guest to use the older VirGL Gallium driver.\r\n\r\n## Changes (v5.0.3)\r\n* Fixed regression in GRUB rendering time due to new graphics backend\r\n* Fixed Vulkan issues on latest Wayland\r\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\r\n* Home: Confirm delete when using swipe left (#3086)\r\n* Home: Prevent duplicate VMs from appearing (#7533) (thanks @DevSecTim)\r\n* AVF: Fixed CPU spike and mic loss due to two audio devices (thanks @matapo)\r\n* Scripting: Added ability to get IP address from AVF machines (#7643) (thanks @hellcastter)\r\n* Scripting: Fixed \"update registry\" for AVM backend (#7664) (thanks @EkkoG)\r\n* Scripting: Improve USB device matching logic (thanks @TronickDev)\r\n\r\n## Changes (v5.0.2)\r\n* Environment variables are now logged when debug log is enabled\r\n* Fixed a regression in GL acceleration where desktop might not render correctly (#7626)\r\n* Added geometry shaders support to MoltenVK to enable DXVK (thanks @Anducalliew433) (#7575)\r\n* (iOS) Fixed an issue where EAGL backend boots into a black screen (#7587)\r\n* (iOS) Fixed a crash on iOS 15 due to incompatible symbols (#7593)\r\n* (iOS) Fixed verbose logging for graphics backend\r\n* (iOS) Fixed a crash when GL is enabled due to missing support for glDrawElementsInstancedBaseVertex (#7596)\r\n* (macOS) Fixed an issue when after resizing a window if the guest outputs a different resolution size, the wrong texture resolution is used leading to misaligned cursor and warped graphics (#5781)\r\n* (macOS) Fixed an issue where the window resizes to 0x0 when native scaling is enabled\r\n\r\n## Changes (v5.0.1)\r\n* CocoaSpice: Reworked Metal renderer to be faster and have lower latency\r\n* Fixed an issue where a BIOS file with a comma in the filename will fail to load\r\n* Default FPS will now be the maximum refresh rate of the display on macOS and iPadOS (iPhone with ProMotion will still have 60Hz as the default rate but can be overridden to 120Hz through settings)\r\n* (macOS) Fixed issue causing `HV_UNSUPPORTED` on startup with Vulkan enabled (#7579)\r\n* (iOS) Fixed resolution issue on external displays (#6040)\r\n* (iOS) Pinch to zoom will turn off automatically updating zoom from the guest (until reset with the resize button)\r\n* (iOS) Fixed external display menu not updating\r\n* (iOS) Fixed incorrect scale on external displays and connecting an external display will now automatically scale to fit\r\n* (iOS) Fixed an issue where powering off the VM will show the home screen but not terminate UTM in the background\r\n\r\n## Changes (v5.0.0)\r\n* Add Venus support for Vulkan (#4551)\r\n* Add Apple Core OpenGL support for OpenGL 4.1 (#4285) (thanks @startergo)\r\n\r\n## Issues\r\nPlease check the full list on [Github](https://github.com/utmapp/UTM/issues) and help report any bug you find that is not listed.\r\n\r\n## Installation\r\n\r\n* [iOS](https://docs.getutm.app/installation/ios/)\r\n* [macOS](https://docs.getutm.app/installation/macos/)\r\n\r\n| File | Description | Installation | JIT | Hypervisor | USB |\r\n|------|------------|--------------|-----|-----------|-----|\r\n| UTM.deb | Jailbroken iOS version | Open in Cydia, dpkg, or Sileo | Yes | Yes(1) | Yes |\r\n| UTM.dmg | macOS version | Mounting and copying UTM.app to /Applications | Yes | Yes | Yes |\r\n| UTM.ipa | Non-jailbroken iOS version (sideloading) | AltStore, etc (see guide) | Yes(2) | No | No |\r\n| UTM-HV.ipa | Non-jailbroken iOS version (TrollStore) | TrollStore | Yes | Yes(1) | Yes |\r\n| UTM-SE.ipa | Non-jailbroken iOS version (sideloading) | AltStore, enterprise signing, etc | No | No | No |\r\n| UTM-Remote.ipa | Remote client | Any | No | No | No |\r\n\r\n1. Hypervisor on iOS requires an M1 iPad or newer.\r\n2. Enabling JIT may require a separate JIT enabler such as [Jitterbug][2] or Jitstreamer.\r\n\r\n[1]: https://getutm.app/install/\r\n[2]: https://github.com/osy/Jitterbug",
+          "downloadURL": "https://github.com/utmapp/UTM/releases/download/v5.0.3/UTM-HV.ipa",
+          "size": 133934900,
+          "sha256": "fe2f6050ca8d1589eb8b55d0963046c6902b706babe5c478a80010f1560374e9",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "sha256": "fe2f6050ca8d1589eb8b55d0963046c6902b706babe5c478a80010f1560374e9",
+      "category": "other"
+    },
+    {
+      "name": "Venera",
+      "githubRepo": "venera-app/venera",
+      "bundleIdentifier": "com.github.wgh136.venera",
+      "developerName": "venera-app",
+      "subtitle": "A comic reader that supports reading local and network comics",
+      "version": "1.6.3",
+      "versionDate": "2026-03-08T10:19:43Z",
+      "versionDescription": "## What's Changed\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/736\r\n* deps: flutter 3.41.4 and upgrade dependencies by @ynyxx in https://github.com/venera-app/venera/pull/809\r\n* Add downloaded comic restore in import comic by @bustesoul in https://github.com/venera-app/venera/pull/765\r\n* chore: update Android Gradle plugin to version 8.12.3 and upgrade Gra… by @ynyxx in https://github.com/venera-app/venera/pull/810\r\n* Fix customImageProcessing not triggering due to async keyword mismatch by @UCPr251 in https://github.com/venera-app/venera/pull/763\r\n* Add device-specific settings by @Arkalin in https://github.com/venera-app/venera/pull/808\r\n* Fix: reader swipe gesture causing  back navigation when image is loading by @boa-z in https://github.com/venera-app/venera/pull/764\r\n* Enhance image resizing logic. Close #800 by @ynyxx in https://github.com/venera-app/venera/pull/812\r\n\r\n## New Contributors\r\n* @UCPr251 made their first contribution in https://github.com/venera-app/venera/pull/763\r\n* @Arkalin made their first contribution in https://github.com/venera-app/venera/pull/808\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.2...v1.6.3",
+      "downloadURL": "https://github.com/venera-app/venera/releases/download/v1.6.3/venera-ios-1.6.3%2B163.ipa",
+      "localizedDescription": "A comic reader that supports reading local and network comics",
+      "iconURL": "https://raw.githubusercontent.com/venera-app/venera/refs/heads/master/assets/app_icon.png",
+      "tintColor": "#0784FC",
+      "size": 15489327,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Ensure that the operation is being performed by the user themselves.",
+          "NSPhotoLibraryUsageDescription": "Choose images"
+        }
+      },
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.6.3",
+          "date": "2026-03-08T10:19:43Z",
+          "localizedDescription": "## What's Changed\r\n* Update AltStore source with latest release by @github-actions[bot] in https://github.com/venera-app/venera/pull/736\r\n* deps: flutter 3.41.4 and upgrade dependencies by @ynyxx in https://github.com/venera-app/venera/pull/809\r\n* Add downloaded comic restore in import comic by @bustesoul in https://github.com/venera-app/venera/pull/765\r\n* chore: update Android Gradle plugin to version 8.12.3 and upgrade Gra… by @ynyxx in https://github.com/venera-app/venera/pull/810\r\n* Fix customImageProcessing not triggering due to async keyword mismatch by @UCPr251 in https://github.com/venera-app/venera/pull/763\r\n* Add device-specific settings by @Arkalin in https://github.com/venera-app/venera/pull/808\r\n* Fix: reader swipe gesture causing  back navigation when image is loading by @boa-z in https://github.com/venera-app/venera/pull/764\r\n* Enhance image resizing logic. Close #800 by @ynyxx in https://github.com/venera-app/venera/pull/812\r\n\r\n## New Contributors\r\n* @UCPr251 made their first contribution in https://github.com/venera-app/venera/pull/763\r\n* @Arkalin made their first contribution in https://github.com/venera-app/venera/pull/808\r\n\r\n**Full Changelog**: https://github.com/venera-app/venera/compare/v1.6.2...v1.6.3",
+          "downloadURL": "https://github.com/venera-app/venera/releases/download/v1.6.3/venera-ios-1.6.3%2B163.ipa",
+          "size": 15489327,
+          "sha256": "26455217fcd5345d5cc7c0afb60d4e4e827dd0cfa6e6c676b87398bfdf4f2aef",
+          "minOSVersion": "14.0"
+        }
+      ],
+      "category": "utilities",
+      "sha256": "26455217fcd5345d5cc7c0afb60d4e4e827dd0cfa6e6c676b87398bfdf4f2aef"
+    }
+  ],
+  "news": [],
+  "headerURL": "https://raw.githubusercontent.com/Aiko3993/iOS-Sideload-Source/main/.github/assets/og-image.png"
+}
