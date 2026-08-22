@@ -709,14 +709,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.6.c635b52",
-      "versionDate": "2026-08-16T06:14:10Z",
-      "versionDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/LiveContainer_Nightly_3.8.6.c635b52_Coexist.ipa",
+      "version": "3.8.7.1a87ea9",
+      "versionDate": "2026-08-22T13:21:39Z",
+      "versionDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_Nightly_3.8.7.1a87ea9_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 4715199,
+      "size": 4714999,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -729,6 +729,7 @@
         ],
         "privacy": {
           "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAlarmKitUsageDescription": "The guest app is requesting for this permission.",
           "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
@@ -766,6 +767,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.7.1a87ea9",
+          "date": "2026-08-22T13:21:39Z",
+          "localizedDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_Nightly_3.8.7.1a87ea9_Coexist.ipa",
+          "size": 4714999,
+          "sha256": "c6d51d6eb9543b77ad64da0a8932aa06c4a5ba6ee67cc55c53fce5d1d13232e9",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.6.c635b52",
           "date": "2026-08-16T06:14:10Z",
           "localizedDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
@@ -773,19 +783,10 @@
           "size": 4715199,
           "sha256": "12b4a16f371c79f8af6e6c37dff5b51384b40f5f1a14f54e092e200eec0122b5",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.8.6.7e356bc",
-          "date": "2026-08-14T10:49:05Z",
-          "localizedDescription": "Nightly build from commit 7e356bc3ab0e05584977281937da9308740b997b",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260814/LiveContainer_Nightly_3.8.6.7e356bc_Coexist.ipa",
-          "size": 4715135,
-          "sha256": "85acf446580962203d2d1ba02f0e14e4e5cfb559479b166054c012b501a67993",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "12b4a16f371c79f8af6e6c37dff5b51384b40f5f1a14f54e092e200eec0122b5",
+      "sha256": "c6d51d6eb9543b77ad64da0a8932aa06c4a5ba6ee67cc55c53fce5d1d13232e9",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
@@ -883,14 +884,14 @@
       "bundleIdentifier": "com.kdt.livecontainer.sidestore.nightly.coexist",
       "developerName": "LiveContainer",
       "subtitle": "Run iOS apps without actually installing them!",
-      "version": "3.8.6.c635b52",
-      "versionDate": "2026-08-16T06:14:10Z",
-      "versionDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/LiveContainer%2BSideStore_Nightly_3.8.6.c635b52_Coexist.ipa",
+      "version": "3.8.7.1a87ea9",
+      "versionDate": "2026-08-22T13:21:39Z",
+      "versionDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer%2BSideStore_Nightly_3.8.7.1a87ea9_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
       "tintColor": "#0784FC",
-      "size": 32392826,
+      "size": 33004051,
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.healthkit",
@@ -903,6 +904,7 @@
         ],
         "privacy": {
           "NFCReaderUsageDescription": "The guest app is requesting for this permission.",
+          "NSAlarmKitUsageDescription": "The guest app is requesting for this permission.",
           "NSAppleMusicUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothAlwaysUsageDescription": "The guest app is requesting for this permission.",
           "NSBluetoothPeripheralUsageDescription": "The guest app is requesting for this permission.",
@@ -940,6 +942,15 @@
       ],
       "versions": [
         {
+          "version": "3.8.7.1a87ea9",
+          "date": "2026-08-22T13:21:39Z",
+          "localizedDescription": "Nightly build from commit 1a87ea9a0f2c9c5de1747d7f519e22aeeaefe4a0",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer%2BSideStore_Nightly_3.8.7.1a87ea9_Coexist.ipa",
+          "size": 33004051,
+          "sha256": "7d81c63ac02cb7863d2252f539cdfdfc69bf1f73f52696e0b2ddc00114a9c271",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "3.8.6.c635b52",
           "date": "2026-08-16T06:14:10Z",
           "localizedDescription": "Nightly build from commit c635b526357807b41bd124f185bea63abdff0652",
@@ -947,19 +958,10 @@
           "size": 32392826,
           "sha256": "16a2afd1c5dd94aa0dce81c27d988f2f118abfd56634bc002f6e8d94f332abaf",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.8.6.7e356bc",
-          "date": "2026-08-14T10:49:05Z",
-          "localizedDescription": "Nightly build from commit 7e356bc3ab0e05584977281937da9308740b997b",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260814/LiveContainer%2BSideStore_Nightly_3.8.6.7e356bc_Coexist.ipa",
-          "size": 32351050,
-          "sha256": "8fdc475d5d7f8d528d582091e5ed82b4dd01d28e7fcc600d9d733a5f09668061",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "utilities",
-      "sha256": "16a2afd1c5dd94aa0dce81c27d988f2f118abfd56634bc002f6e8d94f332abaf",
+      "sha256": "7d81c63ac02cb7863d2252f539cdfdfc69bf1f73f52696e0b2ddc00114a9c271",
       "screenshots": [
         "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
       ]
