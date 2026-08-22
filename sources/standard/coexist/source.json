@@ -1212,14 +1212,14 @@
       "bundleIdentifier": "com.example.piliplus.coexist",
       "developerName": "bggRGjQaUbCoE",
       "subtitle": "PiliPlus",
-      "version": "2.1.1",
-      "versionDate": "2026-08-22T04:07:54Z",
-      "versionDescription": "支持显示 SC 发送时间\r\n私信消息支持标为已读\r\n过滤无播放权限的推荐视频\r\n取消滑动刷新时不隐藏 FAB\r\n动态文字支持复制表情包内容\r\n刷新滑动距离调整为根据刷新指示器高度计算\r\n恢复历史记录视频播放记录 #2458 by @Zxis233\r\n直播卡片支持反馈 #2456 by @My-Responsitories\r\nLinux 平台关闭 Impeller #2569 by @Axiaobo7788\r\n增加弹幕不透明度/字体大小设置区间 #2452 by @Meteor-3\r\n文字选择工具栏部分支持站内搜索 #2474 by @My-Responsitories\r\n支持播放多片段类型视频，优化仅播音频 #2455 by @My-Responsitories\r\n其他调整 #2612 by @My-Responsitories\r\n\r\n界面优化\r\n优化统一 iOS 列表滑动效果 #2184\r\n优化评论/动态检查结果界面 #2501\r\n图片缓存优化 #2473 by @My-Responsitories\r\n\r\n修复桌面端富文本菜单点击无效\r\n修复 #2182 #2485 #2491 #2494 #2581\r\n修复应用内 WebView #2454 by @Starfallan\r\n修复 iPadOS 窗口模式控制按钮 #2482 by @ngbyspy\r\n修复 Start History 链接 #2557 by @Dessalines39394\r\n修复 macOS 标题栏 #2448 by @Lynricsy, #2534 by @xiejiaxue\r\n修复 bug\r\n\r\n其他调整\r\n",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/PiliPlus_2.1.1_Coexist.ipa",
+      "version": "2.1.1.2",
+      "versionDate": "2026-08-22T14:49:12Z",
+      "versionDescription": "自定义定时关闭时长改为滑动选择 #2632\r\n\r\n修复 #2631 #2636\r\n修复 #1967 #2634 by @My-Responsitories\r\n修复复制 VideoTrack 信息 #2633 by @My-Responsitories",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/PiliPlus_2.1.1.2_Coexist.ipa",
       "localizedDescription": "可以通过右侧release进行下载或拉取代码到本地进行编译",
       "iconURL": "https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png",
       "tintColor": "#5CB67B",
-      "size": 23887220,
+      "size": 23910071,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -1232,16 +1232,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "2.1.1",
-          "date": "2026-08-22T04:07:54Z",
-          "localizedDescription": "支持显示 SC 发送时间\r\n私信消息支持标为已读\r\n过滤无播放权限的推荐视频\r\n取消滑动刷新时不隐藏 FAB\r\n动态文字支持复制表情包内容\r\n刷新滑动距离调整为根据刷新指示器高度计算\r\n恢复历史记录视频播放记录 #2458 by @Zxis233\r\n直播卡片支持反馈 #2456 by @My-Responsitories\r\nLinux 平台关闭 Impeller #2569 by @Axiaobo7788\r\n增加弹幕不透明度/字体大小设置区间 #2452 by @Meteor-3\r\n文字选择工具栏部分支持站内搜索 #2474 by @My-Responsitories\r\n支持播放多片段类型视频，优化仅播音频 #2455 by @My-Responsitories\r\n其他调整 #2612 by @My-Responsitories\r\n\r\n界面优化\r\n优化统一 iOS 列表滑动效果 #2184\r\n优化评论/动态检查结果界面 #2501\r\n图片缓存优化 #2473 by @My-Responsitories\r\n\r\n修复桌面端富文本菜单点击无效\r\n修复 #2182 #2485 #2491 #2494 #2581\r\n修复应用内 WebView #2454 by @Starfallan\r\n修复 iPadOS 窗口模式控制按钮 #2482 by @ngbyspy\r\n修复 Start History 链接 #2557 by @Dessalines39394\r\n修复 macOS 标题栏 #2448 by @Lynricsy, #2534 by @xiejiaxue\r\n修复 bug\r\n\r\n其他调整\r\n",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/PiliPlus_2.1.1_Coexist.ipa",
-          "size": 23887220,
-          "sha256": "0c60c8b9c3bfa8b0eb5abdb93644ee160b4b26d16f6c5af6e0dad59c5c1c4a54",
+          "version": "2.1.1.2",
+          "date": "2026-08-22T14:49:12Z",
+          "localizedDescription": "自定义定时关闭时长改为滑动选择 #2632\r\n\r\n修复 #2631 #2636\r\n修复 #1967 #2634 by @My-Responsitories\r\n修复复制 VideoTrack 信息 #2633 by @My-Responsitories",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/PiliPlus_2.1.1.2_Coexist.ipa",
+          "size": 23910071,
+          "sha256": "574585e9b2d799772b5f8fdadaa1da4f778722f3ea9554d4112917101b66eae8",
           "minOSVersion": "15.0"
         }
       ],
-      "sha256": "0c60c8b9c3bfa8b0eb5abdb93644ee160b4b26d16f6c5af6e0dad59c5c1c4a54",
+      "sha256": "574585e9b2d799772b5f8fdadaa1da4f778722f3ea9554d4112917101b66eae8",
       "category": "other"
     },
     {
