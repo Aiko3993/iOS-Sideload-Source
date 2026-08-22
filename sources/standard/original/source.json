@@ -454,14 +454,14 @@
       "bundleIdentifier": "app.ish.iSH",
       "developerName": "ish-app",
       "subtitle": "Linux shell for iOS",
-      "version": "builds/812",
-      "versionDate": "2026-07-27T07:29:23Z",
+      "version": "builds/813",
+      "versionDate": "2026-08-22T06:20:16Z",
       "versionDescription": "Automated daily build",
-      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/812/iSH.ipa",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
       "localizedDescription": "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
       "iconURL": "https://raw.githubusercontent.com/ish-app/ish/master/app/Assets.xcassets/AppIcon.appiconset/App Store.png",
       "tintColor": "#BCBCBC",
-      "size": 4596003,
+      "size": 4602446,
       "appPermissions": {
         "entitlements": [
           "beta-reports-active",
@@ -479,16 +479,16 @@
       "screenshotURLs": [],
       "versions": [
         {
-          "version": "builds/812",
-          "date": "2026-07-27T07:29:23Z",
+          "version": "builds/813",
+          "date": "2026-08-22T06:20:16Z",
           "localizedDescription": "Automated daily build",
-          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/812/iSH.ipa",
-          "size": 4596003,
-          "sha256": "4aa4c19b99bd0d5d9715107f15d7645b85daf079c8a00b684302962e088f1986",
+          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+          "size": 4602446,
+          "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
           "minOSVersion": "11.0"
         }
       ],
-      "sha256": "4aa4c19b99bd0d5d9715107f15d7645b85daf079c8a00b684302962e088f1986",
+      "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
       "category": "other"
     },
     {
