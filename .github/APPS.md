@@ -1,12 +1,12 @@
 # Supported Apps
 
-> *Last Updated: 2026-08-22 15:10:34 (UTC)*
+> *Last Updated: 2026-08-23 06:21:56 (UTC)*
 
 ## Standard Apps
 
 | Icon | Name | Description | Source |
 | :---: | :--- | :--- | :--- |
-| <img src="https://raw.githubusercontent.com/Aidoku/Aidoku/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **Aidoku** | Free and open source manga reader for iOS and iPadOS | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) |
+| <img src="https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png" width="48" height="48"> | **Aidoku** | Free and open source manga reader for iOS and iPadOS | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) |
 | <img src="https://raw.githubusercontent.com/AngelAuraMC/Amethyst-iOS/main/Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png" width="48" height="48"> | **Amethyst (Nightly)** | A Minecraft: Java Edition Launcher for Android and iOS based on PojavLauncher. This repository contains source code for iOS/iPadOS platform. | [AngelAuraMC/Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS) |
 | <img src="https://raw.githubusercontent.com/open-ani/animeko/main/app/desktop/appResources/linux-x64/icon.png" width="48" height="48"> | **Animeko** | 集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。100% Kotlin/Compose Multiplatform | [open-ani/animeko](https://github.com/open-ani/animeko) |
 | <img src="https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp" width="48" height="48"> | **Apollo** | The award-winning Reddit app | [Balackburn/Apollo](https://github.com/Balackburn/Apollo) |

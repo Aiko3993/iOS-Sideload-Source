@@ -18,7 +18,7 @@
       "versionDescription": "- Fixes for iOS 27: fixed settings pages freezing the app, along with other minor visual issues.\r\n- Improved backup restore time: restores should now take seconds instead of minutes. (@Amqx)\r\n- Failed download page retrying: less chance of missing pages in downloaded chapters from sources with aggressive rate limits. (@pxseu)\r\n- New chapter notifications (experimental): when Aidoku refreshes in the background, notification(s) of new chapters should be sent if enabled. (@Zareix)\r\n- Various other bug fixes and small features: see [the website](<https://aidoku.app/release-notes/>) for a more complete list.",
       "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.8.4/Aidoku.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
-      "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Shared/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
       "size": 10136987,
       "appPermissions": {
