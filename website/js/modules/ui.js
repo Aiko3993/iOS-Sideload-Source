@@ -24,6 +24,11 @@ function categoryLabel(c) {
     return parts.map(x => x.charAt(0).toUpperCase() + x.slice(1)).join(' ');
 }
 
+export function getAppKey(app) {
+    if (!app) return '';
+    return app.githubRepo ? `${app.githubRepo}::${app.name}` : `${app.developerName || ''}::${app.name}::${app.bundleIdentifier || ''}`;
+}
+
 function renderCategoryBar() {
     if (!categoryBar || !categoryBarScroll) return;
 
@@ -206,7 +211,7 @@ export function createFlatCard(app, index) {
             <div class="mt-auto space-y-3 z-10">
                 <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-white/5 pt-3 mb-1">
                      <div class="flex items-center gap-2">
-                         <button onclick="window.openModal('${app.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                         <button onclick="window.openModal('${getAppKey(app)}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
                                  style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
                                  onmouseover="this.style.color='var(--hover-color)'"
                                  onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
@@ -294,7 +299,7 @@ export function createStackCard(group, index) {
                 <div class="mt-auto space-y-3 z-10">
                     <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-white/5 pt-3 mb-1">
                          <div class="flex items-center gap-2">
-                             <button onclick="window.openModal('${primaryApp.bundleIdentifier}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
+                             <button onclick="window.openModal('${getAppKey(primaryApp)}')" class="group/btn py-1 flex items-center gap-1 transition-colors"
                                      style="color: rgba(var(--current-text), 0.7); --hover-color: rgb(var(--current-text));"
                                      onmouseover="this.style.color='var(--hover-color)'"
                                      onmouseout="this.style.color='rgba(var(--current-text), 0.7)'">
@@ -352,7 +357,7 @@ export function openVersionsModal(repoKey) {
                             <span>${new Date(app.versionDate).toLocaleDateString()}</span>
                         </p>
                     </div>
-                    <button onclick="window.closeVersionsModal(); setTimeout(() => window.openModal('${app.bundleIdentifier}'), 300);" class="flex-shrink-0 p-2 rounded-xl bg-gray-100 dark:bg-white/10 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-200 transition-colors mt-0.5" title="${t.details || 'Details'}">
+                    <button onclick="window.closeVersionsModal(); setTimeout(() => window.openModal('${getAppKey(app)}'), 300);" class="flex-shrink-0 p-2 rounded-xl bg-gray-100 dark:bg-white/10 text-gray-400 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-200 transition-colors mt-0.5" title="${t.details || 'Details'}">
                         ${getIcon('details', 'w-5 h-5')}
                     </button>
                 </div>
@@ -695,7 +700,12 @@ export function updateFavicon(sourceKey) {
 
 export function openModal(identifier) {
     const { currentApps, currentLang } = getState();
-    const app = currentApps.find(a => a.bundleIdentifier === identifier || a.name === identifier);
+    const app = currentApps.find(a =>
+        getAppKey(a) === identifier ||
+        a.bundleIdentifier === identifier ||
+        a.githubRepo === identifier ||
+        a.name === identifier
+    );
     if (!app) return;
     const theme = getAppTheme(app);
     applyModalTheme(theme);

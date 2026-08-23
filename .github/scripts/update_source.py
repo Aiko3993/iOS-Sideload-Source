@@ -98,10 +98,12 @@ def update_repo_pair(
                 return entry_c, entry_o, merged_updates
 
             future = executor.submit(_process_pair)
-            future_to_app[future] = name
+            future_to_app[future] = app_config
 
         for future in as_completed(future_to_app):
-            name = future_to_app[future]
+            target_config = future_to_app[future]
+            name = target_config.get('name', '')
+            repo = target_config.get('github_repo', '')
             try:
                 is_local_validation = os.environ.get('LOCAL_VALIDATION_ONLY') == '1'
                 timeout_s = int(os.environ.get('APP_PROCESS_TIMEOUT', '180' if is_local_validation else '900'))
@@ -113,29 +115,25 @@ def update_repo_pair(
                     new_apps_list_orig.append(resulting_entry_orig)
 
                 if metadata_updates:
-                    target_config = next((x for x in apps if x['name'] == name), None)
-                    if target_config:
-                        for k, v in metadata_updates.items():
-                            if k == 'icon_url':
-                                logger.info(f"Syncing icon back to apps.json for {name}")
-                                target_config['icon_url'] = v
-                            elif k == 'bundle_id':
-                                logger.info(f"Syncing bundle_id back to apps.json for {name}")
-                                target_config['bundle_id'] = v
-                            elif k == 'tag_regex':
-                                logger.info(f"Syncing computed tag_regex back to apps.json for {name}")
-                                target_config['tag_regex'] = v
-                            elif k == 'pre_release':
-                                target_config['pre_release'] = v
-                            elif k == 'artifact_only':
-                                target_config['artifact_only'] = bool(v)
-                            elif k == 'name':
-                                target_config['name'] = v
+                    for k, v in metadata_updates.items():
+                        if k == 'icon_url':
+                            logger.info(f"Syncing icon back to apps.json for {name} ({repo})")
+                            target_config['icon_url'] = v
+                        elif k == 'bundle_id':
+                            logger.info(f"Syncing bundle_id back to apps.json for {name} ({repo})")
+                            target_config['bundle_id'] = v
+                        elif k == 'tag_regex':
+                            logger.info(f"Syncing computed tag_regex back to apps.json for {name} ({repo})")
+                            target_config['tag_regex'] = v
+                        elif k == 'pre_release':
+                            target_config['pre_release'] = v
+                        elif k == 'artifact_only':
+                            target_config['artifact_only'] = bool(v)
+                        elif k == 'name':
+                            target_config['name'] = v
 
             except Exception as exc:
-                logger.error(f"App {name} generated an exception: {exc}")
-                target_config = next((x for x in apps if x['name'] == name), {})
-                repo = target_config.get('github_repo', '')
+                logger.error(f"App {name} ({repo}) generated an exception: {exc}")
                 key = f"{repo}::{name}"
 
                 if key and key in existing_apps_map_coex:
