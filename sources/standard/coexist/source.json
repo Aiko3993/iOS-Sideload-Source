@@ -80,14 +80,14 @@
       "bundleIdentifier": "app.aidoku.Aidoku.nightly.coexist",
       "developerName": "Aidoku",
       "subtitle": "Free and open source manga reader for iOS and iPadOS",
-      "version": "0.8.4.1.d08a6c8",
-      "versionDate": "2026-08-23T06:34:10Z",
-      "versionDescription": "Nightly build from commit d08a6c88b5cf3e153e339dbd786d6aaadcbd7358",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.d08a6c8_Coexist.ipa",
+      "version": "0.8.4.1.7930d51",
+      "versionDate": "2026-08-23T19:51:24Z",
+      "versionDescription": "Nightly build from commit 7930d516e551bf72448db594858e9de7a22a10ca",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.7930d51_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
-      "size": 11569338,
+      "size": 11568684,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -103,12 +103,12 @@
       ],
       "versions": [
         {
-          "version": "0.8.4.1.d08a6c8",
-          "date": "2026-08-23T06:34:10Z",
-          "localizedDescription": "Nightly build from commit d08a6c88b5cf3e153e339dbd786d6aaadcbd7358",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.d08a6c8_Coexist.ipa",
-          "size": 11569338,
-          "sha256": "4f5e9b1416981d71767d1c6a1e1f5df243845b8ff0c0d9f3a6b23032e1216806",
+          "version": "0.8.4.1.7930d51",
+          "date": "2026-08-23T19:51:24Z",
+          "localizedDescription": "Nightly build from commit 7930d516e551bf72448db594858e9de7a22a10ca",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.7930d51_Coexist.ipa",
+          "size": 11568684,
+          "sha256": "833999d8d2a1dd480fd14dc198a206ded9e9042a12167fa343f58669905db8d9",
           "minOSVersion": "15.0"
         }
       ],
@@ -130,7 +130,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "4f5e9b1416981d71767d1c6a1e1f5df243845b8ff0c0d9f3a6b23032e1216806"
+      "sha256": "833999d8d2a1dd480fd14dc198a206ded9e9042a12167fa343f58669905db8d9"
     },
     {
       "name": "Amethyst (Nightly)",
