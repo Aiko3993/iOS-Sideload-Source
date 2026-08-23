@@ -6,6 +6,12 @@
     "icon_url": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png"
   },
   {
+    "name": "Aidoku (Nightly)",
+    "github_repo": "Aidoku/Aidoku",
+    "artifact_only": true,
+    "github_workflow": "nightly.yml"
+  },
+  {
     "name": "Amethyst (Nightly)",
     "github_repo": "AngelAuraMC/Amethyst-iOS",
     "artifact_name": "org.angelauramc.amethyst-ios.ipa",
