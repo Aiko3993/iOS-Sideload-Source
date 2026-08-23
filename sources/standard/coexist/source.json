@@ -75,6 +75,64 @@
       "sha256": "8d49e5d581219fcd2c8ba4ef098303ab5576014c3af288416ebd2e9121a55e42"
     },
     {
+      "name": "Aidoku (Nightly)",
+      "githubRepo": "Aidoku/Aidoku",
+      "bundleIdentifier": "app.aidoku.Aidoku.nightly.coexist",
+      "developerName": "Aidoku",
+      "subtitle": "Free and open source manga reader for iOS and iPadOS",
+      "version": "0.8.4.1.d08a6c8",
+      "versionDate": "2026-08-23T06:34:10Z",
+      "versionDescription": "Nightly build from commit d08a6c88b5cf3e153e339dbd786d6aaadcbd7358",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.d08a6c8_Coexist.ipa",
+      "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
+      "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
+      "tintColor": "ff375f",
+      "size": 11569338,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSFaceIDUsageDescription": "Aidoku needs FaceID permissions for user-defined settings",
+          "NSLocalNetworkUsageDescription": "Aidoku needs permission to connect to local Komga and Kavita servers",
+          "NSPhotoLibraryUsageDescription": "Aidoku needs permission to save pages in your photo library"
+        }
+      },
+      "screenshotURLs": [
+        "https://aidoku.app/images/library.png",
+        "https://aidoku.app/images/source.png",
+        "https://aidoku.app/images/reader.png"
+      ],
+      "versions": [
+        {
+          "version": "0.8.4.1.d08a6c8",
+          "date": "2026-08-23T06:34:10Z",
+          "localizedDescription": "Nightly build from commit d08a6c88b5cf3e153e339dbd786d6aaadcbd7358",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Nightly_0.8.4.1.d08a6c8_Coexist.ipa",
+          "size": 11569338,
+          "sha256": "4f5e9b1416981d71767d1c6a1e1f5df243845b8ff0c0d9f3a6b23032e1216806",
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshots": [
+        {
+          "imageURL": "https://aidoku.app/images/library.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/source.png",
+          "width": 450,
+          "height": 908
+        },
+        {
+          "imageURL": "https://aidoku.app/images/reader.png",
+          "width": 450,
+          "height": 908
+        }
+      ],
+      "category": "entertainment",
+      "sha256": "4f5e9b1416981d71767d1c6a1e1f5df243845b8ff0c0d9f3a6b23032e1216806"
+    },
+    {
       "name": "Amethyst (Nightly)",
       "githubRepo": "AngelAuraMC/Amethyst-iOS",
       "bundleIdentifier": "org.angelauramc.amethyst.coexist",

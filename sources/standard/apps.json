@@ -8,8 +8,10 @@
   {
     "name": "Aidoku (Nightly)",
     "github_repo": "Aidoku/Aidoku",
-    "artifact_only": true,
-    "github_workflow": "nightly.yml"
+    "github_workflow": "nightly.yml",
+    "bundle_id": "app.aidoku.Aidoku",
+    "icon_url": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
+    "artifact_only": true
   },
   {
     "name": "Amethyst (Nightly)",
