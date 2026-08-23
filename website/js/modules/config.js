@@ -60,7 +60,11 @@ export const TRANSLATIONS = {
         variantsButton: "Variants ({0})",
         variantsAvailable: "{0} Variants Available",
         variantsTitle: "Variants",
-        versions: "Versions"
+        versions: "Versions",
+        pullToRefresh: "Pull to refresh",
+        releaseToRefresh: "Release to refresh",
+        refreshing: "Refreshing...",
+        refreshed: "Updated"
     },
     zh: {
         title: "iOS 侧载源",
@@ -109,7 +113,11 @@ export const TRANSLATIONS = {
         variantsButton: "变体 ({0})",
         variantsAvailable: "{0} 个可用变体",
         variantsTitle: "变体",
-        versions: "版本"
+        versions: "版本",
+        pullToRefresh: "下拉刷新",
+        releaseToRefresh: "释放立即刷新",
+        refreshing: "正在刷新...",
+        refreshed: "已刷新"
     }
 };
 

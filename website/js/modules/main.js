@@ -5,6 +5,7 @@ import { getState, setState } from './state.js';
 import { renderApps, filterApps, updateLanguage, updateSourceUI, updateHeaderIcon, updateFavicon, showToast, copySourceURL, handleDownloadClick, openModal, closeModal, collapseAllExpanded, openVersionsModal, closeVersionsModal } from './ui.js';
 import { fetchSource, switchSource, toggleSource } from './data.js';
 import { handleEasterEgg, showDeveloperConsolePrompt, initCheatCodes } from './effects.js';
+import { initPullToRefresh } from './pullRefresh.js';
 
 // Expose functions to window for HTML event handlers
 window.handleDownloadClick = handleDownloadClick;
@@ -87,6 +88,28 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFavicon(startSource);
 
     fetchSource(startSource);
+    initPullToRefresh();
+
+    let lastFetchTime = Date.now();
+    const REFRESH_INTERVAL = 60 * 1000;
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            const now = Date.now();
+            if (now - lastFetchTime > REFRESH_INTERVAL) {
+                lastFetchTime = now;
+                const { currentSource } = getState();
+                fetchSource(currentSource, true);
+            }
+        }
+    });
+
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted) {
+            const { currentSource } = getState();
+            fetchSource(currentSource, true);
+        }
+    });
 
     const searchInput = document.getElementById('search-input');
     if (searchInput) {

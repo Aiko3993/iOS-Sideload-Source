@@ -8,13 +8,16 @@ const grid = document.getElementById('apps-grid');
 const emptyState = document.getElementById('empty-state');
 const searchInput = document.getElementById('search-input');
 
-export async function fetchSource(sourceKey) {
-    grid.innerHTML = `
-        <div class="col-span-full flex flex-col items-center justify-center py-24 text-center animate-pulse">
-            <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-4"></div>
-            <div class="h-4 w-48 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
-        </div>`;
-    emptyState.classList.add('hidden');
+export async function fetchSource(sourceKey, silent = false) {
+    const { currentApps: existingApps } = getState();
+    if (!silent || !existingApps || existingApps.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full flex flex-col items-center justify-center py-24 text-center animate-pulse">
+                <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-4"></div>
+                <div class="h-4 w-48 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+            </div>`;
+        emptyState.classList.add('hidden');
+    }
 
     try {
         let currentApps = [];
@@ -41,7 +44,7 @@ export async function fetchSource(sourceKey) {
 
             const seen = new Set();
             currentApps = allApps.filter(app => {
-                const key = app.bundleIdentifier || app.name;
+                const key = app.githubRepo ? `${app.githubRepo}::${app.name}` : `${app.developerName}::${app.name}::${app.bundleIdentifier}`;
                 if (seen.has(key)) return false;
                 seen.add(key);
                 return true;
@@ -55,7 +58,7 @@ export async function fetchSource(sourceKey) {
         }
 
         setState('currentApps', currentApps);
-        setState('currentCategory', 'all');
+        if (!silent) setState('currentCategory', 'all');
         renderApps();
 
         if (history.pushState) {

@@ -71,6 +71,10 @@ jobs:
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
           sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
 
+          CACHE_BUST=$(date +%s)
+          sed -i "s|js/modules/main.js|js/modules/main.js?v=$CACHE_BUST|g" public/index.html
+          sed -i "s|css/flat.css|css/flat.css?v=$CACHE_BUST|g" public/index.html
+
           cat <<EOF > public/manifest.json
           {
               "name": "iOS Sideload Source",

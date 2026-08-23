@@ -102,6 +102,25 @@
 
 <body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 min-h-screen transition-colors duration-300">
 
+    <!-- Pull to Refresh Indicator -->
+    <div id="pull-refresh-indicator"
+        class="fixed top-0 inset-x-0 z-50 flex items-center justify-center pointer-events-none opacity-0 -translate-y-full select-none pt-safe">
+        <div id="pull-refresh-pill"
+            class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/30 dark:border-gray-700/30 rounded-full shadow-lg px-4 py-2 flex items-center gap-2.5 text-xs font-medium text-gray-700 dark:text-gray-200 transition-transform duration-200 ease-out mt-3">
+            <svg id="pull-refresh-icon" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 transition-transform duration-300 transform-gpu" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+            <svg id="pull-refresh-spinner" class="w-3.5 h-3.5 animate-spin hidden text-primary-500 dark:text-primary-400" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3.5"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span id="pull-refresh-label" data-i18n="pullToRefresh" class="tracking-wide font-medium">Pull to refresh</span>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast-container"
         class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none"></div>
