@@ -80,14 +80,14 @@
       "bundleIdentifier": "app.aidoku.Aidoku",
       "developerName": "Aidoku",
       "subtitle": "Free and open source manga reader for iOS and iPadOS",
-      "version": "0.8.4.1.7930d51",
-      "versionDate": "2026-08-23T19:51:24Z",
-      "versionDescription": "Nightly build from commit 7930d516e551bf72448db594858e9de7a22a10ca",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/Aidoku_Aidoku_Aidoku-iOS_nightly-7930d51_7930d51.ipa",
+      "version": "0.8.4.1.5a0e386",
+      "versionDate": "2026-08-24T08:15:36Z",
+      "versionDescription": "Nightly build from commit 5a0e3867eba4c9f21fee45462fa3be309391d04c",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260824/Aidoku_Aidoku_Aidoku-iOS_nightly-5a0e386_5a0e386.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
       "tintColor": "ff375f",
-      "size": 11536393,
+      "size": 11532358,
       "appPermissions": {
         "entitlements": [],
         "privacy": {
@@ -102,6 +102,15 @@
         "https://aidoku.app/images/reader.png"
       ],
       "versions": [
+        {
+          "version": "0.8.4.1.5a0e386",
+          "date": "2026-08-24T08:15:36Z",
+          "localizedDescription": "Nightly build from commit 5a0e3867eba4c9f21fee45462fa3be309391d04c",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260824/Aidoku_Aidoku_Aidoku-iOS_nightly-5a0e386_5a0e386.ipa",
+          "size": 11532358,
+          "sha256": "9a2d07b53c94fc7b3fab9b0039645d72b32a587b37bed67328854b6847865834",
+          "minOSVersion": "15.0"
+        },
         {
           "version": "0.8.4.1.7930d51",
           "date": "2026-08-23T19:51:24Z",
@@ -130,7 +139,7 @@
         }
       ],
       "category": "entertainment",
-      "sha256": "f9d58712e3a1784154c7f284953b1e8c8435cd8bc8d92cc74c870287661aed53"
+      "sha256": "9a2d07b53c94fc7b3fab9b0039645d72b32a587b37bed67328854b6847865834"
     },
     {
       "name": "Amethyst (Nightly)",
