@@ -19,7 +19,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260703/Aidoku_0.8.4_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
-      "tintColor": "ff375f",
+      "tintColor": "#FF2F52",
       "size": 10125380,
       "appPermissions": {
         "entitlements": [
@@ -86,7 +86,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260824/Aidoku_Nightly_0.8.4.1.5a0e386_Coexist.ipa",
       "localizedDescription": "A free and open source manga reading application for iOS and iPadOS.",
       "iconURL": "https://raw.githubusercontent.com/Aidoku/Aidoku/main/Aidoku/App/Resources/Assets.xcassets/AppIcon.appiconset/Icon.png",
-      "tintColor": "ff375f",
+      "tintColor": "#FF2F52",
       "size": 11559361,
       "appPermissions": {
         "entitlements": [],
@@ -229,7 +229,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260819/Apollo_1.15.11_3.6.0_Coexist.ipa",
       "localizedDescription": "Apollo is an app for Reddit built for customizability, smoothness, gestures, and taking advantage of everything iOS has to offer. Apollo is a beautiful Reddit app built for fast navigation with an incredibly powerful set of features. Thanks to features like the Jump Bar, fully customizable gestures, and a super-charged Media Viewer, browsing Reddit has never been this amazing. It's created specifically with iOS design guidelines in mind, so it fits right at home on your device, and with input from thousands of Redditors helping sculpt and perfect it over several years before launching:\n\n• Jump Bar, for super-fast hopping between subreddits\n• Super-charged Media Viewer for an amazing experience viewing images, GIFs, videos, albums, and more from a variety of sources.\n• Tabbed interface for easy navigating\n• Incredibly powerful Markdown composer for writing comments and posts\n• Full inline Imgur uploading, both images and albums\n• Large or compact posts depending on your preference\n• Dark mode (can be automatic)\n• Fully customizable gestures\n• Safari View Controller for browsing articles and links\n• Inline previews of media in comments\n• 3D Touch support\n• Beautifully organized Inbox\n• Filtering and blocking\n• Face ID / Touch ID / Passcode lock\n• Moderator features\n• Tons of settings to tweak\n• GIF scrubbing to go backward and forward in time\n• Multiple accounts\n• Powerful search\n• Full Markdown rendering\n• Unobtrusive Volume Indicator\n\nAs well as much, much more and it's constantly evolving. If you have anything you'd specifically like to see, come to the ApolloApp subreddit and we'd love to hear it! Apollo is an unofficial app, and side effects may include an incredible browsing experience.",
       "iconURL": "https://raw.githubusercontent.com/Balackburn/Apollo/main/public/apollo_icons/icon_1.webp",
-      "tintColor": "#4453f4",
+      "tintColor": "#E88B38",
       "size": 95391045,
       "appPermissions": {
         "entitlements": [
@@ -341,7 +341,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260817/emexDE_0.11.2_Coexist.ipa",
       "localizedDescription": "IDE to develop native code iOS apps and utilities on stock iOS it self just via a certificate and a custom micro kernel for those apps.",
       "iconURL": "https://raw.githubusercontent.com/emexlab/emexDE/main/Nyxian/Assets.xcassets/Icons/AppIcon.appiconset/darkmode nyx.png",
-      "tintColor": "#000",
+      "tintColor": "#30115C",
       "size": 105411519,
       "appPermissions": {
         "entitlements": [],
@@ -450,7 +450,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260705/Feather_2.9.0_Coexist.ipa",
       "localizedDescription": "Feather is a free on-device iOS application manager/installer built with UIKit for quality.",
       "iconURL": "https://raw.githubusercontent.com/khcrysalis/Feather/main/Feather/Resources/Assets.xcassets/AppIcon.appiconset/feather.png",
-      "tintColor": "848ef9",
+      "tintColor": "#C5A8EB",
       "size": 14232252,
       "appPermissions": {
         "entitlements": [],
@@ -570,7 +570,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260719/iTorrent_2.2.0-1_Coexist.ipa",
       "localizedDescription": "iTorrent officially in the AltStore!\n\nIt is an ordinary torrent client for iOS with Files app support and much more.\n\nWhat can this app do:\n\n• Download in the background\n• Live Activity and Dynamic Island progress bar\n• Downloading on external drives\n• Sequential download (use VLC to watch films while loading)\n• Add torrent files from Share menu (Safari and other apps)\n• Add magnet links directly from Safari\n• Store files in Files app\n• File sharing directly from app\n• Download torrent by url\n• Download torrent by magnet\n• Show progress in Dynamic Island\n• Send notification on torrent downloaded\n• Web/WebDav Server\n• Select files download priority\n• Change UI to dark theme\n• Color personalization\n• RSS Feed\n• ???",
       "iconURL": "https://raw.githubusercontent.com/XITRIX/iTorrent/main/iTorrent/Core/Assets/Assets.xcassets/AppIcons/AppIcon.appiconset/tinted_icon.png",
-      "tintColor": "#F19E69",
+      "tintColor": "#9F9F9F",
       "size": 24267916,
       "appPermissions": {
         "entitlements": [
@@ -620,7 +620,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260821/Kazumi_2.2.9_Coexist.ipa",
       "localizedDescription": "使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～",
       "iconURL": "https://raw.githubusercontent.com/Predidit/Kazumi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png",
-      "tintColor": "#F6F5F0",
+      "tintColor": "#C9E3A6",
       "size": 29542911,
       "appPermissions": {
         "entitlements": [],
@@ -662,7 +662,7 @@
       "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/beta/Ksign.ipa",
       "localizedDescription": "Yet another codesigning app, have you ever wondered what if Feather and Esign had a child? Welcome to Ksign!",
       "iconURL": "https://raw.githubusercontent.com/Nyasami/Ksign/main/Ksign/Resources/Assets.xcassets/AppIcon.appiconset/Ksign-default.png",
-      "tintColor": "3c94fc",
+      "tintColor": "#007BFA",
       "size": 16231234,
       "appPermissions": {
         "entitlements": [],
@@ -695,7 +695,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260717/LiveContainer_3.8.0_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
-      "tintColor": "#0784FC",
+      "tintColor": "#0050FF",
       "size": 4691443,
       "appPermissions": {
         "entitlements": [
@@ -782,7 +782,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer_Nightly_3.8.7.1a87ea9_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
-      "tintColor": "#0784FC",
+      "tintColor": "#0050FF",
       "size": 4714999,
       "appPermissions": {
         "entitlements": [
@@ -870,7 +870,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260717/LiveContainer%2BSideStore_3.8.0_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
-      "tintColor": "#0784FC",
+      "tintColor": "#0050FF",
       "size": 35386266,
       "appPermissions": {
         "entitlements": [
@@ -957,7 +957,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260822/LiveContainer%2BSideStore_Nightly_3.8.7.1a87ea9_Coexist.ipa",
       "localizedDescription": "Run iOS apps without actually installing them!",
       "iconURL": "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon1024.png",
-      "tintColor": "#0784FC",
+      "tintColor": "#0050FF",
       "size": 33004051,
       "appPermissions": {
         "entitlements": [
@@ -1078,7 +1078,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.8_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
-      "tintColor": "EF4444",
+      "tintColor": "#E5E5E5",
       "size": 108005396,
       "appPermissions": {
         "entitlements": [
@@ -1139,7 +1139,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20251103/NeoFreeBird_2.2_Coexist.ipa",
       "localizedDescription": "A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications.",
       "iconURL": "https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png",
-      "tintColor": "1DA1F2",
+      "tintColor": "#1D9BF0",
       "size": 152563310,
       "appPermissions": {
         "entitlements": [
@@ -1272,7 +1272,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260816/NeoFreeBird_X_6.5.0_Coexist.ipa",
       "localizedDescription": "NeoFreeBird-BHTwitter",
       "iconURL": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
-      "tintColor": "#000000",
+      "tintColor": "#1D9BF0",
       "size": 230354756,
       "appPermissions": {
         "entitlements": [
@@ -1478,7 +1478,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260505/SideStore_0.6.3_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
-      "tintColor": "#EDE7FD",
+      "tintColor": "#C502F4",
       "size": 28250711,
       "appPermissions": {
         "entitlements": [],
@@ -1513,7 +1513,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260823/SideStore_Nightly_0.6.4-20260823.1342%2Bb6cd85c1.0604_Coexist.ipa",
       "localizedDescription": "SideStore is an iOS application that allows you to sideload apps onto your iOS device with just your Apple ID. SideStore resigns apps with your personal development certificate, and then uses a specially designed VPN in order to trick iOS into installing them. SideStore will periodically \"refresh\" your apps in the background, to keep their normal 7-day development period from expiring.",
       "iconURL": "https://raw.githubusercontent.com/SideStore/SideStore/develop/AltStore/Resources/Icons.xcassets/AppIcon.appiconset/1024.png",
-      "tintColor": "#EDE7FD",
+      "tintColor": "#C502F4",
       "size": 26724377,
       "appPermissions": {
         "entitlements": [
@@ -1608,7 +1608,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260503/UTM_5.0.3_Coexist.ipa",
       "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
       "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
-      "tintColor": "#3D7FEB",
+      "tintColor": "#4692F5",
       "size": 133604723,
       "appPermissions": {
         "entitlements": [
@@ -1658,7 +1658,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260503/UTM_HV_5.0.3_Coexist.ipa",
       "localizedDescription": "UTM is a full featured system emulator and virtual machine host for iOS and macOS. It is based off of QEMU. In short, it allows you to run Windows, Linux, and more on your Mac, iPhone, and iPad. More information at https://getutm.app/ and https://mac.getutm.app/",
       "iconURL": "https://raw.githubusercontent.com/utmapp/UTM/main/Platform/Assets.xcassets/AppIcon.appiconset/Icon.png",
-      "tintColor": "#3D7FEB",
+      "tintColor": "#4692F5",
       "size": 133604979,
       "appPermissions": {
         "entitlements": [
@@ -1711,7 +1711,7 @@
       "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260308/Venera_1.6.3_Coexist.ipa",
       "localizedDescription": "A comic reader that supports reading local and network comics",
       "iconURL": "https://raw.githubusercontent.com/venera-app/venera/refs/heads/master/assets/app_icon.png",
-      "tintColor": "#0784FC",
+      "tintColor": "#2143F3",
       "size": 15422324,
       "appPermissions": {
         "entitlements": [],
