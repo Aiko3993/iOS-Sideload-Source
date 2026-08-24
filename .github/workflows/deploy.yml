@@ -1,73 +1,129 @@
 name: Deploy to GitHub Pages
 
 on:
+  schedule:
+    - cron: '0 * * * *'
   push:
     branches:
       - main
+    paths-ignore:
+      - '.github/APPS.md'
+      - 'README.md'
   workflow_dispatch: {}
-  workflow_run:
-    workflows: ["Update Source"]
-    types:
-      - completed
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+  update-source:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(toJson(github.event.commits), 'apps.json') || contains(toJson(github.event.commits), '.github/scripts/')
+    runs-on: ubuntu-latest
+    outputs:
+      has_changes: ${{ steps.commit.outputs.has_changes }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+          cache-dependency-path: '.github/requirements.txt'
+
+      - name: Install dependencies
+        run: pip install -r .github/requirements.txt
+
+      - name: Validate Apps JSON
+        run: python3 .github/scripts/validate_apps.py
+
+      - name: Run update script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RECONCILE_CACHED_ASSETS: '1'
+          RECONCILE_APPLY: '1'
+          RECONCILE_MIN_AGE_DAYS: '1'
+        run: python .github/scripts/update_source.py
+
+      - name: Auto-format files
+        run: |
+          for f in $(find . -type f -not -path "*/\.git/*" -not -path "*/\.github/workflows/*" -not -path "*/\.venv/*" -not -path "*/__pycache__/*" \( -name "*.json" -o -name "*.md" -o -name "*.py" -o -name "*.yml" -o -name "*.yaml" -o -name "*.html" -o -name "*.css" -o -name "*.js" \)); do
+            if grep -q '[[:space:]]$' "$f" 2>/dev/null; then
+              sed -i 's/[[:space:]]*$//' "$f"
+            fi
+            perl -i -0pe 's/\n{3,}/\n\n/g' "$f"
+            if [ -s "$f" ] && [ "$(tail -c 1 "$f")" != "$(printf '\n')" ]; then
+              echo "" >> "$f"
+            fi
+          done
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git commit -m "Update source.json and app lists"
+
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until git pull --rebase && git push; do
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              if [ $RETRY_COUNT -ge $MAX_RETRIES ]; then
+                echo "Failed to push after $MAX_RETRIES attempts."
+                exit 1
+              fi
+              echo "Push failed, retrying in $((RETRY_COUNT * 2)) seconds..."
+              sleep $((RETRY_COUNT * 2))
+            done
+          fi
+
+  build-pages:
+    needs: [update-source]
+    if: |
+      always() &&
+      (needs.update-source.result == 'success' || needs.update-source.result == 'skipped') &&
+      (github.event_name != 'schedule' || needs.update-source.outputs.has_changes == 'true')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          ref: main
 
-      - name: Check if deploy needed
-        id: check
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_run" ]; then
-            LAST_COMMIT_TIME=$(git log -1 --format="%ct")
-            NOW=$(date +%s)
-            DIFF=$((NOW - LAST_COMMIT_TIME))
-            
-            echo "Last commit was $DIFF seconds ago"
-            
-            if [ $DIFF -gt 300 ]; then
-              echo "No recent commits, skipping deployment"
-              echo "skip=true" >> $GITHUB_OUTPUT
-            else
-              echo "Recent commit detected, proceeding with deployment"
-              echo "skip=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "skip=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Prepare deployment
-        if: steps.check.outputs.skip != 'true'
+      - name: Build site
         run: |
           mkdir public
-          
           cp website/index.html public/
           cp -r website/css public/
           cp -r website/js public/
-          
+
           mkdir -p public/sources/standard/original public/sources/standard/coexist public/sources/nsfw/original public/sources/nsfw/coexist
           [ -f sources/standard/original/source.json ] && cp sources/standard/original/source.json public/sources/standard/original/
           [ -f sources/standard/coexist/source.json ] && cp sources/standard/coexist/source.json public/sources/standard/coexist/
           [ -f sources/nsfw/original/source.json ] && cp sources/nsfw/original/source.json public/sources/nsfw/original/
           [ -f sources/nsfw/coexist/source.json ] && cp sources/nsfw/coexist/source.json public/sources/nsfw/coexist/
-          
+
           BASE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
           AUTHOR="${GITHUB_REPOSITORY_OWNER}"
           REPO="${GITHUB_REPOSITORY#*/}"
-          
+
           sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/index.html
           sed -i "s|{{BASE_URL}}/assets/|https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
           sed -i "s|\"assets/|\"https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
-          
+
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
           sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
 
@@ -94,14 +150,14 @@ jobs:
               ]
           }
           EOF
-          
+
           cat <<EOF > public/robots.txt
           User-agent: *
           Allow: /
 
           Sitemap: ${BASE_URL}sitemap.xml
           EOF
-          
+
           CURRENT_DATE=$(date +"%Y-%m-%d")
           cat <<EOF > public/sitemap.xml
           <?xml version="1.0" encoding="UTF-8"?>
@@ -114,32 +170,25 @@ jobs:
              </url>
           </urlset>
           EOF
-          
+
           touch public/.nojekyll
 
-      - name: Deploy to GitHub Pages
-        if: steps.check.outputs.skip != 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd public
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          
-          git fetch origin gh-pages --depth=1 || true
-          
-          if git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
-            git commit -m "Temp"
-            
-            if git diff origin/gh-pages --quiet; then
-              echo "No changes detected compared to gh-pages. Skipping deployment."
-              exit 0
-            fi
-            
-            git reset --soft HEAD~1
-          fi
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
 
-          git commit -m "Deploy to GitHub Pages (Automated)"
-          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
+  deploy-pages:
+    needs: [build-pages]
+    if: always() && needs.build-pages.result == 'success'
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
