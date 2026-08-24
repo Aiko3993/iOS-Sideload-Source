@@ -4,7 +4,7 @@ import { getState } from './state.js';
 // Base config for paths
 export const PATH_CONFIG = {
     isLocalDev: window.location.pathname.includes('/website/'),
-    productionBase: 'https://raw.githubusercontent.com/{{AUTHOR}}/{{REPO}}/gh-pages/'
+    productionBase: 'https://raw.githubusercontent.com/{{AUTHOR}}/{{REPO}}/main/'
 };
 
 const _authorMatch = PATH_CONFIG.productionBase.match(/github(?:usercontent)?\.com\/([^/]+)\//);

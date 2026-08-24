@@ -108,6 +108,7 @@ jobs:
           cp website/index.html public/
           cp -r website/css public/
           cp -r website/js public/
+          cp -r .github/assets public/assets
 
           mkdir -p public/sources/standard/original public/sources/standard/coexist public/sources/nsfw/original public/sources/nsfw/coexist
           [ -f sources/standard/original/source.json ] && cp sources/standard/original/source.json public/sources/standard/original/
@@ -121,8 +122,6 @@ jobs:
 
           sed -i "s|{{BASE_URL}}|$BASE_URL|g" public/index.html
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/index.html
-          sed -i "s|{{BASE_URL}}/assets/|https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
-          sed -i "s|\"assets/|\"https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/|g" public/index.html
 
           sed -i "s|{{AUTHOR}}|$AUTHOR|g" public/js/modules/config.js
           sed -i "s|{{REPO}}|$REPO|g" public/js/modules/config.js
@@ -142,7 +141,7 @@ jobs:
               "theme_color": "#2563eb",
               "icons": [
                   {
-                      "src": "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/.github/assets/apple-touch-icon.png",
+                      "src": "assets/apple-touch-icon.png",
                       "sizes": "1024x1024",
                       "type": "image/png",
                       "purpose": "any"
