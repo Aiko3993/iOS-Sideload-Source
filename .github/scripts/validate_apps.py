@@ -115,11 +115,9 @@ def validate_apps_json(file_path, global_seen_repos):
             logger.error(f"Item {idx}: {msg} ('{icon_url}')")
             success = False
 
-        tint = app.get('tint_color')
-        if tint:
-            if not isinstance(tint, str) or not tint.startswith('#') or len(tint) not in [4, 7]:
-                logger.error(f"Item {idx}: Invalid tint_color '{tint}'")
-                success = False
+        if 'tint_color' in app:
+            logger.error(f"Item {idx}: 'tint_color' is disallowed; tintColor is derived automatically from icon_url")
+            success = False
 
     if success:
         logger.info(f"OK {file_path} is valid. ({len(data)} apps)")

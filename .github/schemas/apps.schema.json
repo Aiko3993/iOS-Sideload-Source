@@ -47,10 +47,6 @@
           "maxLength": 200,
           "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
         },
-        "tint_color": {
-          "type": "string",
-          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$"
-        },
         "pre_release": {
           "type": "boolean"
         },

@@ -253,10 +253,10 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                     else:
                         logger.warning(f"Configured icon for {name} is broken (HTTP {head_cfg.status_code if head_cfg else 'None'}), keeping current icon")
 
-                config_tint = app_config.get('tint_color')
-                if config_tint and app_entry.get('tintColor') != config_tint:
-                    app_entry['tintColor'] = config_tint
-                    logger.info(f"Updated tint color for {name} from config")
+                if app_entry.get('iconURL'):
+                    extracted = extract_dominant_color(app_entry['iconURL'], client)
+                    if extracted:
+                        app_entry['tintColor'] = extracted
 
                 should_discover = os.environ.get('OFFICIAL_SOURCE_DISCOVERY') == '1'
                 if not should_discover and not is_local_validation:
@@ -266,7 +266,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                     official_data = find_official_source(repo, expected_id, client)
                     if official_data:
                         for k, v in official_data.items():
-                            if k not in app_entry or not app_entry[k] or k in ['screenshotURLs', 'tintColor']:
+                            if k not in app_entry or not app_entry[k] or k in ['screenshotURLs']:
                                 app_entry[k] = v
                         if 'subtitle' in official_data:
                             app_entry['subtitle'] = official_data['subtitle']
@@ -339,10 +339,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                         app_entry['iconURL'] = best_repo_icon
                         found_icon_auto = best_repo_icon
 
-        config_tint = app_config.get('tint_color')
-        if config_tint:
-            app_entry['tintColor'] = config_tint
-        elif not app_entry.get('tintColor') or app_entry.get('tintColor') == '#000000':
+        if app_entry.get('iconURL'):
             extracted = extract_dominant_color(app_entry['iconURL'], client)
             if extracted:
                 app_entry['tintColor'] = extracted
@@ -627,10 +624,8 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
                         found_icon_auto = icon_candidates[0]
                         logger.warning(f"Could not analyze icons for {name}, using first candidate: {icon_url}")
 
-        tint_color = app_config.get('tint_color')
-        if not tint_color:
-            extracted = extract_dominant_color(icon_url, client)
-            tint_color = extracted if extracted else '#000000'
+        extracted = extract_dominant_color(icon_url, client) if icon_url else None
+        tint_color = extracted if extracted else '#007AFF'
 
         app_entry = {
             "name": name,
@@ -653,7 +648,7 @@ def process_app(app_config, app_entry, client, base_name, is_coexist=True):
 
     if official_data:
         for k, v in official_data.items():
-            if k not in app_entry or not app_entry.get(k) or k in ['screenshotURLs', 'tintColor']:
+            if k not in app_entry or not app_entry.get(k) or k in ['screenshotURLs']:
                 app_entry[k] = v
 
     _apply_passthrough_fields(app_entry, app_config)
