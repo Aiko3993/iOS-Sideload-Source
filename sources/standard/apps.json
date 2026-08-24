@@ -130,11 +130,15 @@
   {
     "name": "NeoFreeBird (Twitter)",
     "github_repo": "orionblur/NeoFreeBird",
+    "bundle_id": "com.atebits.Tweetie2",
+    "icon_url": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
     "ipa_regex": "sideloaded-Twitter"
   },
   {
     "name": "NeoFreeBird (X)",
     "github_repo": "orionblur/NeoFreeBird",
+    "bundle_id": "com.atebits.Tweetie2",
+    "icon_url": "https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png",
     "ipa_regex": "sideloaded-X"
   },
   {

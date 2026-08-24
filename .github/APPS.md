@@ -1,6 +1,6 @@
 # Supported Apps
 
-> *Last Updated: 2026-08-24 03:43:48 (UTC)*
+> *Last Updated: 2026-08-24 07:33:10 (UTC)*
 
 ## Standard Apps
 
@@ -26,7 +26,8 @@
 | <img src="https://raw.githubusercontent.com/cranci1/Luna/main/Luna/Assets.xcassets/AppIcon.appiconset/Default.png" width="48" height="48"> | **Luna** | No description available. | [cranci1/Luna](https://github.com/cranci1/Luna) |
 | <img src="https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png" width="48" height="48"> | **Mangayomi** | Read manga, novels, and watch anime | [kodjodevf/mangayomi](https://github.com/kodjodevf/mangayomi) |
 | <img src="https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png" width="48" height="48"> | **NeoFreeBird** | A modified Twitter app, with branding reverts, BHTwitter and other QoL modifications. | [NeoFreeBird/app](https://github.com/NeoFreeBird/app) |
-| <img src="https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png" width="48" height="48"> | **NeoFreeBird** | NeoFreeBird version 6.5.0 | [orionblur/NeoFreeBird](https://github.com/orionblur/NeoFreeBird) |
+| <img src="https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png" width="48" height="48"> | **NeoFreeBird (Twitter)** | A tweak for Twitter that reverts branding to pre-2023, blocks ads, unlocks Twitter Blue features, and more! | [orionblur/NeoFreeBird](https://github.com/orionblur/NeoFreeBird) |
+| <img src="https://raw.githubusercontent.com/orionblur/NeoFreeBird/v6/icon_rounded.png" width="48" height="48"> | **NeoFreeBird (X)** | NeoFreeBird version 6.5.0 | [orionblur/NeoFreeBird](https://github.com/orionblur/NeoFreeBird) |
 | <img src="https://raw.githubusercontent.com/bggRGjQaUbCoE/PiliPlus/main/assets/images/logo/logo.png" width="48" height="48"> | **PiliPlus** | PiliPlus | [bggRGjQaUbCoE/PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus) |
 | <img src="https://raw.githubusercontent.com/Eslzzyl/Pixiv-SwiftUI/master/docs/images/AppIcon.png" width="48" height="48"> | **Pixiv-SwiftUI** | 为现代 Apple 平台设计的第三方 Pixiv 客户端，支持 iOS/iPadOS/macOS | [Eslzzyl/Pixiv-SwiftUI](https://github.com/Eslzzyl/Pixiv-SwiftUI) |
 | <img src="https://raw.githubusercontent.com/hrydgard/ppsspp/master/ios/assets.xcassets/AppIcon.appiconset/icon_backfill_1024.png" width="48" height="48"> | **PPSSPP** | A PSP emulator for Android, Windows, Mac, Linux and iOS, written in C++. Want to contribute? Join us on Discord at https://discord.gg/5NJB6dD or just send pull requests / issues. | [hrydgard/ppsspp](https://github.com/hrydgard/ppsspp) |
