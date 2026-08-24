@@ -128,8 +128,14 @@
     "icon_url": "https://raw.githubusercontent.com/NeoFreeBird/app/main/assets/classic/ProductionAppIcon60x60@2x.png"
   },
   {
-    "name": "NeoFreeBird",
-    "github_repo": "orionblur/NeoFreeBird"
+    "name": "NeoFreeBird (Twitter)",
+    "github_repo": "orionblur/NeoFreeBird",
+    "ipa_regex": "sideloaded-Twitter"
+  },
+  {
+    "name": "NeoFreeBird (X)",
+    "github_repo": "orionblur/NeoFreeBird",
+    "ipa_regex": "sideloaded-X"
   },
   {
     "name": "PiliPlus",
