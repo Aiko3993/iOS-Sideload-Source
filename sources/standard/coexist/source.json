@@ -1072,14 +1072,14 @@
       "bundleIdentifier": "com.kodjodevf.mangayomi.coexist",
       "developerName": "kodjodevf",
       "subtitle": "Read manga, novels, and watch anime",
-      "version": "0.8.8",
-      "versionDate": "2026-08-20T20:28:27Z",
-      "versionDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
-      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260820/Mangayomi_0.8.8_Coexist.ipa",
+      "version": "0.8.9",
+      "versionDate": "2026-08-24T13:15:55Z",
+      "versionDescription": "## What's Changed\r\n* Fix migration screen row overflow by @not-akari in https://github.com/kodjodevf/mangayomi/pull/884\r\n* Fix History screen scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/885\r\n* Fix Updates and chapter list scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/886\r\n* Fix warning by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/887\r\n* New feature: backup encryption by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/888\r\n* fix: read downloaded chapters from disk instead of the source by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/889\r\n* Fix chapter sort incorrectly and Added Missing Chapter Header by @not-akari in https://github.com/kodjodevf/mangayomi/pull/890\r\n* Fix overflow in global search result cards by @not-akari in https://github.com/kodjodevf/mangayomi/pull/891\r\n* Add live connection status to Sync screen, redesign layout by @not-akari in https://github.com/kodjodevf/mangayomi/pull/892\r\n* Fixed reader where it launch and causing blank screen by @not-akari in https://github.com/kodjodevf/mangayomi/pull/893\r\n* Fix Isar nested-transaction crash after backup restore and settings sync by @not-akari in https://github.com/kodjodevf/mangayomi/pull/894\r\n* Fix blank reader screen on chapter change by @not-akari in https://github.com/kodjodevf/mangayomi/pull/895\r\n* Surface the real error when an image fails to load by @not-akari in https://github.com/kodjodevf/mangayomi/pull/896\r\n* Fix overflow in tracker library section screen by @not-akari in https://github.com/kodjodevf/mangayomi/pull/897\r\n* Fix migration screen lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/898\r\n* fix: stop a running update from the updates screen, and a grey box in its list by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/900\r\n* fix: stop dropping decimal chapters and mismatching them on migration (#812) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/899\r\n* feat: a first run for a fresh install by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/901\r\n* fix: stop settings writes putting back what changed in the meantime by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/904\r\n* Cloudflare Issue Fixed by @not-akari in https://github.com/kodjodevf/mangayomi/pull/910\r\n* Push restored data to sync server after a restore, guarding against r… by @not-akari in https://github.com/kodjodevf/mangayomi/pull/905\r\n* Add dyslexia-friendly font options for novel reader text by @not-akari in https://github.com/kodjodevf/mangayomi/pull/908\r\n* Use correct file extension for images by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/909\r\n* Fix source-installed detection and add mangayomi-backup merge parity by @not-akari in https://github.com/kodjodevf/mangayomi/pull/907\r\n* fix: stop share throwing on Linux, and give it something useful to do by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/903\r\n* feat: keep the errors the app catches, and offer to report them by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/906\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.8...v0.8.9",
+      "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260824/Mangayomi_0.8.9_Coexist.ipa",
       "localizedDescription": "Mangayomi is an open-source Flutter app for reading manga, novels, and watching anime across multiple platforms.",
       "iconURL": "https://raw.githubusercontent.com/kodjodevf/mangayomi/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x-tinted.png",
       "tintColor": "#E5E5E5",
-      "size": 108005396,
+      "size": 108452705,
       "appPermissions": {
         "entitlements": [
           "aps-environment",
@@ -1101,6 +1101,15 @@
       ],
       "versions": [
         {
+          "version": "0.8.9",
+          "date": "2026-08-24T13:15:55Z",
+          "localizedDescription": "## What's Changed\r\n* Fix migration screen row overflow by @not-akari in https://github.com/kodjodevf/mangayomi/pull/884\r\n* Fix History screen scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/885\r\n* Fix Updates and chapter list scroll lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/886\r\n* Fix warning by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/887\r\n* New feature: backup encryption by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/888\r\n* fix: read downloaded chapters from disk instead of the source by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/889\r\n* Fix chapter sort incorrectly and Added Missing Chapter Header by @not-akari in https://github.com/kodjodevf/mangayomi/pull/890\r\n* Fix overflow in global search result cards by @not-akari in https://github.com/kodjodevf/mangayomi/pull/891\r\n* Add live connection status to Sync screen, redesign layout by @not-akari in https://github.com/kodjodevf/mangayomi/pull/892\r\n* Fixed reader where it launch and causing blank screen by @not-akari in https://github.com/kodjodevf/mangayomi/pull/893\r\n* Fix Isar nested-transaction crash after backup restore and settings sync by @not-akari in https://github.com/kodjodevf/mangayomi/pull/894\r\n* Fix blank reader screen on chapter change by @not-akari in https://github.com/kodjodevf/mangayomi/pull/895\r\n* Surface the real error when an image fails to load by @not-akari in https://github.com/kodjodevf/mangayomi/pull/896\r\n* Fix overflow in tracker library section screen by @not-akari in https://github.com/kodjodevf/mangayomi/pull/897\r\n* Fix migration screen lag by @not-akari in https://github.com/kodjodevf/mangayomi/pull/898\r\n* fix: stop a running update from the updates screen, and a grey box in its list by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/900\r\n* fix: stop dropping decimal chapters and mismatching them on migration (#812) by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/899\r\n* feat: a first run for a fresh install by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/901\r\n* fix: stop settings writes putting back what changed in the meantime by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/904\r\n* Cloudflare Issue Fixed by @not-akari in https://github.com/kodjodevf/mangayomi/pull/910\r\n* Push restored data to sync server after a restore, guarding against r… by @not-akari in https://github.com/kodjodevf/mangayomi/pull/905\r\n* Add dyslexia-friendly font options for novel reader text by @not-akari in https://github.com/kodjodevf/mangayomi/pull/908\r\n* Use correct file extension for images by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/909\r\n* Fix source-installed detection and add mangayomi-backup merge parity by @not-akari in https://github.com/kodjodevf/mangayomi/pull/907\r\n* fix: stop share throwing on Linux, and give it something useful to do by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/903\r\n* feat: keep the errors the app catches, and offer to report them by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/906\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.8...v0.8.9",
+          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260824/Mangayomi_0.8.9_Coexist.ipa",
+          "size": 108452705,
+          "sha256": "b77773ab6bbdf3c5434ca3d45810b16255e39c2c5fe5782cdb335144c94307bc",
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "0.8.8",
           "date": "2026-08-20T20:28:27Z",
           "localizedDescription": "## What's Changed\r\n* Fix extension list row overflow with NSFW badge + repo name by @not-akari in https://github.com/kodjodevf/mangayomi/pull/883\r\n* fix(download): restore downloads to downloads folder instead of local library\r\n* fix #878\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.7...v0.8.8",
@@ -1108,19 +1117,10 @@
           "size": 108005396,
           "sha256": "d46466a247a334ea209feb38072ea6f93b927c237e0ac3987434e3b3f4ba488f",
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "0.8.6",
-          "date": "2026-08-18T12:09:26Z",
-          "localizedDescription": "## What's Changed\r\n* fixed flickering when switching to another page by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/872\r\n* added toggle to auto start Zero by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/871\r\n* perf: stop the grouped list re-sorting on every rebuild by @mrandhawa14 in https://github.com/kodjodevf/mangayomi/pull/874\r\n* support render for AVIF images on iOS <16 by @Schnitzel5 in https://github.com/kodjodevf/mangayomi/pull/875\r\n* Continuous‑mode eviction fixes + O(1) evicted‑chapter checks by @NBA2K1 in https://github.com/kodjodevf/mangayomi/pull/876\r\n\r\n\r\n**Full Changelog**: https://github.com/kodjodevf/mangayomi/compare/v0.8.5...v0.8.6",
-          "downloadURL": "https://github.com/Aiko3993/iOS-Sideload-Source/releases/download/builds-20260818/Mangayomi_0.8.6_Coexist.ipa",
-          "size": 107924495,
-          "sha256": "58fcee865fb7ff7e7c468056cc89799cb801523e6908c61af4b102e422f63c98",
-          "minOSVersion": "15.0"
         }
       ],
       "category": "entertainment",
-      "sha256": "d46466a247a334ea209feb38072ea6f93b927c237e0ac3987434e3b3f4ba488f",
+      "sha256": "b77773ab6bbdf3c5434ca3d45810b16255e39c2c5fe5782cdb335144c94307bc",
       "screenshots": [
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_0_default.webp",
         "https://raw.githubusercontent.com/kodjodevf/mangayomi/refs/heads/main/repo/images/screenshots/image_1_default.webp",
